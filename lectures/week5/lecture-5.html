@@ -1,0 +1,1426 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Machine learning lecture &#8212; Geospatial Data Science Applications</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Machine learning" href="../../labs/week5/lab5-demo.html" />
+    <link rel="prev" title="Gridded data" href="../../labs/week4/lab4-demo.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/uo_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Geospatial Data Science Applications</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Geospatial Data Science Applications
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Course information
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course-info/general-info.html">
+   General information
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course-info/schedule.html">
+   Schedule
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course-info/final-project.html">
+   Final project
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 1
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../labs/week1/lab1a-demo.html">
+   Getting started with Python and GitHub
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../labs/week1/lab1b-demo.html">
+   Instructions for submitting assignments
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 2
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../labs/week2/lab2-demo.html">
+   Exploring vector data
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 3
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../labs/week3/lab3-demo.html">
+   Network data
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 4
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week4/lecture-4.html">
+   Gridded data lecture
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../labs/week4/lab4-demo.html">
+   Gridded data
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 5
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Machine learning lecture
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../labs/week5/lab5-demo.html">
+   Machine learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../labs/week5/project-ideas.html">
+   Project ideas
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 6
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week6/lecture-6.html">
+   Code management lecture
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../labs/week6/lab6-demo.html">
+   Collaborating on GitHub
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 7
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week7/lecture-7.html">
+   Data access lecture
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../labs/week7/lab7-demo.html">
+   Data access
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 8
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week8/lecture-8.html">
+   Visualization lecture
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/lectures/week5/lecture-5.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flectures/week5/lecture-5.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/main?urlpath=tree/book/lectures/week5/lecture-5.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#content-of-this-lecture">
+   Content of this lecture
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-machine-learning">
+   What is machine learning?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#input-data">
+   Input data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Input data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#features">
+   Features
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#algorithms">
+   Algorithms
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#supervised-learning">
+   Supervised learning
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#classification">
+   Classification
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#regression">
+   Regression
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#unsupervised-learning">
+   Unsupervised learning
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#clustering">
+   Clustering
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dimensionality-reduction">
+   Dimensionality reduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ensemble-methods">
+   Ensemble methods
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bagging">
+   Bagging
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#boosting">
+   Boosting
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#predicting-house-prices-using-scikit-learn">
+   Predicting house prices using
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     scikit-learn
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#check-data">
+   Check data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   Check data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualize-data">
+   Visualize data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#correlation-analysis">
+   Correlation analysis
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#warning">
+     Warning
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#feature-scaling">
+   Feature scaling
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#split-data-in-training-and-testing-subsets">
+   Split data in training and testing subsets
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multiple-linear-regression">
+   Multiple linear regression
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#decision-tree">
+   Decision Tree
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#randomforests">
+   RandomForests
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Machine learning lecture</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#content-of-this-lecture">
+   Content of this lecture
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-machine-learning">
+   What is machine learning?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#input-data">
+   Input data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Input data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#features">
+   Features
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#algorithms">
+   Algorithms
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#supervised-learning">
+   Supervised learning
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#classification">
+   Classification
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#regression">
+   Regression
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#unsupervised-learning">
+   Unsupervised learning
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#clustering">
+   Clustering
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dimensionality-reduction">
+   Dimensionality reduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ensemble-methods">
+   Ensemble methods
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bagging">
+   Bagging
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#boosting">
+   Boosting
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#predicting-house-prices-using-scikit-learn">
+   Predicting house prices using
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     scikit-learn
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#check-data">
+   Check data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   Check data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualize-data">
+   Visualize data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#correlation-analysis">
+   Correlation analysis
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#warning">
+     Warning
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#feature-scaling">
+   Feature scaling
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#split-data-in-training-and-testing-subsets">
+   Split data in training and testing subsets
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multiple-linear-regression">
+   Multiple linear regression
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#decision-tree">
+   Decision Tree
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#randomforests">
+   RandomForests
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="machine-learning-lecture">
+<h1>Machine learning lecture<a class="headerlink" href="#machine-learning-lecture" title="Permalink to this headline">¶</a></h1>
+<CENTER>
+    <h1> Geospatial Data Science Applications: GEOG 4/590</h1>
+    <h3>Jan 31, 2022</h3>
+    <h2>Lecture 5: Machine learning</h2>
+    <img src="images/coding-computer-programming.jpeg" width="300"/>
+    <h3>Johnny Ryan: jryan4@uoregon.edu</h3>
+</CENTER><div class="section" id="content-of-this-lecture">
+<h2>Content of this lecture<a class="headerlink" href="#content-of-this-lecture" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Crash course on machine learning for environmental applications
+<br>
+<br></p></li>
+<li><p>Introduce <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> for machine learning in Python
+<br>
+<br></p></li>
+<li><p>Learn how to represent data so a program can learn from it
+<br>
+<br></p></li>
+<li><p>Learn how to evaluate a machine learning model
+<br>
+<br></p></li>
+<li><p>Background for this week’s lab</p></li>
+</ul>
+</div>
+<div class="section" id="what-is-machine-learning">
+<h2>What is machine learning?<a class="headerlink" href="#what-is-machine-learning" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>The goal of machine learning is use <strong>input data</strong> to make <strong>useful predictions</strong> on <strong>never-before-seen data</strong></p></li>
+</ul>
+<ul class="simple">
+<li><p>Machine learning is <strong>part</strong> of artificial intelligence, but not the only part</p></li>
+</ul>
+<img src="images/ml_schematic.jpg" alt="https://vas3k.com/blog/machine_learning/" width="500"/></div>
+<div class="section" id="input-data">
+<h2>Input data<a class="headerlink" href="#input-data" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Machine learning starts with a <strong>labelled dataset</strong></p></li>
+<li><p>A <strong>label</strong> (or target variable) is the thing we’re predicting (e.g. <code class="docutils literal notranslate"><span class="pre">y</span></code> variable in linear regression)</p></li>
+<li><p>For example, house price, river discharge, land cover etc.</p></li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h2>Input data<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>It’s tough to collect a good collection of data (time-consuming, expensive)</p></li>
+<li><p>These datasets are therefore <strong>extremely valuable</strong></p></li>
+</ul>
+<img src="images/captcha.jpeg" alt="https://onezero.medium.com/why-captcha-pictures-are-so-unbearably-depressing-20679b8cf84a" width="200"/></div>
+<div class="section" id="features">
+<h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>An input <strong>variable</strong> (e.g. the <code class="docutils literal notranslate"><span class="pre">x</span></code> variable in linear regression)</p></li>
+<li><p>A simple dataset might use a <strong>one or two features</strong> while a more complex dataset could have <strong>thousands of features</strong></p></li>
+<li><p>In our river discharge example - features could include precipitation, snow depth, soil moisture</p></li>
+</ul>
+</div>
+<div class="section" id="algorithms">
+<h2>Algorithms<a class="headerlink" href="#algorithms" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>There are many (e.g. naive bayes, decision trees, neural network etc.)</p></li>
+<li><p>Performance of algorithm dependent on type of problem</p></li>
+<li><p>Just remember: <strong>garage in, garbage out</strong></p></li>
+</ul>
+<img src="images/ml_types.jpg" alt="https://vas3k.com/blog/machine_learning/" width="600"/><img src="images/classical_ml.jpg" alt="https://vas3k.com/blog/machine_learning/" width="600"/></div>
+<div class="section" id="supervised-learning">
+<h2>Supervised learning<a class="headerlink" href="#supervised-learning" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Training data is already <strong>labeled</strong> and we teach the machine to learn from these examples</p></li>
+<li><p>Supervised learning can used to predict a <strong>category</strong> (classification) or predict a <strong>number</strong> (regression)</p></li>
+</ul>
+</div>
+<div class="section" id="classification">
+<h2>Classification<a class="headerlink" href="#classification" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>“Split things into <strong>groups</strong> based on their <strong>features</strong>”</p></li>
+<li><p>Examples include:</p>
+<ul>
+<li><p>Land cover</p></li>
+<li><p>Flood risk</p></li>
+<li><p>Sentiment analysis</p></li>
+</ul>
+</li>
+<li><p>Popular algorithms include:</p>
+<ul>
+<li><p>Naive Bayes</p></li>
+<li><p>Decision Trees</p></li>
+<li><p>K-Nearest Neighbours</p></li>
+<li><p>Support Vector Machine</p></li>
+</ul>
+</li>
+</ul>
+<img src="images/classification.jpg" alt="https://vas3k.com/blog/machine_learning/" width="300"/></div>
+<div class="section" id="regression">
+<h2>Regression<a class="headerlink" href="#regression" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>“Draw a <strong>line</strong> through these dots”</p></li>
+<li><p>Used for predicting continuous variables:</p>
+<ul>
+<li><p>River discharge</p></li>
+<li><p>House prices</p></li>
+<li><p>Weather forecasting</p></li>
+</ul>
+</li>
+<li><p>Popular algorithms include linear regression, polynomial regression, + other algorithms</p></li>
+</ul>
+<img src="images/regression.jpeg" alt="https://vas3k.com/blog/machine_learning/" width="300"/></div>
+<div class="section" id="unsupervised-learning">
+<h2>Unsupervised learning<a class="headerlink" href="#unsupervised-learning" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Labeled data is a luxury, sometimes we don’t have it</p></li>
+<li><p>Sometimes we have <strong>no idea</strong> what the labels could be</p></li>
+<li><p>Much <strong>less used</strong> in geospatial data science but sometimes useful for exploratory analysis</p></li>
+</ul>
+</div>
+<div class="section" id="clustering">
+<h2>Clustering<a class="headerlink" href="#clustering" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>“Divide data into groups but machine chooses the best way”</p></li>
+<li><p>Common usages include:</p>
+<ul>
+<li><p>image compression</p></li>
+<li><p>labeling training data (i.e. for supervised learning)</p></li>
+<li><p>detecting abnormal behavior</p></li>
+</ul>
+</li>
+<li><p>Popular algorithms:</p>
+<ul>
+<li><p>K-means clustering</p></li>
+<li><p>Mean-Shift</p></li>
+<li><p>DBSCAN</p></li>
+</ul>
+</li>
+</ul>
+<img src="images/clustering.jpeg" alt="https://vas3k.com/blog/machine_learning/" width="300"/><img src="images/kmeans.jpeg" alt="https://vas3k.com/blog/machine_learning/" width="600"/></div>
+<div class="section" id="dimensionality-reduction">
+<h2>Dimensionality reduction<a class="headerlink" href="#dimensionality-reduction" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>“Assemble specific features into higher-level ones”</p></li>
+<li><p>When we have too many features, some of which are useless</p></li>
+<li><p>Most popular algorithm is Principal Component Analysis (PCA)</p></li>
+</ul>
+<img src="images/pca.jpeg" alt="https://vas3k.com/blog/machine_learning/" width="300"/></div>
+<div class="section" id="ensemble-methods">
+<h2>Ensemble methods<a class="headerlink" href="#ensemble-methods" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>“Multiple learning algorithms learning to correct errors of each other”</p></li>
+<li><p>Often used improve the accuracy over what could be acheived with a single classical machine learning model.</p></li>
+<li><p>Popular algorithms:</p>
+<ul>
+<li><p>Random Forest</p></li>
+<li><p>XGBoost</p></li>
+</ul>
+</li>
+</ul>
+<img src="images/ensemble.jpeg" alt="https://vas3k.com/blog/machine_learning/" width="300"/></div>
+<div class="section" id="bagging">
+<h2>Bagging<a class="headerlink" href="#bagging" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Apply the same algorithm but train it on different subsets of original data. At the end - just average the answers. Most famous example is <strong>Random Forests</strong>.</p></li>
+</ul>
+<img src="images/bagging.jpeg" alt="https://vas3k.com/blog/machine_learning/" width="600"/>
+</div>
+<div class="section" id="boosting">
+<h2>Boosting<a class="headerlink" href="#boosting" title="Permalink to this headline">¶</a></h2>
+<p>Similar to bagging but each subsequent algorithm is paying most attention to data points that were <strong>mispredicted</strong> by the previous one.</p>
+<img src="images/boosting.jpeg" alt="https://vas3k.com/blog/machine_learning/" width="600"/>
+</div>
+<div class="section" id="predicting-house-prices-using-scikit-learn">
+<h2>Predicting house prices using <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code><a class="headerlink" href="#predicting-house-prices-using-scikit-learn" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>The <strong>California house price dataset</strong> is a classic example dataset derived from the 1990 U.S. Census</p></li>
+<li><p><strong>Labels</strong> = house prices at the block group level (a block group typically has a population of 600 to 3,000 people)</p></li>
+<li><p><strong>Features</strong> = longitude, latitude, housing_median_age, total_rooms, total_bedrooms, population, households, median_income</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import libraries</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read dataset</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/california_house_prices.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># Examine dataset (each row represents one block group)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>housing_median_age</th>
+      <th>total_rooms</th>
+      <th>total_bedrooms</th>
+      <th>population</th>
+      <th>households</th>
+      <th>median_income</th>
+      <th>median_house_value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>51</td>
+      <td>1905</td>
+      <td>291</td>
+      <td>707</td>
+      <td>284</td>
+      <td>6.2561</td>
+      <td>431000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>51</td>
+      <td>1616</td>
+      <td>374</td>
+      <td>608</td>
+      <td>302</td>
+      <td>3.1932</td>
+      <td>400000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>51</td>
+      <td>2413</td>
+      <td>431</td>
+      <td>1095</td>
+      <td>437</td>
+      <td>4.0089</td>
+      <td>357000</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>51</td>
+      <td>1502</td>
+      <td>243</td>
+      <td>586</td>
+      <td>231</td>
+      <td>4.3750</td>
+      <td>332400</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>51</td>
+      <td>2399</td>
+      <td>516</td>
+      <td>1160</td>
+      <td>514</td>
+      <td>3.8456</td>
+      <td>318900</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="check-data">
+<h2>Check data<a class="headerlink" href="#check-data" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check for NaN values and data types</span>
+<span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 15267 entries, 0 to 15266
+Data columns (total 7 columns):
+ #   Column              Non-Null Count  Dtype  
+---  ------              --------------  -----  
+ 0   housing_median_age  15267 non-null  int64  
+ 1   total_rooms         15267 non-null  int64  
+ 2   total_bedrooms      15267 non-null  int64  
+ 3   population          15267 non-null  int64  
+ 4   households          15267 non-null  int64  
+ 5   median_income       15267 non-null  float64
+ 6   median_house_value  15267 non-null  int64  
+dtypes: float64(1), int64(6)
+memory usage: 835.0 KB
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>Check data<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check summary statistics</span>
+<span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>housing_median_age</th>
+      <th>total_rooms</th>
+      <th>total_bedrooms</th>
+      <th>population</th>
+      <th>households</th>
+      <th>median_income</th>
+      <th>median_house_value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>15267.000000</td>
+      <td>15267.000000</td>
+      <td>15267.000000</td>
+      <td>15267.000000</td>
+      <td>15267.000000</td>
+      <td>15267.00000</td>
+      <td>15267.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>26.924805</td>
+      <td>2678.617214</td>
+      <td>549.977075</td>
+      <td>1476.071199</td>
+      <td>510.814371</td>
+      <td>3.70112</td>
+      <td>189416.617345</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>11.426288</td>
+      <td>2225.565198</td>
+      <td>430.964703</td>
+      <td>1180.890618</td>
+      <td>393.232807</td>
+      <td>1.57686</td>
+      <td>95681.349164</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>1.000000</td>
+      <td>2.000000</td>
+      <td>2.000000</td>
+      <td>3.000000</td>
+      <td>2.000000</td>
+      <td>0.49990</td>
+      <td>14999.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>17.000000</td>
+      <td>1469.000000</td>
+      <td>302.000000</td>
+      <td>814.000000</td>
+      <td>286.000000</td>
+      <td>2.53665</td>
+      <td>115400.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>27.000000</td>
+      <td>2142.000000</td>
+      <td>441.000000</td>
+      <td>1203.000000</td>
+      <td>415.000000</td>
+      <td>3.47840</td>
+      <td>171200.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>36.000000</td>
+      <td>3187.000000</td>
+      <td>661.000000</td>
+      <td>1780.000000</td>
+      <td>614.500000</td>
+      <td>4.62635</td>
+      <td>243050.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>51.000000</td>
+      <td>37937.000000</td>
+      <td>6445.000000</td>
+      <td>35682.000000</td>
+      <td>6082.000000</td>
+      <td>15.00010</td>
+      <td>499100.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="visualize-data">
+<h2>Visualize data<a class="headerlink" href="#visualize-data" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot histogram</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">50</span> <span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/lecture-5_29_0.png" src="../../_images/lecture-5_29_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="correlation-analysis">
+<h2>Correlation analysis<a class="headerlink" href="#correlation-analysis" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>It is always useful to compute correlation coeffcients (e.g.Pearson’s r) between the labels (i.e. <code class="docutils literal notranslate"><span class="pre">median_house_value</span></code>) and features.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute correlation matrix</span>
+<span class="n">corr_matrix</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+
+<span class="c1"># Display just house value correlations</span>
+<span class="n">corr_matrix</span><span class="p">[</span><span class="s2">&quot;median_house_value&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>median_house_value    1.000000
+median_income         0.668566
+total_rooms           0.152923
+households            0.098525
+total_bedrooms        0.079023
+population            0.020930
+housing_median_age    0.014355
+Name: median_house_value, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="warning">
+<h3>Warning<a class="headerlink" href="#warning" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Just remember that correlation coefficients only measure linear correlations (“if <code class="docutils literal notranslate"><span class="pre">x</span></code> goes up, then <code class="docutils literal notranslate"><span class="pre">y</span></code> generally goes up/down”).</p></li>
+<li><p>They may completely miss nonlinear relationships (e.g., “if <code class="docutils literal notranslate"><span class="pre">x</span></code> is close to zero then <code class="docutils literal notranslate"><span class="pre">y</span></code> generally goes up”).</p></li>
+</ul>
+<img src="images/correlations.png" alt="https://www.kaggle.com/aakashjoshi123/o-reilly-solution-with-my-observations-notebook" width="600"/></div>
+</div>
+<div class="section" id="feature-scaling">
+<h2>Feature scaling<a class="headerlink" href="#feature-scaling" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Machine Learning algorithms don’t perform well when the input numerical attributes have very <strong>different scales</strong>.</p></li>
+<li><p>We often <strong>scale</strong> (or normalize) our features before training the model (e.g. min-max scaling or standardization).</p></li>
+<li><p><strong>Min-max method</strong> scales values so that they end up ranging from 0 to 1</p></li>
+<li><p><strong>Standardization</strong> scales values so that the they have mean of 0 and unit variance.</p></li>
+</ul>
+<img src="images/scaling.png" alt="https://www.kaggle.com/aakashjoshi123/o-reilly-solution-with-my-observations-notebook" width="800"/><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import library</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+
+<span class="c1"># Define feature list</span>
+<span class="n">feature_list</span> <span class="o">=</span>  <span class="p">[</span><span class="s1">&#39;housing_median_age&#39;</span><span class="p">,</span> <span class="s1">&#39;total_rooms&#39;</span><span class="p">,</span> <span class="s1">&#39;total_bedrooms&#39;</span><span class="p">,</span> 
+                 <span class="s1">&#39;population&#39;</span><span class="p">,</span> <span class="s1">&#39;households&#39;</span><span class="p">,</span> <span class="s1">&#39;median_income&#39;</span><span class="p">]</span>
+
+<span class="c1"># Define features and labels </span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">feature_list</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;median_house_value&#39;</span><span class="p">]</span>
+
+<span class="c1"># Standarize data</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>  
+<span class="n">X_scaled</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="split-data-in-training-and-testing-subsets">
+<h2>Split data in training and testing subsets<a class="headerlink" href="#split-data-in-training-and-testing-subsets" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="c1"># Split data </span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X_scaled</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="multiple-linear-regression">
+<h2>Multiple linear regression<a class="headerlink" href="#multiple-linear-regression" title="Permalink to this headline">¶</a></h2>
+<p>A very simple supervised algorithm that fits a linear model to our data using a least squares approach.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+
+<span class="c1"># Define model</span>
+<span class="n">lin_reg</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+
+<span class="c1"># Fit model to data</span>
+<span class="n">lin_reg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LinearRegression()
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
+
+<span class="c1"># Predict test labels</span>
+<span class="n">predictions</span> <span class="o">=</span> <span class="n">lin_reg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="c1"># Compute mean-squared-error</span>
+<span class="n">lin_mse</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predictions</span><span class="p">)</span>
+<span class="n">lin_rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">lin_mse</span><span class="p">)</span>
+<span class="n">lin_rmse</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>64374.61617631897
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predictions</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">500000</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">500000</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Predicted house price ($)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Observed house price ($)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;major&#39;</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">500000</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">500000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 500000.0)
+</pre></div>
+</div>
+<img alt="../../_images/lecture-5_40_1.png" src="../../_images/lecture-5_40_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="decision-tree">
+<h2>Decision Tree<a class="headerlink" href="#decision-tree" title="Permalink to this headline">¶</a></h2>
+<p>A popular machine learning algorithm that predicts a target variable using multiple regression trees</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeRegressor</span>
+
+<span class="c1"># Define model</span>
+<span class="n">tree_reg</span> <span class="o">=</span> <span class="n">DecisionTreeRegressor</span><span class="p">()</span>
+
+<span class="c1"># Fit model</span>
+<span class="n">tree_reg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DecisionTreeRegressor()
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Predict test labels</span>
+<span class="n">predictions</span> <span class="o">=</span> <span class="n">tree_reg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="c1"># Compute mean-squared-error</span>
+<span class="n">tree_mse</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predictions</span><span class="p">)</span>
+<span class="n">tree_rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">tree_mse</span><span class="p">)</span>
+<span class="n">tree_rmse</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>82289.76594673106
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predictions</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">500000</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">500000</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Predicted house price ($)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Observed house price ($)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;major&#39;</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">500000</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">500000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 500000.0)
+</pre></div>
+</div>
+<img alt="../../_images/lecture-5_44_1.png" src="../../_images/lecture-5_44_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="randomforests">
+<h2>RandomForests<a class="headerlink" href="#randomforests" title="Permalink to this headline">¶</a></h2>
+<p>A popular <strong>ensemble algorithm</strong> that fits a number of <strong>decision tree classifiers</strong> on various sub-samples of the dataset and uses averaging to improve the predictive accuracy and control over-fitting.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestRegressor</span>
+
+<span class="c1"># Define model</span>
+<span class="n">forest_reg</span> <span class="o">=</span> <span class="n">RandomForestRegressor</span><span class="p">(</span><span class="n">n_estimators</span> <span class="o">=</span> <span class="mi">30</span><span class="p">)</span>
+
+<span class="c1"># Fit model</span>
+<span class="n">forest_reg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RandomForestRegressor(n_estimators=30)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Predict test labels predictions</span>
+<span class="n">predictions</span> <span class="o">=</span> <span class="n">forest_reg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="c1"># Compute mean-squared-error</span>
+<span class="n">final_mse</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span> <span class="p">,</span> <span class="n">predictions</span><span class="p">)</span>
+<span class="n">final_rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">final_mse</span><span class="p">)</span>
+<span class="n">final_rmse</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>60264.63679436083
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predictions</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">500000</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">500000</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Predicted house price ($)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Observed house price ($)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;major&#39;</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">500000</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">500000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 500000.0)
+</pre></div>
+</div>
+<img alt="../../_images/lecture-5_48_1.png" src="../../_images/lecture-5_48_1.png" />
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lectures/week5"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../../labs/week4/lab4-demo.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Gridded data</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../../labs/week5/lab5-demo.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Machine learning</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Johnny Ryan<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,745 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Collaborating on GitHub &#8212; Geospatial Data Science Applications</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Data access lecture" href="../../lectures/week7/lecture-7.html" />
+    <link rel="prev" title="Code management lecture" href="../../lectures/week6/lecture-6.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/uo_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Geospatial Data Science Applications</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Geospatial Data Science Applications
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Course information
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course-info/general-info.html">
+   General information
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course-info/schedule.html">
+   Schedule
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course-info/final-project.html">
+   Final project
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 1
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week1/lab1a-demo.html">
+   Getting started with Python and GitHub
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week1/lab1b-demo.html">
+   Instructions for submitting assignments
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 2
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week2/lab2-demo.html">
+   Exploring vector data
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 3
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week3/lab3-demo.html">
+   Network data
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 4
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/week4/lecture-4.html">
+   Gridded data lecture
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week4/lab4-demo.html">
+   Gridded data
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 5
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/week5/lecture-5.html">
+   Machine learning lecture
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week5/lab5-demo.html">
+   Machine learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week5/project-ideas.html">
+   Project ideas
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 6
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/week6/lecture-6.html">
+   Code management lecture
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Collaborating on GitHub
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 7
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/week7/lecture-7.html">
+   Data access lecture
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week7/lab7-demo.html">
+   Data access
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 8
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/week8/lecture-8.html">
+   Visualization lecture
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/labs/week6/lab6-demo.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flabs/week6/lab6-demo.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/main?urlpath=tree/book/labs/week6/lab6-demo.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#team-leader-make-a-new-github-repository">
+   Team leader: make a new Github repository
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#team-leader-add-other-team-members-to-repository">
+   Team leader: add other team members to repository
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#everyone-clone-repository">
+   Everyone: clone repository
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-a-new-slack-channel-for-discussion">
+   Create a new Slack channel for discussion:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#centralized-workflow-in-github-desktop">
+   Centralized workflow in GitHub Desktop
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#some-tips-for-the-centralized-workflow">
+     Some tips for the centralized workflow
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#feature-branch-workflow-in-github-desktop">
+   Feature branch workflow in GitHub Desktop
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#workflow">
+     Workflow
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#some-tips-for-the-feature-branch-workflow">
+     Some tips for the feature branch workflow
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#feature-branch-workflow-in-command-line">
+   Feature branch workflow in command line
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#some-tips-for-collaborating-on-group-project">
+     Some tips for collaborating on group project
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-1-prepare-a-readme-40-points">
+   Task 1: prepare a README (40 points)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-2-push-all-changes-to-github-and-submit-readme-as-a-pdf-to-canvas-10-points">
+   Task 2: push all changes to GitHub and submit README as a pdf to Canvas (10 points)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#some-notes-for-final-projects">
+     Some notes for final projects
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Collaborating on GitHub</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#team-leader-make-a-new-github-repository">
+   Team leader: make a new Github repository
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#team-leader-add-other-team-members-to-repository">
+   Team leader: add other team members to repository
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#everyone-clone-repository">
+   Everyone: clone repository
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-a-new-slack-channel-for-discussion">
+   Create a new Slack channel for discussion:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#centralized-workflow-in-github-desktop">
+   Centralized workflow in GitHub Desktop
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#some-tips-for-the-centralized-workflow">
+     Some tips for the centralized workflow
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#feature-branch-workflow-in-github-desktop">
+   Feature branch workflow in GitHub Desktop
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#workflow">
+     Workflow
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#some-tips-for-the-feature-branch-workflow">
+     Some tips for the feature branch workflow
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#feature-branch-workflow-in-command-line">
+   Feature branch workflow in command line
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#some-tips-for-collaborating-on-group-project">
+     Some tips for collaborating on group project
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-1-prepare-a-readme-40-points">
+   Task 1: prepare a README (40 points)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-2-push-all-changes-to-github-and-submit-readme-as-a-pdf-to-canvas-10-points">
+   Task 2: push all changes to GitHub and submit README as a pdf to Canvas (10 points)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#some-notes-for-final-projects">
+     Some notes for final projects
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="collaborating-on-github">
+<h1>Collaborating on GitHub<a class="headerlink" href="#collaborating-on-github" title="Permalink to this headline">¶</a></h1>
+<p><strong>Objectives:</strong></p>
+<ul class="simple">
+<li><p>Form teams and designate a team leader</p></li>
+<li><p>Create a new GitHub repository for final project</p></li>
+<li><p>Choose a GitHub workflow that works for all team members</p></li>
+<li><p>Prepare and submit an outline of your group’s final project</p></li>
+</ul>
+<div class="section" id="team-leader-make-a-new-github-repository">
+<h2>Team leader: make a new Github repository<a class="headerlink" href="#team-leader-make-a-new-github-repository" title="Permalink to this headline">¶</a></h2>
+<p>If you’re working in a group, pick a <strong>project lead</strong> to initiate and manage the repo.</p>
+<ul class="simple">
+<li><p>Go to: <a class="reference external" href="https://github.com/">https://github.com/</a></p></li>
+<li><p>Click the big green <strong>New</strong> button and follow instructions on the left side of page. Come up with a clever, descriptive repo name - try to avoid names like “finalproject”, which won’t make it very searchable.</p></li>
+<li><p>Set the access to <strong>Public</strong> (so other students can follow progress).</p></li>
+<li><p>Select to include a <code class="docutils literal notranslate"><span class="pre">README.md</span></code> and include a <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file with a <code class="docutils literal notranslate"><span class="pre">Python</span></code> template.</p></li>
+</ul>
+<p>Don’t stress too much about the specifics of the repo - these are not permanent, and you can always change repo names, or start over entirely (just copy and add existing files as a first commit). One of the goals here is to gain more experience using <code class="docutils literal notranslate"><span class="pre">git</span></code> for collaborative work and, early on, you’re inevitably going to make some mistakes.</p>
+</div>
+<div class="section" id="team-leader-add-other-team-members-to-repository">
+<h2>Team leader: add other team members to repository<a class="headerlink" href="#team-leader-add-other-team-members-to-repository" title="Permalink to this headline">¶</a></h2>
+<p>The team leader now needs to add the others as collaborators and make sure they have permission to access and commit.</p>
+<ul class="simple">
+<li><p>Click <strong>Settings</strong> –&gt; <strong>Collaborators</strong> from menu on the left</p></li>
+<li><p>Click the big green <strong>Add people</strong> button and add the other team members using their <strong>GitHub usernames</strong></p></li>
+</ul>
+</div>
+<div class="section" id="everyone-clone-repository">
+<h2>Everyone: clone repository<a class="headerlink" href="#everyone-clone-repository" title="Permalink to this headline">¶</a></h2>
+<p>All team members should now go to GitHub Desktop, click <strong>File</strong> –&gt; <strong>Clone repository…</strong>, enter <code class="docutils literal notranslate"><span class="pre">https://github.com/&lt;team-leader-username&gt;/&lt;project-repo-name&gt;</span></code> as the <strong>URL</strong> where <code class="docutils literal notranslate"><span class="pre">&lt;team-leader-username&gt;</span></code> is the <strong>team leader’s</strong> GitHub username and <code class="docutils literal notranslate"><span class="pre">&lt;project-repo-name&gt;</span></code> is the name of the new project repo.</p>
+<p>Choose a <strong>Local path</strong> where you keep your coursework (e.g. <code class="docutils literal notranslate"><span class="pre">C:\Users\your_name\Documents</span></code>) and click <strong>Clone</strong>.</p>
+<p>Notice that in the top left that <strong>Current repository</strong> is now set to <code class="docutils literal notranslate"><span class="pre">project-repo-name</span></code>. Depending on if we’re working on our projects or lab assignments, we’ll need to switch between this and <code class="docutils literal notranslate"><span class="pre">geospatial-data-science</span></code>.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="create-a-new-slack-channel-for-discussion">
+<h2>Create a new Slack channel for discussion:<a class="headerlink" href="#create-a-new-slack-channel-for-discussion" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Click <strong>“+”</strong> icon next to <strong>Channels</strong> list in the Slack sidebar -&gt; <strong>“Create a channel”</strong></p></li>
+<li><p>Add your project name</p></li>
+<li><p>Invite your team members Slack members</p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="centralized-workflow-in-github-desktop">
+<h2>Centralized workflow in GitHub Desktop<a class="headerlink" href="#centralized-workflow-in-github-desktop" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>To contribute to the repo, <strong>team members</strong> should make a new file called <code class="docutils literal notranslate"><span class="pre">README_XX.md</span></code> where <code class="docutils literal notranslate"><span class="pre">XX</span></code> are the initials of the team member.</p></li>
+<li><p>When the team member is finished with thir edits to <code class="docutils literal notranslate"><span class="pre">README_XX.md</span></code>, they can go to <strong>GitHub Desktop</strong>, include a <strong>Summary</strong> of the changes, <strong>Commit to main</strong> and then click <strong>Push origin</strong> button.</p></li>
+<li><p><strong>Team leader</strong> can then go to <strong>GitHub Desktop</strong>, click <strong>Fetch origin</strong> and <strong>Pull origin</strong> to retrieve the changes that the team members made to their local environment.</p></li>
+<li><p><strong>Team leader</strong> can then add useful text from <code class="docutils literal notranslate"><span class="pre">README_XX.md</span></code> to the main file (e.g. <code class="docutils literal notranslate"><span class="pre">README.md</span></code>). Once they are finished they can <strong>delete</strong> <code class="docutils literal notranslate"><span class="pre">README_XX.md</span></code>, go to <strong>GitHub Desktop</strong>, include a <strong>Summary</strong> of the changes, click <strong>Commit to main</strong> and then <strong>Push origin</strong> button.</p></li>
+<li><p><strong>Team members</strong> can then go to <strong>GitHub Desktop</strong>, click <strong>Fetch origin</strong> and <strong>Pull origin</strong> to retrieve the changes that the team leader made. Repeat the steps above to contribute to the project.</p></li>
+</ul>
+<hr class="docutils" />
+<div class="section" id="some-tips-for-the-centralized-workflow">
+<h3>Some tips for the centralized workflow<a class="headerlink" href="#some-tips-for-the-centralized-workflow" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Only the team leader should edit the main files (e.g. <code class="docutils literal notranslate"><span class="pre">README.md</span></code>)</p></li>
+<li><p>Team members should edit their own versions (e.g. <code class="docutils literal notranslate"><span class="pre">README_XX.md</span></code>)</p></li>
+<li><p><strong>Fetch</strong> and <strong>pull</strong> regularly to avoid conflicts</p></li>
+</ul>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="feature-branch-workflow-in-github-desktop">
+<h2>Feature branch workflow in GitHub Desktop<a class="headerlink" href="#feature-branch-workflow-in-github-desktop" title="Permalink to this headline">¶</a></h2>
+<p>If you feel comfortable with <code class="docutils literal notranslate"><span class="pre">GitHub</span></code>, you are welcome to use a more standard branching workflow.</p>
+<div class="section" id="workflow">
+<h3>Workflow<a class="headerlink" href="#workflow" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>In GitHub Desktop, <strong>all team members</strong> should create a their own branch by clicking the drop-down menu called <strong>Current branch</strong>, typing a name for their branch (e.g. <code class="docutils literal notranslate"><span class="pre">xx_branch</span></code>), click the big blue <strong>Create new branch</strong> button and <strong>Create branch</strong></p></li>
+<li><p>All team members should publish <code class="docutils literal notranslate"><span class="pre">xx_branch</span></code> to main repo by clicking the big blue <strong>Publish branch</strong> button</p></li>
+<li><p>All team members can make changes to <code class="docutils literal notranslate"><span class="pre">README.md</span></code>. Once they are finished, go back to <strong>GitHub Desktop</strong>, include a <strong>Summary</strong> of the changes, click <strong>Commit to <code class="docutils literal notranslate"><span class="pre">xx_branch</span></code></strong> and then <strong>Push origin</strong> button.</p></li>
+<li><p>In GitHub Desktop, click the big blue <strong>Create Pull Request</strong> button which should take you to <a class="reference external" href="http://GitHub.com">GitHub.com</a> where you can click <strong>Create pull request</strong>.</p></li>
+<li><p>The <strong>team leader</strong> can then go to <code class="docutils literal notranslate"><span class="pre">https://github.com/&lt;team-leader-username&gt;/&lt;project-repo-name&gt;</span></code>, click <strong>Pull requests</strong> from the top menu, click on the open pull request. If there are no conflicts, the team leader can click <strong>Merge pull request</strong> and <strong>Confirm merge</strong>.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">README.md</span></code> should now be updated on the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.</p></li>
+<li><p>Once your changes have been incorpotated in the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch it is good practice to clean up your repository by <strong>deleting</strong> the old branch (e.g. <code class="docutils literal notranslate"><span class="pre">xx_branch</span></code>).</p></li>
+<li><p>Before starting new work, <strong>all team members</strong> should first click the <strong>Fetch origin</strong> button to check for new changes.</p></li>
+<li><p>Repeat the steps above to contribute to the project.</p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="some-tips-for-the-feature-branch-workflow">
+<h3>Some tips for the feature branch workflow<a class="headerlink" href="#some-tips-for-the-feature-branch-workflow" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Remember to <strong>stay</strong> on your own branch</p></li>
+<li><p>Remember to <strong>fetch</strong> changes before making a new branch and starting work</p></li>
+<li><p>If the changes in your branch conflict with another team member’s branch, you can still <strong>Create a pull request</strong>. The <strong>team leader</strong> should click <strong>Resolve conflicts</strong>, decide what to keep and what discard and click <strong>Mark as resolved</strong> and <strong>Commit merge</strong>. The team leader can then click <strong>Merge pull request</strong> and <strong>Confirm merge</strong></p></li>
+</ul>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="feature-branch-workflow-in-command-line">
+<h2>Feature branch workflow in command line<a class="headerlink" href="#feature-branch-workflow-in-command-line" title="Permalink to this headline">¶</a></h2>
+<p>It seems like most people in the class are using GitHub Desktop. But if your team would like to use the command line, the steps are basically the same. There are some useful instructions here: <a class="reference external" href="https://icesat-2hackweek.github.io/learning-resources/projects/example_workflow/">https://icesat-2hackweek.github.io/learning-resources/projects/example_workflow/</a> and <a class="reference external" href="https://blog.scottlowe.org/2015/01/27/using-fork-branch-git-workflow/">https://blog.scottlowe.org/2015/01/27/using-fork-branch-git-workflow/</a>. The instructor and TA would also be happy to help get a workflow started.</p>
+<div class="section" id="some-tips-for-collaborating-on-group-project">
+<h3>Some tips for collaborating on group project<a class="headerlink" href="#some-tips-for-collaborating-on-group-project" title="Permalink to this headline">¶</a></h3>
+<p>Best practice for collaborating on GitHub is to <strong>avoid</strong> situations where two people are independently <strong>working on the same script</strong>. When trying to push/pull changes to/from same origin branch, there will inevitably be <strong>merge conflicts</strong> that can be messy to untangle.</p>
+<p>Collaboration is also a little more complicated with <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebooks</span></code> since running cells in the notebook will change execution count and output, even if the code and content appear identical. You are welcome to use other programs to write scripts (e.g. <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Lab</span></code>).</p>
+<p>General recommendation - <strong>split up</strong> the project into multiple <strong>smaller scipts</strong>, and have each person work on different components. For example, you could have one script that ingests files, reduces/manipulates the data (e.g., reprojection), then writes new files out to disk in “analysis-ready” format. Then a second notebook reads in those data and does some analysis, creates some plots, etc. If you can pass things back and forth between group members like this, you’ll avoid conflicts.</p>
+</div>
+</div>
+<div class="section" id="task-1-prepare-a-readme-40-points">
+<h2>Task 1: prepare a README (40 points)<a class="headerlink" href="#task-1-prepare-a-readme-40-points" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file in your new repo will serve as the landing page for your project. You can continue to update it as your project evolves, but for now, please prepare a basic project outline.</p>
+<p>Review the <a class="reference external" href="https://www.markdownguide.org/basic-syntax/">markdown cheat sheet</a> and use some basic headings, bulleted/numbered lists, and other formatting to organize your outline. We recommend using a <strong>markdown editor</strong> such as <a class="reference external" href="https://macdown.uranusjr.com/">MacDown</a> for MacOS or <a class="reference external" href="https://wereturtle.github.io/ghostwriter/download.html">Ghostwriter</a> for Windows.</p>
+<p>Please include the following in <code class="docutils literal notranslate"><span class="pre">README.md</span></code>:</p>
+<ul class="simple">
+<li><p>Project Title</p></li>
+<li><p>Name(s) of individual or team members</p></li>
+<li><p>Short 1-2 sentence summary</p></li>
+<li><p>Problem statement, question(s) and/or objective(s)</p></li>
+<li><p>Datasets you will use (with links, if available)</p></li>
+<li><p>Tools/packages you’ll need</p></li>
+<li><p>Planned methodology/approach</p></li>
+<li><p>Expected outcomes</p></li>
+<li><p>Any other relevant information, images/tables, references, etc.</p></li>
+<li><p>References</p></li>
+</ul>
+<p>That may sound like a lot, but some of these items should only be 1-2 sentences, others can be short lists. Consider this the start of your final report.</p>
+<p>We would like to see at <strong>least one commit</strong> from <strong>each group member</strong> at this phase of the project, even if it is as simple as adding their name to the <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file.</p>
+</div>
+<div class="section" id="task-2-push-all-changes-to-github-and-submit-readme-as-a-pdf-to-canvas-10-points">
+<h2>Task 2: push all changes to GitHub and submit README as a pdf to Canvas (10 points)<a class="headerlink" href="#task-2-push-all-changes-to-github-and-submit-readme-as-a-pdf-to-canvas-10-points" title="Permalink to this headline">¶</a></h2>
+<p>The markdown editors should be able to export <code class="docutils literal notranslate"><span class="pre">.md</span></code> files as <code class="docutils literal notranslate"><span class="pre">.pdf</span></code></p>
+<div class="section" id="some-notes-for-final-projects">
+<h3>Some notes for final projects<a class="headerlink" href="#some-notes-for-final-projects" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Start early!</p></li>
+<li><p>Create subdirectories in your repo to store:</p>
+<ul>
+<li><p><strong>notebooks</strong> - contains scripts to complete project</p></li>
+<li><p><strong>data</strong> - contains small amount of data such as output of analyses. Just make sure filesizes are &lt;20 MB and total number of files (&lt;20 MB) is limited. Best practice is to store and share data on <strong>Dropbox</strong>.</p></li>
+<li><p><strong>doc</strong> - for any additional documentation, static images/figures that you want to include in notebooks or markdown files, etc.</p></li>
+</ul>
+</li>
+<li><p>Start adding and developing notebooks, code, markdown files, etc.</p></li>
+<li><p>Start with limited test case(s) for initial development and exploration:</p>
+<ul>
+<li><p>Extract a small region of a large raster</p></li>
+<li><p>If you need the entire raster, start with a downsampled version, then when you’re happy with methods, run for native resolution</p></li>
+<li><p>Start with a single timestep or subset of timesteps for time series analysis</p></li>
+</ul>
+</li>
+<li><p>Don’t add unnecessary files to your repo (careful with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add/commit</span></code>)</p></li>
+<li><p>Commit <strong>early</strong>, commit <strong>often</strong></p></li>
+</ul>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./labs/week6"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../../lectures/week6/lecture-6.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Code management lecture</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../../lectures/week7/lecture-7.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Data access lecture</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Johnny Ryan<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,1770 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data access lecture &#8212; Geospatial Data Science Applications</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Data access" href="../../labs/week7/lab7-demo.html" />
+    <link rel="prev" title="Collaborating on GitHub" href="../../labs/week6/lab6-demo.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/uo_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Geospatial Data Science Applications</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Geospatial Data Science Applications
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Course information
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course-info/general-info.html">
+   General information
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course-info/schedule.html">
+   Schedule
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course-info/final-project.html">
+   Final project
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 1
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../labs/week1/lab1a-demo.html">
+   Getting started with Python and GitHub
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../labs/week1/lab1b-demo.html">
+   Instructions for submitting assignments
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 2
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../labs/week2/lab2-demo.html">
+   Exploring vector data
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 3
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../labs/week3/lab3-demo.html">
+   Network data
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 4
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week4/lecture-4.html">
+   Gridded data lecture
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../labs/week4/lab4-demo.html">
+   Gridded data
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 5
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week5/lecture-5.html">
+   Machine learning lecture
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../labs/week5/lab5-demo.html">
+   Machine learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../labs/week5/project-ideas.html">
+   Project ideas
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 6
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week6/lecture-6.html">
+   Code management lecture
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../labs/week6/lab6-demo.html">
+   Collaborating on GitHub
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 7
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Data access lecture
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../labs/week7/lab7-demo.html">
+   Data access
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 8
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week8/lecture-8.html">
+   Visualization lecture
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/lectures/week7/lecture-7.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flectures/week7/lecture-7.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/main?urlpath=tree/book/lectures/week7/lecture-7.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#content-of-this-lecture">
+   Content of this lecture
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apis">
+   APIs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   APIs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tips-for-apis">
+   Tips for APIs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apis-are-sometimes-not-available-or-have-limitations">
+   APIs are sometimes not available or have limitations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#web-scraping">
+   Web scraping
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#suppose-a-friend-wanted-to-do-this">
+   Suppose a friend wanted to do this?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#requests">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       requests
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#beautifulsoup4">
+   BeautifulSoup4
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#import-packages">
+     Import packages
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parse-html-using">
+     Parse HTML using
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#selenium">
+   Selenium
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Data access lecture</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#content-of-this-lecture">
+   Content of this lecture
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apis">
+   APIs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   APIs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tips-for-apis">
+   Tips for APIs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apis-are-sometimes-not-available-or-have-limitations">
+   APIs are sometimes not available or have limitations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#web-scraping">
+   Web scraping
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#suppose-a-friend-wanted-to-do-this">
+   Suppose a friend wanted to do this?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#requests">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       requests
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#beautifulsoup4">
+   BeautifulSoup4
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#import-packages">
+     Import packages
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parse-html-using">
+     Parse HTML using
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#selenium">
+   Selenium
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="data-access-lecture">
+<h1>Data access lecture<a class="headerlink" href="#data-access-lecture" title="Permalink to this headline">¶</a></h1>
+<CENTER>
+    <h1> Geospatial Data Science Applications: GEOG 4/590</h1>
+    <h3>Feb 14, 2022</h3>
+    <h2>Lecture 7: Data access</h2>
+    <img src="images/coding-computer-programming.jpeg" width="300"/>
+    <h3>Johnny Ryan: jryan4@uoregon.edu</h3>
+</CENTER><div class="section" id="content-of-this-lecture">
+<h2>Content of this lecture<a class="headerlink" href="#content-of-this-lecture" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Web2.0
+<br>
+<br></p></li>
+<li><p>Standard data access using APIs
+<br>
+<br></p></li>
+<li><p>What to do when an API is unavailable or insufficient?
+<br>
+<br></p></li>
+<li><p>Background for this week’s lab</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+<span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/BxV14h0kFs0&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;/iframe&gt;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/envs/clouds/lib/python3.8/site-packages/IPython/core/display.py:724: UserWarning: Consider using IPython.display.IFrame instead
+  warnings.warn(&quot;Consider using IPython.display.IFrame instead&quot;)
+</pre></div>
+</div>
+<div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/BxV14h0kFs0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div>
+</div>
+</div>
+<div class="section" id="apis">
+<h2>APIs<a class="headerlink" href="#apis" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Application programming interface</p></li>
+<li><p>A type of <strong>software</strong> that provides a <strong>standard set of protocols/functions</strong> so that our computer can <strong>communicate</strong> with other computers</p></li>
+<li><p>In contrast, a <strong>user interface</strong> is a type of software that connects a <strong>computer</strong> to a <strong>person</strong></p></li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h2>APIs<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Many organizations have great APIs because they want people to use their data</p></li>
+<li><p>We have used one…</p></li>
+</ul>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">cenpy</span></code></p></li>
+</ul>
+<img src="images/usgs.png" width="1000"/><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install package</span>
+<span class="o">!</span>pip install -U dataretrieval
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting dataretrieval
+  Downloading dataretrieval-0.7-py3-none-any.whl (16 kB)
+Requirement already satisfied: requests in /opt/anaconda3/envs/lab7/lib/python3.10/site-packages (from dataretrieval) (2.27.1)
+Requirement already satisfied: pandas in /opt/anaconda3/envs/lab7/lib/python3.10/site-packages (from dataretrieval) (1.4.0)
+Requirement already satisfied: python-dateutil&gt;=2.8.1 in /opt/anaconda3/envs/lab7/lib/python3.10/site-packages (from pandas-&gt;dataretrieval) (2.8.2)
+Requirement already satisfied: pytz&gt;=2020.1 in /opt/anaconda3/envs/lab7/lib/python3.10/site-packages (from pandas-&gt;dataretrieval) (2021.3)
+Requirement already satisfied: numpy&gt;=1.21.0 in /opt/anaconda3/envs/lab7/lib/python3.10/site-packages (from pandas-&gt;dataretrieval) (1.22.1)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in /opt/anaconda3/envs/lab7/lib/python3.10/site-packages (from requests-&gt;dataretrieval) (3.3)
+Requirement already satisfied: charset-normalizer~=2.0.0 in /opt/anaconda3/envs/lab7/lib/python3.10/site-packages (from requests-&gt;dataretrieval) (2.0.11)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /opt/anaconda3/envs/lab7/lib/python3.10/site-packages (from requests-&gt;dataretrieval) (2021.10.8)
+Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /opt/anaconda3/envs/lab7/lib/python3.10/site-packages (from requests-&gt;dataretrieval) (1.26.8)
+Requirement already satisfied: six&gt;=1.5 in /opt/anaconda3/envs/lab7/lib/python3.10/site-packages (from python-dateutil&gt;=2.8.1-&gt;pandas-&gt;dataretrieval) (1.16.0)
+Installing collected packages: dataretrieval
+Successfully installed dataretrieval-0.7
+</pre></div>
+</div>
+</div>
+</div>
+<img src="images/usgs_example.png" width="1000"/><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the functions for downloading data from NWIS</span>
+<span class="kn">import</span> <span class="nn">dataretrieval.nwis</span> <span class="k">as</span> <span class="nn">nwis</span>
+
+<span class="c1"># Specify the USGS site code</span>
+<span class="n">site</span> <span class="o">=</span> <span class="s1">&#39;03339000&#39;</span>
+
+<span class="c1"># Get instantaneous values (iv)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">nwis</span><span class="o">.</span><span class="n">get_record</span><span class="p">(</span><span class="n">sites</span><span class="o">=</span><span class="n">site</span><span class="p">,</span> <span class="n">service</span><span class="o">=</span><span class="s1">&#39;dv&#39;</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="s1">&#39;2020-10-01&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;2021-09-30&#39;</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>00010_Mean</th>
+      <th>00010_Mean_cd</th>
+      <th>site_no</th>
+      <th>00060_Mean</th>
+      <th>00060_Mean_cd</th>
+      <th>00065_Mean</th>
+      <th>00065_Mean_cd</th>
+      <th>00095_Mean</th>
+      <th>00095_Mean_cd</th>
+      <th>00300_Minimum</th>
+      <th>...</th>
+      <th>63680_ysi_Mean</th>
+      <th>63680_ysi_Mean_cd</th>
+      <th>91049_Mean</th>
+      <th>91049_Mean_cd</th>
+      <th>99133_Maximum</th>
+      <th>99133_Maximum_cd</th>
+      <th>99133_Minimum</th>
+      <th>99133_Minimum_cd</th>
+      <th>99133_Mean</th>
+      <th>99133_Mean_cd</th>
+    </tr>
+    <tr>
+      <th>datetime</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2020-10-01 00:00:00+00:00</th>
+      <td>14.9</td>
+      <td>A</td>
+      <td>03339000</td>
+      <td>75.7</td>
+      <td>A</td>
+      <td>2.04</td>
+      <td>A</td>
+      <td>672.0</td>
+      <td>A</td>
+      <td>8.9</td>
+      <td>...</td>
+      <td>3.7</td>
+      <td>A</td>
+      <td>1510.0</td>
+      <td>P</td>
+      <td>4.1</td>
+      <td>A</td>
+      <td>3.3</td>
+      <td>A</td>
+      <td>3.7</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>2020-10-02 00:00:00+00:00</th>
+      <td>14.5</td>
+      <td>A</td>
+      <td>03339000</td>
+      <td>66.0</td>
+      <td>A</td>
+      <td>1.99</td>
+      <td>A</td>
+      <td>678.0</td>
+      <td>A</td>
+      <td>9.2</td>
+      <td>...</td>
+      <td>3.6</td>
+      <td>A</td>
+      <td>1450.0</td>
+      <td>P</td>
+      <td>4.2</td>
+      <td>A</td>
+      <td>3.8</td>
+      <td>A</td>
+      <td>4.1</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>2020-10-03 00:00:00+00:00</th>
+      <td>14.2</td>
+      <td>A</td>
+      <td>03339000</td>
+      <td>60.2</td>
+      <td>A</td>
+      <td>1.96</td>
+      <td>A</td>
+      <td>678.0</td>
+      <td>A</td>
+      <td>9.4</td>
+      <td>...</td>
+      <td>3.2</td>
+      <td>A</td>
+      <td>1110.0</td>
+      <td>P</td>
+      <td>3.8</td>
+      <td>A</td>
+      <td>3.0</td>
+      <td>A</td>
+      <td>3.4</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>2020-10-04 00:00:00+00:00</th>
+      <td>14.4</td>
+      <td>A</td>
+      <td>03339000</td>
+      <td>68.8</td>
+      <td>A</td>
+      <td>2.01</td>
+      <td>A</td>
+      <td>705.0</td>
+      <td>A</td>
+      <td>9.1</td>
+      <td>...</td>
+      <td>3.3</td>
+      <td>A</td>
+      <td>1030.0</td>
+      <td>P</td>
+      <td>3.0</td>
+      <td>A</td>
+      <td>2.6</td>
+      <td>A</td>
+      <td>2.8</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>2020-10-05 00:00:00+00:00</th>
+      <td>13.4</td>
+      <td>A</td>
+      <td>03339000</td>
+      <td>66.8</td>
+      <td>A</td>
+      <td>1.99</td>
+      <td>A</td>
+      <td>718.0</td>
+      <td>A</td>
+      <td>9.6</td>
+      <td>...</td>
+      <td>3.1</td>
+      <td>A</td>
+      <td>1080.0</td>
+      <td>P</td>
+      <td>3.4</td>
+      <td>A</td>
+      <td>2.7</td>
+      <td>A</td>
+      <td>3.0</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2021-09-26 00:00:00+00:00</th>
+      <td>18.7</td>
+      <td>A</td>
+      <td>03339000</td>
+      <td>174.0</td>
+      <td>A</td>
+      <td>2.52</td>
+      <td>A</td>
+      <td>571.0</td>
+      <td>A</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>12.6</td>
+      <td>A</td>
+      <td>2080.0</td>
+      <td>P</td>
+      <td>2.5</td>
+      <td>A</td>
+      <td>2.1</td>
+      <td>A</td>
+      <td>2.2</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>2021-09-27 00:00:00+00:00</th>
+      <td>20.2</td>
+      <td>A</td>
+      <td>03339000</td>
+      <td>155.0</td>
+      <td>A</td>
+      <td>2.46</td>
+      <td>A</td>
+      <td>578.0</td>
+      <td>A</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>11.7</td>
+      <td>A</td>
+      <td>2050.0</td>
+      <td>P</td>
+      <td>2.6</td>
+      <td>A</td>
+      <td>2.2</td>
+      <td>A</td>
+      <td>2.4</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>2021-09-28 00:00:00+00:00</th>
+      <td>21.6</td>
+      <td>A</td>
+      <td>03339000</td>
+      <td>132.0</td>
+      <td>P</td>
+      <td>2.37</td>
+      <td>P</td>
+      <td>587.0</td>
+      <td>A</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>10.7</td>
+      <td>A</td>
+      <td>1600.0</td>
+      <td>P</td>
+      <td>2.4</td>
+      <td>A</td>
+      <td>2.1</td>
+      <td>A</td>
+      <td>2.2</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>2021-09-29 00:00:00+00:00</th>
+      <td>22.3</td>
+      <td>A</td>
+      <td>03339000</td>
+      <td>117.0</td>
+      <td>P</td>
+      <td>2.31</td>
+      <td>P</td>
+      <td>614.0</td>
+      <td>A</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>9.8</td>
+      <td>A</td>
+      <td>1430.0</td>
+      <td>P</td>
+      <td>2.4</td>
+      <td>A</td>
+      <td>2.2</td>
+      <td>A</td>
+      <td>2.3</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>2021-09-30 00:00:00+00:00</th>
+      <td>22.6</td>
+      <td>A</td>
+      <td>03339000</td>
+      <td>111.0</td>
+      <td>P</td>
+      <td>2.28</td>
+      <td>P</td>
+      <td>628.0</td>
+      <td>A</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>8.6</td>
+      <td>A</td>
+      <td>1290.0</td>
+      <td>P</td>
+      <td>2.2</td>
+      <td>A</td>
+      <td>2.1</td>
+      <td>A</td>
+      <td>2.2</td>
+      <td>A</td>
+    </tr>
+  </tbody>
+</table>
+<p>365 rows × 41 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simple plot</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;00060_Mean&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;datetime&#39;&gt;
+</pre></div>
+</div>
+<img alt="../../_images/lecture-7_11_1.png" src="../../_images/lecture-7_11_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="tips-for-apis">
+<h2>Tips for APIs<a class="headerlink" href="#tips-for-apis" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Take a minute to make sure that package is used (e.g. lots of forks, stars) and up-to-date (e.g. last commit)</p></li>
+<li><p>Read the <code class="docutils literal notranslate"><span class="pre">docs</span></code>, <code class="docutils literal notranslate"><span class="pre">demos</span></code>, <code class="docutils literal notranslate"><span class="pre">examples</span></code> and hope we find what we’re looking for (sometimes they are not that comprehensive)</p></li>
+<li><p>If you can’t find what you’re looking for, inspect the source code (<code class="docutils literal notranslate"><span class="pre">.py</span></code> files)</p></li>
+</ul>
+</div>
+<div class="section" id="apis-are-sometimes-not-available-or-have-limitations">
+<h2>APIs are sometimes not available or have limitations<a class="headerlink" href="#apis-are-sometimes-not-available-or-have-limitations" title="Permalink to this headline">¶</a></h2>
+<img src="images/zillow.png" width="1000"/><img src="images/zillow2.png" width="1000"/><img src="images/airbnb.png" width="1000"/><ul class="simple">
+<li><p>These companies hoard data to secure market dominance</p></li>
+<li><p>Without access to their data it is difficult to tell whether they are in compliance</p></li>
+<li><p>By guarding data, they are also preventing it being used for good (maybe bad) causes</p></li>
+</ul>
+<img src="images/cambridge.png" width="1000"/><p>Facebook loophole that allowed third-party apps to access not only user profile data but profile data of all friends. Kogan copied someone else’s idea and made “thisisyourdigitallife”. Only 270K used it but collected data from all friends of users (50+ million FB profiles).</p>
+</div>
+<div class="section" id="web-scraping">
+<h2>Web scraping<a class="headerlink" href="#web-scraping" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Also known as crawling or harvesting is the practice of <strong>automatically</strong> gathering data from the internet without the use of an <strong>API</strong></p></li>
+<li><p>Most commonly accomplished by writing a program that <strong>queries</strong> a web server, <strong>requests</strong> data (usually in the form of HTML), and <strong>parses</strong> that data to extract information</p></li>
+</ul>
+<img src="images/scrape_hero.png" width="1000"/><img src="images/inside_airbnb.png" width="1000"/></div>
+<div class="section" id="suppose-a-friend-wanted-to-do-this">
+<h2>Suppose a friend wanted to do this?<a class="headerlink" href="#suppose-a-friend-wanted-to-do-this" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Some HTML basics</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">requests</span></code>: standard Python library for requesting data from the web</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BeautifulSoup</span></code>: a library for pulling data out of HTML and XML files</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">selenium</span></code>: is a library for performing <strong>web browser automation</strong></p></li>
+</ul>
+<img src="images/html.png" width="800"/><html>
+    <h1>Geospatial Data Science Applications: GEOG 4/590</h1>
+    <h3>Feb 14, 2022</h3>
+    <h2>Lecture 7: Data access</h2>
+    <img src="images/coding-computer-programming.jpeg" width="150"/>
+    <h3>Johnny Ryan: jryan4@uoregon.edu</h3>
+</html><div class="section" id="requests">
+<h3><code class="docutils literal notranslate"><span class="pre">requests</span></code><a class="headerlink" href="#requests" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import packages</span>
+<span class="kn">import</span> <span class="nn">requests</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Open a webpage</span>
+<span class="n">html</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://en.wikipedia.org/wiki/Climate_of_Oregon&#39;</span><span class="p">)</span>
+
+<span class="c1"># HTML</span>
+<span class="n">html</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Response [200]&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<img src="images/climate_wiki.png" width="1000"/><img src="images/more_html.png" width="1000"/></div>
+</div>
+<div class="section" id="beautifulsoup4">
+<h2>BeautifulSoup4<a class="headerlink" href="#beautifulsoup4" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Now we could write a program to <strong>parse</strong> this HTML code (i.e. split into useful blocks)…</p></li>
+<li><p>…or we could use another package called <code class="docutils literal notranslate"><span class="pre">BeautifulSoup</span></code> (also known as <code class="docutils literal notranslate"><span class="pre">bs4</span></code>) a Python library for parsing data out of HTML and XML files</p></li>
+</ul>
+<img src="images/bs4.jpg" width="200"/><div class="section" id="import-packages">
+<h3>Import packages<a class="headerlink" href="#import-packages" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import package</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span><span class="p">,</span> <span class="n">SoupStrainer</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read HTML content as &quot;soup object&quot; and define default parser</span>
+<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="parse-html-using">
+<h3>Parse HTML using<a class="headerlink" href="#parse-html-using" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">.find</span></code> and <code class="docutils literal notranslate"><span class="pre">.find_all</span></code> are the most common methods we will use. They can be used to filter HTML code to find a list of tags or tags with specific attributes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define heading tags</span>
+<span class="n">heading_tags</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;h1&quot;</span><span class="p">,</span> <span class="s2">&quot;h2&quot;</span><span class="p">]</span>
+
+<span class="c1"># Find heading tags in HTML code</span>
+<span class="n">headings</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="n">heading_tags</span><span class="p">)</span>
+
+<span class="c1"># Loop over every heading and print text</span>
+<span class="k">for</span> <span class="n">tags</span> <span class="ow">in</span> <span class="n">headings</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">tags</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s1">&#39; -&gt; &#39;</span> <span class="o">+</span> <span class="n">tags</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>h1 -&gt; Climate of Oregon
+h2 -&gt; Contents
+h2 -&gt; Precipitation[edit]
+h2 -&gt; Temperature[edit]
+h2 -&gt; Selected climate charts[edit]
+h2 -&gt; See also[edit]
+h2 -&gt; References[edit]
+h2 -&gt; Navigation menu
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find every hyperlink</span>
+<span class="n">links</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+
+<span class="c1"># Loop over every link and print hyperlink</span>
+<span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">links</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">link</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>None
+#mw-head
+#searchInput
+/wiki/File:Oregon_K%C3%B6ppen.svg
+/wiki/File:Oregon_K%C3%B6ppen.svg
+/wiki/K%C3%B6ppen_climate_classification
+/wiki/Oregon
+/wiki/File:OR_trewartha.svg
+/wiki/File:OR_trewartha.svg
+/wiki/Trewartha_climate_classification
+/wiki/K%C3%B6ppen_climate_classification
+/wiki/Western_Oregon
+/wiki/Warm-summer_mediterranean_climate
+/wiki/Eastern_Oregon
+/wiki/Cold_semi-arid_climate
+/wiki/Cascade_Range
+/wiki/Arctic
+/wiki/Cold_waves
+#cite_note-1
+#Precipitation
+#Snow
+#Temperature
+#Selected_climate_charts
+#See_also
+#References
+#Works_cited
+/w/index.php?title=Climate_of_Oregon&amp;action=edit&amp;section=1
+/wiki/File:Oregon_Average_Annual_Precipitation_(1961-1990)_Map.png
+/wiki/File:Oregon_Average_Annual_Precipitation_(1961-1990)_Map.png
+/wiki/Precipitation_(meteorology)
+/wiki/Alvord_Desert
+/wiki/Rain_shadow
+/wiki/Steens_Mountain
+#cite_note-FOOTNOTEAllanBuckleyMeacham2001154–55-2
+#cite_note-WRCC-3
+/wiki/Oregon_Coast_Range
+/wiki/Condensation
+/wiki/Orographic_precipitation
+#cite_note-FOOTNOTEAllanBuckleyMeacham2001154–55-2
+/wiki/Willamette_Valley
+/wiki/Cascade_Range
+#cite_note-FOOTNOTEAllanBuckleyMeacham2001154–55-2
+/wiki/Mount_Hood
+#cite_note-FOOTNOTEAllanBuckleyMeacham2001130–31-4
+#cite_note-FOOTNOTEAllanBuckleyMeacham2001154–55-2
+/wiki/Semi-arid_climate
+/wiki/Blue_Mountains_(Pacific_Northwest)
+/wiki/Wallowa_Mountains
+#cite_note-FOOTNOTEAllanBuckleyMeacham2001154–55-2
+/wiki/Jet_stream
+#cite_note-FOOTNOTEAllanBuckleyMeacham2001156–57-5
+/w/index.php?title=Climate_of_Oregon&amp;action=edit&amp;section=2
+/wiki/File:Wintersports_terrain_park_P1391.jpeg
+/wiki/File:Wintersports_terrain_park_P1391.jpeg
+/wiki/Cascade_Range
+/wiki/Snowfall
+#cite_note-WRCC-3
+/wiki/Crater_Lake
+#cite_note-FOOTNOTETaylorHannan1999xii-6
+#cite_note-WRCC-3
+/wiki/Glacier
+#cite_note-WRCC-3
+/wiki/Snake_River
+#cite_note-WRCC-3
+/w/index.php?title=Climate_of_Oregon&amp;action=edit&amp;section=3
+/wiki/File:Oregon_High_Desert.jpg
+/wiki/File:Oregon_High_Desert.jpg
+/wiki/High_Desert_(Oregon)
+/wiki/Columbia_Gorge
+#cite_note-FOOTNOTEAllanBuckleyMeacham2001158–59-7
+#cite_note-WRCC-3
+/wiki/Hermiston,_Oregon
+/wiki/Redmond,_Oregon
+#cite_note-FOOTNOTETaylorHannan1999xii-6
+/wiki/Ukiah,_Oregon
+/wiki/Seneca,_Oregon
+#cite_note-FOOTNOTETaylorHannan1999xii-6
+/wiki/Willamette_Valley
+#cite_note-8
+/wiki/Jackson_County,_Oregon
+#cite_note-9
+/w/index.php?title=Climate_of_Oregon&amp;action=edit&amp;section=4
+/wiki/File:USA_Oregon_relief_location_map.svg
+/wiki/Astoria,_Oregon
+/wiki/Bend,_Oregon
+/wiki/Brookings,_Oregon
+/wiki/Burns,_Oregon
+/wiki/Eugene,_Oregon
+/wiki/Medford,_Oregon
+/wiki/Newport,_Oregon
+/wiki/Ontario,_Oregon
+/wiki/Pendleton,_Oregon
+/wiki/Portland,_Oregon
+/wiki/File:USA_Oregon_relief_location_map.svg
+/wiki/Astoria,_Oregon
+/wiki/Template:Climate_chart/How_to_read_a_climate_chart
+/wiki/Bend,_Oregon
+/wiki/Template:Climate_chart/How_to_read_a_climate_chart
+/wiki/Brookings,_Oregon
+/wiki/Template:Climate_chart/How_to_read_a_climate_chart
+/wiki/Burns,_Oregon
+/wiki/Template:Climate_chart/How_to_read_a_climate_chart
+/wiki/Eugene,_Oregon
+/wiki/Template:Climate_chart/How_to_read_a_climate_chart
+/wiki/Medford,_Oregon
+/wiki/Template:Climate_chart/How_to_read_a_climate_chart
+/wiki/Newport,_Oregon
+/wiki/Template:Climate_chart/How_to_read_a_climate_chart
+/wiki/Ontario,_Oregon
+/wiki/Template:Climate_chart/How_to_read_a_climate_chart
+/wiki/Pendleton,_Oregon
+/wiki/Template:Climate_chart/How_to_read_a_climate_chart
+/wiki/Portland,_Oregon
+/wiki/Template:Climate_chart/How_to_read_a_climate_chart
+/w/index.php?title=Climate_of_Oregon&amp;action=edit&amp;section=5
+/wiki/Climate_of_the_United_States
+/wiki/Climate_change_in_Oregon
+/w/index.php?title=Climate_of_Oregon&amp;action=edit&amp;section=6
+#cite_ref-1
+https://web.archive.org/web/20090531012223/http://www.geog.nau.edu/courses/alew/ggr346/text/chapters/ch10.html
+/wiki/Northern_Arizona_University
+http://www.geog.nau.edu/courses/alew/ggr346/text/chapters/ch10.html
+#cite_ref-FOOTNOTEAllanBuckleyMeacham2001154–55_2-0
+#cite_ref-FOOTNOTEAllanBuckleyMeacham2001154–55_2-1
+#cite_ref-FOOTNOTEAllanBuckleyMeacham2001154–55_2-2
+#cite_ref-FOOTNOTEAllanBuckleyMeacham2001154–55_2-3
+#cite_ref-FOOTNOTEAllanBuckleyMeacham2001154–55_2-4
+#CITEREFAllanBuckleyMeacham2001
+#cite_ref-WRCC_3-0
+#cite_ref-WRCC_3-1
+#cite_ref-WRCC_3-2
+#cite_ref-WRCC_3-3
+#cite_ref-WRCC_3-4
+#cite_ref-WRCC_3-5
+http://www.wrcc.dri.edu/narratives/OREGON.htm
+/wiki/Desert_Research_Institute
+#cite_ref-FOOTNOTEAllanBuckleyMeacham2001130–31_4-0
+#CITEREFAllanBuckleyMeacham2001
+#cite_ref-FOOTNOTEAllanBuckleyMeacham2001156–57_5-0
+#CITEREFAllanBuckleyMeacham2001
+#cite_ref-FOOTNOTETaylorHannan1999xii_6-0
+#cite_ref-FOOTNOTETaylorHannan1999xii_6-1
+#cite_ref-FOOTNOTETaylorHannan1999xii_6-2
+#CITEREFTaylorHannan1999
+#cite_ref-FOOTNOTEAllanBuckleyMeacham2001158–59_7-0
+#CITEREFAllanBuckleyMeacham2001
+#cite_ref-8
+https://web.archive.org/web/20100624153919/http://www.ocs.orst.edu/county_climate/Multnomah_files/Multnomah.html
+/wiki/Oregon_State_University
+http://www.ocs.orst.edu/county_climate/Multnomah_files/Multnomah.html
+/wiki/Template:Cite_web
+/wiki/Category:CS1_maint:_multiple_names:_authors_list
+#cite_ref-9
+https://web.archive.org/web/20100304143656/http://www.ocs.oregonstate.edu/county_climate/Jackson_files/Jackson.html
+/wiki/Oregon_State_University
+http://ocs.oregonstate.edu/county_climate/Jackson_files/Jackson.html
+/wiki/Template:Cite_web
+/wiki/Category:CS1_maint:_multiple_names:_authors_list
+/w/index.php?title=Climate_of_Oregon&amp;action=edit&amp;section=7
+/wiki/ISBN_(identifier)
+/wiki/Special:BookSources/0-87114-101-9
+/wiki/ISBN_(identifier)
+/wiki/Special:BookSources/978-0-87071-468-9
+/wiki/Template:Oregon
+/wiki/Template_talk:Oregon
+https://en.wikipedia.org/w/index.php?title=Template:Oregon&amp;action=edit
+/wiki/U.S._state
+/wiki/Oregon
+/wiki/Salem,_Oregon
+/wiki/Lists_of_Oregon-related_topics
+/wiki/Index_of_Oregon-related_articles
+/wiki/Outline_of_Oregon
+None
+/wiki/Oregon#Geography
+/wiki/Fauna_of_Oregon
+/wiki/List_of_beaches_in_Oregon
+/wiki/List_of_lakes_of_Oregon
+/wiki/List_of_rivers_of_Oregon
+/wiki/Government_of_Oregon
+/wiki/Constitution_of_Oregon
+/wiki/United_States_congressional_delegations_from_Oregon
+/wiki/List_of_Oregon_ballot_measures
+/wiki/Elections_in_Oregon
+/wiki/Governor_of_Oregon
+/wiki/List_of_governors_of_Oregon
+/wiki/History_of_Oregon
+/wiki/Bibliography_of_Oregon_history
+/wiki/Oregon_Trail
+/wiki/List_of_Oregon_state_parks
+/wiki/List_of_people_from_Oregon
+/wiki/Oregon_pioneer_history
+/wiki/Oregon_State_Fair
+/wiki/List_of_Oregon_state_symbols
+/wiki/Culture_of_Oregon
+/wiki/Crime_in_Oregon
+/wiki/Oregon#Demographics
+/wiki/Economy_of_Oregon
+/wiki/Oregon#Education
+/wiki/Gambling_in_Oregon
+/wiki/Politics_of_Oregon
+/wiki/List_of_regions_of_Oregon
+/wiki/Western_Oregon
+/wiki/Northwest_Oregon
+/wiki/Oregon_Coast
+/wiki/Portland_metropolitan_area,_Oregon
+/wiki/Tualatin_Valley
+/wiki/Willamette_Valley
+/wiki/Eastern_Oregon
+/wiki/Harney_Basin
+/wiki/High_Desert_(Oregon)
+/wiki/Palouse
+/wiki/Treasure_Valley
+/wiki/Central_Oregon
+/wiki/Southern_Oregon
+/wiki/Rogue_Valley
+/wiki/Cascade_Range
+/wiki/Columbia_River_Gorge
+/wiki/Columbia_River
+/wiki/Columbia_Plateau
+/wiki/Great_Basin
+/wiki/Mount_Hood_Corridor
+/wiki/Trout_Creek_Mountains
+/wiki/Oregon_statistical_areas
+/wiki/Albany%E2%80%93Corvallis%E2%80%93Lebanon_combined_statistical_area
+/wiki/Bend%E2%80%93Prineville_combined_statistical_area
+/wiki/Eugene,_Oregon
+/wiki/Springfield,_Oregon
+/wiki/Medford,_Oregon
+/wiki/Ashland,_Oregon
+/wiki/Portland_metropolitan_area,_Oregon
+/wiki/Salem_Metropolitan_Statistical_Area
+/wiki/List_of_cities_in_Oregon
+/wiki/Portland,_Oregon
+/wiki/Salem,_Oregon
+/wiki/Eugene,_Oregon
+/wiki/Gresham,_Oregon
+/wiki/Hillsboro,_Oregon
+/wiki/Beaverton,_Oregon
+/wiki/Bend,_Oregon
+/wiki/Medford,_Oregon
+/wiki/Springfield,_Oregon
+/wiki/Corvallis,_Oregon
+/wiki/Albany,_Oregon
+/wiki/Tigard,_Oregon
+/wiki/Lake_Oswego,_Oregon
+/wiki/Keizer,_Oregon
+/wiki/Grants_Pass,_Oregon
+/wiki/Oregon_City,_Oregon
+/wiki/McMinnville,_Oregon
+/wiki/Redmond,_Oregon
+/wiki/Tualatin,_Oregon
+/wiki/West_Linn,_Oregon
+/wiki/Woodburn,_Oregon
+/wiki/Forest_Grove,_Oregon
+/wiki/Newberg,_Oregon
+/wiki/Wilsonville,_Oregon
+/wiki/Roseburg,_Oregon
+/wiki/Klamath_Falls,_Oregon
+/wiki/Ashland,_Oregon
+/wiki/Milwaukie,_Oregon
+/wiki/Sherwood,_Oregon
+/wiki/Happy_Valley,_Oregon
+/wiki/Central_Point,_Oregon
+/wiki/Canby,_Oregon
+/wiki/Hermiston,_Oregon
+/wiki/Pendleton,_Oregon
+/wiki/List_of_counties_in_Oregon
+/wiki/Baker_County,_Oregon
+/wiki/Benton_County,_Oregon
+/wiki/Clackamas_County,_Oregon
+/wiki/Clatsop_County,_Oregon
+/wiki/Columbia_County,_Oregon
+/wiki/Coos_County,_Oregon
+/wiki/Crook_County,_Oregon
+/wiki/Curry_County,_Oregon
+/wiki/Deschutes_County,_Oregon
+/wiki/Douglas_County,_Oregon
+/wiki/Gilliam_County,_Oregon
+/wiki/Grant_County,_Oregon
+/wiki/Harney_County,_Oregon
+/wiki/Hood_River_County,_Oregon
+/wiki/Jackson_County,_Oregon
+/wiki/Jefferson_County,_Oregon
+/wiki/Josephine_County,_Oregon
+/wiki/Klamath_County,_Oregon
+/wiki/Lake_County,_Oregon
+/wiki/Lane_County,_Oregon
+/wiki/Lincoln_County,_Oregon
+/wiki/Linn_County,_Oregon
+/wiki/Malheur_County,_Oregon
+/wiki/Marion_County,_Oregon
+/wiki/Morrow_County,_Oregon
+/wiki/Multnomah_County,_Oregon
+/wiki/Polk_County,_Oregon
+/wiki/Sherman_County,_Oregon
+/wiki/Tillamook_County,_Oregon
+/wiki/Umatilla_County,_Oregon
+/wiki/Union_County,_Oregon
+/wiki/Wallowa_County,_Oregon
+/wiki/Wasco_County,_Oregon
+/wiki/Washington_County,_Oregon
+/wiki/Wheeler_County,_Oregon
+/wiki/Yamhill_County,_Oregon
+/wiki/File:Flag_of_Oregon.svg
+/wiki/Portal:Oregon
+/wiki/File:Abies_lasiocarpa_0775.JPG
+/wiki/Portal:Pacific_Northwest
+/wiki/Template:ClimateUS
+/wiki/Template_talk:ClimateUS
+https://en.wikipedia.org/w/index.php?title=Template:ClimateUS&amp;action=edit
+/wiki/Climate_of_the_United_States
+/wiki/Climate_of_Alabama
+/wiki/Climate_of_Alaska
+/wiki/Climate_of_Arizona
+/wiki/Climate_of_Arkansas
+/wiki/Climate_of_California
+/wiki/Climate_of_Colorado
+/wiki/Climate_of_Connecticut
+/wiki/Climate_of_Delaware
+/wiki/Climate_of_Florida
+/wiki/Climate_of_Georgia_(U.S._state)
+/wiki/Climate_of_Hawaii
+/wiki/Climate_of_Idaho
+/wiki/Climate_of_Illinois
+/wiki/Climate_of_Indiana
+/wiki/Climate_of_Iowa
+/wiki/Climate_of_Kansas
+/wiki/Climate_of_Kentucky
+/wiki/Climate_of_Louisiana
+/wiki/Climate_of_Maine
+/wiki/Climate_of_Maryland
+/wiki/Climate_of_Massachusetts
+/wiki/Climate_of_Michigan
+/wiki/Climate_of_Minnesota
+/wiki/Climate_of_Mississippi
+/wiki/Climate_of_Missouri
+/wiki/Climate_of_Montana
+/wiki/Climate_of_Nebraska
+/wiki/Climate_of_Nevada
+/wiki/Climate_of_New_Hampshire
+/wiki/Climate_of_New_Jersey
+/wiki/Climate_of_New_Mexico
+/wiki/Climate_of_New_York
+/wiki/Climate_of_North_Carolina
+/wiki/Climate_of_North_Dakota
+/wiki/Climate_of_Ohio
+/wiki/Climate_of_Oklahoma
+None
+/wiki/Climate_of_Pennsylvania
+/wiki/Climate_of_Rhode_Island
+/wiki/Climate_of_South_Carolina
+/wiki/Climate_of_South_Dakota
+/wiki/Climate_of_Tennessee
+/wiki/Climate_of_Texas
+/wiki/Climate_of_Utah
+/wiki/Climate_of_Vermont
+/wiki/Climate_of_Virginia
+/wiki/Climate_of_Washington_(state)
+/wiki/Climate_of_West_Virginia
+/wiki/Climate_of_Wisconsin
+/wiki/Climate_of_Wyoming
+/wiki/Federal_district
+/wiki/Climate_of_Washington,_D.C.
+/wiki/Insular_area
+/wiki/Climate_of_American_Samoa
+/wiki/Climate_of_Guam
+/wiki/Climate_of_the_Northern_Mariana_Islands
+/wiki/Climate_of_Puerto_Rico
+/wiki/Climate_of_the_United_States_Virgin_Islands
+/wiki/Climate_of_Allentown,_Pennsylvania
+/wiki/Climate_of_Anchorage
+/wiki/Climate_of_Beaumont,_Texas
+/wiki/Climate_of_Bismarck,_North_Dakota
+/wiki/Climate_of_Chicago
+/wiki/Climate_of_Columbus,_Ohio
+/wiki/Climate_of_Dallas
+/wiki/Climate_of_Door_County,_Wisconsin
+/wiki/Climate_of_Grand_Forks,_North_Dakota
+/wiki/Climate_of_Houston
+/wiki/Climate_of_Little_Rock,_Arkansas
+/wiki/Climate_of_Los_Angeles
+/wiki/Climate_of_New_England
+/wiki/Climate_of_Miami
+/wiki/Climate_of_Milwaukee
+/wiki/Climate_of_Minneapolis%E2%80%93Saint_Paul
+/wiki/Climate_of_New_York_City
+/wiki/Climate_of_Oklahoma_City
+/wiki/Climate_of_Salt_Lake_City
+/wiki/Climate_of_San_Diego
+/wiki/Climate_of_Seattle
+/wiki/Climate_of_the_Tampa_Bay_area
+/wiki/List_of_cities_by_sunshine_duration#North_America
+/wiki/Climate_change_in_the_United_States
+/wiki/List_of_derecho_events#North_America
+/wiki/List_of_Storm_Prediction_Center_extremely_critical_days
+/wiki/Drought_in_the_United_States
+/wiki/Lists_of_floods_in_the_United_States
+/wiki/List_of_Storm_Prediction_Center_high_risk_days
+/wiki/List_of_costly_or_deadly_hailstorms#North_America
+/wiki/List_of_United_States_hurricanes
+/wiki/List_of_major_snow_and_ice_events_in_the_United_States
+/wiki/Snow_in_Florida
+/wiki/Snow_in_Louisiana
+/wiki/List_of_snowiest_places_in_the_United_States_by_state
+/wiki/Tornadoes_in_the_United_States
+/wiki/Template:WeatherRecordsByState
+/wiki/Weather-related_fatalities_in_the_United_States
+https://en.wikipedia.org/w/index.php?title=Climate_of_Oregon&amp;oldid=1030296200
+/wiki/Help:Category
+/wiki/Category:Climate_of_Oregon
+/wiki/Category:Climate_of_the_United_States_by_state
+/wiki/Category:CS1_maint:_multiple_names:_authors_list
+/wiki/Special:MyTalk
+/wiki/Special:MyContributions
+/w/index.php?title=Special:CreateAccount&amp;returnto=Climate+of+Oregon
+/w/index.php?title=Special:UserLogin&amp;returnto=Climate+of+Oregon
+/wiki/Climate_of_Oregon
+/wiki/Talk:Climate_of_Oregon
+/wiki/Climate_of_Oregon
+/w/index.php?title=Climate_of_Oregon&amp;action=edit
+/w/index.php?title=Climate_of_Oregon&amp;action=history
+/wiki/Main_Page
+/wiki/Main_Page
+/wiki/Wikipedia:Contents
+/wiki/Portal:Current_events
+/wiki/Special:Random
+/wiki/Wikipedia:About
+//en.wikipedia.org/wiki/Wikipedia:Contact_us
+https://donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_en.wikipedia.org&amp;uselang=en
+/wiki/Help:Contents
+/wiki/Help:Introduction
+/wiki/Wikipedia:Community_portal
+/wiki/Special:RecentChanges
+/wiki/Wikipedia:File_Upload_Wizard
+/wiki/Special:WhatLinksHere/Climate_of_Oregon
+/wiki/Special:RecentChangesLinked/Climate_of_Oregon
+/wiki/Wikipedia:File_Upload_Wizard
+/wiki/Special:SpecialPages
+/w/index.php?title=Climate_of_Oregon&amp;oldid=1030296200
+/w/index.php?title=Climate_of_Oregon&amp;action=info
+/w/index.php?title=Special:CiteThisPage&amp;page=Climate_of_Oregon&amp;id=1030296200&amp;wpFormIdentifier=titleform
+https://www.wikidata.org/wiki/Special:EntityPage/Q5133582
+/w/index.php?title=Special:DownloadAsPdf&amp;page=Climate_of_Oregon&amp;action=show-download-screen
+/w/index.php?title=Climate_of_Oregon&amp;printable=yes
+https://commons.wikimedia.org/wiki/Category:Climate_of_Oregon
+https://www.wikidata.org/wiki/Special:EntityPage/Q5133582#sitelinks-wikipedia
+//en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License
+//creativecommons.org/licenses/by-sa/3.0/
+//foundation.wikimedia.org/wiki/Terms_of_Use
+//foundation.wikimedia.org/wiki/Privacy_policy
+//www.wikimediafoundation.org/
+https://foundation.wikimedia.org/wiki/Privacy_policy
+/wiki/Wikipedia:About
+/wiki/Wikipedia:General_disclaimer
+//en.wikipedia.org/wiki/Wikipedia:Contact_us
+//en.m.wikipedia.org/w/index.php?title=Climate_of_Oregon&amp;mobileaction=toggle_view_mobile
+https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute
+https://stats.wikimedia.org/#/en.wikipedia.org
+https://foundation.wikimedia.org/wiki/Cookie_statement
+https://wikimediafoundation.org/
+https://www.mediawiki.org/
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find number of images on page</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;img&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print details of first image</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;img&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;img alt=&quot;&quot; class=&quot;thumbimage&quot; data-file-height=&quot;1359&quot; data-file-width=&quot;1260&quot; decoding=&quot;async&quot; height=&quot;270&quot; src=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Oregon_K%C3%B6ppen.svg/250px-Oregon_K%C3%B6ppen.svg.png&quot; srcset=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Oregon_K%C3%B6ppen.svg/375px-Oregon_K%C3%B6ppen.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Oregon_K%C3%B6ppen.svg/500px-Oregon_K%C3%B6ppen.svg.png 2x&quot; width=&quot;250&quot;/&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find attributes of first image</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;img&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;src&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>//upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Oregon_K%C3%B6ppen.svg/250px-Oregon_K%C3%B6ppen.svg.png
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Download image</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://&#39;</span> <span class="o">+</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;img&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;src&#39;</span><span class="p">][</span><span class="mi">2</span><span class="p">:]</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;images/test_image.jpg&quot;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import packages</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.image</span> <span class="k">as</span> <span class="nn">mpimg</span>
+
+<span class="c1"># Read image</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">mpimg</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;images/test_image.jpg&#39;</span><span class="p">)</span>
+
+<span class="c1"># Plot image</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x1a1794d60&gt;
+</pre></div>
+</div>
+<img alt="../../_images/lecture-7_43_1.png" src="../../_images/lecture-7_43_1.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="selenium">
+<h2>Selenium<a class="headerlink" href="#selenium" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Sometimes we want even more control…</p></li>
+<li><p>Selenium is a package for performing <strong>web browser automation</strong></p></li>
+<li><p>We can use Selenium to enter text in search boxes, click buttons etc.</p></li>
+</ul>
+<img src="images/selenium.png" width="200"/><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install webdriver_manager: https://github.com/SergeyPirogov/webdriver_manager</span>
+<span class="o">!</span>pip3 install webdriver_manager
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: webdriver_manager in /opt/anaconda3/envs/lab7/lib/python3.10/site-packages (3.5.2)
+Requirement already satisfied: crayons in /opt/anaconda3/envs/lab7/lib/python3.10/site-packages (from webdriver_manager) (0.4.0)
+Requirement already satisfied: requests in /opt/anaconda3/envs/lab7/lib/python3.10/site-packages (from webdriver_manager) (2.27.1)
+Requirement already satisfied: configparser in /opt/anaconda3/envs/lab7/lib/python3.10/site-packages (from webdriver_manager) (5.2.0)
+Requirement already satisfied: colorama in /opt/anaconda3/envs/lab7/lib/python3.10/site-packages (from crayons-&gt;webdriver_manager) (0.4.4)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /opt/anaconda3/envs/lab7/lib/python3.10/site-packages (from requests-&gt;webdriver_manager) (2021.10.8)
+Requirement already satisfied: charset-normalizer~=2.0.0 in /opt/anaconda3/envs/lab7/lib/python3.10/site-packages (from requests-&gt;webdriver_manager) (2.0.11)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in /opt/anaconda3/envs/lab7/lib/python3.10/site-packages (from requests-&gt;webdriver_manager) (3.3)
+Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /opt/anaconda3/envs/lab7/lib/python3.10/site-packages (from requests-&gt;webdriver_manager) (1.26.8)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import packages</span>
+<span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
+<span class="kn">from</span> <span class="nn">selenium.webdriver.chrome.service</span> <span class="kn">import</span> <span class="n">Service</span>
+<span class="kn">from</span> <span class="nn">selenium.webdriver.common.by</span> <span class="kn">import</span> <span class="n">By</span>
+<span class="kn">from</span> <span class="nn">webdriver_manager.chrome</span> <span class="kn">import</span> <span class="n">ChromeDriverManager</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install Chrome webdriver</span>
+<span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">service</span><span class="o">=</span><span class="n">Service</span><span class="p">(</span><span class="n">ChromeDriverManager</span><span class="p">()</span><span class="o">.</span><span class="n">install</span><span class="p">()))</span>
+
+<span class="c1"># Open a web browser at the following page</span>
+<span class="n">driver</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://www.google.com/maps&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>====== WebDriver manager ======
+Current google-chrome version is 97.0.4692
+Get LATEST chromedriver version for 97.0.4692 google-chrome
+Driver [/Users/jryan4/.wdm/drivers/chromedriver/mac64/97.0.4692.71/chromedriver] found in cache
+</pre></div>
+</div>
+</div>
+</div>
+<img src="images/google_maps.png" width="1000"/><img src="images/inspect.png" width="1000"/><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enter some text in the search box</span>
+<span class="n">inputElement</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">ID</span><span class="p">,</span> <span class="s2">&quot;searchboxinput&quot;</span><span class="p">)</span>
+<span class="n">inputElement</span><span class="o">.</span><span class="n">send_keys</span><span class="p">(</span><span class="s1">&#39;South Sister Oregon&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<img src="images/enter_text.png" width="1000"/><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Click search button</span>
+<span class="n">element</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">ID</span><span class="p">,</span> <span class="s2">&quot;searchbox-searchbutton&quot;</span><span class="p">)</span>
+<span class="n">element</span><span class="o">.</span><span class="n">click</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<img src="images/search.png" width="1000"/></div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lectures/week7"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../../labs/week6/lab6-demo.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Collaborating on GitHub</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../../labs/week7/lab7-demo.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Data access</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Johnny Ryan<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
