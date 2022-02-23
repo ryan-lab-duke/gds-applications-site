@@ -8,12 +8,16 @@ parts:
     chapters:
     - file: course-info/general-info.md
     - file: course-info/schedule.md
+    - file: course-info/python.md
+    - file: course-info/github.md
+    - file: course-info/slack.md
     - file: course-info/final-project.md
 
   - caption: Week 1
     chapters:
     - file: labs/week1/lab1a-demo.ipynb
     - file: labs/week1/lab1b-demo.ipynb
+    - file: labs/week1/assignment1.md
 
   - caption: Week 2
     chapters:
@@ -27,7 +31,7 @@ parts:
     chapters:
     - file: lectures/week4/lecture-4.ipynb
     - file: labs/week4/lab4-demo.ipynb
- 
+
   - caption: Week 5
     chapters:
     - file: lectures/week5/lecture-5.ipynb
@@ -42,7 +46,7 @@ parts:
   - caption: Week 7
     chapters:
     - file: lectures/week7/lecture-7.ipynb
-    - file: labs/week7/lab7-demo.ipynb 
+    - file: labs/week7/lab7-demo.ipynb
 
   - caption: Week 8
     chapters:

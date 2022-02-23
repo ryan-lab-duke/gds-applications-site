@@ -20,7 +20,6 @@ Learning outcomes:
 
 * Communicate results of data science project orally and as a short write-up
 
-These materials were originally created to support "Geospatial Data Science Applications (GEOG 4/590)" a course taught in the Department of Geography at the University of Oregon.
 
 ## Repository Structure
 
@@ -41,7 +40,8 @@ The book can be updated by running:
 `ghp-import -n -p -f book/_build/html`
 
 ## Acknowledgments
-This course was inspired by a range of excellent course materials, including those by [Melanie Walsh](https://github.com/laurenfklein/emory-qtm340), [David Shean](https://github.com/UW-GDA) and [Ryan Abernathey](https://github.com/earth-env-data-science/earth-env-data-science-book). 
+
+This course was inspired by [Melanie Walsh](https://melaniewalsh.github.io/Intro-Cultural-Analytics/welcome.html), [David Shean](https://github.com/UW-GDA/gda_course_2021) and [Ryan Abernathey](https://github.com/earth-env-data-science/earth-env-data-science-book). 
 
 ## License
 
