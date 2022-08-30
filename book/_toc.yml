@@ -22,6 +22,7 @@ parts:
   - caption: Week 2
     chapters:
     - file: labs/week2/lab2-demo.ipynb
+    - file: labs/week2/assignment2.md
 
   - caption: Week 3
     chapters:

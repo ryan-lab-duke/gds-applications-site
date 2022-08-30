@@ -24,4 +24,4 @@ Post a message in the #lab01 channel at xxx.slack.com with your name and GitHub 
 
 ## Task 4 (10 points) 
 
-Run the cells one last time to make sure your code has no errors. Upload assignment using GitHub Classroom.
+Run the cells one last time to make sure your code has no errors. Upload assignment using **GitHub Classroom**.
