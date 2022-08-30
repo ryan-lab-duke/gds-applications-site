@@ -2,7 +2,7 @@
 
 **Instructor**: [Johnny Ryan](https://www.johnny-ryan.com/)
 
-**Office hours**: Monday 15:00-17:00
+**Office hours**: TBD
 
 **GE**: [Insang Song](https://sigmafelix.wixsite.com/mysite/)
 
@@ -15,7 +15,8 @@
 **Labs**: Wednesdays 14:00-16:00 or Fridays 10:00-12:00
 
 ## Grading
-* **Lab assignments (45%)**: Turn in assignments on Canvas and GitHub (see instructions in Lab #1). Lab assignments are due by the end of the week (i.e. Friday 11:59 pm). Late assignments will be penalized 10% per day late. Assignments will not be accepted after seven days past the submission deadline. 
+
+* **Lab assignments (45%)**: Turn in assignments on Canvas and GitHub (see instructions in Lab #1). Lab assignments are due by the end of the week (i.e. Friday 11:59 pm). Late assignments will be penalized 5% per day late. Assignments will not be accepted after seven days past the submission deadline. 
 
 ```{note}
 Please let the instructors know before the deadline if you anticipate a late submission - we may be able to provide an extension.
