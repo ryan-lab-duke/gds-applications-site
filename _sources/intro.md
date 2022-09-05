@@ -15,6 +15,8 @@ This course introduces students to emerging geospatial data science methods for 
 * Manage individual and group software development using version control
 * Collaborate on a group project
 * Communicate results of data science project orally and as a short write-up
+* Attain the ability to engage in open-source software developement
+* Learn best practices for version control, unit testing, and recommended styles and idioms.
 
 
 ## Binder link

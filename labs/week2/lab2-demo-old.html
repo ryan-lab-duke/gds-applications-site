@@ -37,9 +37,12 @@
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -50,8 +53,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Network data" href="../week3/lab3-demo.html" />
-    <link rel="prev" title="Assignment 1" href="../week1/assignment1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -139,12 +140,12 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../week1/lab1a-demo.html">
+  <a class="reference internal" href="../../lectures/week1/lab1a-demo.html">
    Getting started with Python and GitHub
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../week1/lab1b-demo.html">
+  <a class="reference internal" href="../../lectures/week1/lab1b-demo.html">
    Instructions for submitting assignments
   </a>
  </li>
@@ -159,10 +160,10 @@ const thebe_selector_output = ".output, .cell_output"
   Week 2
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Exploring vector data
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="assignment2.html">
+   Assignment 1
   </a>
  </li>
 </ul>
@@ -186,12 +187,12 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../lectures/week4/lecture-4.html">
-   Gridded data lecture
+   Gridded data
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../week4/lab4-demo.html">
-   Gridded data
+  <a class="reference internal" href="../week4/assignment4.html">
+   Assignment 1
   </a>
  </li>
 </ul>
@@ -303,7 +304,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/labs/week2/lab2-demo.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/labs/week2/lab2-demo-old.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -323,7 +324,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/owel-lab/gds-applications-site/issues/new?title=Issue%20on%20page%20%2Flabs/week2/lab2-demo.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/owel-lab/gds-applications-site/issues/new?title=Issue%20on%20page%20%2Flabs/week2/lab2-demo-old.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -344,7 +345,7 @@ const thebe_selector_output = ".output, .cell_output"
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/owel-lab/gds-applications-site/main?urlpath=tree/book/labs/week2/lab2-demo.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/owel-lab/gds-applications-site/main?urlpath=tree/book/labs/week2/lab2-demo-old.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
@@ -380,41 +381,43 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#download-the-data-for-the-lab">
    Download the data for the lab
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#some-basic-querying">
-   Some basic querying
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#column-labels">
-   Column labels
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#apply-filters">
-   Apply filters
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#datetime-functionality">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     datetime
-    </span>
-   </code>
-   functionality
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#group-by-categories">
-   Group by categories
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#plot">
-   Plot
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#some-basic-querying">
+     Some basic querying
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#column-labels">
+     Column labels
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#apply-filters">
+     Apply filters
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#datetime-functionality">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       datetime
+      </span>
+     </code>
+     functionality
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#group-by-categories">
+     Group by categories
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot">
+     Plot
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#question-1-20-points">
@@ -505,41 +508,43 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#download-the-data-for-the-lab">
    Download the data for the lab
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#some-basic-querying">
-   Some basic querying
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#column-labels">
-   Column labels
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#apply-filters">
-   Apply filters
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#datetime-functionality">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     datetime
-    </span>
-   </code>
-   functionality
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#group-by-categories">
-   Group by categories
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#plot">
-   Plot
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#some-basic-querying">
+     Some basic querying
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#column-labels">
+     Column labels
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#apply-filters">
+     Apply filters
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#datetime-functionality">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       datetime
+      </span>
+     </code>
+     functionality
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#group-by-categories">
+     Group by categories
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot">
+     Plot
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#question-1-20-points">
@@ -659,9 +664,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-</div>
 <div class="section" id="some-basic-querying">
-<h2>Some basic querying<a class="headerlink" href="#some-basic-querying" title="Permalink to this headline">¶</a></h2>
+<h3>Some basic querying<a class="headerlink" href="#some-basic-querying" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find column labels</span>
@@ -686,7 +690,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p><strong>Note</strong> that the max length of a shapefile column header is <strong>10 characters</strong>. A full list of columns can be found below:</p>
 </div>
 <div class="section" id="column-labels">
-<h2>Column labels<a class="headerlink" href="#column-labels" title="Permalink to this headline">¶</a></h2>
+<h3>Column labels<a class="headerlink" href="#column-labels" title="Permalink to this headline">¶</a></h3>
 <p>FOD_ID = Unique numeric record identifier.</p>
 <p>FPA_ID = Unique identifier that contains information necessary to track back to the original record in the source dataset.</p>
 <p>SOURCE_SYSTEM_TYPE = Type of source database or system that the record was drawn from (federal, nonfederal, or interagency).</p>
@@ -800,7 +804,7 @@ Name: FIRE_SIZE, dtype: float64
 <p>So it appears that most fires are extremely small (i.e. 75% of wildfire are less than 0.33 acres)</p>
 </div>
 <div class="section" id="apply-filters">
-<h2>Apply filters<a class="headerlink" href="#apply-filters" title="Permalink to this headline">¶</a></h2>
+<h3>Apply filters<a class="headerlink" href="#apply-filters" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Filter fires larger than 100 acres</span>
@@ -846,7 +850,7 @@ Name: FIRE_SIZE, dtype: float64
 </div>
 </div>
 <div class="section" id="datetime-functionality">
-<h2><code class="docutils literal notranslate"><span class="pre">datetime</span></code> functionality<a class="headerlink" href="#datetime-functionality" title="Permalink to this headline">¶</a></h2>
+<h3><code class="docutils literal notranslate"><span class="pre">datetime</span></code> functionality<a class="headerlink" href="#datetime-functionality" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find date of discovery</span>
@@ -913,7 +917,7 @@ Name: DISCOVERY_, Length: 1164, dtype: datetime64[ns]
 </div>
 </div>
 <div class="section" id="group-by-categories">
-<h2>Group by categories<a class="headerlink" href="#group-by-categories" title="Permalink to this headline">¶</a></h2>
+<h3>Group by categories<a class="headerlink" href="#group-by-categories" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find number of large fires in each year (i.e. number of rows in each year)</span>
@@ -932,7 +936,7 @@ Name: DISCOVERY_, Length: 1164, dtype: datetime64[ns]
 </div>
 </div>
 <div class="section" id="plot">
-<h2>Plot<a class="headerlink" href="#plot" title="Permalink to this headline">¶</a></h2>
+<h3>Plot<a class="headerlink" href="#plot" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot number and acres of wildfire for each year</span>
@@ -952,7 +956,8 @@ Name: DISCOVERY_, Length: 1164, dtype: datetime64[ns]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/lab2-demo_27_0.png" src="../../_images/lab2-demo_27_0.png" />
+<img alt="../../_images/lab2-demo-old_27_0.png" src="../../_images/lab2-demo-old_27_0.png" />
+</div>
 </div>
 </div>
 </div>
@@ -1214,7 +1219,7 @@ Name: B01003_001E, dtype: float64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
 </pre></div>
 </div>
-<img alt="../../_images/lab2-demo_43_1.png" src="../../_images/lab2-demo_43_1.png" />
+<img alt="../../_images/lab2-demo-old_43_1.png" src="../../_images/lab2-demo-old_43_1.png" />
 </div>
 </div>
 <p>A more useful metric might be population density (i.e. people per km<sup>2</sup>)</p>
@@ -1239,7 +1244,7 @@ Name: B01003_001E, dtype: float64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
 </pre></div>
 </div>
-<img alt="../../_images/lab2-demo_45_1.png" src="../../_images/lab2-demo_45_1.png" />
+<img alt="../../_images/lab2-demo-old_45_1.png" src="../../_images/lab2-demo-old_45_1.png" />
 </div>
 </div>
 </div>
@@ -1341,7 +1346,7 @@ Datum: World Geodetic System 1984 ensemble
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
 </pre></div>
 </div>
-<img alt="../../_images/lab2-demo_51_1.png" src="../../_images/lab2-demo_51_1.png" />
+<img alt="../../_images/lab2-demo-old_51_1.png" src="../../_images/lab2-demo-old_51_1.png" />
 </div>
 </div>
 <p>So it looks like most fairly large fires in Lane County were not too close to Eugene. We can find out how many fires were in each tract using a spatial join (<code class="docutils literal notranslate"><span class="pre">gpd.sjoin</span></code>) and a little bit of wrangling (<code class="docutils literal notranslate"><span class="pre">.groupby</span></code>) to count the number of occurrences.</p>
@@ -1372,7 +1377,7 @@ Datum: World Geodetic System 1984 ensemble
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
 </pre></div>
 </div>
-<img alt="../../_images/lab2-demo_53_1.png" src="../../_images/lab2-demo_53_1.png" />
+<img alt="../../_images/lab2-demo-old_53_1.png" src="../../_images/lab2-demo-old_53_1.png" />
 </div>
 </div>
 <p>I hope this lab provided some insight into the ridiculous power of <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> for handling geospatial vector data (both points and polygons).</p>
@@ -1428,21 +1433,7 @@ Datum: World Geodetic System 1984 ensemble
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../week1/assignment1.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Assignment 1</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="../week3/lab3-demo.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Network data</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
+<div class='prev-next-area'>
 </div>
             
         </div>

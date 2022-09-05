@@ -37,9 +37,12 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -139,12 +142,12 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../labs/week1/lab1a-demo.html">
+  <a class="reference internal" href="../lectures/week1/lab1a-demo.html">
    Getting started with Python and GitHub
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../labs/week1/lab1b-demo.html">
+  <a class="reference internal" href="../lectures/week1/lab1b-demo.html">
    Instructions for submitting assignments
   </a>
  </li>
@@ -161,8 +164,8 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../labs/week2/lab2-demo.html">
-   Exploring vector data
+  <a class="reference internal" href="../labs/week2/assignment2.html">
+   Assignment 1
   </a>
  </li>
 </ul>
@@ -186,12 +189,12 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../lectures/week4/lecture-4.html">
-   Gridded data lecture
+   Gridded data
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../labs/week4/lab4-demo.html">
-   Gridded data
+  <a class="reference internal" href="../labs/week4/assignment4.html">
+   Assignment 1
   </a>
  </li>
 </ul>
@@ -417,7 +420,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="test-installation">
 <h2>Test installation<a class="headerlink" href="#test-installation" title="Permalink to this headline">¶</a></h2>
-<p>After installation is complete, we can test that the package manager <code class="docutils literal notranslate"><span class="pre">conda</span></code> works by opening an <strong>Anaconda Powershell Prompt (miniconda3)</strong> (Windows) or <strong>Terminal</strong> (Mac).</p>
+<p>After installation is complete, we can test that the package manager <code class="docutils literal notranslate"><span class="pre">conda</span></code> works by opening an <strong>Anaconda Prompt (miniconda3)</strong> (Windows) or <strong>Terminal</strong> (Mac).</p>
 <p>In the command prompt (or Terminal) run the following:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="o">--</span><span class="n">version</span>
 </pre></div>
@@ -427,7 +430,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="create-course-environment">
 <h2>Create course environment<a class="headerlink" href="#create-course-environment" title="Permalink to this headline">¶</a></h2>
 <p>The Python libraries needed for this course can be installed using an <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file which can be downloaded from <a class="reference external" href="https://www.dropbox.com/s/x6md9xh7brma0lf/environment.yml?dl=0">here</a>.</p>
-<p>We can install <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> by opening a Windows command prompt (as admin) or Mac terminal and running the following command:</p>
+<p>We can install <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> by opening an Anaconda Prompt (Windows) or Terminal (Mac), navigating to the file (i.e. <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">Downloads/</span></code>) and running the following command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">env</span> <span class="n">create</span> <span class="o">-</span><span class="n">f</span> <span class="n">environment</span><span class="o">.</span><span class="n">yml</span>
 </pre></div>
 </div>
@@ -438,7 +441,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>More information about managing environments can be found <a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">here</a>.</p>
 </div>
 </div>
-<p>This will take some time but, if all goes well, we will have a new environment called <code class="docutils literal notranslate"><span class="pre">gds</span></code>. To activate this environment, type:</p>
+<p>This will take some time so we recommend doing this before lab. But, if all goes well, we will have a new environment called <code class="docutils literal notranslate"><span class="pre">gds</span></code>. To activate this environment, type:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">gds</span>
 </pre></div>
 </div>

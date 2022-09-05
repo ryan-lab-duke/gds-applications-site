@@ -37,9 +37,12 @@
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -139,12 +142,12 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../week1/lab1a-demo.html">
+  <a class="reference internal" href="../../lectures/week1/lab1a-demo.html">
    Getting started with Python and GitHub
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../week1/lab1b-demo.html">
+  <a class="reference internal" href="../../lectures/week1/lab1b-demo.html">
    Instructions for submitting assignments
   </a>
  </li>
@@ -161,8 +164,8 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../week2/lab2-demo.html">
-   Exploring vector data
+  <a class="reference internal" href="../week2/assignment2.html">
+   Assignment 1
   </a>
  </li>
 </ul>
@@ -186,12 +189,12 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../lectures/week4/lecture-4.html">
-   Gridded data lecture
+   Gridded data
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../week4/lab4-demo.html">
-   Gridded data
+  <a class="reference internal" href="../week4/assignment4.html">
+   Assignment 1
   </a>
  </li>
 </ul>
@@ -370,16 +373,18 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#check-for-any-updates-in-course-materials">
    Check for any updates in course materials
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#download-the-data-for-the-lab">
-   Download the data for the lab
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-a-new-environment-and-launch-the-notebook">
-   Create a new environment and launch the notebook
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#download-the-data-for-the-lab">
+     Download the data for the lab
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-a-new-environment-and-launch-the-notebook">
+     Create a new environment and launch the notebook
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#feature-engineering">
@@ -453,16 +458,18 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#check-for-any-updates-in-course-materials">
    Check for any updates in course materials
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#download-the-data-for-the-lab">
-   Download the data for the lab
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-a-new-environment-and-launch-the-notebook">
-   Create a new environment and launch the notebook
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#download-the-data-for-the-lab">
+     Download the data for the lab
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-a-new-environment-and-launch-the-notebook">
+     Create a new environment and launch the notebook
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#feature-engineering">
@@ -536,20 +543,20 @@ const thebe_selector_output = ".output, .cell_output"
 <p><code>git merge upstream/master master</code></p>
 <p>GitHub Desktop users should first click the <strong>Fetch origin</strong> button to check for new changes. Then click the triangle symbol next to <strong>Current branch: master</strong>, click <strong>Choose a branch to merge into master</strong>, click <strong>upstream/master</strong> from <strong>Other branches</strong> and click <strong>Create a merge commit</strong>.</p>
 <p>Any new updates to the course repository will now be available in your local repository.</p>
-</div>
 <div class="section" id="download-the-data-for-the-lab">
-<h2>Download the data for the lab<a class="headerlink" href="#download-the-data-for-the-lab" title="Permalink to this headline">¶</a></h2>
+<h3>Download the data for the lab<a class="headerlink" href="#download-the-data-for-the-lab" title="Permalink to this headline">¶</a></h3>
 <p>We will be using the California housing data which is available on Dropbox (see Slack or Canvas for link). Download <code class="docutils literal notranslate"><span class="pre">lab5/california_house_prices.csv</span></code> and <code class="docutils literal notranslate"><span class="pre">california_coastline.shp</span></code> to your local machine.</p>
 <p>A description of the dataset can be found <a class="reference external" href="https://developers.google.com/machine-learning/crash-course/california-housing-data-description">here</a></p>
 </div>
 <div class="section" id="create-a-new-environment-and-launch-the-notebook">
-<h2>Create a new environment and launch the notebook<a class="headerlink" href="#create-a-new-environment-and-launch-the-notebook" title="Permalink to this headline">¶</a></h2>
+<h3>Create a new environment and launch the notebook<a class="headerlink" href="#create-a-new-environment-and-launch-the-notebook" title="Permalink to this headline">¶</a></h3>
 <p>As always, make a new environment that contains all the packages for this lab. Navigate to the <code class="docutils literal notranslate"><span class="pre">labs/lab5</span></code> folder (either from the terminal for Linux and Mac users or from the <strong>CMD.exe Prompt</strong> launched from <strong>Anaconda Navigator</strong> for Windows users) and run:</p>
 <p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">create</span> <span class="pre">-f</span> <span class="pre">environment.yml</span></code></p>
 <p>Activate this environment by running:</p>
 <p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">lab5</span></code></p>
 <p>Now launch the lab demo notebook (if you haven’t already): <a class="reference external" href="https://nbviewer.org/github/JohnnyRyan1/geospatial-data-science/blob/master/labs/lab5/lab5_demo.ipynb">https://nbviewer.org/github/JohnnyRyan1/geospatial-data-science/blob/master/labs/lab5/lab5_demo.ipynb</a></p>
 <p>Now we are ready to start…</p>
+</div>
 </div>
 <div class="section" id="feature-engineering">
 <h2>Feature engineering<a class="headerlink" href="#feature-engineering" title="Permalink to this headline">¶</a></h2>

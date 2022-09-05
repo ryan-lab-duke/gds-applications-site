@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gridded data &#8212; Geospatial Data Science Applications</title>
+    <title>Read climate reanalysis data &#8212; Geospatial Data Science Applications</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -37,9 +37,12 @@
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -50,8 +53,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Machine learning lecture" href="../../lectures/week5/lecture-5.html" />
-    <link rel="prev" title="Gridded data lecture" href="../../lectures/week4/lecture-4.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -139,12 +140,12 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../week1/lab1a-demo.html">
+  <a class="reference internal" href="../../lectures/week1/lab1a-demo.html">
    Getting started with Python and GitHub
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../week1/lab1b-demo.html">
+  <a class="reference internal" href="../../lectures/week1/lab1b-demo.html">
    Instructions for submitting assignments
   </a>
  </li>
@@ -161,8 +162,8 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../week2/lab2-demo.html">
-   Exploring vector data
+  <a class="reference internal" href="../week2/assignment2.html">
+   Assignment 1
   </a>
  </li>
 </ul>
@@ -183,15 +184,15 @@ const thebe_selector_output = ".output, .cell_output"
   Week 4
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../lectures/week4/lecture-4.html">
-   Gridded data lecture
+   Gridded data
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Gridded data
+ <li class="toctree-l1">
+  <a class="reference internal" href="assignment4.html">
+   Assignment 1
   </a>
  </li>
 </ul>
@@ -303,7 +304,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/labs/week4/lab4-demo.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/labs/week4/lab4-demo-old.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -323,7 +324,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/owel-lab/gds-applications-site/issues/new?title=Issue%20on%20page%20%2Flabs/week4/lab4-demo.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/owel-lab/gds-applications-site/issues/new?title=Issue%20on%20page%20%2Flabs/week4/lab4-demo-old.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -344,7 +345,7 @@ const thebe_selector_output = ".output, .cell_output"
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/owel-lab/gds-applications-site/main?urlpath=tree/book/labs/week4/lab4-demo.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/owel-lab/gds-applications-site/main?urlpath=tree/book/labs/week4/lab4-demo-old.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
@@ -366,91 +367,54 @@ const thebe_selector_output = ".output, .cell_output"
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#check-for-any-updates-in-course-materials">
-   Check for any updates in course materials
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#download-the-data-for-the-lab">
-   Download the data for the lab
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-a-new-environment-and-launch-the-notebook">
-   Create a new environment and launch the notebook
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#read-and-inspect-a-landsat-8-raster-layer">
-   Read and inspect a Landsat 8 raster layer
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#produce-a-true-color-image-from-multiple-landsat-8-bands">
-     Produce a true color image from multiple Landsat 8 bands
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#compute-a-band-ratio">
-     Compute a band ratio
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#write-true-color-composite-to-geotiff">
-     Write true color composite to GeoTIFF
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#read-climate-reanalysis-data">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
    Read climate reanalysis data
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#plot-climate-reanalysis-data">
      Plot climate reanalysis data
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#weather-in-florence-or">
      Weather in Florence, OR
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#plot-time-series">
      Plot time series
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#find-mean-values">
      Find mean values
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#question-1-10-points">
    Question 1 (10 points):
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#question-2-20-points">
    Question 2 (20 points):
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#question-3-20-points">
    Question 3 (20 points):
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#question-4-for-grad-students-extra-credit">
    Question 4 (for grad students/extra credit)
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#remember-to-submit-your-answers-to-questions-1-2-and-3-by-friday-11-59pm">
    Remember to submit your answers to Questions 1, 2 and 3
    <strong>
@@ -468,7 +432,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Gridded data</h1>
+                <h1>Read climate reanalysis data</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -478,91 +442,54 @@ const thebe_selector_output = ".output, .cell_output"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#check-for-any-updates-in-course-materials">
-   Check for any updates in course materials
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#download-the-data-for-the-lab">
-   Download the data for the lab
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-a-new-environment-and-launch-the-notebook">
-   Create a new environment and launch the notebook
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#read-and-inspect-a-landsat-8-raster-layer">
-   Read and inspect a Landsat 8 raster layer
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#produce-a-true-color-image-from-multiple-landsat-8-bands">
-     Produce a true color image from multiple Landsat 8 bands
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#compute-a-band-ratio">
-     Compute a band ratio
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#write-true-color-composite-to-geotiff">
-     Write true color composite to GeoTIFF
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#read-climate-reanalysis-data">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
    Read climate reanalysis data
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#plot-climate-reanalysis-data">
      Plot climate reanalysis data
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#weather-in-florence-or">
      Weather in Florence, OR
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#plot-time-series">
      Plot time series
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
+   <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#find-mean-values">
      Find mean values
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#question-1-10-points">
    Question 1 (10 points):
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#question-2-20-points">
    Question 2 (20 points):
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#question-3-20-points">
    Question 3 (20 points):
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#question-4-for-grad-students-extra-credit">
    Question 4 (for grad students/extra credit)
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#remember-to-submit-your-answers-to-questions-1-2-and-3-by-friday-11-59pm">
    Remember to submit your answers to Questions 1, 2 and 3
    <strong>
@@ -579,36 +506,9 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="gridded-data">
-<h1>Gridded data<a class="headerlink" href="#gridded-data" title="Permalink to this headline">¶</a></h1>
-<p><strong>Objectives:</strong></p>
-<ul class="simple">
-<li><p>We will learn how to read, inspect, and write gridded data using <code>rasterio</code> and <code>xarray</code>.</p></li>
-<li><p>Learn how to index, slice and manipulate our gridded data.</p></li>
-<li><p>Export our data as <code>GeoTIFF</code> or <code>NetCDF</code> format.</p></li>
-</ul>
-<p>We will start by reading/writing some remote sensing data where each band is saved as separate <code>GeoTIFFs</code>. After that, we will read some climate reanalysis data saved as <code>NetCDF</code> format.</p>
-<p>The questions are the end of the notebook.</p>
-<div class="section" id="check-for-any-updates-in-course-materials">
-<h2>Check for any updates in course materials<a class="headerlink" href="#check-for-any-updates-in-course-materials" title="Permalink to this headline">¶</a></h2>
-<p>Before we start this assignment, we need to check whether there are any updates to the original course repository. We can do this by adding the original repository (the one we forked) as a <em>remote</em>. Command line users can do this by running:</p>
-<p><code>git fetch upstream</code></p>
-<p><code>git merge upstream/master master</code></p>
-<p>GitHub Desktop users should first click the <strong>Fetch origin</strong> button to check for new changes. Then click the triangle symbol next to <strong>Current branch: master</strong>, click <strong>Choose a branch to merge into master</strong>, click <strong>upstream/master</strong> from <strong>Other branches</strong> and click <strong>Create a merge commit</strong>.</p>
-<p>Any new updates to the course repository will now be available in your local repository.</p>
-</div>
-<div class="section" id="download-the-data-for-the-lab">
-<h2>Download the data for the lab<a class="headerlink" href="#download-the-data-for-the-lab" title="Permalink to this headline">¶</a></h2>
-<p>We will be using some Landsat 8 and ERA5 climate reanalysis data. Since the max file size for GitHub is 2 GB, the lab data will be available on Dropbox (see Slack (or Canvas) for link). Go ahead and download all seven Landsat <code class="docutils literal notranslate"><span class="pre">.TIF</span></code> files and the ERA5 <code class="docutils literal notranslate"><span class="pre">.nc</span></code> file to your local machine.</p>
-</div>
-<div class="section" id="create-a-new-environment-and-launch-the-notebook">
-<h2>Create a new environment and launch the notebook<a class="headerlink" href="#create-a-new-environment-and-launch-the-notebook" title="Permalink to this headline">¶</a></h2>
-<p>As always, make a new environment that contains all the packages for this lab. Navigate to the <code class="docutils literal notranslate"><span class="pre">labs/lab4</span></code> folder (either from the terminal for Linux and Mac users or from the <strong>CMD.exe Prompt</strong> launched from <strong>Anaconda Navigator</strong> for Windows users) and run:</p>
-<p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">create</span> <span class="pre">-f</span> <span class="pre">environment.yml</span></code></p>
-<p>Activate this environment by running:</p>
-<p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">lab4</span></code></p>
-<p>Now launch the lab demo notebook (if you haven’t already): <a class="reference external" href="https://nbviewer.org/github/JohnnyRyan1/geospatial-data-science/blob/master/labs/lab4/lab4_demo.ipynb">https://nbviewer.org/github/JohnnyRyan1/geospatial-data-science/blob/master/labs/lab4/lab4_demo.ipynb</a></p>
-<p>Now we are ready to start…</p>
+  <div class="section" id="read-climate-reanalysis-data">
+<h1>Read climate reanalysis data<a class="headerlink" href="#read-climate-reanalysis-data" title="Permalink to this headline">¶</a></h1>
+<p>We usually use the <code>netCDF4</code> or <code>xarray</code> packages for this task.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import packages</span>
@@ -625,341 +525,10 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="read-and-inspect-a-landsat-8-raster-layer">
-<h2>Read and inspect a Landsat 8 raster layer<a class="headerlink" href="#read-and-inspect-a-landsat-8-raster-layer" title="Permalink to this headline">¶</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define filepath</span>
-<span class="n">filepath</span> <span class="o">=</span> <span class="s1">&#39;/home/johnny/Dropbox (University of Oregon)/Teaching/geospatial-data-science/data/lab4/&#39;</span>
-
-<span class="c1"># Define list of Landsat bands</span>
-<span class="n">files</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">filepath</span> <span class="o">+</span> <span class="s1">&#39;landsat/*.tif&#39;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">files</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;/home/johnny/Dropbox (University of Oregon)/Teaching/geospatial-data-science/data/lab4/landsat/LC08_L2SP_047029_20200814_20210330_02_T1_SR_B1.tif&#39;, &#39;/home/johnny/Dropbox (University of Oregon)/Teaching/geospatial-data-science/data/lab4/landsat/LC08_L2SP_047029_20200814_20210330_02_T1_SR_B2.tif&#39;, &#39;/home/johnny/Dropbox (University of Oregon)/Teaching/geospatial-data-science/data/lab4/landsat/LC08_L2SP_047029_20200814_20210330_02_T1_SR_B3.tif&#39;, &#39;/home/johnny/Dropbox (University of Oregon)/Teaching/geospatial-data-science/data/lab4/landsat/LC08_L2SP_047029_20200814_20210330_02_T1_SR_B4.tif&#39;, &#39;/home/johnny/Dropbox (University of Oregon)/Teaching/geospatial-data-science/data/lab4/landsat/LC08_L2SP_047029_20200814_20210330_02_T1_SR_B5.tif&#39;, &#39;/home/johnny/Dropbox (University of Oregon)/Teaching/geospatial-data-science/data/lab4/landsat/LC08_L2SP_047029_20200814_20210330_02_T1_SR_B6.tif&#39;, &#39;/home/johnny/Dropbox (University of Oregon)/Teaching/geospatial-data-science/data/lab4/landsat/LC08_L2SP_047029_20200814_20210330_02_T1_SR_B7.tif&#39;, &#39;/home/johnny/Dropbox (University of Oregon)/Teaching/geospatial-data-science/data/lab4/landsat/rgb.tif&#39;]
-</pre></div>
-</div>
-</div>
-</div>
-<p>Next, open a single band from your Landsat scene.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Open a single band</span>
-<span class="n">src</span> <span class="o">=</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">files</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="n">band_1</span> <span class="o">=</span> <span class="n">src</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>The dataset’s <strong>profile</strong> contains number of parameters, several of which are required for georeferencing and writing a new dataset</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find metadata (e.g. driver, data type, coordinate reference system, transform etc.)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">src</span><span class="o">.</span><span class="n">profile</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;driver&#39;: &#39;GTiff&#39;, &#39;dtype&#39;: &#39;uint16&#39;, &#39;nodata&#39;: 0.0, &#39;width&#39;: 1208, &#39;height&#39;: 1422, &#39;count&#39;: 1, &#39;crs&#39;: CRS.from_epsg(32610), &#39;transform&#39;: Affine(30.0, 0.0, 391695.0,
-       0.0, -30.0, 4880565.0), &#39;tiled&#39;: False, &#39;interleave&#39;: &#39;band&#39;}
-</pre></div>
-</div>
-</div>
-</div>
-<p>We can also get some of these parameters separately.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find coordinate reference system</span>
-<span class="n">src</span><span class="o">.</span><span class="n">crs</span> <span class="c1"># https://epsg.io/32610</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CRS.from_epsg(32610)
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find format</span>
-<span class="n">src</span><span class="o">.</span><span class="n">driver</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;GTiff&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find pixel size</span>
-<span class="n">src</span><span class="o">.</span><span class="n">transform</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30.0
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find bounds of dataset</span>
-<span class="n">src</span><span class="o">.</span><span class="n">bounds</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BoundingBox(left=391695.0, bottom=4837905.0, right=427935.0, top=4880565.0)
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get corners of dataset</span>
-<span class="n">full_extent</span> <span class="o">=</span> <span class="p">[</span><span class="n">src</span><span class="o">.</span><span class="n">bounds</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">src</span><span class="o">.</span><span class="n">bounds</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">src</span><span class="o">.</span><span class="n">bounds</span><span class="o">.</span><span class="n">bottom</span><span class="p">,</span> <span class="n">src</span><span class="o">.</span><span class="n">bounds</span><span class="o">.</span><span class="n">top</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">full_extent</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[391695.0, 427935.0, 4837905.0, 4880565.0]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot dataset</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
-<span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">band_1</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="n">full_extent</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Band 1&quot;</span><span class="p">)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;vertical&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/lab4-demo_17_0.png" src="../../_images/lab4-demo_17_0.png" />
-</div>
-</div>
-<p>Since the raster is read as an NumPy array (called <code>band_1</code>), we can use standard Python methods to find the dimensions, shape, and size of it.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find number of columns and rows in array</span>
-<span class="n">band_1</span><span class="o">.</span><span class="n">shape</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1422, 1208)
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find total number of pixels in array</span>
-<span class="n">band_1</span><span class="o">.</span><span class="n">size</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1717776
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find maximum value in array</span>
-<span class="n">band_1</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25983
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find datatype</span>
-<span class="n">band_1</span><span class="o">.</span><span class="n">dtype</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dtype(&#39;uint16&#39;)
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find maximum possible value in array</span>
-<span class="mi">2</span><span class="o">**</span><span class="mi">16</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>65536
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find file size (in MB)</span>
-<span class="n">band_1</span><span class="o">.</span><span class="n">nbytes</span> <span class="o">/</span> <span class="mi">1000000</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.435552
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="produce-a-true-color-image-from-multiple-landsat-8-bands">
-<h3>Produce a true color image from multiple Landsat 8 bands<a class="headerlink" href="#produce-a-true-color-image-from-multiple-landsat-8-bands" title="Permalink to this headline">¶</a></h3>
-<p>We often stack Landsat bands so we can conduct our analysis on all bands at the same time. The code below takes each band that you opened, and stacks it into a new single output array.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Open all bands in a loop</span>
-<span class="n">list_bands</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
-    <span class="c1"># Read band</span>
-    <span class="n">src</span> <span class="o">=</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
-    <span class="n">band</span> <span class="o">=</span> <span class="n">src</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-    
-    <span class="c1"># Append to list</span>
-    <span class="n">list_bands</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">band</span><span class="p">)</span>
-
-<span class="c1"># Convert from list of arrays to n-dimensional array</span>
-<span class="n">all_bands</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dstack</span><span class="p">(</span><span class="n">list_bands</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">all_bands</span><span class="o">.</span><span class="n">shape</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1422, 1208, 8)
-</pre></div>
-</div>
-</div>
-</div>
-<p>We can actually pass a 3-band array to imshow and plot it as an RGB image because it is such a common image format. See <a class="reference external" href="https://matplotlib.org/3.3.3/api/_as_gen/matplotlib.pyplot.imshow.html">doc here</a> for (M, N, 3) array input. But first we have to convert our values so they have a range of 0-255. We will also produce a new NumPy array that represents just the Red, Green, and Blue bands using the following as a guide: <a class="reference external" href="https://www.usgs.gov/media/images/landsat-8-band-designations">https://www.usgs.gov/media/images/landsat-8-band-designations</a>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convert values to a range of 0-255</span>
-<span class="n">all_bands_image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">((</span><span class="n">all_bands</span> <span class="o">/</span> <span class="mi">65536</span><span class="p">)</span> <span class="o">*</span> <span class="mi">255</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Produce a new array by stacking the RGB bands</span>
-<span class="n">rgb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dstack</span><span class="p">((</span><span class="n">all_bands_image</span><span class="p">[:,:,</span><span class="mi">3</span><span class="p">],</span><span class="n">all_bands_image</span><span class="p">[:,:,</span><span class="mi">2</span><span class="p">],</span><span class="n">all_bands_image</span><span class="p">[:,:,</span><span class="mi">1</span><span class="p">]))</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot as RGB image</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
-<span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">rgb</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="n">full_extent</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;True color image&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/lab4-demo_32_0.png" src="../../_images/lab4-demo_32_0.png" />
-</div>
-</div>
-</div>
-<div class="section" id="compute-a-band-ratio">
-<h3>Compute a band ratio<a class="headerlink" href="#compute-a-band-ratio" title="Permalink to this headline">¶</a></h3>
-<p>We can compute a Normalized Difference Water Index (NDWI) using the Green and NIR bands.</p>
-<p>NDWI = (Band 3 - Band 5) / (Band 3 + Band 5)</p>
-<p>Remember that arrays are zero indexed, so the first layer is corresponds to <code>all_bands[:,:,0]</code>. Also note that we have to make sure our bands are converted to <code>float</code> datatypes.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute NDWI</span>
-<span class="n">np</span><span class="o">.</span><span class="n">seterr</span><span class="p">(</span><span class="n">divide</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">invalid</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
-<span class="n">ndwi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">divide</span><span class="p">((</span><span class="n">all_bands</span><span class="p">[:,:,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span> <span class="o">-</span> <span class="n">all_bands</span><span class="p">[:,:,</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)),</span> \
-                 <span class="p">(</span><span class="n">all_bands</span><span class="p">[:,:,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span> <span class="o">+</span> <span class="n">all_bands</span><span class="p">[:,:,</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)))</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot NDWI image</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
-<span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">ndwi</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="n">full_extent</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;NDWI image&quot;</span><span class="p">)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;vertical&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/lab4-demo_36_0.png" src="../../_images/lab4-demo_36_0.png" />
-</div>
-</div>
-<p>We can now see which pixels are likely to be ocean, rivers, or lakes.</p>
-</div>
-<div class="section" id="write-true-color-composite-to-geotiff">
-<h3>Write true color composite to GeoTIFF<a class="headerlink" href="#write-true-color-composite-to-geotiff" title="Permalink to this headline">¶</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write an array as a raster band to a new 8-bit file. For the new file&#39;s profile, </span>
-<span class="c1"># we start with the profile of the source</span>
-<span class="n">profile</span> <span class="o">=</span> <span class="n">src</span><span class="o">.</span><span class="n">profile</span>
-
-<span class="c1"># And then change the band count to 3, set the dtype to uint8, and specify LZW compression.</span>
-<span class="n">profile</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="n">rasterio</span><span class="o">.</span><span class="n">uint8</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">compress</span><span class="o">=</span><span class="s1">&#39;lzw&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">filepath</span> <span class="o">+</span> <span class="s1">&#39;landsat/rgb.tif&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">profile</span><span class="p">)</span> <span class="k">as</span> <span class="n">dst</span><span class="p">:</span>
-    <span class="c1"># Write array</span>
-    <span class="n">dst</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">rollaxis</span><span class="p">(</span><span class="n">rgb</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span> <span class="c1"># Note that array needs to be in bands, rows, cols order (z, y, x)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="read-climate-reanalysis-data">
-<h2>Read climate reanalysis data<a class="headerlink" href="#read-climate-reanalysis-data" title="Permalink to this headline">¶</a></h2>
-<p>We usually use the <code>netCDF4</code> or <code>xarray</code> packages for this task.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read data</span>
-<span class="n">xds</span> <span class="o">=</span> <span class="n">xarray</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">filepath</span> <span class="o">+</span> <span class="s1">&#39;era/usa_t2m_tcc_2020.nc&#39;</span><span class="p">,</span> <span class="n">decode_coords</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+<span class="n">xds</span> <span class="o">=</span> <span class="n">xarray</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">&#39;data/usa_t2m_tcc_2020.nc&#39;</span><span class="p">,</span> <span class="n">decode_coords</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1333,8 +902,8 @@ Data variables:
     tcc        (time, latitude, longitude) float32 ...
 Attributes:
     Conventions:  CF-1.6
-    history:      2022-01-05 17:55:44 GMT by grib_to_netcdf-2.23.0: /opt/ecmw...</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-ba09cf7a-5da1-4c44-a897-ff7193040784' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-ba09cf7a-5da1-4c44-a897-ff7193040784' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>longitude</span>: 233</li><li><span class='xr-has-index'>latitude</span>: 99</li><li><span class='xr-has-index'>time</span>: 1464</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-7b8c2ab1-de59-4db1-be66-02e8183b2c26' class='xr-section-summary-in' type='checkbox'  checked><label for='section-7b8c2ab1-de59-4db1-be66-02e8183b2c26' class='xr-section-summary' >Coordinates: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>longitude</span></div><div class='xr-var-dims'>(longitude)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>-125.0 -124.8 ... -67.25 -67.0</div><input id='attrs-378ebcf1-1ca6-4ae5-ab62-3d09d215aa37' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-378ebcf1-1ca6-4ae5-ab62-3d09d215aa37' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-8da1e164-8bb7-4f64-beb5-8c87de0a0a17' class='xr-var-data-in' type='checkbox'><label for='data-8da1e164-8bb7-4f64-beb5-8c87de0a0a17' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>degrees_east</dd><dt><span>long_name :</span></dt><dd>longitude</dd></dl></div><div class='xr-var-data'><pre>array([-125.  , -124.75, -124.5 , ...,  -67.5 ,  -67.25,  -67.  ],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>latitude</span></div><div class='xr-var-dims'>(latitude)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>49.24 48.99 48.74 ... 24.99 24.74</div><input id='attrs-4eea0547-87b5-478f-92fc-837a9b92f810' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-4eea0547-87b5-478f-92fc-837a9b92f810' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-d460b794-fb36-418a-935d-4b0a6ac5b14c' class='xr-var-data-in' type='checkbox'><label for='data-d460b794-fb36-418a-935d-4b0a6ac5b14c' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>degrees_north</dd><dt><span>long_name :</span></dt><dd>latitude</dd></dl></div><div class='xr-var-data'><pre>array([49.24, 48.99, 48.74, 48.49, 48.24, 47.99, 47.74, 47.49, 47.24, 46.99,
+    history:      2022-01-05 17:55:44 GMT by grib_to_netcdf-2.23.0: /opt/ecmw...</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-68152fc1-ab98-44c1-ae16-0d2987856239' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-68152fc1-ab98-44c1-ae16-0d2987856239' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>longitude</span>: 233</li><li><span class='xr-has-index'>latitude</span>: 99</li><li><span class='xr-has-index'>time</span>: 1464</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-805c05ff-7986-4909-98f2-07a4cfd9fdfe' class='xr-section-summary-in' type='checkbox'  checked><label for='section-805c05ff-7986-4909-98f2-07a4cfd9fdfe' class='xr-section-summary' >Coordinates: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>longitude</span></div><div class='xr-var-dims'>(longitude)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>-125.0 -124.8 ... -67.25 -67.0</div><input id='attrs-b99a8a41-d3fa-4d6a-ba8b-e5e6dbb92e63' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-b99a8a41-d3fa-4d6a-ba8b-e5e6dbb92e63' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-7884b918-2999-428d-b1be-cce481c3cbf6' class='xr-var-data-in' type='checkbox'><label for='data-7884b918-2999-428d-b1be-cce481c3cbf6' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>degrees_east</dd><dt><span>long_name :</span></dt><dd>longitude</dd></dl></div><div class='xr-var-data'><pre>array([-125.  , -124.75, -124.5 , ...,  -67.5 ,  -67.25,  -67.  ],
+      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>latitude</span></div><div class='xr-var-dims'>(latitude)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>49.24 48.99 48.74 ... 24.99 24.74</div><input id='attrs-ee506b2a-d887-495b-8d32-d76efd26d359' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-ee506b2a-d887-495b-8d32-d76efd26d359' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-61bd7852-279e-4482-a6ef-88e9d2467968' class='xr-var-data-in' type='checkbox'><label for='data-61bd7852-279e-4482-a6ef-88e9d2467968' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>degrees_north</dd><dt><span>long_name :</span></dt><dd>latitude</dd></dl></div><div class='xr-var-data'><pre>array([49.24, 48.99, 48.74, 48.49, 48.24, 47.99, 47.74, 47.49, 47.24, 46.99,
        46.74, 46.49, 46.24, 45.99, 45.74, 45.49, 45.24, 44.99, 44.74, 44.49,
        44.24, 43.99, 43.74, 43.49, 43.24, 42.99, 42.74, 42.49, 42.24, 41.99,
        41.74, 41.49, 41.24, 40.99, 40.74, 40.49, 40.24, 39.99, 39.74, 39.49,
@@ -1344,10 +913,10 @@ Attributes:
        31.74, 31.49, 31.24, 30.99, 30.74, 30.49, 30.24, 29.99, 29.74, 29.49,
        29.24, 28.99, 28.74, 28.49, 28.24, 27.99, 27.74, 27.49, 27.24, 26.99,
        26.74, 26.49, 26.24, 25.99, 25.74, 25.49, 25.24, 24.99, 24.74],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2020-01-01 ... 2020-12-31T18:00:00</div><input id='attrs-a43ab82a-3618-4f86-8eee-eab36dd109f1' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-a43ab82a-3618-4f86-8eee-eab36dd109f1' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-68a98d80-eafe-4c0e-9f32-e09431e0b935' class='xr-var-data-in' type='checkbox'><label for='data-68a98d80-eafe-4c0e-9f32-e09431e0b935' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>time</dd></dl></div><div class='xr-var-data'><pre>array([&#x27;2020-01-01T00:00:00.000000000&#x27;, &#x27;2020-01-01T06:00:00.000000000&#x27;,
+      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2020-01-01 ... 2020-12-31T18:00:00</div><input id='attrs-255021a8-e0c5-4945-8ad6-0f3e3ec796b3' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-255021a8-e0c5-4945-8ad6-0f3e3ec796b3' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-ece61751-11a5-4137-860a-7c752dc32159' class='xr-var-data-in' type='checkbox'><label for='data-ece61751-11a5-4137-860a-7c752dc32159' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>time</dd></dl></div><div class='xr-var-data'><pre>array([&#x27;2020-01-01T00:00:00.000000000&#x27;, &#x27;2020-01-01T06:00:00.000000000&#x27;,
        &#x27;2020-01-01T12:00:00.000000000&#x27;, ..., &#x27;2020-12-31T06:00:00.000000000&#x27;,
        &#x27;2020-12-31T12:00:00.000000000&#x27;, &#x27;2020-12-31T18:00:00.000000000&#x27;],
-      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-95b30171-df80-4251-8514-651edd79bfbb' class='xr-section-summary-in' type='checkbox'  checked><label for='section-95b30171-df80-4251-8514-651edd79bfbb' class='xr-section-summary' >Data variables: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>t2m</span></div><div class='xr-var-dims'>(time, latitude, longitude)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-0a9b61de-e3e9-49f7-9b31-4c5acd23c849' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-0a9b61de-e3e9-49f7-9b31-4c5acd23c849' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e3f09fda-d009-4351-9635-796c6a9f785b' class='xr-var-data-in' type='checkbox'><label for='data-e3f09fda-d009-4351-9635-796c6a9f785b' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>K</dd><dt><span>long_name :</span></dt><dd>2 metre temperature</dd></dl></div><div class='xr-var-data'><pre>[33770088 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>tcc</span></div><div class='xr-var-dims'>(time, latitude, longitude)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-91f23a5c-6421-4c08-83ae-f80befac8ec9' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-91f23a5c-6421-4c08-83ae-f80befac8ec9' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-a486be69-c28c-4837-89d9-d026c242ef09' class='xr-var-data-in' type='checkbox'><label for='data-a486be69-c28c-4837-89d9-d026c242ef09' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>(0 - 1)</dd><dt><span>long_name :</span></dt><dd>Total cloud cover</dd><dt><span>standard_name :</span></dt><dd>cloud_area_fraction</dd></dl></div><div class='xr-var-data'><pre>[33770088 values with dtype=float32]</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-adda2ac1-8634-4302-b5c9-8992cdf3f627' class='xr-section-summary-in' type='checkbox'  checked><label for='section-adda2ac1-8634-4302-b5c9-8992cdf3f627' class='xr-section-summary' >Attributes: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>Conventions :</span></dt><dd>CF-1.6</dd><dt><span>history :</span></dt><dd>2022-01-05 17:55:44 GMT by grib_to_netcdf-2.23.0: /opt/ecmwf/mars-client/bin/grib_to_netcdf -S param -o /cache/data7/adaptor.mars.internal-1641405337.2156463-13224-2-925a6819-f76e-4e12-a8ce-e9d715b345dd.nc /cache/tmp/925a6819-f76e-4e12-a8ce-e9d715b345dd-adaptor.mars.internal-1641405210.6756463-13224-3-tmp.grib</dd></dl></div></li></ul></div></div></div></div>
+      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-55a9b455-e605-4d51-94e6-a15963d0e178' class='xr-section-summary-in' type='checkbox'  checked><label for='section-55a9b455-e605-4d51-94e6-a15963d0e178' class='xr-section-summary' >Data variables: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>t2m</span></div><div class='xr-var-dims'>(time, latitude, longitude)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-c6f76b1b-a630-4f91-b43c-c79130be2ba3' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-c6f76b1b-a630-4f91-b43c-c79130be2ba3' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-0819ca02-b7ad-4a39-a492-085d2e4c847a' class='xr-var-data-in' type='checkbox'><label for='data-0819ca02-b7ad-4a39-a492-085d2e4c847a' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>K</dd><dt><span>long_name :</span></dt><dd>2 metre temperature</dd></dl></div><div class='xr-var-data'><pre>[33770088 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>tcc</span></div><div class='xr-var-dims'>(time, latitude, longitude)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-d4b70e30-2df3-4617-80d0-8721d2afb965' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-d4b70e30-2df3-4617-80d0-8721d2afb965' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-2865d9a3-c327-417a-abf7-df1c401aecf6' class='xr-var-data-in' type='checkbox'><label for='data-2865d9a3-c327-417a-abf7-df1c401aecf6' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>(0 - 1)</dd><dt><span>long_name :</span></dt><dd>Total cloud cover</dd><dt><span>standard_name :</span></dt><dd>cloud_area_fraction</dd></dl></div><div class='xr-var-data'><pre>[33770088 values with dtype=float32]</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-5b41abd5-efe5-4b71-aad6-8859ae3f40d6' class='xr-section-summary-in' type='checkbox'  checked><label for='section-5b41abd5-efe5-4b71-aad6-8859ae3f40d6' class='xr-section-summary' >Attributes: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>Conventions :</span></dt><dd>CF-1.6</dd><dt><span>history :</span></dt><dd>2022-01-05 17:55:44 GMT by grib_to_netcdf-2.23.0: /opt/ecmwf/mars-client/bin/grib_to_netcdf -S param -o /cache/data7/adaptor.mars.internal-1641405337.2156463-13224-2-925a6819-f76e-4e12-a8ce-e9d715b345dd.nc /cache/tmp/925a6819-f76e-4e12-a8ce-e9d715b345dd-adaptor.mars.internal-1641405210.6756463-13224-3-tmp.grib</dd></dl></div></li></ul></div></div></div></div>
 </div>
 <p>This looks a bit overwelming but it nice way to store gridded data. Below is a schematic of what an xarray data structure represents.</p>
 <br>
@@ -1831,7 +1400,7 @@ Data variables:
          0.25693545, 0.21243116]]], dtype=float32)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-04c10095-4dbf-4474-bf63-2380b9c3ae36' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-04c10095-4dbf-4474-bf63-2380b9c3ae36' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
 </div>
 <div class="section" id="plot-climate-reanalysis-data">
-<h3>Plot climate reanalysis data<a class="headerlink" href="#plot-climate-reanalysis-data" title="Permalink to this headline">¶</a></h3>
+<h2>Plot climate reanalysis data<a class="headerlink" href="#plot-climate-reanalysis-data" title="Permalink to this headline">¶</a></h2>
 <p>Now each layer in the dataset corresponds to a single day. Let’s plot the air temperature and cloud cover for the day which the Landsat image was acquired (August 14, 2020).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1853,12 +1422,12 @@ Data variables:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f102c17eb80&gt;
 </pre></div>
 </div>
-<img alt="../../_images/lab4-demo_50_1.png" src="../../_images/lab4-demo_50_1.png" />
+<img alt="../../_images/lab4-demo-old_10_1.png" src="../../_images/lab4-demo-old_10_1.png" />
 </div>
 </div>
 </div>
 <div class="section" id="weather-in-florence-or">
-<h3>Weather in Florence, OR<a class="headerlink" href="#weather-in-florence-or" title="Permalink to this headline">¶</a></h3>
+<h2>Weather in Florence, OR<a class="headerlink" href="#weather-in-florence-or" title="Permalink to this headline">¶</a></h2>
 <p>So we know that is was relatively cold, cloud-free day in Florence, just like we see in the Landsat image. But how anomalous were these conditions? We can investigate by finding the nearest climate reanalysis grid cell to Florence, OR. First we will define the latitude and longitude of Florence.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1904,7 +1473,7 @@ Data variables:
 </div>
 </div>
 <div class="section" id="plot-time-series">
-<h3>Plot time series<a class="headerlink" href="#plot-time-series" title="Permalink to this headline">¶</a></h3>
+<h2>Plot time series<a class="headerlink" href="#plot-time-series" title="Permalink to this headline">¶</a></h2>
 <p>These values look about right. Now we can plot the time series.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1925,12 +1494,12 @@ Data variables:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Cloud cover (%)&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/lab4-demo_56_1.png" src="../../_images/lab4-demo_56_1.png" />
+<img alt="../../_images/lab4-demo-old_16_1.png" src="../../_images/lab4-demo-old_16_1.png" />
 </div>
 </div>
 </div>
 <div class="section" id="find-mean-values">
-<h3>Find mean values<a class="headerlink" href="#find-mean-values" title="Permalink to this headline">¶</a></h3>
+<h2>Find mean values<a class="headerlink" href="#find-mean-values" title="Permalink to this headline">¶</a></h2>
 <p>It was a pretty nice warm day in Florence on Aug 14, 2020 relative to mean annual conditions. But what is the actual mean?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1972,11 +1541,11 @@ Data variables:
 </div>
 </div>
 </div>
-</div>
-</div>
 <hr class="docutils" />
+</div>
+</div>
 <div class="section" id="question-1-10-points">
-<h2>Question 1 (10 points):<a class="headerlink" href="#question-1-10-points" title="Permalink to this headline">¶</a></h2>
+<h1>Question 1 (10 points):<a class="headerlink" href="#question-1-10-points" title="Permalink to this headline">¶</a></h1>
 <p>Now that we have gone through some examples in the lecture and lab we are ready to apply some of these methods ourselves. Start by making a <strong>new</strong> <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code> called <code class="docutils literal notranslate"><span class="pre">lab4_submission.ipynb</span></code> and complete the following tasks.</p>
 <p>Find the following numbers in the climate reanalysis dataset:</p>
 <ul class="simple">
@@ -1987,7 +1556,7 @@ Data variables:
 </div>
 <hr class="docutils" />
 <div class="section" id="question-2-20-points">
-<h2>Question 2 (20 points):<a class="headerlink" href="#question-2-20-points" title="Permalink to this headline">¶</a></h2>
+<h1>Question 2 (20 points):<a class="headerlink" href="#question-2-20-points" title="Permalink to this headline">¶</a></h1>
 <p>Find the following grid cells in the climate reanalysis dataset and provide the lat/lons <strong>and</strong> a rough location of where they are located.</p>
 <ul class="simple">
 <li><p>a) Highest average air temperature (i.e. hottest place)</p></li>
@@ -2001,7 +1570,7 @@ Data variables:
 </div>
 <hr class="docutils" />
 <div class="section" id="question-3-20-points">
-<h2>Question 3 (20 points):<a class="headerlink" href="#question-3-20-points" title="Permalink to this headline">¶</a></h2>
+<h1>Question 3 (20 points):<a class="headerlink" href="#question-3-20-points" title="Permalink to this headline">¶</a></h1>
 <p>Display the Landsat image of Florence, OR as:</p>
 <ul class="simple">
 <li><p>a) an <strong>NDVI</strong> image (i.e. (Band 5 - Band 4) / (Band 5 + Band 4))</p></li>
@@ -2010,7 +1579,7 @@ Data variables:
 </div>
 <hr class="docutils" />
 <div class="section" id="question-4-for-grad-students-extra-credit">
-<h2>Question 4 (for grad students/extra credit)<a class="headerlink" href="#question-4-for-grad-students-extra-credit" title="Permalink to this headline">¶</a></h2>
+<h1>Question 4 (for grad students/extra credit)<a class="headerlink" href="#question-4-for-grad-students-extra-credit" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><p>a) Produce an NDWI histogram for the Landsat image of Florence</p></li>
 <li><p>b) Choose a threshold and produce a binary water mask</p></li>
@@ -2018,14 +1587,13 @@ Data variables:
 </ul>
 </div>
 <div class="section" id="remember-to-submit-your-answers-to-questions-1-2-and-3-by-friday-11-59pm">
-<h2>Remember to submit your answers to Questions 1, 2 and 3 <strong>by Friday 11:59pm</strong><a class="headerlink" href="#remember-to-submit-your-answers-to-questions-1-2-and-3-by-friday-11-59pm" title="Permalink to this headline">¶</a></h2>
+<h1>Remember to submit your answers to Questions 1, 2 and 3 <strong>by Friday 11:59pm</strong><a class="headerlink" href="#remember-to-submit-your-answers-to-questions-1-2-and-3-by-friday-11-59pm" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># HINT use argmax() or argmin()</span>
 <span class="n">max_value</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">xds_daily</span><span class="p">[</span><span class="s1">&#39;t2m&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">argmax</span><span class="p">()</span>
 <span class="n">index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unravel_index</span><span class="p">(</span><span class="n">max_value</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">xds_daily</span><span class="p">[</span><span class="s1">&#39;t2m&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </pre></div>
-</div>
 </div>
 </div>
 </div>
@@ -2055,21 +1623,7 @@ Data variables:
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../../lectures/week4/lecture-4.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Gridded data lecture</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="../../lectures/week5/lecture-5.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Machine learning lecture</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
+<div class='prev-next-area'>
 </div>
             
         </div>

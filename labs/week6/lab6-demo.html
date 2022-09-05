@@ -37,9 +37,12 @@
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -139,12 +142,12 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../week1/lab1a-demo.html">
+  <a class="reference internal" href="../../lectures/week1/lab1a-demo.html">
    Getting started with Python and GitHub
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../week1/lab1b-demo.html">
+  <a class="reference internal" href="../../lectures/week1/lab1b-demo.html">
    Instructions for submitting assignments
   </a>
  </li>
@@ -161,8 +164,8 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../week2/lab2-demo.html">
-   Exploring vector data
+  <a class="reference internal" href="../week2/assignment2.html">
+   Assignment 1
   </a>
  </li>
 </ul>
@@ -186,12 +189,12 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../lectures/week4/lecture-4.html">
-   Gridded data lecture
+   Gridded data
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../week4/lab4-demo.html">
-   Gridded data
+  <a class="reference internal" href="../week4/assignment4.html">
+   Assignment 1
   </a>
  </li>
 </ul>
@@ -370,21 +373,23 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#team-leader-make-a-new-github-repository">
    Team leader: make a new Github repository
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#team-leader-add-other-team-members-to-repository">
-   Team leader: add other team members to repository
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#everyone-clone-repository">
-   Everyone: clone repository
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-a-new-slack-channel-for-discussion">
-   Create a new Slack channel for discussion:
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#team-leader-add-other-team-members-to-repository">
+     Team leader: add other team members to repository
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#everyone-clone-repository">
+     Everyone: clone repository
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-a-new-slack-channel-for-discussion">
+     Create a new Slack channel for discussion:
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#centralized-workflow-in-github-desktop">
@@ -468,21 +473,23 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#team-leader-make-a-new-github-repository">
    Team leader: make a new Github repository
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#team-leader-add-other-team-members-to-repository">
-   Team leader: add other team members to repository
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#everyone-clone-repository">
-   Everyone: clone repository
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-a-new-slack-channel-for-discussion">
-   Create a new Slack channel for discussion:
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#team-leader-add-other-team-members-to-repository">
+     Team leader: add other team members to repository
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#everyone-clone-repository">
+     Everyone: clone repository
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-a-new-slack-channel-for-discussion">
+     Create a new Slack channel for discussion:
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#centralized-workflow-in-github-desktop">
@@ -570,9 +577,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Select to include a <code class="docutils literal notranslate"><span class="pre">README.md</span></code> and include a <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file with a <code class="docutils literal notranslate"><span class="pre">Python</span></code> template.</p></li>
 </ul>
 <p>Don’t stress too much about the specifics of the repo - these are not permanent, and you can always change repo names, or start over entirely (just copy and add existing files as a first commit). One of the goals here is to gain more experience using <code class="docutils literal notranslate"><span class="pre">git</span></code> for collaborative work and, early on, you’re inevitably going to make some mistakes.</p>
-</div>
 <div class="section" id="team-leader-add-other-team-members-to-repository">
-<h2>Team leader: add other team members to repository<a class="headerlink" href="#team-leader-add-other-team-members-to-repository" title="Permalink to this headline">¶</a></h2>
+<h3>Team leader: add other team members to repository<a class="headerlink" href="#team-leader-add-other-team-members-to-repository" title="Permalink to this headline">¶</a></h3>
 <p>The team leader now needs to add the others as collaborators and make sure they have permission to access and commit.</p>
 <ul class="simple">
 <li><p>Click <strong>Settings</strong> –&gt; <strong>Collaborators</strong> from menu on the left</p></li>
@@ -580,19 +586,20 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </div>
 <div class="section" id="everyone-clone-repository">
-<h2>Everyone: clone repository<a class="headerlink" href="#everyone-clone-repository" title="Permalink to this headline">¶</a></h2>
+<h3>Everyone: clone repository<a class="headerlink" href="#everyone-clone-repository" title="Permalink to this headline">¶</a></h3>
 <p>All team members should now go to GitHub Desktop, click <strong>File</strong> –&gt; <strong>Clone repository…</strong>, enter <code class="docutils literal notranslate"><span class="pre">https://github.com/&lt;team-leader-username&gt;/&lt;project-repo-name&gt;</span></code> as the <strong>URL</strong> where <code class="docutils literal notranslate"><span class="pre">&lt;team-leader-username&gt;</span></code> is the <strong>team leader’s</strong> GitHub username and <code class="docutils literal notranslate"><span class="pre">&lt;project-repo-name&gt;</span></code> is the name of the new project repo.</p>
 <p>Choose a <strong>Local path</strong> where you keep your coursework (e.g. <code class="docutils literal notranslate"><span class="pre">C:\Users\your_name\Documents</span></code>) and click <strong>Clone</strong>.</p>
 <p>Notice that in the top left that <strong>Current repository</strong> is now set to <code class="docutils literal notranslate"><span class="pre">project-repo-name</span></code>. Depending on if we’re working on our projects or lab assignments, we’ll need to switch between this and <code class="docutils literal notranslate"><span class="pre">geospatial-data-science</span></code>.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="create-a-new-slack-channel-for-discussion">
-<h2>Create a new Slack channel for discussion:<a class="headerlink" href="#create-a-new-slack-channel-for-discussion" title="Permalink to this headline">¶</a></h2>
+<h3>Create a new Slack channel for discussion:<a class="headerlink" href="#create-a-new-slack-channel-for-discussion" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Click <strong>“+”</strong> icon next to <strong>Channels</strong> list in the Slack sidebar -&gt; <strong>“Create a channel”</strong></p></li>
 <li><p>Add your project name</p></li>
 <li><p>Invite your team members Slack members</p></li>
 </ul>
+</div>
 </div>
 <hr class="docutils" />
 <div class="section" id="centralized-workflow-in-github-desktop">
