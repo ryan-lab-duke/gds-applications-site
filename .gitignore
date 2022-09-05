@@ -2,4 +2,6 @@ resources/
 *.DS_Store
 *.ipynb_checkpoints
 *-checkpoint.ipynb
-
+book/labs/week2/data/*
+book/labs/week4/data/*
+book/lectures/week4/data/*

@@ -8,7 +8,7 @@ The latest version of Miniconda can be accessed from the [dowload page](https://
 
 ## Test installation
 
-After installation is complete, we can test that the package manager `conda` works by opening an **Anaconda Powershell Prompt (miniconda3)** (Windows) or **Terminal** (Mac). 
+After installation is complete, we can test that the package manager `conda` works by opening an **Anaconda Prompt (miniconda3)** (Windows) or **Terminal** (Mac). 
 
 In the command prompt (or Terminal) run the following:
 ```
@@ -21,7 +21,7 @@ If the command returns a version number of conda (e.g. `conda 4.11.0`) everythin
 
 The Python libraries needed for this course can be installed using an `environment.yml` file which can be downloaded from [here](https://www.dropbox.com/s/x6md9xh7brma0lf/environment.yml?dl=0). 
 
-We can install `environment.yml` by opening a Windows command prompt (as admin) or Mac terminal and running the following command:
+We can install `environment.yml` by opening an Anaconda Prompt (Windows) or Terminal (Mac), navigating to the file (i.e. `cd Downloads/`) and running the following command:
 
 ```
 conda env create -f environment.yml
@@ -33,7 +33,7 @@ More information about managing environments can be found [here](https://docs.co
 ```
 ````
 
-This will take some time but, if all goes well, we will have a new environment called `gds`. To activate this environment, type:
+This will take some time so we recommend doing this before lab. But, if all goes well, we will have a new environment called `gds`. To activate this environment, type:
 
 ```
 conda activate gds

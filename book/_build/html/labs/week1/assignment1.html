@@ -37,9 +37,12 @@
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -50,8 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Exploring vector data" href="../week2/lab2-demo.html" />
-    <link rel="prev" title="Instructions for submitting assignments" href="lab1b-demo.html" />
+    <link rel="next" title="Assignment 1" href="../week2/assignment2.html" />
+    <link rel="prev" title="Instructions for submitting assignments" href="../../lectures/week1/lab1b-demo.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -139,12 +142,12 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="lab1a-demo.html">
+  <a class="reference internal" href="../../lectures/week1/lab1a-demo.html">
    Getting started with Python and GitHub
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="lab1b-demo.html">
+  <a class="reference internal" href="../../lectures/week1/lab1b-demo.html">
    Instructions for submitting assignments
   </a>
  </li>
@@ -161,8 +164,8 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../week2/lab2-demo.html">
-   Exploring vector data
+  <a class="reference internal" href="../week2/assignment2.html">
+   Assignment 1
   </a>
  </li>
 </ul>
@@ -186,12 +189,12 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../lectures/week4/lecture-4.html">
-   Gridded data lecture
+   Gridded data
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../week4/lab4-demo.html">
-   Gridded data
+  <a class="reference internal" href="../week4/assignment4.html">
+   Assignment 1
   </a>
  </li>
 </ul>
@@ -424,23 +427,32 @@ const thebe_selector_output = ".output, .cell_output"
 <p class="admonition-title">Deadline</p>
 <p>Please complete this assignment before xxx.</p>
 </div>
+<hr class="docutils" />
 <div class="section" id="task-1-10-points">
 <h2>Task 1 (10 points)<a class="headerlink" href="#task-1-10-points" title="Permalink to this headline">¶</a></h2>
 <p>Complete some basic Python problems.</p>
 </div>
+<hr class="docutils" />
 <div class="section" id="task-2-10-points">
 <h2>Task 2 (10 points)<a class="headerlink" href="#task-2-10-points" title="Permalink to this headline">¶</a></h2>
 <p>Write some markdown.</p>
 <p>In the cell below your code, add an image from Google images of somewhere inspiring along with a short caption that includes <strong>bold</strong>, <em>italics</em> and a link to the webpage that displays this image.</p>
 <p>Use the following as a guide: <a class="reference external" href="https://www.markdownguide.org/basic-syntax/">https://www.markdownguide.org/basic-syntax/</a>. Remember the image should be saved in the same folder as your answers notebook.</p>
 </div>
+<hr class="docutils" />
 <div class="section" id="task-3-10-points">
 <h2>Task 3 (10 points)<a class="headerlink" href="#task-3-10-points" title="Permalink to this headline">¶</a></h2>
 <p>Post a message in the #lab01 channel at <a class="reference external" href="http://xxx.slack.com">xxx.slack.com</a> with your name and GitHub username.</p>
 </div>
+<hr class="docutils" />
 <div class="section" id="task-4-10-points">
 <h2>Task 4 (10 points)<a class="headerlink" href="#task-4-10-points" title="Permalink to this headline">¶</a></h2>
-<p>Run the cells one last time to make sure your code has no errors. Upload assignment using GitHub Classroom.</p>
+<p>Run the cells one last time to make sure your code has no errors. Upload assignment using <strong>GitHub Classroom</strong>.</p>
+<hr class="docutils" />
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Save your notebook to your local course folder and submit assignment (in <strong>.ipynb</strong> format) to Canvas by the deadline.</p>
+</div>
 </div>
 </div>
 
@@ -469,17 +481,17 @@ const thebe_selector_output = ".output, .cell_output"
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="lab1b-demo.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../../lectures/week1/lab1b-demo.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title">Instructions for submitting assignments</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../week2/lab2-demo.html" title="next page">
+    <a class='right-next' id="next-link" href="../week2/assignment2.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Exploring vector data</p>
+        <p class="prev-next-title">Assignment 1</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

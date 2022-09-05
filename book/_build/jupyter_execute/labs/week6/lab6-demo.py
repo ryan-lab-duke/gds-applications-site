@@ -15,7 +15,7 @@
 # 
 #    * Prepare and submit an outline of your group's final project
 
-# ### Team leader: make a new Github repository
+# ## Team leader: make a new Github repository
 # 
 # If you’re working in a group, pick a **project lead** to initiate and manage the repo. 
 # 

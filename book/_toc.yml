@@ -15,8 +15,8 @@ parts:
 
   - caption: Week 1
     chapters:
-    - file: labs/week1/lab1a-demo.ipynb
-    - file: labs/week1/lab1b-demo.ipynb
+    - file: lectures/week1/lab1a-demo.ipynb
+    - file: lectures/week1/lab1b-demo.ipynb
     - file: labs/week1/assignment1.md
 
   - caption: Week 2
@@ -31,7 +31,7 @@ parts:
   - caption: Week 4
     chapters:
     - file: lectures/week4/lecture-4.ipynb
-    - file: labs/week4/lab4-demo.ipynb
+    - file: labs/week4/assignment4.md
 
   - caption: Week 5
     chapters:

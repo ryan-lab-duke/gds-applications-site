@@ -1,6 +1,6 @@
 # Project ideas
 
-### Objectives
+## Objectives
 
 Now we have explored some different types of geospatial data (e.g. table, network, and gridded) and we are familiar with some different types of analyses, we should be ready to come up with some project ideas.
 
@@ -13,7 +13,7 @@ You have several options:
 * Join forces with others in the class who already have a project idea.
 * If independent research is new to you or you are still struggling, talk to the instructor or grad students in the class to define a suitable final project.
 
-### Task 1 (10 points):
+## Task 1 (10 points):
 
 * Submit a project idea on the `final-projects` Slack channel.
 * Come to class ready to share your idea(s) in small groups and provide feedback to others in the next lab

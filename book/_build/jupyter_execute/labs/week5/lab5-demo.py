@@ -8,7 +8,7 @@
 #    * Train a machine learning model using <code>scikit-learn</code>
 #    * Evaluate our machine learning model
 
-# ### Check for any updates in course materials
+# ## Check for any updates in course materials
 # 
 # Before we start this assignment, we need to check whether there are any updates to the original course repository. We can do this by adding the original repository (the one we forked) as a *remote*. Command line users can do this by running:
 # 
