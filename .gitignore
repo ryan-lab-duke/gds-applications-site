@@ -5,3 +5,4 @@ resources/
 book/labs/week2/data/*
 book/labs/week4/data/*
 book/lectures/week4/data/*
+book/lectures/week3/cache/*
