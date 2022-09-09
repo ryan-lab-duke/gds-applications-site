@@ -26,7 +26,8 @@ parts:
 
   - caption: Week 3
     chapters:
-    - file: labs/week3/lab3-demo.ipynb
+    - file: lectures/week3/lecture-3.ipynb
+    - file: labs/week2/assignment3.md
 
   - caption: Week 4
     chapters:

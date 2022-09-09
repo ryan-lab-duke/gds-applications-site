@@ -1,4 +1,4 @@
-# Assignment 1
+# Assignment 2
 
 ```{admonition} Deadline
 Please complete this assignment before xxx.
