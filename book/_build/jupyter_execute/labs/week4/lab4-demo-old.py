@@ -202,3 +202,9 @@ print('There were %.0f days with less than 20%% cloud cover in 2020' % days)
 max_value = np.mean(xds_daily['t2m'], axis=0).argmax()
 index = np.unravel_index(max_value, np.mean(xds_daily['t2m'], axis=0).shape)
 
+
+# In[ ]:
+
+
+
+

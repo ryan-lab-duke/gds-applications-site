@@ -41,7 +41,7 @@
 # 
 # `jupyter notebook 03_walking_distances.ipynb`
 
-# In[1]:
+# In[3]:
 
 
 # Import modules
@@ -59,7 +59,7 @@ from shapely.geometry import LineString, MultiLineString
 # 
 # First we will retrieve all features labelled (or tagged) as buildings in Eugene.
 
-# In[2]:
+# In[4]:
 
 
 # Specify type of data
@@ -71,7 +71,7 @@ gdf = ox.geometries_from_place('Eugene, Oregon, USA', tags)
 
 # It did not take long to download all this data even though this GeoDataFrame is massive (don't worry about the error message!). We can find the number of buildings in Eugene by printing the shape of the GeoDataFrame.
 
-# In[3]:
+# In[5]:
 
 
 print(gdf.shape)
@@ -79,7 +79,7 @@ print(gdf.shape)
 
 # We can find out what attributes are contained in this GeoDataFrame by printing the column headers as a list. 
 
-# In[4]:
+# In[6]:
 
 
 print(gdf.columns.tolist())
@@ -87,7 +87,7 @@ print(gdf.columns.tolist())
 
 # Since OSM is entirely based on volunteered geographic information, there are a lot of attributes, most of which are not complete. We can find the number of non-NaNs in each column by typing:
 
-# In[5]:
+# In[7]:
 
 
 # Count number of non-NaNs in each column
@@ -96,7 +96,7 @@ gdf.count()
 
 # For the purposes of this assignment, we are only interested in buildings that are tagged as **cafes**. Cafes are usually tagged as an **amenity** in OSM so we can filter them using a string comparison.
 
-# In[7]:
+# In[8]:
 
 
 # Filter cafes
@@ -110,7 +110,7 @@ cafes
 # 
 # We now want to compute the distance to ten nearest cafes. First we will have to reproject our data to UTM Zone 10N which is a projection system that contains Oregon (https://epsg.io/32610)
 
-# In[8]:
+# In[9]:
 
 
 # Reproject to UTM Zone 10N
@@ -120,7 +120,7 @@ cafes = cafes.to_crs('EPSG:32610')
 
 # Find the coordinates of Condon Hall by searching for **Condon Hall** in the original GeoDataFrame.
 
-# In[9]:
+# In[10]:
 
 
 # Get coordinates of Condon Hall
@@ -129,7 +129,7 @@ condon_hall = gdf[gdf['name'] == 'Condon Hall'].reset_index()
 
 # Compute building centroids so we can compute point-to-point distances.
 
-# In[10]:
+# In[11]:
 
 
 # Get cafe and Condon Hall centroids
@@ -144,7 +144,7 @@ condon_hall['centroid'] = condon_hall['geometry'].apply(
 
 # Now we can compute the Euclidean distances between Condon Hall and the cafes
 
-# In[11]:
+# In[12]:
 
 
 # Compute distances
@@ -159,7 +159,7 @@ cafes['euclidean_distance'] = distances
 
 # ...and print a list of the ten closest cafes to Condon Hall
 
-# In[12]:
+# In[13]:
 
 
 print(cafes.nsmallest(10, ['euclidean_distance'])[['name', 'euclidean_distance']])
@@ -167,7 +167,7 @@ print(cafes.nsmallest(10, ['euclidean_distance'])[['name', 'euclidean_distance']
 
 # Now for a bit of magic, let's visualize our data using `folium`
 
-# In[65]:
+# In[14]:
 
 
 # Make a new DataFrame containing only the three most relevant columns
@@ -209,7 +209,7 @@ m
 # 
 # Euclidean distances often underestimate the distance between two objects, especially when there are obstacles between the two. So we will now compute some more realistic distances to cafes around Condon Hall. First we will need to import the [<code>networkx</code>](https://networkx.org/) package which will allow us conduct a network analysis. 
 
-# In[66]:
+# In[15]:
 
 
 # Import module
@@ -218,7 +218,7 @@ import networkx as nx
 
 # Now we will define the coordinates of Condon Hall and download a walkable street network from OSM. Since the furthest of our ten cafes was 1.5 km away, we will limit our download to 1.6 km.
 
-# In[103]:
+# In[16]:
 
 
 # Define coordinates of Condon Hall
@@ -231,7 +231,7 @@ g = ox.graph_from_point(lat_lon, dist=1600, network_type='walk')
 fig, ax = ox.plot_graph(g, node_size=10)
 
 
-# In[68]:
+# In[17]:
 
 
 # Convert to graph
@@ -251,7 +251,7 @@ print("Coordinate system:", edges_proj.crs)
 nearest_cafes = nearest_cafes.to_crs('EPSG:32610')
 
 
-# In[81]:
+# In[18]:
 
 
 # Get x and y coordinates of Condon Hall
@@ -261,7 +261,19 @@ orig_xy = (condon_hall['centroid'].y.values[0], condon_hall['centroid'].x.values
 target_xy = (nearest_cafes['centroid'].y.values[-1], nearest_cafes['centroid'].x.values[-1])
 
 
-# In[82]:
+# In[22]:
+
+
+orig_xy
+
+
+# In[23]:
+
+
+target_xy
+
+
+# In[19]:
 
 
 # Find the node in the graph that is closest to the origin point (here, we want to get the node id)
@@ -271,14 +283,14 @@ orig_node = ox.distance.nearest_nodes(G=graph_proj, X=orig_xy[1], Y=orig_xy[0], 
 target_node = ox.distance.nearest_nodes(graph_proj, X=target_xy[1], Y=target_xy[0], return_dist=False)
 
 
-# In[83]:
+# In[20]:
 
 
 # Calculate the shortest path
 route = nx.shortest_path(G=graph_proj, source=orig_node, target=target_node, weight='length')
 
 
-# In[110]:
+# In[21]:
 
 
 # Plot the shortest path using folium

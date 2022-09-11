@@ -1,4 +1,4 @@
-# Assignment 1
+# Assignment 2
 
 ```{admonition} Deadline
 Please complete this assignment before xxx.
@@ -9,7 +9,7 @@ Please complete this assignment before xxx.
 
 Download the data for the assignment from [here](https://www.dropbox.com/sh/63dhmgtcoss1s0k/AAAsYpRdCV3xcr0jbNq9qFGZa?dl=0). The first dataset contains the centers of activity of all known Northern Spotted Owls breeding pairs in Western Oregon as determined by the Bureau of Land Management. More information can be found [here](https://databasin.org/datasets/18c5edbd64c7497aa17a369fbab6f4ac/). The second dataset contains wildfire perimeters for Oregon from the [National Interagency Fire Center](https://data-nifc.opendata.arcgis.com/search?tags=Category%2Chistoric_wildlandfire_opendata). 
 
-Read the **wildfire** dataset and answer the following questions:
+Import `GeoPandas`, read the **wildfire** dataset, and answer the following questions:
 
 * a) How many rows and columns are there?
 
