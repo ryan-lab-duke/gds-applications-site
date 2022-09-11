@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Assignment 1 &#8212; Geospatial Data Science Applications</title>
+    <title>Assignment 3 &#8212; Geospatial Data Science Applications</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,8 +53,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Assignment 2" href="../week2/assignment2.html" />
-    <link rel="prev" title="Instructions for submitting assignments" href="../../lectures/week1/lab1b-demo.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -140,7 +138,7 @@ const thebe_selector_output = ".output, .cell_output"
   Week 1
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../lectures/week1/lab1a-demo.html">
    Getting started with Python and GitHub
@@ -151,8 +149,8 @@ const thebe_selector_output = ".output, .cell_output"
    Instructions for submitting assignments
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week1/assignment1.html">
    Assignment 1
   </a>
  </li>
@@ -306,7 +304,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/labs/week1/assignment1.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/labs/week3/assignment3.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -326,7 +324,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/owel-lab/gds-applications-site/issues/new?title=Issue%20on%20page%20%2Flabs/week1/assignment1.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/owel-lab/gds-applications-site/issues/new?title=Issue%20on%20page%20%2Flabs/week3/assignment3.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -367,11 +365,6 @@ const thebe_selector_output = ".output, .cell_output"
    Task 3 (10 points)
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#task-4-10-points">
-   Task 4 (10 points)
-  </a>
- </li>
 </ul>
 
             </nav>
@@ -382,7 +375,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Assignment 1</h1>
+                <h1>Assignment 3</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -407,11 +400,6 @@ const thebe_selector_output = ".output, .cell_output"
    Task 3 (10 points)
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#task-4-10-points">
-   Task 4 (10 points)
-  </a>
- </li>
 </ul>
 
                         </nav>
@@ -421,8 +409,8 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="assignment-1">
-<h1>Assignment 1<a class="headerlink" href="#assignment-1" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="assignment-3">
+<h1>Assignment 3<a class="headerlink" href="#assignment-3" title="Permalink to this headline">¶</a></h1>
 <div class="admonition-deadline admonition">
 <p class="admonition-title">Deadline</p>
 <p>Please complete this assignment before xxx.</p>
@@ -430,24 +418,51 @@ const thebe_selector_output = ".output, .cell_output"
 <hr class="docutils" />
 <div class="section" id="task-1-10-points">
 <h2>Task 1 (10 points)<a class="headerlink" href="#task-1-10-points" title="Permalink to this headline">¶</a></h2>
-<p>Complete some basic Python problems.</p>
+<p>Download the data for the assignment from <a class="reference external" href="https://www.dropbox.com/s/6nkgvgbcgu4p9b0/graph.graphml?dl=0">here</a> and <a class="reference external" href="https://www.dropbox.com/s/6gescpjfasrny7v/oregon_cities.zip?dl=0">here</a>. The first dataset is a full-featured <code class="docutils literal notranslate"><span class="pre">OSMnx</span></code>/<code class="docutils literal notranslate"><span class="pre">NetworkX</span></code> graph constructed from a shapefile of the <a class="reference external" href="https://spatialdata.oregonexplorer.info/geoportal/details;id=1d255f740ff74774b236e0faf4d6c2e0">Oregon Highway Network</a>. If you’re interested, the shapefile was converted to a graph using the code <a class="reference external" href="https://github.com/owel-lab/gds-applications-site/blob/main/book/labs/week3/convert_shp_to_multidigraph.ipynb">here</a>. The second dataset is shapefile containing all cities in Oregon (as points).</p>
+<p>Read the graph dataset using the following code:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+<span class="kn">import</span> <span class="nn">osmnx</span> <span class="k">as</span> <span class="nn">ox</span>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+
+<span class="n">graph</span> <span class="o">=</span> <span class="n">ox</span><span class="o">.</span><span class="n">load_graphml</span><span class="p">(</span><span class="s1">&#39;path/to/data/graph.graphml&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>a) How many nodes and edges does this graph have?</p></li>
+</ul>
+<p>Convert the graph to two <code class="docutils literal notranslate"><span class="pre">GeoDataFrames</span></code>, one containing <strong>edges</strong> and one containing the <strong>nodes</strong>.</p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Click to reveal hint</p>
+<p><code class="docutils literal notranslate"><span class="pre">ox.graph_to_gdfs(graph,</span> <span class="pre">nodes=True,</span> <span class="pre">edges=False)</span></code> will provide the nodes.</p>
+</div>
+<ul class="simple">
+<li><p>b) What is the coordinate reference system of the nodes <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code>?</p></li>
+<li><p>c) List the column names in the edges <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code>.</p></li>
+<li><p>d) What is the <strong>min</strong>, <strong>max</strong>, and <strong>mean</strong> edge length?</p></li>
+<li><p>e) Produce and customize a plot showing the Oregon Highway Network.</p></li>
+</ul>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Click to reveal hint</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">ox.plot_graph</span></code> function will help.</p>
+</div>
 </div>
 <hr class="docutils" />
 <div class="section" id="task-2-10-points">
 <h2>Task 2 (10 points)<a class="headerlink" href="#task-2-10-points" title="Permalink to this headline">¶</a></h2>
-<p>Write some markdown.</p>
-<p>In the cell below your code, add an image from Google images of somewhere inspiring along with a short caption that includes <strong>bold</strong>, <em>italics</em> and a link to the webpage that displays this image.</p>
-<p>Use the following as a guide: <a class="reference external" href="https://www.markdownguide.org/basic-syntax/">https://www.markdownguide.org/basic-syntax/</a>. Remember the image should be saved in the same folder as your answers notebook.</p>
+<p>Read the <code class="docutils literal notranslate"><span class="pre">oregon_cities.shp</span></code> using <code class="docutils literal notranslate"><span class="pre">GeoPandas</span></code>.</p>
+<ul class="simple">
+<li><p>a) Reproject the city <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code> to UTM Zone 10 N.</p></li>
+<li><p>b) Choose four cities in Oregon (the more spread out the better!) and compute the Euclidean distance (in km) between each pair.</p></li>
+<li><p>c) List the <strong>nearest node</strong> for each of the four cities.</p></li>
+<li><p>d) What is the shortest path length (i.e. <code class="docutils literal notranslate"><span class="pre">nx.shortest_path_length</span></code>) between each pair of cities (in km)? Produce and customize a plot showing each route with your answer (i.e. <code class="docutils literal notranslate"><span class="pre">fig,</span> <span class="pre">ax</span> <span class="pre">=</span> <span class="pre">ox.plot_graph_route(graph,</span> <span class="pre">route)</span></code>).</p></li>
+<li><p>e) On average, how much longer is the network distance vs. Euclidean distance?</p></li>
+<li><p>f) How long would it take to travel between each pair of cities given an average speed of 60 mph?</p></li>
+</ul>
 </div>
 <hr class="docutils" />
 <div class="section" id="task-3-10-points">
 <h2>Task 3 (10 points)<a class="headerlink" href="#task-3-10-points" title="Permalink to this headline">¶</a></h2>
-<p>Post a message in the #lab01 channel at <a class="reference external" href="http://xxx.slack.com">xxx.slack.com</a> with your name and GitHub username.</p>
-</div>
-<hr class="docutils" />
-<div class="section" id="task-4-10-points">
-<h2>Task 4 (10 points)<a class="headerlink" href="#task-4-10-points" title="Permalink to this headline">¶</a></h2>
-<p>Run the cells one last time to make sure your code has no errors. Upload assignment using <strong>GitHub Classroom</strong>.</p>
+<p>How many cities in Oregon are within a 2 hour drive of Eugene (at 60 mph)?</p>
 <hr class="docutils" />
 <div class="admonition important">
 <p class="admonition-title">Important</p>
@@ -469,7 +484,7 @@ const thebe_selector_output = ".output, .cell_output"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./labs/week1"
+            path: "./labs/week3"
         },
         predefinedOutput: true
     }
@@ -480,21 +495,7 @@ const thebe_selector_output = ".output, .cell_output"
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../../lectures/week1/lab1b-demo.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Instructions for submitting assignments</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="../week2/assignment2.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Assignment 2</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
+<div class='prev-next-area'>
 </div>
             
         </div>
