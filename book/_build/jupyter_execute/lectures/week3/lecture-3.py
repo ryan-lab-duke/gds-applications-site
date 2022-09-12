@@ -85,7 +85,7 @@
 # 
 # Just remember that while we will be using network analysis on transport infrastructure, these principles apply to many other types of relational data such as international trade, character dialogue in films, or social media.
 
-# In[307]:
+# In[6]:
 
 
 import numpy as np
@@ -105,7 +105,7 @@ import folium
 # 
 # First we will retrieve all features labeled (or tagged) as **buildings** in Eugene from OSM. Don't worry if you're not familiar with OSM or `OSMnx`, we will cover this topic next week in our data access lecture. 
 
-# In[4]:
+# In[8]:
 
 
 # Specify type of data
@@ -117,7 +117,7 @@ gdf = ox.geometries_from_place('Eugene, Oregon, USA', tags)
 
 # This produces a large `GeoDataFrame` containing over 56,000 buildings. 
 
-# In[5]:
+# In[9]:
 
 
 print(gdf.shape)
@@ -125,7 +125,7 @@ print(gdf.shape)
 
 # For the purposes of this assignment, we are only interested in buildings that are tagged as **cafes**. Cafes are usually tagged as an **amenity** in OSM so we can filter them using a string comparison.
 
-# In[6]:
+# In[10]:
 
 
 # Filter cafes
@@ -137,7 +137,7 @@ print(cafes.shape)
 # 
 # The cafes are acually **polygons** so we will compute their **centroids** to make it simpler to plot. 
 
-# In[303]:
+# In[11]:
 
 
 # Get cafe centroids
@@ -148,7 +148,7 @@ cafes['centroid'] = cafes['geometry'].apply(
 
 # We can visulize interactively using `folium`. Again don't be too worried if you haven't used this library, we will cover it in a future lecture.
 
-# In[8]:
+# In[12]:
 
 
 # Define center of map (i.e. Condon Hall) and initial zoom level
@@ -179,7 +179,7 @@ m
 # 
 # We will use the `graph_from_point` function which accepts a **point** (as lat/lon), a **distance** (in meters), and a **network type**. The options for **network type** are available in [documentation](https://osmnx.readthedocs.io/en/stable/osmnx.html#osmnx.graph.graph_from_point) and include `"all_private"`, `"all"`, `"bike"`, `"drive"`, `"drive_service"`, `"walk"`. We choose a distance of **2 miles** and the `walk` option since we are interested in cafes that are walkable. 
 
-# In[9]:
+# In[13]:
 
 
 # Define coordinates of Condon Hall
@@ -191,7 +191,7 @@ g = ox.graph_from_point(lat_lon, dist=3200, network_type='walk')
 
 # Let's see what the graph looks like...
 
-# In[10]:
+# In[14]:
 
 
 # Plot map
@@ -204,7 +204,7 @@ fig, ax = ox.plot_graph(g, bgcolor='white', node_color='black', edge_color='grey
 # 
 # Also note that the graph is [`MultiDiGraph`](https://networkx.org/documentation/stable/reference/classes/multidigraph.html) `NetworkX` object. `Multi` means that multiple edges are allowed between any pair of nodes. `Di` stands for **directed** which means that all our edges are directional. Bidirectional streets are therefore represented with **two edges** (with identical geometries): one from node 1 to node 2 and another from 2 to 1, to represent both possible directions of flow. 
 
-# In[351]:
+# In[15]:
 
 
 type(g)
@@ -212,7 +212,7 @@ type(g)
 
 # We can call the [`info`](https://networkx.org/documentation/stable/reference/generated/networkx.classes.function.info.html) function on the graph to see how many nodes and edges it contains.
 
-# In[349]:
+# In[16]:
 
 
 nx.info(g)
@@ -222,7 +222,7 @@ nx.info(g)
 # 
 # Once we have produced our graph (or network, it is good practice to **reproject** it to UTM coorindates so we can work in SI units (i.e. meters) instead of degrees. The [`graph_project`](https://osmnx.readthedocs.io/en/stable/osmnx.html#osmnx.projection.project_graph) function can be used to reproject the graph. The docs note that if the `to_crs` argument is set to `None`, the graph is projected to the UTM coordinate system for the UTM zone in which the graph's centroid lies. 
 
-# In[201]:
+# In[17]:
 
 
 # Convert to graph
@@ -235,7 +235,7 @@ graph_proj = ox.project_graph(g, to_crs=None)
 # 
 # We can find Condon Hall in our original OSM building data using string matching. 
 
-# In[13]:
+# In[18]:
 
 
 # Get coordinates of Condon Hall
@@ -248,7 +248,7 @@ cafes = cafes.to_crs('EPSG:32610')
 
 # Compute centroids...
 
-# In[14]:
+# In[19]:
 
 
 condon_hall['centroid'] = condon_hall['geometry'].apply(
@@ -266,7 +266,7 @@ cafes['centroid'] = cafes['geometry'].apply(
 # To begin with we will only compute the shortest distance between Condon Hall and the **first** cafe in our `GeoDataFrame`.
 # ```
 
-# In[15]:
+# In[20]:
 
 
 # Get x and y coordinates of Condon Hall
@@ -280,7 +280,7 @@ target_xy = [cafes['centroid'].y.values[0], cafes['centroid'].x.values[0]]
 # 
 # The [`distance`](https://osmnx.readthedocs.io/en/stable/osmnx.html#module-osmnx.distance) module in `OSMnx` contains functions for calculating distances, shortest paths, and finding nearest node/edge(s) to point(s). Since the coordinates of our points are unlikely to exactly align with one of the nodes, we first have to find the nearest node to our points using the `nearest_nodes` function. 
 
-# In[362]:
+# In[21]:
 
 
 # Find the node in the graph that is closest to the origin point
@@ -296,7 +296,7 @@ target_node = ox.distance.nearest_nodes(graph_proj, X=target_xy[1], Y=target_xy[
 # The `weight` argument defines the edge attribute to minimize when solving shortest path. In our case, we would like the **shortest distance** so we choose `length`. 
 # ```
 
-# In[17]:
+# In[22]:
 
 
 # Calculate the shortest path
@@ -304,7 +304,7 @@ route = nx.shortest_path(G=graph_proj, source=orig_node, target=target_node, wei
 length = nx.shortest_path_length(G=graph_proj, source=orig_node, target=target_node, weight='length')
 
 
-# In[18]:
+# In[23]:
 
 
 print("Shortest path distance = {t:.1f} km.".format(t=length/1000))
@@ -312,7 +312,7 @@ print("Shortest path distance = {t:.1f} km.".format(t=length/1000))
 
 # The `route` variable contains a list of the nodes constituting the shortest path between the two points. It can plotted using the `plot_route_folium` function.
 
-# In[19]:
+# In[24]:
 
 
 # Plot the shortest path using folium
@@ -324,7 +324,7 @@ m
 # 
 # To compute the shortest distance from Condon Hall to **all** the cafes in Eugene we can make a list of all target locations, find the nearest node for each target location, and loop over them like so...
 
-# In[20]:
+# In[25]:
 
 
 target_xy = [cafes['centroid'].y.values, cafes['centroid'].x.values]
@@ -338,7 +338,7 @@ for i in range(len(target_nodes)):
     lengths.append(nx.shortest_path_length(G=graph_proj, source=orig_node, target=target_nodes[i], weight='length'))
 
 
-# In[21]:
+# In[26]:
 
 
 # Plot the shortest path using folium
@@ -348,7 +348,7 @@ m
 
 # Make a list of the nearest ten cafes from Condon Hall.
 
-# In[170]:
+# In[27]:
 
 
 cafes['distance_km'] = np.array(lengths) / 1000
@@ -357,13 +357,13 @@ cafes[['name', 'distance_km']].nsmallest(columns='distance_km', n=10)
 
 # Finally, we can convert distance to time using an assumed walking speed of 4.5 kph (or 2.8 mph).
 
-# In[171]:
+# In[28]:
 
 
 travel_speed_minutes = 4.5 / 60
 
 
-# In[172]:
+# In[29]:
 
 
 cafes['time_minutes'] = cafes['distance_km'] / travel_speed_minutes
@@ -378,7 +378,7 @@ cafes[['name', 'distance_km', 'time_minutes']].nsmallest(columns='distance_km', 
 # 
 # To conduct this analysis, it is useful to spend a little more time thinking about the attributes of **nodes** and **edges** of the `MultiDiGraph` object that is produced by `OSMnx`.
 
-# In[173]:
+# In[30]:
 
 
 type(graph_proj)
@@ -386,7 +386,7 @@ type(graph_proj)
 
 # We can explore the **edge** and **node** attributes easier if we convert the `MultiDiGraph` to a `GeoDataFrame`. We'll have a look at the nodes first since they are a bit more intuitive. In our infrastructure network, nodes represent intersections/dead-ends, 
 
-# In[211]:
+# In[31]:
 
 
 nodes = ox.graph_to_gdfs(graph_proj, nodes=True, edges=False)
@@ -395,7 +395,7 @@ edges = ox.graph_to_gdfs(graph_proj, nodes=False, edges=True)
 
 # ### Nodes
 
-# In[189]:
+# In[32]:
 
 
 nodes.head()
@@ -407,7 +407,7 @@ nodes.head()
 # 
 # * The `street_count` column provides the number of street segments connected to each node. The `highway` column provides the type of intersection. 
 
-# In[241]:
+# In[33]:
 
 
 nodes['highway'].unique()
@@ -417,7 +417,7 @@ nodes['highway'].unique()
 # 
 # Edges represent street segments and there are a few more columns to interpret. 
 
-# In[246]:
+# In[34]:
 
 
 edges.head()
@@ -435,7 +435,7 @@ edges.head()
 # We have to use a **for loop** to get the unique values because there some roads are labeled more than once. 
 # ```
 
-# In[245]:
+# In[35]:
 
 
 unique_values = []
@@ -447,7 +447,7 @@ print(unique_values)
 
 # * The `service` column is provides the type of service road (e.g. driveway, alley).
 
-# In[247]:
+# In[36]:
 
 
 unique_values = []
@@ -459,7 +459,7 @@ print(unique_values)
 
 # * The `access` column is represents accessibility of the street.
 
-# In[249]:
+# In[37]:
 
 
 edges['access'].unique()
@@ -469,7 +469,7 @@ edges['access'].unique()
 
 # Another way to access the edge and node attributes is to use the `list` built-in function on the `.data()` attribute. Then list the `dict_keys` of the associated object. 
 
-# In[358]:
+# In[38]:
 
 
 list(list(graph_proj.edges.data())[0][-1].keys())
@@ -479,7 +479,7 @@ list(list(graph_proj.edges.data())[0][-1].keys())
 # 
 # To compute the distance we can travel in a given time period, we need to know the time taken to walk along each street segment or edge. Since we know the length of each edge and our travel speed, we can compute this attribute like so:
 
-# In[273]:
+# In[39]:
 
 
 meters_per_minute = travel_speed * 1000 / 60  # km per hour to m per minute
@@ -490,7 +490,7 @@ for u, v, data in graph_proj.edges.data():
 
 # Now when we print a single value from our edges dataset, we have a new attribute called `time` which is the number of minutes to travel along the edge. 
 
-# In[276]:
+# In[ ]:
 
 
 list(graph_proj.edges.data())[0]
@@ -502,11 +502,11 @@ list(graph_proj.edges.data())[0]
 # 
 # As a test we will set `radius` to **10** which is equivalent to 10 **minutes** of traveling by foot. But note that if `distance` was set to `length`, this would be 10 **meters** of traveling by foot (i.e. not very far). 
 
-# In[277]:
+# In[41]:
 
 
 subgraph = nx.ego_graph(graph_proj, orig_node, radius=10, distance="time")
-fig, ax = ox.plot_graph(subgraph)
+fig, ax = ox.plot_graph(subgraph, bgcolor='white', node_color='black', edge_color='grey', node_size=10)
 
 
 # ## Produce isochrone map

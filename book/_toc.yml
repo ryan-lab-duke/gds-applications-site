@@ -21,13 +21,13 @@ parts:
 
   - caption: Week 2
     chapters:
-    - file: labs/week2/lab2-demo.ipynb
+    - file: lectures/week2/lecture-2.ipynb
     - file: labs/week2/assignment2.md
 
   - caption: Week 3
     chapters:
     - file: lectures/week3/lecture-3.ipynb
-    - file: labs/week2/assignment3.md
+    - file: labs/week3/assignment3.md
 
   - caption: Week 4
     chapters:

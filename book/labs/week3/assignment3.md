@@ -3,11 +3,17 @@
 ```{admonition} Deadline
 Please complete this assignment before xxx.
 ```
+
+Download the data for the assignment from [here](https://www.dropbox.com/s/6nkgvgbcgu4p9b0/graph.graphml?dl=0) and [here](https://www.dropbox.com/s/6gescpjfasrny7v/oregon_cities.zip?dl=0). The first dataset is a full-featured `OSMnx`/`NetworkX` graph constructed from a shapefile of the [Oregon Highway Network](https://spatialdata.oregonexplorer.info/geoportal/details;id=1d255f740ff74774b236e0faf4d6c2e0). If you're interested, the shapefile was converted to a graph using the code [here](https://github.com/owel-lab/gds-applications-site/blob/main/book/labs/week3/convert_shp_to_multidigraph.ipynb). The second dataset is shapefile containing all cities in Oregon (as points).
+
+```{image} images/highway.jpg
+:width: 500px
+:align: center
+```
+
 *****************************
 
 ## Task 1 (10 points)
-
-Download the data for the assignment from [here](https://www.dropbox.com/s/6nkgvgbcgu4p9b0/graph.graphml?dl=0) and [here](https://www.dropbox.com/s/6gescpjfasrny7v/oregon_cities.zip?dl=0). The first dataset is a full-featured `OSMnx`/`NetworkX` graph constructed from a shapefile of the [Oregon Highway Network](https://spatialdata.oregonexplorer.info/geoportal/details;id=1d255f740ff74774b236e0faf4d6c2e0). If you're interested, the shapefile was converted to a graph using the code [here](https://github.com/owel-lab/gds-applications-site/blob/main/book/labs/week3/convert_shp_to_multidigraph.ipynb). The second dataset is shapefile containing all cities in Oregon (as points).
 
 Read the graph dataset using the following code:
 
