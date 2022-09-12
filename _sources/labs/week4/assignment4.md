@@ -3,11 +3,17 @@
 ```{admonition} Deadline
 Please complete this assignment before xxx.
 ```
+
+Download the data for the assignment from [here](https://www.dropbox.com/s/znf06otczn3u79r/usa_t2m_tcc_2020.nc?dl=0). The dataset contains gridded air temperature (K) and cloud cover (%) over the USA for 2020 at 6-hour interval. `t2m` stands for 2 m above the surface, the standard height used by temperature sensors. It is a common metric used in climatology but note that it is different from the **surface** temperature which would be the temperature of the ground surface. 
+
+```{image} images/clouds.jpg
+:width: 500px
+:align: center
+```
+
 *****************************
 
 ## Task 1 (5 points)
-
-Download the data for the assignment from [here](https://www.dropbox.com/s/znf06otczn3u79r/usa_t2m_tcc_2020.nc?dl=0). The dataset contains gridded air temperature (K) and cloud cover (%) over the USA for 2020 at 6-hour interval. `t2m` stands for 2 m above the surface, the standard height used by temperature sensors. It is a common metric used in climatology but note that it is different from the **surface** temperature which would be the temperature of the ground surface. 
 
 Read the dataset and answer the following questions:
 
