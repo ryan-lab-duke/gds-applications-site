@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Python &#8212; Geospatial Data Science Applications</title>
+    <title>Install Python using venv and pip &#8212; Geospatial Data Science Applications</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -37,12 +37,9 @@
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -54,7 +51,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="GitHub" href="github.html" />
-    <link rel="prev" title="Schedule (for Winter 2022)" href="schedule.html" />
+    <link rel="prev" title="Install Python using Conda" href="python-conda.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -94,7 +91,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
-   Welcome to Geospatial Data Science Applications 2023!
+   Welcome to Geospatial Data Science 2023!
   </a>
  </li>
 </ul>
@@ -114,9 +111,30 @@ const thebe_selector_output = ".output, .cell_output"
    Schedule (for Winter 2022)
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python-conda.html">
+   Install Python using
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Conda
+    </span>
+   </code>
+  </a>
+ </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Python
+   Install Python using
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     venv
+    </span>
+   </code>
+   and
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pip
+    </span>
+   </code>
   </a>
  </li>
  <li class="toctree-l1">
@@ -316,7 +334,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/course-info/python.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/course-info/python-venv.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -336,7 +354,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/owel-lab/gds-applications-site/issues/new?title=Issue%20on%20page%20%2Fcourse-info/python.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/owel-lab/gds-applications-site/issues/new?title=Issue%20on%20page%20%2Fcourse-info/python-venv.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -363,18 +381,8 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#install-miniconda">
-   Install Miniconda
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#test-installation">
-   Test installation
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-course-environment">
-   Create course environment
+  <a class="reference internal nav-link" href="#install-requirements">
+   Install requirements
   </a>
  </li>
 </ul>
@@ -387,7 +395,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Python</h1>
+                <h1>Install Python using venv and pip</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -398,18 +406,8 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#install-miniconda">
-   Install Miniconda
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#test-installation">
-   Test installation
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-course-environment">
-   Create course environment
+  <a class="reference internal nav-link" href="#install-requirements">
+   Install requirements
   </a>
  </li>
 </ul>
@@ -421,48 +419,20 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="python">
-<h1>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h1>
-<p>In order to execute Python code for completing assignments, we will need to install a Python distribution with the necessary packages. We will use <code class="docutils literal notranslate"><span class="pre">conda</span></code>, an open-source package management system which can be installed using Miniconda (a lightweight version of <a class="reference external" href="https://www.anaconda.com/products/individual">Anaconda</a>).</p>
-<div class="section" id="install-miniconda">
-<h2>Install Miniconda<a class="headerlink" href="#install-miniconda" title="Permalink to this headline">¶</a></h2>
-<p>The latest version of Miniconda can be accessed from the <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">dowload page</a>. In this course we will be using <strong>Python 3.8</strong> so download the corresponding package for your operating system.</p>
-</div>
-<div class="section" id="test-installation">
-<h2>Test installation<a class="headerlink" href="#test-installation" title="Permalink to this headline">¶</a></h2>
-<p>After installation is complete, we can test that the package manager <code class="docutils literal notranslate"><span class="pre">conda</span></code> works by opening an <strong>Anaconda Prompt (miniconda3)</strong> (Windows) or <strong>Terminal</strong> (Mac).</p>
-<p>In the command prompt (or Terminal) run the following:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="o">--</span><span class="n">version</span>
+  <div class="tex2jax_ignore mathjax_ignore section" id="install-python-using-venv-and-pip">
+<h1>Install Python using <code class="docutils literal notranslate"><span class="pre">venv</span></code> and <code class="docutils literal notranslate"><span class="pre">pip</span></code><a class="headerlink" href="#install-python-using-venv-and-pip" title="Permalink to this headline">¶</a></h1>
+<p>A second option is to use <code class="docutils literal notranslate"><span class="pre">venv</span></code>, a built-in Python package that supports virtual environments. We can create a virtual environment running the following in a a command prompt (or Terminal):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">gds</span> <span class="o">.</span><span class="n">venv</span>
 </pre></div>
 </div>
-<p>If the command returns a version number of conda (e.g. <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">4.11.0</span></code>) everything is working correctly.</p>
-</div>
-<div class="section" id="create-course-environment">
-<h2>Create course environment<a class="headerlink" href="#create-course-environment" title="Permalink to this headline">¶</a></h2>
-<p>The Python libraries needed for this course can be installed using an <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file which can be downloaded from <a class="reference external" href="https://www.dropbox.com/s/x6md9xh7brma0lf/environment.yml?dl=0">here</a>.</p>
-<p>We can install <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> by opening an Anaconda Prompt (Windows) or Terminal (Mac), navigating to the file (i.e. <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">Downloads/</span></code>) and running the following command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">env</span> <span class="n">create</span> <span class="o">-</span><span class="n">f</span> <span class="n">environment</span><span class="o">.</span><span class="n">yml</span>
+<p>This creates a new environment called <code class="docutils literal notranslate"><span class="pre">gds</span></code> in the <code class="docutils literal notranslate"><span class="pre">.venv</span></code> folder, which is where all the project dependencies will be installed. Next we will activate the virtual environment, by running the following in the command prompt (or Terminal):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">.</span><span class="n">venv</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
 </pre></div>
 </div>
-<div class="margin sidebar">
-<p class="sidebar-title"></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>More information about managing environments can be found <a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">here</a>.</p>
-</div>
-</div>
-<p>This will take some time so we recommend doing this before lab. But, if all goes well, we will have a new environment called <code class="docutils literal notranslate"><span class="pre">gds</span></code>. To activate this environment, type:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">gds</span>
-</pre></div>
-</div>
-<p>To deactivate this environment, type:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">deactivate</span>
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>It is possible to complete this course without installing anything on your own computer. Look for the <img alt="" src="https://mybinder.org/badge_logo.svg" /> button on the notebooks to run the code interactively in a browser.</p>
-</div>
+<div class="section" id="install-requirements">
+<h2>Install requirements<a class="headerlink" href="#install-requirements" title="Permalink to this headline">¶</a></h2>
+<p>In this always install project dependencies with <code class="docutils literal notranslate"><span class="pre">pip</span></code>, which downloads them from the Python package index at <a class="reference external" href="http://pypi.org">pypi.org</a>. However, it’s best practice to declare dependencies in a requirements.txt file and install from that file, so that anyone else setting up the project will end up with the same dependencies.</p>
+<p>I create the requirements.txt file and seed it with any packages I know I need:</p>
 </div>
 </div>
 
@@ -491,11 +461,11 @@ const thebe_selector_output = ".output, .cell_output"
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="schedule.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="python-conda.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Schedule (for Winter 2022)</p>
+            <p class="prev-next-title">Install Python using <code class="docutils literal notranslate"><span class="pre">Conda</span></code></p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="github.html" title="next page">
