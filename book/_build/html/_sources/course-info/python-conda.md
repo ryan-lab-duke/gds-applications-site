@@ -1,6 +1,8 @@
-# Python
+# Install Python using `Conda`
 
-In order to execute Python code for completing assignments, we will need to install a Python distribution with the necessary packages. We will use `conda`, an open-source package management system which can be installed using Miniconda (a lightweight version of [Anaconda](https://www.anaconda.com/products/individual)). 
+Python packaging has never been pretty and it is probably one of the biggest barriers to entry.
+
+In order to execute Python code for completing assignments, we will need to install a Python distribution with the necessary packages. One option is to use `conda`, an open-source package management system which can be installed using **Miniconda** (a lightweight version of [Anaconda](https://www.anaconda.com/products/individual)). 
 
 ## Install Miniconda
 
