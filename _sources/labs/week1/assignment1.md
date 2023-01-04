@@ -4,7 +4,7 @@
 Please complete this assignment by Jan 20 11:59pm.
 ```
 
-Follow the instructions [here](../course-info/python.md) to install the Python programming environment that we will use in this class. 
+Follow the instructions [here](https://owel-lab.github.io/gds-applications-site/course-info/python.html) to install the Python programming environment that we will use in this class. 
 
 *****************************
 
@@ -40,7 +40,7 @@ The image should be saved in the same folder as your answers notebook.
 
 ## Task 3 (5 points)
 
-* Sign-up for a GitHub account and install `git` or `GitHub Desktop` by following instructions [here](../course-info/github.md)
+* Sign-up for a GitHub account and install `git` or `GitHub Desktop` by following instructions [here](https://owel-lab.github.io/gds-applications-site/course-info/github.html).
 
 * Add your GitHub username to your notebook (e.g. next to your real name).
 
@@ -53,5 +53,5 @@ The image should be saved in the same folder as your answers notebook.
 This can is a little tricky. We recommend using `ctrl + p` (or `command + p`) &rarr; **Save as PDF**. If you'd like to get the **File** &rarr; **Download as** &rarr; **PDF via LaTeX** (or **PDF via HTML**) working, you will need to install some other packages.
 
 ```{important}
-Save your notebooks locally as both `ipynb` and `.pdf` formats but only submit the pdf to Canvas.
+Save your notebooks locally as both `.ipynb` and `.pdf` formats but only submit the pdf to Canvas.
 ```
