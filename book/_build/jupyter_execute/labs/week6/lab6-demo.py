@@ -1,211 +1,272 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Collaborating on GitHub
+# # Machine learning
 # 
 # **Objectives:**
-#    * Form teams and designate a team leader
-#    
-#    
-#    * Create a new GitHub repository for final project
-#    
-#    
-#    * Choose a GitHub workflow that works for all team members
-#   
-# 
-#    * Prepare and submit an outline of your group's final project
+#    * Engineer some features for better prediction of California house prices 
+#    * Train a machine learning model using <code>scikit-learn</code>
+#    * Evaluate our machine learning model
 
-# ## Team leader: make a new Github repository
+# ## Check for any updates in course materials
 # 
-# If you’re working in a group, pick a **project lead** to initiate and manage the repo. 
+# Before we start this assignment, we need to check whether there are any updates to the original course repository. We can do this by adding the original repository (the one we forked) as a *remote*. Command line users can do this by running:
 # 
+# <code>git fetch upstream</code>
 # 
-# * Go to: https://github.com/
+# <code>git merge upstream/master master</code>
 # 
+# GitHub Desktop users should first click the **Fetch origin** button to check for new changes. Then click the triangle symbol next to **Current branch: master**, click **Choose a branch to merge into master**, click **upstream/master** from **Other branches** and click **Create a merge commit**. 
 # 
-# 
-# * Click the big green **New** button and follow instructions on the left side of page. Come up with a clever, descriptive repo name - try to avoid names like "finalproject", which won't make it very searchable. 
-# 
-# 
-# 
-# * Set the access to **Public** (so other students can follow progress).
-# 
-# 
-# 
-# * Select to include a `README.md` and include a `.gitignore` file with a `Python` template.
-# 
-# 
-# Don’t stress too much about the specifics of the repo - these are not permanent, and you can always change repo names, or start over entirely (just copy and add existing files as a first commit). One of the goals here is to gain more experience using `git` for collaborative work and, early on, you're inevitably going to make some mistakes.
+# Any new updates to the course repository will now be available in your local repository.
 
-# ### Team leader: add other team members to repository
+# ### Download the data for the lab
 # 
-# The team leader now needs to add the others as collaborators and make sure they have permission to access and commit. 
+# We will be using the California housing data which is available on Dropbox (see Slack or Canvas for link). Download `lab5/california_house_prices.csv` and `california_coastline.shp` to your local machine. 
 # 
-# * Click **Settings** --> **Collaborators** from menu on the left
-# 
-# 
-# * Click the big green **Add people** button and add the other team members using their **GitHub usernames**
+# A description of the dataset can be found [here](https://developers.google.com/machine-learning/crash-course/california-housing-data-description)
 
-# ### Everyone: clone repository
+# ### Create a new environment and launch the notebook
 # 
-# All team members should now go to GitHub Desktop, click **File** --> **Clone repository...**, enter `https://github.com/<team-leader-username>/<project-repo-name>` as the **URL** where ```<team-leader-username>``` is the **team leader's** GitHub username and ```<project-repo-name>``` is the name of the new project repo. 
+# As always, make a new environment that contains all the packages for this lab. Navigate to the `labs/lab5` folder (either from the terminal for Linux and Mac users or from the **CMD.exe Prompt** launched from **Anaconda Navigator** for Windows users) and run:
 # 
-# Choose a **Local path** where you keep your coursework (e.g. `C:\Users\your_name\Documents`) and click **Clone**.
+# `conda env create -f environment.yml`
 # 
-# Notice that in the top left that **Current repository** is now set to `project-repo-name`. Depending on if we're working on our projects or lab assignments, we'll need to switch between this and `geospatial-data-science`.
+# Activate this environment by running:
+# 
+# `conda activate lab5`
+# 
+# Now launch the lab demo notebook (if you haven't already): https://nbviewer.org/github/JohnnyRyan1/geospatial-data-science/blob/master/labs/lab5/lab5_demo.ipynb
+# 
+# Now we are ready to start...
 
-# ------
+# ## Feature engineering
 # 
-# ### Create a new Slack channel for discussion:
+# The most important part of data science is generating new features that have predictive power. We just used the default variables for predicting house prices in the lecture but there are other factors that may be useful.
 # 
-# * Click **"+"** icon next to **Channels** list in the Slack sidebar -> **"Create a channel"**
-# * Add your project name
-# * Invite your team members Slack members
+# For example, we often have **geolocation data**, which could be very useful for house price prediction task. In this demo we will engineer some new features to improve the accuracy of our house price prediction model.
 # 
-# --------
-
-# ## Centralized workflow in GitHub Desktop
+# As a recap, these were the mean-sqaured-errors from the lecture demo:
 # 
-# * To contribute to the repo, **team members** should make a new file called `README_XX.md` where `XX` are the initials of the team member. 
+# * Multiple linear regression: $64,374
 # 
 # 
-# * When the team member is finished with thir edits to `README_XX.md`, they can go to **GitHub Desktop**, include a **Summary** of the changes, **Commit to main** and then click **Push origin** button.
+# * Decision Tree: $82,290
 # 
 # 
-# * **Team leader** can then go to **GitHub Desktop**, click **Fetch origin** and **Pull origin** to retrieve the changes that the team members made to their local environment. 
-# 
-# 
-# * **Team leader** can then add useful text from `README_XX.md` to the main file (e.g. `README.md`). Once they are finished they can **delete** `README_XX.md`, go to **GitHub Desktop**, include a **Summary** of the changes, click **Commit to main** and then **Push origin** button.
-# 
-# 
-# * **Team members** can then go to **GitHub Desktop**, click **Fetch origin** and **Pull origin** to retrieve the changes that the team leader made. Repeat the steps above to contribute to the project.
+# * RandomForests: $60,264
 # 
 # 
 
-# ----------
-# 
-# ### Some tips for the centralized workflow
-# 
-# * Only the team leader should edit the main files (e.g. `README.md`)
-# 
-# 
-# * Team members should edit their own versions (e.g. `README_XX.md`)
-# 
-# 
-# * **Fetch** and **pull** regularly to avoid conflicts
-# 
-# 
-# ---------
+# In[1]:
 
-# ## Feature branch workflow in GitHub Desktop
-# 
-# If you feel comfortable with `GitHub`, you are welcome to use a more standard branching workflow.
-# 
-# 
-# ### Workflow 
-# 
-# * In GitHub Desktop, **all team members** should create a their own branch by clicking the drop-down menu called **Current branch**, typing a name for their branch (e.g. `xx_branch`), click the big blue **Create new branch** button and **Create branch**
-# 
-# 
-# * All team members should publish `xx_branch` to main repo by clicking the big blue **Publish branch** button
-# 
-# 
-# * All team members can make changes to `README.md`. Once they are finished, go back to **GitHub Desktop**, include a **Summary** of the changes, click **Commit to `xx_branch`** and then **Push origin** button.
-# 
-# 
-# * In GitHub Desktop, click the big blue **Create Pull Request** button which should take you to GitHub.com where you can click **Create pull request**.
-# 
-# 
-# * The **team leader** can then go to `https://github.com/<team-leader-username>/<project-repo-name>`, click **Pull requests** from the top menu, click on the open pull request. If there are no conflicts, the team leader can click **Merge pull request** and **Confirm merge**.
-# 
-# 
-# * The `README.md` should now be updated on the `main` branch. 
-# 
-# 
-# * Once your changes have been incorpotated in the `main` branch it is good practice to clean up your repository by **deleting** the old branch (e.g. `xx_branch`).
-#  
-# 
-# * Before starting new work, **all team members** should first click the **Fetch origin** button to check for new changes. 
-# 
-# 
-# * Repeat the steps above to contribute to the project.
 
-# -------------
-# 
-# ### Some tips for the feature branch workflow
-# 
-# 
-# * Remember to **stay** on your own branch
-# 
-# 
-# * Remember to **fetch** changes before making a new branch and starting work
-# 
-# 
-# * If the changes in your branch conflict with another team member's branch, you can still **Create a pull request**. The **team leader** should click **Resolve conflicts**, decide what to keep and what discard and click **Mark as resolved** and **Commit merge**. The team leader can then click **Merge pull request** and **Confirm merge**
-# 
-# --------
+# Import libraries
+import pandas as pd
+import numpy as np
+import geopandas as gpd
+import matplotlib.pyplot as plt
+from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.metrics import mean_squared_error
 
-# ## Feature branch workflow in command line
-# 
-# It seems like most people in the class are using GitHub Desktop. But if your team would like to use the command line, the steps are basically the same. There are some useful instructions here: https://icesat-2hackweek.github.io/learning-resources/projects/example_workflow/ and https://blog.scottlowe.org/2015/01/27/using-fork-branch-git-workflow/. The instructor and TA would also be happy to help get a workflow started. 
 
-# ###  Some tips for collaborating on group project
-# 
-# Best practice for collaborating on GitHub is to **avoid** situations where two people are independently **working on the same script**. When trying to push/pull changes to/from same origin branch, there will inevitably be **merge conflicts** that can be messy to untangle.
-# 
-# Collaboration is also a little more complicated with `Jupyter Notebooks` since running cells in the notebook will change execution count and output, even if the code and content appear identical. You are welcome to use other programs to write scripts (e.g. `Jupyter Lab`). 
-# 
-# General recommendation - **split up** the project into multiple **smaller scipts**, and have each person work on different components. For example, you could have one script that ingests files, reduces/manipulates the data (e.g., reprojection), then writes new files out to disk in "analysis-ready" format. Then a second notebook reads in those data and does some analysis, creates some plots, etc. If you can pass things back and forth between group members like this, you'll avoid conflicts.
+# In[4]:
 
-# ## Task 1: prepare a README (40 points)
-# 
-# The `README.md` file in your new repo will serve as the landing page for your project. You can continue to update it as your project evolves, but for now, please prepare a basic project outline.  
-# 
-# Review the [markdown cheat sheet](https://www.markdownguide.org/basic-syntax/) and use some basic headings, bulleted/numbered lists, and other formatting to organize your outline. We recommend using a **markdown editor** such as [MacDown](https://macdown.uranusjr.com/) for MacOS or [Ghostwriter](https://wereturtle.github.io/ghostwriter/download.html) for Windows.
-# 
-# Please include the following in `README.md`:
-# 
-# * Project Title
-# * Name(s) of individual or team members
-# * Short 1-2 sentence summary
-# * Problem statement, question(s) and/or objective(s)
-# * Datasets you will use (with links, if available)
-# * Tools/packages you’ll need
-# * Planned methodology/approach
-# * Expected outcomes
-# * Any other relevant information, images/tables, references, etc.
-# * References
-# 
-# That may sound like a lot, but some of these items should only be 1-2 sentences, others can be short lists. Consider this the start of your final report. 
-# 
-# We would like to see at **least one commit** from **each group member** at this phase of the project, even if it is as simple as adding their name to the `README.md` file. 
 
-# ## Task 2: push all changes to GitHub and submit README as a pdf to Canvas (10 points)
-# 
-# The markdown editors should be able to export `.md` files as `.pdf`
+# Import data
+df = pd.read_csv('/home/johnny/Dropbox (University of Oregon)/Teaching/geospatial-data-science/data/lab5/california_house_prices.csv')
 
-# ### Some notes for final projects
+# Read dataset
+coast = gpd.read_file('/home/johnny/Dropbox (University of Oregon)/Teaching/geospatial-data-science/data/lab5/california_coastline.shp')
+
+
+# In[5]:
+
+
+# Convert DataFrame to GeoDataFrame
+gdf = gpd.GeoDataFrame(df, geometry=gpd.points_from_xy(df['longitude'], df['latitude']))
+gdf = gdf.set_crs(4326, allow_override=True)
+
+# Reproject everything to UTM 10N (EPSG:32610)
+gdf_utm = gdf.to_crs('EPSG:32610')
+coast_utm = coast.to_crs('EPSG:32610')
+
+
+# In[6]:
+
+
+# Compute distance to coast
+distance_to_coast = []
+for i in range(gdf_utm.shape[0]):
+    distance_to_coast.append(coast_utm.distance(gdf_utm['geometry'].iloc[i]).min())
+    
+# Add to DataFrame
+gdf_utm['distance_to_coast'] = distance_to_coast
+
+
+# In[7]:
+
+
+# Quickly check that it worked!
+plt.scatter(gdf_utm['longitude'], gdf_utm['latitude'], c=gdf_utm['distance_to_coast'])
+plt.colorbar()
+
+
+# ## Correlation matrix
+# 
+# We will perform another correlation matrix to see if `distance_to_coast` is useful predictor of `median_house_value`.
+
+# In[8]:
+
+
+# Compute correlation matrix
+corr_matrix = gdf_utm.corr()
+
+# Display just house value correlations
+corr_matrix["median_house_value"].sort_values(ascending= False)
+
+
+# It is the second most correlated variable with `median_house_value`, excellent!
+# 
+# There are still some features that could be improved. For example, `total_rooms` and `total_bedrooms` does not mean much because it just depends on the number of house in the block group. A more useful metric would be **rooms per house** or **bedrooms per house**. 
+# 
+# We can add those columns pretty simply
+# 
+
+# In[9]:
+
+
+# Rooms per house
+gdf_utm['rooms_per_house'] = gdf_utm['total_rooms'] / gdf_utm['households']
+
+# Bedrooms per house
+gdf_utm['bedrooms_per_room'] = gdf_utm['total_bedrooms'] / gdf_utm['total_rooms']
+
+
+# In[10]:
+
+
+# Compute correlation matrix
+corr_matrix = gdf_utm.corr()
+
+# Display just house value correlations
+corr_matrix["median_house_value"].sort_values(ascending= False)
+
+
+# The new `bedrooms_per_room` attribute is more correlated with `median_house_value` than the `total_rooms` or `total_bedrooms`. Apparently houses with a lower bedroom/room ratio tend to be more expensive. 
+# 
+# The `rooms_per_house` is surprisingly not that well correlated with `median_house_value`. Location is clearly the most important thing in the California housing market!
+
+# ## Fit a model to data
+
+# In[11]:
+
+
+# Define feature list
+feature_list =  ['median_income', 'distance_to_coast', 'bedrooms_per_room', 
+                 'total_rooms', 'rooms_per_house', 'total_bedrooms', 'households']
+
+# Define features and labels 
+X = gdf_utm[feature_list]
+y = gdf_utm['median_house_value']
+
+# Standarize data
+scaler = StandardScaler()  
+X_scaled = scaler.fit_transform(X)
+
+
+# In[12]:
+
+
+# Split data 
+X_train, X_test, y_train, y_test = train_test_split(X_scaled, y, test_size=0.2, random_state=42)
+
+
+# In[13]:
+
+
+# Define model
+forest_reg = RandomForestRegressor(n_estimators = 30)
+
+# Fit model
+forest_reg.fit(X_train, y_train)
+
+
+# ## Evaluate model
+
+# In[14]:
+
+
+# Predict test labels predictions
+predictions = forest_reg.predict(X_test)
+
+# Compute mean-squared-error
+final_mse = mean_squared_error(y_test , predictions)
+final_rmse = np.sqrt(final_mse)
+final_rmse
+
+
+# So we improved our model by around $4,000. This might not sound like much but could make a big difference to someone and might the difference between winning a [Kaggle](https://www.kaggle.com/) competition or not.
+
+# ## It's competition time!
+
+# In this week's lab we will play a Kaggle-like competition. In these competitions, a host usually prepares a dataset and people from around the world compete against each other to produce the best model. Submitted models are scored based on their predictive accuracy relative to a hidden solution file. 
+# 
+# We will be competing to produce the most accurate model for predicting house prices in Seattle. The dataset can be downloaded from the Dropbox link provided on Slack or Canvas. 
+# 
+# ***********
+# ## Question 1 (10 points): 
+# 
+# To start, make a **new** `jupyter notebook` called `lab5_submission.ipynb` and work through the following tasks. 
+# 
+# The first task is answer the following questions using some of the methods we have covered in the lecture/demo. 
+# 
+# * How many houses are in this dataset?
+# * How many **features** are there for predicting house price? 
+# * Are there any null values in this dataset?
+# * Which three variables are best correlated with house price (include correlation coefficients)?
+# * Which three variables are least correlated with house price (include correlation coefficients)?
 # 
 # 
-# * Start early! 
+# *******
+# 
+# ## Question 2 (30 points):
+# 
+# * Produce a model to predict house prices. You are welcome to generate new features, scale the data, and split the data into training/testing (i.e. `train_test_split`) in any way you like. 
 # 
 # 
-# * Create subdirectories in your repo to store:
-#     * **notebooks** - contains scripts to complete project
-#     * **data** - contains small amount of data such as output of analyses. Just make sure filesizes are <20 MB and total number of files (<20 MB) is limited. Best practice is to store and share data on **Dropbox**. 
-#     * **doc** - for any additional documentation, static images/figures that you want to include in notebooks or markdown files, etc.
+# * Evaluate your model's accuracy by predicting a test dataset, for example:
+# 
+# `predictions = forest_reg.predict(X_test)
+# final_mse = mean_squared_error(y_test, predictions)
+# final_rmse = np.sqrt(final_mse)`
 # 
 # 
-# * Start adding and developing notebooks, code, markdown files, etc.
+# * Push your `lab5_submission.ipynb` to GitHub and submit a `.pdf` version to Canvas 
 # 
 # 
-# * Start with limited test case(s) for initial development and exploration:
-#     * Extract a small region of a large raster
-#     * If you need the entire raster, start with a downsampled version, then when you're happy with methods, run for native resolution
-#     * Start with a single timestep or subset of timesteps for time series analysis
+# 
+# * On **Monday** the instructor and TA will provide an **unseen set of houses** which students will use to repeat their accuracy evaluation. The best models (i.e. lowest RMSE) will win prizes. 
 # 
 # 
-# * Don’t add unnecessary files to your repo (careful with `git add/commit`)
+# * We will evaluate the models using a simple `mean-squared-error` as follows:
+# 
+# `mse = mean_squared_error(y_test , predictions)
+# rmse = np.sqrt(final_mse)`
+# 
+# *********
+# 
+# ## Task 1 (10 points):
+# 
+# Submit a project idea to the `#final-projects` channel on **Slack**. See: https://github.com/JohnnyRyan1/geospatial-data-science/blob/master/labs/lab5/project_ideas_task.md for more details.
 # 
 # 
-# * Commit **early**, commit **often**
+# ## Remember to submit your answers to Questions 1 and 2 and complete Task 1 **by Friday 11:59pm**
+
+# In[ ]:
+
+
+
+
