@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Assignment 1 &#8212; Geospatial Data Science Applications</title>
+    <title>Getting started with Python and GitHub &#8212; Geospatial Data Science Applications</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -50,8 +50,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Vector data analysis" href="../../lectures/week2/lecture-2.html" />
-    <link rel="prev" title="Final projects" href="../../course-info/final-project.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -137,9 +135,9 @@ const thebe_selector_output = ".output, .cell_output"
   Week 1
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="assignment1.html">
    Assignment 1
   </a>
  </li>
@@ -303,9 +301,9 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/labs/week1/assignment1.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/labs/week1/lab1a-demo-old.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
                 onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -323,7 +321,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/owel-lab/gds-applications-site/issues/new?title=Issue%20on%20page%20%2Flabs/week1/assignment1.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/owel-lab/gds-applications-site/issues/new?title=Issue%20on%20page%20%2Flabs/week1/lab1a-demo-old.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -339,6 +337,23 @@ const thebe_selector_output = ".output, .cell_output"
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/owel-lab/gds-applications-site/main?urlpath=tree/book/labs/week1/lab1a-demo-old.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
@@ -350,81 +365,45 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#setup-a-python-project">
-   Setup a Python project
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#task-1-5-points">
-   Task 1 (5 points)
+  <a class="reference internal nav-link" href="#join-the-slack-channel">
+   Join the slack channel
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#install-interactive-development-environment-ide-with-python">
-     Install Interactive Development Environment (IDE) with Python
+    <a class="reference internal nav-link" href="#complete-background-survey">
+     Complete background survey
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#configure-some-settings">
-     Configure some settings
+    <a class="reference internal nav-link" href="#sign-up-for-a-github-account-and-fork-the-course-repository">
+     Sign-up for a GitHub account and fork the course repository
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#create-a-python-script">
-     Create a Python script
+    <a class="reference internal nav-link" href="#install-code-git-code-and-clone-the-course-repository">
+     Install
+     <code>
+      git
+     </code>
+     and clone the course repository
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-anaconda">
+     Install Anaconda
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#make-a-new-environment">
+     Make a new environment
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#view-the-assignments">
+     View the assignments
     </a>
    </li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#task-2-10-points">
-   Task 2 (10 points)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#signup-for-github-account">
-   Signup for GitHub account
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   Task 2 (10 points)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#setup-a-virtual-environment">
-   Setup a virtual environment
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#task-3-10-points">
-   Task 3 (10 points)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#task-4-10-points">
-   Task 4 (10 points)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#write-some-python-code">
-   Write some Python code
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   Task 3 (10 points)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
-   Task 4 (10 points)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#task-5-10-points">
-   Task 5 (10 points)
-  </a>
  </li>
 </ul>
 
@@ -436,7 +415,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Assignment 1</h1>
+                <h1>Getting started with Python and GitHub</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -447,81 +426,45 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#setup-a-python-project">
-   Setup a Python project
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#task-1-5-points">
-   Task 1 (5 points)
+  <a class="reference internal nav-link" href="#join-the-slack-channel">
+   Join the slack channel
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#install-interactive-development-environment-ide-with-python">
-     Install Interactive Development Environment (IDE) with Python
+    <a class="reference internal nav-link" href="#complete-background-survey">
+     Complete background survey
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#configure-some-settings">
-     Configure some settings
+    <a class="reference internal nav-link" href="#sign-up-for-a-github-account-and-fork-the-course-repository">
+     Sign-up for a GitHub account and fork the course repository
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#create-a-python-script">
-     Create a Python script
+    <a class="reference internal nav-link" href="#install-code-git-code-and-clone-the-course-repository">
+     Install
+     <code>
+      git
+     </code>
+     and clone the course repository
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-anaconda">
+     Install Anaconda
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#make-a-new-environment">
+     Make a new environment
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#view-the-assignments">
+     View the assignments
     </a>
    </li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#task-2-10-points">
-   Task 2 (10 points)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#signup-for-github-account">
-   Signup for GitHub account
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   Task 2 (10 points)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#setup-a-virtual-environment">
-   Setup a virtual environment
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#task-3-10-points">
-   Task 3 (10 points)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#task-4-10-points">
-   Task 4 (10 points)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#write-some-python-code">
-   Write some Python code
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   Task 3 (10 points)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
-   Task 4 (10 points)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#task-5-10-points">
-   Task 5 (10 points)
-  </a>
  </li>
 </ul>
 
@@ -532,103 +475,66 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="assignment-1">
-<h1>Assignment 1<a class="headerlink" href="#assignment-1" title="Permalink to this headline">¶</a></h1>
-<div class="admonition-deadline admonition">
-<p class="admonition-title">Deadline</p>
-<p>Please complete this assignment before xxx.</p>
-</div>
-<div class="section" id="setup-a-python-project">
-<h2>Setup a Python project<a class="headerlink" href="#setup-a-python-project" title="Permalink to this headline">¶</a></h2>
-</div>
-<hr class="docutils" />
-<div class="section" id="task-1-5-points">
-<h2>Task 1 (5 points)<a class="headerlink" href="#task-1-5-points" title="Permalink to this headline">¶</a></h2>
-<p>Follow these instructions to setup VSCode with a Python interpeter: <code class="docutils literal notranslate"><span class="pre">https://code.visualstudio.com/docs/python/python-tutorial</span></code></p>
-<div class="section" id="install-interactive-development-environment-ide-with-python">
-<h3>Install Interactive Development Environment (IDE) with Python<a class="headerlink" href="#install-interactive-development-environment-ide-with-python" title="Permalink to this headline">¶</a></h3>
+  <div class="tex2jax_ignore mathjax_ignore section" id="getting-started-with-python-and-github">
+<h1>Getting started with Python and GitHub<a class="headerlink" href="#getting-started-with-python-and-github" title="Permalink to this headline">¶</a></h1>
+<p><strong>Objectives:</strong></p>
 <ul class="simple">
-<li><p>Download and install <strong>VSCode</strong> from <a class="reference external" href="https://code.visualstudio.com/">here</a>.</p></li>
-<li><p>In the <strong>Get Started</strong> panel click <strong>Rich support for all your languages</strong> and <strong>Browse Language Extenstions</strong>.</p></li>
-<li><p>Type <code class="docutils literal notranslate"><span class="pre">Python</span></code> in the textbox and click <strong>Install</strong></p></li>
-<li><p>Download and install <strong>Python interpeter</strong>. Windows users should install from <a class="reference external" href="https://www.python.org/downloads/">here</a>. MacOS and Linux users should follow instructions <a class="reference external" href="https://code.visualstudio.com/docs/python/python-tutorial">here</a>.</p></li>
-<li><p>Restart VSCode.</p></li>
+<li><p>Sign-up for a <strong>GitHub</strong> account</p></li>
+<li><p>Fork the course repository to access the materials</p></li>
+<li><p>Install a <strong>Python</strong> distribution using <strong>Anaconda</strong></p></li>
+<li><p>Make a new Python <strong>environment</strong> using <code>conda</code></p></li>
+<li><p>View the first assignment as a <code>jupyter notebook</code></p></li>
 </ul>
+<div class="section" id="join-the-slack-channel">
+<h2>Join the slack channel<a class="headerlink" href="#join-the-slack-channel" title="Permalink to this headline">¶</a></h2>
+<p>Students should have received an email (via Canvas) for an invite to the course Slack workspace.</p>
+<p>If you’re confused or uncertain about something in the lab, please ask or post a question/comment on the relevant Slack channel for the lab (e.g., #lab01).</p>
+<div class="section" id="complete-background-survey">
+<h3>Complete background survey<a class="headerlink" href="#complete-background-survey" title="Permalink to this headline">¶</a></h3>
+<p>If you haven’t already, please complete the background survey which can be found on the course Canvas page.</p>
 </div>
-<div class="section" id="configure-some-settings">
-<h3>Configure some settings<a class="headerlink" href="#configure-some-settings" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Go <strong>File</strong> –&gt; <strong>Preferences</strong> –&gt; <strong>Settings</strong> and search for <code class="docutils literal notranslate"><span class="pre">Send</span> <span class="pre">Selection</span> <span class="pre">To</span> <span class="pre">Interactive</span> <span class="pre">Window</span></code> in the <strong>Search Bar</strong>. Click the checkbox of <strong>Jupyter: Send Selection To Interactive Window</strong>. After that, you will be able to run highlighted lines directly in the <strong>Interactive Window</strong>.</p></li>
-</ul>
+<div class="section" id="sign-up-for-a-github-account-and-fork-the-course-repository">
+<h3>Sign-up for a GitHub account and fork the course repository<a class="headerlink" href="#sign-up-for-a-github-account-and-fork-the-course-repository" title="Permalink to this headline">¶</a></h3>
+<p>If you already have a GitHub account, you can skip this step. If not, create a new GitHub account using your <code>&#64;uoregon.edu</code> email address <a class="reference external" href="https://github.com/signup?ref_cta=Sign+up&amp;ref_loc=header+logged+out&amp;ref_page=%2F&amp;source=header-home">here</a>. We recommend that you apply for the free “edu” account upgrade (<a class="reference external" href="https://education.github.com/discount_requests/new">https://education.github.com/discount_requests/new</a>) which will allow you to create unlimited number of private repos with unlimited collaborators.</p>
+<p>Once signed in to <a class="reference external" href="http://GitHub.com">GitHub.com</a> browse to <code><a class="reference external" href="https://github.com/JohnnyRyan1/geospatial-data-science">https://github.com/JohnnyRyan1/geospatial-data-science</a></code> and click <strong>Fork</strong> from the upper-right menu. This copies all the course materials to your GitHub account and allows you to upload assignments without affecting the original repository.</p>
 </div>
-<div class="section" id="create-a-python-script">
-<h3>Create a Python script<a class="headerlink" href="#create-a-python-script" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>In <strong>File Explorer</strong>,  make a new folder for the course material (e.g. something like <code class="docutils literal notranslate"><span class="pre">gds</span></code>).</p></li>
-<li><p>In <strong>VSCode</strong>, go <strong>File</strong> –&gt; <strong>Open Folder..</strong> and open the the new folder (click <strong>Yes, I trust the authors</strong> if prompted)</p></li>
-<li><p>Make a new Python file, by clicking the <strong>New File..</strong> button and call it something like <code class="docutils literal notranslate"><span class="pre">assignment1.py</span></code>.</p></li>
-</ul>
+<div class="section" id="install-code-git-code-and-clone-the-course-repository">
+<h3>Install <code>git</code> and clone the course repository<a class="headerlink" href="#install-code-git-code-and-clone-the-course-repository" title="Permalink to this headline">¶</a></h3>
+<p>In this course we will use <code class="docutils literal notranslate"><span class="pre">git</span></code> to upload assignments, share code, and collaborate on class projects. Linux and Mac users can install <code>git</code> as a command line tool following <a class="reference external" href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">these instructions</a>. I recommend that Windows users (and Mac users who prefer a graphical user interface) install <a class="reference external" href="https://desktop.github.com/">GitHub Desktop</a>.</p>
+<p>Once <code>git</code> is installed, we can clone the course repository from the command line by running:</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/&lt;your-username&gt;/geospatial_data_science</span></code></p>
+<p>Where <code class="docutils literal notranslate"><span class="pre">&lt;your-username&gt;</span></code> is your GitHub username. <em>Note that you should navigate to your coursework folder before running this command</em></p>
+<p>In GitHub Desktop, click <strong>Clone a repository from the Internet</strong>, enter <code class="docutils literal notranslate"><span class="pre">https://github.com/&lt;your-username&gt;/geospatial_data_science</span></code> as the <strong>URL</strong>, choose a <strong>local path</strong> where you keep your coursework (e.g. <code class="docutils literal notranslate"><span class="pre">C:\Users\your_name\Documents</span></code>) and click <strong>Clone</strong>.</p>
 </div>
+<div class="section" id="install-anaconda">
+<h3>Install Anaconda<a class="headerlink" href="#install-anaconda" title="Permalink to this headline">¶</a></h3>
+<p>In order to execute Python code in the notebooks, we will need to install a Python distribution with the necessary packages. Ananconda is already installed on the SSIL lab computers but we can also get it on a laptop from this website <a class="reference external" href="https://www.anaconda.com/products/individual">Anaconda Individual Edition</a>.</p>
 </div>
+<div class="section" id="make-a-new-environment">
+<h3>Make a new environment<a class="headerlink" href="#make-a-new-environment" title="Permalink to this headline">¶</a></h3>
+<p>Once Anaconda is installed, we will create an environment which contains all the packages required to run the code in each lab. We will find this environment file (e.g. <code>environment.yml</code>) in each lab folder of the cloned repository.</p>
 <hr class="docutils" />
-<div class="section" id="task-2-10-points">
-<h2>Task 2 (10 points)<a class="headerlink" href="#task-2-10-points" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="signup-for-github-account">
-<h2>Signup for GitHub account<a class="headerlink" href="#signup-for-github-account" title="Permalink to this headline">¶</a></h2>
-<p>If you already have a GitHub account, you can skip this step. If not, create a new GitHub account using your <code class="docutils literal notranslate"><span class="pre">&#64;uoregon.edu</span> <span class="pre">email</span></code> address <a class="reference external" href="https://github.com/">here</a>. We recommend that you apply for the free “edu” account upgrade <a class="reference external" href="https://education.github.com/discount_requests/new">here</a> which will allow you to create unlimited number of private repos with unlimited collaborators.</p>
-<ul class="simple">
-<li><p>Once you have a GitHub account, go the link <a class="reference external" href="https://classroom.github.com/a/7zkGfqJV">here</a> to start the first assignment.</p></li>
-<li><p>Click <strong>Accept the assignment</strong></p></li>
-<li><p>Click <strong>Open in Visual Studio Code</strong> and open the VSCode application.</p></li>
-<li><p>Install and Open the <strong>GitHub Classroom</strong> extension</p></li>
-</ul>
-</div>
+<p>For Linux and Mac users, we can create the environment for <strong>Lab 1</strong> by navigating to the <strong>labs/lab1</strong> folder in the cloned repository using the terminal and running the following:</p>
+<p><code>conda env create -f environment.yml</code></p>
+<p>This will create a new environment called <strong>lab1</strong>. To activate this environment, type:</p>
+<p><code>conda activate lab1</code></p>
+<p>To deactivate this environment, type:</p>
+<p><code>conda deactivate</code></p>
 <hr class="docutils" />
-<div class="section" id="id1">
-<h2>Task 2 (10 points)<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>For Windows users, open <strong>Anaconda Navigator</strong>, launch a <strong>CMD.exe Prompt</strong>, navigate to <strong>labs/lab1</strong> folder in cloned repository, and run the following:</p>
+<p><code>conda env create -f environment.yml</code></p>
+<p>To activate this environment, type:</p>
+<p><code>conda activate lab1</code></p>
+<p>To deactivate this environment, type:</p>
+<p><code>conda deactivate</code></p>
+<p>More information about managing environments can be found here: <a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html</a></p>
 </div>
-<div class="section" id="setup-a-virtual-environment">
-<h2>Setup a virtual environment<a class="headerlink" href="#setup-a-virtual-environment" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li></li>
-</ul>
-</div>
-<hr class="docutils" />
-<div class="section" id="task-3-10-points">
-<h2>Task 3 (10 points)<a class="headerlink" href="#task-3-10-points" title="Permalink to this headline">¶</a></h2>
-<p><strong>GitHub Classroom</strong> stuff… note that need a list of students from Canvas to setup</p>
-</div>
-<hr class="docutils" />
-<div class="section" id="task-4-10-points">
-<h2>Task 4 (10 points)<a class="headerlink" href="#task-4-10-points" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="write-some-python-code">
-<h2>Write some Python code<a class="headerlink" href="#write-some-python-code" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>Write some Python code</p></li>
-</ul>
-</div>
-<hr class="docutils" />
-<div class="section" id="id2">
-<h2>Task 3 (10 points)<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>Write some markdown.</p>
-<p>In the cell below your code, add an image from Google images of somewhere inspiring along with a short caption that includes <strong>bold</strong>, <em>italics</em> and a link to the webpage that displays this image.</p>
-<p>Use the following as a guide: <a class="reference external" href="https://www.markdownguide.org/basic-syntax/">https://www.markdownguide.org/basic-syntax/</a>. Remember the image should be saved in the same folder as your answers notebook.</p>
-</div>
-<hr class="docutils" />
-<div class="section" id="id3">
-<h2>Task 4 (10 points)<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<p>Post a message in the Teams/Github Discussions at <a class="reference external" href="http://xxxx.com">xxxx.com</a> with your name and GitHub username.</p>
-</div>
-<hr class="docutils" />
-<div class="section" id="task-5-10-points">
-<h2>Task 5 (10 points)<a class="headerlink" href="#task-5-10-points" title="Permalink to this headline">¶</a></h2>
-<p>Run the cells one last time to make sure your code has no errors. Upload assignment using <strong>GitHub Classroom</strong>.</p>
-<hr class="docutils" />
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>Save your notebook to your local course folder and submit assignment (in <strong>.ipynb</strong> format) to Canvas by the deadline.</p>
+<div class="section" id="view-the-assignments">
+<h3>View the assignments<a class="headerlink" href="#view-the-assignments" title="Permalink to this headline">¶</a></h3>
+<p>Now that we have the required packages installed (and the lab1 environment activated), the notebooks can be viewed using the <a class="reference external" href="https://jupyter-notebook.readthedocs.io/en/stable/notebook.html">jupyter notebook</a> application. Navigate to the <code>/geospatial-data-science/labs/lab1/</code> and open the first assignment by running:</p>
+<p><code>jupyter notebook 01b_submitting_assignments.ipynb</code></p>
+<p>Windows users should be able to do this from the <strong>CMD.exe Prompt</strong> or by clicking the <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code> icon in <strong>Anaconda Navigator</strong>, navigate to the repository and open the lab1 notebook.</p>
+<p><em>Note that if you browse directly to the notebooks on GitHub, they might not display as intended.</em></p>
 </div>
 </div>
 </div>
@@ -657,21 +563,7 @@ const thebe_selector_output = ".output, .cell_output"
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../../course-info/final-project.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Final projects</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="../../lectures/week2/lecture-2.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Vector data analysis</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
+<div class='prev-next-area'>
 </div>
             
         </div>
