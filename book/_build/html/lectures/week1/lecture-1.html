@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Welcome to Geospatial Data Science &#8212; Geospatial Data Science Applications</title>
+    <title>Lecture 1 &#8212; Geospatial Data Science Applications</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -50,6 +50,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Assignment 1" href="../../labs/week1/assignment1.html" />
+    <link rel="prev" title="Final projects" href="../../course-info/final-project.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -106,17 +108,17 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../../course-info/schedule.html">
-   Schedule (for Winter 2022)
+   Schedule (for Winter 2023)
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../course-info/python-conda.html">
-   Install Python using
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     Conda
-    </span>
-   </code>
+  <a class="reference internal" href="../../course-info/python.html">
+   Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course-info/jupyter.html">
+   Jupyter
   </a>
  </li>
  <li class="toctree-l1">
@@ -135,7 +137,12 @@ const thebe_selector_output = ".output, .cell_output"
   Week 1
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Lecture 1
+  </a>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../../labs/week1/assignment1.html">
    Assignment 1
@@ -301,9 +308,9 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/lectures/week1/lecture-1.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/lectures/week1/lecture-1.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+                data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
                 onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -337,46 +344,11 @@ const thebe_selector_output = ".output, .cell_output"
 
             <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/owel-lab/gds-applications-site/main?urlpath=tree/book/lectures/week1/lecture-1.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
         </div>
 
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lecture-content">
-   Lecture content
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#interactive-development-environment-ide">
-   Interactive Development Environment (IDE)
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -384,59 +356,19 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Welcome to Geospatial Data Science</h1>
+                <h1>Lecture 1</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lecture-content">
-   Lecture content
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#interactive-development-environment-ide">
-   Interactive Development Environment (IDE)
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="welcome-to-geospatial-data-science">
-<h1>Welcome to Geospatial Data Science<a class="headerlink" href="#welcome-to-geospatial-data-science" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="lecture-content">
-<h2>Lecture content<a class="headerlink" href="#lecture-content" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>Schedule and expectations
-<br>
-<br></p></li>
-<li><p>Overview of course
-<br>
-<br></p></li>
-<li><p>Final projects
-<br>
-<br></p></li>
-<li><p>Introduction to this week’s lab</p></li>
-</ul>
-</div>
-<div class="section" id="interactive-development-environment-ide">
-<h2>Interactive Development Environment (IDE)<a class="headerlink" href="#interactive-development-environment-ide" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>We recommend <strong>VSCode</strong>, a lightweight but powerful code editor that is available for Windows, Mac, <strong>and</strong> Linux.</p></li>
-<li><p>Happy for students to use other IDEs (e.g. Spyder, JupyterLab) if already familiar with them.</p></li>
-</ul>
-</div>
+  <div class="tex2jax_ignore mathjax_ignore section" id="lecture-1">
+<h1>Lecture 1<a class="headerlink" href="#lecture-1" title="Permalink to this headline">¶</a></h1>
 </div>
 
     <script type="text/x-thebe-config">
@@ -463,7 +395,21 @@ const thebe_selector_output = ".output, .cell_output"
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../../course-info/final-project.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Final projects</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../../labs/week1/assignment1.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Assignment 1</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             
         </div>

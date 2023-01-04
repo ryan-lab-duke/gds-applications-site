@@ -1,43 +1,24 @@
 # Assignment 1
 
 ```{admonition} Deadline
-Please complete this assignment before xxx.
+Please complete this assignment by Jan 20 11:59pm.
 ```
 
 ## Setup a Python project 
 
 *****************************
 
-## Task 1 (5 points)
+## Task 1 (10 points)
 
-Follow these instructions to setup VSCode with a Python interpeter: `https://code.visualstudio.com/docs/python/python-tutorial`
+Follow these instructions [here](../course-info/python-conda.md) to install the Python course environment we will use in this class. 
 
-### Install Interactive Development Environment (IDE) with Python
+### Create a new Jupyter Notebook
 
-* Download and install **VSCode** from [here](https://code.visualstudio.com/).
+* Make a new Jupyter Notebook, by clicking the **New File..** button and call it something like `assignment1.ipynb`.
 
-* In the **Get Started** panel click **Rich support for all your languages** and **Browse Language Extenstions**.
+### Write some Python code
 
-* Type `Python` in the textbox and click **Install**
-
-* Download and install **Python interpeter**. Windows users should install from [here](https://www.python.org/downloads/). MacOS and Linux users should follow instructions [here](https://code.visualstudio.com/docs/python/python-tutorial).
-
-* Restart VSCode.
-
-### Configure some settings
-
-* Go **File** --> **Preferences** --> **Settings** and search for `Send Selection To Interactive Window` in the **Search Bar**. Click the checkbox of **Jupyter: Send Selection To Interactive Window**. After that, you will be able to run highlighted lines directly in the **Interactive Window**.
-
-### Create a Python script
-
-* In **File Explorer**,  make a new folder for the course material (e.g. something like `gds`).
-
-* In **VSCode**, go **File** --> **Open Folder..** and open the the new folder (click **Yes, I trust the authors** if prompted)
-
-* Make a new Python file, by clicking the **New File..** button and call it something like `assignment1.py`.
-
-
-
+* Write some Python code
 
 
 *****************************
@@ -51,10 +32,6 @@ If you already have a GitHub account, you can skip this step. If not, create a n
 * Once you have a GitHub account, go the link [here](https://classroom.github.com/a/7zkGfqJV) to start the first assignment.
 
 * Click **Accept the assignment**
-
-* Click **Open in Visual Studio Code** and open the VSCode application.
-
-* Install and Open the **GitHub Classroom** extension
 
 
 *****************************

@@ -108,43 +108,22 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../../course-info/schedule.html">
-   Schedule (for Winter 2022)
+   Schedule (for Winter 2023)
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../course-info/python-conda.html">
-   Install Python using
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     Conda
-    </span>
-   </code>
+  <a class="reference internal" href="../../course-info/python.html">
+   Python
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../course-info/python-venv.html">
-   Install Python using
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     venv
-    </span>
-   </code>
-   and
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     pip
-    </span>
-   </code>
+  <a class="reference internal" href="../../course-info/jupyter.html">
+   Jupyter
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../../course-info/github.html">
    GitHub
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../course-info/slack.html">
-   Slack
   </a>
  </li>
  <li class="toctree-l1">
@@ -160,13 +139,8 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../week1/lab1a-demo.html">
-   Getting started with Python and GitHub
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week1/lab1b-demo.html">
-   Instructions for submitting assignments
+  <a class="reference internal" href="../week1/lecture-1.html">
+   Lecture 1
   </a>
  </li>
  <li class="toctree-l1">
@@ -234,12 +208,12 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../week5/lecture-5.html">
-   Machine learning lecture
+   Project setup
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../labs/week5/lab5-demo.html">
-   Machine learning
+  <a class="reference internal" href="../../labs/week5/assignment5.html">
+   Assignment 5
   </a>
  </li>
  <li class="toctree-l1">
@@ -675,6 +649,8 @@ How can I optimize a vehicle delivery fleet?</p>
 <span class="kn">import</span> <span class="nn">osmnx</span> <span class="k">as</span> <span class="nn">ox</span>
 <span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;USE_PYGEOS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;0&#39;</span>
 <span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">Point</span><span class="p">,</span> <span class="n">LineString</span><span class="p">,</span> <span class="n">Polygon</span><span class="p">,</span> <span class="n">MultiPolygon</span><span class="p">,</span> <span class="n">MultiLineString</span>
 <span class="kn">from</span> <span class="nn">descartes</span> <span class="kn">import</span> <span class="n">PolygonPatch</span>
 
@@ -695,16 +671,6 @@ How can I optimize a vehicle delivery fleet?</p>
 
 <span class="c1"># Download building geometries from OSM</span>
 <span class="n">gdf</span> <span class="o">=</span> <span class="n">ox</span><span class="o">.</span><span class="n">geometries_from_place</span><span class="p">(</span><span class="s1">&#39;Eugene, Oregon, USA&#39;</span><span class="p">,</span> <span class="n">tags</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/johnny/anaconda3/envs/gds/lib/python3.8/site-packages/osmnx/geocoder.py:110: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
-  gdf = gdf.append(_geocode_query_to_gdf(q, wr, by_osmid))
-/home/johnny/anaconda3/envs/gds/lib/python3.8/site-packages/osmnx/geometries.py:805: ShapelyDeprecationWarning: __len__ for multi-part geometries is deprecated and will be removed in Shapely 2.0. Check the length of the `geoms` property instead to get the  number of parts of a multi-part geometry.
-  for merged_outer_linestring in list(merged_outer_linestrings):
-/home/johnny/anaconda3/envs/gds/lib/python3.8/site-packages/osmnx/geometries.py:805: ShapelyDeprecationWarning: Iteration over multi-part geometries is deprecated and will be removed in Shapely 2.0. Use the `geoms` property to access the constituent parts of a multi-part geometry.
-  for merged_outer_linestring in list(merged_outer_linestrings):
 </pre></div>
 </div>
 </div>

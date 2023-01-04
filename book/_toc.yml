@@ -8,14 +8,14 @@ parts:
     chapters:
     - file: course-info/general-info.md
     - file: course-info/schedule.md
-    - file: course-info/python-conda.md
+    - file: course-info/python.md
+    - file: course-info/jupyter.md
     - file: course-info/github.md
     - file: course-info/final-project.md
 
   - caption: Week 1
     chapters:
-    - file: lectures/week1/lab1a-demo.ipynb
-    - file: lectures/week1/lab1b-demo.ipynb
+    - file: lectures/week1/lecture-1.md
     - file: labs/week1/assignment1.md
 
   - caption: Week 2

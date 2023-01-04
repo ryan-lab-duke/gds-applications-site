@@ -1,14 +1,14 @@
-# Schedule (for Winter 2022)
+# Schedule (for Winter 2023)
 
-| **Week**    |  **Date**  | **Lecture x 1 hour**  | **Lab x 2 hours**                      | **Project**                    |
-| ----------- |------------|-----------------------|----------------------------------------|--------------------------------|
-| 1           | Jan 3      | [Introduction](https://github.com/JohnnyRyan1/geospatial-data-science/blob/master/lectures/lecture1/01-introduction.pdf)          | [Getting started with Python and GitHub](https://nbviewer.org/github/JohnnyRyan1/geospatial-data-science/blob/master/labs/lab1/01a_getting_started.ipynb) |                                | 
-| 2           | Jan 10     | [Vector data](https://github.com/JohnnyRyan1/geospatial-data-science/blob/master/lectures/lecture2/02-vector-data.pdf)           | [Wildfire and Census data](https://nbviewer.org/github/JohnnyRyan1/geospatial-data-science/blob/master/labs/lab2/02_wildfires_in_lane_county.ipynb)               |                                | 
-| 3           | Jan 17     | No class (holiday)          | [Walking distances](https://nbviewer.org/github/JohnnyRyan1/geospatial-data-science/blob/master/labs/lab3/03_walking_distances.ipynb)                      |                                |
-| 4           | Jan 24     | [Gridded data](https://nbviewer.org/format/slides/github/JohnnyRyan1/geospatial-data-science/blob/master/lectures/lecture4/lecture-4.ipynb)          | [Remote sensing and climate reanalysis](https://nbviewer.org/github/JohnnyRyan1/geospatial-data-science/blob/master/labs/lab4/lab4_demo.ipynb)  |                                | 
-| 5           | Jan 31     | [Machine learning](https://nbviewer.org/format/slides/github/JohnnyRyan1/geospatial-data-science/blob/master/lectures/lecture5/lecture-5.ipynb)      | [House price prediction](https://nbviewer.org/github/JohnnyRyan1/geospatial-data-science/blob/master/labs/lab5/lab5_demo.ipynb)        | [Submit project ideas](https://github.com/JohnnyRyan1/geospatial-data-science/blob/master/labs/lab5/project_ideas_task.md)   |
-| 6           | Feb 7      | [Code management](https://nbviewer.org/format/slides/github/JohnnyRyan1/geospatial-data-science/blob/master/lectures/lecture6/lecture-6.ipynb)  | [Collaborating on GitHub](https://nbviewer.org/github/JohnnyRyan1/geospatial-data-science/blob/master/labs/lab6/lab6_demo.ipynb)          | [Initialize project](https://nbviewer.org/github/JohnnyRyan1/geospatial-data-science/blob/master/labs/lab6/lab6_demo.ipynb)             |
-| 7           | Feb 14     | [Data access](https://nbviewer.org/format/slides/github/JohnnyRyan1/geospatial-data-science/blob/master/lectures/lecture7/lecture-7.ipynb)           | [Mountains and ski resorts](https://nbviewer.org/github/JohnnyRyan1/geospatial-data-science/blob/master/labs/lab7/lab7_demo.ipynb)                          |                                |
-| 8           | Feb 21     | [Visualization](https://nbviewer.org/format/slides/github/JohnnyRyan1/geospatial-data-science/blob/master/lectures/lecture8/lecture-8.ipynb)         | Project work                | Project check-in               |
-| 9           | Feb 28     | Discussion                | Project work                     |                                |
-| 10          | Mar 7      | Project presentations     | Project presentations              | Submit project write-up        |
+| **Week**    |  **Date**  | **Lecture x 1 hour**  | **Lab x 2 hours**                  | **Project**                                  |
+| ----------- |------------|-----------------------|------------------------------------|----------------------------------------------|
+| 1           | Jan 9      | [Introduction](../lectures/week1/lecture-1.md)             | [Assignment 1](../labs/week1/assignment1.md) |                                | 
+| 2           | Jan 16     | [Vector data analysis](../lectures/week2/lecture-2.ipynb)  | [Assignment 2](../labs/week2/assignment2.md) |                                | 
+| 3           | Jan 23     | [Network data analysis](../lectures/week3/lecture-3.ipynb) | [Assignment 3](../labs/week3/assignment3.md) |                                |
+| 4           | Jan 30     | [Gridded data analysis](../lectures/week4/lecture-4.ipynb) | [Assignment 4](../labs/week4/assignment4.md) |                                | 
+| 5           | Feb 6      | [Machine learning](../lectures/week5/lecture-5.ipynb)      | [Assignment 5](../labs/week5/assignment5.md) | [Submit project ideas](../labs/week5/project-ideas.md)   |
+| 6           | Feb 13     | [Code management](../lectures/week6/lecture-6.ipynb)       | [Assignment 6](../labs/week6/assignment6.md) | [Initialize project](../labs/week6/lab6-demo.ipynb)      |
+| 7           | Feb 20     | [Data access](../lectures/week7/lecture-7.ipynb)           | [Assignment 7](../labs/week6/assignment7.md) |                                |
+| 8           | Feb 27     | [Visualization](../lectures/week8/lecture-8.ipynb)         | Project work                                 | Project check-in               |
+| 9           | Mar 6      | Discussion                                                 | Project work                                 |                                |
+| 10          | Mar 13     | Project presentations                                      |                                              | Submit project write-up        |

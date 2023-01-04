@@ -85,7 +85,7 @@
 # 
 # Just remember that while we will be using network analysis on transport infrastructure, these principles apply to many other types of relational data such as international trade, character dialogue in films, or social media.
 
-# In[6]:
+# In[3]:
 
 
 import numpy as np
@@ -94,6 +94,8 @@ import geopandas as gpd
 import osmnx as ox
 import networkx as nx
 
+import os
+os.environ['USE_PYGEOS'] = '0'
 from shapely.geometry import Point, LineString, Polygon, MultiPolygon, MultiLineString
 from descartes import PolygonPatch
 
@@ -105,7 +107,7 @@ import folium
 # 
 # First we will retrieve all features labeled (or tagged) as **buildings** in Eugene from OSM. Don't worry if you're not familiar with OSM or `OSMnx`, we will cover this topic next week in our data access lecture. 
 
-# In[8]:
+# In[4]:
 
 
 # Specify type of data
@@ -117,7 +119,7 @@ gdf = ox.geometries_from_place('Eugene, Oregon, USA', tags)
 
 # This produces a large `GeoDataFrame` containing over 56,000 buildings. 
 
-# In[9]:
+# In[5]:
 
 
 print(gdf.shape)
