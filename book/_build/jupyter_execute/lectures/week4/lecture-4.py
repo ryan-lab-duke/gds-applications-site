@@ -6,7 +6,7 @@
 # * Quick review of raster data 
 # <br>
 # <br>
-# * Introduce `rasterio` and `xarray` libararies
+# * Introduce `rasterio` and `xarray` libraries
 # <br>
 # <br>
 # * Learn how to read, inspect, manipulate, and write climate data

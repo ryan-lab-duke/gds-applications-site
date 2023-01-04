@@ -361,9 +361,3 @@ grouped.nlargest(n=10, columns='name')
 grouped = join.groupby('county')['dist_from_eugene'].mean().reset_index()
 grouped.nlargest(n=10, columns='dist_from_eugene')
 
-
-# In[ ]:
-
-
-
-

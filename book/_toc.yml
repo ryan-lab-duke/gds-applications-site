@@ -9,9 +9,7 @@ parts:
     - file: course-info/general-info.md
     - file: course-info/schedule.md
     - file: course-info/python-conda.md
-    - file: course-info/python-venv.md
     - file: course-info/github.md
-    - file: course-info/slack.md
     - file: course-info/final-project.md
 
   - caption: Week 1
@@ -38,7 +36,7 @@ parts:
   - caption: Week 5
     chapters:
     - file: lectures/week5/lecture-5.ipynb
-    - file: labs/week5/lab5-demo.ipynb
+    - file: labs/week5/assignment5.md
     - file: labs/week5/project-ideas.md
 
   - caption: Week 6
