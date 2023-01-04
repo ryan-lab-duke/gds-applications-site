@@ -9,7 +9,6 @@ parts:
     - file: course-info/general-info.md
     - file: course-info/schedule.md
     - file: course-info/python.md
-    - file: course-info/jupyter.md
     - file: course-info/github.md
     - file: course-info/final-project.md
 

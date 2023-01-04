@@ -57,15 +57,23 @@ This may take a few minutes.
 
 ## Coding time!
 
+```{image} images/jupyter.png
+:alt: notebook
+:width: 300px
+:align: center
+```
+
 Once we have setup our virtual environment that contains the packages we need for this course, we can start coding. In this class, we will write code and complete assignments using Jupyter Notebooks which can be opened by running:
 
-`jupyter notebook`
+```
+jupyter notebook
+```
 
 Navigate to your course folder and open a new notebook by clicking `New` &rarr; `Python 3 (ipykernel)`. 
 
 ```{image} images/new-notebook.png
 :alt: notebook
-:width: 200px
+:width: 400px
 :align: center
 ```
 
@@ -79,7 +87,7 @@ If this runs without errors we are all set to code!
 
 ## Deactivate environment
 
-When we are finished with coursework, it is good practice to deactivate the virtual environment in the **Anaconda Prompt (Windows)** or **Terminal (Mac)** by running:
+When we are finished with coursework, it is good practice to deactivate the virtual environment in the **Anaconda Prompt (miniconda3)** (Windows) or **Terminal** (macOS) by running:
 
 ```
 deactivate

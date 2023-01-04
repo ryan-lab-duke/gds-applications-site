@@ -4,85 +4,54 @@
 Please complete this assignment by Jan 20 11:59pm.
 ```
 
-## Setup a Python project 
+Follow the instructions [here](../course-info/python.md) to install the Python programming environment that we will use in this class. 
 
 *****************************
 
 ## Task 1 (10 points)
 
-Follow these instructions [here](../course-info/python-conda.md) to install the Python course environment we will use in this class. 
-
 ### Create a new Jupyter Notebook
 
-* Make a new Jupyter Notebook, by clicking the **New File..** button and call it something like `assignment1.ipynb`.
+* Make a new Jupyter Notebook.
 
 ### Write some Python code
 
-* Write some Python code
+* Import the `numpy` package
 
-
-*****************************
-
-## Task 2 (10 points)
-
-## Signup for GitHub account
-
-If you already have a GitHub account, you can skip this step. If not, create a new GitHub account using your `@uoregon.edu email` address [here](https://github.com/). We recommend that you apply for the free "edu" account upgrade [here](https://education.github.com/discount_requests/new) which will allow you to create unlimited number of private repos with unlimited collaborators.
-
-* Once you have a GitHub account, go the link [here](https://classroom.github.com/a/7zkGfqJV) to start the first assignment.
-
-* Click **Accept the assignment**
-
+* Add, subtract, and multiply two numbers using the `numpy` package 
 
 *****************************
 
 ## Task 2 (10 points)
 
-## Setup a virtual environment
+### Write some markdown.
 
-* 
+* In the cell below your code, add an image from Google images of somewhere inspiring along with a short caption that includes **bold**, *italics* and a link to the webpage that displays this image.
 
+The following [guide](https://www.markdownguide.org/basic-syntax/) contains examples of markdown syntax. 
 
-*****************************
+```{tip}
+The image should be saved in the same folder as your answers notebook.
+```
 
-## Task 3 (10 points)
-
-**GitHub Classroom** stuff... note that need a list of students from Canvas to setup
-
-*****************************
-
-## Task 4 (10 points)
-
-## Write some Python code
-
-* Write some Python code
-
+* Add the title of the assignment as a **Heading level 1**, your name as **Heading level 2**, and the date as **Heading level 3** to your notebook.
 
 *****************************
 
-## Task 3 (10 points)
+## Task 3 (5 points)
 
-Write some markdown.
+* Sign-up for a GitHub account and install `git` or `GitHub Desktop` by following instructions [here](../course-info/github.md)
 
-In the cell below your code, add an image from Google images of somewhere inspiring along with a short caption that includes **bold**, *italics* and a link to the webpage that displays this image. 
-
-Use the following as a guide: https://www.markdownguide.org/basic-syntax/. Remember the image should be saved in the same folder as your answers notebook.
+* Add your GitHub username to your notebook (e.g. next to your real name).
 
 *****************************
 
-## Task 4 (10 points)
+## Task 4 (5 points)
 
-Post a message in the Teams/Github Discussions at xxxx.com with your name and GitHub username.
+* Save notebook as PDF and submit via Canvas by the deadline.
 
-*****************************
-
-## Task 5 (10 points) 
-
-Run the cells one last time to make sure your code has no errors. Upload assignment using **GitHub Classroom**.
-
-
-*****************************
-
+This can is a little tricky. We recommend using `ctrl + p` (or `command + p`) &rarr; **Save as PDF**. If you'd like to get the **File** &rarr; **Download as** &rarr; **PDF via LaTeX** (or **PDF via HTML**) working, you will need to install some other packages.
 
 ```{important}
-Save your notebook to your local course folder and submit assignment (in **.ipynb** format) to Canvas by the deadline.
+Save your notebooks locally as both `ipynb` and `.pdf` formats but only submit the pdf to Canvas.
+```

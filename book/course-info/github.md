@@ -1,10 +1,10 @@
 # GitHub
 
-In this course we will use GitHub and GitHub Classrooms to complete assignments, share code, and collaborate on class projects. 
+In this course we will use GitHub to share code and collaborate on the final class project. 
 
 ## Sign-up for an account
 
-If you already have a GitHub account, you can skip this step. If not, create a new GitHub account using your `@uoregon.edu` email address [here](https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home). We recommend that you apply for the free "edu" account upgrade (https://education.github.com/discount_requests/new) which will allow you to create unlimited number of private repos with unlimited collaborators.
+If you already have a GitHub account, you can skip this step. If not, create a new GitHub account using your `@uoregon.edu email` address [here](https://github.com/). We recommend that you apply for the free "edu" account upgrade [here](https://education.github.com/discount_requests/new) which will allow you to create unlimited number of private repos with unlimited collaborators.
 
 ## Install `git`
 
