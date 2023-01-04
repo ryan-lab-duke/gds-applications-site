@@ -2,17 +2,17 @@
 
 **Instructor**: [Johnny Ryan](https://www.johnny-ryan.com/)
 
-**Office hours**: TBD
+**Office hours**: Monday 15:00-16:00 and Friday 09:00-10:00
 
-**GE**: [Insang Song](https://sigmafelix.wixsite.com/mysite/)
+**GE**: [Max Shapovalov](https://cas.uoregon.edu/directory/profiles/all/maxims)
 
-**Office hours**: Tuesday 10:00-12:00
+**Office hours**: Thursday 16:00-17:00
 
 ## Weekly schedule
 
-**Lectures**: Mondays 14:00-14:50
+**Lecture**: Monday 14:00-14:50
 
-**Labs**: Wednesdays 14:00-16:00 or Fridays 10:00-12:00
+**Labs**: Friday 10:00-11:50 or 12:00-13:50
 
 ## Grading
 
@@ -27,16 +27,13 @@ Please let the instructors know before the deadline if you anticipate a late sub
     
 * **Participation (10%)**: Half graded by GE and half by the Professor. Credit can be earned through attendance, participation in class discussion, visiting Professor and GE during office hours, and helping other students in labs. 
 
-## Course website
+## Materials
 
-* All lecture slides, assignments, and guides are available on this website ([https://owel-lab.github.io/gds-applications-site/](https://owel-lab.github.io/gds-applications-site/)).
+* **Class website**: all lecture slides, assignments, and guides are available on [this website](https://owel-lab.github.io/gds-applications-site/).
 
 
 * **Dropbox**: the data for the labs are available on Dropbox. Please see **Canvas** for link.
 
 
 * **Canvas**: the lecture slides and assignments will also be available on Canvas.
-
-
-* **Slack**: We will use [Slack](../course-info/slack.md) for most communication and discussion. Please join the course workspace with your **UO email address** (see Canvas for link). 
 

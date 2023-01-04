@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>General information &#8212; Geospatial Data Science Applications</title>
+    <title>Python &#8212; Geospatial Data Science Applications</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -50,8 +50,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Schedule (for Winter 2023)" href="schedule.html" />
-    <link rel="prev" title="Welcome to Geospatial Data Science 2023!" href="../intro.html" />
+    <link rel="next" title="Jupyter" href="jupyter.html" />
+    <link rel="prev" title="Schedule (for Winter 2023)" href="schedule.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -101,8 +101,8 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="general-info.html">
    General information
   </a>
  </li>
@@ -111,8 +111,8 @@ const thebe_selector_output = ".output, .cell_output"
    Schedule (for Winter 2023)
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="python.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Python
   </a>
  </li>
@@ -308,7 +308,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/course-info/general-info.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/course-info/python.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -328,7 +328,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/owel-lab/gds-applications-site/issues/new?title=Issue%20on%20page%20%2Fcourse-info/general-info.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/owel-lab/gds-applications-site/issues/new?title=Issue%20on%20page%20%2Fcourse-info/python.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -355,18 +355,33 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#weekly-schedule">
-   Weekly schedule
+  <a class="reference internal nav-link" href="#install-miniconda">
+   Install Miniconda
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#grading">
-   Grading
+  <a class="reference internal nav-link" href="#test-installation">
+   Test installation
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#materials">
-   Materials
+  <a class="reference internal nav-link" href="#setup-virtual-environment">
+   Setup virtual environment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#install-requirements">
+   Install requirements
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#coding-time">
+   Coding time!
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deactivate-environment">
+   Deactivate environment
   </a>
  </li>
 </ul>
@@ -379,7 +394,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>General information</h1>
+                <h1>Python</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -390,18 +405,33 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#weekly-schedule">
-   Weekly schedule
+  <a class="reference internal nav-link" href="#install-miniconda">
+   Install Miniconda
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#grading">
-   Grading
+  <a class="reference internal nav-link" href="#test-installation">
+   Test installation
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#materials">
-   Materials
+  <a class="reference internal nav-link" href="#setup-virtual-environment">
+   Setup virtual environment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#install-requirements">
+   Install requirements
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#coding-time">
+   Coding time!
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deactivate-environment">
+   Deactivate environment
   </a>
  </li>
 </ul>
@@ -413,38 +443,73 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="general-information">
-<h1>General information<a class="headerlink" href="#general-information" title="Permalink to this headline">¶</a></h1>
-<p><strong>Instructor</strong>: <a class="reference external" href="https://www.johnny-ryan.com/">Johnny Ryan</a></p>
-<p><strong>Office hours</strong>: Monday 15:00-16:00 and Friday 09:00-10:00</p>
-<p><strong>GE</strong>: <a class="reference external" href="https://cas.uoregon.edu/directory/profiles/all/maxims">Max Shapovalov</a></p>
-<p><strong>Office hours</strong>: Thursday 16:00-17:00</p>
-<div class="section" id="weekly-schedule">
-<h2>Weekly schedule<a class="headerlink" href="#weekly-schedule" title="Permalink to this headline">¶</a></h2>
-<p><strong>Lecture</strong>: Monday 14:00-14:50</p>
-<p><strong>Labs</strong>: Friday 10:00-11:50 or 12:00-13:50</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="python">
+<h1>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h1>
+<p>Python packaging has never been pretty and it is probably one of the biggest barriers to entry.</p>
+<p>In order to execute Python code for completing assignments, we will need to install a Python distribution with the necessary packages. One option is to use <code class="docutils literal notranslate"><span class="pre">conda</span></code>, a cross-platform, open-source package management system which can be installed using <strong>Miniconda</strong> (a lightweight version of <a class="reference external" href="https://www.anaconda.com/products/individual">Anaconda</a>).</p>
+<div class="section" id="install-miniconda">
+<h2>Install Miniconda<a class="headerlink" href="#install-miniconda" title="Permalink to this headline">¶</a></h2>
+<p>The latest version of Miniconda for your operating system can be installed from the <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html#latest-miniconda-installer-links">dowload page</a>.</p>
 </div>
-<div class="section" id="grading">
-<h2>Grading<a class="headerlink" href="#grading" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p><strong>Lab assignments (45%)</strong>: Turn in assignments on Canvas and GitHub (see instructions in Lab #1). Lab assignments are due by the end of the week (i.e. Friday 11:59 pm). Late assignments will be penalized 5% per day late. Assignments will not be accepted after seven days past the submission deadline.</p></li>
-</ul>
+<div class="section" id="test-installation">
+<h2>Test installation<a class="headerlink" href="#test-installation" title="Permalink to this headline">¶</a></h2>
+<p>After installation is complete, we can test that the package manager <code class="docutils literal notranslate"><span class="pre">conda</span></code> works by opening an <strong>Anaconda Prompt (miniconda3)</strong> (Windows) or <strong>Terminal</strong> (macOS).</p>
+<p>In the command prompt (or Terminal) run the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+<p>If the command returns a version number of conda (e.g. <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">22.11.1</span></code>) everything is working correctly.</p>
+</div>
+<div class="section" id="setup-virtual-environment">
+<h2>Setup virtual environment<a class="headerlink" href="#setup-virtual-environment" title="Permalink to this headline">¶</a></h2>
+<p>It is good practice to create a <strong>virtual environment</strong> for each new programming project (e.g. this class). A virtual environment allows us to install Python packages for one project without worrying about conflicts with packages of other projects. Python has built-in support for virtual environments using the <code class="docutils literal notranslate"><span class="pre">venv</span></code> module. To create a new environment by running the following command in an <strong>Anaconda Prompt (miniconda3)</strong> (Windows) or <strong>Terminal</strong> (macOS):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="o">.</span><span class="n">gds</span>
+</pre></div>
+</div>
+<p>That creates an environment called <code class="docutils literal notranslate"><span class="pre">.gds</span></code> which stands for <em>Geospatial Data Science</em>. All Python packages (or dependencies) for this course will be installed in this folder. Note that we could name this environment anything we like.</p>
+<p>Next we need to <strong>activate</strong> the virtual environment. In Windows this can be achieved by running:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span><span class="n">gds</span>\<span class="n">Scripts</span>\<span class="n">activate</span>
+</pre></div>
+</div>
+<p>On macOS, run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">.</span> <span class="n">gds</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-requirements">
+<h2>Install requirements<a class="headerlink" href="#install-requirements" title="Permalink to this headline">¶</a></h2>
+<p>We can install individual Python packages using <a class="reference external" href="https://pip.pypa.io/en/stable/"><code class="docutils literal notranslate"><span class="pre">pip</span></code></a>. The syntax is <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">xxx</span></code> where <code class="docutils literal notranslate"><span class="pre">xxx</span></code> is the package we want to install. It’s often easier to install multiple packages at once using a text file, so that anyone else setting up the project will have exactly the same environment. The <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file for this course can be downloaded from <a class="reference external" href="https://www.dropbox.com/s/uvwo4ppvb8ldn0f/requirements.txt?dl=0">here</a>.</p>
+<p>We can install <code class="docutils literal notranslate"><span class="pre">requirements.txt</span> </code> by opening an <strong>Anaconda Prompt (miniconda3)</strong> (Windows) or <strong>Terminal</strong> (macOS), navigating to the file (i.e. <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">Downloads</span></code>) and running the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span> 
+</pre></div>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Please let the instructors know before the deadline if you anticipate a late submission - we may be able to provide an extension.</p>
+<p>This may take a few minutes.</p>
 </div>
-<ul class="simple">
-<li><p><strong>Final project (45%)</strong>: An essential component of this course is the <a class="reference internal" href="final-project.html"><span class="doc std std-doc">final project</span></a> which provides an opportunity to explore a particular topic of interest using some of the skills developed in this course. Students will present project during the week starting March 7 and submit a write up by March 11 11:59 pm.</p></li>
-<li><p><strong>Participation (10%)</strong>: Half graded by GE and half by the Professor. Credit can be earned through attendance, participation in class discussion, visiting Professor and GE during office hours, and helping other students in labs.</p></li>
-</ul>
 </div>
-<div class="section" id="materials">
-<h2>Materials<a class="headerlink" href="#materials" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p><strong>Class website</strong>: all lecture slides, assignments, and guides are available on <a class="reference external" href="https://owel-lab.github.io/gds-applications-site/">this website</a>.</p></li>
-<li><p><strong>Dropbox</strong>: the data for the labs are available on Dropbox. Please see <strong>Canvas</strong> for link.</p></li>
-<li><p><strong>Canvas</strong>: the lecture slides and assignments will also be available on Canvas.</p></li>
-</ul>
+<div class="section" id="coding-time">
+<h2>Coding time!<a class="headerlink" href="#coding-time" title="Permalink to this headline">¶</a></h2>
+<p>Once we have setup our virtual environment that contains the packages we need for this course, we can start coding. In this class, we will write code and complete assignments using Jupyter Notebooks which can be opened by running:</p>
+<p><code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code></p>
+<p>Navigate to your course folder and open a new notebook by clicking <code class="docutils literal notranslate"><span class="pre">New</span></code> → <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">3</span> <span class="pre">(ipykernel)</span></code>.</p>
+<a class="reference internal image-reference" href="../_images/new-notebook.png"><img alt="notebook" class="align-center" src="../_images/new-notebook.png" style="width: 200px;" /></a>
+<p>We can make sure everything installed properly by running:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+<p>If this runs without errors we are all set to code!</p>
+</div>
+<div class="section" id="deactivate-environment">
+<h2>Deactivate environment<a class="headerlink" href="#deactivate-environment" title="Permalink to this headline">¶</a></h2>
+<p>When we are finished with coursework, it is good practice to deactivate the virtual environment in the <strong>Anaconda Prompt (Windows)</strong> or <strong>Terminal (Mac)</strong> by running:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">deactivate</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is possible to complete this course without installing anything on your own computer. Look for the <img alt="" src="https://mybinder.org/badge_logo.svg" /> button on the notebooks to run the code interactively in a browser.</p>
+</div>
 </div>
 </div>
 
@@ -473,17 +538,17 @@ const thebe_selector_output = ".output, .cell_output"
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../intro.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="schedule.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Welcome to Geospatial Data Science 2023!</p>
+            <p class="prev-next-title">Schedule (for Winter 2023)</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="schedule.html" title="next page">
+    <a class='right-next' id="next-link" href="jupyter.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Schedule (for Winter 2023)</p>
+        <p class="prev-next-title">Jupyter</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
