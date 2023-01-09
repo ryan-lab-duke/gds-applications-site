@@ -4,6 +4,8 @@
 Please complete this assignment by Jan 20 11:59pm.
 ```
 
+## Task 0 (0 points)
+
 Follow the instructions [here](https://owel-lab.github.io/gds-applications-site/course-info/python.html) to install the Python programming environment that we will use in this class. 
 
 *****************************
@@ -18,7 +20,7 @@ Follow the instructions [here](https://owel-lab.github.io/gds-applications-site/
 
 * Import the `numpy` package
 
-* Add, subtract, and multiply two numbers using the `numpy` package 
+* Add, subtract, and multiply two numbers using the `numpy` package in three different code cells.
 
 *****************************
 
