@@ -119,7 +119,7 @@
 # 
 # ### Labs
 # 
-# * Friday @ 10am or noon in MCK 442
+# * Thursday @ 10am or Friday @ noon in MCK 445
 # 
 #     * Seven labs
 #     
@@ -157,7 +157,7 @@
 
 # ## Final project schedule
 # 
-# * **Week 5**: Discuss project ideas with peers and instructors, submit a short summary of a project idea on the #final-projects Slack channel
+# * **Week 5**: Discuss project ideas with peers and instructors, submit a short summary of a project idea via Canvas
 # 
 # 
 # * **Week 6**: Form teams, create GitHub repo, and provide some basic info about project as a README.md
