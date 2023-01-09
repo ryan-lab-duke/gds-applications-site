@@ -1,9 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # GEOG4/590: Geospatial Data Science
-# 
-# ## Lecture 1: Introduction
+# # Introduction
 # 
 # <img src="images/coding-computer-programming.jpeg" width="300"/>
 # 
