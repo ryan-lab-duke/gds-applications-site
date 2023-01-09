@@ -38,7 +38,7 @@ Next we need to **activate** the virtual environment. In Windows this can be ach
 On macOS, run:
 
 ```
-source . gds/bin/activate
+source .gds/bin/activate
 ```
 
 ## Install requirements

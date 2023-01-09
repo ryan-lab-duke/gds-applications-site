@@ -14,7 +14,7 @@ parts:
 
   - caption: Week 1
     chapters:
-    - file: lectures/week1/lecture-1.md
+    - file: lectures/week1/lecture-1.ipynb
     - file: labs/week1/assignment1.md
 
   - caption: Week 2
