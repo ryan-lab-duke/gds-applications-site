@@ -4,8 +4,6 @@
 Please complete this assignment before xxx.
 ```
 
-*****************************
-
 ## Task 1 (5 points)
 
 * Create folder
