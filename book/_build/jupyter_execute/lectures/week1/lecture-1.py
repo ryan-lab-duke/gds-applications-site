@@ -3,8 +3,10 @@
 
 # # Introduction
 # 
-# <img src="images/coding-computer-programming.jpeg" width="300"/>
-# 
+# ```{image} images/coding-computer-programming.jpeg
+# :width: 300px
+# :align: center
+# ```
 
 # # Welcome
 # 
@@ -42,11 +44,17 @@
 # 
 # ### Vector and Raster/gridded data
 # 
-# <img src="images/data.png" width="500"/>
+# ```{image} images/data.png
+# :width: 500px
+# :align: center
+# ```
 
 # ### Network data
 # 
-# <img src="images/network.png" width="500"/>
+# ```{image} images/network.png
+# :width: 500px
+# :align: center
+# ```
 
 # ## Python
 # 
@@ -66,14 +74,20 @@
 # 
 # * Constantly evolving
 # 
-# <img src="images/python-graph.png" width="500"/>
+# ```{image} images/python-graph.png
+# :width: 500px
+# :align: center
+# ```
 
 # ## Version control
 # 
 # ### Git
 # * Version control software for tracking changes to a set of files
 #     
-# <img src="images/git.png" width="150"/>
+# ```{image} images/git.png
+# :width: 150px
+# :align: center
+# ```
 # 
 # ### GitHub
 # * A cloud-based Git repository hosting service
@@ -83,7 +97,10 @@
 # 
 # 
 # 
-# <img src="images/github.png" width="100"/>
+# ```{image} images/github.png
+# :width: 100px
+# :align: center
+# ```
 # 
 # * Python and projects that use Python (e.g. `matplotlib`) are all maintained and developed by a community of scientists and programmers on GitHub
 # 
@@ -110,7 +127,10 @@
 # 
 #     * Class presentations in Week 10
 #     
-# <img src="images/schedule.png" width="600"/>
+# ```{image} images/schedule.png
+# :width: 600px
+# :align: center
+# ```
 
 # ## Course evaluation
 # 
@@ -159,7 +179,10 @@
 #    
 #    * Course materials are publicly-available on the internet 
 #     
-# <img src="images/os.png" width="600"/>
+# ```{image} images/os.png
+# :width: 600px
+# :align: center
+# ```
 
 # ### Promote collaboration and communication
 # 
@@ -168,7 +191,10 @@
 # 
 # * On GitHub
 # 
-# <img src="images/collab.png" width="600"/>
+# ```{image} images/collab.png
+# :width: 600px
+# :align: center
+# ```
 
 # ### Learn about environmental challenges in the Western US
 # 
@@ -184,7 +210,10 @@
 # 
 # * Climate, hydrology, glaciology
 # 
-# <img src="images/environment.png" width="1000"/>
+# ```{image} images/environment.png
+# :width: 1000px
+# :align: center
+# ```
 
 # ## Tips for success
 # 
@@ -199,7 +228,10 @@
 # 
 # * Don't be afraid to ask (peers or instructors)
 # 
-# <img src="images/stack.png" width="400"/>
+# ```{image} images/stack.png
+# :width: 400px
+# :align: center
+# ```
 
 # * Take responsibility for learning
 # 
@@ -212,11 +244,15 @@
 # 
 # * Maintain your GitHub profile and repository
 # 
-# <img src="images/horse.png" width="400"/>
-# 
+# ```{image} images/horse.png
+# :width: 400px
+# :align: center
+# ```
 
-# <img src="images/doing.png" width="600"/>
-# 
+# ```{image} images/doing.png
+# :width: 600px
+# :align: center
+# ```
 
 # ## By the end of this course you will…
 # 
@@ -250,4 +286,13 @@
 
 # ## Careers
 # 
-# <img src="images/jobs.png" width="800"/>
+# ```{image} images/jobs.png
+# :width: 800px
+# :align: center
+# ```
+
+# In[ ]:
+
+
+
+
