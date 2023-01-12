@@ -52,8 +52,8 @@ The image should be saved in the same folder as your answers notebook.
 
 * Save notebook as PDF and submit via Canvas by the deadline.
 
-This can is a little tricky. We recommend using `ctrl + p` (or `command + p`) &rarr; **Save as PDF**. If you'd like to get the **File** &rarr; **Download as** &rarr; **PDF via LaTeX** (or **PDF via HTML**) working, you will need to install some other packages.
+This can be a little tricky. We recommend using `ctrl + p` (or `command + p`) &rarr; **Save as PDF**. If you'd like to get the **File** &rarr; **Download as** &rarr; **PDF via LaTeX** (or **PDF via HTML**) working, you will need to install some other packages.
 
 ```{important}
-Save your notebooks locally as both `.ipynb` and `.pdf` formats but only submit the pdf to Canvas.
+Save your notebooks locally as both `.ipynb` and `.pdf` formats but only submit the **pdf** to Canvas.
 ```

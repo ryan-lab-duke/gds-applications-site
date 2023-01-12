@@ -254,7 +254,7 @@
 # :align: center
 # ```
 
-# ## By the end of this course you will…
+# ## Learning outcomes
 # 
 # * Have confidence using Python specifically for GIS and other geospatial data science applications. In doing so, you will also be comfortable using Python for other things as well
 # 

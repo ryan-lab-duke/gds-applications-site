@@ -1,7 +1,7 @@
 # Assignment 2
 
 ```{admonition} Deadline
-Please complete this assignment before xxx.
+Please complete this assignment before **Jan 27 11:59pm**.
 
 ```
 
@@ -10,6 +10,35 @@ Download the data for the assignment from [here](https://www.dropbox.com/sh/63dh
 ```{image} images/spotted_owl.jpg
 :width: 400px
 :align: center
+```
+*****************************
+
+## Task 0 (0 points)
+
+* Activate the `.gds` Python environment by opening an **Anaconda Prompt (miniconda3)** (Windows) or **Terminal** (macOS). Then, on Windows:
+
+```
+.gds\Scripts\activate
+```
+
+Or, on macOS:
+
+```
+source .gds/bin/activate
+```
+
+```{note}
+Make sure you run this command from the **same directory** as the `.gds` environment folder.
+```
+
+* Open a Jupyter Notebook by running:
+
+```
+jupyter notebook
+```
+
+```{note}
+If you run this command from your course folder, your `.ipynb` assignment will automatically be saved there.
 ```
 
 *****************************
@@ -71,7 +100,7 @@ Merge the two datasets using a **spatial join**.
 
 
 ```{important}
-Save your notebook to your local course folder and submit assignment (in **.ipynb** format) to Canvas by the deadline.
+Save your notebooks locally as both `.ipynb` and `.pdf` formats but only submit the **pdf** to Canvas.
 ```
 
 
