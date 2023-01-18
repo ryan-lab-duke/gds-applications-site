@@ -371,6 +371,11 @@ const thebe_selector_output = ".output, .cell_output"
    Task 3 (5 points)
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extra-credit">
+   Extra credit
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -411,6 +416,11 @@ const thebe_selector_output = ".output, .cell_output"
    Task 3 (5 points)
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extra-credit">
+   Extra credit
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -426,7 +436,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p class="admonition-title">Deadline</p>
 <p>Please complete this assignment before <strong>Jan 27 11:59pm</strong>.</p>
 </div>
-<p>Download the data for the assignment from <a class="reference external" href="https://www.dropbox.com/sh/63dhmgtcoss1s0k/AAAsYpRdCV3xcr0jbNq9qFGZa?dl=0">here</a>. The first dataset contains the centers of activity of all known Northern Spotted Owls breeding pairs in Western Oregon as determined by the Bureau of Land Management. More information can be found <a class="reference external" href="https://databasin.org/datasets/18c5edbd64c7497aa17a369fbab6f4ac/">here</a>. The second dataset contains wildfire perimeters for Oregon from the <a class="reference external" href="https://data-nifc.opendata.arcgis.com/search?tags=Category%2Chistoric_wildlandfire_opendata">National Interagency Fire Center</a>.</p>
+<p>Download the data for the assignment from <a class="reference external" href="https://www.dropbox.com/sh/63dhmgtcoss1s0k/AAAsYpRdCV3xcr0jbNq9qFGZa?dl=0">here</a>. The first dataset contains wildfire perimeters for Oregon from the <a class="reference external" href="https://data-nifc.opendata.arcgis.com/search?tags=Category%2Chistoric_wildlandfire_opendata">National Interagency Fire Center</a>. The first second contains the centers of activity of all known Northern Spotted Owls breeding pairs in Western Oregon as determined by the Bureau of Land Management. More information can be found <a class="reference external" href="https://databasin.org/datasets/18c5edbd64c7497aa17a369fbab6f4ac/">here</a>.</p>
 <a class="reference internal image-reference" href="../../_images/spotted_owl.jpg"><img alt="../../_images/spotted_owl.jpg" class="align-center" src="../../_images/spotted_owl.jpg" style="width: 400px;" /></a>
 <hr class="docutils" />
 <div class="section" id="task-0-0-points">
@@ -464,12 +474,19 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>a) How many rows and columns are there?</p></li>
 <li><p>b) How many wildfires occurred in <strong>2021</strong>?</p></li>
 </ul>
-<p>Reproject the dataset to UTM Zone 10N (EPSG:32610) and make a new column called <code class="docutils literal notranslate"><span class="pre">area</span></code> that contains the <strong>area</strong> of each wildfire.</p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Click to reveal hint</p>
+<p>Remember the syntax for masking is <code class="docutils literal notranslate"><span class="pre">df[df['column']</span> <span class="pre">==</span> <span class="pre">value]</span></code>.</p>
+</div>
 <ul class="simple">
-<li><p>c) What are the <strong>names</strong> and <strong>years</strong> of the five largest wildfires?</p></li>
-<li><p>d) What was the <strong>total area</strong> (in km<span class="math notranslate nohighlight">\(^2\)</span>) of wildfire in <strong>2021</strong>?</p></li>
-<li><p>e) Which <strong>five years</strong> had the largest total area of wildfire?</p></li>
+<li><p>c) Reproject the dataset to UTM Zone 10N (EPSG:32610) and make a new column called <code class="docutils literal notranslate"><span class="pre">area</span></code> that contains the <strong>area</strong> of each wildfire.</p></li>
+<li><p>d) What are the <strong>names</strong> and <strong>years</strong> of the five largest wildfires?</p></li>
+<li><p>e) What was the <strong>total area</strong> (in km<span class="math notranslate nohighlight">\(^2\)</span>) of wildfire in <strong>2021</strong>?</p></li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The units of the <code class="docutils literal notranslate"><span class="pre">area</span></code> column are m<span class="math notranslate nohighlight">\(^2\)</span> by default.</p>
+</div>
 </div>
 <hr class="docutils" />
 <div class="section" id="task-2-5-points">
@@ -477,8 +494,8 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Read the <strong>spotted owls</strong> dataset and answer the following questions:</p>
 <ul class="simple">
 <li><p>a) How many rows and columns are there?</p></li>
-<li><p>b) What percentage of locations have <strong>female</strong> spotted owls?</p></li>
-<li><p>c) What is the furthest <strong>north</strong> that spotted owls have been identified?</p></li>
+<li><p>b) What is the min/max values in the <code class="docutils literal notranslate"><span class="pre">males</span></code> and <code class="docutils literal notranslate"><span class="pre">females</span></code> columns?</p></li>
+<li><p>c) What percentage of locations have <strong>female</strong> spotted owls?</p></li>
 <li><p>d) What is the furthest <strong>east</strong> that spotted owls have been identified?</p></li>
 </ul>
 <p>Reproject the dataset to UTM Zone 10N (EPSG:32610).</p>
@@ -490,19 +507,34 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="task-3-5-points">
 <h2>Task 3 (5 points)<a class="headerlink" href="#task-3-5-points" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>a) How many owl pairs were affected by wildfires between 1908 and 2021.</p></li>
+<li><p>a) How many owl pairs were affected by wildfires?</p></li>
 </ul>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Click to reveal hint</p>
-<p>Merge the two datasets using a <strong>spatial join</strong>.</p>
+<p>Merge the two datasets using a <strong>spatial join</strong>. Depending on how you do it, there will be rows with <code class="docutils literal notranslate"><span class="pre">NaN</span></code> values. These are wildfires that don’t overlap with owls (or owls that don’t overlap with wildfires). Before computing stats, we recommend removing these using the <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.dropna.html#pandas-dataframe-dropna"><code class="docutils literal notranslate"><span class="pre">.dropna()</span></code></a> method.</p>
 </div>
 <ul class="simple">
 <li><p>b) In which <strong>year</strong> were most owl pairs affected by wildfires?</p></li>
+</ul>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Click to reveal hint</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">.groupby</span></code> method will be very useful here.</p>
+</div>
+<ul class="simple">
 <li><p>c) How <strong>many</strong> owl pairs were affected in this year?</p></li>
 <li><p>d) Provide the <strong>name</strong> and <strong>year</strong> of the wildfire that affected the most owl pairs (disregard wildfires named <code class="docutils literal notranslate"><span class="pre">Unknown</span></code>)?</p></li>
-<li><p>e) Provide the <strong>name</strong> and <strong>year</strong> of the wildfire that affected the most owl pairs <strong>per km<span class="math notranslate nohighlight">\(^2\)</span></strong> (disregard wildfires named <code class="docutils literal notranslate"><span class="pre">Unknown</span></code>)?</p></li>
+<li><p>e) Make a plot showing locations of Northern Spotted Owls breeding pairs on top of the wildfire perimeters for Oregon.</p></li>
 </ul>
+</div>
 <hr class="docutils" />
+<div class="section" id="extra-credit">
+<h2>Extra credit<a class="headerlink" href="#extra-credit" title="Permalink to this headline">¶</a></h2>
+<p>There are several duplicate records in the wildfire dataset and the names of fires are inconsistent - some are all caps for example. For extra credit, clean up this dataset by:</p>
+<ul class="simple">
+<li><p>Converting wildfire names to lower case</p></li>
+<li><p>Ignoring wildfires named <strong>UNKNOWN</strong> or <strong>UNNAMED</strong> (or similar), remove duplicated rows (i.e. same name and year) keeping the larger of the two wildfire areas</p></li>
+<li><p>Save as a shapefile and send to me via email.</p></li>
+</ul>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Save your notebooks locally as both <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> and <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> formats but only submit the <strong>pdf</strong> to Canvas.</p>
