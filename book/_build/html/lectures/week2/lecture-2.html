@@ -546,7 +546,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Assuming we have a file containing both data and geometry (e.g. GeoPackage, GeoJSON, Shapefile), we can read it using <code class="docutils literal notranslate"><span class="pre">read_file</span></code>, which automatically detects the filetype and creates a <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code>. In the this demo, we will be working with three shapefiles containing 1) cities and towns (as points), 2) urban growth boundaries (as polygons), and 3) counties (as polygons) in Oregon.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;USE_PYGEOS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;0&#39;</span>
+<span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
 
 <span class="n">cities</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s1">&#39;data/oregon_cities.shp&#39;</span><span class="p">)</span>
 <span class="n">cities</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -1006,7 +1008,51 @@ Name: 1, dtype: object
 </table>
 </div></div></div>
 </div>
-<p>It’s more concise to just add the Boolean mask between square brackets. Here we find cities that contain a <code class="docutils literal notranslate"><span class="pre">z</span></code> in their name.</p>
+<p>It’s more concise to just add the Boolean mask between square brackets. Here we find a specific city.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cities</span><span class="p">[</span><span class="n">cities</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Eugene&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>lat</th>
+      <th>lon</th>
+      <th>geometry</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>100</th>
+      <td>Eugene</td>
+      <td>44.06</td>
+      <td>-123.12</td>
+      <td>POINT (-123.12000 44.06000)</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Or cities that contain a <code class="docutils literal notranslate"><span class="pre">z</span></code> in their name.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cities</span><span class="p">[</span><span class="n">cities</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;z&#39;</span><span class="p">)]</span>
@@ -1078,50 +1124,6 @@ Name: 1, dtype: object
 </table>
 </div></div></div>
 </div>
-<p>Or use string matching to find a specific city.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cities</span><span class="p">[</span><span class="n">cities</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Eugene&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>name</th>
-      <th>lat</th>
-      <th>lon</th>
-      <th>geometry</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>100</th>
-      <td>Eugene</td>
-      <td>44.06</td>
-      <td>-123.12</td>
-      <td>POINT (-123.12000 44.06000)</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
 </div>
 <div class="section" id="descriptive-statistics">
 <h2>Descriptive statistics<a class="headerlink" href="#descriptive-statistics" title="Permalink to this headline">¶</a></h2>
@@ -1152,6 +1154,7 @@ Name: 1, dtype: object
 </div>
 </div>
 </div>
+<p>A full list of descriptive statistics (including some very useful ones such as <code class="docutils literal notranslate"><span class="pre">sum</span></code> and <code class="docutils literal notranslate"><span class="pre">count</span></code>) can be found <a class="reference external" href="https://pandas.pydata.org/docs/user_guide/basics.html#descriptive-statistics">here</a>.</p>
 <p>Sometimes we want to know which row contains the specific value which we can do using <code class="docutils literal notranslate"><span class="pre">idxmax</span></code>/<code class="docutils literal notranslate"><span class="pre">idxmin</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

@@ -19,9 +19,11 @@
 # 
 # Assuming we have a file containing both data and geometry (e.g. GeoPackage, GeoJSON, Shapefile), we can read it using `read_file`, which automatically detects the filetype and creates a `GeoDataFrame`. In the this demo, we will be working with three shapefiles containing 1) cities and towns (as points), 2) urban growth boundaries (as polygons), and 3) counties (as polygons) in Oregon. 
 
-# In[83]:
+# In[2]:
 
 
+import os
+os.environ['USE_PYGEOS'] = '0'
 import geopandas as gpd
 
 cities = gpd.read_file('data/oregon_cities.shp')
@@ -32,21 +34,21 @@ cities.head()
 # 
 # We can analyze our `GeoDataFrame` using standard `Pandas` functions.
 
-# In[84]:
+# In[3]:
 
 
 # Data types of each column
 cities.dtypes
 
 
-# In[85]:
+# In[4]:
 
 
 # Number of rows and columns
 cities.shape
 
 
-# In[86]:
+# In[5]:
 
 
 # Name of columns
@@ -57,14 +59,14 @@ cities.columns
 # 
 # We can select specific columns based on the column values. The basic syntax is `dataframe[value]`, where `value` can be a single column name, or a list of column names.
 
-# In[88]:
+# In[6]:
 
 
 # List the city names
 cities['name']
 
 
-# In[89]:
+# In[7]:
 
 
 # List the latitudes and longitudes
@@ -73,14 +75,14 @@ cities[['lat','lon']]
 
 # We can select specific rows using the `.iloc` method.
 
-# In[90]:
+# In[8]:
 
 
 # Second row
 cities.iloc[1]
 
 
-# In[91]:
+# In[9]:
 
 
 # Sixth to tenth rows
@@ -91,27 +93,27 @@ cities.iloc[5:10]
 # 
 # We can sample of our `DataFrame` based on specific values by producing a **Boolean mask** (i.e. a list of values equal to `True` or `False`). To find cities that are East of -117.5 degrees longitude, we could write:
 
-# In[92]:
+# In[10]:
 
 
 mask = cities['lon'] > -117.5
 cities[mask]
 
 
-# It's more concise to just add the Boolean mask between square brackets. Here we find cities that contain a `z` in their name. 
+# It's more concise to just add the Boolean mask between square brackets. Here we find a specific city.
 
-# In[94]:
-
-
-cities[cities['name'].str.contains('z')]
-
-
-# Or use string matching to find a specific city.
-
-# In[95]:
+# In[11]:
 
 
 cities[cities['name'] == 'Eugene']
+
+
+# Or cities that contain a `z` in their name. 
+
+# In[12]:
+
+
+cities[cities['name'].str.contains('z')]
 
 
 # ## Descriptive statistics
@@ -132,6 +134,8 @@ cities['lat'].min()
 cities['lon'].mean()
 
 
+# A full list of descriptive statistics (including some very useful ones such as `sum` and `count`) can be found [here](https://pandas.pydata.org/docs/user_guide/basics.html#descriptive-statistics).
+# 
 # Sometimes we want to know which row contains the specific value which we can do using `idxmax`/`idxmin`.
 
 # In[98]:
