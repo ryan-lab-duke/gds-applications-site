@@ -367,23 +367,36 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#point-to-point-analysis">
-   Point-to-point analysis
+  <a class="reference internal nav-link" href="#openstreetmap">
+   OpenStreetMap
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#finding-coverage">
-   Finding coverage
+  <a class="reference internal nav-link" href="#osmnx">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     OSMnx
+    </span>
+   </code>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#optimize-fleet">
-   Optimize fleet
+  <a class="reference internal nav-link" href="#network-data">
+   Network data
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#select-optimal-site">
-   Select optimal site
+  <a class="reference internal nav-link" href="#types-of-network-data">
+   Types of network data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#networkx">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     NetworkX
+    </span>
+   </code>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -484,23 +497,36 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#point-to-point-analysis">
-   Point-to-point analysis
+  <a class="reference internal nav-link" href="#openstreetmap">
+   OpenStreetMap
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#finding-coverage">
-   Finding coverage
+  <a class="reference internal nav-link" href="#osmnx">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     OSMnx
+    </span>
+   </code>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#optimize-fleet">
-   Optimize fleet
+  <a class="reference internal nav-link" href="#network-data">
+   Network data
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#select-optimal-site">
-   Select optimal site
+  <a class="reference internal nav-link" href="#types-of-network-data">
+   Types of network data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#networkx">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     NetworkX
+    </span>
+   </code>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -591,51 +617,12 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="network-data-analysis">
 <h1>Network data analysis<a class="headerlink" href="#network-data-analysis" title="Permalink to this headline">¶</a></h1>
-<p>Most geospatial data is represented in one of two spatial models, <strong>vector-based</strong>, i.e. points, lines and polygons, or <strong>raster-based</strong>, i.e. cells of a continuous grid surface. The vector data model is <strong>feature-oriented</strong>, as it represents space as a series of discrete entities.</p>
-<p>Analyzing precisely defined paths, such as roads and rivers or drainage canals, i.e. discrete entities that derive mainly from the built environment, and where attributes play a major role in determining the network.</p>
-<p>A network is based much more on the interaction of its component entities than it is based on its component locations.</p>
-<p>But in the real-world networks, such as a road system, must be modelled appropriately to fit into the different spatial models.</p>
-<p><a class="reference external" href="https://husdal.com/1999/10/11/network-analysis-raster-versus-vector-a-comparison-study/">https://husdal.com/1999/10/11/network-analysis-raster-versus-vector-a-comparison-study/</a></p>
-<p>Almost everyone has needed a type of network analysis in their life.</p>
-<p>For example:</p>
-<p>What’s the shortest route to the beach?
-Where should I build a hospital to best serve a community?
-How can I optimize a vehicle delivery fleet?</p>
-<div class="section" id="point-to-point-analysis">
-<h2>Point-to-point analysis<a class="headerlink" href="#point-to-point-analysis" title="Permalink to this headline">¶</a></h2>
-<p>A point-to-point analysis is the most common routing problem. It consists of a set of points to find the most optimal route based on specific criteria.</p>
-<p>Find Nearest – Where is the closest destination? It finds the nearest destination based on a starting point with multiple potential destinations.</p>
-<p>Shortest Distance – What’s the fastest route? This analysis accumulates all distances, as you travel out from one point to the other. Then, it finds the route with the least distance.</p>
-<p>Fastest route – Which route takes the least amount of time? This network analysis takes into account speed limits, road classification, and other costs to determine the least travel time.</p>
-<p>Other types of point-to-point analysis include the most eco-friendly, scenic, and winding routes. Each type of network analysis generates directions from origin to destination.</p>
-<p>It can also include the capability to select the mode of travel such as emergency vehicles, trucks, pedestrians, transit, or cycling.</p>
-<a class="reference internal image-reference" href="../../_images/shortest_route.png"><img alt="../../_images/shortest_route.png" class="align-center" src="../../_images/shortest_route.png" style="width: 600px;" /></a>
-</div>
-<div class="section" id="finding-coverage">
-<h2>Finding coverage<a class="headerlink" href="#finding-coverage" title="Permalink to this headline">¶</a></h2>
-<p>In this type of network analysis, drive-time areas correspond to the distance that can be reached within a specific amount of time.</p>
-<p>Service Areas – Which houses are within 5, 10, and 15 minutes from a fire station? This type of network analysis also can understand where businesses cover and if there are any gaps.</p>
-<p>Drive-time areas are different from buffers because it takes into account a street network. Buffers can cross water bodies but drive-time areas can only cross water when there’s a bridge.</p>
-<a class="reference internal image-reference" href="../../_images/service_areas.png"><img alt="../../_images/service_areas.png" class="align-center" src="../../_images/service_areas.png" style="width: 600px;" /></a>
-</div>
-<div class="section" id="optimize-fleet">
-<h2>Optimize fleet<a class="headerlink" href="#optimize-fleet" title="Permalink to this headline">¶</a></h2>
-<p>This tool is ideal when your main goal is to service a set of orders in the traveling salesperson problem. Also, you can best minimize the overall operating cost, by managing sets of vehicles and drivers.</p>
-<p>Optimize Fleet – The purpose of this network analysis tool is to find the most efficient route for delivery, repair, transit, or any type of fleet service.</p>
-<p>For example, a furniture company might want to use several trucks to deliver furniture to homes. Alternatively, a fleet might want to schedule their weekly visits, including all the logistics.</p>
-<a class="reference internal image-reference" href="../../_images/optimize_fleet.png"><img alt="../../_images/optimize_fleet.png" class="align-center" src="../../_images/optimize_fleet.png" style="width: 600px;" /></a>
-</div>
-<div class="section" id="select-optimal-site">
-<h2>Select optimal site<a class="headerlink" href="#select-optimal-site" title="Permalink to this headline">¶</a></h2>
-<p>Optimal site selection takes into account the demand to locate the best location given several facilities. For example, it can help decide where to build new hospitals depending on existing hospitals and the available demand.</p>
-<p>Location-allocation – this network analysis tool helps business owners pinpoint optimal location for their store. It can also compare with competing stores to target market share.</p>
-<a class="reference internal image-reference" href="../../_images/optimize_sites.png"><img alt="../../_images/optimize_sites.png" class="align-center" src="../../_images/optimize_sites.png" style="width: 600px;" /></a>
 <p>In this lecture we will use the Python library <code class="docutils literal notranslate"><span class="pre">OSMnx</span></code> to download data from <strong>OpenStreetMap (OSM)</strong> and format it into a <strong>graph</strong> model. We will then use the <code class="docutils literal notranslate"><span class="pre">NetworkX</span></code> library to conduct network analysis.</p>
 <ul class="simple">
 <li><p>Which is the closest cafe?</p></li>
 <li><p>How many cafes can we walk to in 15 minutes?</p></li>
 </ul>
-<p>Just remember that while we will be using network analysis on transport infrastructure, these principles apply to many other types of relational data such as international trade, character dialogue in films, or social media.</p>
+<p>Note that while we will be using network analysis on transport infrastructure, these principles apply to many other types of <strong>relational data</strong> such as international trade, character dialogue in films, or social media.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -655,10 +642,47 @@ How can I optimize a vehicle delivery fleet?</p>
 </div>
 </div>
 </div>
+<div class="section" id="openstreetmap">
+<h2>OpenStreetMap<a class="headerlink" href="#openstreetmap" title="Permalink to this headline">¶</a></h2>
+<p>OpenStreetMap (OSM) is a project that is building a free map of the whole world. Thousands of members are teamed to create an accurate, detailed and up-to-date map that is as good or better than commercial products. Like Wikipedia, OpenStreetMap benefits from the ongoing input of thousands of people around the world.</p>
+<ul class="simple">
+<li><p>Everyone can contribute and add objects.</p></li>
+<li><p>More than eight million participant accounts with more than 16,000 (and rapidly growing) of those highly active members in multiple languages.</p></li>
+<li><p>Anyone can access the OSM map data for free, and it already is being used in many applications.</p></li>
+<li><p>There already is full coverage in most urban areas and data is used in many commercial applications.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/osm.png"><img alt="../../_images/osm.png" class="align-center" src="../../_images/osm.png" style="width: 600px;" /></a>
+</div>
+<div class="section" id="osmnx">
+<h2><code class="docutils literal notranslate"><span class="pre">OSMnx</span> </code><a class="headerlink" href="#osmnx" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">OSMnx</span></code> is a Python package to retrieve, model, analyze, and visualize street <strong>networks</strong> from <strong>OpenStreetMap</strong>. Users can download and model walkable, drivable, or bikeable urban networks with a single line of Python code, and then easily analyze and visualize them.</p>
+<a class="reference internal image-reference" href="../../_images/osmnx.png"><img alt="../../_images/osmnx.png" class="align-center" src="../../_images/osmnx.png" style="width: 800px;" /></a>
+</div>
+<div class="section" id="network-data">
+<h2>Network data<a class="headerlink" href="#network-data" title="Permalink to this headline">¶</a></h2>
+<p>Most geospatial data is represented in one of two spatial models, <strong>vector-based</strong>, i.e. points, lines and polygons, or <strong>raster-based</strong>, i.e. cells of a continuous grid surface. The vector data model is <strong>feature-oriented</strong>, as it represents space as a series of discrete entities.</p>
+<p>Network data represents <strong>interconnections</strong> between a set of features or entities. Almost everyone has needed a type of network analysis in their life.</p>
+<p>For example:</p>
+<ul class="simple">
+<li><p>What is the shortest route to the beach?</p></li>
+<li><p>Where should we build a hospital to best serve a community?</p></li>
+<li><p>How can I optimize a package delivery route?</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/shortest_route.png"><img alt="../../_images/shortest_route.png" class="align-center" src="../../_images/shortest_route.png" style="width: 600px;" /></a>
+</div>
+<div class="section" id="types-of-network-data">
+<h2>Types of network data<a class="headerlink" href="#types-of-network-data" title="Permalink to this headline">¶</a></h2>
+<p>In a network, each <strong>feature</strong> is represented by a <strong>node</strong> and <strong>connections</strong> between nodes are represented by <strong>edges</strong>. There are four main types of network diagram.</p>
+<a class="reference internal image-reference" href="../../_images/network1.png"><img alt="../../_images/network1.png" class="align-center" src="../../_images/network1.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../_images/network2.png"><img alt="../../_images/network2.png" class="align-center" src="../../_images/network2.png" style="width: 600px;" /></a>
+</div>
+<div class="section" id="networkx">
+<h2><code class="docutils literal notranslate"><span class="pre">NetworkX</span></code><a class="headerlink" href="#networkx" title="Permalink to this headline">¶</a></h2>
+<a class="reference internal image-reference" href="../../_images/networkx.png"><img alt="../../_images/networkx.png" class="align-center" src="../../_images/networkx.png" style="width: 600px;" /></a>
 </div>
 <div class="section" id="retrieve-osm-data">
 <h2>Retrieve OSM data<a class="headerlink" href="#retrieve-osm-data" title="Permalink to this headline">¶</a></h2>
-<p>First we will retrieve all features labeled (or tagged) as <strong>buildings</strong> in Eugene from OSM. Don’t worry if you’re not familiar with OSM or <code class="docutils literal notranslate"><span class="pre">OSMnx</span></code>, we will cover this topic next week in our data access lecture.</p>
+<p>First we will retrieve all features labeled (or tagged) as <strong>buildings</strong> in Eugene from OSM using <code class="docutils literal notranslate"><span class="pre">OSMnx</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Specify type of data</span>
