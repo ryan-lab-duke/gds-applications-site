@@ -3,89 +3,15 @@
 
 # # Network data analysis
 # 
-# Most geospatial data is represented in one of two spatial models, **vector-based**, i.e. points, lines and polygons, or **raster-based**, i.e. cells of a continuous grid surface. The vector data model is **feature-oriented**, as it represents space as a series of discrete entities.
-# 
-# Analyzing precisely defined paths, such as roads and rivers or drainage canals, i.e. discrete entities that derive mainly from the built environment, and where attributes play a major role in determining the network.
-# 
-# A network is based much more on the interaction of its component entities than it is based on its component locations. 
-# 
-# But in the real-world networks, such as a road system, must be modelled appropriately to fit into the different spatial models.
-# 
-# https://husdal.com/1999/10/11/network-analysis-raster-versus-vector-a-comparison-study/
-# 
-# Almost everyone has needed a type of network analysis in their life.
-# 
-# For example:
-# 
-# What’s the shortest route to the beach?
-# Where should I build a hospital to best serve a community?
-# How can I optimize a vehicle delivery fleet?
-
-# ## Point-to-point analysis
-# 
-# A point-to-point analysis is the most common routing problem. It consists of a set of points to find the most optimal route based on specific criteria.
-# 
-# Find Nearest – Where is the closest destination? It finds the nearest destination based on a starting point with multiple potential destinations.
-# 
-# Shortest Distance – What’s the fastest route? This analysis accumulates all distances, as you travel out from one point to the other. Then, it finds the route with the least distance.
-# 
-# Fastest route – Which route takes the least amount of time? This network analysis takes into account speed limits, road classification, and other costs to determine the least travel time.
-# 
-# Other types of point-to-point analysis include the most eco-friendly, scenic, and winding routes. Each type of network analysis generates directions from origin to destination.
-# 
-# It can also include the capability to select the mode of travel such as emergency vehicles, trucks, pedestrians, transit, or cycling.
-# 
-# ```{image} images/shortest_route.png
-# :width: 600px
-# :align: center
-# ```
-
-# ## Finding coverage
-# 
-# In this type of network analysis, drive-time areas correspond to the distance that can be reached within a specific amount of time.
-# 
-# Service Areas – Which houses are within 5, 10, and 15 minutes from a fire station? This type of network analysis also can understand where businesses cover and if there are any gaps.
-# 
-# Drive-time areas are different from buffers because it takes into account a street network. Buffers can cross water bodies but drive-time areas can only cross water when there’s a bridge.
-# 
-# ```{image} images/service_areas.png
-# :width: 600px
-# :align: center
-# ```
-
-# ## Optimize fleet
-# 
-# This tool is ideal when your main goal is to service a set of orders in the traveling salesperson problem. Also, you can best minimize the overall operating cost, by managing sets of vehicles and drivers.
-# 
-# Optimize Fleet – The purpose of this network analysis tool is to find the most efficient route for delivery, repair, transit, or any type of fleet service.
-# 
-# For example, a furniture company might want to use several trucks to deliver furniture to homes. Alternatively, a fleet might want to schedule their weekly visits, including all the logistics.
-# 
-# ```{image} images/optimize_fleet.png
-# :width: 600px
-# :align: center
-# ```
-
-# ## Select optimal site
-# 
-# Optimal site selection takes into account the demand to locate the best location given several facilities. For example, it can help decide where to build new hospitals depending on existing hospitals and the available demand.
-# 
-# Location-allocation – this network analysis tool helps business owners pinpoint optimal location for their store. It can also compare with competing stores to target market share.
-# 
-# ```{image} images/optimize_sites.png
-# :width: 600px
-# :align: center
-# ```
-
 # In this lecture we will use the Python library `OSMnx` to download data from **OpenStreetMap (OSM)** and format it into a **graph** model. We will then use the `NetworkX` library to conduct network analysis. 
 # 
 # * Which is the closest cafe?
 # 
 # * How many cafes can we walk to in 15 minutes?
 # 
-# Just remember that while we will be using network analysis on transport infrastructure, these principles apply to many other types of relational data such as international trade, character dialogue in films, or social media.
+# Note that while we will be using network analysis on transport infrastructure, these principles apply to many other types of **relational data** such as international trade, character dialogue in films, or social media.
 
-# In[3]:
+# In[69]:
 
 
 import numpy as np
@@ -103,9 +29,83 @@ import matplotlib.pyplot as plt
 import folium
 
 
+# ## OpenStreetMap
+# 
+# OpenStreetMap (OSM) is a project that is building a free map of the whole world. Thousands of members are teamed to create an accurate, detailed and up-to-date map that is as good or better than commercial products. Like Wikipedia, OpenStreetMap benefits from the ongoing input of thousands of people around the world.
+# 
+# * Everyone can contribute and add objects.
+# 
+# 
+# * More than eight million participant accounts with more than 16,000 (and rapidly growing) of those highly active members in multiple languages.
+# 
+# 
+# 
+# * Anyone can access the OSM map data for free, and it already is being used in many applications.
+# 
+# 
+# * There already is full coverage in most urban areas and data is used in many commercial applications.
+# 
+# ```{image} images/osm.png
+# :width: 600px
+# :align: center
+# ```
+
+# ## `OSMnx `
+# 
+# `OSMnx` is a Python package to retrieve, model, analyze, and visualize street **networks** from **OpenStreetMap**. Users can download and model walkable, drivable, or bikeable urban networks with a single line of Python code, and then easily analyze and visualize them. 
+# 
+# ```{image} images/osmnx.png
+# :width: 800px
+# :align: center
+# ```
+
+# ## Network data
+# 
+# Most geospatial data is represented in one of two spatial models, **vector-based**, i.e. points, lines and polygons, or **raster-based**, i.e. cells of a continuous grid surface. The vector data model is **feature-oriented**, as it represents space as a series of discrete entities.
+# 
+# Network data represents **interconnections** between a set of features or entities. Almost everyone has needed a type of network analysis in their life. 
+# 
+# For example:
+# 
+# * What is the shortest route to the beach?
+# 
+# 
+# * Where should we build a hospital to best serve a community?
+# 
+# 
+# * How can I optimize a package delivery route?
+# 
+# 
+# ```{image} images/shortest_route.png
+# :width: 600px
+# :align: center
+# ```
+
+# ## Types of network data
+# 
+# In a network, each **feature** is represented by a **node** and **connections** between nodes are represented by **edges**. There are four main types of network diagram.
+# 
+# ```{image} images/network1.png
+# :width: 600px
+# :align: center
+# ```
+# 
+# 
+# ```{image} images/network2.png
+# :width: 600px
+# :align: center
+# ```
+
+# ## `NetworkX`
+# 
+# ```{image} images/networkx.png
+# :width: 600px
+# :align: center
+# ```
+
 # ## Retrieve OSM data
 # 
-# First we will retrieve all features labeled (or tagged) as **buildings** in Eugene from OSM. Don't worry if you're not familiar with OSM or `OSMnx`, we will cover this topic next week in our data access lecture. 
+# First we will retrieve all features labeled (or tagged) as **buildings** in Eugene from OSM using `OSMnx`. 
 
 # In[4]:
 
@@ -618,13 +618,13 @@ plt.show()
 # 
 # So to find which cafes are within 20 minutes of walking we would use the **fourth last** item in the index (i.e. 5, 10, 15, **20**). Remember that if `-1` is the last item in the index, `-4` is the fourth last item.
 
-# In[49]:
+# In[67]:
 
 
 cafes['20-minutes'] = cafes.intersects(isochrone_polys[-4])
 
 
-# In[50]:
+# In[68]:
 
 
 cafes[['name', 'time_minutes', 'distance_km']][cafes['20-minutes'] == True]
