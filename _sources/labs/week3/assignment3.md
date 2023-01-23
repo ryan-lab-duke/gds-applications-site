@@ -1,81 +1,93 @@
 # Assignment 3
 
 ```{admonition} Deadline
-Please complete this assignment before xxx.
+Please complete this assignment before **Feb 3, 11:59pm** .
 ```
 
-Download the data for the assignment from [here](https://www.dropbox.com/s/znf06otczn3u79r/usa_t2m_tcc_2020.nc?dl=0). The dataset contains gridded air temperature (K) and cloud cover (%) over the USA for 2020 at 6-hour interval. `t2m` stands for 2 m above the surface, the standard height used by temperature sensors. It is a common metric used in climatology but note that it is different from the **surface** temperature which would be the temperature of the ground surface. 
+Download the data for the assignment from [here](https://www.dropbox.com/s/6nkgvgbcgu4p9b0/graph.graphml?dl=0) and [here](https://www.dropbox.com/s/6gescpjfasrny7v/oregon_cities.zip?dl=0). The first dataset is a full-featured `OSMnx`/`NetworkX` graph constructed from a shapefile of the [Oregon Highway Network](https://spatialdata.oregonexplorer.info/geoportal/details;id=1d255f740ff74774b236e0faf4d6c2e0). If you're interested, the shapefile was converted to a graph using the code [here](https://github.com/owel-lab/gds-applications-site/blob/main/book/labs/week3/convert_shp_to_multidigraph.ipynb). The second dataset is shapefile containing all cities in Oregon (as points).
 
-```{image} images/clouds.jpg
+```{image} images/highway.jpg
 :width: 500px
 :align: center
 ```
 
 *****************************
 
-## Task 1 (5 points)
+## Task 1 (10 points)
 
-Read the dataset and answer the following questions:
+Read the graph dataset using the following code:
 
-* a) What are the dimensions of the dataset?
+```
+import geopandas as gpd
+import osmnx as ox
+import networkx as nx
 
-* b) What was the **mean** air temperature (in F) and cloud cover (in %) of Eugene? 
+graph = ox.load_graphml('path/to/data/graph.graphml')
+```
+
+* a) How many nodes and edges does this graph have?
+
+Convert the graph to two `GeoDataFrames`, one containing **edges** and one containing the **nodes**. 
 
 ```{admonition} Click to reveal hint
 :class: tip, dropdown
-Right-click on Google Maps to record the approximate latitude and longitude of Eugene.
-```
-* c) What day was the hottest and coldest in Eugene? 
-
-* d) What day was the hottest and coldest in Florence, OR? 
- 
-* e) Make a plot showing air temperature for Eugene and Florence.
-
-*****************************
-
-## Task 2 (5 points)
-
-* Resample the data to **daily frequency** and report the the mean, minimum, and maximum air temperature and cloud cover for **five** location of your choice. 
-
-*****************************
-
-## Task 3 (5 points)
-
-In the daily frequency dataset, find the following grid cells and provide the lat/lons **and** a rough location of where they are located.
-
-* a) Highest annual mean air temperature (i.e. hottest place)
-
-* b) Lowest annual mean air temperature (i.e. coldest place)
-
-* c) Highest annual mean cloudiness (i.e. cloudiest place)
-
-* d) Lowest annual mean cloudiest (i.e. least cloudy place)
-
-* e) Highest **range** in air temperature
-
-```{note}
-Copy and paste the lat/lons into Google Maps to find the location of these places.
+`ox.graph_to_gdfs(graph, nodes=True, edges=False)` will provide the nodes.
 ```
 
+* b) What is the coordinate reference system of the nodes `GeoDataFrame`?
+
+* c) List the column names in the edges `GeoDataFrame`.
+
+* d) What is the **min**, **max**, and **mean** edge length? 
+
+* e) Produce and customize a plot showing the Oregon Highway Network.
+
+```{admonition} Click to reveal hint
+:class: tip, dropdown
+The `ox.plot_graph` function will help.
+```
 *****************************
 
-## Task 4 (5 points)
+## Task 2 (10 points)
 
-Answer the following questions in the daily frequency dataset:
+Read the `oregon_cities.shp` using `GeoPandas`.
 
-* a) What was the mean air temperature (in F) and cloud cover (in %) in Florence, OR in **February**?
+* a) Reproject the city `GeoDataFrame` to UTM Zone 10 N.
 
-* b) What was the air temperature (in F) and cloud cover (in %) in Phoenix, AZ on **July 16**?
+* b) Choose four cities in Oregon (the more spread out the better!) and compute the Euclidean distance (in km) between each pair.
 
-* c) What was the mean air temperature (in F) and cloud cover (in %) in San Francisco, CA in **Summer** (i.e. Jun, Jul, and Aug)?
+* c) List the **nearest node** for each of the four cities.
 
-* d) What was the mean air temperature (in F) and cloud cover (in %) in Bozeman, MT between **Dec 16 and 24**?
+* d) What is the shortest path length (i.e. `nx.shortest_path_length`) between each pair of cities (in km)? Produce and customize a plot showing each route with your answer (i.e. `fig, ax = ox.plot_graph_route(graph, route)`).
 
-* e) What was the mean air temperature (in F) and cloud cover (in %) in Las Vegas, NV in **Fall** (i.e. Oct, Sep, Nov)?
+* e) On average, how much longer is the network distance vs. Euclidean distance? 
+
+* f) How long would it take to travel between each pair of cities given an average speed of 60 mph?
 
 *****************************
 
+## Task 3 (10 points)
+
+How many cities in Oregon are within a 2 hour drive of Eugene (at 60 mph)?
+
+*****************************
 
 ```{important}
 Save your notebook to your local course folder and submit assignment (in **.ipynb** format) to Canvas by the deadline.
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
