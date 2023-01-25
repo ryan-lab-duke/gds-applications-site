@@ -75,7 +75,7 @@ How many cities in Oregon are within a 2 hour drive of Eugene (at 60 mph)?
 *****************************
 
 ```{important}
-Save your notebook to your local course folder and submit assignment (in **.ipynb** format) to Canvas by the deadline.
+Save your notebooks locally as both `.ipynb` and `.pdf` formats but only submit the **pdf** to Canvas.
 ```
 
 

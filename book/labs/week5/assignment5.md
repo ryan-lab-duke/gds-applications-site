@@ -31,3 +31,8 @@ Please complete this assignment before xxx.
 *****************************
 
 ## Task 6 (5 points)
+
+
+```{important}
+Save your notebooks locally as both `.ipynb` and `.pdf` formats but only submit the **pdf** to Canvas.
+```

@@ -77,5 +77,5 @@ Answer the following questions in the daily frequency dataset:
 
 
 ```{important}
-Save your notebook to your local course folder and submit assignment (in **.ipynb** format) to Canvas by the deadline.
+Save your notebooks locally as both `.ipynb` and `.pdf` formats but only submit the **pdf** to Canvas.
 ```
