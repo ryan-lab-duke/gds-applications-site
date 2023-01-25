@@ -46,15 +46,6 @@ import folium
 # * There already is full coverage in most urban areas and data is used in many commercial applications.
 # 
 # ```{image} images/osm.png
-# :width: 600px
-# :align: center
-# ```
-
-# ## `OSMnx `
-# 
-# `OSMnx` is a Python package to retrieve, model, analyze, and visualize street **networks** from **OpenStreetMap**. Users can download and model walkable, drivable, or bikeable urban networks with a single line of Python code, and then easily analyze and visualize them. 
-# 
-# ```{image} images/osmnx.png
 # :width: 800px
 # :align: center
 # ```
@@ -100,6 +91,15 @@ import folium
 # 
 # ```{image} images/networkx.png
 # :width: 600px
+# :align: center
+# ```
+
+# ## `OSMnx `
+# 
+# `OSMnx` is a Python package to retrieve, model, analyze, and visualize street **networks** from **OpenStreetMap**. Users can download and model walkable, drivable, or bikeable urban networks with a single line of Python code, and then easily analyze and visualize them. 
+# 
+# ```{image} images/osmnx.png
+# :width: 800px
 # :align: center
 # ```
 

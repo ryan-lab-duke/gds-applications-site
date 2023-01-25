@@ -27,25 +27,21 @@ graph = ox.load_graphml('path/to/data/graph.graphml')
 
 * a) How many nodes and edges does this graph have?
 
-Convert the graph to two `GeoDataFrames`, one containing **edges** and one containing the **nodes**. 
+* b) Convert the graph to two `GeoDataFrames`, one containing **edges** and one containing the **nodes**. 
 
 ```{admonition} Click to reveal hint
 :class: tip, dropdown
 `ox.graph_to_gdfs(graph, nodes=True, edges=False)` will provide the nodes.
 ```
 
-* b) What is the coordinate reference system of the nodes `GeoDataFrame`?
+* c) What is the coordinate reference system of the nodes `GeoDataFrame`?
 
-* c) List the column names in the edges `GeoDataFrame`.
+* d) List the column names in the edges `GeoDataFrame`.
 
-* d) What is the **min**, **max**, and **mean** edge length? 
+* e) What is the **min**, **max**, and **mean** edge length? 
 
-* e) Produce and customize a plot showing the Oregon Highway Network.
+* f) Produce **and customize** a plot showing the Oregon Highway Network using the `ox.plot_graph` function.
 
-```{admonition} Click to reveal hint
-:class: tip, dropdown
-The `ox.plot_graph` function will help.
-```
 *****************************
 
 ## Task 2 (10 points)
@@ -58,15 +54,21 @@ Read the `oregon_cities.shp` using `GeoPandas`.
 
 * c) List the **nearest node** for each of the four cities.
 
-* d) What is the shortest path length (i.e. `nx.shortest_path_length`) between each pair of cities (in km)? Produce and customize a plot showing each route with your answer (i.e. `fig, ax = ox.plot_graph_route(graph, route)`).
+* d) What is the shortest path length (i.e. `nx.shortest_path_length`) between **three pairs** of cities (in km)? 
 
-* e) On average, how much longer is the network distance vs. Euclidean distance? 
+* e) Produce **and customize** a plot showing the routes between your three city pairs (i.e. `fig, ax = ox.plot_graph_route(graph, route)`).
 
-* f) How long would it take to travel between each pair of cities given an average speed of 60 mph?
+```{note}
+`ox.plot_route_folium` probably will not work because the graph is not projected in the expected WGS84 coordinate system (i.e. EPSG:4326). 
+```
+
+* f) On average, how much longer is the network distances compared to the equivalent Euclidean distances? 
+
+* g) How long would it take to travel between your three city pairs given an average speed of 60 mph?
 
 *****************************
 
-## Task 3 (10 points)
+## Extra credit
 
 How many cities in Oregon are within a 2 hour drive of Eugene (at 60 mph)?
 
