@@ -360,8 +360,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#task-3-10-points">
-   Task 3 (10 points)
+  <a class="reference internal nav-link" href="#extra-credit">
+   Extra credit
   </a>
  </li>
 </ul>
@@ -395,8 +395,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#task-3-10-points">
-   Task 3 (10 points)
+  <a class="reference internal nav-link" href="#extra-credit">
+   Extra credit
   </a>
  </li>
 </ul>
@@ -429,22 +429,18 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <ul class="simple">
 <li><p>a) How many nodes and edges does this graph have?</p></li>
+<li><p>b) Convert the graph to two <code class="docutils literal notranslate"><span class="pre">GeoDataFrames</span></code>, one containing <strong>edges</strong> and one containing the <strong>nodes</strong>.</p></li>
 </ul>
-<p>Convert the graph to two <code class="docutils literal notranslate"><span class="pre">GeoDataFrames</span></code>, one containing <strong>edges</strong> and one containing the <strong>nodes</strong>.</p>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Click to reveal hint</p>
 <p><code class="docutils literal notranslate"><span class="pre">ox.graph_to_gdfs(graph,</span> <span class="pre">nodes=True,</span> <span class="pre">edges=False)</span></code> will provide the nodes.</p>
 </div>
 <ul class="simple">
-<li><p>b) What is the coordinate reference system of the nodes <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code>?</p></li>
-<li><p>c) List the column names in the edges <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code>.</p></li>
-<li><p>d) What is the <strong>min</strong>, <strong>max</strong>, and <strong>mean</strong> edge length?</p></li>
-<li><p>e) Produce and customize a plot showing the Oregon Highway Network.</p></li>
+<li><p>c) What is the coordinate reference system of the nodes <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code>?</p></li>
+<li><p>d) List the column names in the edges <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code>.</p></li>
+<li><p>e) What is the <strong>min</strong>, <strong>max</strong>, and <strong>mean</strong> edge length?</p></li>
+<li><p>f) Produce <strong>and customize</strong> a plot showing the Oregon Highway Network using the <code class="docutils literal notranslate"><span class="pre">ox.plot_graph</span></code> function.</p></li>
 </ul>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Click to reveal hint</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">ox.plot_graph</span></code> function will help.</p>
-</div>
 </div>
 <hr class="docutils" />
 <div class="section" id="task-2-10-points">
@@ -454,14 +450,21 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>a) Reproject the city <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code> to UTM Zone 10 N.</p></li>
 <li><p>b) Choose four cities in Oregon (the more spread out the better!) and compute the Euclidean distance (in km) between each pair.</p></li>
 <li><p>c) List the <strong>nearest node</strong> for each of the four cities.</p></li>
-<li><p>d) What is the shortest path length (i.e. <code class="docutils literal notranslate"><span class="pre">nx.shortest_path_length</span></code>) between each pair of cities (in km)? Produce and customize a plot showing each route with your answer (i.e. <code class="docutils literal notranslate"><span class="pre">fig,</span> <span class="pre">ax</span> <span class="pre">=</span> <span class="pre">ox.plot_graph_route(graph,</span> <span class="pre">route)</span></code>).</p></li>
-<li><p>e) On average, how much longer is the network distance vs. Euclidean distance?</p></li>
-<li><p>f) How long would it take to travel between each pair of cities given an average speed of 60 mph?</p></li>
+<li><p>d) What is the shortest path length (i.e. <code class="docutils literal notranslate"><span class="pre">nx.shortest_path_length</span></code>) between <strong>three pairs</strong> of cities (in km)?</p></li>
+<li><p>e) Produce <strong>and customize</strong> a plot showing the routes between your three city pairs (i.e. <code class="docutils literal notranslate"><span class="pre">fig,</span> <span class="pre">ax</span> <span class="pre">=</span> <span class="pre">ox.plot_graph_route(graph,</span> <span class="pre">route)</span></code>).</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">ox.plot_route_folium</span></code> probably will not work because the graph is not projected in the expected WGS84 coordinate system (i.e. EPSG:4326).</p>
+</div>
+<ul class="simple">
+<li><p>f) On average, how much longer is the network distances compared to the equivalent Euclidean distances?</p></li>
+<li><p>g) How long would it take to travel between your three city pairs given an average speed of 60 mph?</p></li>
 </ul>
 </div>
 <hr class="docutils" />
-<div class="section" id="task-3-10-points">
-<h2>Task 3 (10 points)<a class="headerlink" href="#task-3-10-points" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="extra-credit">
+<h2>Extra credit<a class="headerlink" href="#extra-credit" title="Permalink to this headline">¶</a></h2>
 <p>How many cities in Oregon are within a 2 hour drive of Eugene (at 60 mph)?</p>
 <hr class="docutils" />
 <div class="admonition important">
