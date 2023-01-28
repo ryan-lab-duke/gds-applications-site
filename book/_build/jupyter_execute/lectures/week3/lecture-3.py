@@ -96,7 +96,7 @@ import folium
 
 # ## `OSMnx `
 # 
-# `OSMnx` is a Python package to retrieve, model, analyze, and visualize street **networks** from **OpenStreetMap**. Users can download and model walkable, drivable, or bikeable urban networks with a single line of Python code, and then easily analyze and visualize them. 
+# A Python package to retrieve, model, analyze, and visualize street **networks** from **OpenStreetMap**. Users can download and model walkable, drivable, or bikeable urban networks with a single line of Python code, and then easily analyze and visualize them. 
 # 
 # ```{image} images/osmnx.png
 # :width: 800px
@@ -204,7 +204,7 @@ fig, ax = ox.plot_graph(g, bgcolor='white', node_color='black', edge_color='grey
 # 
 # Since our network represents transport infrastructure, nodes represent intersections/dead-ends and edges represent the street segments that link them. If we were studying social relationships between Facebook users, nodes would represent users and edges would represent relationships between them (e.g. friendships or group memberships). 
 # 
-# Also note that the graph is [`MultiDiGraph`](https://networkx.org/documentation/stable/reference/classes/multidigraph.html) `NetworkX` object. `Multi` means that multiple edges are allowed between any pair of nodes. `Di` stands for **directed** which means that all our edges are directional. Bidirectional streets are therefore represented with **two edges** (with identical geometries): one from node 1 to node 2 and another from 2 to 1, to represent both possible directions of flow. 
+# Also note that the graph is [`MultiDiGraph NetworkX`](https://networkx.org/documentation/stable/reference/classes/multidigraph.html) object. `Multi` means that multiple edges are allowed between any pair of nodes. `Di` stands for **directed** which means that all our edges are directional. Bidirectional streets are therefore represented with **two edges** (with identical geometries): one from node 1 to node 2 and another from 2 to 1, to represent both possible directions of flow. 
 
 # In[14]:
 
@@ -469,7 +469,7 @@ edges['access'].unique()
 
 # We won't use most of these columns in this demo but they could be very useful for further analysis. 
 
-# Another way to access the edge and node attributes is to use the `list` built-in function on the `.data()` attribute. Then list the `dict_keys` of the associated object. 
+# Another way to access the edge and node attributes is to use the `list` built-in function on the `data()` attribute. Then list the `dict_keys` of the associated object. 
 
 # In[37]:
 

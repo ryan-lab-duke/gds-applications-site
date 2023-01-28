@@ -48,10 +48,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Project setup" href="../../lectures/week5/lecture-5.html" />
-    <link rel="prev" title="Gridded data" href="../../lectures/week4/lecture-4.html" />
+    <link rel="prev" title="Climate data analysis" href="../../lectures/week4/lecture-4b.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -185,8 +187,13 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../lectures/week4/lecture-4.html">
-   Gridded data
+  <a class="reference internal" href="../../lectures/week4/lecture-4a.html">
+   Gridded data analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/week4/lecture-4b.html">
+   Climate data analysis
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -365,8 +372,23 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extra-credit">
+   Extra credit
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#task-4-5-points">
    Task 4 (5 points)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-5-5-points">
+   Task 5 (5 points)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Extra credit
   </a>
  </li>
 </ul>
@@ -405,8 +427,23 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extra-credit">
+   Extra credit
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#task-4-5-points">
    Task 4 (5 points)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-5-5-points">
+   Task 5 (5 points)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Extra credit
   </a>
  </li>
 </ul>
@@ -422,39 +459,77 @@ const thebe_selector_output = ".output, .cell_output"
 <h1>Assignment 4<a class="headerlink" href="#assignment-4" title="Permalink to this headline">¶</a></h1>
 <div class="admonition-deadline admonition">
 <p class="admonition-title">Deadline</p>
-<p>Please complete this assignment before xxx.</p>
+<p>Please complete this assignment before <strong>Feb 10, 11:59pm</strong>.</p>
 </div>
-<p>Download the data for the assignment from <a class="reference external" href="https://www.dropbox.com/s/znf06otczn3u79r/usa_t2m_tcc_2020.nc?dl=0">here</a>. The dataset contains gridded air temperature (K) and cloud cover (%) over the USA for 2020 at 6-hour interval. <code class="docutils literal notranslate"><span class="pre">t2m</span></code> stands for 2 m above the surface, the standard height used by temperature sensors. It is a common metric used in climatology but note that it is different from the <strong>surface</strong> temperature which would be the temperature of the ground surface.</p>
-<a class="reference internal image-reference" href="../../_images/clouds.jpg"><img alt="../../_images/clouds.jpg" class="align-center" src="../../_images/clouds.jpg" style="width: 500px;" /></a>
+<p>Download the land cover data for this assignment from <a class="reference external" href="https://www.dropbox.com/sh/ueleej8cr77kr2i/AACjQIouxEfUvo6A7ErSfgS0a?dl=0">here</a>. The datasets are two National Land Cover Database (NLCD) products for Phoenix, AZ from 2001 and 2019. More information about the data can be found on the <a class="reference external" href="https://www.mrlc.gov/data">Multi-Resolution Land Characteristics Consortium</a> wesbite.</p>
+<a class="reference internal image-reference" href="../../_images/phoenix.jpeg"><img alt="../../_images/phoenix.jpeg" class="align-center" src="../../_images/phoenix.jpeg" style="width: 700px;" /></a>
 <hr class="docutils" />
 <div class="section" id="task-1-5-points">
 <h2>Task 1 (5 points)<a class="headerlink" href="#task-1-5-points" title="Permalink to this headline">¶</a></h2>
-<p>Read the dataset and answer the following questions:</p>
 <ul class="simple">
-<li><p>a) What are the dimensions of the dataset?</p></li>
-<li><p>b) What was the <strong>mean</strong> air temperature (in F) and cloud cover (in %) of Eugene?</p></li>
+<li><p>a) How many rows and columns are there in the <code class="docutils literal notranslate"><span class="pre">nlcd_2001_phoenix.tif</span></code> GeoTIFF?</p></li>
+<li><p>b) b) Plot the land cover data for 2001 using <a class="reference external" href="https://matplotlib.org/stable/tutorials/colors/colormaps.html#qualitative"><strong>qualitative colormap</strong></a> of your choice.</p></li>
+<li><p>c) Identify the land cover classes of <strong>three</strong> random grid cells. The following table is provided as a reference.</p></li>
 </ul>
-<div class="tip dropdown admonition">
-<p class="admonition-title">Click to reveal hint</p>
-<p>Right-click on Google Maps to record the approximate latitude and longitude of Eugene.</p>
-</div>
+<a class="reference internal image-reference" href="../../_images/nlcd-classes.jpg"><img alt="../../_images/nlcd-classes.jpg" class="align-center" src="../../_images/nlcd-classes.jpg" style="width: 200px;" /></a>
 <ul class="simple">
-<li><p>c) What day was the hottest and coldest in Eugene?</p></li>
-<li><p>d) What day was the hottest and coldest in Florence, OR?</p></li>
-<li><p>e) Make a plot showing air temperature for Eugene and Florence.</p></li>
+<li><p>d) How many grid cells are classified as <strong>Developed, High Intensity</strong>, <strong>Cultivated Crops</strong>, and <strong>Open Water</strong>?</p></li>
+<li><p>e) How many different land cover classes are there in the 2001 data?</p></li>
 </ul>
 </div>
 <hr class="docutils" />
 <div class="section" id="task-2-5-points">
 <h2>Task 2 (5 points)<a class="headerlink" href="#task-2-5-points" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Resample the data to <strong>daily frequency</strong> and report the the mean, minimum, and maximum air temperature and cloud cover for <strong>five</strong> location of your choice.</p></li>
+<li><p>a) Aggregate all developed land cover classes (i.e. 21, 22, 23, and 24) into a single class. Bonus point if you can write it as a one-liner.</p></li>
+<li><p>b) What percentage of the 2001 data is occupied by this new <strong>developed class</strong>?</p></li>
+<li><p>c) What percentage of the 2001 data is occupied by <strong>open water</strong>?</p></li>
+<li><p>d) Which is the <strong>most common</strong> land cover class in the 2001 data (as a percentage)?</p></li>
 </ul>
 </div>
 <hr class="docutils" />
 <div class="section" id="task-3-5-points">
 <h2>Task 3 (5 points)<a class="headerlink" href="#task-3-5-points" title="Permalink to this headline">¶</a></h2>
-<p>In the daily frequency dataset, find the following grid cells and provide the lat/lons <strong>and</strong> a rough location of where they are located.</p>
+<ul class="simple">
+<li><p>a) Import the <code class="docutils literal notranslate"><span class="pre">nlcd_2019_phoenix.tif</span></code> GeoTIFF and aggregate all developed land cover classes (i.e. 21, 22, 23, and 24) into a single class.</p></li>
+<li><p>b) How much did the <strong>developed</strong> land cover class change by between 2001 and 2019 (as a percentage)?</p></li>
+<li><p>c) How much land was developed between 2001 and 2009 <strong>in km<span class="math notranslate nohighlight">\(^2\)</span></strong>? Remember that each pixel is 30 x 30m.</p></li>
+<li><p>d) How did the <strong>cultivate crops</strong> class change between 2001 and 2019 (as a percentage and in km<span class="math notranslate nohighlight">\(^2\)</span>)?</p></li>
+<li><p>e) Make a <strong>DataFrame</strong> showing land cover change (as percentage) for all classes.</p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="extra-credit">
+<h2>Extra credit<a class="headerlink" href="#extra-credit" title="Permalink to this headline">¶</a></h2>
+<p>Make a figure that replicates panels <strong>b</strong> (or <strong>d</strong>) from Figure 2 of van Vliet (2019), but for Phoenix.</p>
+<a class="reference internal image-reference" href="../../_images/fig2.png"><img alt="../../_images/fig2.png" class="align-center" src="../../_images/fig2.png" style="width: 600px;" /></a>
+<p>The figure is from <a class="reference external" href="https://www.dropbox.com/s/dk51m44mlruz7l9/van-vliet-2019.pdf?dl=0">van Vliet, J. (2019). Direct and indirect loss of natural area from urban expansion. Nature Sustainability, 2(8), 755-763</a>.</p>
+<hr class="docutils" />
+<p>In the second part of this assignment we will be anlyzing some climate data for the US in 2021. Download the data for the assignment from <a class="reference external" href="https://www.dropbox.com/sh/ueleej8cr77kr2i/AACjQIouxEfUvo6A7ErSfgS0a?dl=0">here</a>. The dataset contains gridded daily air temperature (K) and cloud cover (%) over the USA for 2021. <code class="docutils literal notranslate"><span class="pre">t2m</span></code> stands for 2 m above the surface, the standard height used by temperature sensors. It is a common metric used in climatology but note that it is different from the surface temperature which would be the temperature of the ground surface.</p>
+<a class="reference internal image-reference" href="../../_images/clouds.jpg"><img alt="../../_images/clouds.jpg" class="align-center" src="../../_images/clouds.jpg" style="width: 500px;" /></a>
+</div>
+<hr class="docutils" />
+<div class="section" id="task-4-5-points">
+<h2>Task 4 (5 points)<a class="headerlink" href="#task-4-5-points" title="Permalink to this headline">¶</a></h2>
+<p>Read the US climate data and answer the following questions:</p>
+<ul class="simple">
+<li><p>a) What are the dimensions of the dataset?</p></li>
+<li><p>b) List the northernmost, southernmost, eastermost, and westernmost coordinates of the dataset.</p></li>
+<li><p>c) What was the <strong>mean</strong> air temperature (in F) and cloud cover (in %) of Eugene?</p></li>
+</ul>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Click to reveal hint</p>
+<p>Right-click on Google Maps to record the approximate latitude and longitude of Eugene.</p>
+</div>
+<ul class="simple">
+<li><p>d) What day was the hottest and coldest in Eugene?</p></li>
+<li><p>e) What day was the hottest and coldest in Florence, OR?</p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="task-5-5-points">
+<h2>Task 5 (5 points)<a class="headerlink" href="#task-5-5-points" title="Permalink to this headline">¶</a></h2>
+<p>Find the following grid cells in the US climate data and provide the lat/lons <strong>and</strong> a rough location of where they are located.</p>
 <ul class="simple">
 <li><p>a) Highest annual mean air temperature (i.e. hottest place)</p></li>
 <li><p>b) Lowest annual mean air temperature (i.e. coldest place)</p></li>
@@ -468,9 +543,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="task-4-5-points">
-<h2>Task 4 (5 points)<a class="headerlink" href="#task-4-5-points" title="Permalink to this headline">¶</a></h2>
-<p>Answer the following questions in the daily frequency dataset:</p>
+<div class="section" id="id1">
+<h2>Extra credit<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>a) What was the mean air temperature (in F) and cloud cover (in %) in Florence, OR in <strong>February</strong>?</p></li>
 <li><p>b) What was the air temperature (in F) and cloud cover (in %) in Phoenix, AZ on <strong>July 16</strong>?</p></li>
@@ -511,11 +585,11 @@ const thebe_selector_output = ".output, .cell_output"
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../../lectures/week4/lecture-4.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../../lectures/week4/lecture-4b.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Gridded data</p>
+            <p class="prev-next-title">Climate data analysis</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../../lectures/week5/lecture-5.html" title="next page">

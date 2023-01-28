@@ -29,7 +29,8 @@ parts:
 
   - caption: Week 4
     chapters:
-    - file: lectures/week4/lecture-4.ipynb
+    - file: lectures/week4/lecture-4a.ipynb
+    - file: lectures/week4/lecture-4b.ipynb
     - file: labs/week4/assignment4.md
 
   - caption: Week 5

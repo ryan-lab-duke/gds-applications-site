@@ -185,8 +185,13 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../week4/lecture-4.html">
-   Gridded data
+  <a class="reference internal" href="../week4/lecture-4a.html">
+   Gridded data analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week4/lecture-4b.html">
+   Climate data analysis
   </a>
  </li>
  <li class="toctree-l1">
@@ -677,7 +682,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="osmnx">
 <h2><code class="docutils literal notranslate"><span class="pre">OSMnx</span> </code><a class="headerlink" href="#osmnx" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">OSMnx</span></code> is a Python package to retrieve, model, analyze, and visualize street <strong>networks</strong> from <strong>OpenStreetMap</strong>. Users can download and model walkable, drivable, or bikeable urban networks with a single line of Python code, and then easily analyze and visualize them.</p>
+<p>A Python package to retrieve, model, analyze, and visualize street <strong>networks</strong> from <strong>OpenStreetMap</strong>. Users can download and model walkable, drivable, or bikeable urban networks with a single line of Python code, and then easily analyze and visualize them.</p>
 <a class="reference internal image-reference" href="../../_images/osmnx.png"><img alt="../../_images/osmnx.png" class="align-center" src="../../_images/osmnx.png" style="width: 800px;" /></a>
 </div>
 <div class="section" id="retrieve-osm-data">
@@ -805,7 +810,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <p>The first thing to note is that the network structure consists of <strong>nodes</strong> (dots) and <strong>edges</strong> (lines). Nodes represent objects while edges represent the relationship between those objects.</p>
 <p>Since our network represents transport infrastructure, nodes represent intersections/dead-ends and edges represent the street segments that link them. If we were studying social relationships between Facebook users, nodes would represent users and edges would represent relationships between them (e.g. friendships or group memberships).</p>
-<p>Also note that the graph is <a class="reference external" href="https://networkx.org/documentation/stable/reference/classes/multidigraph.html"><code class="docutils literal notranslate"><span class="pre">MultiDiGraph</span></code></a> <code class="docutils literal notranslate"><span class="pre">NetworkX</span></code> object. <code class="docutils literal notranslate"><span class="pre">Multi</span></code> means that multiple edges are allowed between any pair of nodes. <code class="docutils literal notranslate"><span class="pre">Di</span></code> stands for <strong>directed</strong> which means that all our edges are directional. Bidirectional streets are therefore represented with <strong>two edges</strong> (with identical geometries): one from node 1 to node 2 and another from 2 to 1, to represent both possible directions of flow.</p>
+<p>Also note that the graph is <a class="reference external" href="https://networkx.org/documentation/stable/reference/classes/multidigraph.html"><code class="docutils literal notranslate"><span class="pre">MultiDiGraph</span> <span class="pre">NetworkX</span></code></a> object. <code class="docutils literal notranslate"><span class="pre">Multi</span></code> means that multiple edges are allowed between any pair of nodes. <code class="docutils literal notranslate"><span class="pre">Di</span></code> stands for <strong>directed</strong> which means that all our edges are directional. Bidirectional streets are therefore represented with <strong>two edges</strong> (with identical geometries): one from node 1 to node 2 and another from 2 to 1, to represent both possible directions of flow.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
@@ -1543,7 +1548,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <p>We won’t use most of these columns in this demo but they could be very useful for further analysis.</p>
-<p>Another way to access the edge and node attributes is to use the <code class="docutils literal notranslate"><span class="pre">list</span></code> built-in function on the <code class="docutils literal notranslate"><span class="pre">.data()</span></code> attribute. Then list the <code class="docutils literal notranslate"><span class="pre">dict_keys</span></code> of the associated object.</p>
+<p>Another way to access the edge and node attributes is to use the <code class="docutils literal notranslate"><span class="pre">list</span></code> built-in function on the <code class="docutils literal notranslate"><span class="pre">data()</span></code> attribute. Then list the <code class="docutils literal notranslate"><span class="pre">dict_keys</span></code> of the associated object.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">graph_proj</span><span class="o">.</span><span class="n">edges</span><span class="o">.</span><span class="n">data</span><span class="p">())[</span><span class="mi">0</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>

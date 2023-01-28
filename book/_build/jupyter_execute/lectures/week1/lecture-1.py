@@ -3,27 +3,7 @@
 
 # # Introduction
 # 
-# ```{image} images/coding-computer-programming.jpeg
-# :width: 300px
-# :align: center
-# ```
-
-# # Welcome
-# 
-# Dr. Johnny Ryan, Assistant Professor of Geography
-# 
-# * BSc in Geography at University of Nottingham, UK
-# 
-# 
-# * MPhil in Polar Studies at University of Cambridge, UK
-# 
-# 
-# * PhD in Geography at Aberystwyth University, UK
-# 
-# 
-# * Postdoc at the Institute at Brown for Environment and Society, RI, USA
-# 
-# Researching glaciology, hydrology, remote sensing
+# Welcome to Geospatial Data Science! In the first lecture we will provide an overview of the course including motivations, expectations, grading, and the schedule. 
 
 # ## Lecture content
 # 
