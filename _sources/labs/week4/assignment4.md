@@ -52,7 +52,7 @@ Download the land cover data for this assignment from [here](https://www.dropbox
 
 * b) How much did the **developed** land cover class change by between 2001 and 2019 (as a percentage)?
 
-* c) How much land was developed between 2001 and 2009 **in km$^2$**? Remember that each pixel is 30 x 30m. 
+* c) How much land was developed between 2001 and 2019 **in km$^2$**? Remember that each pixel is 30 x 30m. 
 
 * d) How did the **cultivate crops** class change between 2001 and 2019 (as a percentage and in km$^2$)?
 
