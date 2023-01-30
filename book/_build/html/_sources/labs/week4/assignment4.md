@@ -17,30 +17,32 @@ Download the land cover data for this assignment from [here](https://www.dropbox
 
 * a) How many rows and columns are there in the `nlcd_2001_phoenix.tif` GeoTIFF?
 
-* b) b) Plot the land cover data for 2001 using [**qualitative colormap**](https://matplotlib.org/stable/tutorials/colors/colormaps.html#qualitative) of your choice.
+* b) List the northernmost, southernmost, eastermost, and westernmost coordinates of the dataset.
 
-* c) Identify the land cover classes of **three** random grid cells. The following table is provided as a reference. 
+* c) Plot the land cover data for 2001 using [**qualitative colormap**](https://matplotlib.org/stable/tutorials/colors/colormaps.html#qualitative) of your choice.
+
+* d) Identify the land cover classes of **three** random grid cells. The following table is provided as a reference. 
 
 ```{image} images/nlcd-classes.jpg
 :width: 200px
 :align: center
 ```
 
-* d) How many grid cells are classified as **Developed, High Intensity**, **Cultivated Crops**, and **Open Water**?
-
-* e) How many different land cover classes are there in the 2001 data?
+* e) How many grid cells are classified as **Developed, High Intensity**, **Cultivated Crops**, and **Open Water**?
 
 *****************************
 
 ## Task 2 (5 points)
 
-* a) Aggregate all developed land cover classes (i.e. 21, 22, 23, and 24) into a single class. Bonus point if you can write it as a one-liner.
+* a) How many different land cover classes are there in the 2001 data?
 
-* b) What percentage of the 2001 data is occupied by this new **developed class**?
+* b) Aggregate all developed land cover classes (i.e. 21, 22, 23, and 24) into a single class. Bonus point if you can write it as a one-liner.
 
-* c) What percentage of the 2001 data is occupied by **open water**?
+* c) What percentage of the 2001 data is occupied by this new **developed class**?
 
-* d) Which is the **most common** land cover class in the 2001 data (as a percentage)?
+* d) What percentage of the 2001 data is occupied by **open water**?
+
+* e) Which is the **most common** land cover class in the 2001 data (as a percentage)?
 
 *****************************
 

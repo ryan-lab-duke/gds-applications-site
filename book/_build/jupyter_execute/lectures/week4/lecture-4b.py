@@ -3,7 +3,7 @@
 
 # # Climate data analysis
 # 
-# In this demo, we will be investigating the world's climate. The data contains gridded monthly air temperature and precipitation for the 1959-2021 time period from the [Copernicus Climate Change Service](https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-single-levels-monthly-means?tab=overview). 
+# In this demo, we will be investigating the **world's climate**. The data contains **gridded monthly air temperature and precipitation** for the 1959-2021 time period from the [Copernicus Climate Change Service](https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-single-levels-monthly-means?tab=overview). 
 # 
 # ```{image} images/climate.jpeg
 # :width: 600px
@@ -12,7 +12,7 @@
 
 # ## `xarray`
 # 
-# * The best Python package for this task is `xarray` which introduces labels in the form of **dimensions, coordinates and attributes** on top of raw NumPy-like arrays, a bit like `Pandas`. 
+# * The best Python package for this task is `xarray` which introduces labels in the form of **dimensions, coordinates, and attributes** on top of raw NumPy-like arrays, a bit like `Pandas`. 
 # 
 # 
 # * `xarray` can be used read, write, and analyze any scientific datasets stored in `.nc` or `.hdf` format.
@@ -22,11 +22,11 @@
 # 
 # ```{image} images/xarray.png
 # :alt: xarray
-# :width: 300px
+# :width: 500px
 # :align: center
 # ```
 
-# In[112]:
+# In[1]:
 
 
 # Import package
@@ -38,6 +38,10 @@ from mpl_toolkits.axes_grid1 import make_axes_locatable
 # Read data
 xds = xr.open_dataset('data/world_climate.nc')
 
+
+# ```{note}
+# The data for this demo can be accessed [here](https://www.dropbox.com/sh/czfmie4piindv8n/AAAiZCdIoi9dSqVTIHK0c8yPa?dl=0).
+# ```
 
 # ## Basic information about `Dataset`
 
@@ -81,78 +85,67 @@ xds
 
 # ## Basic information about `DataArray`
 # 
-# ```{image} images/xarray_data_structures.png
-# :alt: xarray_data
-# :width: 600px
-# :align: center
-# ```
 
-# In[118]:
+# In[12]:
 
 
-type(xds['time'])
+type(xds['latitude'])
 
 
-# In[119]:
+# In[13]:
 
 
-xds['time']
+xds['latitude']
 
 
 # Print as a NumPy array
 
-# In[120]:
+# In[14]:
 
 
-xds['time'].values
-
-
-# In[121]:
-
-
-type(xds['time'].values)
+type(xds['latitude'].values)
 
 
 # First item in array
 
-# In[122]:
+# In[15]:
 
 
-xds['time'].values[0]
+xds['latitude'].values[0]
 
 
 # Last item in array
 
-# In[123]:
+# In[16]:
 
 
-xds['time'].values[-1]
+xds['latitude'].values[-1]
 
 
 # Shape of `DataArray`
 
-# In[124]:
+# In[17]:
 
 
-xds['time'].values.shape
+xds['latitude'].values.shape
 
 
 # ## Time
 
-# In[125]:
+# In[18]:
 
 
 type(xds['time'].values[0])
 
 
-# In[126]:
+# In[19]:
 
 
 period = xds['time'].values[-1] - xds['time'].values[0]
 period
 
 
-# In[127]:
+# In[20]:
 
 
 period.astype('timedelta64[Y]')
@@ -160,7 +153,7 @@ period.astype('timedelta64[Y]')
 
 # Convert to **integer**
 
-# In[128]:
+# In[21]:
 
 
 period.astype('timedelta64[Y]').astype(int)
@@ -168,24 +161,24 @@ period.astype('timedelta64[Y]').astype(int)
 
 # ## Plot
 
-# In[180]:
+# In[24]:
 
 
 fig, ax = plt.subplots(figsize=(10,6))
 
 im1 = ax.imshow(xds['t2m'][0,:,:], cmap='RdYlBu_r')
 
-ax1.set_title("Air temperature", fontsize=14)
-divider = make_axes_locatable(ax2)
+ax.set_title("Air temperature", fontsize=14)
+divider = make_axes_locatable(ax)
 cax = divider.append_axes('right', size='5%', pad=0.05)
-fig.colorbar(im2, cax=cax, orientation='vertical')
+fig.colorbar(im1, cax=cax, orientation='vertical')
 
 
 # ## Stats
 # 
 # Compute mean air temperature for entire period
 
-# In[148]:
+# In[25]:
 
 
 temp = xds['t2m']
@@ -193,19 +186,19 @@ mean_temp = temp.mean(['time'])
 mean_temp
 
 
-# In[145]:
+# In[26]:
 
 
 mean_temp.shape
 
 
-# In[146]:
+# In[28]:
 
 
 mean_temp[300, 100]
 
 
-# In[147]:
+# In[29]:
 
 
 # Plot
@@ -214,17 +207,17 @@ fig, ax = plt.subplots(figsize=(10,6))
 im1 = ax.imshow(xds['t2m'][0,:,:], cmap='RdYlBu_r')
 ax.scatter(100, 300, s=100, c='k')
 
-ax1.set_title("Air temperature", fontsize=14)
-divider = make_axes_locatable(ax2)
+ax.set_title("Air temperature", fontsize=14)
+divider = make_axes_locatable(ax)
 cax = divider.append_axes('right', size='5%', pad=0.05)
-fig.colorbar(im2, cax=cax, orientation='vertical')
+fig.colorbar(im1, cax=cax, orientation='vertical')
 
 
 # ## Indexing multi-dimensional datasets
 # 
 # Since our `xarray` dataset is **aware** of the latitude and longitude coordinates, we can index values conveniently.
 
-# In[170]:
+# In[30]:
 
 
 t = xds['t2m'].sel(latitude=27.7, longitude=85.3, method='nearest')
@@ -233,7 +226,7 @@ print('The mean annual air temperature in Kathmandu is %.2f F' %((t.mean('time')
 
 # Convert to Pandas `DataFrame`
 
-# In[172]:
+# In[31]:
 
 
 t.to_dataframe()
@@ -243,7 +236,7 @@ t.to_dataframe()
 # 
 # To find the coldest place on Earth we have to find the grid cell with the lowest temperature. The `argmin()` function returns the **indices** of the minimum values of an array. 
 
-# In[173]:
+# In[38]:
 
 
 min_value = mean_temp.argmin()
@@ -252,21 +245,21 @@ print(min_value)
 
 # Perhaps unexpectedly, `argmin()` returns a single number instead of a row/column pair. We can use NumPy's `unravel_index()` to convert this 1D index to 2D coordinates. It just needs to know the **shape** of our original 2D `DataArray`.
 
-# In[175]:
+# In[39]:
 
 
 low_idx = np.unravel_index(min_value, mean_temp.shape)
 print(low_idx)
 
 
-# In[176]:
+# In[40]:
 
 
 cold = mean_temp[low_idx[0], low_idx[1]].values
 print('Coldest place on Earth is %.2f F' % ((cold - 273.15) * 9/5 + 32))
 
 
-# In[179]:
+# In[41]:
 
 
 fig, ax1 = plt.subplots(figsize=(10,6))
@@ -276,7 +269,7 @@ im1 = ax1.imshow(xds['t2m'][1,:,:], cmap='RdYlBu_r')
 ax1.set_title("Coldest place on Earth (1959-2021)", fontsize=14)
 ax1.scatter(low_idx[1], low_idx[0], s=100, color='k')
 
-divider = make_axes_locatable(ax2)
+divider = make_axes_locatable(ax1)
 cax = divider.append_axes('right', size='5%', pad=0.05)
 fig.colorbar(im1, cax=cax, orientation='vertical')
 
@@ -285,13 +278,13 @@ fig.colorbar(im1, cax=cax, orientation='vertical')
 # 
 # To find the hottest month on Earth, we need to preserve the time dimension of our data. Instead we need average over the latitude and longitude dimensions.  
 
-# In[182]:
+# In[42]:
 
 
 hot = xds['t2m'].mean(['longitude','latitude'])
 
 
-# In[190]:
+# In[43]:
 
 
 hot['time'][hot.argmax()].values
@@ -303,13 +296,13 @@ hot['time'][hot.argmax()].values
 # 
 # There are a couple of ways to find the hottest year. The first is to use the `groupby` function. 
 
-# In[193]:
+# In[44]:
 
 
 temp_yearly = xds['t2m'].groupby('time.year').mean()
 
 
-# In[201]:
+# In[45]:
 
 
 hot = temp_yearly.mean(['longitude','latitude'])
@@ -320,15 +313,15 @@ hot['year'][hot.argmax()].values
 # Since we grouped by **year**, the time interval dimension was renamed to `year`.
 # ```
 
-# Alternatively, we could use the resample method. 
+# Alternatively, we could use the `resample` function. 
 
-# In[202]:
+# In[46]:
 
 
 temp_yearly = xds['t2m'].resample(time="Y").mean()
 
 
-# In[205]:
+# In[47]:
 
 
 hot = temp_yearly.mean(['longitude','latitude'])
