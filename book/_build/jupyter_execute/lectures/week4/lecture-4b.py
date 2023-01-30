@@ -75,7 +75,7 @@ xds.keys
 # `t2m` stands for 2 m above the surface, the standard height used by temperature sensors. It is a common metric used in climatology but note that it is different from the surface temperature which would be the temperature of the ground surface.
 # ```
 
-# Since we in an interactive notebook, a more convenient way of finding information about our dataset is to just execute the variable name.
+# Since we are using an interactive notebook, a more convenient way of finding information about our dataset is to just execute the variable name.
 
 # In[117]:
 

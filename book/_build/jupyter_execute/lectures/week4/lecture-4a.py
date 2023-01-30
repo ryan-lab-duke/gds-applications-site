@@ -277,9 +277,9 @@ df
 
 # ## Conclusion
 # 
-# Oh dear - the extent of shrubs did **not** increase between 2001 and 2016. One takeway from this could be that shrubification is **not happening** in this region of the Arctic. But the percentage change in shrubs was very small (-0.02%) and could well be smaller than the uncertainty in our land cover product. For example, if just 1% of pixels were incorrectly classified as shrubs in 2001 our result would be insignificant. 
+# Oh dear - the extent of shrubs did **not** increase between 2001 and 2016. One takeaway from this could be that shrubification is **not happening** in this region of the Arctic. But the percentage change in shrubs was very small (-0.02%) and could well be smaller than the uncertainty in our land cover product. For example, if just 1% of pixels were incorrectly classified as shrubs in 2001 our result would be insignificant. 
 # 
-# Other, peraps more signficant changes, that occurred between 2001 and 2016 include an increase in **deciduous forest** (41) by **3.9%**, a decrease in **evergreen forest** (42) by **0.4%**, and an decrease in **emergent herbaceous wetlands** (95) by **0.4%**. 
+# Other, perhaps more significant changes, that occurred between 2001 and 2016 include an increase in **deciduous forest** (41) by **3.9%**, a decrease in **evergreen forest** (42) by **0.4%**, and a decrease in **emergent herbaceous wetlands** (95) by **0.4%**. 
 
 # ## Direction of land cover change
 # 
