@@ -412,11 +412,6 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#slice-and-index-data">
-   Slice and index data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#single-land-cover-type">
    Single land cover type
   </a>
@@ -507,11 +502,6 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#slice-and-index-data">
-   Slice and index data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#single-land-cover-type">
    Single land cover type
   </a>
@@ -552,15 +542,15 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="gridded-data-analysis">
 <h1>Gridded data analysis<a class="headerlink" href="#gridded-data-analysis" title="Permalink to this headline">¶</a></h1>
-<p>In this demo, we will be investigating the extent of <strong>shrubification</strong> in Alaska using the <strong>National Land Cover Database (NLCD)</strong>. “Shrubification” describes the expansion of shrubs across the <strong>Arctic</strong>. Shrubs are woody plants with diverse growth forms but are often the tallest plants occupying tundra ecosystems upslope or northward of the treeline ecotone, and can form dense thickets with closed canopies in suitable habitats.</p>
-<p>Studies indicate that warming temperatures, changes in snow cover, altered disturbance regimes due to permafrost thaw, tundra fires, and anthropogenic activities or changes in herbivory intensity are all contributing to general increases in shrub abundance which will have wide-ranging consequences for the ecosystems and climate of the region.</p>
+<p>In this demo, we will be investigating the extent of <strong>shrubification</strong> in Alaska using the <strong>National Land Cover Database (NLCD)</strong>. “Shrubification” describes the expansion of shrubs across the <strong>Arctic</strong>. Shrubs are woody plants with diverse growth forms but are often the tallest plants occupying tundra ecosystems and can form dense thickets with closed canopies in suitable habitats.</p>
+<p>Studies indicate that warming temperatures, changes in snow cover, altered disturbance regimes (due to permafrost thaw, tundra fires, anthropogenic activities or changes in herbivory intensity) are all contributing to general <strong>increases in shrub abundance</strong> which will have wide-ranging consequences for the ecosystems and climate of the region.</p>
 <a class="reference internal image-reference" href="../../_images/shrubs.jpeg"><img alt="../../_images/shrubs.jpeg" class="align-center" src="../../_images/shrubs.jpeg" style="width: 600px;" /></a>
 <div class="section" id="national-land-cover-database">
 <h2>National Land Cover Database<a class="headerlink" href="#national-land-cover-database" title="Permalink to this headline">¶</a></h2>
 <p>The National Land Cover Database (NLCD) provides <strong>gridded land cover</strong> at a 30 m resolution with a <strong>20-class legend (in Alaska)</strong> based on a modified Anderson Level II classification system.</p>
-<p>The database is designed to provide cyclical updates of United States land cover and associated changes.</p>
-<p>Systematically aligned over time, the database provides the ability to understand both current and historical land cover and land cover change, and enables monitoring and trend assessments.</p>
-<a class="reference internal image-reference" href="../../_images/nlcd-classes1.jpg"><img alt="../../_images/nlcd-classes1.jpg" class="align-center" src="../../_images/nlcd-classes1.jpg" style="width: 200px;" /></a>
+<p>The database is designed to provide cyclical updates of United States land cover every 2-3 years since 2001.</p>
+<p>Enables systematic documententation of land cover change for monitoring and trend assessments.</p>
+<a class="reference internal image-reference" href="../../_images/nlcd-classes1.jpg"><img alt="../../_images/nlcd-classes1.jpg" class="align-center" src="../../_images/nlcd-classes1.jpg" style="width: 300px;" /></a>
 </div>
 <div class="section" id="gridded-data">
 <h2>Gridded data<a class="headerlink" href="#gridded-data" title="Permalink to this headline">¶</a></h2>
@@ -569,8 +559,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="libraries">
 <h2>Libraries<a class="headerlink" href="#libraries" title="Permalink to this headline">¶</a></h2>
-<p>We recommend three libraries for accessing and analyzing gridded data in Python. The first is called <code class="docutils literal notranslate"><span class="pre">rasterio</span></code> which builds on the popular <strong>Geographic Raster Abstraction Library</strong> or <strong>GDAL</strong>. It supports read/write access for over 160 gridded data formats (e.g. GeoTIFF, NetCDF4) and includes methods for finding dataset information, reprojections, resampling, format conversion, and mosaicking.</p>
+<p>The main library for accessing and analyzing gridded data in Python is called <code class="docutils literal notranslate"><span class="pre">rasterio</span></code> which builds on the popular <strong>Geographic Raster Abstraction Library</strong> or <strong>GDAL</strong>. It supports read/write access for over 160 gridded data formats (e.g. GeoTIFF, NetCDF4) and includes methods for finding dataset information, reprojecting, resampling, format conversion, and mosaicking.</p>
 <a class="reference internal image-reference" href="../../_images/gdal.png"><img alt="../../_images/gdal.png" class="align-center" src="../../_images/gdal.png" style="width: 200px;" /></a>
+<p>Let’s get started…</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import libraries</span>
@@ -585,25 +576,29 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="open-dataset">
 <h2>Open dataset<a class="headerlink" href="#open-dataset" title="Permalink to this headline">¶</a></h2>
-<p>The data is formatted as an <code class="docutils literal notranslate"><span class="pre">img</span></code> file which is similar to a GeoTIFF (<code class="docutils literal notranslate"><span class="pre">.tif</span></code>). We can therefore open it using <code class="docutils literal notranslate"><span class="pre">rasterio</span></code> function, <code class="docutils literal notranslate"><span class="pre">open()</span></code>. This function takes a <strong>path string</strong> and returns a <strong>dataset object</strong>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">src</span> <span class="o">=</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;data/NLCD_2016_Land_Cover_AK/NLCD_2016_Land_Cover_AK.img&#39;</span><span class="p">)</span>
-<span class="n">src</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;open DatasetReader name=&#39;data/NLCD_2016_Land_Cover_AK/NLCD_2016_Land_Cover_AK.img&#39; mode=&#39;r&#39;&gt;
-</pre></div>
-</div>
-</div>
+<p>The data is formatted as a GeoTIFF (<code class="docutils literal notranslate"><span class="pre">.tif</span></code>) file which is one of the many formats that can be read by <code class="docutils literal notranslate"><span class="pre">rasterio</span></code>. We can open the dataset using the function <code class="docutils literal notranslate"><span class="pre">open()</span></code> which accepts a <strong>path string</strong> and returns a <strong>dataset object</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The data for this demo can be accessed <a class="reference external" href="https://www.dropbox.com/sh/czfmie4piindv8n/AAAiZCdIoi9dSqVTIHK0c8yPa?dl=0">here</a>.</p>
 </div>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><code class="docutils literal notranslate"><span class="pre">src</span></code> stands for <strong>source</strong></p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">src</span> <span class="o">=</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;data/nlcd_2016_ak.tif&#39;</span><span class="p">)</span>
+<span class="n">src</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;open DatasetReader name=&#39;data/nlcd_2016_ak.tif&#39; mode=&#39;r&#39;&gt;
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -615,13 +610,15 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of bands: </span><span class="si">{</span><span class="n">src</span><span class="o">.</span><span class="n">count</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Width: </span><span class="si">{</span><span class="n">src</span><span class="o">.</span><span class="n">width</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Height: </span><span class="si">{</span><span class="n">src</span><span class="o">.</span><span class="n">height</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Data type: </span><span class="si">{</span><span class="n">src</span><span class="o">.</span><span class="n">dtypes</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of bands: 1
-Width: 124236
-Height: 67844
+Width: 3991
+Height: 2868
+Data type: (&#39;uint8&#39;,)
 </pre></div>
 </div>
 </div>
@@ -637,13 +634,13 @@ Height: 67844
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CRS.from_wkt(&#39;PROJCS[&quot;WGS_1984_Albers&quot;,GEOGCS[&quot;WGS 84&quot;,DATUM[&quot;WGS_1984&quot;,SPHEROID[&quot;WGS 84&quot;,6378137,298.257223563,AUTHORITY[&quot;EPSG&quot;,&quot;7030&quot;]],AUTHORITY[&quot;EPSG&quot;,&quot;6326&quot;]],PRIMEM[&quot;Greenwich&quot;,0,AUTHORITY[&quot;EPSG&quot;,&quot;8901&quot;]],UNIT[&quot;degree&quot;,0.0174532925199433,AUTHORITY[&quot;EPSG&quot;,&quot;9122&quot;]],AUTHORITY[&quot;EPSG&quot;,&quot;4326&quot;]],PROJECTION[&quot;Albers_Conic_Equal_Area&quot;],PARAMETER[&quot;latitude_of_center&quot;,50],PARAMETER[&quot;longitude_of_center&quot;,-154],PARAMETER[&quot;standard_parallel_1&quot;,55],PARAMETER[&quot;standard_parallel_2&quot;,65],PARAMETER[&quot;false_easting&quot;,0],PARAMETER[&quot;false_northing&quot;,0],UNIT[&quot;meters&quot;,1],AXIS[&quot;Easting&quot;,EAST],AXIS[&quot;Northing&quot;,NORTH]]&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CRS.from_wkt(&#39;PROJCS[&quot;WGS_1984_Albers&quot;,GEOGCS[&quot;WGS 84&quot;,DATUM[&quot;WGS_1984&quot;,SPHEROID[&quot;WGS 84&quot;,6378137,298.257223563,AUTHORITY[&quot;EPSG&quot;,&quot;7030&quot;]],AUTHORITY[&quot;EPSG&quot;,&quot;6326&quot;]],PRIMEM[&quot;Greenwich&quot;,0],UNIT[&quot;degree&quot;,0.0174532925199433,AUTHORITY[&quot;EPSG&quot;,&quot;9122&quot;]],AUTHORITY[&quot;EPSG&quot;,&quot;4326&quot;]],PROJECTION[&quot;Albers_Conic_Equal_Area&quot;],PARAMETER[&quot;latitude_of_center&quot;,50],PARAMETER[&quot;longitude_of_center&quot;,-154],PARAMETER[&quot;standard_parallel_1&quot;,55],PARAMETER[&quot;standard_parallel_2&quot;,65],PARAMETER[&quot;false_easting&quot;,0],PARAMETER[&quot;false_northing&quot;,0],UNIT[&quot;metre&quot;,1,AUTHORITY[&quot;EPSG&quot;,&quot;9001&quot;]],AXIS[&quot;Easting&quot;,EAST],AXIS[&quot;Northing&quot;,NORTH]]&#39;)
 </pre></div>
 </div>
 </div>
 </div>
-<p>This is a little overwelming but there is some useful information contained here. For example it looks like the data are projected using an <a class="reference external" href="https://en.wikipedia.org/wiki/Albers_projection"><strong>Albers projection system</strong></a> and the units are in <strong>meters</strong>.</p>
-<p>We can display some more specific information about a dataset’s projection using the <code class="docutils literal notranslate"><span class="pre">transform</span></code> method. This function prints the <strong>spatial resolution</strong> of the dataset (i.e. the dimensions that each pixel of our dataset represents on the ground) and the coordinates of the <strong>top left</strong> corner.</p>
+<p>The output from this function can be a little overwelming but there is some useful information contained here. For example it looks like the data are projected using an <a class="reference external" href="https://en.wikipedia.org/wiki/Albers_projection"><strong>Albers projection system</strong></a> and the units are in <strong>meters</strong>.</p>
+<p>We can display some more specific information about a dataset’s projection using the <code class="docutils literal notranslate"><span class="pre">transform</span></code> method. This function returns the <strong>spatial resolution</strong> of the dataset (i.e. the dimensions that each pixel of our dataset represents on the ground) and the coordinates of the <strong>top left</strong> corner.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">src</span><span class="o">.</span><span class="n">transform</span>
@@ -651,8 +648,8 @@ Height: 67844
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Affine(30.0, 0.0, -2232345.0,
-       0.0, -30.0, 2380125.0)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Affine(30.000052000454264, 0.0, -351410.251360936,
+       0.0, -29.996428936149588, 1939259.112990518)
 </pre></div>
 </div>
 </div>
@@ -665,7 +662,7 @@ Height: 67844
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BoundingBox(left=-2232345.0, bottom=344805.0, right=1494735.0, top=2380125.0)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BoundingBox(left=-351410.251360936, bottom=1853229.354801641, right=-231680.043827123, top=1939259.112990518)
 </pre></div>
 </div>
 </div>
@@ -673,29 +670,26 @@ Height: 67844
 </div>
 <div class="section" id="reading-raster-data">
 <h2>Reading raster data<a class="headerlink" href="#reading-raster-data" title="Permalink to this headline">¶</a></h2>
-<p>Now that we have some basic information about our data, we can go ahead and import it using the <code class="docutils literal notranslate"><span class="pre">read()</span></code> function. Data from each band can be accessed by an index number. Note that bands are indexed from 1 due to a  GDAL convention.</p>
+<p>Now that we have some basic information, we can go ahead and import our data as a NumPy <strong>N-D array</strong> using the <code class="docutils literal notranslate"><span class="pre">read()</span></code> function. Data from each band can be accessed by an index number.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that bands are indexed from 1 due to a  GDAL convention.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nlcd_2016</span> <span class="o">=</span> <span class="n">src</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>The <code class="docutils literal notranslate"><span class="pre">read()</span></code> method returns a numpy <strong>N-D array</strong>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nlcd_2016</span>
+<span class="n">nlcd_2016</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0, 0, 0, ..., 0, 0, 0],
-       [0, 0, 0, ..., 0, 0, 0],
-       [0, 0, 0, ..., 0, 0, 0],
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[42, 42, 42, ..., 52, 52, 41],
+       [42, 42, 42, ..., 52, 52, 41],
+       [42, 42, 42, ..., 41, 41, 52],
        ...,
-       [0, 0, 0, ..., 0, 0, 0],
-       [0, 0, 0, ..., 0, 0, 0],
-       [0, 0, 0, ..., 0, 0, 0]], dtype=uint8)
+       [11, 11, 11, ..., 90, 11, 90],
+       [11, 11, 11, ..., 90, 90, 90],
+       [11, 11, 31, ..., 52, 52, 90]], dtype=uint8)
 </pre></div>
 </div>
 </div>
@@ -719,7 +713,7 @@ Height: 67844
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
-<span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">nlcd_2016</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10000</span><span class="p">,</span> <span class="mi">70000</span><span class="p">:</span><span class="mi">90000</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;tab20b&#39;</span><span class="p">)</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">nlcd_2016</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;tab20b&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Alaska land cover&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -732,22 +726,28 @@ Height: 67844
 </div>
 </div>
 </div>
-<div class="section" id="slice-and-index-data">
-<h2>Slice and index data<a class="headerlink" href="#slice-and-index-data" title="Permalink to this headline">¶</a></h2>
-<p>When conducting exploratory analysis, it is often useful to subset the data into smaller chunks. We will focus on the North Slope of Alaska and we can do that using stanard Python slicing (i.e. <code class="docutils literal notranslate"><span class="pre">array[start:end]</span></code>).</p>
+<div class="section" id="single-land-cover-type">
+<h2>Single land cover type<a class="headerlink" href="#single-land-cover-type" title="Permalink to this headline">¶</a></h2>
+<p>It would be useful to identify what some of these colors mean. To do this we can use <strong>matrix indexing</strong> to find the value of a pixel at a given location (i.e. <code class="docutils literal notranslate"><span class="pre">array[row,</span> <span class="pre">column]</span></code>). In this case we find the land cover at <strong>y (or row) = 500</strong> and <strong>x (or column) = 3000</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nlcd_2016_sample</span> <span class="o">=</span> <span class="n">nlcd_2016</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10000</span><span class="p">,</span> <span class="mi">70000</span><span class="p">:</span><span class="mi">90000</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nlcd_2016</span><span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="mi">3000</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>52
 </pre></div>
 </div>
 </div>
 </div>
-<p>Next it would useful to identify what some of these colors mean. To do this we could start selecting grid cells using their <code class="docutils literal notranslate"><span class="pre">row,</span> <span class="pre">column</span></code> coordinates. In this case we plot the location of <strong>x (or column) = 4000</strong> and <strong>y (or row) = 8000</strong>.</p>
+<p>The land cover type is <strong>52</strong> meaning <strong>shrub/scrub</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/nlcd-shrubs.png"><img alt="../../_images/nlcd-shrubs.png" class="align-center" src="../../_images/nlcd-shrubs.png" style="width: 800px;" /></a>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
-<span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">nlcd_2016_sample</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;tab20b&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="mi">4000</span><span class="p">,</span> <span class="mi">8000</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">nlcd_2016</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;tab20b&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Alaska land cover&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -760,72 +760,39 @@ Height: 67844
 </div>
 </div>
 </div>
-<div class="section" id="single-land-cover-type">
-<h2>Single land cover type<a class="headerlink" href="#single-land-cover-type" title="Permalink to this headline">¶</a></h2>
-<p>We can use <strong>matrix indexing</strong> to find the value of a pixel at a given location (i.e. <code class="docutils literal notranslate"><span class="pre">array[row,</span> <span class="pre">column]</span></code>). At row 2000 and column 9000, the land cover type is <strong>51</strong> meaning <strong>dwarf shrubs</strong>.</p>
-<a class="reference internal image-reference" href="../../_images/nlcd-shrubs.png"><img alt="../../_images/nlcd-shrubs.png" class="align-center" src="../../_images/nlcd-shrubs.png" style="width: 500px;" /></a>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nlcd_2016_sample</span><span class="p">[</span><span class="mi">8000</span><span class="p">,</span> <span class="mi">4000</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>51
-</pre></div>
-</div>
-</div>
-</div>
-<p>We can also identify the land cover the ocean.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nlcd_2016_sample</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
-</pre></div>
-</div>
-</div>
-</div>
-</div>
 <div class="section" id="frequency-of-land-cover-type">
 <h2>Frequency of land cover type<a class="headerlink" href="#frequency-of-land-cover-type" title="Permalink to this headline">¶</a></h2>
-<p>Clearly dwarf shrubs (class 51) cover a large portion the land cover in this region of Alaska. To <strong>quantify</strong> how much area they cover, it would be useful to count the <strong>occurrence of each land cover class</strong>. We can do that using NumPy’s <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.unique.html"><code class="docutils literal notranslate"><span class="pre">unique()</span></code></a> function, making sure we set <code class="docutils literal notranslate"><span class="pre">return_counts</span></code> to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<p>Clearly shrubs (class 52) cover a large portion the land cover in this region of Alaska. To <strong>quantify</strong> how much area they cover, it would be useful to count the <strong>occurrence of each land cover class</strong>. We can do that using NumPy’s <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.unique.html"><code class="docutils literal notranslate"><span class="pre">unique()</span></code></a> function, making sure we set <code class="docutils literal notranslate"><span class="pre">return_counts</span></code> to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unique</span><span class="p">,</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">nlcd_2016_sample</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unique</span><span class="p">,</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">nlcd_2016</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">unique</span><span class="p">,</span> <span class="n">counts</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0: 54136421,
- 11: 17006155,
- 12: 1006816,
- 21: 549,
- 22: 71664,
- 23: 10626,
- 31: 17919994,
- 41: 1437,
- 42: 12176,
- 43: 7059,
- 51: 50502294,
- 52: 7187373,
- 71: 16190,
- 72: 42082616,
- 90: 11389,
- 95: 10027241}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{11: 2378247,
+ 12: 35,
+ 22: 2445,
+ 23: 87,
+ 31: 59650,
+ 41: 59832,
+ 42: 1456210,
+ 43: 146517,
+ 51: 2517179,
+ 52: 1936912,
+ 71: 3609,
+ 72: 1007993,
+ 90: 1161732,
+ 95: 715740}
 </pre></div>
 </div>
 </div>
 </div>
-<p>And convert them to percentages (ignoring ocean values)…</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Count number of land pixels</span>
-<span class="n">land_pixels</span> <span class="o">=</span> <span class="n">nlcd_2016_sample</span><span class="o">.</span><span class="n">size</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">nlcd_2016_sample</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">land_pixels</span> <span class="o">=</span> <span class="n">nlcd_2016</span><span class="o">.</span><span class="n">size</span>
 
 <span class="c1"># Convert to DataFrame</span>
 <span class="n">df_2016</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">unique</span><span class="p">,</span> <span class="n">counts</span><span class="p">,</span> <span class="p">(</span><span class="n">counts</span><span class="o">/</span><span class="n">land_pixels</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">)),</span> 
@@ -861,106 +828,94 @@ Height: 67844
   <tbody>
     <tr>
       <th>0</th>
-      <td>0</td>
-      <td>54136421</td>
-      <td>37.114420</td>
+      <td>11</td>
+      <td>2378247</td>
+      <td>20.777634</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>11</td>
-      <td>17006155</td>
-      <td>11.658945</td>
+      <td>12</td>
+      <td>35</td>
+      <td>0.000306</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>12</td>
-      <td>1006816</td>
-      <td>0.690245</td>
+      <td>22</td>
+      <td>2445</td>
+      <td>0.021361</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>21</td>
-      <td>549</td>
-      <td>0.000376</td>
+      <td>23</td>
+      <td>87</td>
+      <td>0.000760</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>22</td>
-      <td>71664</td>
-      <td>0.049131</td>
+      <td>31</td>
+      <td>59650</td>
+      <td>0.521134</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>23</td>
-      <td>10626</td>
-      <td>0.007285</td>
+      <td>41</td>
+      <td>59832</td>
+      <td>0.522724</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>31</td>
-      <td>17919994</td>
-      <td>12.285448</td>
+      <td>42</td>
+      <td>1456210</td>
+      <td>12.722227</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>41</td>
-      <td>1437</td>
-      <td>0.000985</td>
+      <td>43</td>
+      <td>146517</td>
+      <td>1.280051</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>42</td>
-      <td>12176</td>
-      <td>0.008348</td>
+      <td>51</td>
+      <td>2517179</td>
+      <td>21.991418</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>43</td>
-      <td>7059</td>
-      <td>0.004839</td>
+      <td>52</td>
+      <td>1936912</td>
+      <td>16.921896</td>
     </tr>
     <tr>
       <th>10</th>
-      <td>51</td>
-      <td>50502294</td>
-      <td>34.622964</td>
+      <td>71</td>
+      <td>3609</td>
+      <td>0.031530</td>
     </tr>
     <tr>
       <th>11</th>
-      <td>52</td>
-      <td>7187373</td>
-      <td>4.927462</td>
+      <td>72</td>
+      <td>1007993</td>
+      <td>8.806364</td>
     </tr>
     <tr>
       <th>12</th>
-      <td>71</td>
-      <td>16190</td>
-      <td>0.011099</td>
+      <td>90</td>
+      <td>1161732</td>
+      <td>10.149510</td>
     </tr>
     <tr>
       <th>13</th>
-      <td>72</td>
-      <td>42082616</td>
-      <td>28.850667</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>90</td>
-      <td>11389</td>
-      <td>0.007808</td>
-    </tr>
-    <tr>
-      <th>15</th>
       <td>95</td>
-      <td>10027241</td>
-      <td>6.874397</td>
+      <td>715740</td>
+      <td>6.253086</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
-<p>This is very useful. With reference to the NLCD land cover classes, our table shows that the most dominant type of land cover is <strong>dwarf shrub</strong> at <strong>39%</strong>. Another <strong>33%</strong> is classified as <strong>sedge/herbaceous</strong>, <strong>14%</strong> as <strong>barren land</strong>, and <strong>8%</strong> <strong>emergent herbaceous wetlands</strong>.</p>
-<a class="reference internal image-reference" href="../../_images/classes.png"><img alt="numpy" class="align-center" src="../../_images/classes.png" style="width: 300px;" /></a>
+<p>This is very useful. With reference to the NLCD land cover classes, our table shows that the most dominant type of land cover is <strong>dwarf shrub</strong> (51) at <strong>22%</strong> althoug <strong>normal shrubs</strong> (52) are not far behind with <strong>17%</strong>. We also have some <strong>evergreen forest</strong> (42) at <strong>13%</strong> and <strong>woody wetlands</strong> (90) at <strong>10%</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/nlcd-classes1.jpg"><img alt="../../_images/nlcd-classes1.jpg" class="align-center" src="../../_images/nlcd-classes1.jpg" style="width: 300px;" /></a>
 </div>
 <div class="section" id="aggregate-land-cover-classes">
 <h2>Aggregate land cover classes<a class="headerlink" href="#aggregate-land-cover-classes" title="Permalink to this headline">¶</a></h2>
@@ -968,7 +923,7 @@ Height: 67844
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Re-assign land cover class</span>
-<span class="n">nlcd_2016_sample</span><span class="p">[</span><span class="n">nlcd_2016_sample</span> <span class="o">==</span> <span class="mi">52</span><span class="p">]</span> <span class="o">=</span> <span class="mi">51</span>
+<span class="n">nlcd_2016</span><span class="p">[</span><span class="n">nlcd_2016</span> <span class="o">==</span> <span class="mi">52</span><span class="p">]</span> <span class="o">=</span> <span class="mi">51</span>
 </pre></div>
 </div>
 </div>
@@ -976,7 +931,7 @@ Height: 67844
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check there are no more grid cells classified as normal shrubs</span>
-<span class="n">unique</span><span class="p">,</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">nlcd_2016_sample</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">unique</span><span class="p">,</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">nlcd_2016</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="c1"># Convert to DataFrame</span>
 <span class="n">df_2016</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">unique</span><span class="p">,</span> <span class="n">counts</span><span class="p">,</span> <span class="p">(</span><span class="n">counts</span><span class="o">/</span><span class="n">land_pixels</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">)),</span> 
@@ -1012,93 +967,81 @@ Height: 67844
   <tbody>
     <tr>
       <th>0</th>
-      <td>0</td>
-      <td>54136421</td>
-      <td>37.114420</td>
+      <td>11</td>
+      <td>2378247</td>
+      <td>20.777634</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>11</td>
-      <td>17006155</td>
-      <td>11.658945</td>
+      <td>12</td>
+      <td>35</td>
+      <td>0.000306</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>12</td>
-      <td>1006816</td>
-      <td>0.690245</td>
+      <td>22</td>
+      <td>2445</td>
+      <td>0.021361</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>21</td>
-      <td>549</td>
-      <td>0.000376</td>
+      <td>23</td>
+      <td>87</td>
+      <td>0.000760</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>22</td>
-      <td>71664</td>
-      <td>0.049131</td>
+      <td>31</td>
+      <td>59650</td>
+      <td>0.521134</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>23</td>
-      <td>10626</td>
-      <td>0.007285</td>
+      <td>41</td>
+      <td>59832</td>
+      <td>0.522724</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>31</td>
-      <td>17919994</td>
-      <td>12.285448</td>
+      <td>42</td>
+      <td>1456210</td>
+      <td>12.722227</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>41</td>
-      <td>1437</td>
-      <td>0.000985</td>
+      <td>43</td>
+      <td>146517</td>
+      <td>1.280051</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>42</td>
-      <td>12176</td>
-      <td>0.008348</td>
+      <td>51</td>
+      <td>4454091</td>
+      <td>38.913313</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>43</td>
-      <td>7059</td>
-      <td>0.004839</td>
+      <td>71</td>
+      <td>3609</td>
+      <td>0.031530</td>
     </tr>
     <tr>
       <th>10</th>
-      <td>51</td>
-      <td>57689667</td>
-      <td>39.550426</td>
+      <td>72</td>
+      <td>1007993</td>
+      <td>8.806364</td>
     </tr>
     <tr>
       <th>11</th>
-      <td>71</td>
-      <td>16190</td>
-      <td>0.011099</td>
+      <td>90</td>
+      <td>1161732</td>
+      <td>10.149510</td>
     </tr>
     <tr>
       <th>12</th>
-      <td>72</td>
-      <td>42082616</td>
-      <td>28.850667</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>90</td>
-      <td>11389</td>
-      <td>0.007808</td>
-    </tr>
-    <tr>
-      <th>14</th>
       <td>95</td>
-      <td>10027241</td>
-      <td>6.874397</td>
+      <td>715740</td>
+      <td>6.253086</td>
     </tr>
   </tbody>
 </table>
@@ -1107,20 +1050,17 @@ Height: 67844
 </div>
 <div class="section" id="land-cover-change">
 <h2>Land cover change<a class="headerlink" href="#land-cover-change" title="Permalink to this headline">¶</a></h2>
-<p>The big question here is have these dwarf shrubs always occupied a large portion of the North Slope of Alaska? To answer that we could perform the same analysis on a previous NLCD dataset from 2001.</p>
+<p>The big question here is have these shrubs always occupied a large portion of this region of Alaska? To answer that we could perform the same analysis on a previous NLCD dataset from 2001.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Open</span>
-<span class="n">src_2001</span> <span class="o">=</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;data/NLCD_2001_Land_Cover_AK/NLCD_2001_Land_Cover_AK.img&#39;</span><span class="p">)</span>
+<span class="n">src_2001</span> <span class="o">=</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;data/nlcd_2001_ak.tif&#39;</span><span class="p">)</span>
 
 <span class="c1"># Read</span>
 <span class="n">nlcd_2001</span> <span class="o">=</span> <span class="n">src_2001</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="c1"># Slice</span>
-<span class="n">nlcd_2001_sample</span> <span class="o">=</span> <span class="n">nlcd_2001</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10000</span><span class="p">,</span> <span class="mi">70000</span><span class="p">:</span><span class="mi">90000</span><span class="p">]</span>
-
 <span class="c1"># Re-assign land cover class</span>
-<span class="n">nlcd_2001_sample</span><span class="p">[</span><span class="n">nlcd_2001_sample</span> <span class="o">==</span> <span class="mi">52</span><span class="p">]</span> <span class="o">=</span> <span class="mi">51</span>
+<span class="n">nlcd_2001</span><span class="p">[</span><span class="n">nlcd_2001</span> <span class="o">==</span> <span class="mi">52</span><span class="p">]</span> <span class="o">=</span> <span class="mi">51</span>
 </pre></div>
 </div>
 </div>
@@ -1128,10 +1068,7 @@ Height: 67844
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Count occurrence in each class</span>
-<span class="n">unique</span><span class="p">,</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">nlcd_2001_sample</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="c1"># Count number of land pixels</span>
-<span class="n">land_pixels</span> <span class="o">=</span> <span class="n">nlcd_2001_sample</span><span class="o">.</span><span class="n">size</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">nlcd_2001_sample</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">unique</span><span class="p">,</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">nlcd_2001</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="c1"># Convert to DataFrame</span>
 <span class="n">df_2001</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">unique</span><span class="p">,</span> <span class="n">counts</span><span class="p">,</span> <span class="p">(</span><span class="n">counts</span><span class="o">/</span><span class="n">land_pixels</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">)),</span>
@@ -1167,87 +1104,75 @@ Height: 67844
   <tbody>
     <tr>
       <th>0</th>
-      <td>0</td>
-      <td>54136421</td>
-      <td>37.114420</td>
+      <td>11</td>
+      <td>2375777</td>
+      <td>20.756054</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>11</td>
-      <td>16590763</td>
-      <td>11.374164</td>
+      <td>12</td>
+      <td>24</td>
+      <td>0.000210</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>12</td>
-      <td>1270533</td>
-      <td>0.871042</td>
+      <td>22</td>
+      <td>2436</td>
+      <td>0.021282</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>21</td>
-      <td>412</td>
-      <td>0.000282</td>
+      <td>23</td>
+      <td>91</td>
+      <td>0.000795</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>22</td>
-      <td>70542</td>
-      <td>0.048362</td>
+      <td>31</td>
+      <td>58014</td>
+      <td>0.506841</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>23</td>
-      <td>8753</td>
-      <td>0.006001</td>
+      <td>41</td>
+      <td>57582</td>
+      <td>0.503067</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>31</td>
-      <td>17783022</td>
-      <td>12.191544</td>
+      <td>42</td>
+      <td>1461918</td>
+      <td>12.772095</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>41</td>
-      <td>1395</td>
-      <td>0.000956</td>
+      <td>43</td>
+      <td>144954</td>
+      <td>1.266395</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>42</td>
-      <td>12237</td>
-      <td>0.008389</td>
+      <td>51</td>
+      <td>4454788</td>
+      <td>38.919403</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>43</td>
-      <td>7084</td>
-      <td>0.004857</td>
+      <td>72</td>
+      <td>1009936</td>
+      <td>8.823339</td>
     </tr>
     <tr>
       <th>10</th>
-      <td>51</td>
-      <td>57723016</td>
-      <td>39.573289</td>
+      <td>90</td>
+      <td>1162063</td>
+      <td>10.152402</td>
     </tr>
     <tr>
       <th>11</th>
-      <td>72</td>
-      <td>41965134</td>
-      <td>28.770125</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>90</td>
-      <td>2901</td>
-      <td>0.001989</td>
-    </tr>
-    <tr>
-      <th>13</th>
       <td>95</td>
-      <td>10427787</td>
-      <td>7.149000</td>
+      <td>718605</td>
+      <td>6.278116</td>
     </tr>
   </tbody>
 </table>
@@ -1290,115 +1215,99 @@ Height: 67844
   <tbody>
     <tr>
       <th>0</th>
-      <td>0</td>
-      <td>54136421</td>
-      <td>37.114420</td>
-      <td>54136421</td>
-      <td>37.114420</td>
+      <td>11</td>
+      <td>2375777</td>
+      <td>20.756054</td>
+      <td>2378247</td>
+      <td>20.777634</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>11</td>
-      <td>16590763</td>
-      <td>11.374164</td>
-      <td>17006155</td>
-      <td>11.658945</td>
+      <td>12</td>
+      <td>24</td>
+      <td>0.000210</td>
+      <td>35</td>
+      <td>0.000306</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>12</td>
-      <td>1270533</td>
-      <td>0.871042</td>
-      <td>1006816</td>
-      <td>0.690245</td>
+      <td>22</td>
+      <td>2436</td>
+      <td>0.021282</td>
+      <td>2445</td>
+      <td>0.021361</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>21</td>
-      <td>412</td>
-      <td>0.000282</td>
-      <td>549</td>
-      <td>0.000376</td>
+      <td>23</td>
+      <td>91</td>
+      <td>0.000795</td>
+      <td>87</td>
+      <td>0.000760</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>22</td>
-      <td>70542</td>
-      <td>0.048362</td>
-      <td>71664</td>
-      <td>0.049131</td>
+      <td>31</td>
+      <td>58014</td>
+      <td>0.506841</td>
+      <td>59650</td>
+      <td>0.521134</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>23</td>
-      <td>8753</td>
-      <td>0.006001</td>
-      <td>10626</td>
-      <td>0.007285</td>
+      <td>41</td>
+      <td>57582</td>
+      <td>0.503067</td>
+      <td>59832</td>
+      <td>0.522724</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>31</td>
-      <td>17783022</td>
-      <td>12.191544</td>
-      <td>17919994</td>
-      <td>12.285448</td>
+      <td>42</td>
+      <td>1461918</td>
+      <td>12.772095</td>
+      <td>1456210</td>
+      <td>12.722227</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>41</td>
-      <td>1395</td>
-      <td>0.000956</td>
-      <td>1437</td>
-      <td>0.000985</td>
+      <td>43</td>
+      <td>144954</td>
+      <td>1.266395</td>
+      <td>146517</td>
+      <td>1.280051</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>42</td>
-      <td>12237</td>
-      <td>0.008389</td>
-      <td>12176</td>
-      <td>0.008348</td>
+      <td>51</td>
+      <td>4454788</td>
+      <td>38.919403</td>
+      <td>4454091</td>
+      <td>38.913313</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>43</td>
-      <td>7084</td>
-      <td>0.004857</td>
-      <td>7059</td>
-      <td>0.004839</td>
+      <td>72</td>
+      <td>1009936</td>
+      <td>8.823339</td>
+      <td>1007993</td>
+      <td>8.806364</td>
     </tr>
     <tr>
       <th>10</th>
-      <td>51</td>
-      <td>57723016</td>
-      <td>39.573289</td>
-      <td>57689667</td>
-      <td>39.550426</td>
+      <td>90</td>
+      <td>1162063</td>
+      <td>10.152402</td>
+      <td>1161732</td>
+      <td>10.149510</td>
     </tr>
     <tr>
       <th>11</th>
-      <td>72</td>
-      <td>41965134</td>
-      <td>28.770125</td>
-      <td>42082616</td>
-      <td>28.850667</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>90</td>
-      <td>2901</td>
-      <td>0.001989</td>
-      <td>11389</td>
-      <td>0.007808</td>
-    </tr>
-    <tr>
-      <th>13</th>
       <td>95</td>
-      <td>10427787</td>
-      <td>7.149000</td>
-      <td>10027241</td>
-      <td>6.874397</td>
+      <td>718605</td>
+      <td>6.278116</td>
+      <td>715740</td>
+      <td>6.253086</td>
     </tr>
   </tbody>
 </table>
@@ -1443,143 +1352,123 @@ Height: 67844
   <tbody>
     <tr>
       <th>0</th>
-      <td>0</td>
-      <td>54136421</td>
-      <td>37.114420</td>
-      <td>54136421</td>
-      <td>37.114420</td>
-      <td>0</td>
-      <td>0.000000</td>
+      <td>11</td>
+      <td>2375777</td>
+      <td>20.756054</td>
+      <td>2378247</td>
+      <td>20.777634</td>
+      <td>2470</td>
+      <td>0.103966</td>
     </tr>
     <tr>
       <th>1</th>
+      <td>12</td>
+      <td>24</td>
+      <td>0.000210</td>
+      <td>35</td>
+      <td>0.000306</td>
       <td>11</td>
-      <td>16590763</td>
-      <td>11.374164</td>
-      <td>17006155</td>
-      <td>11.658945</td>
-      <td>415392</td>
-      <td>2.503755</td>
+      <td>45.833333</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>12</td>
-      <td>1270533</td>
-      <td>0.871042</td>
-      <td>1006816</td>
-      <td>0.690245</td>
-      <td>-263717</td>
-      <td>-20.756407</td>
+      <td>22</td>
+      <td>2436</td>
+      <td>0.021282</td>
+      <td>2445</td>
+      <td>0.021361</td>
+      <td>9</td>
+      <td>0.369458</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>21</td>
-      <td>412</td>
-      <td>0.000282</td>
-      <td>549</td>
-      <td>0.000376</td>
-      <td>137</td>
-      <td>33.252427</td>
+      <td>23</td>
+      <td>91</td>
+      <td>0.000795</td>
+      <td>87</td>
+      <td>0.000760</td>
+      <td>-4</td>
+      <td>-4.395604</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>22</td>
-      <td>70542</td>
-      <td>0.048362</td>
-      <td>71664</td>
-      <td>0.049131</td>
-      <td>1122</td>
-      <td>1.590542</td>
+      <td>31</td>
+      <td>58014</td>
+      <td>0.506841</td>
+      <td>59650</td>
+      <td>0.521134</td>
+      <td>1636</td>
+      <td>2.820009</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>23</td>
-      <td>8753</td>
-      <td>0.006001</td>
-      <td>10626</td>
-      <td>0.007285</td>
-      <td>1873</td>
-      <td>21.398378</td>
+      <td>41</td>
+      <td>57582</td>
+      <td>0.503067</td>
+      <td>59832</td>
+      <td>0.522724</td>
+      <td>2250</td>
+      <td>3.907471</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>31</td>
-      <td>17783022</td>
-      <td>12.191544</td>
-      <td>17919994</td>
-      <td>12.285448</td>
-      <td>136972</td>
-      <td>0.770240</td>
+      <td>42</td>
+      <td>1461918</td>
+      <td>12.772095</td>
+      <td>1456210</td>
+      <td>12.722227</td>
+      <td>-5708</td>
+      <td>-0.390446</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>41</td>
-      <td>1395</td>
-      <td>0.000956</td>
-      <td>1437</td>
-      <td>0.000985</td>
-      <td>42</td>
-      <td>3.010753</td>
+      <td>43</td>
+      <td>144954</td>
+      <td>1.266395</td>
+      <td>146517</td>
+      <td>1.280051</td>
+      <td>1563</td>
+      <td>1.078273</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>42</td>
-      <td>12237</td>
-      <td>0.008389</td>
-      <td>12176</td>
-      <td>0.008348</td>
-      <td>-61</td>
-      <td>-0.498488</td>
+      <td>51</td>
+      <td>4454788</td>
+      <td>38.919403</td>
+      <td>4454091</td>
+      <td>38.913313</td>
+      <td>-697</td>
+      <td>-0.015646</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>43</td>
-      <td>7084</td>
-      <td>0.004857</td>
-      <td>7059</td>
-      <td>0.004839</td>
-      <td>-25</td>
-      <td>-0.352908</td>
+      <td>72</td>
+      <td>1009936</td>
+      <td>8.823339</td>
+      <td>1007993</td>
+      <td>8.806364</td>
+      <td>-1943</td>
+      <td>-0.192388</td>
     </tr>
     <tr>
       <th>10</th>
-      <td>51</td>
-      <td>57723016</td>
-      <td>39.573289</td>
-      <td>57689667</td>
-      <td>39.550426</td>
-      <td>-33349</td>
-      <td>-0.057774</td>
+      <td>90</td>
+      <td>1162063</td>
+      <td>10.152402</td>
+      <td>1161732</td>
+      <td>10.149510</td>
+      <td>-331</td>
+      <td>-0.028484</td>
     </tr>
     <tr>
       <th>11</th>
-      <td>72</td>
-      <td>41965134</td>
-      <td>28.770125</td>
-      <td>42082616</td>
-      <td>28.850667</td>
-      <td>117482</td>
-      <td>0.279951</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>90</td>
-      <td>2901</td>
-      <td>0.001989</td>
-      <td>11389</td>
-      <td>0.007808</td>
-      <td>8488</td>
-      <td>292.588762</td>
-    </tr>
-    <tr>
-      <th>13</th>
       <td>95</td>
-      <td>10427787</td>
-      <td>7.149000</td>
-      <td>10027241</td>
-      <td>6.874397</td>
-      <td>-400546</td>
-      <td>-3.841141</td>
+      <td>718605</td>
+      <td>6.278116</td>
+      <td>715740</td>
+      <td>6.253086</td>
+      <td>-2865</td>
+      <td>-0.398689</td>
     </tr>
   </tbody>
 </table>
@@ -1588,15 +1477,15 @@ Height: 67844
 </div>
 <div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
-<p>Oh dear - the extent of dwarf shrubs did <strong>not</strong> increase between 2001 and 2016. One takeway from this could be that shrubification is <strong>not happening</strong> in this region of the Arctic. But the percentage change in dwarf shrubs was very small (-0.06%) and could well be smaller than the uncertainty in our land cover product. For example, if just 1% of pixels were incorrectly classified as shrubs in 2001 our result would be insignificant.</p>
-<p>Other, peraps more signficant changes, that occurred between 2001 and 2016 include an increase in <strong>open water</strong> by <strong>2.5%</strong>, a decrease in <strong>perennial ice/snow</strong> by <strong>21%</strong>, and an decrease in <strong>emergent herbaceous wetlands</strong> by <strong>3.8%</strong>.</p>
+<p>Oh dear - the extent of shrubs did <strong>not</strong> increase between 2001 and 2016. One takeway from this could be that shrubification is <strong>not happening</strong> in this region of the Arctic. But the percentage change in shrubs was very small (-0.02%) and could well be smaller than the uncertainty in our land cover product. For example, if just 1% of pixels were incorrectly classified as shrubs in 2001 our result would be insignificant.</p>
+<p>Other, peraps more signficant changes, that occurred between 2001 and 2016 include an increase in <strong>deciduous forest</strong> (41) by <strong>3.9%</strong>, a decrease in <strong>evergreen forest</strong> (42) by <strong>0.4%</strong>, and an decrease in <strong>emergent herbaceous wetlands</strong> (95) by <strong>0.4%</strong>.</p>
 </div>
 <div class="section" id="direction-of-land-cover-change">
 <h2>Direction of land cover change<a class="headerlink" href="#direction-of-land-cover-change" title="Permalink to this headline">¶</a></h2>
-<p>It would be interesting to know <strong>how</strong> grid cells changed between 2001 and 2016. We can do this by <strong>masking</strong> the 2016 land cover data with specific grid cells from the 2001 land cover data. For example, in the code below we identify grid cells in 2016 that were classified as <strong>emergent herbaceous wetlands</strong> (class 95) in 2001. We then compute what land cover they are by <strong>masking the 2016 land cover data</strong> and using the <code class="docutils literal notranslate"><span class="pre">unique()</span></code> function.</p>
+<p>It would be interesting to know <strong>how</strong> grid cells changed between 2001 and 2016. We can do this by <strong>masking</strong> the 2016 land cover data with specific grid cells from the 2001 land cover data. For example, in the code below we identify grid cells in 2016 that were classified as <strong>evergreen forest</strong> (class 42) in 2001. We then compute what land cover they are by <strong>masking the 2016 land cover data</strong> and using the <code class="docutils literal notranslate"><span class="pre">unique()</span></code> function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mask</span> <span class="o">=</span> <span class="n">nlcd_2016_sample</span><span class="p">[</span><span class="n">nlcd_2001_sample</span> <span class="o">==</span> <span class="mi">95</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mask</span> <span class="o">=</span> <span class="n">nlcd_2016</span><span class="p">[</span><span class="n">nlcd_2001</span> <span class="o">==</span> <span class="mi">42</span><span class="p">]</span>
 <span class="n">unique</span><span class="p">,</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">mask</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1604,9 +1493,9 @@ Height: 67844
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wetland2water_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">unique</span><span class="p">,</span> <span class="n">counts</span><span class="p">,</span> <span class="p">(</span><span class="n">counts</span><span class="o">/</span><span class="n">mask</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">*</span><span class="mi">100</span><span class="p">)),</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">forestchange_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">unique</span><span class="p">,</span> <span class="n">counts</span><span class="p">,</span> <span class="p">(</span><span class="n">counts</span><span class="o">/</span><span class="n">mask</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">*</span><span class="mi">100</span><span class="p">)),</span>
                  <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;lc&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">,</span> <span class="s1">&#39;fraction&#39;</span><span class="p">])</span>
-<span class="n">wetland2water_df</span>
+<span class="n">forestchange_df</span>
 </pre></div>
 </div>
 </div>
@@ -1638,65 +1527,41 @@ Height: 67844
     <tr>
       <th>0</th>
       <td>11</td>
-      <td>507060</td>
-      <td>4.862585</td>
+      <td>308</td>
+      <td>0.021068</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>12</td>
-      <td>457</td>
-      <td>0.004383</td>
+      <td>42</td>
+      <td>1455641</td>
+      <td>99.570633</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>22</td>
-      <td>182</td>
-      <td>0.001745</td>
+      <td>51</td>
+      <td>4273</td>
+      <td>0.292287</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>23</td>
-      <td>232</td>
-      <td>0.002225</td>
+      <td>71</td>
+      <td>1672</td>
+      <td>0.114370</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>31</td>
-      <td>1740</td>
-      <td>0.016686</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>51</td>
-      <td>1026</td>
-      <td>0.009839</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>72</td>
-      <td>898</td>
-      <td>0.008612</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>90</td>
-      <td>5988</td>
-      <td>0.057423</td>
-    </tr>
-    <tr>
-      <th>8</th>
       <td>95</td>
-      <td>9910204</td>
-      <td>95.036502</td>
+      <td>24</td>
+      <td>0.001642</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
-<p>It looks like most of the <strong>emergent herbaceous wetlands</strong> (95%) did not change between 2001 and 2016. When it did, it was most likely to change to <strong>open water</strong>. This may explain why <strong>open water</strong> increased (<strong>2.5%</strong>) by about the same as <strong>emergent herbaceous wetlands</strong> decreased (<strong>3.8%</strong>) between 2001 and 2016. Let’s finish this section by plotting a map showing where emergent herbaceous wetlands were replaced by open water.</p>
+<p>It looks like most of the <strong>evergreen forest</strong> (99.6%) did not change between 2001 and 2016. When it did, it was most likely to change to <strong>shrub</strong> (51) which may indicate some “shrubification” in Alaska. Let’s finish this section by plotting a map showing where <strong>evergreen forest</strong> was replaced by <strong>shrub</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wetland2water</span> <span class="o">=</span> <span class="p">(</span><span class="n">nlcd_2001_sample</span> <span class="o">==</span> <span class="mi">95</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">((</span><span class="n">nlcd_2016_sample</span> <span class="o">==</span> <span class="mi">11</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">forest2shrub</span> <span class="o">=</span> <span class="p">(</span><span class="n">nlcd_2001</span> <span class="o">==</span> <span class="mi">42</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">((</span><span class="n">nlcd_2016</span> <span class="o">==</span> <span class="mi">51</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -1704,32 +1569,32 @@ Height: 67844
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
-<span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">wetland2water</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Wetlands to water in Alaska between 2001 and 2016&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">forest2shrub</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Fores to shrubs in Alaska between 2001 and 2016&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Wetlands to water in Alaska between 2001 and 2016&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Fores to shrubs in Alaska between 2001 and 2016&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/lecture-4a_51_1.png" src="../../_images/lecture-4a_51_1.png" />
+<img alt="../../_images/lecture-4a_46_1.png" src="../../_images/lecture-4a_46_1.png" />
 </div>
 </div>
 <p>At this scale, it’s difficult to see what’s going on. Let’s zoom in a little…</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
-<span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">wetland2water</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)[</span><span class="mi">2000</span><span class="p">:</span><span class="mi">3000</span><span class="p">,</span><span class="mi">5000</span><span class="p">:</span><span class="mi">6000</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Wetlands to water in Alaska between 2001 and 2016&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">im2</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">forest2shrub</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)[</span><span class="mi">1000</span><span class="p">:</span><span class="mi">1750</span><span class="p">,</span><span class="mi">2750</span><span class="p">:</span><span class="mi">3750</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Forest to shrubs in Alaska between 2001 and 2016&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Wetlands to water in Alaska between 2001 and 2016&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Forest to shrubs in Alaska between 2001 and 2016&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/lecture-4a_53_1.png" src="../../_images/lecture-4a_53_1.png" />
+<img alt="../../_images/lecture-4a_48_1.png" src="../../_images/lecture-4a_48_1.png" />
 </div>
 </div>
 </div>
