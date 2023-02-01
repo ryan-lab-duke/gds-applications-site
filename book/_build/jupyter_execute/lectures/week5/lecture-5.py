@@ -202,7 +202,7 @@ df.info()
 
 
 # ```{image} images/columns.png
-# :width: 400px
+# :width: 800px
 # :align: center
 # ```
 

@@ -427,7 +427,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="it-s-competition-time">
 <h2>It’s competition time!<a class="headerlink" href="#it-s-competition-time" title="Permalink to this headline">¶</a></h2>
 <p>In this week’s lab we will play a Kaggle-like competition. In these competitions, a host usually prepares a dataset and people from around the world compete against each other to build the best machine learning model. Submitted models are scored based on their predictive accuracy relative to a hidden solution file.</p>
-<p>We will be attempting to produce an accurate model for for predicting house prices in <strong>Kings County, Seattle</strong>. The dataset can be downloaded from the <a class="reference external" href="https://www.dropbox.com/sh/8nstpdxsyl6sntg/AADlAfMmL7xW7qzKPwlNbKL_a?dl=0">here</a>.</p>
+<p>We will be attempting to produce an accurate model for for predicting house prices. The data contains all houses sold in <strong>King County, WA</strong> between May 2014 and May 2015 and can be downloaded from the <a class="reference external" href="https://www.dropbox.com/sh/8nstpdxsyl6sntg/AADlAfMmL7xW7qzKPwlNbKL_a?dl=0">here</a>.</p>
 <a class="reference internal image-reference" href="../../_images/seattle-houses.webp"><img alt="../../_images/seattle-houses.webp" class="align-center" src="../../_images/seattle-houses.webp" style="width: 700px;" /></a>
 </div>
 <hr class="docutils" />
@@ -449,12 +449,19 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Produce a model to predict house prices. You are welcome to generate new features, scale the data, and split the data into training/testing (i.e. <code class="docutils literal notranslate"><span class="pre">train_test_split</span></code>) in any way you like. You are also welcome to use the datasets contained in the data folder or other datasets that you find on the internet.</p></li>
 <li><p>Evaluate your model’s accuracy by predicting a test dataset, for example:</p></li>
 </ul>
-<p><code class="docutils literal notranslate"><span class="pre">predictions</span> <span class="pre">=</span> <span class="pre">forest_reg.predict(X_test)</span> <span class="pre">final_mse</span> <span class="pre">=</span> <span class="pre">mean_squared_error(y_test,</span> <span class="pre">predictions)</span> <span class="pre">final_rmse</span> <span class="pre">=</span> <span class="pre">np.sqrt(final_mse)</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">predictions</span> <span class="o">=</span> <span class="n">forest_reg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">final_mse</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predictions</span><span class="p">)</span>
+<span class="n">final_rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">final_mse</span><span class="p">)</span>
+</pre></div>
+</div>
 <ul class="simple">
 <li><p>On <strong>Monday</strong> the instructor and TA will provide an <strong>unseen set of houses</strong> which students will use to repeat their accuracy evaluation. The best models (i.e. lowest RMSE) will win prizes.</p></li>
 <li><p>We will evaluate the models using a simple <code class="docutils literal notranslate"><span class="pre">mean-squared-error</span></code> as follows:</p></li>
 </ul>
-<p><code class="docutils literal notranslate"><span class="pre">mse</span> <span class="pre">=</span> <span class="pre">mean_squared_error(y_test</span> <span class="pre">,</span> <span class="pre">predictions)</span> <span class="pre">rmse</span> <span class="pre">=</span> <span class="pre">np.sqrt(final_mse)</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mse</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span> <span class="p">,</span> <span class="n">predictions</span><span class="p">)</span>
+<span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">final_mse</span><span class="p">)</span>
+</pre></div>
+</div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Save your notebooks locally as both <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> and <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> formats but only submit the <strong>pdf</strong> to Canvas.</p>
