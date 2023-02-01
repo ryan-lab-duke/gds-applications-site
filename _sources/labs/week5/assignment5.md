@@ -8,7 +8,7 @@ Please complete this assignment before **Feb 17, 11:59pm**.
 
 In this week's lab we will play a Kaggle-like competition. In these competitions, a host usually prepares a dataset and people from around the world compete against each other to build the best machine learning model. Submitted models are scored based on their predictive accuracy relative to a hidden solution file. 
 
-We will be attempting to produce an accurate model for for predicting house prices in **Kings County, Seattle**. The dataset can be downloaded from the [here](https://www.dropbox.com/sh/8nstpdxsyl6sntg/AADlAfMmL7xW7qzKPwlNbKL_a?dl=0). 
+We will be attempting to produce an accurate model for for predicting house prices. The data contains all houses sold in **King County, WA** between May 2014 and May 2015 and can be downloaded from the [here](https://www.dropbox.com/sh/8nstpdxsyl6sntg/AADlAfMmL7xW7qzKPwlNbKL_a?dl=0). 
 
 ```{image} images/seattle-houses.webp
 :width: 700px
@@ -41,9 +41,11 @@ Start by reading `seattle-house-prices.csv` and answer the following questions.
 
 * Evaluate your model's accuracy by predicting a test dataset, for example:
 
-`predictions = forest_reg.predict(X_test)
+```
+predictions = forest_reg.predict(X_test)
 final_mse = mean_squared_error(y_test, predictions)
-final_rmse = np.sqrt(final_mse)`
+final_rmse = np.sqrt(final_mse)
+```
 
 
 * On **Monday** the instructor and TA will provide an **unseen set of houses** which students will use to repeat their accuracy evaluation. The best models (i.e. lowest RMSE) will win prizes. 
@@ -51,8 +53,10 @@ final_rmse = np.sqrt(final_mse)`
 
 * We will evaluate the models using a simple `mean-squared-error` as follows:
 
-`mse = mean_squared_error(y_test , predictions)
-rmse = np.sqrt(final_mse)`
+```
+mse = mean_squared_error(y_test , predictions)
+rmse = np.sqrt(final_mse)
+```
 
 ```{important}
 Save your notebooks locally as both `.ipynb` and `.pdf` formats but only submit the **pdf** to Canvas.
