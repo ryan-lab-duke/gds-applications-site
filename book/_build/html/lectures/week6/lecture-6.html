@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Machine learning lecture &#8212; Geospatial Data Science</title>
+    <title>Project setup &#8212; Geospatial Data Science</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -50,7 +50,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Machine learning" href="../../labs/week6/lab6-demo.html" />
+    <link rel="next" title="Data access lecture" href="../week7/lecture-7.html" />
     <link rel="prev" title="Project ideas" href="../../labs/week5/project-ideas.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -208,7 +208,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../week5/lecture-5.html">
-   Project setup
+   Machine learning
   </a>
  </li>
  <li class="toctree-l1">
@@ -230,12 +230,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Machine learning lecture
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../labs/week6/lab6-demo.html">
-   Machine learning
+   Project setup
   </a>
  </li>
 </ul>
@@ -372,141 +367,207 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#content-of-this-lecture">
-   Content of this lecture
+  <a class="reference internal nav-link" href="#version-control">
+   Version control
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-machine-learning">
-   What is machine learning?
+  <a class="reference internal nav-link" href="#git">
+   Git
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#input-data">
-   Input data
+  <a class="reference internal nav-link" href="#github">
+   GitHub
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   Input data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#features">
-   Features
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#algorithms">
-   Algorithms
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#supervised-learning">
-   Supervised learning
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#classification">
-   Classification
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#regression">
-   Regression
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#unsupervised-learning">
-   Unsupervised learning
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#clustering">
-   Clustering
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dimensionality-reduction">
-   Dimensionality reduction
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ensemble-methods">
-   Ensemble methods
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bagging">
-   Bagging
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#boosting">
-   Boosting
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#predicting-house-prices-using-scikit-learn">
-   Predicting house prices using
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     scikit-learn
-    </span>
-   </code>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#check-data">
-   Check data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   Check data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#visualize-data">
-   Visualize data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#correlation-analysis">
-   Correlation analysis
+  <a class="reference internal nav-link" href="#why-do-we-use-version-control-systems">
+   Why do we use version control systems?
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#warning">
-     Warning
+    <a class="reference internal nav-link" href="#security">
+     Security
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#collaboration">
+     Collaboration
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#community">
+     Community
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#feature-scaling">
-   Feature scaling
+  <a class="reference internal nav-link" href="#drawbacks-of-version-control">
+   Drawbacks of version control
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#split-data-in-training-and-testing-subsets">
-   Split data in training and testing subsets
+  <a class="reference internal nav-link" href="#what-have-we-been-doing-so-far">
+   What have we been doing so far?
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#multiple-linear-regression">
-   Multiple linear regression
+  <a class="reference internal nav-link" href="#some-basic-terms">
+   Some basic terms
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fork">
+     Fork
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#clone">
+     Clone
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#commit">
+     Commit
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#push">
+     Push
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pull">
+     Pull
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#decision-tree">
-   Decision Tree
+  <a class="reference internal nav-link" href="#collaborating-with-github">
+   Collaborating with GitHub
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#centralized-workflow">
+     Centralized workflow
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Centralized workflow
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Centralized workflow
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Centralized workflow
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Centralized workflow
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#advantages-of-centralized-workflow">
+     Advantages of centralized workflow
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#disadvantages">
+     Disadvantages
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#feature-branch-workflow">
+     Feature branch workflow
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Feature branch workflow
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     Feature branch workflow
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     Feature branch workflow
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     Feature branch workflow
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     Feature branch workflow
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#advantages-of-feature-branch-workflow">
+     Advantages of feature branch workflow
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#forking-workflows">
+     Forking workflows
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#advantages-of-forking-workflows">
+     Advantages of forking workflows
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gitflow-workflow">
+     Gitflow workflow
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#randomforests">
-   RandomForests
+  <a class="reference internal nav-link" href="#good-practices">
+   Good practices
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#agree-on-a-workflow">
+     Agree on a workflow
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#commit-often">
+     Commit often
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ensure-you-re-working-from-latest-version">
+     Ensure you’re working from latest version
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#make-detailed-notes">
+     Make detailed notes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#use-branches">
+     Use branches
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -518,7 +579,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Machine learning lecture</h1>
+                <h1>Project setup</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -529,141 +590,207 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#content-of-this-lecture">
-   Content of this lecture
+  <a class="reference internal nav-link" href="#version-control">
+   Version control
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-machine-learning">
-   What is machine learning?
+  <a class="reference internal nav-link" href="#git">
+   Git
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#input-data">
-   Input data
+  <a class="reference internal nav-link" href="#github">
+   GitHub
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   Input data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#features">
-   Features
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#algorithms">
-   Algorithms
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#supervised-learning">
-   Supervised learning
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#classification">
-   Classification
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#regression">
-   Regression
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#unsupervised-learning">
-   Unsupervised learning
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#clustering">
-   Clustering
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dimensionality-reduction">
-   Dimensionality reduction
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ensemble-methods">
-   Ensemble methods
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bagging">
-   Bagging
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#boosting">
-   Boosting
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#predicting-house-prices-using-scikit-learn">
-   Predicting house prices using
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     scikit-learn
-    </span>
-   </code>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#check-data">
-   Check data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   Check data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#visualize-data">
-   Visualize data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#correlation-analysis">
-   Correlation analysis
+  <a class="reference internal nav-link" href="#why-do-we-use-version-control-systems">
+   Why do we use version control systems?
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#warning">
-     Warning
+    <a class="reference internal nav-link" href="#security">
+     Security
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#collaboration">
+     Collaboration
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#community">
+     Community
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#feature-scaling">
-   Feature scaling
+  <a class="reference internal nav-link" href="#drawbacks-of-version-control">
+   Drawbacks of version control
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#split-data-in-training-and-testing-subsets">
-   Split data in training and testing subsets
+  <a class="reference internal nav-link" href="#what-have-we-been-doing-so-far">
+   What have we been doing so far?
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#multiple-linear-regression">
-   Multiple linear regression
+  <a class="reference internal nav-link" href="#some-basic-terms">
+   Some basic terms
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fork">
+     Fork
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#clone">
+     Clone
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#commit">
+     Commit
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#push">
+     Push
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pull">
+     Pull
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#decision-tree">
-   Decision Tree
+  <a class="reference internal nav-link" href="#collaborating-with-github">
+   Collaborating with GitHub
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#centralized-workflow">
+     Centralized workflow
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Centralized workflow
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Centralized workflow
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Centralized workflow
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Centralized workflow
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#advantages-of-centralized-workflow">
+     Advantages of centralized workflow
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#disadvantages">
+     Disadvantages
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#feature-branch-workflow">
+     Feature branch workflow
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Feature branch workflow
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     Feature branch workflow
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     Feature branch workflow
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     Feature branch workflow
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     Feature branch workflow
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#advantages-of-feature-branch-workflow">
+     Advantages of feature branch workflow
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#forking-workflows">
+     Forking workflows
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#advantages-of-forking-workflows">
+     Advantages of forking workflows
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gitflow-workflow">
+     Gitflow workflow
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#randomforests">
-   RandomForests
+  <a class="reference internal nav-link" href="#good-practices">
+   Good practices
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#agree-on-a-workflow">
+     Agree on a workflow
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#commit-often">
+     Commit often
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ensure-you-re-working-from-latest-version">
+     Ensure you’re working from latest version
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#make-detailed-notes">
+     Make detailed notes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#use-branches">
+     Use branches
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -674,716 +801,305 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="machine-learning-lecture">
-<h1>Machine learning lecture<a class="headerlink" href="#machine-learning-lecture" title="Permalink to this headline">¶</a></h1>
-<CENTER>
-    <h1> Geospatial Data Science Applications: GEOG 4/590</h1>
-    <h3>Jan 31, 2022</h3>
-    <h2>Lecture 5: Machine learning</h2>
-    <img src="images/coding-computer-programming.jpeg" width="300"/>
-    <h3>Johnny Ryan: jryan4@uoregon.edu</h3>
-</CENTER><div class="section" id="content-of-this-lecture">
-<h2>Content of this lecture<a class="headerlink" href="#content-of-this-lecture" title="Permalink to this headline">¶</a></h2>
+  <div class="tex2jax_ignore mathjax_ignore section" id="project-setup">
+<h1>Project setup<a class="headerlink" href="#project-setup" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><p>Crash course on machine learning for environmental applications
+<li><p>Interactive Development Environments (IDE)
 <br>
 <br></p></li>
-<li><p>Introduce <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> for machine learning in Python
+<li><p>Version control
 <br>
 <br></p></li>
-<li><p>Learn how to represent data so a program can learn from it
+<li><p>Virtual environments
 <br>
 <br></p></li>
-<li><p>Learn how to evaluate a machine learning model
+<li><p>Organizing project
 <br>
 <br></p></li>
-<li><p>Background for this week’s lab</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GitHub</span></code> collaboration workflows</p></li>
+</ul>
+<img src="images/version_control.png" alt="https://phdcomics.com/comics/archive_print.php?comicid=1531" width="400"/>
+<p>We’ve all been in this situation before: it seems unnecessary to have multiple nearly-identical versions of the same document.</p>
+<p>The danger of losing good versions often leads to the problematic workflow illustrated in the PhD Comics cartoon at the top of this page.</p>
+<p>Collaborative writing with traditional word processors is cumbersome. Either every collaborator has to work on a document sequentially (slowing down the process of writing), or you have to send out a version to all collaborators and manually merge their comments into your document. The ‘track changes’ option can highlight changes for you and simplifies merging, but as soon as you accept changes you will lose their history. You will then no longer know who suggested that change, why it was suggested, or when it was merged into the rest of the document.</p>
+<div class="section" id="version-control">
+<h2>Version control<a class="headerlink" href="#version-control" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Version control systems</strong> (VCS) start with a <strong>base version</strong> of the document and then <strong>keeps track of changes</strong> you make each step of the way</p></li>
+<li><p>VCS are essential for <strong>developing software</strong> and <strong>carrying out projects</strong> with a lot of code</p></li>
+<li><p>VCS does not care about file names, intead records <strong>who, what, when, and why</strong> changes were made to files</p></li>
+</ul>
+<img src="images/branch.svg" width="600"/></div>
+<div class="section" id="git">
+<h2>Git<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>One of the most popular VCS tools in use today is called <code class="docutils literal notranslate"><span class="pre">git</span></code></p></li>
+<li><p>It is a command-line tool that is installed locally</p></li>
+<li><p>It is free and open-source software</p></li>
+</ul>
+<img src="images/git.svg" width="600"/>
+</div>
+<div class="section" id="github">
+<h2>GitHub<a class="headerlink" href="#github" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>GitHub</strong> is a web-based hosting service for <code class="docutils literal notranslate"><span class="pre">git</span></code>
+<br>
+<br></p></li>
+<li><p>Provides a graphical user interface
+<br>
+<br></p></li>
+<li><p>Maintained by Microsoft
+<br>
+<br></p></li>
+<li><p>There are other web-based hosting services (e.g. GitLab and Bitbucket)</p></li>
+</ul>
+<img src="images/github.png" width="200"/></div>
+<div class="section" id="why-do-we-use-version-control-systems">
+<h2>Why do we use version control systems?<a class="headerlink" href="#why-do-we-use-version-control-systems" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="security">
+<h3>Security<a class="headerlink" href="#security" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>VCS acts like an unlimited <strong>‘undo’</strong> thereby <strong>protecting source code</strong> from yourself <strong>and</strong> others</p></li>
+<li><p>e.g. catastrophe, human error, and unintended consequences</p></li>
+</ul>
+<img src="images/hero.svg" width="600"/></div>
+<div class="section" id="collaboration">
+<h3>Collaboration<a class="headerlink" href="#collaboration" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>VCS enables <strong>many people</strong> to work on the same project at the same time</p></li>
+<li><p>Teams working in parallel accelerates project development</p></li>
+</ul>
+<img src="images/colab.svg" width="500"/></div>
+<div class="section" id="community">
+<h3>Community<a class="headerlink" href="#community" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Impossible for junior developer to mess up a big project</p></li>
+<li><p>Since it is so robust this encourages open-source <strong>experimentation</strong> and <strong>development</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GitHub</span></code> has really emerged as the industry standard</p></li>
+</ul>
+<img src="images/pull.svg" width="500"/>
+</div>
+</div>
+<div class="section" id="drawbacks-of-version-control">
+<h2>Drawbacks of version control<a class="headerlink" href="#drawbacks-of-version-control" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Difficult to learn</p></li>
+</ul>
+<img src="images/meme.jpeg" width="600"/>
+</div>
+<div class="section" id="what-have-we-been-doing-so-far">
+<h2>What have we been doing so far?<a class="headerlink" href="#what-have-we-been-doing-so-far" title="Permalink to this headline">¶</a></h2>
+<img src="images/gds_page.png" width="1000"/><img src="images/git-fork-clone-flow.png" width="400"/></div>
+<div class="section" id="some-basic-terms">
+<h2>Some basic terms<a class="headerlink" href="#some-basic-terms" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="fork">
+<h3>Fork<a class="headerlink" href="#fork" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Copy</strong> a repository to your <a class="reference external" href="http://GitHub.com">GitHub.com</a> account</p></li>
 </ul>
 </div>
-<div class="section" id="what-is-machine-learning">
-<h2>What is machine learning?<a class="headerlink" href="#what-is-machine-learning" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="clone">
+<h3>Clone<a class="headerlink" href="#clone" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>The goal of machine learning is use <strong>input data</strong> to make <strong>useful predictions</strong> on <strong>never-before-seen data</strong></p></li>
-</ul>
-<ul class="simple">
-<li><p>Machine learning is <strong>part</strong> of artificial intelligence, but not the only part</p></li>
-</ul>
-<img src="images/ml_schematic.jpg" alt="https://vas3k.com/blog/machine_learning/" width="500"/></div>
-<div class="section" id="input-data">
-<h2>Input data<a class="headerlink" href="#input-data" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>Machine learning starts with a <strong>labelled dataset</strong></p></li>
-<li><p>A <strong>label</strong> (or target variable) is the thing we’re predicting (e.g. <code class="docutils literal notranslate"><span class="pre">y</span></code> variable in linear regression)</p></li>
-<li><p>For example, house price, river discharge, land cover etc.</p></li>
+<li><p>Retrieve a repository from <strong><a class="reference external" href="http://GitHub.com">GitHub.com</a></strong> to <strong>local machine</strong></p></li>
 </ul>
 </div>
+<div class="section" id="commit">
+<h3>Commit<a class="headerlink" href="#commit" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Create a <strong>snapshot</strong> of the contents of your file tree</p></li>
+</ul>
+</div>
+<div class="section" id="push">
+<h3>Push<a class="headerlink" href="#push" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Upload</strong> your local changes to the central repository, along with necessary commits and objects</p></li>
+</ul>
+</div>
+<div class="section" id="pull">
+<h3>Pull<a class="headerlink" href="#pull" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Fetch</strong> the contents of the central repository and immediately <strong>merge</strong> to your local copy</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="collaborating-with-github">
+<h2>Collaborating with GitHub<a class="headerlink" href="#collaborating-with-github" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Centralized workflow
+<br>
+<br></p></li>
+<li><p>Feature branch workflow
+<br>
+<br></p></li>
+<li><p>Forking workflow
+<br>
+<br></p></li>
+<li><p>Others (e.g. Gitflow workflow)</p></li>
+</ul>
+<div class="section" id="centralized-workflow">
+<h3>Centralized workflow<a class="headerlink" href="#centralized-workflow" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>All team members <strong>clone</strong> a <strong>single, central repository</strong> to their local machine</p></li>
+</ul>
+<img src="images/colab.svg" width="600"/></div>
 <div class="section" id="id1">
-<h2>Input data<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h3>Centralized workflow<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>It’s tough to collect a good collection of data (time-consuming, expensive)</p></li>
-<li><p>These datasets are therefore <strong>extremely valuable</strong></p></li>
+<li><p>One team member makes changes (e.g. add, modify, delete) to files on their local machine</p></li>
+<li><p>Periodically, they should <strong>commit</strong> these changes (i.e. take a snapshot) with a short message saying what they did</p></li>
+<li><p>When they are finished working, they can <strong>push</strong> their changes back to the central repository</p></li>
 </ul>
-<img src="images/captcha.jpeg" alt="https://onezero.medium.com/why-captcha-pictures-are-so-unbearably-depressing-20679b8cf84a" width="200"/></div>
-<div class="section" id="features">
-<h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>An input <strong>variable</strong> (e.g. the <code class="docutils literal notranslate"><span class="pre">x</span></code> variable in linear regression)</p></li>
-<li><p>A simple dataset might use a <strong>one or two features</strong> while a more complex dataset could have <strong>thousands of features</strong></p></li>
-<li><p>In our river discharge example - features could include precipitation, snow depth, soil moisture</p></li>
-</ul>
-</div>
-<div class="section" id="algorithms">
-<h2>Algorithms<a class="headerlink" href="#algorithms" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>There are many (e.g. naive bayes, decision trees, neural network etc.)</p></li>
-<li><p>Performance of algorithm dependent on type of problem</p></li>
-<li><p>Just remember: <strong>garage in, garbage out</strong></p></li>
-</ul>
-<img src="images/ml_types.jpg" alt="https://vas3k.com/blog/machine_learning/" width="600"/><img src="images/classical_ml.jpg" alt="https://vas3k.com/blog/machine_learning/" width="600"/></div>
-<div class="section" id="supervised-learning">
-<h2>Supervised learning<a class="headerlink" href="#supervised-learning" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>Training data is already <strong>labeled</strong> and we teach the machine to learn from these examples</p></li>
-<li><p>Supervised learning can used to predict a <strong>category</strong> (classification) or predict a <strong>number</strong> (regression)</p></li>
-</ul>
-</div>
-<div class="section" id="classification">
-<h2>Classification<a class="headerlink" href="#classification" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>“Split things into <strong>groups</strong> based on their <strong>features</strong>”</p></li>
-<li><p>Examples include:</p>
-<ul>
-<li><p>Land cover</p></li>
-<li><p>Flood risk</p></li>
-<li><p>Sentiment analysis</p></li>
-</ul>
-</li>
-<li><p>Popular algorithms include:</p>
-<ul>
-<li><p>Naive Bayes</p></li>
-<li><p>Decision Trees</p></li>
-<li><p>K-Nearest Neighbours</p></li>
-<li><p>Support Vector Machine</p></li>
-</ul>
-</li>
-</ul>
-<img src="images/classification.jpg" alt="https://vas3k.com/blog/machine_learning/" width="300"/></div>
-<div class="section" id="regression">
-<h2>Regression<a class="headerlink" href="#regression" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>“Draw a <strong>line</strong> through these dots”</p></li>
-<li><p>Used for predicting continuous variables:</p>
-<ul>
-<li><p>River discharge</p></li>
-<li><p>House prices</p></li>
-<li><p>Weather forecasting</p></li>
-</ul>
-</li>
-<li><p>Popular algorithms include linear regression, polynomial regression, + other algorithms</p></li>
-</ul>
-<img src="images/regression.jpeg" alt="https://vas3k.com/blog/machine_learning/" width="300"/></div>
-<div class="section" id="unsupervised-learning">
-<h2>Unsupervised learning<a class="headerlink" href="#unsupervised-learning" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>Labeled data is a luxury, sometimes we don’t have it</p></li>
-<li><p>Sometimes we have <strong>no idea</strong> what the labels could be</p></li>
-<li><p>Much <strong>less used</strong> in geospatial data science but sometimes useful for exploratory analysis</p></li>
-</ul>
-</div>
-<div class="section" id="clustering">
-<h2>Clustering<a class="headerlink" href="#clustering" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>“Divide data into groups but machine chooses the best way”</p></li>
-<li><p>Common usages include:</p>
-<ul>
-<li><p>image compression</p></li>
-<li><p>labeling training data (i.e. for supervised learning)</p></li>
-<li><p>detecting abnormal behavior</p></li>
-</ul>
-</li>
-<li><p>Popular algorithms:</p>
-<ul>
-<li><p>K-means clustering</p></li>
-<li><p>Mean-Shift</p></li>
-<li><p>DBSCAN</p></li>
-</ul>
-</li>
-</ul>
-<img src="images/clustering.jpeg" alt="https://vas3k.com/blog/machine_learning/" width="300"/><img src="images/kmeans.jpeg" alt="https://vas3k.com/blog/machine_learning/" width="600"/></div>
-<div class="section" id="dimensionality-reduction">
-<h2>Dimensionality reduction<a class="headerlink" href="#dimensionality-reduction" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>“Assemble specific features into higher-level ones”</p></li>
-<li><p>When we have too many features, some of which are useless</p></li>
-<li><p>Most popular algorithm is Principal Component Analysis (PCA)</p></li>
-</ul>
-<img src="images/pca.jpeg" alt="https://vas3k.com/blog/machine_learning/" width="300"/></div>
-<div class="section" id="ensemble-methods">
-<h2>Ensemble methods<a class="headerlink" href="#ensemble-methods" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>“Multiple learning algorithms learning to correct errors of each other”</p></li>
-<li><p>Often used improve the accuracy over what could be acheived with a single classical machine learning model.</p></li>
-<li><p>Popular algorithms:</p>
-<ul>
-<li><p>Random Forest</p></li>
-<li><p>XGBoost</p></li>
-</ul>
-</li>
-</ul>
-<img src="images/ensemble.jpeg" alt="https://vas3k.com/blog/machine_learning/" width="300"/></div>
-<div class="section" id="bagging">
-<h2>Bagging<a class="headerlink" href="#bagging" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>Apply the same algorithm but train it on different subsets of original data. At the end - just average the answers. Most famous example is <strong>Random Forests</strong>.</p></li>
-</ul>
-<img src="images/bagging.jpeg" alt="https://vas3k.com/blog/machine_learning/" width="600"/>
-</div>
-<div class="section" id="boosting">
-<h2>Boosting<a class="headerlink" href="#boosting" title="Permalink to this headline">¶</a></h2>
-<p>Similar to bagging but each subsequent algorithm is paying most attention to data points that were <strong>mispredicted</strong> by the previous one.</p>
-<img src="images/boosting.jpeg" alt="https://vas3k.com/blog/machine_learning/" width="600"/>
-</div>
-<div class="section" id="predicting-house-prices-using-scikit-learn">
-<h2>Predicting house prices using <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code><a class="headerlink" href="#predicting-house-prices-using-scikit-learn" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>The <strong>California house price dataset</strong> is a classic example dataset derived from the 1990 U.S. Census</p></li>
-<li><p><strong>Labels</strong> = house prices at the block group level (a block group typically has a population of 600 to 3,000 people)</p></li>
-<li><p><strong>Features</strong> = longitude, latitude, housing_median_age, total_rooms, total_bedrooms, population, households, median_income</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import libraries</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read dataset</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/california_house_prices.csv&#39;</span><span class="p">)</span>
-
-<span class="c1"># Examine dataset (each row represents one block group)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>housing_median_age</th>
-      <th>total_rooms</th>
-      <th>total_bedrooms</th>
-      <th>population</th>
-      <th>households</th>
-      <th>median_income</th>
-      <th>median_house_value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>51</td>
-      <td>1905</td>
-      <td>291</td>
-      <td>707</td>
-      <td>284</td>
-      <td>6.2561</td>
-      <td>431000</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>51</td>
-      <td>1616</td>
-      <td>374</td>
-      <td>608</td>
-      <td>302</td>
-      <td>3.1932</td>
-      <td>400000</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>51</td>
-      <td>2413</td>
-      <td>431</td>
-      <td>1095</td>
-      <td>437</td>
-      <td>4.0089</td>
-      <td>357000</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>51</td>
-      <td>1502</td>
-      <td>243</td>
-      <td>586</td>
-      <td>231</td>
-      <td>4.3750</td>
-      <td>332400</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>51</td>
-      <td>2399</td>
-      <td>516</td>
-      <td>1160</td>
-      <td>514</td>
-      <td>3.8456</td>
-      <td>318900</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-</div>
-<div class="section" id="check-data">
-<h2>Check data<a class="headerlink" href="#check-data" title="Permalink to this headline">¶</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check for NaN values and data types</span>
-<span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 15267 entries, 0 to 15266
-Data columns (total 7 columns):
- #   Column              Non-Null Count  Dtype  
----  ------              --------------  -----  
- 0   housing_median_age  15267 non-null  int64  
- 1   total_rooms         15267 non-null  int64  
- 2   total_bedrooms      15267 non-null  int64  
- 3   population          15267 non-null  int64  
- 4   households          15267 non-null  int64  
- 5   median_income       15267 non-null  float64
- 6   median_house_value  15267 non-null  int64  
-dtypes: float64(1), int64(6)
-memory usage: 835.0 KB
-</pre></div>
-</div>
-</div>
-</div>
-</div>
+<img src="images/john_push.svg" width="600"/></div>
 <div class="section" id="id2">
-<h2>Check data<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check summary statistics</span>
-<span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>housing_median_age</th>
-      <th>total_rooms</th>
-      <th>total_bedrooms</th>
-      <th>population</th>
-      <th>households</th>
-      <th>median_income</th>
-      <th>median_house_value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>count</th>
-      <td>15267.000000</td>
-      <td>15267.000000</td>
-      <td>15267.000000</td>
-      <td>15267.000000</td>
-      <td>15267.000000</td>
-      <td>15267.00000</td>
-      <td>15267.000000</td>
-    </tr>
-    <tr>
-      <th>mean</th>
-      <td>26.924805</td>
-      <td>2678.617214</td>
-      <td>549.977075</td>
-      <td>1476.071199</td>
-      <td>510.814371</td>
-      <td>3.70112</td>
-      <td>189416.617345</td>
-    </tr>
-    <tr>
-      <th>std</th>
-      <td>11.426288</td>
-      <td>2225.565198</td>
-      <td>430.964703</td>
-      <td>1180.890618</td>
-      <td>393.232807</td>
-      <td>1.57686</td>
-      <td>95681.349164</td>
-    </tr>
-    <tr>
-      <th>min</th>
-      <td>1.000000</td>
-      <td>2.000000</td>
-      <td>2.000000</td>
-      <td>3.000000</td>
-      <td>2.000000</td>
-      <td>0.49990</td>
-      <td>14999.000000</td>
-    </tr>
-    <tr>
-      <th>25%</th>
-      <td>17.000000</td>
-      <td>1469.000000</td>
-      <td>302.000000</td>
-      <td>814.000000</td>
-      <td>286.000000</td>
-      <td>2.53665</td>
-      <td>115400.000000</td>
-    </tr>
-    <tr>
-      <th>50%</th>
-      <td>27.000000</td>
-      <td>2142.000000</td>
-      <td>441.000000</td>
-      <td>1203.000000</td>
-      <td>415.000000</td>
-      <td>3.47840</td>
-      <td>171200.000000</td>
-    </tr>
-    <tr>
-      <th>75%</th>
-      <td>36.000000</td>
-      <td>3187.000000</td>
-      <td>661.000000</td>
-      <td>1780.000000</td>
-      <td>614.500000</td>
-      <td>4.62635</td>
-      <td>243050.000000</td>
-    </tr>
-    <tr>
-      <th>max</th>
-      <td>51.000000</td>
-      <td>37937.000000</td>
-      <td>6445.000000</td>
-      <td>35682.000000</td>
-      <td>6082.000000</td>
-      <td>15.00010</td>
-      <td>499100.000000</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-</div>
-<div class="section" id="visualize-data">
-<h2>Visualize data<a class="headerlink" href="#visualize-data" title="Permalink to this headline">¶</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot histogram</span>
-<span class="n">_</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">50</span> <span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/lecture-6_29_0.png" src="../../_images/lecture-6_29_0.png" />
-</div>
-</div>
-</div>
-<div class="section" id="correlation-analysis">
-<h2>Correlation analysis<a class="headerlink" href="#correlation-analysis" title="Permalink to this headline">¶</a></h2>
+<h3>Centralized workflow<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>It is always useful to compute correlation coeffcients (e.g.Pearson’s r) between the labels (i.e. <code class="docutils literal notranslate"><span class="pre">median_house_value</span></code>) and features.</p></li>
+<li><p>But now when <strong>another team member</strong> (who has also been working on the project) tries to <strong>push</strong> their changes, Git will <strong>refuse the request</strong> because the their local history has <strong>diverged</strong> from the central repository</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute correlation matrix</span>
-<span class="n">corr_matrix</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
-
-<span class="c1"># Display just house value correlations</span>
-<span class="n">corr_matrix</span><span class="p">[</span><span class="s2">&quot;median_house_value&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>median_house_value    1.000000
-median_income         0.668566
-total_rooms           0.152923
-households            0.098525
-total_bedrooms        0.079023
-population            0.020930
-housing_median_age    0.014355
-Name: median_house_value, dtype: float64
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="warning">
-<h3>Warning<a class="headerlink" href="#warning" title="Permalink to this headline">¶</a></h3>
+<img src="images/mary_push.svg" width="600"/></div>
+<div class="section" id="id3">
+<h3>Centralized workflow<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>Just remember that correlation coefficients only measure linear correlations (“if <code class="docutils literal notranslate"><span class="pre">x</span></code> goes up, then <code class="docutils literal notranslate"><span class="pre">y</span></code> generally goes up/down”).</p></li>
-<li><p>They may completely miss nonlinear relationships (e.g., “if <code class="docutils literal notranslate"><span class="pre">x</span></code> is close to zero then <code class="docutils literal notranslate"><span class="pre">y</span></code> generally goes up”).</p></li>
+<li><p>The team member must first <strong>pull</strong> the most recent changes in the central reposistory into their local repository</p></li>
 </ul>
-<img src="images/correlations.png" alt="https://www.kaggle.com/aakashjoshi123/o-reilly-solution-with-my-observations-notebook" width="600"/></div>
-</div>
-<div class="section" id="feature-scaling">
-<h2>Feature scaling<a class="headerlink" href="#feature-scaling" title="Permalink to this headline">¶</a></h2>
+<img src="images/mary_pull.svg" width="600"/></div>
+<div class="section" id="id4">
+<h3>Centralized workflow<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>Machine Learning algorithms don’t perform well when the input numerical attributes have very <strong>different scales</strong>.</p></li>
-<li><p>We often <strong>scale</strong> (or normalize) our features before training the model (e.g. min-max scaling or standardization).</p></li>
-<li><p><strong>Min-max method</strong> scales values so that they end up ranging from 0 to 1</p></li>
-<li><p><strong>Standardization</strong> scales values so that the they have mean of 0 and unit variance.</p></li>
+<li><p>Team member then resolves any conflicts between their local version and the central repository.</p></li>
+<li><p>Once finished, team member can then <strong>commit</strong> and <strong>push</strong> their changes to the central repo</p></li>
 </ul>
-<img src="images/scaling.png" alt="https://www.kaggle.com/aakashjoshi123/o-reilly-solution-with-my-observations-notebook" width="800"/><div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import library</span>
-<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
-
-<span class="c1"># Define feature list</span>
-<span class="n">feature_list</span> <span class="o">=</span>  <span class="p">[</span><span class="s1">&#39;housing_median_age&#39;</span><span class="p">,</span> <span class="s1">&#39;total_rooms&#39;</span><span class="p">,</span> <span class="s1">&#39;total_bedrooms&#39;</span><span class="p">,</span> 
-                 <span class="s1">&#39;population&#39;</span><span class="p">,</span> <span class="s1">&#39;households&#39;</span><span class="p">,</span> <span class="s1">&#39;median_income&#39;</span><span class="p">]</span>
-
-<span class="c1"># Define features and labels </span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">feature_list</span><span class="p">]</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;median_house_value&#39;</span><span class="p">]</span>
-
-<span class="c1"># Standarize data</span>
-<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>  
-<span class="n">X_scaled</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
-</pre></div>
+<img src="images/mary_successful_push.svg" width="600"/></div>
+<div class="section" id="advantages-of-centralized-workflow">
+<h3>Advantages of centralized workflow<a class="headerlink" href="#advantages-of-centralized-workflow" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Simplest workflow
+<br>
+<br></p></li>
+<li><p>Works well for small teams</p></li>
+</ul>
 </div>
+<div class="section" id="disadvantages">
+<h3>Disadvantages<a class="headerlink" href="#disadvantages" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>If someone breaks the central repo, it breaks for everyone</p></li>
+<li><p>Potential for a lot of conflicts</p></li>
+<li><p>One solution is to avoid working on the same files</p></li>
+<li><p>But this does not scale well as teams increase in size</p></li>
+</ul>
 </div>
+<div class="section" id="feature-branch-workflow">
+<h3>Feature branch workflow<a class="headerlink" href="#feature-branch-workflow" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>The logical extension of the centralized workflow is to use <strong>branches</strong></p></li>
+<li><p>In this workflow, all feature development takes place in a dedicated branch instead of the main branch</p></li>
+<li><p>This means that main branch never contains broken code - a huge advantage for continuous integration environments</p></li>
+</ul>
 </div>
+<div class="section" id="id5">
+<h3>Feature branch workflow<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>All team members <strong>clone</strong> a <strong>single, central repository</strong> to their local machine</p></li>
+</ul>
+<img src="images/colab.svg" width="600"/></div>
+<div class="section" id="id6">
+<h3>Feature branch workflow<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Team members immediately create a new branch to make their changes</p></li>
+</ul>
+<img src="images/big_branch.svg" width="600"/></div>
+<div class="section" id="id7">
+<h3>Feature branch workflow<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>When team members finish their changes, they <strong>push</strong> their branch to the central repository. The central repository will now contain multiple branches.</p></li>
+<li><p>Therefore, unlike the centralized workflow, this <strong>push</strong> will never cause conflicts</p></li>
+</ul>
+<img src="images/mary_successful_push.svg" width="600"/></div>
+<div class="section" id="id8">
+<h3>Feature branch workflow<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Team members then submit a <strong>pull request</strong> on <a class="reference external" href="http://GitHub.com">GitHub.com</a> asking to <strong>merge</strong> their new feature (or branch) into the main codebase, all team members will be notified automatically</p></li>
+</ul>
+<img src="images/git-pull-request.png" width="300"/>
 </div>
-<div class="section" id="split-data-in-training-and-testing-subsets">
-<h2>Split data in training and testing subsets<a class="headerlink" href="#split-data-in-training-and-testing-subsets" title="Permalink to this headline">¶</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
-
-<span class="c1"># Split data </span>
-<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X_scaled</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
-</pre></div>
+<div class="section" id="id9">
+<h3>Feature branch workflow<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Team leader <strong>reviews</strong> pull request, discusses any changes with team members</p></li>
+<li><p>Once everything looks good, team leader merges new feature into main codebase</p></li>
+<li><p>Team member can then delete their branch</p></li>
+</ul>
+<img src="images/merge.svg" width="600"/><img src="images/pull-request.png" width="800"/><img src="images/pr-changes.png" width="1000"/><img src="images/create-pull-request.png" width="1000"/><img src="images/github-diff-file.png" width="800"/></div>
+<div class="section" id="advantages-of-feature-branch-workflow">
+<h3>Advantages of feature branch workflow<a class="headerlink" href="#advantages-of-feature-branch-workflow" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Promotes collaboration with team members through <strong>pull requests</strong> and <strong>merge reviews</strong></p></li>
+<li><p>Teams can work in parallel on same files so good approach for larger teams</p></li>
+<li><p>Main branch never contains broken code</p></li>
+<li><p>Guiding framework for other, more complex worflows</p></li>
+</ul>
 </div>
+<div class="section" id="forking-workflows">
+<h3>Forking workflows<a class="headerlink" href="#forking-workflows" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Instead of using a single, central repository, forking workflows give every team member their <strong>own central repository</strong></p></li>
+<li><p>Team members can tinker with their forked repository as they wish without disturbing anyone else</p></li>
+<li><p>When ready they can <strong>push</strong> to their private central repository and file <strong>pull requests</strong> if they think their changes are ready to be integrated to main codebase</p></li>
+</ul>
+<img src="images/multiple_repos.svg" width="600"/></div>
+<div class="section" id="advantages-of-forking-workflows">
+<h3>Advantages of forking workflows<a class="headerlink" href="#advantages-of-forking-workflows" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Provides a little more <strong>power</strong> to the team leader because they are the only person that can push to the official repository</p></li>
+<li><p>Allows the team leader to <strong>accept/reject commits</strong> from any developer without giving them write access to the main codebase</p></li>
+<li><p>Often used for large open-source projects</p></li>
+</ul>
 </div>
+<div class="section" id="gitflow-workflow">
+<h3>Gitflow workflow<a class="headerlink" href="#gitflow-workflow" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Great for a release-based software workflow</p></li>
+</ul>
+<img src="images/gitflow.svg" width="500"/></div>
 </div>
+<div class="section" id="good-practices">
+<h2>Good practices<a class="headerlink" href="#good-practices" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="agree-on-a-workflow">
+<h3>Agree on a workflow<a class="headerlink" href="#agree-on-a-workflow" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>It is important that teams establish shared patterns of collaboration</p></li>
+<li><p>If a team doesn’t agree on a shared workflow it can lead to inefficient communication when it comes time to merge branches</p></li>
+</ul>
 </div>
-<div class="section" id="multiple-linear-regression">
-<h2>Multiple linear regression<a class="headerlink" href="#multiple-linear-regression" title="Permalink to this headline">¶</a></h2>
-<p>A very simple supervised algorithm that fits a linear model to our data using a least squares approach.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
-
-<span class="c1"># Define model</span>
-<span class="n">lin_reg</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
-
-<span class="c1"># Fit model to data</span>
-<span class="n">lin_reg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-</pre></div>
+<div class="section" id="commit-often">
+<h3>Commit often<a class="headerlink" href="#commit-often" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Commits are <strong>easy to make</strong> and provide opportunities to <strong>revert</strong> or <strong>undo</strong> work</p></li>
+<li><p>They should be made <strong>frequently</strong> to capture updates to a code base</p></li>
+</ul>
 </div>
+<div class="section" id="ensure-you-re-working-from-latest-version">
+<h3>Ensure you’re working from latest version<a class="headerlink" href="#ensure-you-re-working-from-latest-version" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>VCS enables rapid updates from multiple developers</p></li>
+<li><p>It’s easy to have a local copy of the codebase fall behind the global copy</p></li>
+<li><p>Make sure to <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> or <code class="docutils literal notranslate"><span class="pre">fetch</span></code> the latest code before you start working on project</p></li>
+</ul>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LinearRegression()
-</pre></div>
+<div class="section" id="make-detailed-notes">
+<h3>Make detailed notes<a class="headerlink" href="#make-detailed-notes" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>It is important to leave descriptive explanatory commit log messages. These commit log messages should explain the “why” and “what” that encompass the commits content.</p></li>
+<li><p>These log messages become the canonical history of the project’s development and leave a trail for future contributors to review.</p></li>
+</ul>
 </div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
-
-<span class="c1"># Predict test labels</span>
-<span class="n">predictions</span> <span class="o">=</span> <span class="n">lin_reg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-
-<span class="c1"># Compute mean-squared-error</span>
-<span class="n">lin_mse</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predictions</span><span class="p">)</span>
-<span class="n">lin_rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">lin_mse</span><span class="p">)</span>
-<span class="n">lin_rmse</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>64374.61617631897
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predictions</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">500000</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">500000</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Predicted house price ($)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Observed house price ($)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;major&#39;</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">500000</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">500000</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 500000.0)
-</pre></div>
-</div>
-<img alt="../../_images/lecture-6_40_1.png" src="../../_images/lecture-6_40_1.png" />
-</div>
-</div>
-</div>
-<div class="section" id="decision-tree">
-<h2>Decision Tree<a class="headerlink" href="#decision-tree" title="Permalink to this headline">¶</a></h2>
-<p>A popular machine learning algorithm that predicts a target variable using multiple regression trees</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeRegressor</span>
-
-<span class="c1"># Define model</span>
-<span class="n">tree_reg</span> <span class="o">=</span> <span class="n">DecisionTreeRegressor</span><span class="p">()</span>
-
-<span class="c1"># Fit model</span>
-<span class="n">tree_reg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DecisionTreeRegressor()
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Predict test labels</span>
-<span class="n">predictions</span> <span class="o">=</span> <span class="n">tree_reg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-
-<span class="c1"># Compute mean-squared-error</span>
-<span class="n">tree_mse</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predictions</span><span class="p">)</span>
-<span class="n">tree_rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">tree_mse</span><span class="p">)</span>
-<span class="n">tree_rmse</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>82289.76594673106
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predictions</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">500000</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">500000</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Predicted house price ($)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Observed house price ($)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;major&#39;</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">500000</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">500000</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 500000.0)
-</pre></div>
-</div>
-<img alt="../../_images/lecture-6_44_1.png" src="../../_images/lecture-6_44_1.png" />
-</div>
-</div>
-</div>
-<div class="section" id="randomforests">
-<h2>RandomForests<a class="headerlink" href="#randomforests" title="Permalink to this headline">¶</a></h2>
-<p>A popular <strong>ensemble algorithm</strong> that fits a number of <strong>decision tree classifiers</strong> on various sub-samples of the dataset and uses averaging to improve the predictive accuracy and control over-fitting.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestRegressor</span>
-
-<span class="c1"># Define model</span>
-<span class="n">forest_reg</span> <span class="o">=</span> <span class="n">RandomForestRegressor</span><span class="p">(</span><span class="n">n_estimators</span> <span class="o">=</span> <span class="mi">30</span><span class="p">)</span>
-
-<span class="c1"># Fit model</span>
-<span class="n">forest_reg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RandomForestRegressor(n_estimators=30)
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Predict test labels predictions</span>
-<span class="n">predictions</span> <span class="o">=</span> <span class="n">forest_reg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-
-<span class="c1"># Compute mean-squared-error</span>
-<span class="n">final_mse</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span> <span class="p">,</span> <span class="n">predictions</span><span class="p">)</span>
-<span class="n">final_rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">final_mse</span><span class="p">)</span>
-<span class="n">final_rmse</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>60264.63679436083
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predictions</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">500000</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">500000</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Predicted house price ($)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Observed house price ($)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;major&#39;</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">500000</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">500000</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 500000.0)
-</pre></div>
-</div>
-<img alt="../../_images/lecture-6_48_1.png" src="../../_images/lecture-6_48_1.png" />
-</div>
+<div class="section" id="use-branches">
+<h3>Use branches<a class="headerlink" href="#use-branches" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Branches enable multiple developers to work in parallel on <strong>separate lines</strong> of development</p></li>
+<li><p>Branches should be used <strong>frequently</strong> as they are quick and inexpensive.</p></li>
+<li><p>When development on a branch is complete it should be <strong>merged</strong> into the main line of development and then <strong>deleted</strong></p></li>
+</ul>
 </div>
 </div>
 </div>
@@ -1420,10 +1136,10 @@ Name: median_house_value, dtype: float64
             <p class="prev-next-title">Project ideas</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../../labs/week6/lab6-demo.html" title="next page">
+    <a class='right-next' id="next-link" href="../week7/lecture-7.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Machine learning</p>
+        <p class="prev-next-title">Data access lecture</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

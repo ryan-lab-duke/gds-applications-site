@@ -1,387 +1,592 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Project setup
+# # Machine learning
 # 
-# * Interactive Development Environments (IDE)
-# <br>
-# <br>
-# * Version control
-# <br>
-# <br>
-# * Virtual environments
-# <br>
-# <br>
-# * Organizing project
-# <br>
-# <br>
-# * `GitHub` collaboration workflows
+# This week we will be learning how to develop and use machine learning models. We only have a week so the aim is to briefly **review the basics** of machine learning and provide a **hands-on demo** with a geospatial dataset. Students who are interested are encouraged to pursue some of great online resources that are now available to learn more about this extensive (and rapidly growing) field.    
 
+# ## What is machine learning?
 # 
+# * The goal of machine learning is use **input data** to make **useful predictions** on **never-before-seen data**
+# 
+# 
+# * Machine learning is **part** of artificial intelligence, but not the only part
+# 
+# ```{image} images/ml_schematic.jpg
+# :width: 600px
+# :align: center
+# ```
 
-# <img src="images/version_control.png" alt="https://phdcomics.com/comics/archive_print.php?comicid=1531" width="400"/>
+# ## Input data
 # 
+# * Machine learning starts with a **labelled dataset**
+# 
+# 
+# * A **label** (or target variable) is the thing we're predicting (e.g. `y` variable in linear regression)
+# 
+# 
+# * For example, house price, river discharge, land cover etc.
 
-# We've all been in this situation before: it seems unnecessary to have multiple nearly-identical versions of the same document. 
+# ## Input data
 # 
-# The danger of losing good versions often leads to the problematic workflow illustrated in the PhD Comics cartoon at the top of this page.
+# * It's tough to collect a good collection of data (time-consuming, expensive) 
 # 
-# Collaborative writing with traditional word processors is cumbersome. Either every collaborator has to work on a document sequentially (slowing down the process of writing), or you have to send out a version to all collaborators and manually merge their comments into your document. The 'track changes' option can highlight changes for you and simplifies merging, but as soon as you accept changes you will lose their history. You will then no longer know who suggested that change, why it was suggested, or when it was merged into the rest of the document.
 # 
+# * These datasets are therefore **extremely valuable**
+# 
+# ```{image} images/captcha.jpeg
+# :width: 300px
+# :align: center
+# ```
 
-# ## Version control
+# ## Features
+# 
+# * An input **variable** (e.g. the `x` variable in linear regression)
 # 
 # 
-# * **Version control systems** (VCS) start with a **base version** of the document and then **keeps track of changes** you make each step of the way
+# * A simple dataset might use a **one or two features** while a more complex dataset could have **thousands of features**
 # 
 # 
-# * VCS are essential for **developing software** and **carrying out projects** with a lot of code
-# 
-# 
-# * VCS does not care about file names, intead records **who, what, when, and why** changes were made to files
-# 
-# 
-# 
-# <img src="images/branch.svg" width="600"/>
-
-# ## Git
-# 
-# * One of the most popular VCS tools in use today is called `git`
-# 
-# 
-# * It is a command-line tool that is installed locally 
-# 
-# 
-# * It is free and open-source software
-# 
-# 
-# <img src="images/git.svg" width="600"/>
+# * In our river discharge example - features could include precipitation, snow depth, soil moisture
 # 
 
-# ## GitHub
+# ## Algorithms
 # 
-# * **GitHub** is a web-based hosting service for `git`
-# <br>
-# <br>
-# * Provides a graphical user interface
-# <br>
-# <br>
-# * Maintained by Microsoft
-# <br>
-# <br>
-# * There are other web-based hosting services (e.g. GitLab and Bitbucket)
+# * There are many (e.g. naive bayes, decision trees, neural network etc.)
 # 
-# <img src="images/github.png" width="200"/>
+# 
+# * Performance of algorithm dependent on type of problem
+# 
+# 
+# * Just remember: **garage in, garbage out**
+# 
+# ```{image} images/ml_types.jpg
+# :width: 600px
+# :align: center
+# ```
 
-# ## Why do we use version control systems?
+# ## Supervised learning
 # 
+# * Training data is already **labeled** and we teach the machine to learn from these examples
+# 
+# 
+# * Supervised learning can used to predict a **category** (classification) or predict a **number** (regression) 
 
-# ### Security
+# ## Classification
+# 
+# * "Split things into **groups** based on their **features**"
 # 
 # 
-# * VCS acts like an unlimited **'undo'** thereby **protecting source code** from yourself **and** others 
+# * Examples include:
+#     * Land cover
+#     * Flood risk
+#     * Sentiment analysis
+# 
+# 
+# * Popular algorithms include:
+#     * Naive Bayes
+#     * Decision Trees
+#     * K-Nearest Neighbours
+#     * Support Vector Machine
 #     
 #     
-# * e.g. catastrophe, human error, and unintended consequences
-# 
-# 
-# <img src="images/hero.svg" width="600"/>
+# ```{image} images/classification.jpg
+# :width: 300px
+# :align: center
+# ```
 
-# ### Collaboration
+# ## Regression
 # 
-# * VCS enables **many people** to work on the same project at the same time
+# * "Draw a **line** through these dots"
 # 
 # 
-# * Teams working in parallel accelerates project development
+# * Used for predicting continuous variables:
+#     * River discharge
+#     * House prices
+#     * Weather forecasting
+#     
 # 
-# <img src="images/colab.svg" width="500"/>
+# * Popular algorithms include linear regression, polynomial regression, + other algorithms
+#   
+# 
+# ```{image} images/regression.jpeg
+# :width: 300px
+# :align: center
+# ```
 
-# ### Community
+# ## Unsupervised learning
 # 
-# * Impossible for junior developer to mess up a big project 
-# 
-# 
-# * Since it is so robust this encourages open-source **experimentation** and **development**
+# * Labeled data is a luxury, sometimes we don't have it
 # 
 # 
-# * `GitHub` has really emerged as the industry standard
+# * Sometimes we have **no idea** what the labels could be
 # 
 # 
-# <img src="images/pull.svg" width="500"/>
-# 
+# * Much **less used** in geospatial data science but sometimes useful for exploratory analysis
 
-# ## Drawbacks of version control
+# ## Clustering
 # 
-# * Difficult to learn
+# * "Divide data into groups but machine chooses the best way"
 # 
-# <img src="images/meme.jpeg" width="600"/>
 # 
+# * Common usages include:
+#     * image compression
+#     * labeling training data (i.e. for supervised learning)
+#     * detecting abnormal behavior
+#     
+#     
+# * Popular algorithms: 
+#     * K-means clustering
+#     * Mean-Shift
+#     * DBSCAN
+# 
+# ```{image} images/clustering.jpeg
+# :width: 300px
+# :align: center
+# ```
 
-# ## What have we been doing so far?
+# ## Ensemble methods
 # 
-# <img src="images/gds_page.png" width="1000"/>
+# * "Multiple learning algorithms learning to correct errors of each other"
+# 
+# 
+# * Often used improve the accuracy over what could be acheived with a single classical machine learning model.
+# 
+# 
+# * Popular algorithms: 
+#     * Random Forest
+#     * XGBoost
+# 
+# ```{image} images/ensemble.jpeg
+# :width: 300px
+# :align: center
+# ```
 
-# <img src="images/git-fork-clone-flow.png" width="400"/>
+# ## Predicting house prices using `scikit-learn`
+# 
+# * In our demo we will build a machine learning model to **predict house prices in California**. 
+# 
+# 
+# * The California house price dataset is a **classic example dataset** derived from the 1990 U.S. Census. A description of the dataset can be found [here](https://developers.google.com/machine-learning/crash-course/california-housing-data-description).
+# 
+# 
+# * **Labels** = house prices at the **block group level** (a block group typically has a population of 600 to 3,000 people)
+# 
+# 
+# * **Features** = longitude, latitude, housing_median_age, total_rooms, total_bedrooms, population, households, median_income
 
-# ## Some basic terms
+# In[3]:
 
-# ### Fork
-# 
-# * **Copy** a repository to your GitHub.com account
-# 
-# 
-# ### Clone
-# 
-# * Retrieve a repository from **GitHub.com** to **local machine**
 
-# ### Commit
-# 
-# * Create a **snapshot** of the contents of your file tree
-# 
-# 
-# ### Push
-# 
-# * **Upload** your local changes to the central repository, along with necessary commits and objects
-# 
-# 
-# ### Pull 
-# 
-# * **Fetch** the contents of the central repository and immediately **merge** to your local copy
+# Import libraries
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
 
-# ## Collaborating with GitHub
-# 
-# 
-# * Centralized workflow
-# <br>
-# <br>
-# * Feature branch workflow
-# <br>
-# <br>
-# * Forking workflow
-# <br>
-# <br>
-# * Others (e.g. Gitflow workflow)
 
-# ### Centralized workflow
-# 
-# * All team members **clone** a **single, central repository** to their local machine
-# 
-# 
-# <img src="images/colab.svg" width="600"/>
+# In[5]:
 
-# ### Centralized workflow
-# 
-# * One team member makes changes (e.g. add, modify, delete) to files on their local machine
-# 
-# 
-# * Periodically, they should **commit** these changes (i.e. take a snapshot) with a short message saying what they did
-# 
-# 
-# * When they are finished working, they can **push** their changes back to the central repository 
-# 
-# 
-# 
-# <img src="images/john_push.svg" width="600"/>
 
-# ### Centralized workflow
-# 
-# * But now when **another team member** (who has also been working on the project) tries to **push** their changes, Git will **refuse the request** because the their local history has **diverged** from the central repository
-# 
-# <img src="images/mary_push.svg" width="600"/>
+# Read dataset
+df = pd.read_csv('data/california_house_prices.csv')
+df.head()
 
-# ### Centralized workflow
-# 
-# * The team member must first **pull** the most recent changes in the central reposistory into their local repository
-# 
-# <img src="images/mary_pull.svg" width="600"/>
 
-# ### Centralized workflow
-# 
-# * Team member then resolves any conflicts between their local version and the central repository.
-# 
-# 
-# * Once finished, team member can then **commit** and **push** their changes to the central repo  
-# 
-# 
-# <img src="images/mary_successful_push.svg" width="600"/>
+# ## Check data
 
-# ### Advantages of centralized workflow
-# 
-# * Simplest workflow
-# <br>
-# <br>
-# * Works well for small teams
-# 
-# 
-# ### Disadvantages
-# 
-# * If someone breaks the central repo, it breaks for everyone
-# 
-# 
-# * Potential for a lot of conflicts
-# 
-# 
-# * One solution is to avoid working on the same files
-# 
-# 
-# * But this does not scale well as teams increase in size
-# 
-# 
-# 
+# In[6]:
 
-# ### Feature branch workflow
-# 
-# * The logical extension of the centralized workflow is to use **branches**
-# 
-# 
-# * In this workflow, all feature development takes place in a dedicated branch instead of the main branch
-# 
-# 
-# * This means that main branch never contains broken code - a huge advantage for continuous integration environments
 
-# ### Feature branch workflow
-# 
-# * All team members **clone** a **single, central repository** to their local machine
-# 
-# <img src="images/colab.svg" width="600"/>
+# Summary of columns, values, and data types
+df.info()
 
-# ### Feature branch workflow
-# 
-# * Team members immediately create a new branch to make their changes
-# 
-# <img src="images/big_branch.svg" width="600"/>
 
-# ### Feature branch workflow
-# 
-# 
-# * When team members finish their changes, they **push** their branch to the central repository. The central repository will now contain multiple branches.  
-# 
-# 
-# * Therefore, unlike the centralized workflow, this **push** will never cause conflicts
-# 
-# 
-# <img src="images/mary_successful_push.svg" width="600"/>
+# ```{image} images/columns.png
+# :width: 400px
+# :align: center
+# ```
 
-# ### Feature branch workflow
-# 
-# * Team members then submit a **pull request** on GitHub.com asking to **merge** their new feature (or branch) into the main codebase, all team members will be notified automatically
-# 
-# 
-# <img src="images/git-pull-request.png" width="300"/>
-# 
+# In[7]:
 
-# ### Feature branch workflow
-# 
-# * Team leader **reviews** pull request, discusses any changes with team members
-# 
-# 
-# * Once everything looks good, team leader merges new feature into main codebase
-# 
-# 
-# * Team member can then delete their branch
-# 
-# 
-# <img src="images/merge.svg" width="600"/>
 
-# <img src="images/pull-request.png" width="800"/>
+# Summary statistics
+df.describe()
 
-# <img src="images/pr-changes.png" width="1000"/>
 
-# <img src="images/create-pull-request.png" width="1000"/>
+# ## Visualize data
 
-# <img src="images/github-diff-file.png" width="800"/>
+# In[8]:
 
-# ### Advantages of feature branch workflow
-# 
-# * Promotes collaboration with team members through **pull requests** and **merge reviews**
-# 
-# 
-# * Teams can work in parallel on same files so good approach for larger teams
-# 
-# 
-# * Main branch never contains broken code 
-# 
-# 
-# * Guiding framework for other, more complex worflows
 
-# ### Forking workflows
-# 
-# * Instead of using a single, central repository, forking workflows give every team member their **own central repository**
-# 
-# 
-# 
-# * Team members can tinker with their forked repository as they wish without disturbing anyone else
-# 
-# 
-# 
-# * When ready they can **push** to their private central repository and file **pull requests** if they think their changes are ready to be integrated to main codebase
-# 
-# 
-# 
-# <img src="images/multiple_repos.svg" width="600"/>
+# Plot histogram
+_ = df.hist(bins=50 , figsize=(20, 10))
 
-# ### Advantages of forking workflows
-# 
-# 
-# * Provides a little more **power** to the team leader because they are the only person that can push to the official repository
-# 
-# 
-# 
-# * Allows the team leader to **accept/reject commits** from any developer without giving them write access to the main codebase
-#  
-# 
-# 
-# * Often used for large open-source projects
 
-# ### Gitflow workflow
+# ## Correlation analysis
 # 
-# * Great for a release-based software workflow
-# 
-# <img src="images/gitflow.svg" width="500"/>
+# It is always useful to compute correlation coeffcients (e.g.Pearson's r) between the labels (i.e. `median_house_value`) and features.
 
-# ## Good practices
+# In[9]:
 
-# ### Agree on a workflow
-# 
-# 
-# * It is important that teams establish shared patterns of collaboration
-# 
-# 
-# * If a team doesn't agree on a shared workflow it can lead to inefficient communication when it comes time to merge branches
 
-# ### Commit often
-# 
-# 
-# * Commits are **easy to make** and provide opportunities to **revert** or **undo** work
-# 
-# 
-# * They should be made **frequently** to capture updates to a code base
+# Compute correlation matrix
+corr_matrix = df.corr()
 
-# ### Ensure you're working from latest version
-# 
-# 
-# * VCS enables rapid updates from multiple developers
-# 
-# 
-# * It's easy to have a local copy of the codebase fall behind the global copy
-# 
-# 
-# * Make sure to `git pull` or `fetch` the latest code before you start working on project
+# Display just house value correlations
+corr_matrix["median_house_value"].sort_values(ascending= False)
 
-# ### Make detailed notes
-# 
-# * It is important to leave descriptive explanatory commit log messages. These commit log messages should explain the "why" and "what" that encompass the commits content. 
-# 
-# 
-# * These log messages become the canonical history of the project's development and leave a trail for future contributors to review.
 
-# ### Use branches
+# ## Warning about correlation coefficients
+# 
+# * Just remember that correlation coefficients only measure linear correlations ("if `x` goes up, then `y` generally goes up/down").
 # 
 # 
-# * Branches enable multiple developers to work in parallel on **separate lines** of development
+# * They may completely miss nonlinear relationships (e.g., "if `x` is close to zero then `y` generally goes up").
 # 
 # 
-# * Branches should be used **frequently** as they are quick and inexpensive. 
+# ```{image} images/correlations.png
+# :width: 600px
+# :align: center
+# ```
+
+# ## Feature scaling
+# 
+# * Machine Learning algorithms don’t perform well when the input numerical attributes have very **different scales**.
 # 
 # 
-# * When development on a branch is complete it should be **merged** into the main line of development and then **deleted**
+# * We often **scale** (or normalize) our features before training the model (e.g. min-max scaling or standardization).
+# 
+# 
+# * **Min-max method** scales values so that they end up ranging from 0 to 1
+# 
+# 
+# * **Standardization** scales values so that the they have mean of 0 and unit variance.
+# 
+# 
+# ```{image} images/scaling.png
+# :width: 800px
+# :align: center
+# ```
+
+# In[11]:
+
+
+# Import library
+from sklearn.preprocessing import StandardScaler
+
+# Define feature list
+feature_list =  ['housing_median_age', 'total_rooms', 'total_bedrooms', 
+                 'population', 'households', 'median_income']
+
+# Define features and labels 
+X = df[feature_list]
+y = df['median_house_value']
+
+
+# In[36]:
+
+
+# Standarize data
+scaler = StandardScaler()  
+X_scaled = scaler.fit_transform(X)
+df_scaled = pd.DataFrame(X_scaled, columns=feature_list)
+df_scaled
+
+
+# ## Split data in training and testing subsets
+# 
+# If we want to properly evaluate our machine learning model, we should not use **all** the data for training. Instead, we train the model on a **subset of the data**, retaining another subset (that the model has not "seen") to **evaluate** the model. 
+
+# In[37]:
+
+
+from sklearn.model_selection import train_test_split
+
+# Split data 
+X_train, X_test, y_train, y_test = train_test_split(df_scaled, y, test_size=0.2, random_state=42)
+
+
+# ## Multiple linear regression
+# 
+# We will first experiment with a very simple supervised algorithm that fits a linear model to our data using a least squares approach. 
+
+# In[38]:
+
+
+from sklearn.linear_model import LinearRegression
+
+# Define model
+lin_reg = LinearRegression()
+
+# Fit model to data
+lin_reg.fit(X_train, y_train)
+
+
+# In[39]:
+
+
+from sklearn.metrics import mean_squared_error
+
+# Predict test labels
+predictions = lin_reg.predict(X_test)
+
+# Compute mean-squared-error
+lin_mse = mean_squared_error(y_test, predictions)
+lin_rmse = np.sqrt(lin_mse)
+lin_rmse
+
+
+# In[23]:
+
+
+# Plot
+fig, ax = plt.subplots(figsize=(8, 6))
+ax.scatter(y_test, predictions, alpha=0.1, s=50, zorder=2)
+ax.plot([0,500000], [0, 500000], color='k', lw=1, zorder=3)
+ax.set_ylabel('Predicted house price ($)', fontsize=14)
+ax.set_xlabel('Observed house price ($)', fontsize=14)
+ax.tick_params(axis='both', which='major', labelsize=13)
+ax.grid(ls='dashed', lw=1, zorder=1)
+ax.set_ylim(0,500000)
+ax.set_xlim(0,500000)
+
+
+# ## Decision Tree
+# 
+# Another machine learning algorithm that predicts a target variable using multiple regression trees
+
+# In[27]:
+
+
+from sklearn.tree import DecisionTreeRegressor
+
+# Define model
+tree_reg = DecisionTreeRegressor()
+
+# Fit model
+tree_reg.fit(X_train, y_train)
+
+
+# In[28]:
+
+
+# Predict test labels
+predictions = tree_reg.predict(X_test)
+
+# Compute mean-squared-error
+tree_mse = mean_squared_error(y_test, predictions)
+tree_rmse = np.sqrt(tree_mse)
+tree_rmse
+
+
+# In[29]:
+
+
+# Plot
+fig, ax = plt.subplots(figsize=(8, 6))
+ax.scatter(y_test, predictions, alpha=0.1, s=50, zorder=2)
+ax.plot([0,500000], [0, 500000], color='k', lw=1, zorder=3)
+ax.set_ylabel('Predicted house price ($)', fontsize=14)
+ax.set_xlabel('Observed house price ($)', fontsize=14)
+ax.tick_params(axis='both', which='major', labelsize=13)
+ax.grid(ls='dashed', lw=1, zorder=1)
+ax.set_ylim(0,500000)
+ax.set_xlim(0,500000)
+
+
+# ## RandomForests
+# 
+# A popular **ensemble algorithm** that fits a number of **decision tree classifiers** on various sub-samples of the dataset and uses averaging to improve the predictive accuracy and control over-fitting.
+
+# In[30]:
+
+
+from sklearn.ensemble import RandomForestRegressor
+
+# Define model
+forest_reg = RandomForestRegressor(n_estimators = 30)
+
+# Fit model
+forest_reg.fit(X_train, y_train)
+
+
+# In[31]:
+
+
+# Predict test labels predictions
+predictions = forest_reg.predict(X_test)
+
+# Compute mean-squared-error
+final_mse = mean_squared_error(y_test , predictions)
+final_rmse = np.sqrt(final_mse)
+final_rmse
+
+
+# In[32]:
+
+
+# Plot
+fig, ax = plt.subplots(figsize=(8, 6))
+ax.scatter(y_test, predictions, alpha=0.1, s=50, zorder=2)
+ax.plot([0,500000], [0, 500000], color='k', lw=1, zorder=3)
+ax.set_ylabel('Predicted house price ($)', fontsize=14)
+ax.set_xlabel('Observed house price ($)', fontsize=14)
+ax.tick_params(axis='both', which='major', labelsize=13)
+ax.grid(ls='dashed', lw=1, zorder=1)
+ax.set_ylim(0,500000)
+ax.set_xlim(0,500000)
+
+
+# ## Feature engineering
+# 
+# Generating **new features** that have predictive power is one of the most important aspects of machine learning. Until now, we just used the default variables for predicting house prices but there are likely other factors that may be useful.
+# 
+# For example, we have **geolocation data**, which could be very useful. In the next part of this demo, we will engineer some new features to improve the accuracy of our house price prediction model.
+# 
+# As a recap, these were the mean-sqaured-errors from the three models:
+# 
+# * Multiple linear regression: \\$64,375
+# 
+# 
+# * Decision Tree: \\$82,989
+# 
+# 
+# * RandomForests: \\$60,158
+
+# In[42]:
+
+
+# Import package
+import geopandas as gpd
+
+# Read datasets
+df = pd.read_csv('data/california_house_prices_w_geometry.csv')
+coast = gpd.read_file('data/california_coastline.shp')
+
+
+# In[54]:
+
+
+# Convert DataFrame to GeoDataFrame
+gdf = gpd.GeoDataFrame(df, geometry=gpd.points_from_xy(df['longitude'], df['latitude']))
+gdf = gdf.set_crs(4326, allow_override=True)
+
+# Reproject everything to UTM 10N (EPSG:32610)
+gdf_utm = gdf.to_crs('EPSG:32610')
+coast_utm = coast.to_crs('EPSG:32610')
+
+
+# In[55]:
+
+
+# Compute distance to coast
+distance_to_coast = []
+for i in range(gdf_utm.shape[0]):
+    distance_to_coast.append(coast_utm.distance(gdf_utm['geometry'].iloc[i]).min())
+    
+# Add to DataFrame
+gdf_utm['distance_to_coast'] = distance_to_coast
+
+
+# In[68]:
+
+
+# Quickly check that it worked!
+fig, ax = plt.subplots(figsize=(8, 6))
+ax.scatter(gdf_utm['geometry'].x, gdf_utm['geometry'].y, c=gdf_utm['distance_to_coast'])
+
+
+# ## Correlation matrix
+# 
+# We will perform another correlation matrix to see if `distance_to_coast` is useful predictor of `median_house_value`.
+
+# In[58]:
+
+
+# Compute correlation matrix
+corr_matrix = gdf_utm.corr()
+
+# Display just house value correlations
+corr_matrix["median_house_value"].sort_values(ascending= False)
+
+
+# It is the second most correlated variable with `median_house_value`, excellent!
+# 
+# There are still some features that could be improved. For example, `total_rooms` and `total_bedrooms` does not mean much because it just depends on the number of house in the block group. A more useful metric would be **rooms per house** or **bedrooms per house**. 
+# 
+# We can add those columns pretty simply
+
+# In[59]:
+
+
+# Rooms per house
+gdf_utm['rooms_per_house'] = gdf_utm['total_rooms'] / gdf_utm['households']
+
+# Bedrooms per house
+gdf_utm['bedrooms_per_room'] = gdf_utm['total_bedrooms'] / gdf_utm['total_rooms']
+
+
+# In[60]:
+
+
+# Compute correlation matrix
+corr_matrix = gdf_utm.corr()
+
+# Display just house value correlations
+corr_matrix["median_house_value"].sort_values(ascending= False)
+
+
+# The new `bedrooms_per_room` attribute is more correlated with `median_house_value` than the `total_rooms` or `total_bedrooms`. Apparently houses with a lower bedroom/room ratio tend to be more expensive. 
+# 
+# The `rooms_per_house` is surprisingly not that well correlated with `median_house_value`. Location is clearly the most important thing in the California housing market!
+
+# ## Fit a model to data
+
+# In[61]:
+
+
+# Define feature list
+feature_list =  ['median_income', 'distance_to_coast', 'bedrooms_per_room', 
+                 'total_rooms', 'rooms_per_house', 'total_bedrooms', 'households']
+
+# Define features and labels 
+X = gdf_utm[feature_list]
+y = gdf_utm['median_house_value']
+
+# Standarize data
+scaler = StandardScaler()  
+X_scaled = scaler.fit_transform(X)
+
+
+# In[62]:
+
+
+# Split data 
+X_train, X_test, y_train, y_test = train_test_split(X_scaled, y, test_size=0.2, random_state=42)
+
+
+# In[63]:
+
+
+# Define model
+forest_reg = RandomForestRegressor(n_estimators = 30)
+
+# Fit model
+forest_reg.fit(X_train, y_train)
+
+
+# ## Evaluate model
+
+# In[64]:
+
+
+# Predict test labels predictions
+predictions = forest_reg.predict(X_test)
+
+# Compute mean-squared-error
+final_mse = mean_squared_error(y_test , predictions)
+final_rmse = np.sqrt(final_mse)
+final_rmse
+
+
+# So we improved our model by \\$4,388 (\\$60,158 to \\$55,770). This might not sound like much but could make a big difference to someone and might the difference between winning a [Kaggle](https://www.kaggle.com/) competition or not.

@@ -42,13 +42,14 @@ parts:
   - caption: Week 6
     chapters:
     - file: lectures/week6/lecture-6.ipynb
-    - file: labs/week6/lab6-demo.ipynb
+    - file: labs/week6/assignment6.md
 
   - caption: Week 7
     chapters:
     - file: lectures/week7/lecture-7.ipynb
-    - file: labs/week7/lab7-demo.ipynb
+    - file: labs/week7/assignment7.md
 
   - caption: Week 8
     chapters:
     - file: lectures/week8/lecture-8.ipynb
+    - file: labs/week8/assignment8.md

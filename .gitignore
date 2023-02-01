@@ -9,8 +9,17 @@ resources/
 book/labs/week2/data/*
 book/labs/week3/data/*
 book/labs/week4/data/*
+book/labs/week5/data/*
+book/labs/week6/data/*
+book/labs/week7/data/*
+book/labs/week8/data/*
+book/labs/week9/data/*
 
 book/lectures/week2/data/*
 book/lectures/week3/data/*
 book/lectures/week4/data/*
-
+book/lectures/week5/data/*
+book/lectures/week6/data/*
+book/lectures/week7/data/*
+book/lectures/week8/data/*
+book/lectures/week9/data/*

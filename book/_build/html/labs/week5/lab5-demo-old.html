@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Collaborating on GitHub &#8212; Geospatial Data Science</title>
+    <title>Machine learning &#8212; Geospatial Data Science</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -206,7 +206,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../lectures/week5/lecture-5.html">
-   Project setup
+   Machine learning
   </a>
  </li>
  <li class="toctree-l1">
@@ -228,12 +228,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../lectures/week6/lecture-6.html">
-   Machine learning lecture
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../week6/lab6-demo.html">
-   Machine learning
+   Project setup
   </a>
  </li>
 </ul>
@@ -370,84 +365,69 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#team-leader-make-a-new-github-repository">
-   Team leader: make a new Github repository
+  <a class="reference internal nav-link" href="#check-for-any-updates-in-course-materials">
+   Check for any updates in course materials
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#team-leader-add-other-team-members-to-repository">
-     Team leader: add other team members to repository
+    <a class="reference internal nav-link" href="#download-the-data-for-the-lab">
+     Download the data for the lab
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#everyone-clone-repository">
-     Everyone: clone repository
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#create-a-new-slack-channel-for-discussion">
-     Create a new Slack channel for discussion:
+    <a class="reference internal nav-link" href="#create-a-new-environment-and-launch-the-notebook">
+     Create a new environment and launch the notebook
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#centralized-workflow-in-github-desktop">
-   Centralized workflow in GitHub Desktop
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#some-tips-for-the-centralized-workflow">
-     Some tips for the centralized workflow
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#feature-branch-workflow-in-github-desktop">
-   Feature branch workflow in GitHub Desktop
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#workflow">
-     Workflow
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#some-tips-for-the-feature-branch-workflow">
-     Some tips for the feature branch workflow
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#feature-branch-workflow-in-command-line">
-   Feature branch workflow in command line
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#some-tips-for-collaborating-on-group-project">
-     Some tips for collaborating on group project
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#task-1-prepare-a-readme-40-points">
-   Task 1: prepare a README (40 points)
+  <a class="reference internal nav-link" href="#feature-engineering">
+   Feature engineering
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#task-2-push-all-changes-to-github-and-submit-readme-as-a-pdf-to-canvas-10-points">
-   Task 2: push all changes to GitHub and submit README as a pdf to Canvas (10 points)
+  <a class="reference internal nav-link" href="#correlation-matrix">
+   Correlation matrix
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#some-notes-for-final-projects">
-     Some notes for final projects
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fit-a-model-to-data">
+   Fit a model to data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#evaluate-model">
+   Evaluate model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#it-s-competition-time">
+   It’s competition time!
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-1-10-points">
+   Question 1 (10 points):
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-2-30-points">
+   Question 2 (30 points):
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-1-10-points">
+   Task 1 (10 points):
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#remember-to-submit-your-answers-to-questions-1-and-2-and-complete-task-1-by-friday-11-59pm">
+   Remember to submit your answers to Questions 1 and 2 and complete Task 1
+   <strong>
+    by Friday 11:59pm
+   </strong>
+  </a>
  </li>
 </ul>
 
@@ -459,7 +439,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Collaborating on GitHub</h1>
+                <h1>Machine learning</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -470,84 +450,69 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#team-leader-make-a-new-github-repository">
-   Team leader: make a new Github repository
+  <a class="reference internal nav-link" href="#check-for-any-updates-in-course-materials">
+   Check for any updates in course materials
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#team-leader-add-other-team-members-to-repository">
-     Team leader: add other team members to repository
+    <a class="reference internal nav-link" href="#download-the-data-for-the-lab">
+     Download the data for the lab
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#everyone-clone-repository">
-     Everyone: clone repository
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#create-a-new-slack-channel-for-discussion">
-     Create a new Slack channel for discussion:
+    <a class="reference internal nav-link" href="#create-a-new-environment-and-launch-the-notebook">
+     Create a new environment and launch the notebook
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#centralized-workflow-in-github-desktop">
-   Centralized workflow in GitHub Desktop
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#some-tips-for-the-centralized-workflow">
-     Some tips for the centralized workflow
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#feature-branch-workflow-in-github-desktop">
-   Feature branch workflow in GitHub Desktop
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#workflow">
-     Workflow
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#some-tips-for-the-feature-branch-workflow">
-     Some tips for the feature branch workflow
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#feature-branch-workflow-in-command-line">
-   Feature branch workflow in command line
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#some-tips-for-collaborating-on-group-project">
-     Some tips for collaborating on group project
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#task-1-prepare-a-readme-40-points">
-   Task 1: prepare a README (40 points)
+  <a class="reference internal nav-link" href="#feature-engineering">
+   Feature engineering
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#task-2-push-all-changes-to-github-and-submit-readme-as-a-pdf-to-canvas-10-points">
-   Task 2: push all changes to GitHub and submit README as a pdf to Canvas (10 points)
+  <a class="reference internal nav-link" href="#correlation-matrix">
+   Correlation matrix
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#some-notes-for-final-projects">
-     Some notes for final projects
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fit-a-model-to-data">
+   Fit a model to data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#evaluate-model">
+   Evaluate model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#it-s-competition-time">
+   It’s competition time!
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-1-10-points">
+   Question 1 (10 points):
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-2-30-points">
+   Question 2 (30 points):
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-1-10-points">
+   Task 1 (10 points):
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#remember-to-submit-your-answers-to-questions-1-and-2-and-complete-task-1-by-friday-11-59pm">
+   Remember to submit your answers to Questions 1 and 2 and complete Task 1
+   <strong>
+    by Friday 11:59pm
+   </strong>
+  </a>
  </li>
 </ul>
 
@@ -558,154 +523,294 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="collaborating-on-github">
-<h1>Collaborating on GitHub<a class="headerlink" href="#collaborating-on-github" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="machine-learning">
+<h1>Machine learning<a class="headerlink" href="#machine-learning" title="Permalink to this headline">¶</a></h1>
 <p><strong>Objectives:</strong></p>
 <ul class="simple">
-<li><p>Form teams and designate a team leader</p></li>
-<li><p>Create a new GitHub repository for final project</p></li>
-<li><p>Choose a GitHub workflow that works for all team members</p></li>
-<li><p>Prepare and submit an outline of your group’s final project</p></li>
+<li><p>Engineer some features for better prediction of California house prices</p></li>
+<li><p>Train a machine learning model using <code>scikit-learn</code></p></li>
+<li><p>Evaluate our machine learning model</p></li>
 </ul>
-<div class="section" id="team-leader-make-a-new-github-repository">
-<h2>Team leader: make a new Github repository<a class="headerlink" href="#team-leader-make-a-new-github-repository" title="Permalink to this headline">¶</a></h2>
-<p>If you’re working in a group, pick a <strong>project lead</strong> to initiate and manage the repo.</p>
-<ul class="simple">
-<li><p>Go to: <a class="reference external" href="https://github.com/">https://github.com/</a></p></li>
-<li><p>Click the big green <strong>New</strong> button and follow instructions on the left side of page. Come up with a clever, descriptive repo name - try to avoid names like “finalproject”, which won’t make it very searchable.</p></li>
-<li><p>Set the access to <strong>Public</strong> (so other students can follow progress).</p></li>
-<li><p>Select to include a <code class="docutils literal notranslate"><span class="pre">README.md</span></code> and include a <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file with a <code class="docutils literal notranslate"><span class="pre">Python</span></code> template.</p></li>
-</ul>
-<p>Don’t stress too much about the specifics of the repo - these are not permanent, and you can always change repo names, or start over entirely (just copy and add existing files as a first commit). One of the goals here is to gain more experience using <code class="docutils literal notranslate"><span class="pre">git</span></code> for collaborative work and, early on, you’re inevitably going to make some mistakes.</p>
-<div class="section" id="team-leader-add-other-team-members-to-repository">
-<h3>Team leader: add other team members to repository<a class="headerlink" href="#team-leader-add-other-team-members-to-repository" title="Permalink to this headline">¶</a></h3>
-<p>The team leader now needs to add the others as collaborators and make sure they have permission to access and commit.</p>
-<ul class="simple">
-<li><p>Click <strong>Settings</strong> –&gt; <strong>Collaborators</strong> from menu on the left</p></li>
-<li><p>Click the big green <strong>Add people</strong> button and add the other team members using their <strong>GitHub usernames</strong></p></li>
-</ul>
+<div class="section" id="check-for-any-updates-in-course-materials">
+<h2>Check for any updates in course materials<a class="headerlink" href="#check-for-any-updates-in-course-materials" title="Permalink to this headline">¶</a></h2>
+<p>Before we start this assignment, we need to check whether there are any updates to the original course repository. We can do this by adding the original repository (the one we forked) as a <em>remote</em>. Command line users can do this by running:</p>
+<p><code>git fetch upstream</code></p>
+<p><code>git merge upstream/master master</code></p>
+<p>GitHub Desktop users should first click the <strong>Fetch origin</strong> button to check for new changes. Then click the triangle symbol next to <strong>Current branch: master</strong>, click <strong>Choose a branch to merge into master</strong>, click <strong>upstream/master</strong> from <strong>Other branches</strong> and click <strong>Create a merge commit</strong>.</p>
+<p>Any new updates to the course repository will now be available in your local repository.</p>
+<div class="section" id="download-the-data-for-the-lab">
+<h3>Download the data for the lab<a class="headerlink" href="#download-the-data-for-the-lab" title="Permalink to this headline">¶</a></h3>
+<p>We will be using the California housing data which is available on Dropbox (see Slack or Canvas for link). Download <code class="docutils literal notranslate"><span class="pre">lab5/california_house_prices.csv</span></code> and <code class="docutils literal notranslate"><span class="pre">california_coastline.shp</span></code> to your local machine.</p>
+<p>A description of the dataset can be found <a class="reference external" href="https://developers.google.com/machine-learning/crash-course/california-housing-data-description">here</a></p>
 </div>
-<div class="section" id="everyone-clone-repository">
-<h3>Everyone: clone repository<a class="headerlink" href="#everyone-clone-repository" title="Permalink to this headline">¶</a></h3>
-<p>All team members should now go to GitHub Desktop, click <strong>File</strong> –&gt; <strong>Clone repository…</strong>, enter <code class="docutils literal notranslate"><span class="pre">https://github.com/&lt;team-leader-username&gt;/&lt;project-repo-name&gt;</span></code> as the <strong>URL</strong> where <code class="docutils literal notranslate"><span class="pre">&lt;team-leader-username&gt;</span></code> is the <strong>team leader’s</strong> GitHub username and <code class="docutils literal notranslate"><span class="pre">&lt;project-repo-name&gt;</span></code> is the name of the new project repo.</p>
-<p>Choose a <strong>Local path</strong> where you keep your coursework (e.g. <code class="docutils literal notranslate"><span class="pre">C:\Users\your_name\Documents</span></code>) and click <strong>Clone</strong>.</p>
-<p>Notice that in the top left that <strong>Current repository</strong> is now set to <code class="docutils literal notranslate"><span class="pre">project-repo-name</span></code>. Depending on if we’re working on our projects or lab assignments, we’ll need to switch between this and <code class="docutils literal notranslate"><span class="pre">geospatial-data-science</span></code>.</p>
+<div class="section" id="create-a-new-environment-and-launch-the-notebook">
+<h3>Create a new environment and launch the notebook<a class="headerlink" href="#create-a-new-environment-and-launch-the-notebook" title="Permalink to this headline">¶</a></h3>
+<p>As always, make a new environment that contains all the packages for this lab. Navigate to the <code class="docutils literal notranslate"><span class="pre">labs/lab5</span></code> folder (either from the terminal for Linux and Mac users or from the <strong>CMD.exe Prompt</strong> launched from <strong>Anaconda Navigator</strong> for Windows users) and run:</p>
+<p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">create</span> <span class="pre">-f</span> <span class="pre">environment.yml</span></code></p>
+<p>Activate this environment by running:</p>
+<p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">lab5</span></code></p>
+<p>Now launch the lab demo notebook (if you haven’t already): <a class="reference external" href="https://nbviewer.org/github/JohnnyRyan1/geospatial-data-science/blob/master/labs/lab5/lab5_demo.ipynb">https://nbviewer.org/github/JohnnyRyan1/geospatial-data-science/blob/master/labs/lab5/lab5_demo.ipynb</a></p>
+<p>Now we are ready to start…</p>
+</div>
+</div>
+<div class="section" id="feature-engineering">
+<h2>Feature engineering<a class="headerlink" href="#feature-engineering" title="Permalink to this headline">¶</a></h2>
+<p>The most important part of data science is generating new features that have predictive power. We just used the default variables for predicting house prices in the lecture but there are other factors that may be useful.</p>
+<p>For example, we often have <strong>geolocation data</strong>, which could be very useful for house price prediction task. In this demo we will engineer some new features to improve the accuracy of our house price prediction model.</p>
+<p>As a recap, these were the mean-sqaured-errors from the lecture demo:</p>
+<ul class="simple">
+<li><p>Multiple linear regression: $64,374</p></li>
+<li><p>Decision Tree: $82,290</p></li>
+<li><p>RandomForests: $60,264</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import libraries</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestRegressor</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import data</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/home/johnny/Dropbox (University of Oregon)/Teaching/geospatial-data-science/data/lab5/california_house_prices.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># Read dataset</span>
+<span class="n">coast</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s1">&#39;/home/johnny/Dropbox (University of Oregon)/Teaching/geospatial-data-science/data/lab5/california_coastline.shp&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convert DataFrame to GeoDataFrame</span>
+<span class="n">gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">geometry</span><span class="o">=</span><span class="n">gpd</span><span class="o">.</span><span class="n">points_from_xy</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;longitude&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;latitude&#39;</span><span class="p">]))</span>
+<span class="n">gdf</span> <span class="o">=</span> <span class="n">gdf</span><span class="o">.</span><span class="n">set_crs</span><span class="p">(</span><span class="mi">4326</span><span class="p">,</span> <span class="n">allow_override</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Reproject everything to UTM 10N (EPSG:32610)</span>
+<span class="n">gdf_utm</span> <span class="o">=</span> <span class="n">gdf</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="s1">&#39;EPSG:32610&#39;</span><span class="p">)</span>
+<span class="n">coast_utm</span> <span class="o">=</span> <span class="n">coast</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="s1">&#39;EPSG:32610&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute distance to coast</span>
+<span class="n">distance_to_coast</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">gdf_utm</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+    <span class="n">distance_to_coast</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">coast_utm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">gdf_utm</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
+    
+<span class="c1"># Add to DataFrame</span>
+<span class="n">gdf_utm</span><span class="p">[</span><span class="s1">&#39;distance_to_coast&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">distance_to_coast</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Quickly check that it worked!</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">gdf_utm</span><span class="p">[</span><span class="s1">&#39;longitude&#39;</span><span class="p">],</span> <span class="n">gdf_utm</span><span class="p">[</span><span class="s1">&#39;latitude&#39;</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">gdf_utm</span><span class="p">[</span><span class="s1">&#39;distance_to_coast&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f97ff7576a0&gt;
+</pre></div>
+</div>
+<img alt="../../_images/lab5-demo-old_9_1.png" src="../../_images/lab5-demo-old_9_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="correlation-matrix">
+<h2>Correlation matrix<a class="headerlink" href="#correlation-matrix" title="Permalink to this headline">¶</a></h2>
+<p>We will perform another correlation matrix to see if <code class="docutils literal notranslate"><span class="pre">distance_to_coast</span></code> is useful predictor of <code class="docutils literal notranslate"><span class="pre">median_house_value</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute correlation matrix</span>
+<span class="n">corr_matrix</span> <span class="o">=</span> <span class="n">gdf_utm</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+
+<span class="c1"># Display just house value correlations</span>
+<span class="n">corr_matrix</span><span class="p">[</span><span class="s2">&quot;median_house_value&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>median_house_value    1.000000
+median_income         0.668566
+total_rooms           0.152923
+households            0.098525
+total_bedrooms        0.079023
+population            0.020930
+housing_median_age    0.014355
+longitude            -0.020092
+latitude             -0.173908
+distance_to_coast    -0.505078
+Name: median_house_value, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>It is the second most correlated variable with <code class="docutils literal notranslate"><span class="pre">median_house_value</span></code>, excellent!</p>
+<p>There are still some features that could be improved. For example, <code class="docutils literal notranslate"><span class="pre">total_rooms</span></code> and <code class="docutils literal notranslate"><span class="pre">total_bedrooms</span></code> does not mean much because it just depends on the number of house in the block group. A more useful metric would be <strong>rooms per house</strong> or <strong>bedrooms per house</strong>.</p>
+<p>We can add those columns pretty simply</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Rooms per house</span>
+<span class="n">gdf_utm</span><span class="p">[</span><span class="s1">&#39;rooms_per_house&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdf_utm</span><span class="p">[</span><span class="s1">&#39;total_rooms&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">gdf_utm</span><span class="p">[</span><span class="s1">&#39;households&#39;</span><span class="p">]</span>
+
+<span class="c1"># Bedrooms per house</span>
+<span class="n">gdf_utm</span><span class="p">[</span><span class="s1">&#39;bedrooms_per_room&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gdf_utm</span><span class="p">[</span><span class="s1">&#39;total_bedrooms&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">gdf_utm</span><span class="p">[</span><span class="s1">&#39;total_rooms&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute correlation matrix</span>
+<span class="n">corr_matrix</span> <span class="o">=</span> <span class="n">gdf_utm</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+
+<span class="c1"># Display just house value correlations</span>
+<span class="n">corr_matrix</span><span class="p">[</span><span class="s2">&quot;median_house_value&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>median_house_value    1.000000
+median_income         0.668566
+total_rooms           0.152923
+rooms_per_house       0.113277
+households            0.098525
+total_bedrooms        0.079023
+population            0.020930
+housing_median_age    0.014355
+longitude            -0.020092
+latitude             -0.173908
+bedrooms_per_room    -0.233964
+distance_to_coast    -0.505078
+Name: median_house_value, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>The new <code class="docutils literal notranslate"><span class="pre">bedrooms_per_room</span></code> attribute is more correlated with <code class="docutils literal notranslate"><span class="pre">median_house_value</span></code> than the <code class="docutils literal notranslate"><span class="pre">total_rooms</span></code> or <code class="docutils literal notranslate"><span class="pre">total_bedrooms</span></code>. Apparently houses with a lower bedroom/room ratio tend to be more expensive.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">rooms_per_house</span></code> is surprisingly not that well correlated with <code class="docutils literal notranslate"><span class="pre">median_house_value</span></code>. Location is clearly the most important thing in the California housing market!</p>
+</div>
+<div class="section" id="fit-a-model-to-data">
+<h2>Fit a model to data<a class="headerlink" href="#fit-a-model-to-data" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define feature list</span>
+<span class="n">feature_list</span> <span class="o">=</span>  <span class="p">[</span><span class="s1">&#39;median_income&#39;</span><span class="p">,</span> <span class="s1">&#39;distance_to_coast&#39;</span><span class="p">,</span> <span class="s1">&#39;bedrooms_per_room&#39;</span><span class="p">,</span> 
+                 <span class="s1">&#39;total_rooms&#39;</span><span class="p">,</span> <span class="s1">&#39;rooms_per_house&#39;</span><span class="p">,</span> <span class="s1">&#39;total_bedrooms&#39;</span><span class="p">,</span> <span class="s1">&#39;households&#39;</span><span class="p">]</span>
+
+<span class="c1"># Define features and labels </span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">gdf_utm</span><span class="p">[</span><span class="n">feature_list</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">gdf_utm</span><span class="p">[</span><span class="s1">&#39;median_house_value&#39;</span><span class="p">]</span>
+
+<span class="c1"># Standarize data</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>  
+<span class="n">X_scaled</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Split data </span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X_scaled</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define model</span>
+<span class="n">forest_reg</span> <span class="o">=</span> <span class="n">RandomForestRegressor</span><span class="p">(</span><span class="n">n_estimators</span> <span class="o">=</span> <span class="mi">30</span><span class="p">)</span>
+
+<span class="c1"># Fit model</span>
+<span class="n">forest_reg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RandomForestRegressor(n_estimators=30)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="evaluate-model">
+<h2>Evaluate model<a class="headerlink" href="#evaluate-model" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Predict test labels predictions</span>
+<span class="n">predictions</span> <span class="o">=</span> <span class="n">forest_reg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="c1"># Compute mean-squared-error</span>
+<span class="n">final_mse</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span> <span class="p">,</span> <span class="n">predictions</span><span class="p">)</span>
+<span class="n">final_rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">final_mse</span><span class="p">)</span>
+<span class="n">final_rmse</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>56114.57594259003
+</pre></div>
+</div>
+</div>
+</div>
+<p>So we improved our model by around $4,000. This might not sound like much but could make a big difference to someone and might the difference between winning a <a class="reference external" href="https://www.kaggle.com/">Kaggle</a> competition or not.</p>
+</div>
+<div class="section" id="it-s-competition-time">
+<h2>It’s competition time!<a class="headerlink" href="#it-s-competition-time" title="Permalink to this headline">¶</a></h2>
+<p>In this week’s lab we will play a Kaggle-like competition. In these competitions, a host usually prepares a dataset and people from around the world compete against each other to produce the best model. Submitted models are scored based on their predictive accuracy relative to a hidden solution file.</p>
+<p>We will be competing to produce the most accurate model for predicting house prices in Seattle. The dataset can be downloaded from the Dropbox link provided on Slack or Canvas.</p>
 </div>
 <hr class="docutils" />
-<div class="section" id="create-a-new-slack-channel-for-discussion">
-<h3>Create a new Slack channel for discussion:<a class="headerlink" href="#create-a-new-slack-channel-for-discussion" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="question-1-10-points">
+<h2>Question 1 (10 points):<a class="headerlink" href="#question-1-10-points" title="Permalink to this headline">¶</a></h2>
+<p>To start, make a <strong>new</strong> <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code> called <code class="docutils literal notranslate"><span class="pre">lab5_submission.ipynb</span></code> and work through the following tasks.</p>
+<p>The first task is answer the following questions using some of the methods we have covered in the lecture/demo.</p>
 <ul class="simple">
-<li><p>Click <strong>“+”</strong> icon next to <strong>Channels</strong> list in the Slack sidebar -&gt; <strong>“Create a channel”</strong></p></li>
-<li><p>Add your project name</p></li>
-<li><p>Invite your team members Slack members</p></li>
-</ul>
-</div>
-</div>
-<hr class="docutils" />
-<div class="section" id="centralized-workflow-in-github-desktop">
-<h2>Centralized workflow in GitHub Desktop<a class="headerlink" href="#centralized-workflow-in-github-desktop" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>To contribute to the repo, <strong>team members</strong> should make a new file called <code class="docutils literal notranslate"><span class="pre">README_XX.md</span></code> where <code class="docutils literal notranslate"><span class="pre">XX</span></code> are the initials of the team member.</p></li>
-<li><p>When the team member is finished with thir edits to <code class="docutils literal notranslate"><span class="pre">README_XX.md</span></code>, they can go to <strong>GitHub Desktop</strong>, include a <strong>Summary</strong> of the changes, <strong>Commit to main</strong> and then click <strong>Push origin</strong> button.</p></li>
-<li><p><strong>Team leader</strong> can then go to <strong>GitHub Desktop</strong>, click <strong>Fetch origin</strong> and <strong>Pull origin</strong> to retrieve the changes that the team members made to their local environment.</p></li>
-<li><p><strong>Team leader</strong> can then add useful text from <code class="docutils literal notranslate"><span class="pre">README_XX.md</span></code> to the main file (e.g. <code class="docutils literal notranslate"><span class="pre">README.md</span></code>). Once they are finished they can <strong>delete</strong> <code class="docutils literal notranslate"><span class="pre">README_XX.md</span></code>, go to <strong>GitHub Desktop</strong>, include a <strong>Summary</strong> of the changes, click <strong>Commit to main</strong> and then <strong>Push origin</strong> button.</p></li>
-<li><p><strong>Team members</strong> can then go to <strong>GitHub Desktop</strong>, click <strong>Fetch origin</strong> and <strong>Pull origin</strong> to retrieve the changes that the team leader made. Repeat the steps above to contribute to the project.</p></li>
-</ul>
-<hr class="docutils" />
-<div class="section" id="some-tips-for-the-centralized-workflow">
-<h3>Some tips for the centralized workflow<a class="headerlink" href="#some-tips-for-the-centralized-workflow" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Only the team leader should edit the main files (e.g. <code class="docutils literal notranslate"><span class="pre">README.md</span></code>)</p></li>
-<li><p>Team members should edit their own versions (e.g. <code class="docutils literal notranslate"><span class="pre">README_XX.md</span></code>)</p></li>
-<li><p><strong>Fetch</strong> and <strong>pull</strong> regularly to avoid conflicts</p></li>
-</ul>
-</div>
-</div>
-<hr class="docutils" />
-<div class="section" id="feature-branch-workflow-in-github-desktop">
-<h2>Feature branch workflow in GitHub Desktop<a class="headerlink" href="#feature-branch-workflow-in-github-desktop" title="Permalink to this headline">¶</a></h2>
-<p>If you feel comfortable with <code class="docutils literal notranslate"><span class="pre">GitHub</span></code>, you are welcome to use a more standard branching workflow.</p>
-<div class="section" id="workflow">
-<h3>Workflow<a class="headerlink" href="#workflow" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>In GitHub Desktop, <strong>all team members</strong> should create a their own branch by clicking the drop-down menu called <strong>Current branch</strong>, typing a name for their branch (e.g. <code class="docutils literal notranslate"><span class="pre">xx_branch</span></code>), click the big blue <strong>Create new branch</strong> button and <strong>Create branch</strong></p></li>
-<li><p>All team members should publish <code class="docutils literal notranslate"><span class="pre">xx_branch</span></code> to main repo by clicking the big blue <strong>Publish branch</strong> button</p></li>
-<li><p>All team members can make changes to <code class="docutils literal notranslate"><span class="pre">README.md</span></code>. Once they are finished, go back to <strong>GitHub Desktop</strong>, include a <strong>Summary</strong> of the changes, click <strong>Commit to <code class="docutils literal notranslate"><span class="pre">xx_branch</span></code></strong> and then <strong>Push origin</strong> button.</p></li>
-<li><p>In GitHub Desktop, click the big blue <strong>Create Pull Request</strong> button which should take you to <a class="reference external" href="http://GitHub.com">GitHub.com</a> where you can click <strong>Create pull request</strong>.</p></li>
-<li><p>The <strong>team leader</strong> can then go to <code class="docutils literal notranslate"><span class="pre">https://github.com/&lt;team-leader-username&gt;/&lt;project-repo-name&gt;</span></code>, click <strong>Pull requests</strong> from the top menu, click on the open pull request. If there are no conflicts, the team leader can click <strong>Merge pull request</strong> and <strong>Confirm merge</strong>.</p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">README.md</span></code> should now be updated on the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.</p></li>
-<li><p>Once your changes have been incorpotated in the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch it is good practice to clean up your repository by <strong>deleting</strong> the old branch (e.g. <code class="docutils literal notranslate"><span class="pre">xx_branch</span></code>).</p></li>
-<li><p>Before starting new work, <strong>all team members</strong> should first click the <strong>Fetch origin</strong> button to check for new changes.</p></li>
-<li><p>Repeat the steps above to contribute to the project.</p></li>
+<li><p>How many houses are in this dataset?</p></li>
+<li><p>How many <strong>features</strong> are there for predicting house price?</p></li>
+<li><p>Are there any null values in this dataset?</p></li>
+<li><p>Which three variables are best correlated with house price (include correlation coefficients)?</p></li>
+<li><p>Which three variables are least correlated with house price (include correlation coefficients)?</p></li>
 </ul>
 </div>
 <hr class="docutils" />
-<div class="section" id="some-tips-for-the-feature-branch-workflow">
-<h3>Some tips for the feature branch workflow<a class="headerlink" href="#some-tips-for-the-feature-branch-workflow" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="question-2-30-points">
+<h2>Question 2 (30 points):<a class="headerlink" href="#question-2-30-points" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Remember to <strong>stay</strong> on your own branch</p></li>
-<li><p>Remember to <strong>fetch</strong> changes before making a new branch and starting work</p></li>
-<li><p>If the changes in your branch conflict with another team member’s branch, you can still <strong>Create a pull request</strong>. The <strong>team leader</strong> should click <strong>Resolve conflicts</strong>, decide what to keep and what discard and click <strong>Mark as resolved</strong> and <strong>Commit merge</strong>. The team leader can then click <strong>Merge pull request</strong> and <strong>Confirm merge</strong></p></li>
+<li><p>Produce a model to predict house prices. You are welcome to generate new features, scale the data, and split the data into training/testing (i.e. <code class="docutils literal notranslate"><span class="pre">train_test_split</span></code>) in any way you like.</p></li>
+<li><p>Evaluate your model’s accuracy by predicting a test dataset, for example:</p></li>
 </ul>
-</div>
+<p><code class="docutils literal notranslate"><span class="pre">predictions</span> <span class="pre">=</span> <span class="pre">forest_reg.predict(X_test)</span> <span class="pre">final_mse</span> <span class="pre">=</span> <span class="pre">mean_squared_error(y_test,</span> <span class="pre">predictions)</span> <span class="pre">final_rmse</span> <span class="pre">=</span> <span class="pre">np.sqrt(final_mse)</span></code></p>
+<ul class="simple">
+<li><p>Push your <code class="docutils literal notranslate"><span class="pre">lab5_submission.ipynb</span></code> to GitHub and submit a <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> version to Canvas</p></li>
+<li><p>On <strong>Monday</strong> the instructor and TA will provide an <strong>unseen set of houses</strong> which students will use to repeat their accuracy evaluation. The best models (i.e. lowest RMSE) will win prizes.</p></li>
+<li><p>We will evaluate the models using a simple <code class="docutils literal notranslate"><span class="pre">mean-squared-error</span></code> as follows:</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">mse</span> <span class="pre">=</span> <span class="pre">mean_squared_error(y_test</span> <span class="pre">,</span> <span class="pre">predictions)</span> <span class="pre">rmse</span> <span class="pre">=</span> <span class="pre">np.sqrt(final_mse)</span></code></p>
 </div>
 <hr class="docutils" />
-<div class="section" id="feature-branch-workflow-in-command-line">
-<h2>Feature branch workflow in command line<a class="headerlink" href="#feature-branch-workflow-in-command-line" title="Permalink to this headline">¶</a></h2>
-<p>It seems like most people in the class are using GitHub Desktop. But if your team would like to use the command line, the steps are basically the same. There are some useful instructions here: <a class="reference external" href="https://icesat-2hackweek.github.io/learning-resources/projects/example_workflow/">https://icesat-2hackweek.github.io/learning-resources/projects/example_workflow/</a> and <a class="reference external" href="https://blog.scottlowe.org/2015/01/27/using-fork-branch-git-workflow/">https://blog.scottlowe.org/2015/01/27/using-fork-branch-git-workflow/</a>. The instructor and TA would also be happy to help get a workflow started.</p>
-<div class="section" id="some-tips-for-collaborating-on-group-project">
-<h3>Some tips for collaborating on group project<a class="headerlink" href="#some-tips-for-collaborating-on-group-project" title="Permalink to this headline">¶</a></h3>
-<p>Best practice for collaborating on GitHub is to <strong>avoid</strong> situations where two people are independently <strong>working on the same script</strong>. When trying to push/pull changes to/from same origin branch, there will inevitably be <strong>merge conflicts</strong> that can be messy to untangle.</p>
-<p>Collaboration is also a little more complicated with <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebooks</span></code> since running cells in the notebook will change execution count and output, even if the code and content appear identical. You are welcome to use other programs to write scripts (e.g. <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Lab</span></code>).</p>
-<p>General recommendation - <strong>split up</strong> the project into multiple <strong>smaller scipts</strong>, and have each person work on different components. For example, you could have one script that ingests files, reduces/manipulates the data (e.g., reprojection), then writes new files out to disk in “analysis-ready” format. Then a second notebook reads in those data and does some analysis, creates some plots, etc. If you can pass things back and forth between group members like this, you’ll avoid conflicts.</p>
+<div class="section" id="task-1-10-points">
+<h2>Task 1 (10 points):<a class="headerlink" href="#task-1-10-points" title="Permalink to this headline">¶</a></h2>
+<p>Submit a project idea to the <code class="docutils literal notranslate"><span class="pre">#final-projects</span></code> channel on <strong>Slack</strong>. See: <a class="reference external" href="https://github.com/JohnnyRyan1/geospatial-data-science/blob/master/labs/lab5/project_ideas_task.md">https://github.com/JohnnyRyan1/geospatial-data-science/blob/master/labs/lab5/project_ideas_task.md</a> for more details.</p>
 </div>
-</div>
-<div class="section" id="task-1-prepare-a-readme-40-points">
-<h2>Task 1: prepare a README (40 points)<a class="headerlink" href="#task-1-prepare-a-readme-40-points" title="Permalink to this headline">¶</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file in your new repo will serve as the landing page for your project. You can continue to update it as your project evolves, but for now, please prepare a basic project outline.</p>
-<p>Review the <a class="reference external" href="https://www.markdownguide.org/basic-syntax/">markdown cheat sheet</a> and use some basic headings, bulleted/numbered lists, and other formatting to organize your outline. We recommend using a <strong>markdown editor</strong> such as <a class="reference external" href="https://macdown.uranusjr.com/">MacDown</a> for MacOS or <a class="reference external" href="https://wereturtle.github.io/ghostwriter/download.html">Ghostwriter</a> for Windows.</p>
-<p>Please include the following in <code class="docutils literal notranslate"><span class="pre">README.md</span></code>:</p>
-<ul class="simple">
-<li><p>Project Title</p></li>
-<li><p>Name(s) of individual or team members</p></li>
-<li><p>Short 1-2 sentence summary</p></li>
-<li><p>Problem statement, question(s) and/or objective(s)</p></li>
-<li><p>Datasets you will use (with links, if available)</p></li>
-<li><p>Tools/packages you’ll need</p></li>
-<li><p>Planned methodology/approach</p></li>
-<li><p>Expected outcomes</p></li>
-<li><p>Any other relevant information, images/tables, references, etc.</p></li>
-<li><p>References</p></li>
-</ul>
-<p>That may sound like a lot, but some of these items should only be 1-2 sentences, others can be short lists. Consider this the start of your final report.</p>
-<p>We would like to see at <strong>least one commit</strong> from <strong>each group member</strong> at this phase of the project, even if it is as simple as adding their name to the <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file.</p>
-</div>
-<div class="section" id="task-2-push-all-changes-to-github-and-submit-readme-as-a-pdf-to-canvas-10-points">
-<h2>Task 2: push all changes to GitHub and submit README as a pdf to Canvas (10 points)<a class="headerlink" href="#task-2-push-all-changes-to-github-and-submit-readme-as-a-pdf-to-canvas-10-points" title="Permalink to this headline">¶</a></h2>
-<p>The markdown editors should be able to export <code class="docutils literal notranslate"><span class="pre">.md</span></code> files as <code class="docutils literal notranslate"><span class="pre">.pdf</span></code></p>
-<div class="section" id="some-notes-for-final-projects">
-<h3>Some notes for final projects<a class="headerlink" href="#some-notes-for-final-projects" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Start early!</p></li>
-<li><p>Create subdirectories in your repo to store:</p>
-<ul>
-<li><p><strong>notebooks</strong> - contains scripts to complete project</p></li>
-<li><p><strong>data</strong> - contains small amount of data such as output of analyses. Just make sure filesizes are &lt;20 MB and total number of files (&lt;20 MB) is limited. Best practice is to store and share data on <strong>Dropbox</strong>.</p></li>
-<li><p><strong>doc</strong> - for any additional documentation, static images/figures that you want to include in notebooks or markdown files, etc.</p></li>
-</ul>
-</li>
-<li><p>Start adding and developing notebooks, code, markdown files, etc.</p></li>
-<li><p>Start with limited test case(s) for initial development and exploration:</p>
-<ul>
-<li><p>Extract a small region of a large raster</p></li>
-<li><p>If you need the entire raster, start with a downsampled version, then when you’re happy with methods, run for native resolution</p></li>
-<li><p>Start with a single timestep or subset of timesteps for time series analysis</p></li>
-</ul>
-</li>
-<li><p>Don’t add unnecessary files to your repo (careful with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add/commit</span></code>)</p></li>
-<li><p>Commit <strong>early</strong>, commit <strong>often</strong></p></li>
-</ul>
-</div>
+<div class="section" id="remember-to-submit-your-answers-to-questions-1-and-2-and-complete-task-1-by-friday-11-59pm">
+<h2>Remember to submit your answers to Questions 1 and 2 and complete Task 1 <strong>by Friday 11:59pm</strong><a class="headerlink" href="#remember-to-submit-your-answers-to-questions-1-and-2-and-complete-task-1-by-friday-11-59pm" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
