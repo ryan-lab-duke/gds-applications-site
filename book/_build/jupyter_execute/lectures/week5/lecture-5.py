@@ -27,8 +27,6 @@
 # 
 # * For example, house price, river discharge, land cover etc.
 
-# ## Input data
-# 
 # * It's tough to collect a good collection of data (time-consuming, expensive) 
 # 
 # 
@@ -445,13 +443,13 @@ ax.set_xlim(0,500000)
 # 
 # As a recap, these were the mean-sqaured-errors from the three models:
 # 
-# * Multiple linear regression: \\$64,375
+# * Multiple linear regression: \$64,375
 # 
 # 
-# * Decision Tree: \\$82,989
+# * Decision Tree: \$82,989
 # 
 # 
-# * RandomForests: \\$60,158
+# * RandomForests: \$60,158
 
 # In[42]:
 
@@ -589,4 +587,10 @@ final_rmse = np.sqrt(final_mse)
 final_rmse
 
 
-# So we improved our model by \\$4,388 (\\$60,158 to \\$55,770). This might not sound like much but could make a big difference to someone and might the difference between winning a [Kaggle](https://www.kaggle.com/) competition or not.
+# So we improved our model by \$4,388 (\$60,158 to \$55,770). This might not sound like much but could make a big difference to someone and might the difference between winning a [Kaggle](https://www.kaggle.com/) competition or not.
+
+# In[ ]:
+
+
+
+
