@@ -50,7 +50,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Assignment 6" href="../../labs/week6/assignment6.html" />
+    <link rel="next" title="Final project setup" href="../../labs/week6/project-setup.html" />
     <link rel="prev" title="Project ideas" href="../../labs/week5/project-ideas.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -234,6 +234,11 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../../labs/week6/project-setup.html">
+   Final project setup
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../../labs/week6/assignment6.html">
    Assignment 6
   </a>
@@ -372,68 +377,6 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#python-distribution">
-   Python distribution
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-a-project-folder">
-   Create a project folder
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#setup-a-virtual-environment">
-   Setup a virtual environment
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#install-dependencies">
-   Install dependencies
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#version-control">
-   Version control
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#github-desktop">
-   GitHub Desktop
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#github-com">
-   GitHub.com
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#basic-usage">
-   Basic usage
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#add-a-new-file">
-     Add a new file
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#make-some-changes">
-     Make some changes
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#undo-the-changes">
-     Undo the changes
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   Version control
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#git">
    Git
   </a>
@@ -468,11 +411,6 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#drawbacks-of-version-control">
    Drawbacks of version control
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-have-we-been-doing-so-far">
-   What have we been doing so far?
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -511,35 +449,15 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#collaborating-with-github">
    Collaborating with GitHub
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#centralized-workflow">
+   Centralized workflow
+  </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#centralized-workflow">
-     Centralized workflow
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     Centralized workflow
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     Centralized workflow
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     Centralized workflow
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
-     Centralized workflow
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#advantages-of-centralized-workflow">
-     Advantages of centralized workflow
+    <a class="reference internal nav-link" href="#advantages">
+     Advantages
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -553,48 +471,18 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
+    <a class="reference internal nav-link" href="#id1">
      Feature branch workflow
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id7">
-     Feature branch workflow
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id8">
-     Feature branch workflow
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id9">
-     Feature branch workflow
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id10">
+    <a class="reference internal nav-link" href="#id2">
      Feature branch workflow
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#advantages-of-feature-branch-workflow">
      Advantages of feature branch workflow
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#forking-workflows">
-     Forking workflows
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#advantages-of-forking-workflows">
-     Advantages of forking workflows
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#gitflow-workflow">
-     Gitflow workflow
     </a>
    </li>
   </ul>
@@ -627,6 +515,38 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#use-branches">
      Use branches
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#github-desktop">
+   GitHub Desktop
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#github-com">
+   GitHub.com
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-usage">
+   Basic usage
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#add-a-new-file">
+     Add a new file
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#make-some-changes">
+     Make some changes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#undo-the-changes">
+     Undo the changes
     </a>
    </li>
   </ul>
@@ -652,68 +572,6 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#python-distribution">
-   Python distribution
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-a-project-folder">
-   Create a project folder
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#setup-a-virtual-environment">
-   Setup a virtual environment
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#install-dependencies">
-   Install dependencies
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#version-control">
-   Version control
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#github-desktop">
-   GitHub Desktop
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#github-com">
-   GitHub.com
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#basic-usage">
-   Basic usage
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#add-a-new-file">
-     Add a new file
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#make-some-changes">
-     Make some changes
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#undo-the-changes">
-     Undo the changes
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   Version control
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#git">
    Git
   </a>
@@ -748,11 +606,6 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#drawbacks-of-version-control">
    Drawbacks of version control
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-have-we-been-doing-so-far">
-   What have we been doing so far?
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -791,35 +644,15 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#collaborating-with-github">
    Collaborating with GitHub
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#centralized-workflow">
+   Centralized workflow
+  </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#centralized-workflow">
-     Centralized workflow
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     Centralized workflow
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     Centralized workflow
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     Centralized workflow
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
-     Centralized workflow
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#advantages-of-centralized-workflow">
-     Advantages of centralized workflow
+    <a class="reference internal nav-link" href="#advantages">
+     Advantages
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -833,48 +666,18 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
+    <a class="reference internal nav-link" href="#id1">
      Feature branch workflow
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id7">
-     Feature branch workflow
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id8">
-     Feature branch workflow
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id9">
-     Feature branch workflow
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id10">
+    <a class="reference internal nav-link" href="#id2">
      Feature branch workflow
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#advantages-of-feature-branch-workflow">
      Advantages of feature branch workflow
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#forking-workflows">
-     Forking workflows
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#advantages-of-forking-workflows">
-     Advantages of forking workflows
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#gitflow-workflow">
-     Gitflow workflow
     </a>
    </li>
   </ul>
@@ -911,6 +714,38 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#github-desktop">
+   GitHub Desktop
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#github-com">
+   GitHub.com
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-usage">
+   Basic usage
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#add-a-new-file">
+     Add a new file
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#make-some-changes">
+     Make some changes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#undo-the-changes">
+     Undo the changes
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
                         </nav>
@@ -922,91 +757,255 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="code-management">
 <h1>Code management<a class="headerlink" href="#code-management" title="Permalink to this headline">¶</a></h1>
-<p>In this demo we will learn how to setup a <strong>Python development environment</strong>. There are many ways to do this, but our <em>current</em> preferred option is described in the next slides. One advantage of the workflow described next is that it is cross-platform meaning that it should work on Windows, MacOS, and Linux operating systems. Some of the text here overlaps with the <a class="reference external" href="https://owel-lab.github.io/gds-applications-site/course-info/python.html">intro to Python packaging</a> page. But, unlike that page, we will go into more detail about folder structure and development tools in this lecture.</p>
-<div class="section" id="python-distribution">
-<h2>Python distribution<a class="headerlink" href="#python-distribution" title="Permalink to this headline">¶</a></h2>
-<p>A distribution is a collection of files that together allows us to build, package, and distribute a module. Since many software programs are written in Python, all computers have an internal <strong>Python distribution</strong> by default but it is usually an older version of Python (e.g. Python 2.7).</p>
-<p>Given that we require specific packages for geospatial data science, it is good practice to install a more modern Python distribution (e.g. Python 3.10.8) using <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html"><code class="docutils literal notranslate"><span class="pre">Miniconda</span></code></a>.</p>
-<p>The latest version of Miniconda for your operating system can be installed from the <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">dowload page</a>.</p>
-<p>We can check that Python installed properly by opening an <strong>Anaconda Prompt (miniconda3)</strong> (Windows) and entering:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">where</span> <span class="n">python</span>
-</pre></div>
+<p>In this demo we will learn about using <strong>version control</strong> to collaborate on programming projects.</p>
+<a class="reference internal image-reference" href="../../_images/version_control.png"><img alt="../../_images/version_control.png" class="align-center" src="../../_images/version_control.png" style="width: 400px;" /></a>
+<p>We’ve all been in this situation before: it seems unnecessary to have multiple nearly-identical versions of the same document.</p>
+<p>The danger of losing good versions often leads to the problematic workflow illustrated in the PhD Comics cartoon at the top of this page.</p>
+<p>Collaborative writing with traditional word processors is cumbersome. Either every collaborator has to work on a document sequentially (slowing down the process of writing), or you have to send out a version to all collaborators and manually merge their comments into your document. The <strong>track changes</strong> option can highlight changes for you and simplifies merging, but as soon as you accept changes you will lose their history. You will then no longer know who suggested that change, why it was suggested, or when it was merged into the rest of the document.</p>
+<ul class="simple">
+<li><p><strong>Version control systems</strong> (VCS) start with a <strong>base version</strong> of the document and then <strong>keeps track of changes</strong> you make each step of the way</p></li>
+<li><p>VCS are essential for <strong>developing software</strong> and <strong>carrying out projects</strong> with a lot of code</p></li>
+<li><p>VCS does not care about file names, intead records <strong>who, what, when, and why</strong> changes were made to files</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/branch.svg"><img alt="../../_images/branch.svg" class="align-center" src="../../_images/branch.svg" width="600px" /></a>
+<div class="section" id="git">
+<h2>Git<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>One of the most popular VCS tools in use today is called <code class="docutils literal notranslate"><span class="pre">git</span></code></p></li>
+<li><p>It is a command-line tool that is installed locally</p></li>
+<li><p>It is free and open-source software</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/git.svg"><img alt="../../_images/git.svg" class="align-center" src="../../_images/git.svg" width="600px" /></a>
 </div>
-<p>Or, on MacOS, open a <strong>Terminal</strong> and enter:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">which</span> <span class="n">python</span>
-</pre></div>
+<div class="section" id="github">
+<h2>GitHub<a class="headerlink" href="#github" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>GitHub</strong> is a web-based hosting service for <code class="docutils literal notranslate"><span class="pre">git</span></code></p></li>
+<li><p>Provides a graphical user interface</p></li>
+<li><p>Maintained by Microsoft</p></li>
+<li><p>There are other web-based hosting services (e.g. <strong>GitLab</strong> and <strong>Bitbucket</strong>)</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/github1.png"><img alt="../../_images/github1.png" class="align-center" src="../../_images/github1.png" style="width: 200px;" /></a>
 </div>
-<p>We should see somthing like:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">johnny</span>\<span class="n">miniconda3</span>\<span class="n">python</span><span class="o">.</span><span class="n">exe</span>
-</pre></div>
+<div class="section" id="why-do-we-use-version-control-systems">
+<h2>Why do we use version control systems?<a class="headerlink" href="#why-do-we-use-version-control-systems" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="security">
+<h3>Security<a class="headerlink" href="#security" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>VCS acts like an unlimited <strong>‘undo’</strong> thereby <strong>protecting source code</strong> from yourself <strong>and</strong> others</p></li>
+<li><p>e.g. catastrophe, human error, and unintended consequences</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/hero.svg"><img alt="../../_images/hero.svg" class="align-center" src="../../_images/hero.svg" width="600px" /></a>
 </div>
-<p>Or:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">python</span>
-</pre></div>
+<div class="section" id="collaboration">
+<h3>Collaboration<a class="headerlink" href="#collaboration" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>VCS enables <strong>many people</strong> to work on the same project at the same time</p></li>
+<li><p>Teams working in parallel accelerates project development</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/colab.svg"><img alt="../../_images/colab.svg" class="align-center" src="../../_images/colab.svg" width="500px" /></a>
 </div>
-</div>
-<div class="section" id="create-a-project-folder">
-<h2>Create a project folder<a class="headerlink" href="#create-a-project-folder" title="Permalink to this headline">¶</a></h2>
-<p>Every new project starts with a new folder. We make one using <strong>File Explorer</strong> (Windows) or <strong>Finder</strong> (MacOS). Or we navigate using <code class="docutils literal notranslate"><span class="pre">cd</span></code> in the command prompt and enter:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="n">new</span><span class="o">-</span><span class="n">project</span> 
-</pre></div>
-</div>
-</div>
-<div class="section" id="setup-a-virtual-environment">
-<h2>Setup a virtual environment<a class="headerlink" href="#setup-a-virtual-environment" title="Permalink to this headline">¶</a></h2>
-<p>It is good practice to create a virtual environment for each new programming project (e.g. this class). A virtual environment allows us to install Python packages for one project without worrying about conflicts with packages of other projects. Python has built-in support for virtual environments using the <code class="docutils literal notranslate"><span class="pre">venv</span></code> module. A new environment can be created using the following command in an <strong>Anaconda Prompt (miniconda3)</strong> (Windows) or <strong>Terminal</strong> (macOS):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="o">.</span><span class="n">venv</span>
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This command should be run from <strong>within</strong> your new project folder.</p>
-</div>
-<div class="margin sidebar">
-<p class="sidebar-title">Note</p>
-<p>The dot in <code class="docutils literal notranslate"><span class="pre">.venv</span></code> means that it is a hidden file. <code class="docutils literal notranslate"><span class="pre">.venv</span></code> or <code class="docutils literal notranslate"><span class="pre">venv</span></code> are standard names for virtual environments.</p>
-</div>
-<p>Next we need to activate the virtual environment. In Windows this can be achieved by running:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span><span class="n">venv</span>\<span class="n">Scripts</span>\<span class="n">activate</span>
-</pre></div>
-</div>
-<p>On macOS, run:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">.</span><span class="n">venv</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="install-dependencies">
-<h2>Install dependencies<a class="headerlink" href="#install-dependencies" title="Permalink to this headline">¶</a></h2>
-<p>We can install individual Python packages using <a class="reference external" href="https://pip.pypa.io/en/stable/"><code class="docutils literal notranslate"><span class="pre">pip</span></code></a>. The syntax is <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">xxx</span></code> where <code class="docutils literal notranslate"><span class="pre">xxx</span></code> is the package we want to install. It’s often easier to install multiple packages at once using a text file, so that anyone else setting up the project will have exactly the same environment.</p>
-<p>To do this we can make a text file called <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> using <strong>Notepad</strong> on Windows or <strong>TextEdit</strong> on MacOS, add the names of the packages for the project, and save it into our new project folder.</p>
-<a class="reference internal image-reference" href="../../_images/requirements.png"><img alt="../../_images/requirements.png" class="align-center" src="../../_images/requirements.png" style="width: 400px;" /></a>
-<p>We can install all the packages at once by running:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span> 
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This could take between a few seconds to tens of minutes depending on how many packages need to be installed.</p>
-</div>
-<p>We can check that everything installed properly by first running:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span>
-</pre></div>
-</div>
-<p>Then:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
-</pre></div>
-</div>
-<p>If this runs without error, we are all good. If we get a <code class="docutils literal notranslate"><span class="pre">ModuleNotFoundError:</span></code>, we might check that the package was included in our <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Exit the Python interpreter by pressing <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">Z</span></code> and then <code class="docutils literal notranslate"><span class="pre">Enter</span></code> in Windows or just <code class="docutils literal notranslate"><span class="pre">control</span> <span class="pre">+</span> <span class="pre">Z</span></code> in MacOS.</p>
+<div class="section" id="community">
+<h3>Community<a class="headerlink" href="#community" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Impossible for junior developer to mess up a big project</p></li>
+<li><p>Since it is so robust this encourages open-source <strong>experimentation</strong> and <strong>development</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GitHub</span></code> has really emerged as the industry standard</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/pull.svg"><img alt="../../_images/pull.svg" class="align-center" src="../../_images/pull.svg" width="500px" /></a>
 </div>
 </div>
-<div class="section" id="version-control">
-<h2>Version control<a class="headerlink" href="#version-control" title="Permalink to this headline">¶</a></h2>
-<p>Almost all software projects use version control to keep of track of changes to files. The most popular is <code class="docutils literal notranslate"><span class="pre">git</span></code>, a free open-source software project that is installed locally.</p>
-<p><strong>GitHub</strong> is a web-based hosting service for <code class="docutils literal notranslate"><span class="pre">git</span></code> which provides a graphical user interface to <code class="docutils literal notranslate"><span class="pre">git</span></code> and is owned by Microsoft. There are other web-based hosting services for <code class="docutils literal notranslate"><span class="pre">git</span></code> (e.g. <strong>GitLab</strong> and <strong>Bitbucket</strong>).</p>
+<div class="section" id="drawbacks-of-version-control">
+<h2>Drawbacks of version control<a class="headerlink" href="#drawbacks-of-version-control" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Difficult to learn</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/meme.jpeg"><img alt="../../_images/meme.jpeg" class="align-center" src="../../_images/meme.jpeg" style="width: 600px;" /></a>
+</div>
+<div class="section" id="some-basic-terms">
+<h2>Some basic terms<a class="headerlink" href="#some-basic-terms" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="fork">
+<h3>Fork<a class="headerlink" href="#fork" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Copy</strong> a repository to your <a class="reference external" href="http://GitHub.com">GitHub.com</a> account</p></li>
+</ul>
+</div>
+<div class="section" id="clone">
+<h3>Clone<a class="headerlink" href="#clone" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Retrieve a repository from <strong><a class="reference external" href="http://GitHub.com">GitHub.com</a></strong> to <strong>local machine</strong></p></li>
+</ul>
+</div>
+<div class="section" id="commit">
+<h3>Commit<a class="headerlink" href="#commit" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Create a <strong>snapshot</strong> of the contents of your file tree</p></li>
+</ul>
+</div>
+<div class="section" id="push">
+<h3>Push<a class="headerlink" href="#push" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Upload</strong> your local changes to the central repository, along with necessary commits and objects</p></li>
+</ul>
+</div>
+<div class="section" id="pull">
+<h3>Pull<a class="headerlink" href="#pull" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Fetch</strong> the contents of the central repository and immediately <strong>merge</strong> to your local copy</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="collaborating-with-github">
+<h2>Collaborating with GitHub<a class="headerlink" href="#collaborating-with-github" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Centralized workflow</p></li>
+<li><p>Feature branch workflow</p></li>
+<li><p>Forking workflow</p></li>
+<li><p>Others (e.g. Gitflow workflow)</p></li>
+</ul>
+</div>
+<div class="section" id="centralized-workflow">
+<h2>Centralized workflow<a class="headerlink" href="#centralized-workflow" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>All team members <strong>clone</strong> a <strong>single, central repository</strong> to their local machine</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/colab.svg"><img alt="../../_images/colab.svg" class="align-center" src="../../_images/colab.svg" width="600px" /></a>
+<ul class="simple">
+<li><p>One team member makes changes (e.g. add, modify, delete) to files on their local machine</p></li>
+<li><p>Periodically, they should <strong>commit</strong> these changes (i.e. take a snapshot) with a short message saying what they did</p></li>
+<li><p>When they are finished working, they can <strong>push</strong> their changes back to the central repository</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/john_push.svg"><img alt="../../_images/john_push.svg" class="align-center" src="../../_images/john_push.svg" width="600px" /></a>
+<ul class="simple">
+<li><p>But now when <strong>another team member</strong> (who has also been working on the project) tries to <strong>push</strong> their changes, Git will <strong>refuse the request</strong> because the their local history has <strong>diverged</strong> from the central repository</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/mary_push.svg"><img alt="../../_images/mary_push.svg" class="align-center" src="../../_images/mary_push.svg" width="600px" /></a>
+<ul class="simple">
+<li><p>The team member must first <strong>pull</strong> the most recent changes in the central reposistory into their local repository</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/mary_pull.svg"><img alt="../../_images/mary_pull.svg" class="align-center" src="../../_images/mary_pull.svg" width="600px" /></a>
+<ul class="simple">
+<li><p>Team member then resolves any conflicts between their local version and the central repository.</p></li>
+<li><p>Once finished, team member can then <strong>commit</strong> and <strong>push</strong> their changes to the central repo</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/mary_successful_push.svg"><img alt="../../_images/mary_successful_push.svg" class="align-center" src="../../_images/mary_successful_push.svg" width="600px" /></a>
+<div class="section" id="advantages">
+<h3>Advantages<a class="headerlink" href="#advantages" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Simplest workflow</p></li>
+<li><p>Works well for small teams</p></li>
+</ul>
+</div>
+<div class="section" id="disadvantages">
+<h3>Disadvantages<a class="headerlink" href="#disadvantages" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>If someone breaks the central repo, it breaks for everyone</p></li>
+<li><p>Potential for a lot of conflicts</p></li>
+<li><p>One solution is to avoid working on the same files</p></li>
+<li><p>But this does not scale well as teams increase in size</p></li>
+</ul>
+</div>
+<div class="section" id="feature-branch-workflow">
+<h3>Feature branch workflow<a class="headerlink" href="#feature-branch-workflow" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>The logical extension of the centralized workflow is to use <strong>branches</strong></p></li>
+<li><p>In this workflow, all feature development takes place in a dedicated branch instead of the main branch</p></li>
+<li><p>This means that main branch never contains broken code - a huge advantage for continuous integration environments</p></li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h3>Feature branch workflow<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>All team members <strong>clone</strong> a <strong>single, central repository</strong> to their local machine</p></li>
+</ul>
+<img src="images/colab.svg" width="600"/></div>
+<div class="section" id="id2">
+<h3>Feature branch workflow<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Team members immediately create a new branch to make their changes</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/big_branch.svg"><img alt="../../_images/big_branch.svg" class="align-center" src="../../_images/big_branch.svg" width="600px" /></a>
+<ul class="simple">
+<li><p>When team members finish their changes, they <strong>push</strong> their branch to the central repository. The central repository will now contain multiple branches.</p></li>
+<li><p>Therefore, unlike the centralized workflow, this <strong>push</strong> will never cause conflicts</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/mary_successful_push.svg"><img alt="../../_images/mary_successful_push.svg" class="align-center" src="../../_images/mary_successful_push.svg" width="600px" /></a>
+<ul class="simple">
+<li><p>Team members then submit a <strong>pull request</strong> on <a class="reference external" href="http://GitHub.com">GitHub.com</a> asking to <strong>merge</strong> their new feature (or branch) into the main codebase, all team members will be notified automatically</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/git-pull-request.png"><img alt="../../_images/git-pull-request.png" class="align-center" src="../../_images/git-pull-request.png" style="width: 300px;" /></a>
+<ul class="simple">
+<li><p>Team leader <strong>reviews</strong> pull request, discusses any changes with team members</p></li>
+<li><p>Once everything looks good, team leader merges new feature into main codebase</p></li>
+<li><p>Team member can then delete their branch</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/merge.svg"><img alt="../../_images/merge.svg" class="align-center" src="../../_images/merge.svg" width="600px" /></a>
+<a class="reference internal image-reference" href="../../_images/pull-request.png"><img alt="../../_images/pull-request.png" class="align-center" src="../../_images/pull-request.png" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../../_images/pr-changes.png"><img alt="../../_images/pr-changes.png" class="align-center" src="../../_images/pr-changes.png" style="width: 1000px;" /></a>
+<a class="reference internal image-reference" href="../../_images/create-pull-request.png"><img alt="../../_images/create-pull-request.png" class="align-center" src="../../_images/create-pull-request.png" style="width: 1000px;" /></a>
+<a class="reference internal image-reference" href="../../_images/github-diff-file.png"><img alt="../../_images/github-diff-file.png" class="align-center" src="../../_images/github-diff-file.png" style="width: 800px;" /></a>
+</div>
+<div class="section" id="advantages-of-feature-branch-workflow">
+<h3>Advantages of feature branch workflow<a class="headerlink" href="#advantages-of-feature-branch-workflow" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Promotes collaboration with team members through <strong>pull requests</strong> and <strong>merge reviews</strong></p></li>
+<li><p>Teams can work in parallel on same files so good approach for larger teams</p></li>
+<li><p>Main branch never contains broken code</p></li>
+<li><p>Guiding framework for other, more complex worflows</p></li>
+</ul>
+<ul class="simple">
+<li><p>Instead of using a single, central repository, forking workflows give every team member their <strong>own central repository</strong></p></li>
+<li><p>Team members can tinker with their forked repository as they wish without disturbing anyone else</p></li>
+<li><p>When ready they can <strong>push</strong> to their private central repository and file <strong>pull requests</strong> if they think their changes are ready to be integrated to main codebase</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/multiple_repos.svg"><img alt="../../_images/multiple_repos.svg" class="align-center" src="../../_images/multiple_repos.svg" width="600px" /></a>
+<ul class="simple">
+<li><p>Provides a little more <strong>power</strong> to the team leader because they are the only person that can push to the official repository</p></li>
+<li><p>Allows the team leader to <strong>accept/reject commits</strong> from any developer without giving them write access to the main codebase</p></li>
+<li><p>Often used for large open-source projects</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="good-practices">
+<h2>Good practices<a class="headerlink" href="#good-practices" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="agree-on-a-workflow">
+<h3>Agree on a workflow<a class="headerlink" href="#agree-on-a-workflow" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>It is important that teams establish shared patterns of collaboration</p></li>
+<li><p>If a team doesn’t agree on a shared workflow it can lead to inefficient communication when it comes time to merge branches</p></li>
+</ul>
+</div>
+<div class="section" id="commit-often">
+<h3>Commit often<a class="headerlink" href="#commit-often" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Commits are <strong>easy to make</strong> and provide opportunities to <strong>revert</strong> or <strong>undo</strong> work</p></li>
+<li><p>They should be made <strong>frequently</strong> to capture updates to a code base</p></li>
+</ul>
+</div>
+<div class="section" id="ensure-you-re-working-from-latest-version">
+<h3>Ensure you’re working from latest version<a class="headerlink" href="#ensure-you-re-working-from-latest-version" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>VCS enables rapid updates from multiple developers</p></li>
+<li><p>It’s easy to have a local copy of the codebase fall behind the global copy</p></li>
+<li><p>Make sure to <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> or <code class="docutils literal notranslate"><span class="pre">fetch</span></code> the latest code before you start working on project</p></li>
+</ul>
+</div>
+<div class="section" id="make-detailed-notes">
+<h3>Make detailed notes<a class="headerlink" href="#make-detailed-notes" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>It is important to leave descriptive explanatory commit log messages. These commit log messages should explain the “why” and “what” that encompass the commits content.</p></li>
+<li><p>These log messages become the canonical history of the project’s development and leave a trail for future contributors to review.</p></li>
+</ul>
+</div>
+<div class="section" id="use-branches">
+<h3>Use branches<a class="headerlink" href="#use-branches" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Branches enable multiple developers to work in parallel on <strong>separate lines</strong> of development</p></li>
+<li><p>Branches should be used <strong>frequently</strong> as they are quick and inexpensive.</p></li>
+<li><p>When development on a branch is complete it should be <strong>merged</strong> into the main line of development and then <strong>deleted</strong></p></li>
+</ul>
 <p>There are two ways to use <code class="docutils literal notranslate"><span class="pre">git</span></code>, the command-line and <strong>GitHub Desktop</strong>. Most students prefer to use the desktop version to begin with but we’d be happy to provide guidance on the command-line version during labs.</p>
+</div>
 </div>
 <div class="section" id="github-desktop">
 <h2>GitHub Desktop<a class="headerlink" href="#github-desktop" title="Permalink to this headline">¶</a></h2>
@@ -1047,290 +1046,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Right-click the <strong>Changed README</strong> commit and click <strong>Revert Changes in Commit…</strong></p></li>
 </ul>
 <p>If we navigate to the <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file, we will find that the changes we made have been deleted. We have successfully used <code class="docutils literal notranslate"><span class="pre">git</span></code> in a practical way!</p>
-<img src="images/version_control.png" alt="https://phdcomics.com/comics/archive_print.php?comicid=1531" width="400"/>
-<p>We’ve all been in this situation before: it seems unnecessary to have multiple nearly-identical versions of the same document.</p>
-<p>The danger of losing good versions often leads to the problematic workflow illustrated in the PhD Comics cartoon at the top of this page.</p>
-<p>Collaborative writing with traditional word processors is cumbersome. Either every collaborator has to work on a document sequentially (slowing down the process of writing), or you have to send out a version to all collaborators and manually merge their comments into your document. The ‘track changes’ option can highlight changes for you and simplifies merging, but as soon as you accept changes you will lose their history. You will then no longer know who suggested that change, why it was suggested, or when it was merged into the rest of the document.</p>
-</div>
-</div>
-<div class="section" id="id1">
-<h2>Version control<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p><strong>Version control systems</strong> (VCS) start with a <strong>base version</strong> of the document and then <strong>keeps track of changes</strong> you make each step of the way</p></li>
-<li><p>VCS are essential for <strong>developing software</strong> and <strong>carrying out projects</strong> with a lot of code</p></li>
-<li><p>VCS does not care about file names, intead records <strong>who, what, when, and why</strong> changes were made to files</p></li>
-</ul>
-<img src="images/branch.svg" width="600"/></div>
-<div class="section" id="git">
-<h2>Git<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>One of the most popular VCS tools in use today is called <code class="docutils literal notranslate"><span class="pre">git</span></code></p></li>
-<li><p>It is a command-line tool that is installed locally</p></li>
-<li><p>It is free and open-source software</p></li>
-</ul>
-<img src="images/git.svg" width="600"/>
-</div>
-<div class="section" id="github">
-<h2>GitHub<a class="headerlink" href="#github" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p><strong>GitHub</strong> is a web-based hosting service for <code class="docutils literal notranslate"><span class="pre">git</span></code>
-<br>
-<br></p></li>
-<li><p>Provides a graphical user interface
-<br>
-<br></p></li>
-<li><p>Maintained by Microsoft
-<br>
-<br></p></li>
-<li><p>There are other web-based hosting services (e.g. GitLab and Bitbucket)</p></li>
-</ul>
-<img src="images/github.png" width="200"/></div>
-<div class="section" id="why-do-we-use-version-control-systems">
-<h2>Why do we use version control systems?<a class="headerlink" href="#why-do-we-use-version-control-systems" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="security">
-<h3>Security<a class="headerlink" href="#security" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>VCS acts like an unlimited <strong>‘undo’</strong> thereby <strong>protecting source code</strong> from yourself <strong>and</strong> others</p></li>
-<li><p>e.g. catastrophe, human error, and unintended consequences</p></li>
-</ul>
-<img src="images/hero.svg" width="600"/></div>
-<div class="section" id="collaboration">
-<h3>Collaboration<a class="headerlink" href="#collaboration" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>VCS enables <strong>many people</strong> to work on the same project at the same time</p></li>
-<li><p>Teams working in parallel accelerates project development</p></li>
-</ul>
-<img src="images/colab.svg" width="500"/></div>
-<div class="section" id="community">
-<h3>Community<a class="headerlink" href="#community" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Impossible for junior developer to mess up a big project</p></li>
-<li><p>Since it is so robust this encourages open-source <strong>experimentation</strong> and <strong>development</strong></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">GitHub</span></code> has really emerged as the industry standard</p></li>
-</ul>
-<img src="images/pull.svg" width="500"/>
-</div>
-</div>
-<div class="section" id="drawbacks-of-version-control">
-<h2>Drawbacks of version control<a class="headerlink" href="#drawbacks-of-version-control" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>Difficult to learn</p></li>
-</ul>
-<img src="images/meme.jpeg" width="600"/>
-</div>
-<div class="section" id="what-have-we-been-doing-so-far">
-<h2>What have we been doing so far?<a class="headerlink" href="#what-have-we-been-doing-so-far" title="Permalink to this headline">¶</a></h2>
-<img src="images/gds_page.png" width="1000"/><img src="images/git-fork-clone-flow.png" width="400"/></div>
-<div class="section" id="some-basic-terms">
-<h2>Some basic terms<a class="headerlink" href="#some-basic-terms" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="fork">
-<h3>Fork<a class="headerlink" href="#fork" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p><strong>Copy</strong> a repository to your <a class="reference external" href="http://GitHub.com">GitHub.com</a> account</p></li>
-</ul>
-</div>
-<div class="section" id="clone">
-<h3>Clone<a class="headerlink" href="#clone" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Retrieve a repository from <strong><a class="reference external" href="http://GitHub.com">GitHub.com</a></strong> to <strong>local machine</strong></p></li>
-</ul>
-</div>
-<div class="section" id="commit">
-<h3>Commit<a class="headerlink" href="#commit" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Create a <strong>snapshot</strong> of the contents of your file tree</p></li>
-</ul>
-</div>
-<div class="section" id="push">
-<h3>Push<a class="headerlink" href="#push" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p><strong>Upload</strong> your local changes to the central repository, along with necessary commits and objects</p></li>
-</ul>
-</div>
-<div class="section" id="pull">
-<h3>Pull<a class="headerlink" href="#pull" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p><strong>Fetch</strong> the contents of the central repository and immediately <strong>merge</strong> to your local copy</p></li>
-</ul>
-</div>
-</div>
-<div class="section" id="collaborating-with-github">
-<h2>Collaborating with GitHub<a class="headerlink" href="#collaborating-with-github" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>Centralized workflow
-<br>
-<br></p></li>
-<li><p>Feature branch workflow
-<br>
-<br></p></li>
-<li><p>Forking workflow
-<br>
-<br></p></li>
-<li><p>Others (e.g. Gitflow workflow)</p></li>
-</ul>
-<div class="section" id="centralized-workflow">
-<h3>Centralized workflow<a class="headerlink" href="#centralized-workflow" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>All team members <strong>clone</strong> a <strong>single, central repository</strong> to their local machine</p></li>
-</ul>
-<img src="images/colab.svg" width="600"/></div>
-<div class="section" id="id2">
-<h3>Centralized workflow<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>One team member makes changes (e.g. add, modify, delete) to files on their local machine</p></li>
-<li><p>Periodically, they should <strong>commit</strong> these changes (i.e. take a snapshot) with a short message saying what they did</p></li>
-<li><p>When they are finished working, they can <strong>push</strong> their changes back to the central repository</p></li>
-</ul>
-<img src="images/john_push.svg" width="600"/></div>
-<div class="section" id="id3">
-<h3>Centralized workflow<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>But now when <strong>another team member</strong> (who has also been working on the project) tries to <strong>push</strong> their changes, Git will <strong>refuse the request</strong> because the their local history has <strong>diverged</strong> from the central repository</p></li>
-</ul>
-<img src="images/mary_push.svg" width="600"/></div>
-<div class="section" id="id4">
-<h3>Centralized workflow<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>The team member must first <strong>pull</strong> the most recent changes in the central reposistory into their local repository</p></li>
-</ul>
-<img src="images/mary_pull.svg" width="600"/></div>
-<div class="section" id="id5">
-<h3>Centralized workflow<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Team member then resolves any conflicts between their local version and the central repository.</p></li>
-<li><p>Once finished, team member can then <strong>commit</strong> and <strong>push</strong> their changes to the central repo</p></li>
-</ul>
-<img src="images/mary_successful_push.svg" width="600"/></div>
-<div class="section" id="advantages-of-centralized-workflow">
-<h3>Advantages of centralized workflow<a class="headerlink" href="#advantages-of-centralized-workflow" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Simplest workflow
-<br>
-<br></p></li>
-<li><p>Works well for small teams</p></li>
-</ul>
-</div>
-<div class="section" id="disadvantages">
-<h3>Disadvantages<a class="headerlink" href="#disadvantages" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>If someone breaks the central repo, it breaks for everyone</p></li>
-<li><p>Potential for a lot of conflicts</p></li>
-<li><p>One solution is to avoid working on the same files</p></li>
-<li><p>But this does not scale well as teams increase in size</p></li>
-</ul>
-</div>
-<div class="section" id="feature-branch-workflow">
-<h3>Feature branch workflow<a class="headerlink" href="#feature-branch-workflow" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>The logical extension of the centralized workflow is to use <strong>branches</strong></p></li>
-<li><p>In this workflow, all feature development takes place in a dedicated branch instead of the main branch</p></li>
-<li><p>This means that main branch never contains broken code - a huge advantage for continuous integration environments</p></li>
-</ul>
-</div>
-<div class="section" id="id6">
-<h3>Feature branch workflow<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>All team members <strong>clone</strong> a <strong>single, central repository</strong> to their local machine</p></li>
-</ul>
-<img src="images/colab.svg" width="600"/></div>
-<div class="section" id="id7">
-<h3>Feature branch workflow<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Team members immediately create a new branch to make their changes</p></li>
-</ul>
-<img src="images/big_branch.svg" width="600"/></div>
-<div class="section" id="id8">
-<h3>Feature branch workflow<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>When team members finish their changes, they <strong>push</strong> their branch to the central repository. The central repository will now contain multiple branches.</p></li>
-<li><p>Therefore, unlike the centralized workflow, this <strong>push</strong> will never cause conflicts</p></li>
-</ul>
-<img src="images/mary_successful_push.svg" width="600"/></div>
-<div class="section" id="id9">
-<h3>Feature branch workflow<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Team members then submit a <strong>pull request</strong> on <a class="reference external" href="http://GitHub.com">GitHub.com</a> asking to <strong>merge</strong> their new feature (or branch) into the main codebase, all team members will be notified automatically</p></li>
-</ul>
-<img src="images/git-pull-request.png" width="300"/>
-</div>
-<div class="section" id="id10">
-<h3>Feature branch workflow<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Team leader <strong>reviews</strong> pull request, discusses any changes with team members</p></li>
-<li><p>Once everything looks good, team leader merges new feature into main codebase</p></li>
-<li><p>Team member can then delete their branch</p></li>
-</ul>
-<img src="images/merge.svg" width="600"/><img src="images/pull-request.png" width="800"/><img src="images/pr-changes.png" width="1000"/><img src="images/create-pull-request.png" width="1000"/><img src="images/github-diff-file.png" width="800"/></div>
-<div class="section" id="advantages-of-feature-branch-workflow">
-<h3>Advantages of feature branch workflow<a class="headerlink" href="#advantages-of-feature-branch-workflow" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Promotes collaboration with team members through <strong>pull requests</strong> and <strong>merge reviews</strong></p></li>
-<li><p>Teams can work in parallel on same files so good approach for larger teams</p></li>
-<li><p>Main branch never contains broken code</p></li>
-<li><p>Guiding framework for other, more complex worflows</p></li>
-</ul>
-</div>
-<div class="section" id="forking-workflows">
-<h3>Forking workflows<a class="headerlink" href="#forking-workflows" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Instead of using a single, central repository, forking workflows give every team member their <strong>own central repository</strong></p></li>
-<li><p>Team members can tinker with their forked repository as they wish without disturbing anyone else</p></li>
-<li><p>When ready they can <strong>push</strong> to their private central repository and file <strong>pull requests</strong> if they think their changes are ready to be integrated to main codebase</p></li>
-</ul>
-<img src="images/multiple_repos.svg" width="600"/></div>
-<div class="section" id="advantages-of-forking-workflows">
-<h3>Advantages of forking workflows<a class="headerlink" href="#advantages-of-forking-workflows" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Provides a little more <strong>power</strong> to the team leader because they are the only person that can push to the official repository</p></li>
-<li><p>Allows the team leader to <strong>accept/reject commits</strong> from any developer without giving them write access to the main codebase</p></li>
-<li><p>Often used for large open-source projects</p></li>
-</ul>
-</div>
-<div class="section" id="gitflow-workflow">
-<h3>Gitflow workflow<a class="headerlink" href="#gitflow-workflow" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Great for a release-based software workflow</p></li>
-</ul>
-<img src="images/gitflow.svg" width="500"/></div>
-</div>
-<div class="section" id="good-practices">
-<h2>Good practices<a class="headerlink" href="#good-practices" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="agree-on-a-workflow">
-<h3>Agree on a workflow<a class="headerlink" href="#agree-on-a-workflow" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>It is important that teams establish shared patterns of collaboration</p></li>
-<li><p>If a team doesn’t agree on a shared workflow it can lead to inefficient communication when it comes time to merge branches</p></li>
-</ul>
-</div>
-<div class="section" id="commit-often">
-<h3>Commit often<a class="headerlink" href="#commit-often" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Commits are <strong>easy to make</strong> and provide opportunities to <strong>revert</strong> or <strong>undo</strong> work</p></li>
-<li><p>They should be made <strong>frequently</strong> to capture updates to a code base</p></li>
-</ul>
-</div>
-<div class="section" id="ensure-you-re-working-from-latest-version">
-<h3>Ensure you’re working from latest version<a class="headerlink" href="#ensure-you-re-working-from-latest-version" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>VCS enables rapid updates from multiple developers</p></li>
-<li><p>It’s easy to have a local copy of the codebase fall behind the global copy</p></li>
-<li><p>Make sure to <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> or <code class="docutils literal notranslate"><span class="pre">fetch</span></code> the latest code before you start working on project</p></li>
-</ul>
-</div>
-<div class="section" id="make-detailed-notes">
-<h3>Make detailed notes<a class="headerlink" href="#make-detailed-notes" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>It is important to leave descriptive explanatory commit log messages. These commit log messages should explain the “why” and “what” that encompass the commits content.</p></li>
-<li><p>These log messages become the canonical history of the project’s development and leave a trail for future contributors to review.</p></li>
-</ul>
-</div>
-<div class="section" id="use-branches">
-<h3>Use branches<a class="headerlink" href="#use-branches" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Branches enable multiple developers to work in parallel on <strong>separate lines</strong> of development</p></li>
-<li><p>Branches should be used <strong>frequently</strong> as they are quick and inexpensive.</p></li>
-<li><p>When development on a branch is complete it should be <strong>merged</strong> into the main line of development and then <strong>deleted</strong></p></li>
-</ul>
 </div>
 </div>
 </div>
@@ -1367,10 +1082,10 @@ const thebe_selector_output = ".output, .cell_output"
             <p class="prev-next-title">Project ideas</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../../labs/week6/assignment6.html" title="next page">
+    <a class='right-next' id="next-link" href="../../labs/week6/project-setup.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Assignment 6</p>
+        <p class="prev-next-title">Final project setup</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
