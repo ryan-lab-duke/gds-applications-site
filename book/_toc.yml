@@ -52,4 +52,3 @@ parts:
   - caption: Week 8
     chapters:
     - file: lectures/week8/lecture-8.ipynb
-    - file: labs/week8/assignment8.md

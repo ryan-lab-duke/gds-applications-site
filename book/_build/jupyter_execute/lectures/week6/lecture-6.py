@@ -1,21 +1,170 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Project setup
+# # Code management
 # 
-# * Interactive Development Environments (IDE)
-# <br>
-# <br>
-# * Version control
-# <br>
-# <br>
-# * Virtual environments
-# <br>
-# <br>
-# * Organizing project
-# <br>
-# <br>
-# * `GitHub` collaboration workflows
+# In this demo we will learn how to setup a **Python development environment**. There are many ways to do this, but our *current* preferred option is described in the next slides. One advantage of the workflow described next is that it is cross-platform meaning that it should work on Windows, MacOS, and Linux operating systems. Some of the text here overlaps with the [intro to Python packaging](https://owel-lab.github.io/gds-applications-site/course-info/python.html) page. But, unlike that page, we will go into more detail about folder structure and development tools in this lecture. 
+
+# ## Python distribution
+# 
+# A distribution is a collection of files that together allows us to build, package, and distribute a module. Since many software programs are written in Python, all computers have an internal **Python distribution** by default but it is usually an older version of Python (e.g. Python 2.7). 
+# 
+# 
+# Given that we require specific packages for geospatial data science, it is good practice to install a more modern Python distribution (e.g. Python 3.10.8) using [`Miniconda`](https://docs.conda.io/en/latest/miniconda.html).
+# 
+# 
+# The latest version of Miniconda for your operating system can be installed from the [dowload page](https://docs.conda.io/en/latest/miniconda.html). 
+# 
+# We can check that Python installed properly by opening an **Anaconda Prompt (miniconda3)** (Windows) and entering:
+# 
+# ```
+# where python
+# ```
+# 
+# Or, on MacOS, open a **Terminal** and enter:
+# 
+# ```
+# which python
+# ```
+# 
+# We should see somthing like:
+# 
+# ```
+# C:\Users\johnny\miniconda3\python.exe
+# ```
+# 
+# Or:
+# 
+# ```
+# /opt/miniconda3/bin/python
+# ```
+
+# ## Create a project folder
+# 
+# Every new project starts with a new folder. We make one using **File Explorer** (Windows) or **Finder** (MacOS). Or we navigate using `cd` in the command prompt and enter: 
+# 
+# ```
+# mkdir new-project 
+# ```
+
+# ## Setup a virtual environment
+# 
+# It is good practice to create a virtual environment for each new programming project (e.g. this class). A virtual environment allows us to install Python packages for one project without worrying about conflicts with packages of other projects. Python has built-in support for virtual environments using the `venv` module. A new environment can be created using the following command in an **Anaconda Prompt (miniconda3)** (Windows) or **Terminal** (macOS):
+# 
+# ```
+# python -m venv .venv
+# ```
+# 
+# ```{note}
+# This command should be run from **within** your new project folder.
+# ```
+# 
+# ```{margin} Note
+# The dot in `.venv` means that it is a hidden file. `.venv` or `venv` are standard names for virtual environments.  
+# ```
+
+# Next we need to activate the virtual environment. In Windows this can be achieved by running:
+# 
+# ```
+# .venv\Scripts\activate
+# ```
+# 
+# On macOS, run:
+# 
+# ```
+# source .venv/bin/activate
+# ```
+
+# ## Install dependencies
+# 
+# We can install individual Python packages using [`pip`](https://pip.pypa.io/en/stable/). The syntax is `pip install xxx` where `xxx` is the package we want to install. It's often easier to install multiple packages at once using a text file, so that anyone else setting up the project will have exactly the same environment. 
+# 
+# To do this we can make a text file called `requirements.txt` using **Notepad** on Windows or **TextEdit** on MacOS, add the names of the packages for the project, and save it into our new project folder. 
+# 
+# ```{image} images/requirements.png
+# :width: 400px
+# :align: center
+# ```
+# 
+# We can install all the packages at once by running:
+# 
+# ```
+# pip install -r requirements.txt 
+# ```
+# 
+# ```{note}
+# This could take between a few seconds to tens of minutes depending on how many packages need to be installed.
+# ```
+# 
+# We can check that everything installed properly by first running:
+# 
+# ```
+# python
+# ```
+# 
+# Then:
+# 
+# ```
+# import numpy
+# ```
+# 
+# If this runs without error, we are all good. If we get a `ModuleNotFoundError:`, we might check that the package was included in our `requirements.txt` file. 
+# 
+# ```{note}
+# Exit the Python interpreter by pressing `Ctrl + Z` and then `Enter` in Windows or just `control + Z` in MacOS.
+# ```
+
+# ## Version control
+# 
+# Almost all software projects use version control to keep of track of changes to files. The most popular is `git`, a free open-source software project that is installed locally. 
+# 
+# 
+# **GitHub** is a web-based hosting service for `git` which provides a graphical user interface to `git` and is owned by Microsoft. There are other web-based hosting services for `git` (e.g. **GitLab** and **Bitbucket**).
+# 
+# 
+# There are two ways to use `git`, the command-line and **GitHub Desktop**. Most students prefer to use the desktop version to begin with but we'd be happy to provide guidance on the command-line version during labs.  
+# 
+# 
+# ## GitHub Desktop
+# 
+# We will talk a bit more about `git` later in the lecture but, to continue setting up our project, go ahead and install [**GitHub Desktop**](https://desktop.github.com/). 
+# 
+# * Open **GitHub Desktop** &rarr; **Add an Existing Repository from your Hard Drive...**
+# * Select **Choose...** and navigate to your project folder
+# * Respond to this warning by clicking **create a repository**
+# * Leave everything as is and **Create Repository**
+# 
+# Now we can **Publish repository** on Github.com by clicking the big blue button. If you signed up for an educational GitHub account we should able to tick the box to **Keep this code private** and click **Publish Repository** again.
+# 
+# 
+# ## GitHub.com
+# 
+# If we navigate to `github.com` on a web browser, sign in, and navigate to our profile, there should be a new **repository** that contains our files (just an `requirements.txt` and `.venv` folder for now).
+# 
+# 
+# ## Basic usage
+# 
+# In line with our "learn by doing" mantra, we will demonstrate the basics of version control with GitHub using a demo. 
+# 
+# ### Add a new file
+# 
+# * Make a new text file using **Notepad** on Windows or **TextEdit** on MacOS called `README.md`, add some random text, and save.
+# * In **GitHub Desktop** we will see **1 changed file**. 
+# * Type in **"Added README"** in the **Summary** box in the lower left &rarr; **Commit to main**.
+# 
+# If we navigate to `github.com`, we will see this new file. 
+# 
+# ### Make some changes
+# 
+# Now make some changes to the text in the `README.md` file, save, **and close**. Again, we will see **1 changed file** in GitHub Desktop. 
+# 
+# ### Undo the changes
+# 
+# * Type in **"Changed README"** in the **Summary** box in the lower left and **Commit to main** again.
+# * Click the **History** tab (next to **Changes**)
+# * Right-click the **Changed README** commit and click **Revert Changes in Commit...**
+# 
+# If we navigate to the `README.md` file, we will find that the changes we made have been deleted. We have successfully used `git` in a practical way!
 
 # 
 
