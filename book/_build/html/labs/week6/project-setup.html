@@ -375,8 +375,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#centralized-git-workflow">
-   Centralized git workflow
+  <a class="reference internal nav-link" href="#option-1-centralized-git-workflow">
+   (Option 1) Centralized git workflow
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -387,8 +387,8 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#feature-branch-workflow-recommended">
-   Feature branch workflow (recommended)
+  <a class="reference internal nav-link" href="#option-2-feature-branch-workflow-recommended">
+   (Option 2) Feature branch workflow (recommended)
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -459,8 +459,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#centralized-git-workflow">
-   Centralized git workflow
+  <a class="reference internal nav-link" href="#option-1-centralized-git-workflow">
+   (Option 1) Centralized git workflow
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -471,8 +471,8 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#feature-branch-workflow-recommended">
-   Feature branch workflow (recommended)
+  <a class="reference internal nav-link" href="#option-2-feature-branch-workflow-recommended">
+   (Option 2) Feature branch workflow (recommended)
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -556,8 +556,8 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Choose a <strong>Local path</strong> where you keep your coursework (e.g. <code class="docutils literal notranslate"><span class="pre">C:\Users\your_name\Documents</span></code>) and click <strong>Clone</strong>.</p>
 <p>Notice that in the top left that <strong>Current repository</strong> is now set to <code class="docutils literal notranslate"><span class="pre">project-repo-name</span></code>.</p>
 </div>
-<div class="section" id="centralized-git-workflow">
-<h2>Centralized git workflow<a class="headerlink" href="#centralized-git-workflow" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="option-1-centralized-git-workflow">
+<h2>(Option 1) Centralized git workflow<a class="headerlink" href="#option-1-centralized-git-workflow" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>To contribute to the repo, <strong>team members</strong> should make a new file called <code class="docutils literal notranslate"><span class="pre">README_XX.md</span></code> where <code class="docutils literal notranslate"><span class="pre">XX</span></code> are the initials of the team member.</p></li>
 <li><p>When the team member is finished with thir edits to <code class="docutils literal notranslate"><span class="pre">README_XX.md</span></code>, they can go to <strong>GitHub Desktop</strong>, include a <strong>Summary</strong> of the changes, <strong>Commit to main</strong> and then click <strong>Push origin</strong> button.</p></li>
@@ -574,8 +574,8 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </div>
 </div>
-<div class="section" id="feature-branch-workflow-recommended">
-<h2>Feature branch workflow (recommended)<a class="headerlink" href="#feature-branch-workflow-recommended" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="option-2-feature-branch-workflow-recommended">
+<h2>(Option 2) Feature branch workflow (recommended)<a class="headerlink" href="#option-2-feature-branch-workflow-recommended" title="Permalink to this headline">¶</a></h2>
 <p>To fully explore the power of GitHub, we recommend that using a feature branching workflow. The learning curve is a little steeper than the centralized workflow but will provide a more complete introduction to git and GitHub.</p>
 <div class="section" id="workflow">
 <h3>Workflow<a class="headerlink" href="#workflow" title="Permalink to this headline">¶</a></h3>
@@ -631,8 +631,8 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="o">.</span><span class="n">venv</span>
 </pre></div>
 </div>
-<div class="margin sidebar">
-<p class="sidebar-title">Note</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>The dot in <code class="docutils literal notranslate"><span class="pre">.venv</span></code> means that it is a hidden file. <code class="docutils literal notranslate"><span class="pre">.venv</span></code> or <code class="docutils literal notranslate"><span class="pre">venv</span></code> are standard names for virtual environments.</p>
 </div>
 <p>Next we need to activate the virtual environment. In Windows this can be achieved by running:</p>
@@ -648,7 +648,7 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>Install dependencies<a class="headerlink" href="#install-dependencies" title="Permalink to this headline">¶</a></h2>
 <p>We can install individual Python packages using <a class="reference external" href="https://pip.pypa.io/en/stable/"><code class="docutils literal notranslate"><span class="pre">pip</span></code></a>. The syntax is <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">xxx</span></code> where <code class="docutils literal notranslate"><span class="pre">xxx</span></code> is the package we want to install. It’s often easier to install multiple packages at once using a text file, so that anyone else setting up the project will have exactly the same environment.</p>
 <p>To do this we can make a text file called <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> using <strong>Notepad</strong> on Windows or <strong>TextEdit</strong> on MacOS, add the names of the packages for the project, and save it into our new project folder.</p>
-<a class="reference internal image-reference" href="labs/week6/images/requirements.png"><img alt="labs/week6/images/requirements.png" class="align-center" src="labs/week6/images/requirements.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../../_images/requirements.png"><img alt="../../_images/requirements.png" class="align-center" src="../../_images/requirements.png" style="width: 400px;" /></a>
 <p>We can install all the packages at once by running:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span> 
 </pre></div>

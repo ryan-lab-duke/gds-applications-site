@@ -240,7 +240,10 @@
 # 
 # * All team members **clone** a **single, central repository** to their local machine
 # 
-# <img src="images/colab.svg" width="600"/>
+# ```{image} images/colab.svg
+# :width: 600px
+# :align: center
+# ```
 
 # ### Feature branch workflow
 # 
