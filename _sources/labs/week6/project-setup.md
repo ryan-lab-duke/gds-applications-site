@@ -59,7 +59,7 @@ Choose a **Local path** where you keep your coursework (e.g. `C:\Users\your_name
 
 Notice that in the top left that **Current repository** is now set to `project-repo-name`.
 
-## Centralized git workflow
+## (Option 1) Centralized git workflow
 
 * To contribute to the repo, **team members** should make a new file called `README_XX.md` where `XX` are the initials of the team member. 
 
@@ -84,7 +84,7 @@ Notice that in the top left that **Current repository** is now set to `project-r
 
 * **Fetch** and **pull** regularly to avoid conflicts
 
-## Feature branch workflow (recommended)
+## (Option 2) Feature branch workflow (recommended)
 
 To fully explore the power of GitHub, we recommend that using a feature branching workflow. The learning curve is a little steeper than the centralized workflow but will provide a more complete introduction to git and GitHub. 
 
@@ -173,7 +173,7 @@ It is good practice to create a new virtual environment for each new programming
 python -m venv .venv
 ```
 
-```{margin} Note
+```{note}
 The dot in `.venv` means that it is a hidden file. `.venv` or `venv` are standard names for virtual environments.  
 ```
 
