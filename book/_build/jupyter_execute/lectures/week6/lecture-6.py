@@ -236,8 +236,6 @@
 # 
 # * This means that main branch never contains broken code - a huge advantage for continuous integration environments
 
-# ### Feature branch workflow
-# 
 # * All team members **clone** a **single, central repository** to their local machine
 # 
 # ```{image} images/colab.svg
@@ -245,8 +243,6 @@
 # :align: center
 # ```
 
-# ### Feature branch workflow
-# 
 # * Team members immediately create a new branch to make their changes
 # 
 # ```{image} images/big_branch.svg
