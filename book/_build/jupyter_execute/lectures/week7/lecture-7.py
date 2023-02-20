@@ -3,7 +3,7 @@
 
 # # Data access
 # 
-# Finding, downloading, and cleaning data is an important, but laborious, part of geospatial data science. In this demo, we will download data programmatically using Application Programming Interfaces (APIs). We will also talk about strategies to download data when an API is unavailable or insufficient.
+# Finding, downloading, and cleaning data is an important, but laborious, part of geospatial data science. In this demo, we will download data programmatically using Application Programming Interfaces (APIs). We will also talk about strategies for downloading data when an API is unavailable or insufficient.
 
 # ## APIs
 # 
@@ -36,7 +36,7 @@
 # We know `CenPy` is legitimate because it has an **active GitHub repository**. 
 # 
 # ```{image} images/cenpy-github.png
-# :width: 900px
+# :width: 1000px
 # :align: center
 # ```
 # 
@@ -45,7 +45,7 @@
 # First we should find how to install it, either using `conda` or `pip` depending on which virtual environment manager (`conda` or `venv`) we are using. 
 # 
 # ```{image} images/cenpy-install.png
-# :width: 600px
+# :width: 800px
 # :align: center
 # ```
 
@@ -60,7 +60,7 @@ import matplotlib.pyplot as plt
 # Then search the documentation for examples...
 # 
 # ```{image} images/cenpy-examples.png
-# :width: 600px
+# :width: 1000px
 # :align: center
 # ```
 
@@ -86,7 +86,7 @@ acs.filter_variables('B01003')
 
 
 # ```{image} images/census-geo.png
-# :width: 700px
+# :width: 800px
 # :align: center
 # ```
 
@@ -128,7 +128,7 @@ lane_pop.plot('pop_density', ax=ax, legend=True, cax=cax)
 # Let's have a look at another API called [`dataretrieval`](https://github.com/DOI-USGS/dataretrieval-python) which was developed by USGS to retrieve hydrologic data.
 # 
 # ```{image} images/usgs-github.png
-# :width: 900px
+# :width: 1000px
 # :align: center
 # ```
 # 
@@ -136,7 +136,7 @@ lane_pop.plot('pop_density', ax=ax, legend=True, cax=cax)
 # 
 # 
 # ```{image} images/usgs-install.png
-# :width: 600px
+# :width: 800px
 # :align: center
 # ```
 
@@ -185,14 +185,14 @@ ax.plot(df['00060_Mean'])
 # Often APIs are sometimes not available or have limitations. Technology companies **hoard data** to secure market dominance. But this is a problem because, by guarding data, they are also preventing it **being used** for good causes. Without access to their data it is difficult to tell whether they are in **compliance**. 
 # 
 # ```{image} images/zillow.png
-# :width: 900px
+# :width: 1000px
 # :align: center
 # ```
 # 
 # 
 # 
 # ```{image} images/zillow2.png
-# :width: 900px
+# :width: 1000px
 # :align: center
 # ```
 # 
@@ -216,12 +216,12 @@ ax.plot(df['00060_Mean'])
 # * Most commonly accomplished by writing a program that **queries** a web server, **requests** data (usually in the form of HTML), and **parses** that data to extract information
 
 # ```{image} images/scrape_hero.png
-# :width: 900px
+# :width: 1000px
 # :align: center
 # ```
 
 # ```{image} images/inside_airbnb.png
-# :width: 900px
+# :width: 1000px
 # :align: center
 # ```
 
@@ -301,12 +301,12 @@ html
 
 
 # ```{image} images/climate_wiki.png
-# :width: 900px
+# :width: 1000px
 # :align: center
 # ```
 
 # ```{image} images/more_html.png
-# :width: 900px
+# :width: 1000px
 # :align: center
 # ```
 
@@ -451,12 +451,12 @@ driver.get("https://www.google.com/maps")
 
 
 # ```{image} images/google_maps.png
-# :width: 900px
+# :width: 1000px
 # :align: center
 # ```
 
 # ```{image} images/inspect.png
-# :width: 900px
+# :width: 1000px
 # :align: center
 # ```
 # 
@@ -470,7 +470,7 @@ inputElement.send_keys('South Sister Oregon')
 
 
 # ```{image} images/enter_text.png
-# :width: 900px
+# :width: 1000px
 # :align: center
 # ```
 # 
