@@ -546,7 +546,7 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="data-access">
 <h1>Data access<a class="headerlink" href="#data-access" title="Permalink to this headline">¶</a></h1>
-<p>Finding, downloading, and cleaning data is an important, but laborious, part of geospatial data science. In this demo, we will download data programmatically using Application Programming Interfaces (APIs). We will also talk about strategies to download data when an API is unavailable or insufficient.</p>
+<p>Finding, downloading, and cleaning data is an important, but laborious, part of geospatial data science. In this demo, we will download data programmatically using Application Programming Interfaces (APIs). We will also talk about strategies for downloading data when an API is unavailable or insufficient.</p>
 <div class="section" id="apis">
 <h2>APIs<a class="headerlink" href="#apis" title="Permalink to this headline">¶</a></h2>
 <p>So far in this course we have mainly been using data that has been downloaded <strong>locally</strong> from point-and-click GUIs. But it is becoming more and more common to access data programmatically from an online server. These platforms often have a <strong>public API</strong> that we can use to pull data inside our Python environment.</p>
@@ -569,10 +569,10 @@ const thebe_selector_output = ".output, .cell_output"
 <h2><code class="docutils literal notranslate"><span class="pre">CenPy</span></code><a class="headerlink" href="#cenpy" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">CenPy</span></code> is an interface to explore and query the US Census API in <strong>Python</strong>. It conveniently returns the data in <strong><code class="docutils literal notranslate"><span class="pre">Pandas</span></code> Dataframes</strong> for further analysis.</p>
 <p>We know <code class="docutils literal notranslate"><span class="pre">CenPy</span></code> is legitimate because it has an <strong>active GitHub repository</strong>.</p>
-<a class="reference internal image-reference" href="../../_images/cenpy-github.png"><img alt="../../_images/cenpy-github.png" class="align-center" src="../../_images/cenpy-github.png" style="width: 900px;" /></a>
+<a class="reference internal image-reference" href="../../_images/cenpy-github.png"><img alt="../../_images/cenpy-github.png" class="align-center" src="../../_images/cenpy-github.png" style="width: 1000px;" /></a>
 <p>More information about this package can be found <a class="reference external" href="https://github.com/cenpy-devs/cenpy">here</a>.</p>
 <p>First we should find how to install it, either using <code class="docutils literal notranslate"><span class="pre">conda</span></code> or <code class="docutils literal notranslate"><span class="pre">pip</span></code> depending on which virtual environment manager (<code class="docutils literal notranslate"><span class="pre">conda</span></code> or <code class="docutils literal notranslate"><span class="pre">venv</span></code>) we are using.</p>
-<a class="reference internal image-reference" href="../../_images/cenpy-install.png"><img alt="../../_images/cenpy-install.png" class="align-center" src="../../_images/cenpy-install.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../_images/cenpy-install.png"><img alt="../../_images/cenpy-install.png" class="align-center" src="../../_images/cenpy-install.png" style="width: 800px;" /></a>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import library</span>
@@ -583,7 +583,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <p>Then search the documentation for examples…</p>
-<a class="reference internal image-reference" href="../../_images/cenpy-examples.png"><img alt="../../_images/cenpy-examples.png" class="align-center" src="../../_images/cenpy-examples.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../_images/cenpy-examples.png"><img alt="../../_images/cenpy-examples.png" class="align-center" src="../../_images/cenpy-examples.png" style="width: 1000px;" /></a>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">acs</span> <span class="o">=</span> <span class="n">products</span><span class="o">.</span><span class="n">ACS</span><span class="p">(</span><span class="mi">2019</span><span class="p">)</span>
@@ -748,7 +748,7 @@ With MapServer: Census ACS 2019 WMS
 </table>
 </div></div></div>
 </div>
-<a class="reference internal image-reference" href="../../_images/census-geo.png"><img alt="../../_images/census-geo.png" class="align-center" src="../../_images/census-geo.png" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../../_images/census-geo.png"><img alt="../../_images/census-geo.png" class="align-center" src="../../_images/census-geo.png" style="width: 800px;" /></a>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Download data</span>
@@ -883,9 +883,9 @@ With MapServer: Census ACS 2019 WMS
 <div class="section" id="usgs-hydrologic-data">
 <h2>USGS hydrologic data<a class="headerlink" href="#usgs-hydrologic-data" title="Permalink to this headline">¶</a></h2>
 <p>Let’s have a look at another API called <a class="reference external" href="https://github.com/DOI-USGS/dataretrieval-python"><code class="docutils literal notranslate"><span class="pre">dataretrieval</span></code></a> which was developed by USGS to retrieve hydrologic data.</p>
-<a class="reference internal image-reference" href="../../_images/usgs-github.png"><img alt="../../_images/usgs-github.png" class="align-center" src="../../_images/usgs-github.png" style="width: 900px;" /></a>
+<a class="reference internal image-reference" href="../../_images/usgs-github.png"><img alt="../../_images/usgs-github.png" class="align-center" src="../../_images/usgs-github.png" style="width: 1000px;" /></a>
 <p>On the GitHub <code class="docutils literal notranslate"><span class="pre">REAMDE.md</span></code> for this package it says we can also install <code class="docutils literal notranslate"><span class="pre">dataretrieval</span></code> using <code class="docutils literal notranslate"><span class="pre">conda</span></code> or <code class="docutils literal notranslate"><span class="pre">pip</span></code>.</p>
-<a class="reference internal image-reference" href="../../_images/usgs-install.png"><img alt="../../_images/usgs-install.png" class="align-center" src="../../_images/usgs-install.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../_images/usgs-install.png"><img alt="../../_images/usgs-install.png" class="align-center" src="../../_images/usgs-install.png" style="width: 800px;" /></a>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>%%capture
@@ -1129,8 +1129,8 @@ With MapServer: Census ACS 2019 WMS
 <div class="section" id="api-limits">
 <h2>API limits<a class="headerlink" href="#api-limits" title="Permalink to this headline">¶</a></h2>
 <p>Often APIs are sometimes not available or have limitations. Technology companies <strong>hoard data</strong> to secure market dominance. But this is a problem because, by guarding data, they are also preventing it <strong>being used</strong> for good causes. Without access to their data it is difficult to tell whether they are in <strong>compliance</strong>.</p>
-<a class="reference internal image-reference" href="../../_images/zillow.png"><img alt="../../_images/zillow.png" class="align-center" src="../../_images/zillow.png" style="width: 900px;" /></a>
-<a class="reference internal image-reference" href="../../_images/zillow2.png"><img alt="../../_images/zillow2.png" class="align-center" src="../../_images/zillow2.png" style="width: 900px;" /></a>
+<a class="reference internal image-reference" href="../../_images/zillow.png"><img alt="../../_images/zillow.png" class="align-center" src="../../_images/zillow.png" style="width: 1000px;" /></a>
+<a class="reference internal image-reference" href="../../_images/zillow2.png"><img alt="../../_images/zillow2.png" class="align-center" src="../../_images/zillow2.png" style="width: 1000px;" /></a>
 <a class="reference internal image-reference" href="../../_images/airbnb.png"><img alt="../../_images/airbnb.png" class="align-center" src="../../_images/airbnb.png" style="width: 900px;" /></a>
 </div>
 <div class="section" id="web-scraping">
@@ -1140,8 +1140,8 @@ With MapServer: Census ACS 2019 WMS
 <li><p>Web scraping (also known as crawling or harvesting) is the practice of <strong>automatically</strong> gathering data from the internet without the use of an <strong>API</strong></p></li>
 <li><p>Most commonly accomplished by writing a program that <strong>queries</strong> a web server, <strong>requests</strong> data (usually in the form of HTML), and <strong>parses</strong> that data to extract information</p></li>
 </ul>
-<a class="reference internal image-reference" href="../../_images/scrape_hero.png"><img alt="../../_images/scrape_hero.png" class="align-center" src="../../_images/scrape_hero.png" style="width: 900px;" /></a>
-<a class="reference internal image-reference" href="../../_images/inside_airbnb.png"><img alt="../../_images/inside_airbnb.png" class="align-center" src="../../_images/inside_airbnb.png" style="width: 900px;" /></a>
+<a class="reference internal image-reference" href="../../_images/scrape_hero.png"><img alt="../../_images/scrape_hero.png" class="align-center" src="../../_images/scrape_hero.png" style="width: 1000px;" /></a>
+<a class="reference internal image-reference" href="../../_images/inside_airbnb.png"><img alt="../../_images/inside_airbnb.png" class="align-center" src="../../_images/inside_airbnb.png" style="width: 1000px;" /></a>
 </div>
 <div class="section" id="suppose-a-friend-wanted-to-do-this">
 <h2>Suppose a friend wanted to do this?<a class="headerlink" href="#suppose-a-friend-wanted-to-do-this" title="Permalink to this headline">¶</a></h2>
@@ -1206,8 +1206,8 @@ With MapServer: Census ACS 2019 WMS
 </div>
 </div>
 </div>
-<a class="reference internal image-reference" href="../../_images/climate_wiki.png"><img alt="../../_images/climate_wiki.png" class="align-center" src="../../_images/climate_wiki.png" style="width: 900px;" /></a>
-<a class="reference internal image-reference" href="../../_images/more_html.png"><img alt="../../_images/more_html.png" class="align-center" src="../../_images/more_html.png" style="width: 900px;" /></a>
+<a class="reference internal image-reference" href="../../_images/climate_wiki.png"><img alt="../../_images/climate_wiki.png" class="align-center" src="../../_images/climate_wiki.png" style="width: 1000px;" /></a>
+<a class="reference internal image-reference" href="../../_images/more_html.png"><img alt="../../_images/more_html.png" class="align-center" src="../../_images/more_html.png" style="width: 1000px;" /></a>
 </div>
 </div>
 <div class="section" id="beautifulsoup4">
@@ -1401,8 +1401,8 @@ h2 -&gt; References[edit]
 </div>
 </div>
 </div>
-<a class="reference internal image-reference" href="../../_images/google_maps.png"><img alt="../../_images/google_maps.png" class="align-center" src="../../_images/google_maps.png" style="width: 900px;" /></a>
-<a class="reference internal image-reference" href="../../_images/inspect.png"><img alt="../../_images/inspect.png" class="align-center" src="../../_images/inspect.png" style="width: 900px;" /></a>
+<a class="reference internal image-reference" href="../../_images/google_maps.png"><img alt="../../_images/google_maps.png" class="align-center" src="../../_images/google_maps.png" style="width: 1000px;" /></a>
+<a class="reference internal image-reference" href="../../_images/inspect.png"><img alt="../../_images/inspect.png" class="align-center" src="../../_images/inspect.png" style="width: 1000px;" /></a>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enter some text in the search box</span>
@@ -1412,7 +1412,7 @@ h2 -&gt; References[edit]
 </div>
 </div>
 </div>
-<a class="reference internal image-reference" href="../../_images/enter_text.png"><img alt="../../_images/enter_text.png" class="align-center" src="../../_images/enter_text.png" style="width: 900px;" /></a>
+<a class="reference internal image-reference" href="../../_images/enter_text.png"><img alt="../../_images/enter_text.png" class="align-center" src="../../_images/enter_text.png" style="width: 1000px;" /></a>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Click search button</span>
