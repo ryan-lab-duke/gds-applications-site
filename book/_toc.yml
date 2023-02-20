@@ -48,7 +48,6 @@ parts:
   - caption: Week 7
     chapters:
     - file: lectures/week7/lecture-7.ipynb
-    - file: labs/week7/assignment7.md
 
   - caption: Week 8
     chapters:

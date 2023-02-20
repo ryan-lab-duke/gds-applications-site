@@ -1,68 +1,154 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Data access lecture
-
-# <CENTER>
-#     <h1> Geospatial Data Science Applications: GEOG 4/590</h1>
-#     <h3>Feb 14, 2022</h3>
-#     <h2>Lecture 7: Data access</h2>
-#     <img src="images/coding-computer-programming.jpeg" width="300"/>
-#     <h3>Johnny Ryan: jryan4@uoregon.edu</h3>
-# </CENTER>
-
-# ## Content of this lecture
+# # Data access
 # 
-# * Web2.0
-# <br>
-# <br>
-# * Standard data access using APIs
-# <br>
-# <br>
-# * What to do when an API is unavailable or insufficient?
-# <br>
-# <br>
-# * Background for this week's lab
-
-# In[1]:
-
-
-from IPython.display import HTML
-HTML('<iframe width="560" height="315" src="https://www.youtube.com/embed/BxV14h0kFs0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>')
-
+# Finding, downloading, and cleaning data is an important, but laborious, part of geospatial data science. In this demo, we will download data programmatically using Application Programming Interfaces (APIs). We will also talk about strategies to download data when an API is unavailable or insufficient.
 
 # ## APIs
 # 
+# So far in this course we have mainly been using data that has been downloaded **locally** from point-and-click GUIs. But it is becoming more and more common to access data programmatically from an online server. These platforms often have a **public API** that we can use to pull data inside our Python environment. 
 # 
-# * Application programming interface
+# An API is a type of **software** that provides a **standard set of protocols/functions** so that our computer can **communicate** with other computers (in contrast, a **user interface** is a type of software that connects a **computer** to a **person**)
+# 
+# The basic idea is we send a **request** (which may include query parameters and access credentials) to an endpoint. That endpoint will return a **response** code plus the data we asked for. For these kind of tasks, we have to carefully inspect the API **documentation** to understand what functions are available and what keyword arguments they require.
+# 
+# Many organizations have great APIs because they want people to use their data.
+
+# ## Census Bureau
+# 
+# The US Census Bureau has a great API that makes demographic, socio-economic and housing statistics more accessible than ever before. 
+# 
+# Developers use customize these statistics to create apps that:
+# 
+# * Provide a local government a range of socioeconomic statistics on its population.
+# 
+# * Show commuting patterns for every city in America.
+# 
+# * Display the latest numbers on owners and renters in a neighborhood someone may want to live in.
+# 
+# Many students will use Census Bureau data in their final projects. 
+
+# ## `CenPy`
+# 
+# `CenPy` is an interface to explore and query the US Census API in **Python**. It conveniently returns the data in **`Pandas` Dataframes** for further analysis. 
+# 
+# We know `CenPy` is legitimate because it has an **active GitHub repository**. 
+# 
+# ```{image} images/cenpy-github.png
+# :width: 900px
+# :align: center
+# ```
+# 
+# More information about this package can be found [here](https://github.com/cenpy-devs/cenpy).
+# 
+# First we should find how to install it, either using `conda` or `pip` depending on which virtual environment manager (`conda` or `venv`) we are using. 
+# 
+# ```{image} images/cenpy-install.png
+# :width: 600px
+# :align: center
+# ```
+
+# In[ ]:
+
+
+# Import library
+from cenpy import products
+import matplotlib.pyplot as plt
+
+
+# Then search the documentation for examples...
+# 
+# ```{image} images/cenpy-examples.png
+# :width: 600px
+# :align: center
+# ```
+
+# In[12]:
+
+
+acs = products.ACS(2019)
+acs
+
+
+# In[13]:
+
+
+# Find tables containing keyword
+acs.filter_tables('POPULATION', by='description')
+
+
+# In[14]:
+
+
+# Print list of tables
+acs.filter_variables('B01003')
+
+
+# ```{image} images/census-geo.png
+# :width: 700px
+# :align: center
+# ```
+
+# In[15]:
+
+
+# Download data
+lane_pop = products.ACS(2019).from_county('Lane County, OR', 
+                                          level='tract',
+                                          variables=['B01003_001E']) # don't worry about the deprecation message!
+
+
+# In[18]:
+
+
+lane_pop.head()
+
+
+# In[19]:
+
+
+# Compute population density
+lane_pop['pop_density'] = lane_pop['B01003_001E'] / (lane_pop['geometry'].area / 1e+6)
+
+from mpl_toolkits.axes_grid1 import make_axes_locatable
+
+# Plot map
+f, ax = plt.subplots(1, 1, figsize=(10,10))
+
+# These two lines make the colorbar the same size as the axes.
+divider = make_axes_locatable(ax)
+cax = divider.append_axes("right", size="5%", pad=0.1)
+
+lane_pop.plot('pop_density', ax=ax, legend=True, cax=cax)
+
+
+# ## USGS hydrologic data
+# 
+# Let's have a look at another API called [`dataretrieval`](https://github.com/DOI-USGS/dataretrieval-python) which was developed by USGS to retrieve hydrologic data.
+# 
+# ```{image} images/usgs-github.png
+# :width: 900px
+# :align: center
+# ```
+# 
+# On the GitHub `REAMDE.md` for this package it says we can also install `dataretrieval` using `conda` or `pip`.
 # 
 # 
-# * A type of **software** that provides a **standard set of protocols/functions** so that our computer can **communicate** with other computers
-# 
-# 
-# * In contrast, a **user interface** is a type of software that connects a **computer** to a **person**
+# ```{image} images/usgs-install.png
+# :width: 600px
+# :align: center
+# ```
 
-# ## APIs
-# 
-# * Many organizations have great APIs because they want people to use their data
-# 
-# 
-# * We have used one...
-
-# * `cenpy`
-
-# <img src="images/usgs.png" width="1000"/>
-
-# In[2]:
+# In[22]:
 
 
-# Install package
-get_ipython().system('pip install -U dataretrieval')
+get_ipython().run_cell_magic('capture', '', '# Install package\n!pip install -U dataretrieval')
 
 
-# <img src="images/usgs_example.png" width="1000"/>
+# Now we can look through the documentation and test some examples
 
-# In[3]:
+# In[24]:
 
 
 # Import the functions for downloading data from NWIS
@@ -73,14 +159,15 @@ site = '03339000'
 
 # Get instantaneous values (iv)
 df = nwis.get_record(sites=site, service='dv', start='2020-10-01', end='2021-09-30')
-df
+df.head()
 
 
-# In[4]:
+# In[27]:
 
 
-# Simple plot
-df['00060_Mean'].plot()
+# Plot
+f, ax = plt.subplots(1, 1, figsize=(10,4))
+ax.plot(df['00060_Mean'])
 
 
 # ## Tips for APIs
@@ -93,42 +180,52 @@ df['00060_Mean'].plot()
 # 
 # * If you can't find what you're looking for, inspect the source code (`.py` files)
 
-# ## APIs are sometimes not available or have limitations
-
-# <img src="images/zillow.png" width="1000"/>
-
-# <img src="images/zillow2.png" width="1000"/>
-
-# <img src="images/airbnb.png" width="1000"/>
-
-# * These companies hoard data to secure market dominance
+# ## API limits
+# 
+# Often APIs are sometimes not available or have limitations. Technology companies **hoard data** to secure market dominance. But this is a problem because, by guarding data, they are also preventing it **being used** for good causes. Without access to their data it is difficult to tell whether they are in **compliance**. 
+# 
+# ```{image} images/zillow.png
+# :width: 900px
+# :align: center
+# ```
 # 
 # 
-# * Without access to their data it is difficult to tell whether they are in compliance
+# 
+# ```{image} images/zillow2.png
+# :width: 900px
+# :align: center
+# ```
 # 
 # 
-# * By guarding data, they are also preventing it being used for good (maybe bad) causes 
-
-# <img src="images/cambridge.png" width="1000"/>
-
-# Facebook loophole that allowed third-party apps to access not only user profile data but profile data of all friends. Kogan copied someone else's idea and made "thisisyourdigitallife". Only 270K used it but collected data from all friends of users (50+ million FB profiles).
+# 
+# ```{image} images/airbnb.png
+# :width: 900px
+# :align: center
+# ```
+# 
 
 # ## Web scraping
 # 
-# * Also known as crawling or harvesting is the practice of **automatically** gathering data from the internet without the use of an **API**
+# 
+# * Since web pages are usually organized in a specfic way, we can still download data from them. 
+# 
+# 
+# * Web scraping (also known as crawling or harvesting) is the practice of **automatically** gathering data from the internet without the use of an **API**
 # 
 # 
 # * Most commonly accomplished by writing a program that **queries** a web server, **requests** data (usually in the form of HTML), and **parses** that data to extract information
 
-# <img src="images/scrape_hero.png" width="1000"/>
+# ```{image} images/scrape_hero.png
+# :width: 900px
+# :align: center
+# ```
 
-# <img src="images/inside_airbnb.png" width="1000"/>
+# ```{image} images/inside_airbnb.png
+# :width: 900px
+# :align: center
+# ```
 
 # ## Suppose a friend wanted to do this?
-# 
-
-# * Some HTML basics
-# 
 # 
 # * `requests`: standard Python library for requesting data from the web
 # 
@@ -138,27 +235,63 @@ df['00060_Mean'].plot()
 # 
 # * `selenium`: is a library for performing **web browser automation**
 
-# <img src="images/html.png" width="800"/>
-
-# <html>
-#     <h1>Geospatial Data Science Applications: GEOG 4/590</h1>
-#     <h3>Feb 14, 2022</h3>
-#     <h2>Lecture 7: Data access</h2>
-#     <img src="images/coding-computer-programming.jpeg" width="150"/>
-#     <h3>Johnny Ryan: jryan4@uoregon.edu</h3>
-# </html>
-
 # ### `requests`
+# 
+# A lot of data on Wikipedia is contained in HTML tables which have the following syntax.
+# 
+# 
+# * The table itself starts with the `<table>` tag and finishes with `</table>`
+# 
+# 
+# * Table rows start with the `<tr>` tag and finish with `</tr>`
+# 
+# 
+# * Table headers start with the `<th>` tag and finish with `</th>`
+# 
+# 
+# * Table data start with the `<td>` tag and finish with `</td>`
+# 
+# 
+# The table below, showing some of the biggest soccer clubs in the world, is an example of a simple HTML table. 
 
-# In[2]:
+# <table>
+#   <tr>
+#     <th>Team</th>
+#     <th>Manager</th>
+#     <th>Country</th>
+#   </tr>
+#   <tr>
+#     <td>Real Madrid</td>
+#     <td>Carlo Ancelotti</td>
+#     <td>Spain</td>
+#   </tr>
+#   <tr>
+#     <td>Bayern Munich</td>
+#     <td>Julian Nagelsmann</td>
+#     <td>Germany</td>
+#   </tr>
+#     <tr>
+#     <td>Hull City</td>
+#     <td>Liam Rosenior</td>
+#     <td>England</td>
+#   </tr>
+#     <tr>
+#     <td>Paris Saint-Germain</td>
+#     <td>Christophe Galtier</td>
+#     <td>France</td>
+#   </tr>
+# </table>
+
+# ```{image} images/html.png
+# :width: 300px
+# :align: center
+# ```
+
+# In[28]:
 
 
 # Import packages
-import requests 
-
-
-# In[7]:
-
+import requests
 
 # Open a webpage
 html = requests.get('https://en.wikipedia.org/wiki/Climate_of_Oregon')
@@ -167,9 +300,15 @@ html = requests.get('https://en.wikipedia.org/wiki/Climate_of_Oregon')
 html
 
 
-# <img src="images/climate_wiki.png" width="1000"/>
+# ```{image} images/climate_wiki.png
+# :width: 900px
+# :align: center
+# ```
 
-# <img src="images/more_html.png" width="1000"/>
+# ```{image} images/more_html.png
+# :width: 900px
+# :align: center
+# ```
 
 # ## BeautifulSoup4
 # 
@@ -178,29 +317,27 @@ html
 # 
 # * ...or we could use another package called `BeautifulSoup` (also known as `bs4`) a Python library for parsing data out of HTML and XML files
 # 
-# <img src="images/bs4.jpg" width="200"/>
+# ```{image} images/bs4.jpg
+# :width: 200px
+# :align: center
+# ```
+# 
 
-# ### Import packages
-
-# In[9]:
+# In[42]:
 
 
 # Import package
 from bs4 import BeautifulSoup, SoupStrainer
 
-
-# In[20]:
-
-
 # Read HTML content as "soup object" and define default parser
 soup = BeautifulSoup(html.text, 'html.parser')
 
 
-# ### Parse HTML using 
+# ### Parse HTML
 # 
 # The `.find` and `.find_all` are the most common methods we will use. They can be used to filter HTML code to find a list of tags or tags with specific attributes.  
 
-# In[24]:
+# In[43]:
 
 
 # Define heading tags
@@ -214,50 +351,50 @@ for tags in headings:
     print(tags.name + ' -> ' + tags.text.strip())
 
 
-# In[31]:
+# In[44]:
 
 
 # Find every hyperlink
 links = soup.find_all('a')
 
 # Loop over every link and print hyperlink
-for link in links:
+for link in links[0:10]:
     print(link.get('href'))
 
 
-# In[98]:
+# In[45]:
 
 
 # Find number of images on page
 len(soup.find_all('img'))
 
 
-# In[104]:
+# In[51]:
 
 
 # Print details of first image
-print(soup.find_all('img')[0])
+print(soup.find_all('img')[5])
 
 
-# In[103]:
+# In[52]:
 
 
 # Find attributes of first image
-print(soup.find_all('img')[0].attrs['src'])
+print(soup.find_all('img')[5].attrs['src'])
 
 
-# In[97]:
+# In[53]:
 
 
 # Download image
-url = 'https://' + soup.find_all('img')[0].attrs['src'][2:]
+url = 'https://' + soup.find_all('img')[5].attrs['src'][2:]
 response = requests.get(url)
 if response.status_code == 200:
     with open("images/test_image.jpg", 'wb') as f:
         f.write(response.content)
 
 
-# In[99]:
+# In[54]:
 
 
 # Import packages
@@ -281,16 +418,19 @@ plt.imshow(img)
 # 
 # * We can use Selenium to enter text in search boxes, click buttons etc. 
 # 
-# <img src="images/selenium.png" width="200"/>
+# 
+# ```{image} images/selenium.png
+# :width: 200px
+# :align: center
+# ```
 
-# In[1]:
+# In[56]:
 
 
-# Install webdriver_manager: https://github.com/SergeyPirogov/webdriver_manager
-get_ipython().system('pip3 install webdriver_manager')
+get_ipython().run_cell_magic('capture', '', '# Install webdriver_manager: https://github.com/SergeyPirogov/webdriver_manager\n!pip3 install webdriver_manager')
 
 
-# In[2]:
+# In[57]:
 
 
 # Import packages
@@ -300,7 +440,7 @@ from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 
 
-# In[3]:
+# In[58]:
 
 
 # Install Chrome webdriver
@@ -310,9 +450,16 @@ driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 driver.get("https://www.google.com/maps")
 
 
-# <img src="images/google_maps.png" width="1000"/>
+# ```{image} images/google_maps.png
+# :width: 900px
+# :align: center
+# ```
 
-# <img src="images/inspect.png" width="1000"/>
+# ```{image} images/inspect.png
+# :width: 900px
+# :align: center
+# ```
+# 
 
 # In[4]:
 
@@ -322,7 +469,11 @@ inputElement = driver.find_element(By.ID, "searchboxinput")
 inputElement.send_keys('South Sister Oregon')
 
 
-# <img src="images/enter_text.png" width="1000"/>
+# ```{image} images/enter_text.png
+# :width: 900px
+# :align: center
+# ```
+# 
 
 # In[5]:
 
@@ -332,4 +483,8 @@ element = driver.find_element(By.ID, "searchbox-searchbutton")
 element.click()
 
 
-# <img src="images/search.png" width="1000"/>
+# ```{image} images/search.png
+# :width: 900px
+# :align: center
+# ```
+# 
