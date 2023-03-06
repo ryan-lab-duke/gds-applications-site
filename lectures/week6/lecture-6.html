@@ -1,812 +1,375 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Code management &#8212; Geospatial Data Science</title>
-  
-  
-  
-  <script data-cfasync="false">
-    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
-  </script>
-  
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
-<link href="../../_static/styles/bootstrap.css?digest=796348d33e8b1d947c94" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
-  
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=796348d33e8b1d947c94" rel="stylesheet">
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=4ec06e9971c5264fbd345897d5258098f11cc577" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94">
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94">
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=8bf782fb4ee92b3d3646425e50f299c4e1fd152d"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'lectures/week6/lecture-6';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Final project setup" href="../../labs/week6/project-setup.html" />
     <link rel="prev" title="Project ideas" href="../../labs/week5/project-ideas.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="docsearch:language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
   </head>
-  
-  
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
-
-  
-  
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-
-  
-  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
-  <label class="overlay overlay-primary" for="__primary"></label>
-
-  
-  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
-      
-<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-    </div>
-  </div>
-
-  
-  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
-  <label class="sidebar-toggle primary-toggle" for="__primary">
-      <span class="fa-solid fa-bars"></span>
-  </label>
-  <div id="navbar-start">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
+    <div class="container-fluid" id="banner"></div>
+
     
-  
 
-
-<a class="navbar-brand logo" href="../../intro.html">
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <img src="../../_static/uo_logo.png" class="logo__image only-light" alt="Logo image">
-    <img src="../../_static/uo_logo.png" class="logo__image only-dark" alt="Logo image">
-  
-  
-</a>
-    
-  </div>
-
-  
-  <div class="col-lg-9 navbar-header-items">
-    <div id="navbar-center" class="mr-auto">
-      
-      <div class="navbar-center-item">
-        <nav class="navbar-nav">
-    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
-        Site Navigation
-    </p>
-    <ul id="navbar-main-elements" class="navbar-nav">
-        
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../course-info/general-info.html">
-                        General information
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../course-info/schedule.html">
-                        Schedule (for Winter 2023)
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../course-info/python.html">
-                        Python
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../course-info/github.html">
-                        GitHub
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../course-info/final-project.html">
-                        Final projects
-                      </a>
-                    </li>
-                
-            <div class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    More
-                </button>
-                <div class="dropdown-menu">
-                    
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../week1/lecture-1.html">
-                        Introduction
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../labs/week1/assignment1.html">
-                        Assignment 1
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../week2/lecture-2.html">
-                        Vector data analysis
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../labs/week2/assignment2.html">
-                        Assignment 2
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../week3/lecture-3.html">
-                        Network data analysis
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../labs/week3/assignment3.html">
-                        Assignment 3
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../week4/lecture-4a.html">
-                        Gridded data analysis
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../week4/lecture-4b.html">
-                        Climate data analysis
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../labs/week4/assignment4.html">
-                        Assignment 4
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../week5/lecture-5.html">
-                        Machine learning
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../labs/week5/assignment5.html">
-                        Assignment 5
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../labs/week5/project-ideas.html">
-                        Project ideas
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="#">
-                        Code management
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../labs/week6/project-setup.html">
-                        Final project setup
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../labs/week6/assignment6.html">
-                        Assignment 6
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../week7/lecture-7.html">
-                        Data access
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../week8/lecture-8.html">
-                        Geospatial data visualization
-                      </a>
-                    </li>
-                
-                </div>
-            </div>
-            
-    </ul>
-</nav>
-      </div>
-      
-    </div>
-
-    <div id="navbar-end">
-      
-        <div class="navbar-end-item navbar-persistent--container">
+    <div class="container-xl">
+      <div class="row">
           
-<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
-  <i class="fa-solid fa-magnifying-glass"></i>
-</button>
-        </div>
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
       
-      
-      <div class="navbar-end-item">
-        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
-</button>
-      </div>
-      
-      <div class="navbar-end-item">
-        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
-      </ul>
-      </div>
-      
-    </div>
-  </div>
-
-
-  
-  
-    <div class="navbar-persistent--mobile">
-<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
-  <i class="fa-solid fa-magnifying-glass"></i>
-</button>
-    </div>
-  
-
-  
-  <label class="sidebar-toggle secondary-toggle" for="__secondary">
-      <span class="fa-solid fa-outdent"></span>
-  </label>
-  
-
-</div>
-  </nav>
-  
-
-  <div class="bd-container">
-    <div class="bd-container__inner bd-page-width">
-      
-      <div class="bd-sidebar-primary bd-sidebar">
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
-  
-  <div class="sidebar-header-items sidebar-primary__section">
-    
-    
-      <div class="sidebar-header-items__center">
       
-      <div class="navbar-center-item">
-        <nav class="navbar-nav">
-    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
-        Site Navigation
-    </p>
-    <ul id="navbar-main-elements" class="navbar-nav">
-        
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../course-info/general-info.html">
-                        General information
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../course-info/schedule.html">
-                        Schedule (for Winter 2023)
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../course-info/python.html">
-                        Python
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../course-info/github.html">
-                        GitHub
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../course-info/final-project.html">
-                        Final projects
-                      </a>
-                    </li>
-                
-            <div class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    More
-                </button>
-                <div class="dropdown-menu">
-                    
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../week1/lecture-1.html">
-                        Introduction
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../labs/week1/assignment1.html">
-                        Assignment 1
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../week2/lecture-2.html">
-                        Vector data analysis
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../labs/week2/assignment2.html">
-                        Assignment 2
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../week3/lecture-3.html">
-                        Network data analysis
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../labs/week3/assignment3.html">
-                        Assignment 3
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../week4/lecture-4a.html">
-                        Gridded data analysis
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../week4/lecture-4b.html">
-                        Climate data analysis
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../labs/week4/assignment4.html">
-                        Assignment 4
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../week5/lecture-5.html">
-                        Machine learning
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../labs/week5/assignment5.html">
-                        Assignment 5
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../labs/week5/project-ideas.html">
-                        Project ideas
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="#">
-                        Code management
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../labs/week6/project-setup.html">
-                        Final project setup
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../labs/week6/assignment6.html">
-                        Assignment 6
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../week7/lecture-7.html">
-                        Data access
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../week8/lecture-8.html">
-                        Geospatial data visualization
-                      </a>
-                    </li>
-                
-                </div>
-            </div>
-            
-    </ul>
-</nav>
-      </div>
       
-      </div>
-    
-
-    
-    
-    <div class="sidebar-header-items__end">
+      <img src="../../_static/uo_logo.png" class="logo" alt="logo">
       
-      <div class="navbar-end-item">
-        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
-</button>
-      </div>
       
-      <div class="navbar-end-item">
-        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
-      </ul>
-      </div>
+      <h1 class="site-logo" id="site-title">Geospatial Data Science</h1>
       
-    </div>
-    
-  </div>
-
-  
-  <div class="sidebar-start-items sidebar-primary__section">
-    <div class="sidebar-start-items__item">
-  
-
-
-<a class="navbar-brand logo" href="../../intro.html">
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <img src="../../_static/uo_logo.png" class="logo__image only-light" alt="Logo image">
-    <img src="../../_static/uo_logo.png" class="logo__image only-dark" alt="Logo image">
-  
-  
-</a>
-    </div>
-    <div class="sidebar-start-items__item">
-<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-    </div>
-    <div class="sidebar-start-items__item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item navbar-nav active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../../intro.html">
-                    Welcome to Geospatial Data Science 2023!
-                </a>
-            </li>
-        </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Course information</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../course-info/general-info.html">General information</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../course-info/schedule.html">Schedule (for Winter 2023)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../course-info/python.html">Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../course-info/github.html">GitHub</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../course-info/final-project.html">Final projects</a></li>
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to Geospatial Data Science 2023!
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 1</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Course information
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../week1/lecture-1.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../labs/week1/assignment1.html">Assignment 1</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course-info/general-info.html">
+   General information
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course-info/schedule.html">
+   Schedule (for Winter 2023)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course-info/python.html">
+   Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course-info/github.html">
+   GitHub
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course-info/final-project.html">
+   Final projects
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 2</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 1
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../week2/lecture-2.html">Vector data analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../labs/week2/assignment2.html">Assignment 2</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week1/lecture-1.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../labs/week1/assignment1.html">
+   Assignment 1
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 3</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 2
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../week3/lecture-3.html">Network data analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../labs/week3/assignment3.html">Assignment 3</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week2/lecture-2.html">
+   Vector data analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../labs/week2/assignment2.html">
+   Assignment 2
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 4</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 3
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../week4/lecture-4a.html">Gridded data analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../week4/lecture-4b.html">Climate data analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../labs/week4/assignment4.html">Assignment 4</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week3/lecture-3.html">
+   Network data analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../labs/week3/assignment3.html">
+   Assignment 3
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 5</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 4
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../week5/lecture-5.html">Machine learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../labs/week5/assignment5.html">Assignment 5</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../labs/week5/project-ideas.html">Project ideas</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week4/lecture-4a.html">
+   Gridded data analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week4/lecture-4b.html">
+   Climate data analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../labs/week4/assignment4.html">
+   Assignment 4
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 6</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 5
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week5/lecture-5.html">
+   Machine learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../labs/week5/assignment5.html">
+   Assignment 5
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../labs/week5/project-ideas.html">
+   Project ideas
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 6
+ </span>
+</p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Code management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../labs/week6/project-setup.html">Final project setup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../labs/week6/assignment6.html">Assignment 6</a></li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Code management
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../labs/week6/project-setup.html">
+   Final project setup
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../labs/week6/assignment6.html">
+   Assignment 6
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 7</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 7
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../week7/lecture-7.html">Data access</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week7/lecture-7.html">
+   Data access
+  </a>
+ </li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 8</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Week 8
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../week8/lecture-8.html">Geospatial data visualization</a></li>
-
+ <li class="toctree-l1">
+  <a class="reference internal" href="../week8/lecture-8.html">
+   Visualization
+  </a>
+ </li>
 </ul>
 
     </div>
-</nav>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/lectures/week6/lecture-6.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
-  </div>
-  
+</div>
 
-  
-  <div class="sidebar-end-items sidebar-primary__section">
-    <div class="sidebar-end-items__item">
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/owel-lab/gds-applications-site"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/owel-lab/gds-applications-site/issues/new?title=Issue%20on%20page%20%2Flectures/week6/lecture-6.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
     </div>
-  </div>
+</div>
 
-  
-  <div id="rtd-footer-container"></div>
+            <!-- Full screen (wrap in <a> to have style consistency -->
 
-      </div>
-      <main id="main-content" class="bd-main">
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/owel-lab/gds-applications-site/main?urlpath=tree/book/lectures/week6/lecture-6.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
         
         
-
-<div class="sbt-scroll-pixel-helper"></div>
-
-        <div class="bd-content">
-          <div class="bd-article-container">
-            
-            <div class="bd-header-article">
-                
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        <label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" data-toggle="tooltip" data-placement="right" title="Toggle primary sidebar">
-            <span class="fa-solid fa-bars"></span>
-        </label>
-    </div>
-    <div class="header-article__right">
-
-
-<div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
-  </button>
-  <ul class="dropdown-menu">
-  </ul>
-</div>
-
-<button onclick="toggleFullScreen()"
-  class="btn btn-sm"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-
-
-
-<div class="dropdown dropdown-repository-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
-    <i class="fab fa-github"></i>
-  </button>
-  <ul class="dropdown-menu">
-      <li><a href="https://github.com/owel-lab/gds-applications-site" target="_blank"
-   class="btn btn-sm dropdown-item"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="btn__text-container">repository</span>
-</a>
-</a>
-      
-      <li><a href="https://github.com/owel-lab/gds-applications-site/issues/new?title=Issue%20on%20page%20%2Flectures/week6/lecture-6.html&body=Your%20issue%20content%20here." target="_blank"
-   class="btn btn-sm dropdown-item"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="btn__text-container">open issue</span>
-</a>
-</a>
-      
-  </ul>
-</div>
-
-
-
-<div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
-    <i class="fas fa-download"></i>
-  </button>
-  <ul class="dropdown-menu">
-      <li><a href="../../_sources/lectures/week6/lecture-6.ipynb" target="_blank"
-   class="btn btn-sm dropdown-item"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="btn__text-container">.ipynb</span>
-</a>
-</a>
-      
-      <li>
-<button onclick="printPdf(this)"
-  class="btn btn-sm dropdown-item"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="btn__text-container">.pdf</span>
-</button>
-</a>
-      
-  </ul>
-</div>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary" data-toggle="tooltip" data-placement="left" title="Toggle secondary sidebar">
-            <span class="fa-solid fa-list"></span>
-        </label>
+        
+        
     </div>
 </div>
-            </div>
-            
-            
 
-<div id="jb-print-docs-body" class="onlyprint">
-    <h1>Code management</h1>
-    <!-- Table of contents -->
-    <div id="print-main-content">
-        <div id="jb-print-toc">
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
-            <div>
-                <h2> Contents </h2>
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
             </div>
-            <nav aria-label="Page">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#git">
@@ -979,357 +542,20 @@ title="Print to PDF"
         </div>
     </div>
 </div>
-
-            <article class="bd-article" role="main">
-              
-  <section class="tex2jax_ignore mathjax_ignore" id="code-management">
-<h1>Code management<a class="headerlink" href="#code-management" title="Permalink to this heading">#</a></h1>
-<p>In this demo we will learn about using <strong>version control</strong> to collaborate on programming projects.</p>
-<a class="reference internal image-reference" href="../../_images/version_control.png"><img alt="../../_images/version_control.png" class="align-center" src="../../_images/version_control.png" style="width: 400px;" /></a>
-<p>We’ve all been in this situation before: it seems unnecessary to have multiple nearly-identical versions of the same document.</p>
-<p>The danger of losing good versions often leads to the problematic workflow illustrated in the PhD Comics cartoon at the top of this page.</p>
-<p>Collaborative writing with traditional word processors is cumbersome. Either every collaborator has to work on a document sequentially (slowing down the process of writing), or you have to send out a version to all collaborators and manually merge their comments into your document. The <strong>track changes</strong> option can highlight changes for you and simplifies merging, but as soon as you accept changes you will lose their history. You will then no longer know who suggested that change, why it was suggested, or when it was merged into the rest of the document.</p>
-<ul class="simple">
-<li><p><strong>Version control systems</strong> (VCS) start with a <strong>base version</strong> of the document and then <strong>keeps track of changes</strong> you make each step of the way</p></li>
-<li><p>VCS are essential for <strong>developing software</strong> and <strong>carrying out projects</strong> with a lot of code</p></li>
-<li><p>VCS does not care about file names, intead records <strong>who, what, when, and why</strong> changes were made to files</p></li>
-</ul>
-<a class="reference internal image-reference" href="../../_images/branch.svg"><img alt="../../_images/branch.svg" class="align-center" src="../../_images/branch.svg" width="600px" /></a>
-<section id="git">
-<h2>Git<a class="headerlink" href="#git" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>One of the most popular VCS tools in use today is called <code class="docutils literal notranslate"><span class="pre">git</span></code></p></li>
-<li><p>It is a command-line tool that is installed locally</p></li>
-<li><p>It is free and open-source software</p></li>
-</ul>
-<a class="reference internal image-reference" href="../../_images/git.svg"><img alt="../../_images/git.svg" class="align-center" src="../../_images/git.svg" width="600px" /></a>
-</section>
-<section id="github">
-<h2>GitHub<a class="headerlink" href="#github" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p><strong>GitHub</strong> is a web-based hosting service for <code class="docutils literal notranslate"><span class="pre">git</span></code></p></li>
-<li><p>Provides a graphical user interface</p></li>
-<li><p>Maintained by Microsoft</p></li>
-<li><p>There are other web-based hosting services (e.g. <strong>GitLab</strong> and <strong>Bitbucket</strong>)</p></li>
-</ul>
-<a class="reference internal image-reference" href="../../_images/github1.png"><img alt="../../_images/github1.png" class="align-center" src="../../_images/github1.png" style="width: 200px;" /></a>
-</section>
-<section id="why-do-we-use-version-control-systems">
-<h2>Why do we use version control systems?<a class="headerlink" href="#why-do-we-use-version-control-systems" title="Permalink to this heading">#</a></h2>
-<section id="security">
-<h3>Security<a class="headerlink" href="#security" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p>VCS acts like an unlimited <strong>‘undo’</strong> thereby <strong>protecting source code</strong> from yourself <strong>and</strong> others</p></li>
-<li><p>e.g. catastrophe, human error, and unintended consequences</p></li>
-</ul>
-<a class="reference internal image-reference" href="../../_images/hero.svg"><img alt="../../_images/hero.svg" class="align-center" src="../../_images/hero.svg" width="600px" /></a>
-</section>
-<section id="collaboration">
-<h3>Collaboration<a class="headerlink" href="#collaboration" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p>VCS enables <strong>many people</strong> to work on the same project at the same time</p></li>
-<li><p>Teams working in parallel accelerates project development</p></li>
-</ul>
-<a class="reference internal image-reference" href="../../_images/colab.svg"><img alt="../../_images/colab.svg" class="align-center" src="../../_images/colab.svg" width="500px" /></a>
-</section>
-<section id="community">
-<h3>Community<a class="headerlink" href="#community" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Impossible for junior developer to mess up a big project</p></li>
-<li><p>Since it is so robust this encourages open-source <strong>experimentation</strong> and <strong>development</strong></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">GitHub</span></code> has really emerged as the industry standard</p></li>
-</ul>
-<a class="reference internal image-reference" href="../../_images/pull.svg"><img alt="../../_images/pull.svg" class="align-center" src="../../_images/pull.svg" width="500px" /></a>
-</section>
-</section>
-<section id="drawbacks-of-version-control">
-<h2>Drawbacks of version control<a class="headerlink" href="#drawbacks-of-version-control" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Difficult to learn</p></li>
-</ul>
-<a class="reference internal image-reference" href="../../_images/meme.jpeg"><img alt="../../_images/meme.jpeg" class="align-center" src="../../_images/meme.jpeg" style="width: 600px;" /></a>
-</section>
-<section id="some-basic-terms">
-<h2>Some basic terms<a class="headerlink" href="#some-basic-terms" title="Permalink to this heading">#</a></h2>
-<section id="fork">
-<h3>Fork<a class="headerlink" href="#fork" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Copy</strong> a repository to your <a class="reference external" href="http://GitHub.com">GitHub.com</a> account</p></li>
-</ul>
-</section>
-<section id="clone">
-<h3>Clone<a class="headerlink" href="#clone" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Retrieve a repository from <strong><a class="reference external" href="http://GitHub.com">GitHub.com</a></strong> to <strong>local machine</strong></p></li>
-</ul>
-</section>
-<section id="commit">
-<h3>Commit<a class="headerlink" href="#commit" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Create a <strong>snapshot</strong> of the contents of your file tree</p></li>
-</ul>
-</section>
-<section id="push">
-<h3>Push<a class="headerlink" href="#push" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Upload</strong> your local changes to the central repository, along with necessary commits and objects</p></li>
-</ul>
-</section>
-<section id="pull">
-<h3>Pull<a class="headerlink" href="#pull" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Fetch</strong> the contents of the central repository and immediately <strong>merge</strong> to your local copy</p></li>
-</ul>
-</section>
-</section>
-<section id="collaborating-with-github">
-<h2>Collaborating with GitHub<a class="headerlink" href="#collaborating-with-github" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Centralized workflow</p></li>
-<li><p>Feature branch workflow</p></li>
-<li><p>Forking workflow</p></li>
-<li><p>Others (e.g. Gitflow workflow)</p></li>
-</ul>
-</section>
-<section id="centralized-workflow">
-<h2>Centralized workflow<a class="headerlink" href="#centralized-workflow" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>All team members <strong>clone</strong> a <strong>single, central repository</strong> to their local machine</p></li>
-</ul>
-<a class="reference internal image-reference" href="../../_images/colab.svg"><img alt="../../_images/colab.svg" class="align-center" src="../../_images/colab.svg" width="600px" /></a>
-<ul class="simple">
-<li><p>One team member makes changes (e.g. add, modify, delete) to files on their local machine</p></li>
-<li><p>Periodically, they should <strong>commit</strong> these changes (i.e. take a snapshot) with a short message saying what they did</p></li>
-<li><p>When they are finished working, they can <strong>push</strong> their changes back to the central repository</p></li>
-</ul>
-<a class="reference internal image-reference" href="../../_images/john_push.svg"><img alt="../../_images/john_push.svg" class="align-center" src="../../_images/john_push.svg" width="600px" /></a>
-<ul class="simple">
-<li><p>But now when <strong>another team member</strong> (who has also been working on the project) tries to <strong>push</strong> their changes, Git will <strong>refuse the request</strong> because the their local history has <strong>diverged</strong> from the central repository</p></li>
-</ul>
-<a class="reference internal image-reference" href="../../_images/mary_push.svg"><img alt="../../_images/mary_push.svg" class="align-center" src="../../_images/mary_push.svg" width="600px" /></a>
-<ul class="simple">
-<li><p>The team member must first <strong>pull</strong> the most recent changes in the central reposistory into their local repository</p></li>
-</ul>
-<a class="reference internal image-reference" href="../../_images/mary_pull.svg"><img alt="../../_images/mary_pull.svg" class="align-center" src="../../_images/mary_pull.svg" width="600px" /></a>
-<ul class="simple">
-<li><p>Team member then resolves any conflicts between their local version and the central repository.</p></li>
-<li><p>Once finished, team member can then <strong>commit</strong> and <strong>push</strong> their changes to the central repo</p></li>
-</ul>
-<a class="reference internal image-reference" href="../../_images/mary_successful_push.svg"><img alt="../../_images/mary_successful_push.svg" class="align-center" src="../../_images/mary_successful_push.svg" width="600px" /></a>
-<section id="advantages">
-<h3>Advantages<a class="headerlink" href="#advantages" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Simplest workflow</p></li>
-<li><p>Works well for small teams</p></li>
-</ul>
-</section>
-<section id="disadvantages">
-<h3>Disadvantages<a class="headerlink" href="#disadvantages" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p>If someone breaks the central repo, it breaks for everyone</p></li>
-<li><p>Potential for a lot of conflicts</p></li>
-<li><p>One solution is to avoid working on the same files</p></li>
-<li><p>But this does not scale well as teams increase in size</p></li>
-</ul>
-</section>
-<section id="feature-branch-workflow">
-<h3>Feature branch workflow<a class="headerlink" href="#feature-branch-workflow" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p>The logical extension of the centralized workflow is to use <strong>branches</strong></p></li>
-<li><p>In this workflow, all feature development takes place in a dedicated branch instead of the main branch</p></li>
-<li><p>This means that main branch never contains broken code - a huge advantage for continuous integration environments</p></li>
-</ul>
-<ul class="simple">
-<li><p>All team members <strong>clone</strong> a <strong>single, central repository</strong> to their local machine</p></li>
-</ul>
-<a class="reference internal image-reference" href="../../_images/colab.svg"><img alt="../../_images/colab.svg" class="align-center" src="../../_images/colab.svg" width="600px" /></a>
-<ul class="simple">
-<li><p>Team members immediately create a new branch to make their changes</p></li>
-</ul>
-<a class="reference internal image-reference" href="../../_images/big_branch.svg"><img alt="../../_images/big_branch.svg" class="align-center" src="../../_images/big_branch.svg" width="600px" /></a>
-<ul class="simple">
-<li><p>When team members finish their changes, they <strong>push</strong> their branch to the central repository. The central repository will now contain multiple branches.</p></li>
-<li><p>Therefore, unlike the centralized workflow, this <strong>push</strong> will never cause conflicts</p></li>
-</ul>
-<a class="reference internal image-reference" href="../../_images/mary_successful_push.svg"><img alt="../../_images/mary_successful_push.svg" class="align-center" src="../../_images/mary_successful_push.svg" width="600px" /></a>
-<ul class="simple">
-<li><p>Team members then submit a <strong>pull request</strong> on <a class="reference external" href="http://GitHub.com">GitHub.com</a> asking to <strong>merge</strong> their new feature (or branch) into the main codebase, all team members will be notified automatically</p></li>
-</ul>
-<a class="reference internal image-reference" href="../../_images/git-pull-request.png"><img alt="../../_images/git-pull-request.png" class="align-center" src="../../_images/git-pull-request.png" style="width: 300px;" /></a>
-<ul class="simple">
-<li><p>Team leader <strong>reviews</strong> pull request, discusses any changes with team members</p></li>
-<li><p>Once everything looks good, team leader merges new feature into main codebase</p></li>
-<li><p>Team member can then delete their branch</p></li>
-</ul>
-<a class="reference internal image-reference" href="../../_images/merge.svg"><img alt="../../_images/merge.svg" class="align-center" src="../../_images/merge.svg" width="600px" /></a>
-<a class="reference internal image-reference" href="../../_images/pull-request.png"><img alt="../../_images/pull-request.png" class="align-center" src="../../_images/pull-request.png" style="width: 800px;" /></a>
-<a class="reference internal image-reference" href="../../_images/pr-changes.png"><img alt="../../_images/pr-changes.png" class="align-center" src="../../_images/pr-changes.png" style="width: 1000px;" /></a>
-<a class="reference internal image-reference" href="../../_images/create-pull-request.png"><img alt="../../_images/create-pull-request.png" class="align-center" src="../../_images/create-pull-request.png" style="width: 1000px;" /></a>
-<a class="reference internal image-reference" href="../../_images/github-diff-file.png"><img alt="../../_images/github-diff-file.png" class="align-center" src="../../_images/github-diff-file.png" style="width: 800px;" /></a>
-</section>
-<section id="advantages-of-feature-branch-workflow">
-<h3>Advantages of feature branch workflow<a class="headerlink" href="#advantages-of-feature-branch-workflow" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Promotes collaboration with team members through <strong>pull requests</strong> and <strong>merge reviews</strong></p></li>
-<li><p>Teams can work in parallel on same files so good approach for larger teams</p></li>
-<li><p>Main branch never contains broken code</p></li>
-<li><p>Guiding framework for other, more complex worflows</p></li>
-</ul>
-<ul class="simple">
-<li><p>Instead of using a single, central repository, forking workflows give every team member their <strong>own central repository</strong></p></li>
-<li><p>Team members can tinker with their forked repository as they wish without disturbing anyone else</p></li>
-<li><p>When ready they can <strong>push</strong> to their private central repository and file <strong>pull requests</strong> if they think their changes are ready to be integrated to main codebase</p></li>
-</ul>
-<a class="reference internal image-reference" href="../../_images/multiple_repos.svg"><img alt="../../_images/multiple_repos.svg" class="align-center" src="../../_images/multiple_repos.svg" width="600px" /></a>
-<ul class="simple">
-<li><p>Provides a little more <strong>power</strong> to the team leader because they are the only person that can push to the official repository</p></li>
-<li><p>Allows the team leader to <strong>accept/reject commits</strong> from any developer without giving them write access to the main codebase</p></li>
-<li><p>Often used for large open-source projects</p></li>
-</ul>
-</section>
-</section>
-<section id="good-practices">
-<h2>Good practices<a class="headerlink" href="#good-practices" title="Permalink to this heading">#</a></h2>
-<section id="agree-on-a-workflow">
-<h3>Agree on a workflow<a class="headerlink" href="#agree-on-a-workflow" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p>It is important that teams establish shared patterns of collaboration</p></li>
-<li><p>If a team doesn’t agree on a shared workflow it can lead to inefficient communication when it comes time to merge branches</p></li>
-</ul>
-</section>
-<section id="commit-often">
-<h3>Commit often<a class="headerlink" href="#commit-often" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Commits are <strong>easy to make</strong> and provide opportunities to <strong>revert</strong> or <strong>undo</strong> work</p></li>
-<li><p>They should be made <strong>frequently</strong> to capture updates to a code base</p></li>
-</ul>
-</section>
-<section id="ensure-you-re-working-from-latest-version">
-<h3>Ensure you’re working from latest version<a class="headerlink" href="#ensure-you-re-working-from-latest-version" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p>VCS enables rapid updates from multiple developers</p></li>
-<li><p>It’s easy to have a local copy of the codebase fall behind the global copy</p></li>
-<li><p>Make sure to <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> or <code class="docutils literal notranslate"><span class="pre">fetch</span></code> the latest code before you start working on project</p></li>
-</ul>
-</section>
-<section id="make-detailed-notes">
-<h3>Make detailed notes<a class="headerlink" href="#make-detailed-notes" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p>It is important to leave descriptive explanatory commit log messages. These commit log messages should explain the “why” and “what” that encompass the commits content.</p></li>
-<li><p>These log messages become the canonical history of the project’s development and leave a trail for future contributors to review.</p></li>
-</ul>
-</section>
-<section id="use-branches">
-<h3>Use branches<a class="headerlink" href="#use-branches" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Branches enable multiple developers to work in parallel on <strong>separate lines</strong> of development</p></li>
-<li><p>Branches should be used <strong>frequently</strong> as they are quick and inexpensive.</p></li>
-<li><p>When development on a branch is complete it should be <strong>merged</strong> into the main line of development and then <strong>deleted</strong></p></li>
-</ul>
-<p>There are two ways to use <code class="docutils literal notranslate"><span class="pre">git</span></code>, the command-line and <strong>GitHub Desktop</strong>. Most students prefer to use the desktop version to begin with but we’d be happy to provide guidance on the command-line version during labs.</p>
-</section>
-</section>
-<section id="github-desktop">
-<h2>GitHub Desktop<a class="headerlink" href="#github-desktop" title="Permalink to this heading">#</a></h2>
-<p>We will talk a bit more about <code class="docutils literal notranslate"><span class="pre">git</span></code> later in the lecture but, to continue setting up our project, go ahead and install <a class="reference external" href="https://desktop.github.com/"><strong>GitHub Desktop</strong></a>.</p>
-<ul class="simple">
-<li><p>Open <strong>GitHub Desktop</strong> → <strong>Add an Existing Repository from your Hard Drive…</strong></p></li>
-<li><p>Select <strong>Choose…</strong> and navigate to your project folder</p></li>
-<li><p>Respond to this warning by clicking <strong>create a repository</strong></p></li>
-<li><p>Leave everything as is and <strong>Create Repository</strong></p></li>
-</ul>
-<p>Now we can <strong>Publish repository</strong> on <a class="reference external" href="http://Github.com">Github.com</a> by clicking the big blue button. If you signed up for an educational GitHub account we should able to tick the box to <strong>Keep this code private</strong> and click <strong>Publish Repository</strong> again.</p>
-</section>
-<section id="github-com">
-<h2><a class="reference external" href="http://GitHub.com">GitHub.com</a><a class="headerlink" href="#github-com" title="Permalink to this heading">#</a></h2>
-<p>If we navigate to <code class="docutils literal notranslate"><span class="pre">github.com</span></code> on a web browser, sign in, and navigate to our profile, there should be a new <strong>repository</strong> that contains our files (just an <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> and <code class="docutils literal notranslate"><span class="pre">.venv</span></code> folder for now).</p>
-</section>
-<section id="basic-usage">
-<h2>Basic usage<a class="headerlink" href="#basic-usage" title="Permalink to this heading">#</a></h2>
-<p>In line with our “learn by doing” mantra, we will demonstrate the basics of version control with GitHub using a demo.</p>
-<section id="add-a-new-file">
-<h3>Add a new file<a class="headerlink" href="#add-a-new-file" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Make a new text file using <strong>Notepad</strong> on Windows or <strong>TextEdit</strong> on MacOS called <code class="docutils literal notranslate"><span class="pre">README.md</span></code>, add some random text, and save.</p></li>
-<li><p>In <strong>GitHub Desktop</strong> we will see <strong>1 changed file</strong>.</p></li>
-<li><p>Type in <strong>“Added README”</strong> in the <strong>Summary</strong> box in the lower left → <strong>Commit to main</strong>.</p></li>
-</ul>
-<p>If we navigate to <code class="docutils literal notranslate"><span class="pre">github.com</span></code>, we will see this new file.</p>
-</section>
-<section id="make-some-changes">
-<h3>Make some changes<a class="headerlink" href="#make-some-changes" title="Permalink to this heading">#</a></h3>
-<p>Now make some changes to the text in the <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file, save, <strong>and close</strong>. Again, we will see <strong>1 changed file</strong> in GitHub Desktop.</p>
-</section>
-<section id="undo-the-changes">
-<h3>Undo the changes<a class="headerlink" href="#undo-the-changes" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Type in <strong>“Changed README”</strong> in the <strong>Summary</strong> box in the lower left and <strong>Commit to main</strong> again.</p></li>
-<li><p>Click the <strong>History</strong> tab (next to <strong>Changes</strong>)</p></li>
-<li><p>Right-click the <strong>Changed README</strong> commit and click <strong>Revert Changes in Commit…</strong></p></li>
-</ul>
-<p>If we navigate to the <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file, we will find that the changes we made have been deleted. We have successfully used <code class="docutils literal notranslate"><span class="pre">git</span></code> in a practical way!</p>
-</section>
-</section>
-</section>
-
-    <script type="text/x-thebe-config">
-    {
-        requestKernel: true,
-        binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
-            ref: "master",
-        },
-        codeMirrorConfig: {
-            theme: "abcdef",
-            mode: "python"
-        },
-        kernelOptions: {
-            name: "python3",
-            path: "./lectures/week6"
-        },
-        predefinedOutput: true
-    }
-    </script>
-    <script>kernelName = 'python3'</script>
-
-            </article>
-            
-
-            
-            
-            <footer class="bd-footer-article">
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-  <a class='left-prev' id="prev-link" href="../../labs/week5/project-ideas.html" title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-          <p class="prev-next-subtitle">previous</p>
-          <p class="prev-next-title">Project ideas</p>
-      </div>
-  </a>
-  <a class='right-next' id="next-link" href="../../labs/week6/project-setup.html" title="next page">
-  <div class="prev-next-info">
-      <p class="prev-next-subtitle">next</p>
-      <p class="prev-next-title">Final project setup</p>
-  </div>
-  <i class="fa-solid fa-angle-right"></i>
-  </a>
-</div>
-            </footer>
-            
-          </div>
-          
-          
-          
-            <div class="bd-sidebar-secondary bd-toc">
-              
-<div class="toc-item">
-  
-<div class="tocsection onthispage">
-    <i class="fa-solid fa-list"></i> On this page
-</div>
-<nav id="bd-toc-nav" class="page-toc">
-    <ul class="visible nav section-nav flex-column">
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Code management</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#git">
    Git
@@ -1497,60 +723,361 @@ title="Print to PDF"
  </li>
 </ul>
 
-</nav>
-</div>
-
+                        </nav>
+                    </div>
+                </div>
             </div>
-          
-          
-        </div>
-        <footer class="bd-footer-content">
-          <div class="bd-footer-content__inner">
             
-<div class="bd-footer-content__inner container">
-  
-  <div class="footer-item">
-    
-<p class="component-author">
-By Johnny Ryan
-</p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-<p class="copyright">
-
-    &copy; Copyright 2022.<br>
-
-</p>
-
-  </div>
-  
-  <div class="footer-item">
-    <p class="last-updated">
-Last updated on None.<br>
-</p>
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="code-management">
+<h1>Code management<a class="headerlink" href="#code-management" title="Permalink to this headline">¶</a></h1>
+<p>In this demo we will learn about using <strong>version control</strong> to collaborate on programming projects.</p>
+<a class="reference internal image-reference" href="../../_images/version_control.png"><img alt="../../_images/version_control.png" class="align-center" src="../../_images/version_control.png" style="width: 400px;" /></a>
+<p>We’ve all been in this situation before: it seems unnecessary to have multiple nearly-identical versions of the same document.</p>
+<p>The danger of losing good versions often leads to the problematic workflow illustrated in the PhD Comics cartoon at the top of this page.</p>
+<p>Collaborative writing with traditional word processors is cumbersome. Either every collaborator has to work on a document sequentially (slowing down the process of writing), or you have to send out a version to all collaborators and manually merge their comments into your document. The <strong>track changes</strong> option can highlight changes for you and simplifies merging, but as soon as you accept changes you will lose their history. You will then no longer know who suggested that change, why it was suggested, or when it was merged into the rest of the document.</p>
+<ul class="simple">
+<li><p><strong>Version control systems</strong> (VCS) start with a <strong>base version</strong> of the document and then <strong>keeps track of changes</strong> you make each step of the way</p></li>
+<li><p>VCS are essential for <strong>developing software</strong> and <strong>carrying out projects</strong> with a lot of code</p></li>
+<li><p>VCS does not care about file names, intead records <strong>who, what, when, and why</strong> changes were made to files</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/branch.svg"><img alt="../../_images/branch.svg" class="align-center" src="../../_images/branch.svg" width="600px" /></a>
+<div class="section" id="git">
+<h2>Git<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>One of the most popular VCS tools in use today is called <code class="docutils literal notranslate"><span class="pre">git</span></code></p></li>
+<li><p>It is a command-line tool that is installed locally</p></li>
+<li><p>It is free and open-source software</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/git.svg"><img alt="../../_images/git.svg" class="align-center" src="../../_images/git.svg" width="600px" /></a>
 </div>
-          </div>
-        </footer>
-        
+<div class="section" id="github">
+<h2>GitHub<a class="headerlink" href="#github" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>GitHub</strong> is a web-based hosting service for <code class="docutils literal notranslate"><span class="pre">git</span></code></p></li>
+<li><p>Provides a graphical user interface</p></li>
+<li><p>Maintained by Microsoft</p></li>
+<li><p>There are other web-based hosting services (e.g. <strong>GitLab</strong> and <strong>Bitbucket</strong>)</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/github1.png"><img alt="../../_images/github1.png" class="align-center" src="../../_images/github1.png" style="width: 200px;" /></a>
+</div>
+<div class="section" id="why-do-we-use-version-control-systems">
+<h2>Why do we use version control systems?<a class="headerlink" href="#why-do-we-use-version-control-systems" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="security">
+<h3>Security<a class="headerlink" href="#security" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>VCS acts like an unlimited <strong>‘undo’</strong> thereby <strong>protecting source code</strong> from yourself <strong>and</strong> others</p></li>
+<li><p>e.g. catastrophe, human error, and unintended consequences</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/hero.svg"><img alt="../../_images/hero.svg" class="align-center" src="../../_images/hero.svg" width="600px" /></a>
+</div>
+<div class="section" id="collaboration">
+<h3>Collaboration<a class="headerlink" href="#collaboration" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>VCS enables <strong>many people</strong> to work on the same project at the same time</p></li>
+<li><p>Teams working in parallel accelerates project development</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/colab.svg"><img alt="../../_images/colab.svg" class="align-center" src="../../_images/colab.svg" width="500px" /></a>
+</div>
+<div class="section" id="community">
+<h3>Community<a class="headerlink" href="#community" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Impossible for junior developer to mess up a big project</p></li>
+<li><p>Since it is so robust this encourages open-source <strong>experimentation</strong> and <strong>development</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GitHub</span></code> has really emerged as the industry standard</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/pull.svg"><img alt="../../_images/pull.svg" class="align-center" src="../../_images/pull.svg" width="500px" /></a>
+</div>
+</div>
+<div class="section" id="drawbacks-of-version-control">
+<h2>Drawbacks of version control<a class="headerlink" href="#drawbacks-of-version-control" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Difficult to learn</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/meme.jpeg"><img alt="../../_images/meme.jpeg" class="align-center" src="../../_images/meme.jpeg" style="width: 600px;" /></a>
+</div>
+<div class="section" id="some-basic-terms">
+<h2>Some basic terms<a class="headerlink" href="#some-basic-terms" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="fork">
+<h3>Fork<a class="headerlink" href="#fork" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Copy</strong> a repository to your <a class="reference external" href="http://GitHub.com">GitHub.com</a> account</p></li>
+</ul>
+</div>
+<div class="section" id="clone">
+<h3>Clone<a class="headerlink" href="#clone" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Retrieve a repository from <strong><a class="reference external" href="http://GitHub.com">GitHub.com</a></strong> to <strong>local machine</strong></p></li>
+</ul>
+</div>
+<div class="section" id="commit">
+<h3>Commit<a class="headerlink" href="#commit" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Create a <strong>snapshot</strong> of the contents of your file tree</p></li>
+</ul>
+</div>
+<div class="section" id="push">
+<h3>Push<a class="headerlink" href="#push" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Upload</strong> your local changes to the central repository, along with necessary commits and objects</p></li>
+</ul>
+</div>
+<div class="section" id="pull">
+<h3>Pull<a class="headerlink" href="#pull" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Fetch</strong> the contents of the central repository and immediately <strong>merge</strong> to your local copy</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="collaborating-with-github">
+<h2>Collaborating with GitHub<a class="headerlink" href="#collaborating-with-github" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Centralized workflow</p></li>
+<li><p>Feature branch workflow</p></li>
+<li><p>Forking workflow</p></li>
+<li><p>Others (e.g. Gitflow workflow)</p></li>
+</ul>
+</div>
+<div class="section" id="centralized-workflow">
+<h2>Centralized workflow<a class="headerlink" href="#centralized-workflow" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>All team members <strong>clone</strong> a <strong>single, central repository</strong> to their local machine</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/colab.svg"><img alt="../../_images/colab.svg" class="align-center" src="../../_images/colab.svg" width="600px" /></a>
+<ul class="simple">
+<li><p>One team member makes changes (e.g. add, modify, delete) to files on their local machine</p></li>
+<li><p>Periodically, they should <strong>commit</strong> these changes (i.e. take a snapshot) with a short message saying what they did</p></li>
+<li><p>When they are finished working, they can <strong>push</strong> their changes back to the central repository</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/john_push.svg"><img alt="../../_images/john_push.svg" class="align-center" src="../../_images/john_push.svg" width="600px" /></a>
+<ul class="simple">
+<li><p>But now when <strong>another team member</strong> (who has also been working on the project) tries to <strong>push</strong> their changes, Git will <strong>refuse the request</strong> because the their local history has <strong>diverged</strong> from the central repository</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/mary_push.svg"><img alt="../../_images/mary_push.svg" class="align-center" src="../../_images/mary_push.svg" width="600px" /></a>
+<ul class="simple">
+<li><p>The team member must first <strong>pull</strong> the most recent changes in the central reposistory into their local repository</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/mary_pull.svg"><img alt="../../_images/mary_pull.svg" class="align-center" src="../../_images/mary_pull.svg" width="600px" /></a>
+<ul class="simple">
+<li><p>Team member then resolves any conflicts between their local version and the central repository.</p></li>
+<li><p>Once finished, team member can then <strong>commit</strong> and <strong>push</strong> their changes to the central repo</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/mary_successful_push.svg"><img alt="../../_images/mary_successful_push.svg" class="align-center" src="../../_images/mary_successful_push.svg" width="600px" /></a>
+<div class="section" id="advantages">
+<h3>Advantages<a class="headerlink" href="#advantages" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Simplest workflow</p></li>
+<li><p>Works well for small teams</p></li>
+</ul>
+</div>
+<div class="section" id="disadvantages">
+<h3>Disadvantages<a class="headerlink" href="#disadvantages" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>If someone breaks the central repo, it breaks for everyone</p></li>
+<li><p>Potential for a lot of conflicts</p></li>
+<li><p>One solution is to avoid working on the same files</p></li>
+<li><p>But this does not scale well as teams increase in size</p></li>
+</ul>
+</div>
+<div class="section" id="feature-branch-workflow">
+<h3>Feature branch workflow<a class="headerlink" href="#feature-branch-workflow" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>The logical extension of the centralized workflow is to use <strong>branches</strong></p></li>
+<li><p>In this workflow, all feature development takes place in a dedicated branch instead of the main branch</p></li>
+<li><p>This means that main branch never contains broken code - a huge advantage for continuous integration environments</p></li>
+</ul>
+<ul class="simple">
+<li><p>All team members <strong>clone</strong> a <strong>single, central repository</strong> to their local machine</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/colab.svg"><img alt="../../_images/colab.svg" class="align-center" src="../../_images/colab.svg" width="600px" /></a>
+<ul class="simple">
+<li><p>Team members immediately create a new branch to make their changes</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/big_branch.svg"><img alt="../../_images/big_branch.svg" class="align-center" src="../../_images/big_branch.svg" width="600px" /></a>
+<ul class="simple">
+<li><p>When team members finish their changes, they <strong>push</strong> their branch to the central repository. The central repository will now contain multiple branches.</p></li>
+<li><p>Therefore, unlike the centralized workflow, this <strong>push</strong> will never cause conflicts</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/mary_successful_push.svg"><img alt="../../_images/mary_successful_push.svg" class="align-center" src="../../_images/mary_successful_push.svg" width="600px" /></a>
+<ul class="simple">
+<li><p>Team members then submit a <strong>pull request</strong> on <a class="reference external" href="http://GitHub.com">GitHub.com</a> asking to <strong>merge</strong> their new feature (or branch) into the main codebase, all team members will be notified automatically</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/git-pull-request.png"><img alt="../../_images/git-pull-request.png" class="align-center" src="../../_images/git-pull-request.png" style="width: 300px;" /></a>
+<ul class="simple">
+<li><p>Team leader <strong>reviews</strong> pull request, discusses any changes with team members</p></li>
+<li><p>Once everything looks good, team leader merges new feature into main codebase</p></li>
+<li><p>Team member can then delete their branch</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/merge.svg"><img alt="../../_images/merge.svg" class="align-center" src="../../_images/merge.svg" width="600px" /></a>
+<a class="reference internal image-reference" href="../../_images/pull-request.png"><img alt="../../_images/pull-request.png" class="align-center" src="../../_images/pull-request.png" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../../_images/pr-changes.png"><img alt="../../_images/pr-changes.png" class="align-center" src="../../_images/pr-changes.png" style="width: 1000px;" /></a>
+<a class="reference internal image-reference" href="../../_images/create-pull-request.png"><img alt="../../_images/create-pull-request.png" class="align-center" src="../../_images/create-pull-request.png" style="width: 1000px;" /></a>
+<a class="reference internal image-reference" href="../../_images/github-diff-file.png"><img alt="../../_images/github-diff-file.png" class="align-center" src="../../_images/github-diff-file.png" style="width: 800px;" /></a>
+</div>
+<div class="section" id="advantages-of-feature-branch-workflow">
+<h3>Advantages of feature branch workflow<a class="headerlink" href="#advantages-of-feature-branch-workflow" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Promotes collaboration with team members through <strong>pull requests</strong> and <strong>merge reviews</strong></p></li>
+<li><p>Teams can work in parallel on same files so good approach for larger teams</p></li>
+<li><p>Main branch never contains broken code</p></li>
+<li><p>Guiding framework for other, more complex worflows</p></li>
+</ul>
+<ul class="simple">
+<li><p>Instead of using a single, central repository, forking workflows give every team member their <strong>own central repository</strong></p></li>
+<li><p>Team members can tinker with their forked repository as they wish without disturbing anyone else</p></li>
+<li><p>When ready they can <strong>push</strong> to their private central repository and file <strong>pull requests</strong> if they think their changes are ready to be integrated to main codebase</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/multiple_repos.svg"><img alt="../../_images/multiple_repos.svg" class="align-center" src="../../_images/multiple_repos.svg" width="600px" /></a>
+<ul class="simple">
+<li><p>Provides a little more <strong>power</strong> to the team leader because they are the only person that can push to the official repository</p></li>
+<li><p>Allows the team leader to <strong>accept/reject commits</strong> from any developer without giving them write access to the main codebase</p></li>
+<li><p>Often used for large open-source projects</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="good-practices">
+<h2>Good practices<a class="headerlink" href="#good-practices" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="agree-on-a-workflow">
+<h3>Agree on a workflow<a class="headerlink" href="#agree-on-a-workflow" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>It is important that teams establish shared patterns of collaboration</p></li>
+<li><p>If a team doesn’t agree on a shared workflow it can lead to inefficient communication when it comes time to merge branches</p></li>
+</ul>
+</div>
+<div class="section" id="commit-often">
+<h3>Commit often<a class="headerlink" href="#commit-often" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Commits are <strong>easy to make</strong> and provide opportunities to <strong>revert</strong> or <strong>undo</strong> work</p></li>
+<li><p>They should be made <strong>frequently</strong> to capture updates to a code base</p></li>
+</ul>
+</div>
+<div class="section" id="ensure-you-re-working-from-latest-version">
+<h3>Ensure you’re working from latest version<a class="headerlink" href="#ensure-you-re-working-from-latest-version" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>VCS enables rapid updates from multiple developers</p></li>
+<li><p>It’s easy to have a local copy of the codebase fall behind the global copy</p></li>
+<li><p>Make sure to <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> or <code class="docutils literal notranslate"><span class="pre">fetch</span></code> the latest code before you start working on project</p></li>
+</ul>
+</div>
+<div class="section" id="make-detailed-notes">
+<h3>Make detailed notes<a class="headerlink" href="#make-detailed-notes" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>It is important to leave descriptive explanatory commit log messages. These commit log messages should explain the “why” and “what” that encompass the commits content.</p></li>
+<li><p>These log messages become the canonical history of the project’s development and leave a trail for future contributors to review.</p></li>
+</ul>
+</div>
+<div class="section" id="use-branches">
+<h3>Use branches<a class="headerlink" href="#use-branches" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Branches enable multiple developers to work in parallel on <strong>separate lines</strong> of development</p></li>
+<li><p>Branches should be used <strong>frequently</strong> as they are quick and inexpensive.</p></li>
+<li><p>When development on a branch is complete it should be <strong>merged</strong> into the main line of development and then <strong>deleted</strong></p></li>
+</ul>
+<p>There are two ways to use <code class="docutils literal notranslate"><span class="pre">git</span></code>, the command-line and <strong>GitHub Desktop</strong>. Most students prefer to use the desktop version to begin with but we’d be happy to provide guidance on the command-line version during labs.</p>
+</div>
+</div>
+<div class="section" id="github-desktop">
+<h2>GitHub Desktop<a class="headerlink" href="#github-desktop" title="Permalink to this headline">¶</a></h2>
+<p>We will talk a bit more about <code class="docutils literal notranslate"><span class="pre">git</span></code> later in the lecture but, to continue setting up our project, go ahead and install <a class="reference external" href="https://desktop.github.com/"><strong>GitHub Desktop</strong></a>.</p>
+<ul class="simple">
+<li><p>Open <strong>GitHub Desktop</strong> → <strong>Add an Existing Repository from your Hard Drive…</strong></p></li>
+<li><p>Select <strong>Choose…</strong> and navigate to your project folder</p></li>
+<li><p>Respond to this warning by clicking <strong>create a repository</strong></p></li>
+<li><p>Leave everything as is and <strong>Create Repository</strong></p></li>
+</ul>
+<p>Now we can <strong>Publish repository</strong> on <a class="reference external" href="http://Github.com">Github.com</a> by clicking the big blue button. If you signed up for an educational GitHub account we should able to tick the box to <strong>Keep this code private</strong> and click <strong>Publish Repository</strong> again.</p>
+</div>
+<div class="section" id="github-com">
+<h2><a class="reference external" href="http://GitHub.com">GitHub.com</a><a class="headerlink" href="#github-com" title="Permalink to this headline">¶</a></h2>
+<p>If we navigate to <code class="docutils literal notranslate"><span class="pre">github.com</span></code> on a web browser, sign in, and navigate to our profile, there should be a new <strong>repository</strong> that contains our files (just an <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> and <code class="docutils literal notranslate"><span class="pre">.venv</span></code> folder for now).</p>
+</div>
+<div class="section" id="basic-usage">
+<h2>Basic usage<a class="headerlink" href="#basic-usage" title="Permalink to this headline">¶</a></h2>
+<p>In line with our “learn by doing” mantra, we will demonstrate the basics of version control with GitHub using a demo.</p>
+<div class="section" id="add-a-new-file">
+<h3>Add a new file<a class="headerlink" href="#add-a-new-file" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Make a new text file using <strong>Notepad</strong> on Windows or <strong>TextEdit</strong> on MacOS called <code class="docutils literal notranslate"><span class="pre">README.md</span></code>, add some random text, and save.</p></li>
+<li><p>In <strong>GitHub Desktop</strong> we will see <strong>1 changed file</strong>.</p></li>
+<li><p>Type in <strong>“Added README”</strong> in the <strong>Summary</strong> box in the lower left → <strong>Commit to main</strong>.</p></li>
+</ul>
+<p>If we navigate to <code class="docutils literal notranslate"><span class="pre">github.com</span></code>, we will see this new file.</p>
+</div>
+<div class="section" id="make-some-changes">
+<h3>Make some changes<a class="headerlink" href="#make-some-changes" title="Permalink to this headline">¶</a></h3>
+<p>Now make some changes to the text in the <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file, save, <strong>and close</strong>. Again, we will see <strong>1 changed file</strong> in GitHub Desktop.</p>
+</div>
+<div class="section" id="undo-the-changes">
+<h3>Undo the changes<a class="headerlink" href="#undo-the-changes" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Type in <strong>“Changed README”</strong> in the <strong>Summary</strong> box in the lower left and <strong>Commit to main</strong> again.</p></li>
+<li><p>Click the <strong>History</strong> tab (next to <strong>Changes</strong>)</p></li>
+<li><p>Right-click the <strong>Changed README</strong> commit and click <strong>Revert Changes in Commit…</strong></p></li>
+</ul>
+<p>If we navigate to the <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file, we will find that the changes we made have been deleted. We have successfully used <code class="docutils literal notranslate"><span class="pre">git</span></code> in a practical way!</p>
+</div>
+</div>
+</div>
 
-      </main>
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lectures/week6"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../../labs/week5/project-ideas.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Project ideas</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../../labs/week6/project-setup.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Final project setup</p>
     </div>
-  </div>
-
-  
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
     
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94"></script>
+      By Johnny Ryan<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>
