@@ -2,17 +2,17 @@
 
 **Instructor**: [Johnny Ryan](https://www.johnny-ryan.com/)
 
-**Office hours**: Monday 15:00-16:00 and Friday 09:00-10:00
+**Office hours**: TBD
 
 **GE**: [Max Shapovalov](https://cas.uoregon.edu/directory/profiles/all/maxims)
 
-**Office hours**: Thursday 16:00-17:00
+**Office hours**: TBD
 
 ## Weekly schedule
 
-**Lecture**: Monday 14:00-14:50
+**Lecture**: Tuesdays and Thursdays at 09:00-09:50
 
-**Labs**: Friday 10:00-11:50 or 12:00-13:50
+**Labs**: Wednesdays at 09:00-10:50 
 
 ## Grading
 
@@ -22,7 +22,7 @@
 Please let the instructors know before the deadline if you anticipate a late submission - we may be able to provide an extension.
 ```
     
-* **Final project (45%)**: An essential component of this course is the [final project](../course-info/final-project.md) which provides an opportunity to explore a particular topic of interest using some of the skills developed in this course. Students will present project during the week starting March 7 and submit a write up by March 11 11:59 pm.
+* **Final project (45%)**: An essential component of this course is the [final project](../course-info/final-project.md) which provides an opportunity to explore a particular topic of interest using some of the skills developed in this course. Students will present project during the week starting June 4 and submit a write up by June 6 11:59 pm.
     
     
 * **Participation (10%)**: Half graded by GE and half by the Professor. Credit can be earned through attendance, participation in class discussion, visiting Professor and GE during office hours, and helping other students in labs. 
