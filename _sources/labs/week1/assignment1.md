@@ -1,12 +1,12 @@
 # Assignment 1
 
 ```{admonition} Deadline
-Please complete this assignment by Jan 20 11:59pm.
+Please complete this assignment by **Apr 10 11:59pm**.
 ```
 
 ## Task 0 (0 points)
 
-Follow the instructions [here](https://owel-lab.github.io/gds-applications-site/course-info/python.html) to install the Python programming environment that we will use in this class. 
+Follow the instructions [here](https://cleo-lab.github.io/gds-applications-site/course-info/python.html) to install the Python programming environment that we will use in this class. 
 
 *****************************
 
@@ -42,7 +42,7 @@ The image should be saved in the same folder as your answers notebook.
 
 ## Task 3 (5 points)
 
-* Sign-up for a GitHub account and install `git` or `GitHub Desktop` by following instructions [here](https://owel-lab.github.io/gds-applications-site/course-info/github.html).
+* Sign-up for a GitHub account and install `git` or `GitHub Desktop` by following instructions [here](https://cleo-lab.github.io/gds-applications-site/course-info/github.html).
 
 * Add your GitHub username to your notebook (e.g. next to your real name).
 
