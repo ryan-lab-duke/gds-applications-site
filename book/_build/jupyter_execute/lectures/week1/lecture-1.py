@@ -91,21 +91,33 @@
 # 
 # ### Lectures
 # 
-# * Monday 2 pm
+# * Tuesday @ 9am
 # 
-#     * Eight lectures
+#     * Nine lectures
 #     
-#     * Holiday on Jan 16
+#     * Project presentations in Week 10
 # 
 # ### Labs
 # 
-# * Thursday @ 10am or Friday @ noon in MCK 445
+# * Wednesday @ 9am in MCK 445
 # 
-#     * Seven labs
+#     * Seven lab assignments
 #     
 #     * Two labs to concentrate on final project
 # 
-#     * Class presentations in Week 10
+#     * No lab in Week 10
+# 
+# ### Activities/project work
+# 
+# * Thursday @ 9am
+# 
+#     * Three activities
+#     
+#     * One lecture about previous class projects
+#     
+#     * Five sessions for project work
+#     
+#     * Project presentations in Week 10
 #     
 # ```{image} images/schedule.png
 # :width: 600px
@@ -114,16 +126,16 @@
 
 # ## Course evaluation
 # 
-# * Lab assignments (**45%**) due every **Friday 11:59 pm**
+# * Lab assignments (**45%**) due every **Wednesday 11:59 pm**
 # 
 # 
 # * Final project (**45%**) 
-#     * Presentation due March 13, 11:59 pm
-#     * Write-ups due March 17, 11:59pm
+#     * Presentations due May 31, 11:59 pm
+#     * Write-ups due June 6, 11:59pm
 # 
 # 
 # * Participation (**10%**)
-#     * Credit can be earned through attendance in lectures, participation in class discussion (both virtual and in-person), visiting Professor and GE during office hours, and helping other students in labs. 
+#     * Credit can be earned through attendance in lectures, visiting Professor and GE during office hours, and helping other students in labs. 
 
 # ## Final project
 # 
@@ -140,7 +152,7 @@
 # * **Week 5**: Discuss project ideas with peers and instructors, submit a short summary of a project idea via Canvas
 # 
 # 
-# * **Week 6**: Form teams, create GitHub repo, and provide some basic info about project as a README.md
+# * **Week 6**: Form teams, create GitHub repo, and provide some basic info about project as a [README.md](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes)
 # 
 # 
 # * **Week 8**: Provide informal update to instructors, ensure data has been accessed, goals are accomplishable

@@ -1,6 +1,6 @@
-# Welcome to Geospatial Data Science 2023!
+# Welcome to Geospatial Data Science 2024!
 
-On this website you will find the course materials for GEOG 4/590 taught at the [Department of Geography](https://geography.uoregon.edu/) at the University of Oregon in Winter 2023.
+On this website you will find the course materials for GEOG 4/590 taught at the [Department of Geography](https://geography.uoregon.edu/) at the University of Oregon in Spring 2024.
 
 ## Overview
 

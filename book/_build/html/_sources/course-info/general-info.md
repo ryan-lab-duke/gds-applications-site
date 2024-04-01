@@ -2,11 +2,15 @@
 
 **Instructor**: [Johnny Ryan](https://www.johnny-ryan.com/)
 
-**Office hours**: TBD
+**Office hours**: Monday 14:00-16:00
+
+**Office**: See Canvas
 
 **GE**: [Max Shapovalov](https://cas.uoregon.edu/directory/profiles/all/maxims)
 
-**Office hours**: TBD
+**Office hours**: Tuesday 13:00-15:00
+
+**Office**: See Canvas
 
 ## Weekly schedule
 
@@ -16,7 +20,7 @@
 
 ## Grading
 
-* **Lab assignments (45%)**: Turn in assignments on Canvas and GitHub (see instructions in Lab #1). Lab assignments are due by the end of the week (i.e. Friday 11:59 pm). Late assignments will be penalized 5% per day late. Assignments will not be accepted after seven days past the submission deadline. 
+* **Lab assignments (45%)**: Turn in assignments on Canvas and GitHub (see instructions in Lab #1). Lab assignments are due by the end of the week (i.e. Wednesday 11:59 pm). Late assignments will be penalized 5% per day late. Assignments will not be accepted after seven days past the submission deadline. 
 
 ```{note}
 Please let the instructors know before the deadline if you anticipate a late submission - we may be able to provide an extension.
@@ -29,7 +33,7 @@ Please let the instructors know before the deadline if you anticipate a late sub
 
 ## Materials
 
-* **Class website**: all lecture slides, assignments, and guides are available on [this website](https://owel-lab.github.io/gds-applications-site/).
+* **Class website**: all lecture slides, assignments, and guides are available on [this website](../intro.md).
 
 
 * **Dropbox**: the data for the labs are available on Dropbox. Please see **Canvas** for link.

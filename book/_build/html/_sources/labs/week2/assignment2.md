@@ -1,7 +1,7 @@
 # Assignment 2
 
 ```{admonition} Deadline
-Please complete this assignment before **Jan 27 11:59pm**.
+Please complete this assignment before **Apr 17 11:59pm**.
 
 ```
 
@@ -109,16 +109,6 @@ The `.groupby` method will be very useful here.
 * e) Make a plot showing locations of Northern Spotted Owls breeding pairs on top of the wildfire perimeters for Oregon.
 
 *****************************
-
-## Extra credit
-
-There are several duplicate records in the wildfire dataset and the names of fires are inconsistent - some are all caps for example. For extra credit, clean up this dataset by:
-
-* Converting wildfire names to lower case
-
-* Ignoring wildfires named **UNKNOWN** or **UNNAMED** (or similar), remove duplicated rows (i.e. same name and year) keeping the larger of the two wildfire areas
-
-* Save as a shapefile and send to me via email.
 
 
 ```{important}
