@@ -16,6 +16,7 @@ parts:
     chapters:
     - file: lectures/week1/lecture-1.ipynb
     - file: labs/week1/assignment1.md
+    - file: activities/activity-01.md
 
   - caption: Week 2
     chapters:
