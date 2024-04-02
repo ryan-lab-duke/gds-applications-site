@@ -1,7 +1,7 @@
 # Activity 1
 
 ```{admonition} Deadline
-Please complete this assignment before **Apr 17 11:59pm**.
+Please complete this assignment before **Apr 10 11:59pm**.
 
 ```
 
