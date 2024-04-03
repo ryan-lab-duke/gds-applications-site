@@ -1,4 +1,4 @@
-# Activity 1
+# Activity 2
 
 ```{admonition} Deadline
 Please complete this assignment before **Apr 17 11:59pm**.
@@ -12,7 +12,7 @@ Download the data for the assignment from [here](https://www.dropbox.com/scl/fo/
 ```
 
 ```{image} images/lane-county.png
-:width: 400px
+:width: 200px
 :align: center
 ```
 *****************************
@@ -44,7 +44,7 @@ If you run this command from your course folder, your `.ipynb` assignment will a
 ```
 
 ```{tip}
-Alternatively, you can also use a virtual Jupyter Lab by clicking this button: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/owel-lab/programming-for-sds-site/HEAD).
+Alternatively, you can also use a virtual Jupyter Lab by clicking this button: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/owel-lab/programming-for-sds-site/HEAD)
 ```
 
 
