@@ -2,8 +2,8 @@
 
 | **Week**    |  **Date**  | **Lecture x 1 hour**  | **Lab x 2 hours**                  | **Lecture x 1 hour**                         |
 | ----------- |------------|-----------------------|------------------------------------|----------------------------------------------|
-| 1           | Apr 2      | [Introduction](../lectures/week1/lecture-1.md)             | [Assignment 1](../labs/week1/assignment1.md) | [Activity](../activities/activity-01.md)                       | 
-| 2           | Apr 9      | [Vector data analysis](../lectures/week2/lecture-2.ipynb)  | [Assignment 2](../labs/week2/assignment2.md) | Activity                       | 
+| 1           | Apr 2      | [Introduction](../lectures/week1/lecture-1.md)             | [Assignment 1](../labs/week1/assignment1.md) | [Activity](../activities/week1/activity-01.md)                       | 
+| 2           | Apr 9      | [Vector data analysis](../lectures/week2/lecture-2.ipynb)  | [Assignment 2](../labs/week2/assignment2.md) | [Activity](../activities/week2/activity-02.md)                                              | 
 | 3           | Apr 16     | [Network data analysis](../lectures/week3/lecture-3.ipynb) | [Assignment 3](../labs/week3/assignment3.md) | Activity                       |
 | 4           | Apr 23     | [Gridded data analysis](../lectures/week4/lecture-4a.ipynb)| [Assignment 4](../labs/week4/assignment4.md) | Previous class projects        | 
 | 5           | Apr 30     | [Machine learning](../lectures/week5/lecture-5.ipynb)      | [Assignment 5](../labs/week5/assignment5.md) | [Submit project ideas](../labs/week5/project-ideas.md)  |

@@ -16,12 +16,13 @@ parts:
     chapters:
     - file: lectures/week1/lecture-1.ipynb
     - file: labs/week1/assignment1.md
-    - file: activities/activity-01.md
+    - file: activities/week1/activity-01.md
 
   - caption: Week 2
     chapters:
     - file: lectures/week2/lecture-2.ipynb
     - file: labs/week2/assignment2.md
+    - file: activities/week2/activity-02.md
 
   - caption: Week 3
     chapters:

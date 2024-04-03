@@ -1,0 +1,23 @@
+River,Continent,Average discharge (m3/s),Length (km),Drainage area (km2),Outflow,Type
+Amazon,South America,224000,6992,6915000,Atlantic Ocean,Primary river
+Congo,Africa,41400,4370,3822000,Atlantic Ocean,Primary river
+Nile,Africa,2810,6853,3349000,Mediterranean Sea,Primary river
+Mississippi,North America,21300,3766,3248000,Gulf of Mexico,Primary river
+Rio de la Plata,South America,27225,290,3182064,Atlantic Ocean,Primary river
+Ob,Asia,13100,4345,2990000,Gulf of Ob,Primary river
+Parana,South America,19706,4880,2582672,Rio de la Plata,Tributary river
+Yenisei,Asia,20200,4090,2580000,Kara Sea,Primary river
+Lena,Asia,18300,4294,2490000,Laptev Sea,Primary river
+Niger,Africa,7900,4200,2117000,Gulf of Guinea,Primary river
+Ganges,Asia,43950,3969,1999000,Bay of Bengal,Primary river
+Amur,Asia,11526,4444,1855000,Sea of Okhotsk,Primary river
+Yangtze,Asia,31900,6300,1840000,East China Sea,Primary river
+Mackenzie,North America,9800,4241,1805200,Beaufort Sea,Primary river
+Irtysh,Asia,2980,4248,1673470,Ob,Tributary river
+Volga,Europe,8220,3531,1380000,Caspian Sea,Primary river
+Madeira,South America,30173,3380,1376000,Amazon,Tributary river
+Missouri,North America,2445,3767,1371010,Mississippi,Tributary river
+Saint Lawrence,North America,16800,500,1344200,Gulf of Saint Lawrence,Primary river
+Zambezi,Africa,4217,2574,1331000,Indian Ocean,Primary river
+Ganges,Asia,18691,2525,1300000,Bay of Bengal,Primary river
+Paraguay,South America,4696,2621,1120154,Parana,Tributary river

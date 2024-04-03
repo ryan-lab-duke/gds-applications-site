@@ -5,6 +5,7 @@ resources/
 *-checkpoint.ipynb
 *.json
 *cache
+*.gds
 
 book/labs/week2/data/*
 book/labs/week3/data/*
