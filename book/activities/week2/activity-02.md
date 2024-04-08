@@ -70,7 +70,7 @@ Import the `geopandas` package and read the shapefile. Write some code that prin
 
 * Reproject the shapefile to a `projected coordinate system` (i.e. spatial units are in meters)
 
-* Make a new column that contains population density.
+* Make a new column that contains population density (in km2).
 
 * What is the min, mean, and max population density?
 

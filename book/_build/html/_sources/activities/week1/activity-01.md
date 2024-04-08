@@ -71,7 +71,7 @@ Answer the following questions:
 
 * How many of these rivers are located in North America?
 
-* What is the mean and standard deviation of `Average discharge (m3/s)`?
+* What is the mean and standard deviation of `Average discharge (m3/s)` (of entire DataFrame)?
 
 * What are the names of the rivers that flow into the Atlantic Ocean?
 

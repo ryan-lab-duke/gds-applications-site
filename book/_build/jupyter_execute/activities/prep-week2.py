@@ -14,7 +14,7 @@ get_ipython().system('pip install us')
 get_ipython().system('pip install openpyxl')
 
 
-# In[2]:
+# In[1]:
 
 
 from census import Census
@@ -22,7 +22,7 @@ from us import states
 import pandas as pd
 
 
-# In[3]:
+# In[2]:
 
 
 c = Census("5f7e25f1ce5f52828e64cc4e5ff5f470759b4e03")
