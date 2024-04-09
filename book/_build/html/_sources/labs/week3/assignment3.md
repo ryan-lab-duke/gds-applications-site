@@ -68,9 +68,9 @@ Read the `oregon_cities.shp` using `GeoPandas`.
 
 *****************************
 
-## Extra credit
+## Task 3 (5 points)
 
-How many cities in Oregon are within a 2 hour drive of Eugene (at 60 mph)?
+* How many cities in Oregon are within a 2 hour drive of Eugene (at 60 mph)?
 
 *****************************
 
