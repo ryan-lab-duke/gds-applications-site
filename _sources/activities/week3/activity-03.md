@@ -1,17 +1,10 @@
 # Activity 3
 
-## Census data
-
-
-```{image} images/census.png
-:width: 300px
-:align: center
-```
-
 ```{admonition} Deadline
 Please complete this assignment before **Apr 24 11:59pm**.
-
 ```
+
+## Census data
 
 In this activity, we will be downloading our own data! 
 
@@ -106,9 +99,11 @@ plt.plot(df.values[0])
 Now it's your turn to download Census variable(s) for a place or topic of interest. Note that we are not restricted to states. We can also download data at smaller geographic units such as **counties**, **tracts**, or even **block groups**. See below for a summary of the different geographic units and [here](https://www.socialexplorer.com/help/faq/knowledge-base/geographies) for more information.
 
 ```{image} images/census_geographic_units.png
-:width: 600px
+:width: 800px
 :align: center
 ```
+
+
 
 From the **README** on the [`census`](https://github.com/datamade/census) GitHub page, the syntax for downloading at the tract level is `state_county_tract(fields, state_fips, county_fips, tract)`. Note that two more arguments are required now, `county_fips` and `tract`. We can pass `Census.ALL` to get **all** counties and/or tracts. 
 
@@ -121,7 +116,7 @@ Otherwise, we should specify a county. For example, `039` would be **Lane County
 * Download some Census data for a variable(s) for a particular place or topic of interest.
 
 ```{tip}
-You can use `Crtl + F` to search for a keyword in the following table: https://api.census.gov/data/2021/acs/acs5/variables.html.
+You can use `Crtl + F` to search for a keyword in the following [table](https://api.census.gov/data/2021/acs/acs5/variables.html).
 ```
 
 * Describe the data (and the geographic units) that you downloaded.
@@ -130,9 +125,9 @@ You can use `Crtl + F` to search for a keyword in the following table: https://a
 
 ## Task 3 (5 points)
 
-The data we downloaded can easily be converted into a `DataFrame` but it would useful if we could add some geographical information to the data. To do this, we can download a shapefile that represents the corresponding geographic information from [here](https://www2.census.gov/geo/tiger/TIGER2021/). 
+The data we downloaded can easily be converted into a `DataFrame` but it would useful if we could add some spatial information to the data. To do this, we can download a shapefile that represents the corresponding geographic units from [here](https://www2.census.gov/geo/tiger/TIGER2021/). 
 
-If were interested in **tract** level data we would navigate to https://www2.census.gov/geo/tiger/TIGER2021/TRACT/ and download the `.zip` file for Oregon (`tl_2021_41_tract.zip`)
+If were interested in **tract** level data we would navigate to the `TRACT/` folder and download the `.zip` file for Oregon (i.e. `tl_2021_41_tract.zip`)
 
 ```{tip}
 We can find the FIPS code for Oregon by running: `print(states.OR.fips)`
