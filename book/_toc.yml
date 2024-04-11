@@ -54,4 +54,5 @@ parts:
 
   - caption: Week 8
     chapters:
-    - file: lectures/week8/lecture-8.ipynb
+    - file: lectures/week8/lecture-8a.ipynb
+    - file: lectures/week8/lecture-8b.ipynb
