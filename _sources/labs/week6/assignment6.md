@@ -144,7 +144,7 @@ General recommendation - **split up** the project into multiple **smaller scipts
 
 ## Everyone: install a Python distribution
 
-There are many ways to do this, but our *current* preferred option is described below. One advantage of the workflow described next is that it is cross-platform meaning that it should work on Windows, MacOS, and Linux operating systems. Some of the text here overlaps with the [intro to Python packaging](../course-info/python) page. 
+There are many ways to do this, but our *current* preferred option is described below. One advantage of the workflow described next is that it is cross-platform meaning that it should work on Windows, MacOS, and Linux operating systems. Some of the text here overlaps with the [intro to Python packaging](../course-info/python.md) page. 
 
 
 As a reminder, a distribution is a collection of files that together allows us to build, package, and distribute a module. Since many software programs are written in Python, all computers have an internal **Python distribution** by default but it is usually an older version of Python (e.g. Python 2.7). 
@@ -243,5 +243,5 @@ Exit the Python interpreter by pressing `Ctrl + Z` and then `Enter` in Windows o
 ```
 
 ```{important}
-Once all team members have installed (1) GitHub Desktop, (2) a Python distribution, and (3) a virtual environment with the packages they need for the project, proceed to this week's [**activity**](../labs/week6/activity6).
+Once all team members have installed (1) GitHub Desktop, (2) a Python distribution, and (3) a virtual environment with the packages they need for the project, proceed to this week's [**activity**](../labs/week6/activity6.md).
 ```
