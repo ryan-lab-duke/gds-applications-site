@@ -50,7 +50,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Final project setup" href="project-setup.html" />
+    <link rel="next" title="Activity" href="activity6.html" />
     <link rel="prev" title="Code management" href="../../lectures/week6/lecture-6.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -254,8 +254,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="project-setup.html">
-   Final project setup
+  <a class="reference internal" href="activity6.html">
+   Activity
   </a>
  </li>
 </ul>
@@ -375,18 +375,67 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#task-1-40-points">
-   Task 1 (40 points)
+  <a class="reference internal nav-link" href="#team-leader-make-a-new-github-repository">
+   Team leader: make a new Github repository
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#task-2-10-points">
-   Task 2 (10 points)
+  <a class="reference internal nav-link" href="#team-leader-add-other-team-members-to-repository">
+   Team leader: add other team members to repository
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#some-notes-for-final-projects">
-   Some notes for final projects
+  <a class="reference internal nav-link" href="#everyone-clone-repository">
+   Everyone: clone repository
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#option-1-centralized-git-workflow">
+   (Option 1) Centralized git workflow
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#some-tips-for-the-centralized-workflow">
+     Some tips for the centralized workflow
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#option-2-feature-branch-workflow-recommended">
+   (Option 2) Feature branch workflow (recommended)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#workflow">
+     Workflow
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#feature-branch-workflow-in-command-line">
+   Feature branch workflow in command line
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#some-tips-for-collaborating-on-group-project">
+   Some tips for collaborating on group project
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#everyone-install-a-python-distribution">
+   Everyone: install a Python distribution
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup-a-virtual-environment">
+   Setup a virtual environment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#install-dependencies">
+   Install dependencies
   </a>
  </li>
 </ul>
@@ -410,18 +459,67 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#task-1-40-points">
-   Task 1 (40 points)
+  <a class="reference internal nav-link" href="#team-leader-make-a-new-github-repository">
+   Team leader: make a new Github repository
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#task-2-10-points">
-   Task 2 (10 points)
+  <a class="reference internal nav-link" href="#team-leader-add-other-team-members-to-repository">
+   Team leader: add other team members to repository
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#some-notes-for-final-projects">
-   Some notes for final projects
+  <a class="reference internal nav-link" href="#everyone-clone-repository">
+   Everyone: clone repository
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#option-1-centralized-git-workflow">
+   (Option 1) Centralized git workflow
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#some-tips-for-the-centralized-workflow">
+     Some tips for the centralized workflow
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#option-2-feature-branch-workflow-recommended">
+   (Option 2) Feature branch workflow (recommended)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#workflow">
+     Workflow
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#feature-branch-workflow-in-command-line">
+   Feature branch workflow in command line
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#some-tips-for-collaborating-on-group-project">
+   Some tips for collaborating on group project
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#everyone-install-a-python-distribution">
+   Everyone: install a Python distribution
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup-a-virtual-environment">
+   Setup a virtual environment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#install-dependencies">
+   Install dependencies
   </a>
  </li>
 </ul>
@@ -435,41 +533,89 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="assignment-6">
 <h1>Assignment 6<a class="headerlink" href="#assignment-6" title="Permalink to this headline">¶</a></h1>
-<div class="admonition-deadline admonition">
-<p class="admonition-title">Deadline</p>
-<p>Please complete this assignment before <strong>Feb 24, 11:59pm</strong>.</p>
-</div>
-<hr class="docutils" />
-<div class="section" id="task-1-40-points">
-<h2>Task 1 (40 points)<a class="headerlink" href="#task-1-40-points" title="Permalink to this headline">¶</a></h2>
-<p>Prepare a <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file in your new repo that will serve as the landing page for your project. You can continue to update it as your project evolves, but for now, please prepare a basic project outline.</p>
-<p>Review the <a class="reference external" href="https://www.markdownguide.org/basic-syntax/">markdown cheat sheet</a> and use some basic headings, bulleted/numbered lists, and other formatting to organize your outline. We recommend using a <strong>markdown editor</strong> such as <a class="reference external" href="https://macdown.uranusjr.com/">MacDown</a> for MacOS or <a class="reference external" href="https://wereturtle.github.io/ghostwriter/download.html">Ghostwriter</a> for Windows.</p>
-<p>Please include the following in <code class="docutils literal notranslate"><span class="pre">README.md</span></code>:</p>
+<p>The goal of the lab this week is to:</p>
 <ul class="simple">
-<li><p>Project Title</p></li>
-<li><p>Name(s) of individual or team members</p></li>
-<li><p>Short 1-2 sentence summary</p></li>
-<li><p>Problem statement, question(s) and/or objective(s)</p></li>
-<li><p>Datasets you will use (with links, if available)</p></li>
-<li><p>Python packages that team members require</p></li>
-<li><p>Planned methods/approach</p></li>
-<li><p>Expected outcomes</p></li>
-<li><p>Any other relevant information, images/tables, references, etc.</p></li>
-<li><p>References</p></li>
+<li><p>Form teams and designate a team leader</p></li>
+<li><p>Create a new GitHub repository for your final project</p></li>
+<li><p>Choose a GitHub workflow that works for all team members</p></li>
+<li><p>Install necessary Python packages to carry out project</p></li>
 </ul>
-<p>That may sound like a lot, but some of these items should only be 1-2 sentences, others can be short lists. Consider this the start of your final report.</p>
-<p>We would like to see at <strong>least one commit</strong> from <strong>each group member</strong> at this phase of the project, even if it is as simple as adding their name to the <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>There is no submission for this lab.</p>
 </div>
-<hr class="docutils" />
-<div class="section" id="task-2-10-points">
-<h2>Task 2 (10 points)<a class="headerlink" href="#task-2-10-points" title="Permalink to this headline">¶</a></h2>
-<p>Push all changes to GitHub and submit README as a pdf to Canvas. The markdown editors should be able to export <code class="docutils literal notranslate"><span class="pre">.md</span></code> files as <code class="docutils literal notranslate"><span class="pre">.pdf</span></code></p>
-</div>
-<hr class="docutils" />
-<div class="section" id="some-notes-for-final-projects">
-<h2>Some notes for final projects<a class="headerlink" href="#some-notes-for-final-projects" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="team-leader-make-a-new-github-repository">
+<h2>Team leader: make a new Github repository<a class="headerlink" href="#team-leader-make-a-new-github-repository" title="Permalink to this headline">¶</a></h2>
+<p>If you’re working in a group, pick a <strong>project lead</strong> to initiate and manage the <strong>GitHub repository</strong> (or repo).</p>
 <ul class="simple">
-<li><p>Start early!</p></li>
+<li><p>Go to: <a class="reference external" href="https://github.com/">https://github.com/</a></p></li>
+<li><p>Click the big green <strong>New</strong> button and follow instructions on the left side of page. Come up with a clever, descriptive repo name - try to avoid names like “finalproject”, which won’t make the project very memorable or searchable.</p></li>
+<li><p>Set the access to <strong>Public</strong> (so instructors/other students can follow progress).</p></li>
+<li><p>Select to include a <code class="docutils literal notranslate"><span class="pre">README.md</span></code> and include a <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file with a <code class="docutils literal notranslate"><span class="pre">Python</span></code> template.</p></li>
+</ul>
+<p>Don’t stress too much about the specifics of the repo - these are not permanent, and you can always change repo names, or start over entirely (just copy and add existing files as a first commit). One of the goals here is to gain more experience using <code class="docutils literal notranslate"><span class="pre">git</span></code> for collaborative work and, early on, you’re inevitably going to make some mistakes.</p>
+</div>
+<div class="section" id="team-leader-add-other-team-members-to-repository">
+<h2>Team leader: add other team members to repository<a class="headerlink" href="#team-leader-add-other-team-members-to-repository" title="Permalink to this headline">¶</a></h2>
+<p>The team leader now needs to add the others as collaborators and make sure they have permission to access and commit.</p>
+<ul class="simple">
+<li><p>Click <strong>Settings</strong> –&gt; <strong>Collaborators</strong> from menu on the left</p></li>
+<li><p>Click the big green <strong>Add people</strong> button and add the other team members using their <strong>GitHub usernames</strong></p></li>
+</ul>
+</div>
+<div class="section" id="everyone-clone-repository">
+<h2>Everyone: clone repository<a class="headerlink" href="#everyone-clone-repository" title="Permalink to this headline">¶</a></h2>
+<p>All team members should install <a class="reference external" href="https://desktop.github.com/">GitHub Desktop</a>.</p>
+<p>Once installed, open GitHub Desktop, click <strong>File</strong> –&gt; <strong>Clone repository…</strong>, enter <code class="docutils literal notranslate"><span class="pre">https://github.com/&lt;team-leader-username&gt;/&lt;project-repo-name&gt;</span></code> as the <strong>URL</strong> where <code class="docutils literal notranslate"><span class="pre">&lt;team-leader-username&gt;</span></code> is the <strong>team leader’s</strong> GitHub username and <code class="docutils literal notranslate"><span class="pre">&lt;project-repo-name&gt;</span></code> is the name of the new project repo.</p>
+<p>Choose a <strong>Local path</strong> where you keep your coursework (e.g. <code class="docutils literal notranslate"><span class="pre">C:\Users\your_name\Documents</span></code>) and click <strong>Clone</strong>.</p>
+<p>Notice that in the top left that <strong>Current repository</strong> is now set to <code class="docutils literal notranslate"><span class="pre">project-repo-name</span></code>.</p>
+</div>
+<div class="section" id="option-1-centralized-git-workflow">
+<h2>(Option 1) Centralized git workflow<a class="headerlink" href="#option-1-centralized-git-workflow" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>To contribute to the repo, <strong>team members</strong> should make a new file called <code class="docutils literal notranslate"><span class="pre">README_XX.md</span></code> where <code class="docutils literal notranslate"><span class="pre">XX</span></code> are the initials of the team member.</p></li>
+<li><p>When the team member is finished with thir edits to <code class="docutils literal notranslate"><span class="pre">README_XX.md</span></code>, they can go to <strong>GitHub Desktop</strong>, include a <strong>Summary</strong> of the changes, <strong>Commit to main</strong> and then click <strong>Push origin</strong> button.</p></li>
+<li><p><strong>Team leader</strong> can then go to <strong>GitHub Desktop</strong>, click <strong>Fetch origin</strong> and <strong>Pull origin</strong> to retrieve the changes that the team members made to their local environment.</p></li>
+<li><p><strong>Team leader</strong> can then add useful text from <code class="docutils literal notranslate"><span class="pre">README_XX.md</span></code> to the main file (e.g. <code class="docutils literal notranslate"><span class="pre">README.md</span></code>). Once they are finished they can <strong>delete</strong> <code class="docutils literal notranslate"><span class="pre">README_XX.md</span></code>, go to <strong>GitHub Desktop</strong>, include a <strong>Summary</strong> of the changes, click <strong>Commit to main</strong> and then <strong>Push origin</strong> button.</p></li>
+<li><p><strong>Team members</strong> can then go to <strong>GitHub Desktop</strong>, click <strong>Fetch origin</strong> and <strong>Pull origin</strong> to retrieve the changes that the team leader made. Repeat the steps above to contribute to the project.</p></li>
+</ul>
+<div class="section" id="some-tips-for-the-centralized-workflow">
+<h3>Some tips for the centralized workflow<a class="headerlink" href="#some-tips-for-the-centralized-workflow" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Only the team leader should edit the main files (e.g. <code class="docutils literal notranslate"><span class="pre">README.md</span></code>)</p></li>
+<li><p>Team members should edit their own versions (e.g. <code class="docutils literal notranslate"><span class="pre">README_XX.md</span></code>)</p></li>
+<li><p><strong>Fetch</strong> and <strong>pull</strong> regularly to avoid conflicts</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="option-2-feature-branch-workflow-recommended">
+<h2>(Option 2) Feature branch workflow (recommended)<a class="headerlink" href="#option-2-feature-branch-workflow-recommended" title="Permalink to this headline">¶</a></h2>
+<p>To fully explore the power of GitHub, we recommend that using a feature branching workflow. The learning curve is a little steeper than the centralized workflow but will provide a more complete introduction to git and GitHub.</p>
+<div class="section" id="workflow">
+<h3>Workflow<a class="headerlink" href="#workflow" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>In GitHub Desktop, <strong>all team members</strong> should create a their <strong>own branch</strong> by clicking the drop-down menu called <strong>Current branch</strong>, typing a name for their branch (e.g. <code class="docutils literal notranslate"><span class="pre">xx_branch</span></code>), click the big blue <strong>Create new branch</strong> button and <strong>Create branch</strong></p></li>
+<li><p>All team members should publish <code class="docutils literal notranslate"><span class="pre">xx_branch</span></code> to main repo by clicking the big blue <strong>Publish branch</strong> button</p></li>
+<li><p>All team members can make changes to <code class="docutils literal notranslate"><span class="pre">README.md</span></code>. Once they are finished, go back to <strong>GitHub Desktop</strong>, include a <strong>Summary</strong> of the changes, click <strong>Commit to <code class="docutils literal notranslate"><span class="pre">xx_branch</span></code></strong> and then <strong>Push origin</strong> button.</p></li>
+<li><p>In GitHub Desktop, click the big blue <strong>Create Pull Request</strong> button which should take you to <a class="reference external" href="http://GitHub.com">GitHub.com</a> where you can click <strong>Create pull request</strong>.</p></li>
+<li><p>The <strong>team leader</strong> can then go to <code class="docutils literal notranslate"><span class="pre">https://github.com/&lt;team-leader-username&gt;/&lt;project-repo-name&gt;</span></code>, click <strong>Pull requests</strong> from the top menu, click on the open pull request. If there are no conflicts, the team leader can click <strong>Merge pull request</strong> and <strong>Confirm merge</strong>.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">README.md</span></code> should now be updated on the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.</p></li>
+<li><p>Once your changes have been incorpotated in the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch it is good practice to clean up your repository by <strong>deleting</strong> the old branch (e.g. <code class="docutils literal notranslate"><span class="pre">xx_branch</span></code>).</p></li>
+<li><p>Before starting new work, <strong>all team members</strong> should first click the <strong>Fetch origin</strong> button to check for new changes.</p></li>
+<li><p>Repeat the steps above to contribute to the project.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="feature-branch-workflow-in-command-line">
+<h2>Feature branch workflow in command line<a class="headerlink" href="#feature-branch-workflow-in-command-line" title="Permalink to this headline">¶</a></h2>
+<p>It seems like most people in the class are using GitHub Desktop. But if your team would like to use the <strong>command line</strong> (i.e. Terminal), the steps are basically the same. There are some useful instructions <a class="reference external" href="https://icesat-2hackweek.github.io/learning-resources/projects/example_workflow/">here</a> and <a class="reference external" href="https://blog.scottlowe.org/2015/01/27/using-fork-branch-git-workflow/">here</a>. The instructor and TA would also be happy to help get a workflow started.</p>
+</div>
+<div class="section" id="some-tips-for-collaborating-on-group-project">
+<h2>Some tips for collaborating on group project<a class="headerlink" href="#some-tips-for-collaborating-on-group-project" title="Permalink to this headline">¶</a></h2>
+<p>The best practice for collaborating on GitHub is to <strong>avoid</strong> situations where two people are independently <strong>working on the same script</strong>. When trying to push/pull changes to/from same origin branch, there will inevitably be <strong>merge conflicts</strong> that can be messy to untangle.</p>
+<p>Collaboration is also a little more complicated with <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebooks</span></code> since running cells in the notebook will change execution count and output, even if the code and content appear identical. You are welcome to use other programs to write scripts (e.g. <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Lab</span></code> or <code class="docutils literal notranslate"><span class="pre">Spyder</span></code>).</p>
+<p>General recommendation - <strong>split up</strong> the project into multiple <strong>smaller scipts</strong>, and have each person work on different components. For example, you could have one script that ingests files, reduces/manipulates the data (e.g., reprojection), then writes new files out to disk in “analysis-ready” format. Then a second notebook reads in those data and does some analysis, creates some plots, etc. If you can pass things back and forth between group members like this, you’ll avoid conflicts.</p>
+<ul class="simple">
 <li><p>Create subdirectories in your repo to store:</p>
 <ul>
 <li><p><strong>notebooks</strong> - contains scripts to complete project</p></li>
@@ -488,9 +634,79 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Don’t add unnecessary files to your repo (careful with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add/commit</span></code>)</p></li>
 <li><p>Commit <strong>early</strong>, commit <strong>often</strong></p></li>
 </ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="everyone-install-a-python-distribution">
+<h2>Everyone: install a Python distribution<a class="headerlink" href="#everyone-install-a-python-distribution" title="Permalink to this headline">¶</a></h2>
+<p>There are many ways to do this, but our <em>current</em> preferred option is described below. One advantage of the workflow described next is that it is cross-platform meaning that it should work on Windows, MacOS, and Linux operating systems. Some of the text here overlaps with the <span class="xref myst">intro to Python packaging</span> page.</p>
+<p>As a reminder, a distribution is a collection of files that together allows us to build, package, and distribute a module. Since many software programs are written in Python, all computers have an internal <strong>Python distribution</strong> by default but it is usually an older version of Python (e.g. Python 2.7).</p>
+<p>Given that we require specific packages for geospatial data science, it is good practice to install a more modern Python distribution (e.g. Python 3.10.8) using <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html"><code class="docutils literal notranslate"><span class="pre">Miniconda</span></code></a>.</p>
+<p>Most students downloaded Python in Week 1 so can <strong>skip this setep</strong>. But, as a reminder, the latest version of Miniconda can be installed from the <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">dowload page</a>.</p>
+<p>We can check that Python is installed by opening an <strong>Anaconda Prompt (miniconda3)</strong> (Windows) and entering:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">where</span> <span class="n">python</span>
+</pre></div>
+</div>
+<p>Or, on MacOS, open a <strong>Terminal</strong> and enter:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">which</span> <span class="n">python</span>
+</pre></div>
+</div>
+<p>We should see somthing like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">johnny</span>\<span class="n">miniconda3</span>\<span class="n">python</span><span class="o">.</span><span class="n">exe</span>
+</pre></div>
+</div>
+<p>Or:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">python</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="setup-a-virtual-environment">
+<h2>Setup a virtual environment<a class="headerlink" href="#setup-a-virtual-environment" title="Permalink to this headline">¶</a></h2>
+<p>It is good practice to create a new virtual environment for each new programming project (e.g. the final project for this class). A virtual environment allows us to install Python packages for one project without worrying about conflicts with packages of other projects. Python has built-in support for virtual environments using the <code class="docutils literal notranslate"><span class="pre">venv</span></code> module. A new environment can be created using the following command in an <strong>Anaconda Prompt (miniconda3)</strong> (Windows) or <strong>Terminal</strong> (macOS):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="o">.</span><span class="n">venv</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The dot in <code class="docutils literal notranslate"><span class="pre">.venv</span></code> means that it is a hidden file. <code class="docutils literal notranslate"><span class="pre">.venv</span></code> or <code class="docutils literal notranslate"><span class="pre">venv</span></code> are standard names for virtual environments.</p>
+</div>
+<p>Next we need to activate the virtual environment. In Windows this can be achieved by running:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span><span class="n">venv</span>\<span class="n">Scripts</span>\<span class="n">activate</span>
+</pre></div>
+</div>
+<p>On macOS, run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">.</span><span class="n">venv</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-dependencies">
+<h2>Install dependencies<a class="headerlink" href="#install-dependencies" title="Permalink to this headline">¶</a></h2>
+<p>We can install individual Python packages using <a class="reference external" href="https://pip.pypa.io/en/stable/"><code class="docutils literal notranslate"><span class="pre">pip</span></code></a>. The syntax is <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">xxx</span></code> where <code class="docutils literal notranslate"><span class="pre">xxx</span></code> is the package we want to install. It’s often easier to install multiple packages at once using a text file, so that anyone else setting up the project will have exactly the same environment.</p>
+<p>To do this we can make a text file called <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> using <strong>Notepad</strong> on Windows or <strong>TextEdit</strong> on MacOS, add the names of the packages for the project, and save it into our new project folder.</p>
+<a class="reference internal image-reference" href="../../_images/requirements.png"><img alt="../../_images/requirements.png" class="align-center" src="../../_images/requirements.png" style="width: 400px;" /></a>
+<p>We can install all the packages at once by running:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span> 
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This could take between a few seconds to tens of minutes depending on how many packages need to be installed.</p>
+</div>
+<p>We can check that everything installed properly by first running:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span>
+</pre></div>
+</div>
+<p>Then:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
+</pre></div>
+</div>
+<p>If this runs without error, we are all good. If we get a <code class="docutils literal notranslate"><span class="pre">ModuleNotFoundError:</span></code>, we might check that the package was included in our <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Exit the Python interpreter by pressing <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">Z</span></code> and then <code class="docutils literal notranslate"><span class="pre">Enter</span></code> in Windows or just <code class="docutils literal notranslate"><span class="pre">control</span> <span class="pre">+</span> <span class="pre">Z</span></code> in MacOS.</p>
+</div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>Save your README locally as both <code class="docutils literal notranslate"><span class="pre">.md</span></code> and <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> formats but only submit the <strong>pdf</strong> to Canvas.</p>
+<p>Once all team members have installed (1) GitHub Desktop, (2) a Python distribution, and (3) a virtual environment with the packages they need for the project, proceed to this week’s <span class="xref myst"><strong>activity</strong></span>.</p>
 </div>
 </div>
 </div>
@@ -527,10 +743,10 @@ const thebe_selector_output = ".output, .cell_output"
             <p class="prev-next-title">Code management</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="project-setup.html" title="next page">
+    <a class='right-next' id="next-link" href="activity6.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Final project setup</p>
+        <p class="prev-next-title">Activity</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
