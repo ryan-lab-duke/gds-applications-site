@@ -1,4 +1,4 @@
-# Activity
+# Make a README
 
 ## Task 1 (10 points)
 
