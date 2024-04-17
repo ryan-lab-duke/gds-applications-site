@@ -1,9 +1,5 @@
 # Assignment 1
 
-```{admonition} Deadline
-Please complete this assignment by **Apr 10 11:59pm**.
-```
-
 ## Task 0 (0 points)
 
 Follow the instructions [here](https://cleo-lab.github.io/gds-applications-site/course-info/python.html) to install the Python programming environment that we will use in this class. 

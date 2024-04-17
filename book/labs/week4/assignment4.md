@@ -1,9 +1,5 @@
 # Assignment 4
 
-```{admonition} Deadline
-Please complete this assignment before **Feb 10, 11:59pm**.
-```
-
 Download the land cover data for this assignment from [here](https://www.dropbox.com/sh/ueleej8cr77kr2i/AACjQIouxEfUvo6A7ErSfgS0a?dl=0). The datasets are two National Land Cover Database (NLCD) products for Phoenix, AZ from 2001 and 2019. More information about the data can be found on the [Multi-Resolution Land Characteristics Consortium](https://www.mrlc.gov/data) wesbite.
 
 ```{image} images/phoenix.jpeg

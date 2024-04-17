@@ -1,9 +1,5 @@
 # Assignment 5
 
-```{admonition} Deadline
-Please complete this assignment before **Feb 17, 11:59pm**.
-```
-
 ## It's competition time!
 
 In this week's lab we will play a Kaggle-like competition. In these competitions, a host usually prepares a dataset and people from around the world compete against each other to build the best machine learning model. Submitted models are scored based on their predictive accuracy relative to a hidden solution file. 

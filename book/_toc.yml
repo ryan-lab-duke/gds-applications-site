@@ -46,7 +46,7 @@ parts:
     chapters:
     - file: lectures/week6/lecture-6.ipynb
     - file: labs/week6/assignment6.md
-    - file: labs/week6/project-setup.md
+    - file: labs/week6/activity6.md
 
   - caption: Week 7
     chapters:

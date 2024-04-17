@@ -1,9 +1,5 @@
 # Activity 3
 
-```{admonition} Deadline
-Please complete this assignment before **Apr 24 11:59pm**.
-```
-
 ## Census data
 
 In this activity, we will be downloading our own data! 

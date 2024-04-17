@@ -1,10 +1,5 @@
 # Activity 2
 
-```{admonition} Deadline
-Please complete this assignment before **Apr 17 11:59pm**.
-
-```
-
 Download the data for the assignment from [here](https://www.dropbox.com/scl/fo/otgc923zyn2o8go10486e/h?rlkey=jmzcte1fddpic85a78eju6tfx&dl=0). This dataset contains population and income data for Census tracts in Lane County, Oregon. In this activity, we will use the `geopandas` package to do some basic analysis on this dataset. 
 
 ```{note}

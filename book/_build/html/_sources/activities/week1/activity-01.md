@@ -1,10 +1,5 @@
 # Activity 1
 
-```{admonition} Deadline
-Please complete this assignment before **Apr 10 11:59pm**.
-
-```
-
 Download the data for the assignment from [here](https://www.dropbox.com/scl/fi/zcqevrwv51k3oahjwwz7k/rivers.csv?rlkey=aal2mmo2kk6exeor3mw9i4lir&dl=0). This dataset contains attributes for the some of the largest rivers in the world. In this activity, we will use the `pandas` package to do some basic analysis on this dataset. 
 
 ```{image} images/global-rivers.webp
