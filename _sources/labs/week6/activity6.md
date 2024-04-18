@@ -30,5 +30,5 @@ Push all changes to GitHub and submit README as a pdf to Canvas. The markdown ed
 We would like to see at **least one commit** from **each group member** at this phase of the project, even if it is as simple as adding their name to the `README.md` file.
 
 ```{important}
-Save your README.md locally as both `.md` and `.pdf` formats but only submit the **pdf** to Canvas.
+Save your README locally as both `.md` and `.pdf` formats but only submit the **pdf** to Canvas.
 ```
