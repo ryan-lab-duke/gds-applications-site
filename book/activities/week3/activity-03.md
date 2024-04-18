@@ -44,21 +44,24 @@ If you run this command from your course folder, your `.ipynb` assignment will a
 
 ```
 !pip install census
-!pip install us
 ```
 
-The `census` package provides a simplified interface for downloading data from the Census Bureau's API. More information about this package can be found [here](https://github.com/datamade/census). The `us` pacakge provides provides convenient access to [FIPS codes](https://en.wikipedia.org/wiki/Federal_Information_Processing_Standard_state_code) for identifying states and counties in the US. 
+The `census` package provides a simplified interface for downloading data from the Census Bureau's API. More information about this package can be found [here](https://github.com/datamade/census). 
 
-* Request a [Census API Key](https://api.census.gov/data/key_signup.html).
+* Request a [Census API Key](https://api.census.gov/data/key_signup.html). You will receive an email with the API key - make sure you activate it!
 
-* Test installation by running the following (where `API_KEY` is your API key):
+* Test installation by first importing the packages and running the following (where `API_KEY` is your API key):
 
 ```
+from census import Census
+import pandas as pd
+import matplotlib.pyplot as plt
+
 c = Census("API_KEY")
-data = c.acs5.state(('B25034_011E'), states.OR.fips)
+data = c.acs5.state(('B25034_011E'), '41')
 ```
 
-The code above will download the variable `B25034_011E` for **Oregon** from the **5-year American Community Survey** (`acs5`). By default, `census` will download the most recent survey data which is currently 2021. More information about the American Community Survey can be found [here](https://en.wikipedia.org/wiki/American_Community_Survey).
+The code above will download the variable `B25034_011E` for **Oregon** ([FIPS code](https://transition.fcc.gov/oet/info/maps/census/fips/fips.txt) = 41), from the **5-year American Community Survey** (`acs5`). By default, `census` will download the most recent survey data which is currently 2021. More information about the American Community Survey can be found [here](https://en.wikipedia.org/wiki/American_Community_Survey).
 
 The variable `B25034_011E` represents the **number of houses built in 1939 or earlier**. A full list of variables (or tables) can be found [here](https://api.census.gov/data/2021/acs/acs5/variables.html). If we wanted to download the number of houses built in 1940-1949, 1950-159 etc. we could make a list. 
 
@@ -66,7 +69,7 @@ The variable `B25034_011E` represents the **number of houses built in 1939 or ea
 variable_list = ['B25034_002E','B25034_003E', 'B25034_004E', 'B25034_005E','B25034_006E', 
                  'B25034_007E','B25034_008E', 'B25034_009E', 'B25034_010E', 'B25034_011E']
 
-data = c.acs5.state((variable_list), states.OR.fips)
+data = c.acs5.state((variable_list), '41')
 
 ```
 
@@ -104,7 +107,7 @@ Now it's your turn to download Census variable(s) for a place or topic of intere
 From the **README** on the [`census`](https://github.com/datamade/census) GitHub page, the syntax for downloading at the tract level is `state_county_tract(fields, state_fips, county_fips, tract)`. Note that two more arguments are required now, `county_fips` and `tract`. We can pass `Census.ALL` to get **all** counties and/or tracts. 
 
 ```
-data = c.acs5.state_county_tract((variable_list), states.OR.fips, Census.ALL, Census.ALL)
+data = c.acs5.state_county_tract((variable_list), '41', Census.ALL, Census.ALL)
 ```
 
 Otherwise, we should specify a county. For example, `039` would be **Lane County**. A table with the county FIPS codes can be found [here](https://unicede.air-worldwide.com/unicede/unicede_oregon_fips.html). 
@@ -126,7 +129,7 @@ The data we downloaded can easily be converted into a `DataFrame` but it would u
 If were interested in **tract** level data we would navigate to the `TRACT/` folder and download the `.zip` file for Oregon (i.e. `tl_2021_41_tract.zip`)
 
 ```{tip}
-We can find the FIPS code for Oregon by running: `print(states.OR.fips)`
+We can find the FIPS code for Oregon from [this website](https://transition.fcc.gov/oet/info/maps/census/fips/fips.txt).
 ```
 
 Unzip the file and read the `.shp` file with `geopandas`. The two DataFrames can be merged using the following code:
