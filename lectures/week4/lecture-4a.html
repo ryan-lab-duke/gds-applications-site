@@ -574,7 +574,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="gridded-data">
 <h2>Gridded data<a class="headerlink" href="#gridded-data" title="Permalink to this headline">¶</a></h2>
-<p>Gridded (or raster) data represent a matrix of cells (or pixels) organized into rows and columns (or a grid). Grid cells can represent data that changes <strong>continuously</strong> across a landscape (surface) such as elevation, air temperature, or . reflectance data from satellite imaging platforms. Grid cells can also represent <strong>discrete</strong> data such as vegetation type or land cover.</p>
+<p>Gridded (or raster) data represent a matrix of cells (or pixels) organized into rows and columns (or a grid). Grid cells can represent data that changes <strong>continuously</strong> across a landscape (surface) such as elevation, air temperature, or reflectance data from satellite imaging platforms. Grid cells can also represent <strong>discrete</strong> data such as vegetation type or land cover.</p>
 <a class="reference internal image-reference" href="../../_images/raster-matrix.png"><img alt="../../_images/raster-matrix.png" class="align-center" src="../../_images/raster-matrix.png" style="width: 500px;" /></a>
 </div>
 <div class="section" id="libraries">
@@ -939,7 +939,7 @@ Data type: (&#39;uint8&#39;,)
 </div>
 <div class="section" id="aggregate-land-cover-classes">
 <h2>Aggregate land cover classes<a class="headerlink" href="#aggregate-land-cover-classes" title="Permalink to this headline">¶</a></h2>
-<p>Since we are interested in shrubs of all kinds shrubs, we will combine the the <strong>dwarf shrubs</strong> and <strong>shrub/scrub</strong> classes. The most simple way of doing this is to re-assign all grid cells classified as <strong>shrub/scrub</strong> (52) to <strong>dwarf shrubs</strong> (51) using a <strong>mask</strong>.</p>
+<p>Since we are interested in all kinds of shrubs, we will combine the the <strong>dwarf shrubs</strong> and <strong>shrub/scrub</strong> classes. The most simple way of doing this is to re-assign all grid cells classified as <strong>shrub/scrub</strong> (52) to <strong>dwarf shrubs</strong> (51) using a <strong>mask</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Re-assign land cover class</span>
