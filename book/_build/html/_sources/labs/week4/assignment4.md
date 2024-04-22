@@ -57,7 +57,7 @@ Download the land cover data for this assignment from [here](https://www.dropbox
 
 *****************************
 
-## Extra credit
+## Task 4 (5 points)
 
 Make a figure that replicates panels **b** (or **d**) from Figure 2 of van Vliet (2019), but for Phoenix. 
 
@@ -80,7 +80,7 @@ In the second part of this assignment we will be anlyzing some climate data for 
 
 *****************************
 
-## Task 4 (5 points)
+## Task 5 (5 points)
 
 Read the US climate data and answer the following questions:
 
@@ -100,7 +100,7 @@ Right-click on Google Maps to record the approximate latitude and longitude of E
  
 *****************************
 
-## Task 5 (5 points)
+## Task 6 (5 points)
 
 Find the following grid cells in the US climate data and provide the lat/lons **and** a rough location of where they are located.
 
@@ -120,7 +120,7 @@ Copy and paste the lat/lons into Google Maps to find the location of these place
 
 *****************************
 
-## Extra credit
+## Task 7 (5 points)
 
 * a) What was the mean air temperature (in F) and cloud cover (in %) in Florence, OR in **February**?
 
