@@ -27,7 +27,7 @@
 
 # ## Gridded data
 # 
-# Gridded (or raster) data represent a matrix of cells (or pixels) organized into rows and columns (or a grid). Grid cells can represent data that changes **continuously** across a landscape (surface) such as elevation, air temperature, or . reflectance data from satellite imaging platforms. Grid cells can also represent **discrete** data such as vegetation type or land cover.
+# Gridded (or raster) data represent a matrix of cells (or pixels) organized into rows and columns (or a grid). Grid cells can represent data that changes **continuously** across a landscape (surface) such as elevation, air temperature, or reflectance data from satellite imaging platforms. Grid cells can also represent **discrete** data such as vegetation type or land cover.
 # 
 # ```{image} images/raster-matrix.png
 # :width: 500px
@@ -208,7 +208,7 @@ df_2016
 
 # ## Aggregate land cover classes
 # 
-# Since we are interested in shrubs of all kinds shrubs, we will combine the the **dwarf shrubs** and **shrub/scrub** classes. The most simple way of doing this is to re-assign all grid cells classified as **shrub/scrub** (52) to **dwarf shrubs** (51) using a **mask**.
+# Since we are interested in all kinds of shrubs, we will combine the the **dwarf shrubs** and **shrub/scrub** classes. The most simple way of doing this is to re-assign all grid cells classified as **shrub/scrub** (52) to **dwarf shrubs** (51) using a **mask**.
 
 # In[43]:
 
