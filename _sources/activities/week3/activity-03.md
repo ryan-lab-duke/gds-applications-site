@@ -146,7 +146,7 @@ Tracts are unique to each county but not to each state. Hence, there could be mu
 
 ## Task 4 (5 points)
 
-* Make a chloropleth map showing a variable of interest
+* Make a choropleth map showing a variable of interest
 
 * Customize the plot so it looks more presentable.
 
