@@ -69,14 +69,14 @@ Import the `geopandas` package and read the shapefile. Write some code that prin
 
 ## Task 3 (5 points)
 
-* Make a chloropleth map showing population density
+* Make a choropleth map showing population density
 
 ```{admonition} Click to reveal hint
 :class: tip, dropdown
 The following guide may be helpful: https://geopandas.org/en/stable/docs/user_guide/mapping.html
 ```
 
-* Make a chloropleth map showing household income.
+* Make a choropleth map showing household income.
 
 * Customize both plots so they look more presentable.
 
