@@ -58,16 +58,4 @@ rmse = np.sqrt(final_mse)
 Save your notebooks locally as both `.ipynb` and `.pdf` formats but only submit the **pdf** to Canvas.
 ```
 
-*****************************
-
-## Task 1 (10 points):
-
-```{admonition} Deadline
-Please complete this task by **Sunday Feb 12, 11:59pm**.
-```
-
-It's time to think about a final project! Some guidance for picking a final project idea can be found [here](https://owel-lab.github.io/gds-applications-site/labs/week5/project-ideas.html). Note that we will be available during the labs this week to discuss ideas.
-
-* Submit a project idea to me and the TA via email. At this stage, it's perfectly OK if the idea is a little vague. 
-
-* Come to next class (Feb 13) ready to share your idea(s) in small groups and provide feedback to others in the next lab
+****************************

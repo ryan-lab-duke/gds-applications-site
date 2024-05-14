@@ -32,7 +32,7 @@ Download the land cover data for this assignment from [here](https://www.dropbox
 
 * a) How many different land cover classes are there in the 2001 data?
 
-* b) Aggregate all developed land cover classes (i.e. 21, 22, 23, and 24) into a single class. Bonus point if you can write it as a one-liner.
+* b) Aggregate all developed land cover classes (i.e. 21, 22, 23, and 24) into a single class.
 
 * c) What percentage of the 2001 data is occupied by this new **developed class**?
 

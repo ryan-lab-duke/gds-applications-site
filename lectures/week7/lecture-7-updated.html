@@ -50,6 +50,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Visualization" href="../week8/lecture-8a.html" />
+    <link rel="prev" title="Make a README" href="../../labs/week6/activity6.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -262,9 +264,9 @@ const thebe_selector_output = ".output, .cell_output"
   Week 7
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="lecture-7-updated.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Data access
   </a>
  </li>
@@ -326,7 +328,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/lectures/week7/lecture-7.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/lectures/week7/lecture-7-updated.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -346,7 +348,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/cleo-lab/gds-applications-site/issues/new?title=Issue%20on%20page%20%2Flectures/week7/lecture-7.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/cleo-lab/gds-applications-site/issues/new?title=Issue%20on%20page%20%2Flectures/week7/lecture-7-updated.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -367,7 +369,7 @@ const thebe_selector_output = ".output, .cell_output"
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/cleo-lab/gds-applications-site/main?urlpath=tree/book/lectures/week7/lecture-7.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/cleo-lab/gds-applications-site/main?urlpath=tree/book/lectures/week7/lecture-7-updated.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
@@ -461,6 +463,11 @@ const thebe_selector_output = ".output, .cell_output"
    Selenium
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#acknowledgements">
+   Acknowledgements
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -551,6 +558,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#selenium">
    Selenium
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#acknowledgements">
+   Acknowledgements
   </a>
  </li>
 </ul>
@@ -851,7 +863,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fd769e592b0&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/lecture-7_12_1.png" src="../../_images/lecture-7_12_1.png" />
+<img alt="../../_images/lecture-7-updated_12_1.png" src="../../_images/lecture-7-updated_12_1.png" />
 </div>
 </div>
 </div>
@@ -865,7 +877,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="api-limits">
 <h2>API limits<a class="headerlink" href="#api-limits" title="Permalink to this headline">¶</a></h2>
-<p>Often APIs are sometimes not available or have limitations. Technology companies are known for <strong>hoarding data</strong> to secure market dominance. But this is a problem because, by guarding data, they are also preventing it being <strong>used for good causes</strong>. Without access to their data it is difficult to tell whether they are in <strong>compliance</strong>.</p>
+<p>So can we just do the same for any data that is hosted on the internet?</p>
+<p>Often APIs are not freely available or have limitations. Technology companies are known for <strong>hoarding data</strong> to secure market dominance. But this is a problem because, by guarding data, they are also preventing it being <strong>used for good causes</strong>. Without access to their data it is difficult to tell whether they are in <strong>compliance</strong>.</p>
 <p>Either presented with subscription-based API</p>
 <a class="reference internal image-reference" href="../../_images/airbnb.png"><img alt="../../_images/airbnb.png" class="align-center" src="../../_images/airbnb.png" style="width: 1000px;" /></a>
 <p>Or an API with limited functionality</p>
@@ -884,10 +897,32 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="suppose-a-friend-wanted-to-do-this">
 <h2>Suppose a friend wanted to do this?<a class="headerlink" href="#suppose-a-friend-wanted-to-do-this" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">requests</span></code>: standard Python library for requesting data from the web</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">BeautifulSoup</span></code>: a library for pulling data out of HTML and XML files</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">selenium</span></code>: is a library for performing <strong>web browser automation</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">webbrowser</span></code>: comes installed with Python and opens a browser to a specific page</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">requests</span></code>: downloads files and web pages from the internet</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BeautifulSoup</span></code>: parses HTML, the format that web pages are written in</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">selenium</span></code>: launches and controls a web browser. The package is able to fill in forms and simulate mouse clicks in this browser.</p></li>
 </ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="ch">#! python3</span>
+
+<span class="c1"># mapIt.py - Launches a map in the browser using an address from the</span>
+<span class="c1"># command line or clipboard.</span>
+
+<span class="kn">import</span> <span class="nn">webbrowser</span><span class="o">,</span> <span class="nn">sys</span>
+
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="c1"># Get address from command line.</span>
+    <span class="n">address</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+
+    <span class="n">webbrowser</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;https://www.google.com/maps/place/&#39;</span> <span class="o">+</span> <span class="n">address</span><span class="p">)</span>
+
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;No address&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="requests">
 <h3><code class="docutils literal notranslate"><span class="pre">requests</span></code><a class="headerlink" href="#requests" title="Permalink to this headline">¶</a></h3>
 <p>A lot of data on Wikipedia is contained in HTML tables which have the following syntax.</p>
@@ -1090,7 +1125,7 @@ h2 -&gt; References[edit]
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7fc6e846cd30&gt;
 </pre></div>
 </div>
-<img alt="../../_images/lecture-7_34_1.png" src="../../_images/lecture-7_34_1.png" />
+<img alt="../../_images/lecture-7-updated_35_1.png" src="../../_images/lecture-7-updated_35_1.png" />
 </div>
 </div>
 </div>
@@ -1162,6 +1197,10 @@ h2 -&gt; References[edit]
 </div>
 <a class="reference internal image-reference" href="../../_images/search.png"><img alt="../../_images/search.png" class="align-center" src="../../_images/search.png" style="width: 900px;" /></a>
 </div>
+<div class="section" id="acknowledgements">
+<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this headline">¶</a></h2>
+<p>Some of the this demo was inspired by <a class="reference external" href="https://automatetheboringstuff.com/2e/chapter12/">Automating the Boring Stuff</a> Chapter 12.</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -1188,7 +1227,21 @@ h2 -&gt; References[edit]
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../../labs/week6/activity6.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Make a README</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../week8/lecture-8a.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Visualization</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             
         </div>
