@@ -50,8 +50,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Visualization" href="../week8/lecture-8a.html" />
-    <link rel="prev" title="Make a README" href="../../labs/week6/activity6.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -264,9 +262,9 @@ const thebe_selector_output = ".output, .cell_output"
   Week 7
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="lecture-7-updated.html">
    Data access
   </a>
  </li>
@@ -402,10 +400,10 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cenpy">
+  <a class="reference internal nav-link" href="#census">
    <code class="docutils literal notranslate">
     <span class="pre">
-     CenPy
+     census
     </span>
    </code>
   </a>
@@ -494,10 +492,10 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cenpy">
+  <a class="reference internal nav-link" href="#census">
    <code class="docutils literal notranslate">
     <span class="pre">
-     CenPy
+     census
     </span>
    </code>
   </a>
@@ -585,326 +583,44 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p>Many students will use Census Bureau data in their final projects.</p>
 </div>
-<div class="section" id="cenpy">
-<h2><code class="docutils literal notranslate"><span class="pre">CenPy</span></code><a class="headerlink" href="#cenpy" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">CenPy</span></code> is an interface to explore and query the US Census API in <strong>Python</strong>. It conveniently returns the data in <strong><code class="docutils literal notranslate"><span class="pre">Pandas</span></code> Dataframes</strong> for further analysis.</p>
-<p>We know <code class="docutils literal notranslate"><span class="pre">CenPy</span></code> is legitimate because it has an <strong>active GitHub repository</strong>.</p>
-<a class="reference internal image-reference" href="../../_images/cenpy-github.png"><img alt="../../_images/cenpy-github.png" class="align-center" src="../../_images/cenpy-github.png" style="width: 1000px;" /></a>
-<p>More information about this package can be found <a class="reference external" href="https://github.com/cenpy-devs/cenpy">here</a>.</p>
-<p>First we should find how to install it, either using <code class="docutils literal notranslate"><span class="pre">conda</span></code> or <code class="docutils literal notranslate"><span class="pre">pip</span></code> depending on which virtual environment manager (<code class="docutils literal notranslate"><span class="pre">conda</span></code> or <code class="docutils literal notranslate"><span class="pre">venv</span></code>) we are using.</p>
-<a class="reference internal image-reference" href="../../_images/cenpy-install.png"><img alt="../../_images/cenpy-install.png" class="align-center" src="../../_images/cenpy-install.png" style="width: 800px;" /></a>
+<div class="section" id="census">
+<h2><code class="docutils literal notranslate"><span class="pre">census</span></code><a class="headerlink" href="#census" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">census</span></code> is an interface to explore and query the US Census API in <strong>Python</strong>. It conveniently returns the data in <strong><code class="docutils literal notranslate"><span class="pre">Pandas</span></code> Dataframes</strong> for further analysis.</p>
+<p>We know <code class="docutils literal notranslate"><span class="pre">census</span></code> is legitimate because it has an <strong>active GitHub repository</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/census-github.png"><img alt="../../_images/census-github.png" class="align-center" src="../../_images/census-github.png" style="width: 1000px;" /></a>
+<p>More information about this package can be found <a class="reference external" href="https://github.com/datamade/census">here</a>.</p>
+<p>First we should find how to install it, usually either through <code class="docutils literal notranslate"><span class="pre">conda</span></code> or <code class="docutils literal notranslate"><span class="pre">pip</span></code>.</p>
+<a class="reference internal image-reference" href="../../_images/census-install.png"><img alt="../../_images/census-install.png" class="align-center" src="../../_images/census-install.png" style="width: 800px;" /></a>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import library</span>
-<span class="kn">from</span> <span class="nn">cenpy</span> <span class="kn">import</span> <span class="n">products</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import package</span>
+<span class="kn">from</span> <span class="nn">census</span> <span class="kn">import</span> <span class="n">Census</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>Then search the documentation for examples…</p>
-<a class="reference internal image-reference" href="../../_images/cenpy-examples.png"><img alt="../../_images/cenpy-examples.png" class="align-center" src="../../_images/cenpy-examples.png" style="width: 1000px;" /></a>
+<a class="reference internal image-reference" href="../../_images/census-examples.png"><img alt="../../_images/census-examples.png" class="align-center" src="../../_images/census-examples.png" style="width: 1000px;" /></a>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">acs</span> <span class="o">=</span> <span class="n">products</span><span class="o">.</span><span class="n">ACS</span><span class="p">(</span><span class="mi">2019</span><span class="p">)</span>
-<span class="n">acs</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">Census</span><span class="p">(</span><span class="s2">&quot;5f7e25f1ce5f52828e64cc4e5ff5f470759b4e03&quot;</span><span class="p">)</span>
+<span class="n">c</span><span class="o">.</span><span class="n">acs5</span><span class="o">.</span><span class="n">state</span><span class="p">((</span><span class="s1">&#39;NAME&#39;</span><span class="p">,</span> <span class="s1">&#39;B25034_010E&#39;</span><span class="p">),</span> <span class="s1">&#39;41&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Connection to American Community Survey: 5-Year Estimates: Detailed Tables 5-Year(ID: https://api.census.gov/data/id/ACSDT5Y2019)
-With MapServer: Census ACS 2019 WMS
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;NAME&#39;: &#39;Oregon&#39;, &#39;B25034_010E&#39;: 92807.0, &#39;state&#39;: &#39;41&#39;}]
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find tables containing keyword</span>
-<span class="n">acs</span><span class="o">.</span><span class="n">filter_tables</span><span class="p">(</span><span class="s1">&#39;POPULATION&#39;</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s1">&#39;description&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>description</th>
-      <th>columns</th>
-    </tr>
-    <tr>
-      <th>table_name</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>B01003</th>
-      <td>TOTAL POPULATION</td>
-      <td>[B01003_001E]</td>
-    </tr>
-    <tr>
-      <th>B05006</th>
-      <td>PLACE OF BIRTH FOR THE FOREIGN-BORN POPULATION...</td>
-      <td>[B05006_001E, B05006_002E, B05006_003E, B05006...</td>
-    </tr>
-    <tr>
-      <th>B05007</th>
-      <td>PLACE OF BIRTH BY YEAR OF ENTRY BY CITIZENSHIP...</td>
-      <td>[B05007_001E, B05007_002E, B05007_003E, B05007...</td>
-    </tr>
-    <tr>
-      <th>B05008</th>
-      <td>SEX BY PLACE OF BIRTH BY YEAR OF ENTRY FOR THE...</td>
-      <td>[B05008_001E, B05008_002E, B05008_003E, B05008...</td>
-    </tr>
-    <tr>
-      <th>B05013</th>
-      <td>SEX BY AGE FOR THE FOREIGN-BORN POPULATION</td>
-      <td>[B05013_001E, B05013_002E, B05013_003E, B05013...</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>C24030</th>
-      <td>SEX BY INDUSTRY FOR THE CIVILIAN EMPLOYED POPU...</td>
-      <td>[C24030_001E, C24030_002E, C24030_003E, C24030...</td>
-    </tr>
-    <tr>
-      <th>C24040</th>
-      <td>SEX BY INDUSTRY FOR THE FULL-TIME, YEAR-ROUND ...</td>
-      <td>[C24040_001E, C24040_002E, C24040_003E, C24040...</td>
-    </tr>
-    <tr>
-      <th>C24050</th>
-      <td>INDUSTRY BY OCCUPATION FOR THE CIVILIAN  EMPLO...</td>
-      <td>[C24050_001E, C24050_002E, C24050_003E, C24050...</td>
-    </tr>
-    <tr>
-      <th>C24060</th>
-      <td>OCCUPATION BY CLASS OF WORKER FOR THE CIVILIAN...</td>
-      <td>[C24060_001E, C24060_002E, C24060_003E, C24060...</td>
-    </tr>
-    <tr>
-      <th>C24070</th>
-      <td>INDUSTRY BY CLASS OF WORKER FOR THE CIVILIAN E...</td>
-      <td>[C24070_001E, C24070_002E, C24070_003E, C24070...</td>
-    </tr>
-  </tbody>
-</table>
-<p>143 rows × 2 columns</p>
-</div></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print list of tables</span>
-<span class="n">acs</span><span class="o">.</span><span class="n">filter_variables</span><span class="p">(</span><span class="s1">&#39;B01003&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>label</th>
-      <th>concept</th>
-      <th>predicateType</th>
-      <th>group</th>
-      <th>limit</th>
-      <th>predicateOnly</th>
-      <th>hasGeoCollectionSupport</th>
-      <th>attributes</th>
-      <th>required</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>B01003_001E</th>
-      <td>Estimate!!Total</td>
-      <td>TOTAL POPULATION</td>
-      <td>int</td>
-      <td>B01003</td>
-      <td>0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>B01003_001EA,B01003_001M,B01003_001MA</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<a class="reference internal image-reference" href="../../_images/census-geo.png"><img alt="../../_images/census-geo.png" class="align-center" src="../../_images/census-geo.png" style="width: 800px;" /></a>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Download data</span>
-<span class="n">lane_pop</span> <span class="o">=</span> <span class="n">products</span><span class="o">.</span><span class="n">ACS</span><span class="p">(</span><span class="mi">2019</span><span class="p">)</span><span class="o">.</span><span class="n">from_county</span><span class="p">(</span><span class="s1">&#39;Lane County, OR&#39;</span><span class="p">,</span> 
-                                          <span class="n">level</span><span class="o">=</span><span class="s1">&#39;tract&#39;</span><span class="p">,</span>
-                                          <span class="n">variables</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;B01003_001E&#39;</span><span class="p">])</span> <span class="c1"># don&#39;t worry about the deprecation message!</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/envs/gds/lib/python3.8/site-packages/cenpy/products.py:762: FutureWarning: The `op` parameter is deprecated and will be removed in a future release. Please use the `predicate` parameter instead.
-  return self._from_name(county, variables, level, &quot;Counties&quot;, **kwargs)
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lane_pop</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>GEOID</th>
-      <th>geometry</th>
-      <th>B01003_001E</th>
-      <th>NAME</th>
-      <th>state</th>
-      <th>county</th>
-      <th>tract</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>41039000705</td>
-      <td>POLYGON ((-13817570.420 5462507.770, -13817562...</td>
-      <td>3686.0</td>
-      <td>Census Tract 7.05, Lane County, Oregon</td>
-      <td>41</td>
-      <td>039</td>
-      <td>000705</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>41039004000</td>
-      <td>POLYGON ((-13705354.030 5475460.590, -13705335...</td>
-      <td>2473.0</td>
-      <td>Census Tract 40, Lane County, Oregon</td>
-      <td>41</td>
-      <td>039</td>
-      <td>004000</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>41039003000</td>
-      <td>POLYGON ((-13704040.350 5477214.460, -13704036...</td>
-      <td>4542.0</td>
-      <td>Census Tract 30, Lane County, Oregon</td>
-      <td>41</td>
-      <td>039</td>
-      <td>003000</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>41039001202</td>
-      <td>POLYGON ((-13712723.380 5432343.990, -13712713...</td>
-      <td>4178.0</td>
-      <td>Census Tract 12.02, Lane County, Oregon</td>
-      <td>41</td>
-      <td>039</td>
-      <td>001202</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>41039004900</td>
-      <td>POLYGON ((-13700806.520 5470431.210, -13700788...</td>
-      <td>4741.0</td>
-      <td>Census Tract 49, Lane County, Oregon</td>
-      <td>41</td>
-      <td>039</td>
-      <td>004900</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute population density</span>
-<span class="n">lane_pop</span><span class="p">[</span><span class="s1">&#39;pop_density&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">lane_pop</span><span class="p">[</span><span class="s1">&#39;B01003_001E&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="p">(</span><span class="n">lane_pop</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">area</span> <span class="o">/</span> <span class="mf">1e+6</span><span class="p">)</span>
-
-<span class="kn">from</span> <span class="nn">mpl_toolkits.axes_grid1</span> <span class="kn">import</span> <span class="n">make_axes_locatable</span>
-
-<span class="c1"># Plot map</span>
-<span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
-
-<span class="c1"># These two lines make the colorbar the same size as the axes.</span>
-<span class="n">divider</span> <span class="o">=</span> <span class="n">make_axes_locatable</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
-<span class="n">cax</span> <span class="o">=</span> <span class="n">divider</span><span class="o">.</span><span class="n">append_axes</span><span class="p">(</span><span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;5%&quot;</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
-
-<span class="n">lane_pop</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;pop_density&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cax</span><span class="o">=</span><span class="n">cax</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
-</pre></div>
-</div>
-<img alt="../../_images/lecture-7_12_1.png" src="../../_images/lecture-7_12_1.png" />
-</div>
-</div>
+<a class="reference internal image-reference" href="../../_images/more-examples.png"><img alt="../../_images/more-examples.png" class="align-center" src="../../_images/more-examples.png" style="width: 1000px;" /></a>
 </div>
 <div class="section" id="usgs-hydrologic-data">
 <h2>USGS hydrologic data<a class="headerlink" href="#usgs-hydrologic-data" title="Permalink to this headline">¶</a></h2>
 <p>Let’s have a look at another API called <a class="reference external" href="https://github.com/DOI-USGS/dataretrieval-python"><code class="docutils literal notranslate"><span class="pre">dataretrieval</span></code></a> which was developed by USGS to retrieve hydrologic data.</p>
 <a class="reference internal image-reference" href="../../_images/usgs-github.png"><img alt="../../_images/usgs-github.png" class="align-center" src="../../_images/usgs-github.png" style="width: 1000px;" /></a>
-<p>On the GitHub <code class="docutils literal notranslate"><span class="pre">REAMDE.md</span></code> for this package it says we can also install <code class="docutils literal notranslate"><span class="pre">dataretrieval</span></code> using <code class="docutils literal notranslate"><span class="pre">conda</span></code> or <code class="docutils literal notranslate"><span class="pre">pip</span></code>.</p>
+<p>Again, the documentation makes it clear that we should install it using either <code class="docutils literal notranslate"><span class="pre">conda</span></code> or <code class="docutils literal notranslate"><span class="pre">pip</span></code>.</p>
 <a class="reference internal image-reference" href="../../_images/usgs-install.png"><img alt="../../_images/usgs-install.png" class="align-center" src="../../_images/usgs-install.png" style="width: 800px;" /></a>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -915,7 +631,8 @@ With MapServer: Census ACS 2019 WMS
 </div>
 </div>
 </div>
-<p>Now we can look through the documentation and test some examples</p>
+<p>Now we can look through the documentation to see if the examples function as expected.</p>
+<a class="reference internal image-reference" href="../../_images/usgs.png"><img alt="../../_images/usgs.png" class="align-center" src="../../_images/usgs.png" style="width: 1000px;" /></a>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the functions for downloading data from NWIS</span>
@@ -949,9 +666,9 @@ With MapServer: Census ACS 2019 WMS
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>00010_Mean</th>
-      <th>00010_Mean_cd</th>
       <th>site_no</th>
+      <th>00010_ysi_Mean</th>
+      <th>00010_ysi_Mean_cd</th>
       <th>00060_Mean</th>
       <th>00060_Mean_cd</th>
       <th>00065_Mean</th>
@@ -999,9 +716,9 @@ With MapServer: Census ACS 2019 WMS
   <tbody>
     <tr>
       <th>2020-10-01 00:00:00+00:00</th>
+      <td>03339000</td>
       <td>14.9</td>
       <td>A</td>
-      <td>03339000</td>
       <td>75.7</td>
       <td>A</td>
       <td>2.04</td>
@@ -1012,8 +729,8 @@ With MapServer: Census ACS 2019 WMS
       <td>...</td>
       <td>3.7</td>
       <td>A</td>
-      <td>1510.0</td>
-      <td>P</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>4.1</td>
       <td>A</td>
       <td>3.3</td>
@@ -1023,9 +740,9 @@ With MapServer: Census ACS 2019 WMS
     </tr>
     <tr>
       <th>2020-10-02 00:00:00+00:00</th>
+      <td>03339000</td>
       <td>14.5</td>
       <td>A</td>
-      <td>03339000</td>
       <td>66.0</td>
       <td>A</td>
       <td>1.99</td>
@@ -1036,8 +753,8 @@ With MapServer: Census ACS 2019 WMS
       <td>...</td>
       <td>3.6</td>
       <td>A</td>
-      <td>1450.0</td>
-      <td>P</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>4.2</td>
       <td>A</td>
       <td>3.8</td>
@@ -1047,9 +764,9 @@ With MapServer: Census ACS 2019 WMS
     </tr>
     <tr>
       <th>2020-10-03 00:00:00+00:00</th>
+      <td>03339000</td>
       <td>14.2</td>
       <td>A</td>
-      <td>03339000</td>
       <td>60.2</td>
       <td>A</td>
       <td>1.96</td>
@@ -1060,8 +777,8 @@ With MapServer: Census ACS 2019 WMS
       <td>...</td>
       <td>3.2</td>
       <td>A</td>
-      <td>1110.0</td>
-      <td>P</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>3.8</td>
       <td>A</td>
       <td>3.0</td>
@@ -1071,9 +788,9 @@ With MapServer: Census ACS 2019 WMS
     </tr>
     <tr>
       <th>2020-10-04 00:00:00+00:00</th>
+      <td>03339000</td>
       <td>14.4</td>
       <td>A</td>
-      <td>03339000</td>
       <td>68.8</td>
       <td>A</td>
       <td>2.01</td>
@@ -1084,8 +801,8 @@ With MapServer: Census ACS 2019 WMS
       <td>...</td>
       <td>3.3</td>
       <td>A</td>
-      <td>1030.0</td>
-      <td>P</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>3.0</td>
       <td>A</td>
       <td>2.6</td>
@@ -1095,9 +812,9 @@ With MapServer: Census ACS 2019 WMS
     </tr>
     <tr>
       <th>2020-10-05 00:00:00+00:00</th>
+      <td>03339000</td>
       <td>13.4</td>
       <td>A</td>
-      <td>03339000</td>
       <td>66.8</td>
       <td>A</td>
       <td>1.99</td>
@@ -1108,8 +825,8 @@ With MapServer: Census ACS 2019 WMS
       <td>...</td>
       <td>3.1</td>
       <td>A</td>
-      <td>1080.0</td>
-      <td>P</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>3.4</td>
       <td>A</td>
       <td>2.7</td>
@@ -1131,10 +848,10 @@ With MapServer: Census ACS 2019 WMS
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fc731f81b50&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fd769e592b0&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/lecture-7_17_1.png" src="../../_images/lecture-7_17_1.png" />
+<img alt="../../_images/lecture-7_12_1.png" src="../../_images/lecture-7_12_1.png" />
 </div>
 </div>
 </div>
@@ -1148,10 +865,11 @@ With MapServer: Census ACS 2019 WMS
 </div>
 <div class="section" id="api-limits">
 <h2>API limits<a class="headerlink" href="#api-limits" title="Permalink to this headline">¶</a></h2>
-<p>Often APIs are sometimes not available or have limitations. Technology companies <strong>hoard data</strong> to secure market dominance. But this is a problem because, by guarding data, they are also preventing it <strong>being used</strong> for good causes. Without access to their data it is difficult to tell whether they are in <strong>compliance</strong>.</p>
-<a class="reference internal image-reference" href="../../_images/zillow.png"><img alt="../../_images/zillow.png" class="align-center" src="../../_images/zillow.png" style="width: 1000px;" /></a>
-<a class="reference internal image-reference" href="../../_images/zillow2.png"><img alt="../../_images/zillow2.png" class="align-center" src="../../_images/zillow2.png" style="width: 1000px;" /></a>
-<a class="reference internal image-reference" href="../../_images/airbnb.png"><img alt="../../_images/airbnb.png" class="align-center" src="../../_images/airbnb.png" style="width: 900px;" /></a>
+<p>Often APIs are sometimes not available or have limitations. Technology companies are known for <strong>hoarding data</strong> to secure market dominance. But this is a problem because, by guarding data, they are also preventing it being <strong>used for good causes</strong>. Without access to their data it is difficult to tell whether they are in <strong>compliance</strong>.</p>
+<p>Either presented with subscription-based API</p>
+<a class="reference internal image-reference" href="../../_images/airbnb.png"><img alt="../../_images/airbnb.png" class="align-center" src="../../_images/airbnb.png" style="width: 1000px;" /></a>
+<p>Or an API with limited functionality</p>
+<a class="reference internal image-reference" href="../../_images/zestimate.png"><img alt="../../_images/zestimate.png" class="align-center" src="../../_images/zestimate.png" style="width: 1000px;" /></a>
 </div>
 <div class="section" id="web-scraping">
 <h2>Web scraping<a class="headerlink" href="#web-scraping" title="Permalink to this headline">¶</a></h2>
@@ -1372,7 +1090,7 @@ h2 -&gt; References[edit]
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7fc6e846cd30&gt;
 </pre></div>
 </div>
-<img alt="../../_images/lecture-7_39_1.png" src="../../_images/lecture-7_39_1.png" />
+<img alt="../../_images/lecture-7_34_1.png" src="../../_images/lecture-7_34_1.png" />
 </div>
 </div>
 </div>
@@ -1470,21 +1188,7 @@ h2 -&gt; References[edit]
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../../labs/week6/activity6.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Make a README</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="../week8/lecture-8a.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Visualization</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
+<div class='prev-next-area'>
 </div>
             
         </div>

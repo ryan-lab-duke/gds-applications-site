@@ -29,99 +29,51 @@
 # 
 # Many students will use Census Bureau data in their final projects. 
 
-# ## `CenPy`
+# ## `census`
 # 
-# `CenPy` is an interface to explore and query the US Census API in **Python**. It conveniently returns the data in **`Pandas` Dataframes** for further analysis. 
+# `census` is an interface to explore and query the US Census API in **Python**. It conveniently returns the data in **`Pandas` Dataframes** for further analysis. 
 # 
-# We know `CenPy` is legitimate because it has an **active GitHub repository**. 
+# We know `census` is legitimate because it has an **active GitHub repository**. 
 # 
-# ```{image} images/cenpy-github.png
+# ```{image} images/census-github.png
 # :width: 1000px
 # :align: center
 # ```
 # 
-# More information about this package can be found [here](https://github.com/cenpy-devs/cenpy).
+# More information about this package can be found [here](https://github.com/datamade/census).
 # 
-# First we should find how to install it, either using `conda` or `pip` depending on which virtual environment manager (`conda` or `venv`) we are using. 
+# First we should find how to install it, usually either through `conda` or `pip`. 
 # 
-# ```{image} images/cenpy-install.png
+# ```{image} images/census-install.png
 # :width: 800px
 # :align: center
 # ```
 
-# In[ ]:
+# In[1]:
 
 
-# Import library
-from cenpy import products
-import matplotlib.pyplot as plt
+# Import package
+from census import Census
 
 
 # Then search the documentation for examples...
 # 
-# ```{image} images/cenpy-examples.png
+# ```{image} images/census-examples.png
 # :width: 1000px
 # :align: center
 # ```
 
-# In[12]:
+# In[3]:
 
 
-acs = products.ACS(2019)
-acs
+c = Census("5f7e25f1ce5f52828e64cc4e5ff5f470759b4e03")
+c.acs5.state(('NAME', 'B25034_010E'), '41')
 
 
-# In[13]:
-
-
-# Find tables containing keyword
-acs.filter_tables('POPULATION', by='description')
-
-
-# In[14]:
-
-
-# Print list of tables
-acs.filter_variables('B01003')
-
-
-# ```{image} images/census-geo.png
-# :width: 800px
+# ```{image} images/more-examples.png
+# :width: 1000px
 # :align: center
 # ```
-
-# In[15]:
-
-
-# Download data
-lane_pop = products.ACS(2019).from_county('Lane County, OR', 
-                                          level='tract',
-                                          variables=['B01003_001E']) # don't worry about the deprecation message!
-
-
-# In[18]:
-
-
-lane_pop.head()
-
-
-# In[19]:
-
-
-# Compute population density
-lane_pop['pop_density'] = lane_pop['B01003_001E'] / (lane_pop['geometry'].area / 1e+6)
-
-from mpl_toolkits.axes_grid1 import make_axes_locatable
-
-# Plot map
-f, ax = plt.subplots(1, 1, figsize=(10,10))
-
-# These two lines make the colorbar the same size as the axes.
-divider = make_axes_locatable(ax)
-cax = divider.append_axes("right", size="5%", pad=0.1)
-
-lane_pop.plot('pop_density', ax=ax, legend=True, cax=cax)
-
 
 # ## USGS hydrologic data
 # 
@@ -132,23 +84,27 @@ lane_pop.plot('pop_density', ax=ax, legend=True, cax=cax)
 # :align: center
 # ```
 # 
-# On the GitHub `REAMDE.md` for this package it says we can also install `dataretrieval` using `conda` or `pip`.
-# 
+# Again, the documentation makes it clear that we should install it using either `conda` or `pip`. 
 # 
 # ```{image} images/usgs-install.png
 # :width: 800px
 # :align: center
 # ```
 
-# In[22]:
+# In[4]:
 
 
 get_ipython().run_cell_magic('capture', '', '# Install package\n!pip install -U dataretrieval')
 
 
-# Now we can look through the documentation and test some examples
+# Now we can look through the documentation to see if the examples function as expected.
+# 
+# ```{image} images/usgs.png
+# :width: 1000px
+# :align: center
+# ```
 
-# In[24]:
+# In[5]:
 
 
 # Import the functions for downloading data from NWIS
@@ -162,7 +118,7 @@ df = nwis.get_record(sites=site, service='dv', start='2020-10-01', end='2021-09-
 df.head()
 
 
-# In[27]:
+# In[6]:
 
 
 # Plot
@@ -182,24 +138,19 @@ ax.plot(df['00060_Mean'])
 
 # ## API limits
 # 
-# Often APIs are sometimes not available or have limitations. Technology companies **hoard data** to secure market dominance. But this is a problem because, by guarding data, they are also preventing it **being used** for good causes. Without access to their data it is difficult to tell whether they are in **compliance**. 
+# Often APIs are sometimes not available or have limitations. Technology companies are known for **hoarding data** to secure market dominance. But this is a problem because, by guarding data, they are also preventing it being **used for good causes**. Without access to their data it is difficult to tell whether they are in **compliance**. 
 # 
-# ```{image} images/zillow.png
-# :width: 1000px
-# :align: center
-# ```
-# 
-# 
-# 
-# ```{image} images/zillow2.png
-# :width: 1000px
-# :align: center
-# ```
-# 
-# 
+# Either presented with subscription-based API
 # 
 # ```{image} images/airbnb.png
-# :width: 900px
+# :width: 1000px
+# :align: center
+# ```
+# 
+# Or an API with limited functionality 
+# 
+# ```{image} images/zestimate.png
+# :width: 1000px
 # :align: center
 # ```
 # 

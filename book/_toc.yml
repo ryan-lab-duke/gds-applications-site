@@ -50,7 +50,7 @@ parts:
 
   - caption: Week 7
     chapters:
-    - file: lectures/week7/lecture-7.ipynb
+    - file: lectures/week7/lecture-7-updated.ipynb
 
   - caption: Week 8
     chapters:
