@@ -138,7 +138,9 @@ ax.plot(df['00060_Mean'])
 
 # ## API limits
 # 
-# Often APIs are sometimes not available or have limitations. Technology companies are known for **hoarding data** to secure market dominance. But this is a problem because, by guarding data, they are also preventing it being **used for good causes**. Without access to their data it is difficult to tell whether they are in **compliance**. 
+# So can we just do the same for any data that is hosted on the internet? 
+# 
+# Often APIs are not freely available or have limitations. Technology companies are known for **hoarding data** to secure market dominance. But this is a problem because, by guarding data, they are also preventing it being **used for good causes**. Without access to their data it is difficult to tell whether they are in **compliance**. 
 # 
 # Either presented with subscription-based API
 # 
@@ -178,13 +180,13 @@ ax.plot(df['00060_Mean'])
 
 # ## Suppose a friend wanted to do this?
 # 
-# * `requests`: standard Python library for requesting data from the web
+# * `requests`: downloads files and web pages from the internet
 # 
 # 
-# * `BeautifulSoup`: a library for pulling data out of HTML and XML files
+# * `BeautifulSoup`: parses HTML, the format that web pages are written in
 # 
 # 
-# * `selenium`: is a library for performing **web browser automation**
+# * `selenium`: launches and controls a web browser. The package is able to fill in forms and simulate mouse clicks in this browser.
 
 # ### `requests`
 # 
@@ -439,3 +441,7 @@ element.click()
 # :align: center
 # ```
 # 
+
+# ## Acknowledgements
+# 
+# Some of the this demo was inspired by [Automating the Boring Stuff](https://automatetheboringstuff.com/2e/chapter12/) Chapter 12.

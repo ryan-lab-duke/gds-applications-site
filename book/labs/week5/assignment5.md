@@ -57,5 +57,3 @@ rmse = np.sqrt(final_mse)
 ```{important}
 Save your notebooks locally as both `.ipynb` and `.pdf` formats but only submit the **pdf** to Canvas.
 ```
-
-****************************

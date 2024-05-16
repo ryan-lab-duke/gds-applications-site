@@ -50,9 +50,13 @@ parts:
 
   - caption: Week 7
     chapters:
-    - file: lectures/week7/lecture-7-updated.ipynb
+    - file: lectures/week7/lecture-7.ipynb
 
   - caption: Week 8
     chapters:
-    - file: lectures/week8/lecture-8a.ipynb
-    - file: lectures/week8/lecture-8b.ipynb
+    - file: lectures/week8/lecture-8.ipynb
+
+  - caption: Week 9
+    chapters:
+    - file: lectures/week9/lecture-9a.ipynb
+    - file: lectures/week9/lecture-9b.ipynb
