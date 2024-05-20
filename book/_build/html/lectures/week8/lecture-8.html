@@ -409,13 +409,23 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#task-1">
-   Task 1
+  <a class="reference internal nav-link" href="#task-1-5-points">
+   Task 1 (5 points)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#convert-datatype-to-minimum-size">
-   Convert datatype to minimum size
+  <a class="reference internal nav-link" href="#task-2-5-points">
+   Task 2 (5 points)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-3-5-points">
+   Task 3 (5 points)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-4-5-points">
+   Task 4 (5 points)
   </a>
  </li>
 </ul>
@@ -444,13 +454,23 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#task-1">
-   Task 1
+  <a class="reference internal nav-link" href="#task-1-5-points">
+   Task 1 (5 points)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#convert-datatype-to-minimum-size">
-   Convert datatype to minimum size
+  <a class="reference internal nav-link" href="#task-2-5-points">
+   Task 2 (5 points)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-3-5-points">
+   Task 3 (5 points)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-4-5-points">
+   Task 4 (5 points)
   </a>
  </li>
 </ul>
@@ -464,167 +484,87 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="automating-raster-analysis">
 <h1>Automating raster analysis<a class="headerlink" href="#automating-raster-analysis" title="Permalink to this headline">¶</a></h1>
-<p>In this class we have, for the most part, been working with relatively tidy datasets. For example, vector datasets with no missing values, gridded datasets that have consistent dimensions. But in the real-world, datasets are often messy. When conducting a research project, therefore, most of our time is actually spent formatting data so that it is convenient to analyze. This includes making sure that gridded data has the same dimensions, grid cell sizes, and projections. In this activity, we will coach you through a typical workflow that we would use for analyzing many satellite images.</p>
+<p>In this class we have, for the most part, been working with relatively tidy datasets. For example, vector datasets with no missing values, gridded datasets that have consistent dimensions. But in the real-world, datasets are often messy. When conducting a research project, therefore, most of our time is actually spent formatting data so that it is convenient to analyze. This includes making sure that gridded data has the same dimensions, spatial resolution, and projections. In this activity, we will coach you through a typical workflow that we would use for analyzing many satellite images.</p>
 <div class="section" id="background">
 <h2>Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h2>
-<p>We have been asked to compute the seasonal variability in surface water for a small region just North of Anchorage, Alaska. To do this, we have downloaded satellite imagery from <a class="reference external" href="https://www.planet.com/">Planet Lab’s</a> constellation of CubeSats. The images can be downloaded from <span class="xref myst">here</span>. These images contain four bands (Red, Green, Blue, and Near-Infrared) with a pixel resolution of ~3 m. Unfortunately, the images are not tiled meaning that the images have different numbers of rows and columns. This will prevent us applying statistical analysis to images as a whole. Furthermore, the images are projected in a geographic coordinate system (i.e. degrees) meaning that any area calculation will be inaccurate. The goal of this activity is to reformat the images to a common standard and track how surface water varies through time. Proceed by following the set of instructions below.</p>
+<p>The goal of the activity is to compute the seasonal variability in surface water for a small region just North of Anchorage, Alaska. To do this, we have downloaded satellite imagery from <a class="reference external" href="https://www.planet.com/">Planet Lab’s</a> constellation of CubeSats. The images can be downloaded from <a class="reference external" href="https://www.dropbox.com/scl/fo/t2bqd9811kn7y4brrsfoj/AGvCU_pJY3BujkZAQwE8GM0?rlkey=glpeflxxmwq8ggwh1c4gea8lh&amp;st=w02v80y8&amp;dl=0">here</a>. These images contain four bands (Red, Green, Blue, and Near-Infrared) with a pixel resolution of ~3 m. Unfortunately, the images are not tiled meaning that the images have different numbers of rows and columns. This will prevent us doing calculations on the whole set of images. Furthermore, the images are projected in a geographic coordinate system (i.e. degrees) meaning that any area calculation will be inaccurate. In this activity, we will learn how to use <a class="reference external" href="https://corteva.github.io/rioxarray/stable/getting_started/getting_started.html"><code class="docutils literal notranslate"><span class="pre">rioxarray</span></code></a> to format the images to a common standard and track how surface water varies through time. <code class="docutils literal notranslate"><span class="pre">rioxarray</span></code> is a relatively new library that extends the spatial capabilities of <code class="docutils literal notranslate"><span class="pre">xarray</span></code> using functions from <code class="docutils literal notranslate"><span class="pre">rasterio</span></code>. It’s a little clunky, as we’ll see, but also incredibly powerful for geospatial analysis. Proceed by following the set of instructions below.</p>
 </div>
-<div class="section" id="task-1">
-<h2>Task 1<a class="headerlink" href="#task-1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="task-1-5-points">
+<h2>Task 1 (5 points)<a class="headerlink" href="#task-1-5-points" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>a) Download the data to your course folder</p></li>
-<li><p>b) Import <code class="docutils literal notranslate"><span class="pre">rasterio</span></code> and <code class="docutils literal notranslate"><span class="pre">os</span></code> packages</p></li>
-<li><p>c) Make a <strong>sorted</strong> list of files in the directory where you saved the data</p></li>
+<li><p>b) Make a <strong>sorted</strong> list of files in the directory where you saved the data</p></li>
 </ul>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Click here for hint</p>
-<p>The [<code class="docutils literal notranslate"><span class="pre">os.listdir](https://docs.python.org/3/library/os.html#os.listdir)</span></code> function returns a list containing the names of the entries in the directory. The <a class="reference external" href="https://www.w3schools.com/python/ref_func_sorted.asp"><code class="docutils literal notranslate"><span class="pre">sorted()</span></code></a> function returns a sorted list.</p>
+<p>Something like [<code class="docutils literal notranslate"><span class="pre">os.listdir'](https://docs.python.org/3/library/os.html#os.listdir)</span></code> or <a class="reference external" href="https://docs.python.org/3/library/glob.html"><code class="docutils literal notranslate"><span class="pre">glob</span></code></a> would be useful for this. The <a class="reference external" href="https://www.w3schools.com/python/ref_func_sorted.asp"><code class="docutils literal notranslate"><span class="pre">sorted()</span></code></a> function returns a sorted list.</p>
 </div>
 <ul class="simple">
-<li><p>d) What is the list</p></li>
+<li><p>c) How many files are in the list?</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">glob</span>
-<span class="kn">import</span> <span class="nn">rasterio</span>
-<span class="kn">import</span> <span class="nn">os</span>
-</pre></div>
+</div>
+<div class="section" id="task-2-5-points">
+<h2>Task 2 (5 points)<a class="headerlink" href="#task-2-5-points" title="Permalink to this headline">¶</a></h2>
+<p>First we want check the projections of the files. If they are in a geographic coordinate system then we will want to reproject them to a projected coordinate reference system.</p>
+<ul class="simple">
+<li><p>a) Import the <code class="docutils literal notranslate"><span class="pre">rioxarray</span></code> package as <code class="docutils literal notranslate"><span class="pre">rio</span></code>.</p></li>
+<li><p>b) Open the first file in your list (i.e. <code class="docutils literal notranslate"><span class="pre">2023-07-01_strip_6617511_composite.tif</span></code>)</p></li>
+</ul>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Click here for hint</p>
+<p>The data can be opened using <a class="reference external" href="https://corteva.github.io/rioxarray/html/getting_started/getting_started.html#rioxarray"><code class="docutils literal notranslate"><span class="pre">rio.open_rasterio(filepath)</span></code></a>.</p>
+</div>
+<ul class="simple">
+<li><p>c) What is the coordinate system of this satellite image?</p></li>
+</ul>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Click here for hint</p>
+<p>The coordinate reference system can be accessed using <a class="reference external" href="https://corteva.github.io/rioxarray/html/getting_started/crs_management.html#Accessing-the-CRS-object"><code class="docutils literal notranslate"><span class="pre">.rio.crs</span></code></a>.</p>
+</div>
+<ul class="simple">
+<li><p>d) Reproject this satellite image to UTM Zone 5N.</p></li>
+</ul>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Click here for hint</p>
+<p>The EPSG code for UTM Zone 5N is <strong>32605</strong>. The dataset can be reprojected using <a class="reference external" href="https://corteva.github.io/rioxarray/html/examples/reproject.html#Reproject"><code class="docutils literal notranslate"><span class="pre">.rio.reproject()</span></code></a> and written to a new file using <a class="reference external" href="https://corteva.github.io/rioxarray/stable/examples/convert_to_raster.html#Converting-Dataset-to-raster"><code class="docutils literal notranslate"><span class="pre">.rio.to_raster()</span></code></a>.</p>
 </div>
 </div>
+<div class="section" id="task-3-5-points">
+<h2>Task 3 (5 points)<a class="headerlink" href="#task-3-5-points" title="Permalink to this headline">¶</a></h2>
+<p>Now we want check the extents of the reprojected files to make sure they match each other.</p>
+<ul class="simple">
+<li><p>a) Match the extent (and projection) of the second satellite image in your list (i.e. <code class="docutils literal notranslate"><span class="pre">2023-07-13_strip_6645417_composite.tif</span></code>) with the first satellite image in your list (<code class="docutils literal notranslate"><span class="pre">2023-07-01_strip_6617511_composite.tif</span></code>).</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The <a class="reference external" href="https://corteva.github.io/rioxarray/stable/examples/reproject_match.html#Example---Reproject-Match-(For-Raster-Calculations/Stacking)"><code class="docutils literal notranslate"><span class="pre">.rio.reproject_match()</span></code></a> is very useful for this task.</p>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;/Users/johnnyryan/Dropbox (University of Oregon)/teaching/gds-applications-site/resources/data/petersville/&#39;</span>
-<span class="n">files</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">path</span><span class="p">))</span>
-<span class="nb">len</span><span class="p">(</span><span class="n">files</span><span class="p">)</span>
-</pre></div>
+<ul class="simple">
+<li><p>b) Print the number of rows and columns of both satellite images (to confirm they are all the same).</p></li>
+</ul>
 </div>
+<div class="section" id="task-4-5-points">
+<h2>Task 4 (5 points)<a class="headerlink" href="#task-4-5-points" title="Permalink to this headline">¶</a></h2>
+<p>Next we will classify water in the images.</p>
+<ul class="simple">
+<li><p>a) Classify the first satellite image into three categories (i.e. null vs. water vs. non-water) using a threshold of 500 in the NIR band (i.e. band 4). Null values should be == 0, water pixels should have a value of &lt;500 (but larger than 0) and non-water pixels should be &gt;500.</p></li>
+</ul>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Click here for hint</p>
+<p>It’s sometimes easier to do this by first converting Band 4 into a <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> array (i.e. <code class="docutils literal notranslate"><span class="pre">dataset1_utm_np</span> <span class="pre">=</span> <span class="pre">dataset1_utm[3,:,:].values</span></code>)</p>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>26
-</pre></div>
+<ul class="simple">
+<li><p>b) Calculate the fraction of water cover (i.e. as a percentage of water + non-water pixels).</p></li>
+<li><p>c) Write a for loop that computes water fraction for every satellite image in the list and saves it as a list.</p></li>
+<li><p>d) Plot the water fraction.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Congratulations for getting this far. There are still a couple of things we could do to improve this analysis. For example, accounting for cloud cover or a more sophisticated water classification. But that would take a lot of time and, for a class activity, we’ve done pretty well already.</p>
 </div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
-    <span class="n">filepath</span> <span class="o">=</span> <span class="n">path</span> <span class="o">+</span> <span class="n">file</span>
-    <span class="n">src</span> <span class="o">=</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Width: </span><span class="si">{</span><span class="n">src</span><span class="o">.</span><span class="n">width</span><span class="si">}</span><span class="s2"> and Height: </span><span class="si">{</span><span class="n">src</span><span class="o">.</span><span class="n">height</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Width: 4991 and Height: 5467
-Width: 4991 and Height: 5467
-Width: 4991 and Height: 5467
-Width: 4991 and Height: 5467
-Width: 4991 and Height: 5467
-Width: 4991 and Height: 5467
-Width: 4991 and Height: 5467
-Width: 4941 and Height: 5467
-Width: 4559 and Height: 5459
-Width: 4991 and Height: 5467
-Width: 4991 and Height: 5467
-Width: 4908 and Height: 5467
-Width: 4787 and Height: 5467
-Width: 4300 and Height: 5450
-Width: 3960 and Height: 5435
-Width: 4991 and Height: 5467
-Width: 4991 and Height: 5467
-Width: 4991 and Height: 5467
-Width: 4991 and Height: 5467
-Width: 4926 and Height: 5467
-Width: 4434 and Height: 5453
-Width: 4991 and Height: 5467
-Width: 2381 and Height: 5380
-Width: 4991 and Height: 5467
-Width: 4991 and Height: 5467
-Width: 4991 and Height: 5467
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
-    <span class="n">filepath</span> <span class="o">=</span> <span class="n">path</span> <span class="o">+</span> <span class="n">file</span>
-    <span class="n">src</span> <span class="o">=</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">src</span><span class="o">.</span><span class="n">bounds</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BoundingBox(left=617034.0, bottom=6906237.0, right=632007.0, top=6922638.0)
-BoundingBox(left=617034.0, bottom=6906237.0, right=632007.0, top=6922638.0)
-BoundingBox(left=617034.0, bottom=6906237.0, right=632007.0, top=6922638.0)
-BoundingBox(left=617034.0, bottom=6906237.0, right=632007.0, top=6922638.0)
-BoundingBox(left=617034.0, bottom=6906237.0, right=632007.0, top=6922638.0)
-BoundingBox(left=617034.0, bottom=6906237.0, right=632007.0, top=6922638.0)
-BoundingBox(left=617034.0, bottom=6906237.0, right=632007.0, top=6922638.0)
-BoundingBox(left=617034.0, bottom=6906237.0, right=631857.0, top=6922638.0)
-BoundingBox(left=618330.0, bottom=6906261.0, right=632007.0, top=6922638.0)
-BoundingBox(left=617034.0, bottom=6906237.0, right=632007.0, top=6922638.0)
-BoundingBox(left=617034.0, bottom=6906237.0, right=632007.0, top=6922638.0)
-BoundingBox(left=617283.0, bottom=6906237.0, right=632007.0, top=6922638.0)
-BoundingBox(left=617034.0, bottom=6906237.0, right=631395.0, top=6922638.0)
-BoundingBox(left=619107.0, bottom=6906288.0, right=632007.0, top=6922638.0)
-BoundingBox(left=617034.0, bottom=6906237.0, right=628914.0, top=6922542.0)
-BoundingBox(left=617034.0, bottom=6906237.0, right=632007.0, top=6922638.0)
-BoundingBox(left=617034.0, bottom=6906237.0, right=632007.0, top=6922638.0)
-BoundingBox(left=617034.0, bottom=6906237.0, right=632007.0, top=6922638.0)
-BoundingBox(left=617034.0, bottom=6906237.0, right=632007.0, top=6922638.0)
-BoundingBox(left=617229.0, bottom=6906237.0, right=632007.0, top=6922638.0)
-BoundingBox(left=617034.0, bottom=6906237.0, right=630336.0, top=6922596.0)
-BoundingBox(left=617034.0, bottom=6906237.0, right=632007.0, top=6922638.0)
-BoundingBox(left=624864.0, bottom=6906498.0, right=632007.0, top=6922638.0)
-BoundingBox(left=617034.0, bottom=6906237.0, right=632007.0, top=6922638.0)
-BoundingBox(left=617034.0, bottom=6906237.0, right=632007.0, top=6922638.0)
-BoundingBox(left=617034.0, bottom=6906237.0, right=632007.0, top=6922638.0)
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">src</span><span class="o">.</span><span class="n">transform</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Affine(3.0, 0.0, 617034.0,
-       0.0, -3.0, 6922638.0)
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="convert-datatype-to-minimum-size">
-<h2>Convert datatype to minimum size<a class="headerlink" href="#convert-datatype-to-minimum-size" title="Permalink to this headline">¶</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="mi">4</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="mi">8</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>48
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="mi">4</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="mi">4</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24
-</pre></div>
-</div>
-</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Save your notebook locally in both <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> and <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> formats but only submit the <strong>pdf</strong> to Canvas.</p>
 </div>
 </div>
 </div>
