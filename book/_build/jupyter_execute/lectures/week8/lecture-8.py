@@ -17,7 +17,7 @@
 # 
 # ```{admonition} Click here for hint
 # :class: tip, dropdown
-# Something like [`os.listdir'](https://docs.python.org/3/library/os.html#os.listdir)` or [`glob`](https://docs.python.org/3/library/glob.html) would be useful for this. The [`sorted()`](https://www.w3schools.com/python/ref_func_sorted.asp) function returns a sorted list. 
+# Something like [`os.listdir`](https://docs.python.org/3/library/os.html#os.listdir)` or [`glob`](https://docs.python.org/3/library/glob.html) would be useful for this. The [`sorted()`](https://www.w3schools.com/python/ref_func_sorted.asp) function returns a sorted list. 
 # ```
 # 
 # * c) How many files are in the list?
@@ -45,7 +45,7 @@
 # 
 # ```{admonition} Click here for hint
 # :class: tip, dropdown
-# The EPSG code for UTM Zone 5N is **32605**. The dataset can be reprojected using [`.rio.reproject()`](https://corteva.github.io/rioxarray/html/examples/reproject.html#Reproject) and written to a new file using [`.rio.to_raster()`](https://corteva.github.io/rioxarray/stable/examples/convert_to_raster.html#Converting-Dataset-to-raster).
+# The EPSG code for UTM Zone 5N is **32605**. The dataset can be reprojected using [`.rio.reproject()`](https://corteva.github.io/rioxarray/html/examples/reproject.html#Reproject).
 # ```
 
 # ## Task 3 (5 points)
@@ -55,7 +55,7 @@
 # * a) Match the extent (and projection) of the second satellite image in your list (i.e. `2023-07-13_strip_6645417_composite.tif`) with the first satellite image in your list (`2023-07-01_strip_6617511_composite.tif`).
 # 
 # ```{tip}
-# The [`.rio.reproject_match()`](https://corteva.github.io/rioxarray/stable/examples/reproject_match.html#Example---Reproject-Match-(For-Raster-Calculations/Stacking)) is very useful for this task.  
+# [`.rio.reproject_match()`](https://corteva.github.io/rioxarray/stable/examples/reproject_match.html#Example---Reproject-Match-(For-Raster-Calculations/Stacking)) is very useful for this task.  
 # ```
 # 
 # * b) Print the number of rows and columns of both satellite images (to confirm they are all the same).
