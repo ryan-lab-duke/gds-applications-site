@@ -7,7 +7,7 @@
 # 
 # We can automatically download Census Bureau data from the 2019 American Community Survey using `CenPy`. 
 
-# In[ ]:
+# In[1]:
 
 
 from cenpy import products
@@ -90,7 +90,7 @@ plumbing = pd.concat([wa_plumbing, or_plumbing, ca_plumbing,
 plumbing['lack_plumbing_percent'] = plumbing['B25047_003E'] / plumbing['B25047_001E']
 
 
-# ## Simple chloropleth map
+# ## Simple choropleth map
 # 
 # `GeoPandas` provides a high-level interface to the `Matplotlib` library for making maps. It is as easy as using the `plot()` method on a `GeoDataFrame`. 
 
@@ -100,7 +100,7 @@ plumbing['lack_plumbing_percent'] = plumbing['B25047_003E'] / plumbing['B25047_0
 plumbing.plot('lack_plumbing_percent')
 
 
-# ## Improving the chloropleth map
+# ## Improving the choropleth map
 # 
 # This is useful for a quick look over the data but we would prefer to customize our plot. For instance, we should add a title, colorbar, and nicer colormap. 
 
