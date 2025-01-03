@@ -1,12 +1,12 @@
 # Geospatial Data Science
 
-This repository hosts the code for the online textbook **Geospatial Data Science** designed by [Johnny Ryan](https://www.johnny-ryan.com/).
+This repository hosts the code for the online textbook **Geospatial Data Science** designed by [Johnny Ryan](https://nicholas.duke.edu/people/faculty/ryan).
 
 ## Repository structure
 
-The Python package [`jupyter-book`](https://jupyterbook.org/intro.html#install-jupyter-book) processes the Jupyter notebook files from this repository and outputs them as the publication-quality HTML files that generate the [corresponding website](https://owel-lab.github.io/gds-applications-site/).
+The Python package [`jupyter-book`](https://jupyterbook.org/intro.html#install-jupyter-book) processes the Jupyter notebook files from this repository and outputs them as the publication-quality HTML files that generate the [corresponding website](https://ryan-lab-duke.github.io/gds-applications-site/).
 
-The HTML files are currently hidden in this branch of the GitHub repository, but you can find them in the [gh-pages branch](https://github.com/owel-lab/gds-applications-site/tree/gh-pages).
+The HTML files are currently hidden in this branch of the GitHub repository, but you can find them in the [gh-pages branch](https://github.com/ryan-lab-duke/gds-applications-site/tree/gh-pages).
 
 ## Build
 
