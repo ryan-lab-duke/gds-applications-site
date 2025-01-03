@@ -1,22 +1,22 @@
 # General information
 
-**Instructor**: [Johnny Ryan](https://www.johnny-ryan.com/)
+**Instructor**: [Johnny Ryan](https://nicholas.duke.edu/people/faculty/ryan)
 
-**Office hours**: Monday 14:00-16:00
+**Office hours**: See Canvas
 
 **Office**: See Canvas
 
-**GE**: [Max Shapovalov](https://cas.uoregon.edu/directory/profiles/all/maxims)
+**GE**: See Canvas
 
-**Office hours**: Tuesday 13:00-15:00
+**Office hours**: See Canvas
 
 **Office**: See Canvas
 
 ## Weekly schedule
 
-**Lecture**: Tuesdays and Thursdays at 09:00-09:50
+**Lecture**: TBD
 
-**Labs**: Wednesdays at 09:00-10:50 
+**Labs**: TBD
 
 ## Grading
 
