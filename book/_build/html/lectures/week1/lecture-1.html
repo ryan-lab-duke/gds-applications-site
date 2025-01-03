@@ -1,0 +1,823 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Introduction &#8212; Geospatial Data Science</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lectures/week1/lecture-1';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Assignment 1" href="../../labs/week1/assignment1.html" />
+    <link rel="prev" title="Final projects" href="../../course-info/final-project.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/nsoe-logo.png" class="logo__image only-light" alt="Geospatial Data Science - Home"/>
+    <img src="../../_static/nsoe-logo.png" class="logo__image only-dark pst-js-only" alt="Geospatial Data Science - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welcome to Geospatial Data Science 2024!
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Course information</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../course-info/general-info.html">General information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../course-info/schedule.html">Schedule (for Spring 2024)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../course-info/python.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../course-info/github.html">GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../course-info/final-project.html">Final projects</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 1</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labs/week1/assignment1.html">Assignment 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../activities/week1/activity-01.html">Activity 1</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 2</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../week2/lecture-2.html">Vector data analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labs/week2/assignment2.html">Assignment 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../activities/week2/activity-02.html">Activity 2</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 3</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../week3/lecture-3.html">Network data analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labs/week3/assignment3.html">Assignment 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../activities/week3/activity-03.html">Activity 3</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 4</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../week4/lecture-4a.html">Gridded data analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week4/lecture-4b.html">Climate data analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labs/week4/assignment4.html">Assignment 4</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 5</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../week5/lecture-5.html">Machine learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labs/week5/assignment5.html">Assignment 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labs/week5/project-ideas.html">Project ideas</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 6</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../week6/lecture-6.html">Code management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labs/week6/assignment6.html">Assignment 6</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labs/week6/activity6.html">Make a README</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 7</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../week7/lecture-7.html">Data access</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 8</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../week8/lecture-8.html">Automating raster analysis</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 9</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../week9/lecture-9a.html">Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week9/lecture-9b.html">Maps with data</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ryan-lab-duke/gds-applications-site" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ryan-lab-duke/gds-applications-site/issues/new?title=Issue%20on%20page%20%2Flectures/week1/lecture-1.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/lectures/week1/lecture-1.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Introduction</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-content">Lecture content</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geospatial-data">Geospatial data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-and-raster-gridded-data">Vector and Raster/gridded data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#network-data">Network data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python">Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-control">Version control</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#git">Git</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#github">GitHub</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-schedule">Course schedule</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lectures">Lectures</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#labs">Labs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activities-project-work">Activities/project work</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-evaluation">Course evaluation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-project">Final project</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-project-schedule">Final project schedule</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-course-themes">Some course themes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#everything-is-open-source">Everything is open-source</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#promote-collaboration-and-communication">Promote collaboration and communication</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-about-environmental-challenges-in-the-western-us">Learn about environmental challenges in the Western US</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-for-success">Tips for success</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-outcomes">Learning outcomes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#careers">Careers</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h1>
+<p>Welcome to Geospatial Data Science! In the first lecture we will provide an overview of the course including motivations, expectations, grading, and the schedule.</p>
+<section id="lecture-content">
+<h2>Lecture content<a class="headerlink" href="#lecture-content" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Overview of course</p>
+<ul>
+<li><p>What is geospatial data science?</p></li>
+</ul>
+</li>
+<li><p>Schedule and expectations</p>
+<ul>
+<li><p>Lectures, labs, grading</p></li>
+</ul>
+</li>
+<li><p>Final projects</p></li>
+<li><p>Introduction to Friday’s lab</p></li>
+</ul>
+</section>
+<section id="geospatial-data">
+<h2>Geospatial data<a class="headerlink" href="#geospatial-data" title="Link to this heading">#</a></h2>
+<section id="vector-and-raster-gridded-data">
+<h3>Vector and Raster/gridded data<a class="headerlink" href="#vector-and-raster-gridded-data" title="Link to this heading">#</a></h3>
+<a class="reference internal image-reference" href="../../_images/data.png"><img alt="../../_images/data.png" class="align-center" src="../../_images/data.png" style="width: 500px;" /></a>
+</section>
+<section id="network-data">
+<h3>Network data<a class="headerlink" href="#network-data" title="Link to this heading">#</a></h3>
+<a class="reference internal image-reference" href="../../_images/network.png"><img alt="../../_images/network.png" class="align-center" src="../../_images/network.png" style="width: 500px;" /></a>
+</section>
+</section>
+<section id="python">
+<h2>Python<a class="headerlink" href="#python" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Popular high-level programming language</p></li>
+<li><p>Easy-to-read</p></li>
+<li><p>Extensive and mature libraries (or packages)</p></li>
+<li><p>Free and open-source</p>
+<ul>
+<li><p>Accessible</p></li>
+<li><p>Can be examined, modified, and improved</p></li>
+</ul>
+</li>
+<li><p>Constantly evolving</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/python-graph.png"><img alt="../../_images/python-graph.png" class="align-center" src="../../_images/python-graph.png" style="width: 500px;" /></a>
+</section>
+<section id="version-control">
+<h2>Version control<a class="headerlink" href="#version-control" title="Link to this heading">#</a></h2>
+<section id="git">
+<h3>Git<a class="headerlink" href="#git" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Version control software for tracking changes to a set of files</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/git.png"><img alt="../../_images/git.png" class="align-center" src="../../_images/git.png" style="width: 150px;" /></a>
+</section>
+<section id="github">
+<h3>GitHub<a class="headerlink" href="#github" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>A cloud-based Git repository hosting service</p></li>
+<li><p>Makes it easier to coordinate work among programmers collaboratively developing source code during software development</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/github.png"><img alt="../../_images/github.png" class="align-center" src="../../_images/github.png" style="width: 100px;" /></a>
+<ul class="simple">
+<li><p>Python and projects that use Python (e.g. <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>) are all maintained and developed by a community of scientists and programmers on GitHub</p></li>
+<li><p>An active, up-to-date GitHub profile, with contributions to open-source project is a great way to provide evidence of skills</p></li>
+</ul>
+</section>
+</section>
+<section id="course-schedule">
+<h2>Course schedule<a class="headerlink" href="#course-schedule" title="Link to this heading">#</a></h2>
+<section id="lectures">
+<h3>Lectures<a class="headerlink" href="#lectures" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Tuesday &#64; 9am</p>
+<ul>
+<li><p>Nine lectures</p></li>
+<li><p>Project presentations in Week 10</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="labs">
+<h3>Labs<a class="headerlink" href="#labs" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Wednesday &#64; 9am in MCK 445</p>
+<ul>
+<li><p>Seven lab assignments</p></li>
+<li><p>Two labs to concentrate on final project</p></li>
+<li><p>No lab in Week 10</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="activities-project-work">
+<h3>Activities/project work<a class="headerlink" href="#activities-project-work" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Thursday &#64; 9am</p>
+<ul>
+<li><p>Three activities</p></li>
+<li><p>One lecture about previous class projects</p></li>
+<li><p>Five sessions for project work</p></li>
+<li><p>Project presentations in Week 10</p></li>
+</ul>
+</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/schedule.png"><img alt="../../_images/schedule.png" class="align-center" src="../../_images/schedule.png" style="width: 600px;" /></a>
+</section>
+</section>
+<section id="course-evaluation">
+<h2>Course evaluation<a class="headerlink" href="#course-evaluation" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Lab assignments (<strong>45%</strong>) due every <strong>Wednesday 11:59 pm</strong></p></li>
+<li><p>Final project (<strong>45%</strong>)</p>
+<ul>
+<li><p>Presentations due May 31, 11:59 pm</p></li>
+<li><p>Write-ups due June 6, 11:59pm</p></li>
+</ul>
+</li>
+<li><p>Participation (<strong>10%</strong>)</p>
+<ul>
+<li><p>Credit can be earned through attendance in lectures, visiting Professor and GE during office hours, and helping other students in labs.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="final-project">
+<h2>Final project<a class="headerlink" href="#final-project" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>An opportunity to explore a particular topic of interest using some of the skills developed in this course</p></li>
+<li><p>Students can work independently or in groups of two or three</p></li>
+<li><p>Sharing of project ideas is encouraged so we can form teams</p></li>
+</ul>
+</section>
+<section id="final-project-schedule">
+<h2>Final project schedule<a class="headerlink" href="#final-project-schedule" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Week 5</strong>: Discuss project ideas with peers and instructors, submit a short summary of a project idea via Canvas</p></li>
+<li><p><strong>Week 6</strong>: Form teams, create GitHub repo, and provide some basic info about project as a <a class="reference external" href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes">README.md</a></p></li>
+<li><p><strong>Week 8</strong>: Provide informal update to instructors, ensure data has been accessed, goals are accomplishable</p></li>
+<li><p><strong>Week 10</strong>: Present project to class and submit write-up by the end of the week</p></li>
+</ul>
+</section>
+<section id="some-course-themes">
+<h2>Some course themes<a class="headerlink" href="#some-course-themes" title="Link to this heading">#</a></h2>
+<section id="everything-is-open-source">
+<h3>Everything is open-source<a class="headerlink" href="#everything-is-open-source" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>All software we use is freely available</p></li>
+<li><p>Labs can be completed anytime, anywhere from any OS</p></li>
+<li><p>Course materials are publicly-available on the internet</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/os.png"><img alt="../../_images/os.png" class="align-center" src="../../_images/os.png" style="width: 600px;" /></a>
+</section>
+<section id="promote-collaboration-and-communication">
+<h3>Promote collaboration and communication<a class="headerlink" href="#promote-collaboration-and-communication" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>With instructors and peers</p></li>
+<li><p>On GitHub</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/collab.png"><img alt="../../_images/collab.png" class="align-center" src="../../_images/collab.png" style="width: 600px;" /></a>
+</section>
+<section id="learn-about-environmental-challenges-in-the-western-us">
+<h3>Learn about environmental challenges in the Western US<a class="headerlink" href="#learn-about-environmental-challenges-in-the-western-us" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Urban planning</p></li>
+<li><p>Hazards (e.g. wildfires, flooding)</p></li>
+<li><p>Energy</p></li>
+<li><p>Climate, hydrology, glaciology</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/environment.png"><img alt="../../_images/environment.png" class="align-center" src="../../_images/environment.png" style="width: 1000px;" /></a>
+</section>
+</section>
+<section id="tips-for-success">
+<h2>Tips for success<a class="headerlink" href="#tips-for-success" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Don’t try and write perfect code - if it works, it works</p></li>
+<li><p>It’s not always necessary to write code, adapting code is quite normal</p></li>
+<li><p>Make use of stackoverflow</p></li>
+<li><p>Don’t be afraid to ask (peers or instructors)</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/stack.png"><img alt="../../_images/stack.png" class="align-center" src="../../_images/stack.png" style="width: 400px;" /></a>
+<ul class="simple">
+<li><p>Take responsibility for learning</p></li>
+<li><p>Organize your files</p></li>
+<li><p>Check Canvas regularly</p></li>
+<li><p>Maintain your GitHub profile and repository</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/horse.png"><img alt="../../_images/horse.png" class="align-center" src="../../_images/horse.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../../_images/doing.png"><img alt="../../_images/doing.png" class="align-center" src="../../_images/doing.png" style="width: 600px;" /></a>
+</section>
+<section id="learning-outcomes">
+<h2>Learning outcomes<a class="headerlink" href="#learning-outcomes" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Have confidence using Python specifically for GIS and other geospatial data science applications. In doing so, you will also be comfortable using Python for other things as well</p></li>
+<li><p>Be able to download, process, analyze, and visualize the main types of geospatial data</p></li>
+<li><p>Automate boring GIS tasks (no more clicking!)</p></li>
+</ul>
+<ul class="simple">
+<li><p>Improve programming skills</p></li>
+<li><p>Learn how think computationally and statistically</p></li>
+<li><p>Solve real-world problems using spatial analysis</p></li>
+<li><p>Run basic machine learning models</p></li>
+<li><p>Manage a data science project using version control</p></li>
+<li><p>Collaboratively develop a data science project</p></li>
+<li><p>Communicate results of data science project orally and as a short write-up</p></li>
+</ul>
+</section>
+<section id="careers">
+<h2>Careers<a class="headerlink" href="#careers" title="Link to this heading">#</a></h2>
+<a class="reference internal image-reference" href="../../_images/jobs.png"><img alt="../../_images/jobs.png" class="align-center" src="../../_images/jobs.png" style="width: 800px;" /></a>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./lectures/week1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../../course-info/final-project.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Final projects</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../labs/week1/assignment1.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Assignment 1</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-content">Lecture content</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geospatial-data">Geospatial data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-and-raster-gridded-data">Vector and Raster/gridded data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#network-data">Network data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python">Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-control">Version control</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#git">Git</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#github">GitHub</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-schedule">Course schedule</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lectures">Lectures</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#labs">Labs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activities-project-work">Activities/project work</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-evaluation">Course evaluation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-project">Final project</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-project-schedule">Final project schedule</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-course-themes">Some course themes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#everything-is-open-source">Everything is open-source</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#promote-collaboration-and-communication">Promote collaboration and communication</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-about-environmental-challenges-in-the-western-us">Learn about environmental challenges in the Western US</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-for-success">Tips for success</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-outcomes">Learning outcomes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#careers">Careers</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Johnny Ryan
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

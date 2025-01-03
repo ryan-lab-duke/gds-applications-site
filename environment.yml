@@ -19,6 +19,6 @@ dependencies:
     - selenium      # Automated web browsers
     - bs4           # Web scraping
     - jupyter-book  # Produce book
-    - black
+    - black	    # Style configuration
     - descartes     # Geometric objects as matplotlib paths and patches
     - momepy        # Urban morphology measuring toolkit
