@@ -1,4 +1,4 @@
-# Welcome to Geospatial Data Science 2024!
+# Welcome to Geospatial Data Science!
 
 On this website you will find the course materials for ECS XXX taught at the [Nicholas School of the Environment](https://nicholas.duke.edu/) at Duke University in Fall 2025.
 
