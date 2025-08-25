@@ -4,7 +4,7 @@
 
 | Week | Date    | Lecture                     | Homework       |
 |------|---------|-----------------------------|----------------|
-| 1    | Aug 25  | [Introduction](../lectures/week1/lecture-1.md)                | [Assignment 1](../labs/week1/assignment1.md)   |
+| 1    | Aug 25  | [Introduction](../lectures/week1/lecture-1.ipynb)                | [Assignment 1](../labs/week1/assignment1.md)   |
 |      | Aug 27  | [Vector data](../lectures/week2/lecture-2.ipynb)                 |                |
 | 2    | Sep 1   | No class (Labor Day)        | [Assignment 2](../labs/week1/assignment2.md)   |
 |      | Sep 3   | [Activity](../activities/week1/activity-01.md)                    |                |
