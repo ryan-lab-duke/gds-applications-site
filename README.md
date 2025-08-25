@@ -16,10 +16,6 @@ The book can be updated by running:
 
 `ghp-import -n -p -f book/_build/html`
 
-## Acknowledgments
-
-This course was inspired by [Melanie Walsh](https://melaniewalsh.github.io/Intro-Cultural-Analytics/welcome.html), [David Shean](https://github.com/UW-GDA/gda_course_2021) and [Ryan Abernathey](https://github.com/earth-env-data-science/earth-env-data-science-book). 
-
 ## License
 
 This book is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License](https://creativecommons.org/licenses/by-nc-sa/4.0/).
