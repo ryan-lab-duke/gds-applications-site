@@ -2,35 +2,27 @@
 
 **Instructor**: [Johnny Ryan](https://nicholas.duke.edu/people/faculty/ryan)
 
-**Office hours**: See Canvas
-
-**Office**: See Canvas
-
-**GE**: See Canvas
-
-**Office hours**: See Canvas
+**Office hours**: Monday 15:00-16:00 and Wednesday 15:00-16:00 (no appointment required)
 
 **Office**: See Canvas
 
 ## Weekly schedule
 
-**Lecture**: TBD
-
-**Labs**: TBD
+**Lecture**: Monday at 13:25-14:40 and Wednesday 13:25-14:40 in LSRC A156
 
 ## Grading
 
-* **Lab assignments (45%)**: Turn in assignments on Canvas (see instructions in Lab #1). Lab assignments are due by the end of the week (i.e. Wednesday 11:59 pm). Late assignments will be penalized 5% per day late. Assignments will not be accepted after seven days past the submission deadline. 
+* **Assignments (45%)**: Submit weekly assignments on Canvas (see instructions in Lab #1). Assignments are due a week after they are set (i.e. the following Wed 11:59 pm). Late submissions will be penalized 5% per day late. Submissions will not be accepted after seven days past the deadline. 
 
 ```{note}
-Please let the instructors know before the deadline if you anticipate a late submission - we may be able to provide an extension.
+Please let the instructor know before the deadline if you anticipate a late submission - we may be able to provide an extension.
 ```
 
-* **Activities (15%)**: Turn in assignments on Canvas. The deadline for activities will also be Wed 11:59 pm. Late assignments will be penalized 5% per day late. Assignments will not be accepted after 7 days past the submission deadline.
+* **Activities (15%)**: Submitted through Canvas. The deadline for activities will be the same day that they are set (i.e. Wed 11:59 pm). Late submissions will be penalized 5% per day late. Submissions will not be accepted after 7 days past the deadline.
     
 * **Final project (30%)**: An essential component of this course is the [final project](../course-info/final-project.md) which provides an opportunity to explore a particular topic of interest using some of the skills developed in this course. Students will present project during the week starting June 4 and submit a write up by June 6 11:59 pm.
     
-* **Engagement (10%)**: Half graded by GE and half by the Professor. Credit can be earned through attendance, participation in class discussion, visiting Professor and GE during office hours, and helping other students in labs. 
+* **Engagement (10%)**: Graded by instructor. Credit can be earned through attendance, participation in class discussion, visiting Professor during office hours, and helping other students with assignments. 
 
 ## Materials
 

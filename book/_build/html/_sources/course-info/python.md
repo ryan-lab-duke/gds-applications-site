@@ -6,7 +6,7 @@ In order to execute Python code for completing assignments, we will need to inst
 
 ## Install Miniconda
 
-The latest version of Miniconda for your operating system can be installed from the [dowload page](https://docs.conda.io/en/latest/miniconda.html#latest-miniconda-installer-links).
+The latest version of Miniconda for your operating system can be installed from the [dowload page](https://www.anaconda.com/download/success).
 
 ## Test installation
 
@@ -27,7 +27,7 @@ It is good practice to create a **virtual environment** for each new programming
 python -m venv .gds
 ```
 
-That creates an environment called `.gds` which stands for *Geospatial Data Science*. All Python packages (or dependencies) for this course will be installed in this folder. Note that we could name this environment anything we like. 
+That creates an environment called `.gds` (which stands for *Geospatial Data Science*) in your root directory. All Python packages (or dependencies) for this course will be installed in this folder. Note that we could name this environment anything we like or create it in our course folder. 
 
 Next we need to **activate** the virtual environment. In Windows this can be achieved by running:
 
@@ -43,7 +43,7 @@ source .gds/bin/activate
 
 ## Install requirements
 
-We can install individual Python packages using [`pip`](https://pip.pypa.io/en/stable/). The syntax is `pip install xxx` where `xxx` is the package we want to install. It's often easier to install multiple packages at once using a text file, so that anyone else setting up the project will have exactly the same environment. The `requirements.txt` file for this course can be downloaded from [here](https://www.dropbox.com/s/uvwo4ppvb8ldn0f/requirements.txt?dl=0). 
+We can install individual Python packages using [`pip`](https://pip.pypa.io/en/stable/). The syntax is `pip install xxx` where `xxx` is the package we want to install. It's often easier to install multiple packages at once using a text file, so that anyone else setting up the project will have exactly the same environment. The `requirements.txt` file for this course can be downloaded from [here](https://prodduke-my.sharepoint.com/:t:/g/personal/jr555_duke_edu/ERQmdnYS_YROh5kZz-_kmdkB47leNhbDvM6OY2TzBAi5tA?e=am9ZMx). 
 
 We can install `requirements.txt ` by opening an **Anaconda Prompt (miniconda3)** (Windows) or **Terminal** (macOS), navigating to the file (i.e. `cd Downloads`) and running the following command:
 
