@@ -4,14 +4,14 @@
 
 | Week | Date    | Lecture                     | Homework       |
 |------|---------|-----------------------------|----------------|
-| 1    | Aug 25  | [Introduction](../lectures/week1/lecture-1.ipynb)                | [Assignment 1](../labs/week1/assignment1.md)   |
-|      | Aug 27  | [Vector data](../lectures/week2/lecture-2.ipynb)                 |                |
-| 2    | Sep 1   | No class (Labor Day)        | [Assignment 2](../labs/week1/assignment2.md)   |
+| 1    | Aug 25  | [Introduction](../lectures/unit1/lecture-1.ipynb)                | [Assignment 1](../labs/week1/assignment1.md)   |
+|      | Aug 27  | [Vector data](../lectures/unit1/lecture-2.ipynb)                 |                |
+| 2    | Sep 1   | No class (Labor Day)        | [Assignment 2](../labs/week2/assignment2.md)   |
 |      | Sep 3   | [Activity](../activities/week1/activity-01.md)                    |                |
-| 3    | Sep 8   | [Network data](../lectures/week2/lecture-3.ipynb)                | [Assignment 3](../labs/week1/assignment3.md)   |
-|      | Sep 10  | [Activity](../activities/week1/activity-02.md)                    |                |
-| 4    | Sep 15  | [Gridded data](../lectures/week2/lecture-4a.ipynb)                | [Assignment 4](../labs/week1/assignment4.md)   |
-|      | Sep 17  | [Activity](../activities/week1/activity-03.md)                    |                |
+| 3    | Sep 8   | [Network data](../lectures/unit1/lecture-3.ipynb)                | [Assignment 3](../labs/week3/assignment3.md)   |
+|      | Sep 10  | [Activity](../activities/week2/activity-02.md)                    |                |
+| 4    | Sep 15  | [Gridded data](../lectures/unit1/lecture-4a.ipynb)                | [Assignment 4](../labs/week4/assignment4.md)   |
+|      | Sep 17  | [Activity](../activities/week3/activity-03.md)                    |                |
 --
 
 ## Unit 2: Geospatial Machine Learning

@@ -1,0 +1,1196 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Data access &#8212; Geospatial Data Science</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lectures/unit3/lecture-7';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Automating raster analysis" href="lecture-8.html" />
+    <link rel="prev" title="Make a README" href="../../labs/week6/activity6.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/nsoe-logo.png" class="logo__image only-light" alt="Geospatial Data Science - Home"/>
+    <img src="../../_static/nsoe-logo.png" class="logo__image only-dark pst-js-only" alt="Geospatial Data Science - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welcome to Geospatial Data Science!
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Course information</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../course-info/general-info.html">General information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../course-info/schedule.html">Schedule (for Fall 2025)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../course-info/python.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../course-info/github.html">GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../course-info/final-project.html">Final projects</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 1</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../unit1/lecture-1.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labs/week1/assignment1.html">Assignment 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../activities/week1/activity-01.html">Activity 1</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 2</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../unit1/lecture-2.html">Vector data analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labs/week2/assignment2.html">Assignment 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../activities/week2/activity-02.html">Activity 2</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 3</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../unit1/lecture-3.html">Network data analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labs/week3/assignment3.html">Assignment 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../activities/week3/activity-03.html">Activity 3</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 4</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../unit1/lecture-4a.html">Gridded data analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit1/lecture-4b.html">Climate data analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labs/week4/assignment4.html">Assignment 4</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 5</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../unit2/lecture-5.html">Machine learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labs/week5/assignment5.html">Assignment 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labs/week5/project-ideas.html">Project ideas</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 6</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="lecture-6.html">Code management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labs/week6/assignment6.html">Assignment 6</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labs/week6/activity6.html">Make a README</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 7</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Data access</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 8</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="lecture-8.html">Automating raster analysis</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 9</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../unit4/lecture-9a.html">Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit4/lecture-9b.html">Maps with data</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ryan-lab-duke/gds-applications-site" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ryan-lab-duke/gds-applications-site/issues/new?title=Issue%20on%20page%20%2Flectures/unit3/lecture-7.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/lectures/unit3/lecture-7.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Data access</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apis">APIs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#census-bureau">Census Bureau</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#census"><code class="docutils literal notranslate"><span class="pre">census</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usgs-hydrologic-data">USGS hydrologic data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-for-apis">Tips for APIs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#api-limits">API limits</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#web-scraping">Web scraping</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#suppose-a-friend-wanted-to-do-this">Suppose a friend wanted to do this?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#requests"><code class="docutils literal notranslate"><span class="pre">requests</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beautifulsoup4">BeautifulSoup4</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parse-html">Parse HTML</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selenium">Selenium</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgements">Acknowledgements</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="data-access">
+<h1>Data access<a class="headerlink" href="#data-access" title="Link to this heading">#</a></h1>
+<p>Finding, downloading, and cleaning data is an important, but laborious, part of geospatial data science. In this demo, we will download data programmatically using Application Programming Interfaces (APIs). We will also talk about strategies for downloading data when an API is unavailable or insufficient.</p>
+<section id="apis">
+<h2>APIs<a class="headerlink" href="#apis" title="Link to this heading">#</a></h2>
+<p>So far in this course we have mainly been using data that has been downloaded <strong>locally</strong> from point-and-click GUIs. But it is becoming more and more common to access data programmatically from an online server. These platforms often have a <strong>public API</strong> that we can use to pull data inside our Python environment.</p>
+<p>An API is a type of <strong>software</strong> that provides a <strong>standard set of protocols/functions</strong> so that our computer can <strong>communicate</strong> with other computers (in contrast, a <strong>user interface</strong> is a type of software that connects a <strong>computer</strong> to a <strong>person</strong>)</p>
+<p>The basic idea is we send a <strong>request</strong> (which may include query parameters and access credentials) to an endpoint. That endpoint will return a <strong>response</strong> code plus the data we asked for. For these kind of tasks, we have to carefully inspect the API <strong>documentation</strong> to understand what functions are available and what keyword arguments they require.</p>
+<p>Many organizations have great APIs because they want people to use their data.</p>
+</section>
+<section id="census-bureau">
+<h2>Census Bureau<a class="headerlink" href="#census-bureau" title="Link to this heading">#</a></h2>
+<p>The US Census Bureau has a great API that makes demographic, socio-economic and housing statistics more accessible than ever before.</p>
+<p>Developers use customize these statistics to create apps that:</p>
+<ul class="simple">
+<li><p>Provide a local government a range of socioeconomic statistics on its population.</p></li>
+<li><p>Show commuting patterns for every city in America.</p></li>
+<li><p>Display the latest numbers on owners and renters in a neighborhood someone may want to live in.</p></li>
+</ul>
+<p>Many students will use Census Bureau data in their final projects.</p>
+</section>
+<section id="census">
+<h2><code class="docutils literal notranslate"><span class="pre">census</span></code><a class="headerlink" href="#census" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">census</span></code> is an interface to explore and query the US Census API in <strong>Python</strong>. It conveniently returns the data in <strong><code class="docutils literal notranslate"><span class="pre">Pandas</span></code> Dataframes</strong> for further analysis.</p>
+<p>We know <code class="docutils literal notranslate"><span class="pre">census</span></code> is legitimate because it has an <strong>active GitHub repository</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/census-github.png"><img alt="../../_images/census-github.png" class="align-center" src="../../_images/census-github.png" style="width: 1000px;" /></a>
+<p>More information about this package can be found <a class="reference external" href="https://github.com/datamade/census">here</a>.</p>
+<p>First we should find how to install it, usually either through <code class="docutils literal notranslate"><span class="pre">conda</span></code> or <code class="docutils literal notranslate"><span class="pre">pip</span></code>.</p>
+<a class="reference internal image-reference" href="../../_images/census-install.png"><img alt="../../_images/census-install.png" class="align-center" src="../../_images/census-install.png" style="width: 800px;" /></a>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import package</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">census</span><span class="w"> </span><span class="kn">import</span> <span class="n">Census</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then search the documentation for examples…</p>
+<a class="reference internal image-reference" href="../../_images/census-examples.png"><img alt="../../_images/census-examples.png" class="align-center" src="../../_images/census-examples.png" style="width: 1000px;" /></a>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">Census</span><span class="p">(</span><span class="s2">&quot;5f7e25f1ce5f52828e64cc4e5ff5f470759b4e03&quot;</span><span class="p">)</span>
+<span class="n">c</span><span class="o">.</span><span class="n">acs5</span><span class="o">.</span><span class="n">state</span><span class="p">((</span><span class="s1">&#39;NAME&#39;</span><span class="p">,</span> <span class="s1">&#39;B25034_010E&#39;</span><span class="p">),</span> <span class="s1">&#39;41&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;NAME&#39;: &#39;Oregon&#39;, &#39;B25034_010E&#39;: 92792.0, &#39;state&#39;: &#39;41&#39;}]
+</pre></div>
+</div>
+</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/more-examples.png"><img alt="../../_images/more-examples.png" class="align-center" src="../../_images/more-examples.png" style="width: 1000px;" /></a>
+</section>
+<section id="usgs-hydrologic-data">
+<h2>USGS hydrologic data<a class="headerlink" href="#usgs-hydrologic-data" title="Link to this heading">#</a></h2>
+<p>Let’s have a look at another API called <a class="reference external" href="https://github.com/DOI-USGS/dataretrieval-python"><code class="docutils literal notranslate"><span class="pre">dataretrieval</span></code></a> which was developed by USGS to retrieve hydrologic data.</p>
+<a class="reference internal image-reference" href="../../_images/usgs-github.png"><img alt="../../_images/usgs-github.png" class="align-center" src="../../_images/usgs-github.png" style="width: 1000px;" /></a>
+<p>Again, the documentation makes it clear that we should install it using either <code class="docutils literal notranslate"><span class="pre">conda</span></code> or <code class="docutils literal notranslate"><span class="pre">pip</span></code>.</p>
+<a class="reference internal image-reference" href="../../_images/usgs-install.png"><img alt="../../_images/usgs-install.png" class="align-center" src="../../_images/usgs-install.png" style="width: 800px;" /></a>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
+<span class="c1"># Install package</span>
+<span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">dataretrieval</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we can look through the documentation to see if the examples function as expected.</p>
+<a class="reference internal image-reference" href="../../_images/usgs.png"><img alt="../../_images/usgs.png" class="align-center" src="../../_images/usgs.png" style="width: 1000px;" /></a>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the functions for downloading data from NWIS</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">dataretrieval.nwis</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nwis</span>
+
+<span class="c1"># Specify the USGS site code</span>
+<span class="n">site</span> <span class="o">=</span> <span class="s1">&#39;03339000&#39;</span>
+
+<span class="c1"># Get instantaneous values (iv)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">nwis</span><span class="o">.</span><span class="n">get_record</span><span class="p">(</span><span class="n">sites</span><span class="o">=</span><span class="n">site</span><span class="p">,</span> <span class="n">service</span><span class="o">=</span><span class="s1">&#39;dv&#39;</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="s1">&#39;2020-10-01&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;2021-09-30&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>site_no</th>
+      <th>00010_ysi_Mean</th>
+      <th>00010_ysi_Mean_cd</th>
+      <th>00060_Mean</th>
+      <th>00060_Mean_cd</th>
+      <th>00065_Mean</th>
+      <th>00065_Mean_cd</th>
+      <th>00095_Mean</th>
+      <th>00095_Mean_cd</th>
+      <th>00300_Minimum</th>
+      <th>...</th>
+      <th>63680_hach_Mean</th>
+      <th>63680_hach_Mean_cd</th>
+      <th>63680_ysi_Mean</th>
+      <th>63680_ysi_Mean_cd</th>
+      <th>99133_Maximum</th>
+      <th>99133_Maximum_cd</th>
+      <th>99133_Minimum</th>
+      <th>99133_Minimum_cd</th>
+      <th>99133_Mean</th>
+      <th>99133_Mean_cd</th>
+    </tr>
+    <tr>
+      <th>datetime</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2020-10-01 00:00:00+00:00</th>
+      <td>03339000</td>
+      <td>14.9</td>
+      <td>A</td>
+      <td>75.7</td>
+      <td>A</td>
+      <td>2.04</td>
+      <td>A</td>
+      <td>672.0</td>
+      <td>A</td>
+      <td>8.9</td>
+      <td>...</td>
+      <td>5.5</td>
+      <td>A</td>
+      <td>3.7</td>
+      <td>A</td>
+      <td>4.1</td>
+      <td>A</td>
+      <td>3.3</td>
+      <td>A</td>
+      <td>3.7</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>2020-10-02 00:00:00+00:00</th>
+      <td>03339000</td>
+      <td>14.5</td>
+      <td>A</td>
+      <td>66.0</td>
+      <td>A</td>
+      <td>1.99</td>
+      <td>A</td>
+      <td>678.0</td>
+      <td>A</td>
+      <td>9.2</td>
+      <td>...</td>
+      <td>5.4</td>
+      <td>A</td>
+      <td>3.6</td>
+      <td>A</td>
+      <td>4.2</td>
+      <td>A</td>
+      <td>3.8</td>
+      <td>A</td>
+      <td>4.1</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>2020-10-03 00:00:00+00:00</th>
+      <td>03339000</td>
+      <td>14.2</td>
+      <td>A</td>
+      <td>60.2</td>
+      <td>A</td>
+      <td>1.96</td>
+      <td>A</td>
+      <td>678.0</td>
+      <td>A</td>
+      <td>9.4</td>
+      <td>...</td>
+      <td>4.9</td>
+      <td>A</td>
+      <td>3.2</td>
+      <td>A</td>
+      <td>3.8</td>
+      <td>A</td>
+      <td>3.0</td>
+      <td>A</td>
+      <td>3.4</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>2020-10-04 00:00:00+00:00</th>
+      <td>03339000</td>
+      <td>14.4</td>
+      <td>A</td>
+      <td>68.8</td>
+      <td>A</td>
+      <td>2.01</td>
+      <td>A</td>
+      <td>705.0</td>
+      <td>A</td>
+      <td>9.1</td>
+      <td>...</td>
+      <td>4.7</td>
+      <td>A</td>
+      <td>3.3</td>
+      <td>A</td>
+      <td>3.0</td>
+      <td>A</td>
+      <td>2.6</td>
+      <td>A</td>
+      <td>2.8</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>2020-10-05 00:00:00+00:00</th>
+      <td>03339000</td>
+      <td>13.4</td>
+      <td>A</td>
+      <td>66.8</td>
+      <td>A</td>
+      <td>1.99</td>
+      <td>A</td>
+      <td>718.0</td>
+      <td>A</td>
+      <td>9.6</td>
+      <td>...</td>
+      <td>4.4</td>
+      <td>A</td>
+      <td>3.1</td>
+      <td>A</td>
+      <td>3.4</td>
+      <td>A</td>
+      <td>2.7</td>
+      <td>A</td>
+      <td>3.0</td>
+      <td>A</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 57 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot</span>
+<span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;00060_Mean&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Plot</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;00060_Mean&#39;</span><span class="p">])</span>
+
+<span class="ne">NameError</span>: name &#39;plt&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="tips-for-apis">
+<h2>Tips for APIs<a class="headerlink" href="#tips-for-apis" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Take a minute to make sure that package is used (e.g. lots of forks, stars) and up-to-date (e.g. last commit)</p></li>
+<li><p>Read the <code class="docutils literal notranslate"><span class="pre">docs</span></code>, <code class="docutils literal notranslate"><span class="pre">demos</span></code>, <code class="docutils literal notranslate"><span class="pre">examples</span></code> and hope we find what we’re looking for (sometimes they are not that comprehensive)</p></li>
+<li><p>If you can’t find what you’re looking for, inspect the source code (<code class="docutils literal notranslate"><span class="pre">.py</span></code> files)</p></li>
+</ul>
+</section>
+<section id="api-limits">
+<h2>API limits<a class="headerlink" href="#api-limits" title="Link to this heading">#</a></h2>
+<p>So can we just do the same for any data that is hosted on the internet?</p>
+<p>Often APIs are not freely available or have limitations. Technology companies are known for <strong>hoarding data</strong> to secure market dominance. But this is a problem because, by guarding data, they are also preventing it being <strong>used for good causes</strong>. Without access to their data it is difficult to tell whether they are in <strong>compliance</strong>.</p>
+<p>Either presented with subscription-based API</p>
+<a class="reference internal image-reference" href="../../_images/airbnb.png"><img alt="../../_images/airbnb.png" class="align-center" src="../../_images/airbnb.png" style="width: 1000px;" /></a>
+<p>Or an API with limited functionality</p>
+<a class="reference internal image-reference" href="../../_images/zestimate.png"><img alt="../../_images/zestimate.png" class="align-center" src="../../_images/zestimate.png" style="width: 1000px;" /></a>
+</section>
+<section id="web-scraping">
+<h2>Web scraping<a class="headerlink" href="#web-scraping" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Since web pages are usually organized in a specfic way, we can still download data from them.</p></li>
+<li><p>Web scraping (also known as crawling or harvesting) is the practice of <strong>automatically</strong> gathering data from the internet without the use of an <strong>API</strong></p></li>
+<li><p>Most commonly accomplished by writing a program that <strong>queries</strong> a web server, <strong>requests</strong> data (usually in the form of HTML), and <strong>parses</strong> that data to extract information</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/scrape_hero.png"><img alt="../../_images/scrape_hero.png" class="align-center" src="../../_images/scrape_hero.png" style="width: 1000px;" /></a>
+<a class="reference internal image-reference" href="../../_images/inside_airbnb.png"><img alt="../../_images/inside_airbnb.png" class="align-center" src="../../_images/inside_airbnb.png" style="width: 1000px;" /></a>
+</section>
+<section id="suppose-a-friend-wanted-to-do-this">
+<h2>Suppose a friend wanted to do this?<a class="headerlink" href="#suppose-a-friend-wanted-to-do-this" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">requests</span></code>: downloads files and web pages from the internet</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BeautifulSoup</span></code>: parses HTML, the format that web pages are written in</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">selenium</span></code>: launches and controls a web browser. The package is able to fill in forms and simulate mouse clicks in this browser.</p></li>
+</ul>
+<section id="requests">
+<h3><code class="docutils literal notranslate"><span class="pre">requests</span></code><a class="headerlink" href="#requests" title="Link to this heading">#</a></h3>
+<p>A lot of data on Wikipedia is contained in HTML tables which have the following syntax.</p>
+<ul class="simple">
+<li><p>The table itself starts with the <code class="docutils literal notranslate"><span class="pre">&lt;table&gt;</span></code> tag and finishes with <code class="docutils literal notranslate"><span class="pre">&lt;/table&gt;</span></code></p></li>
+<li><p>Table rows start with the <code class="docutils literal notranslate"><span class="pre">&lt;tr&gt;</span></code> tag and finish with <code class="docutils literal notranslate"><span class="pre">&lt;/tr&gt;</span></code></p></li>
+<li><p>Table headers start with the <code class="docutils literal notranslate"><span class="pre">&lt;th&gt;</span></code> tag and finish with <code class="docutils literal notranslate"><span class="pre">&lt;/th&gt;</span></code></p></li>
+<li><p>Table data start with the <code class="docutils literal notranslate"><span class="pre">&lt;td&gt;</span></code> tag and finish with <code class="docutils literal notranslate"><span class="pre">&lt;/td&gt;</span></code></p></li>
+</ul>
+<p>The table below, showing some of the biggest soccer clubs in the world, is an example of a simple HTML table.</p>
+<table>
+  <tr>
+    <th>Team</th>
+    <th>Manager</th>
+    <th>Country</th>
+  </tr>
+  <tr>
+    <td>Real Madrid</td>
+    <td>Carlo Ancelotti</td>
+    <td>Spain</td>
+  </tr>
+  <tr>
+    <td>Bayern Munich</td>
+    <td>Julian Nagelsmann</td>
+    <td>Germany</td>
+  </tr>
+    <tr>
+    <td>Hull City</td>
+    <td>Liam Rosenior</td>
+    <td>England</td>
+  </tr>
+    <tr>
+    <td>Paris Saint-Germain</td>
+    <td>Christophe Galtier</td>
+    <td>France</td>
+  </tr>
+</table><a class="reference internal image-reference" href="../../_images/html.png"><img alt="../../_images/html.png" class="align-center" src="../../_images/html.png" style="width: 300px;" /></a>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import packages</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+
+<span class="c1"># Open a webpage</span>
+<span class="n">html</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://en.wikipedia.org/wiki/Climate_of_Oregon&#39;</span><span class="p">)</span>
+
+<span class="c1"># HTML</span>
+<span class="n">html</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Response [200]&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/climate_wiki.png"><img alt="../../_images/climate_wiki.png" class="align-center" src="../../_images/climate_wiki.png" style="width: 1000px;" /></a>
+<a class="reference internal image-reference" href="../../_images/more_html.png"><img alt="../../_images/more_html.png" class="align-center" src="../../_images/more_html.png" style="width: 1000px;" /></a>
+</section>
+</section>
+<section id="beautifulsoup4">
+<h2>BeautifulSoup4<a class="headerlink" href="#beautifulsoup4" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Now we could write a program to <strong>parse</strong> this HTML code (i.e. split into useful blocks)…</p></li>
+<li><p>…or we could use another package called <code class="docutils literal notranslate"><span class="pre">BeautifulSoup</span></code> (also known as <code class="docutils literal notranslate"><span class="pre">bs4</span></code>) a Python library for parsing data out of HTML and XML files</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/bs4.jpg"><img alt="../../_images/bs4.jpg" class="align-center" src="../../_images/bs4.jpg" style="width: 200px;" /></a>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import package</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bs4</span><span class="w"> </span><span class="kn">import</span> <span class="n">BeautifulSoup</span><span class="p">,</span> <span class="n">SoupStrainer</span>
+
+<span class="c1"># Read HTML content as &quot;soup object&quot; and define default parser</span>
+<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="parse-html">
+<h3>Parse HTML<a class="headerlink" href="#parse-html" title="Link to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">.find</span></code> and <code class="docutils literal notranslate"><span class="pre">.find_all</span></code> are the most common methods we will use. They can be used to filter HTML code to find a list of tags or tags with specific attributes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define heading tags</span>
+<span class="n">heading_tags</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;h1&quot;</span><span class="p">,</span> <span class="s2">&quot;h2&quot;</span><span class="p">]</span>
+
+<span class="c1"># Find heading tags in HTML code</span>
+<span class="n">headings</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="n">heading_tags</span><span class="p">)</span>
+
+<span class="c1"># Loop over every heading and print text</span>
+<span class="k">for</span> <span class="n">tags</span> <span class="ow">in</span> <span class="n">headings</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">tags</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s1">&#39; -&gt; &#39;</span> <span class="o">+</span> <span class="n">tags</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>h2 -&gt; Contents
+h1 -&gt; Climate of Oregon
+h2 -&gt; Precipitation[edit]
+h2 -&gt; Temperature[edit]
+h2 -&gt; Selected climate charts[edit]
+h2 -&gt; See also[edit]
+h2 -&gt; References[edit]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find every hyperlink</span>
+<span class="n">links</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+
+<span class="c1"># Loop over every link and print hyperlink</span>
+<span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">links</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">link</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>#bodyContent
+/wiki/Main_Page
+/wiki/Special:Search
+/w/index.php?title=Special:CreateAccount&amp;returnto=Climate+of+Oregon
+/w/index.php?title=Special:UserLogin&amp;returnto=Climate+of+Oregon
+/w/index.php?title=Special:CreateAccount&amp;returnto=Climate+of+Oregon
+/w/index.php?title=Special:UserLogin&amp;returnto=Climate+of+Oregon
+/wiki/Help:Introduction
+/wiki/Special:MyContributions
+/wiki/Special:MyTalk
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find number of images on page</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;img&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print details of first image</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;img&#39;</span><span class="p">)[</span><span class="mi">5</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;img class=&quot;thumbimage&quot; data-file-height=&quot;1206&quot; data-file-width=&quot;776&quot; decoding=&quot;async&quot; height=&quot;342&quot; src=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/8/80/Oregon_Average_Annual_Precipitation_%281961-1990%29_Map.png/220px-Oregon_Average_Annual_Precipitation_%281961-1990%29_Map.png&quot; srcset=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/8/80/Oregon_Average_Annual_Precipitation_%281961-1990%29_Map.png/330px-Oregon_Average_Annual_Precipitation_%281961-1990%29_Map.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/8/80/Oregon_Average_Annual_Precipitation_%281961-1990%29_Map.png/440px-Oregon_Average_Annual_Precipitation_%281961-1990%29_Map.png 2x&quot; width=&quot;220&quot;/&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find attributes of first image</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;img&#39;</span><span class="p">)[</span><span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;src&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>//upload.wikimedia.org/wikipedia/commons/thumb/8/80/Oregon_Average_Annual_Precipitation_%281961-1990%29_Map.png/220px-Oregon_Average_Annual_Precipitation_%281961-1990%29_Map.png
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Download image</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://&#39;</span> <span class="o">+</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;img&#39;</span><span class="p">)[</span><span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;src&#39;</span><span class="p">][</span><span class="mi">2</span><span class="p">:]</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;images/test_image.jpg&quot;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import packages</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.image</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mpimg</span>
+
+<span class="c1"># Read image</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">mpimg</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;images/test_image.jpg&#39;</span><span class="p">)</span>
+
+<span class="c1"># Plot image</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7fc6e846cd30&gt;
+</pre></div>
+</div>
+<img alt="../../_images/d855fe38841bca885055cec462e77ce35c3812043eebdcf6a2aa07c0d396e87e.png" src="../../_images/d855fe38841bca885055cec462e77ce35c3812043eebdcf6a2aa07c0d396e87e.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="selenium">
+<h2>Selenium<a class="headerlink" href="#selenium" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Sometimes we want even more control…</p></li>
+<li><p>Selenium is a package for performing <strong>web browser automation</strong></p></li>
+<li><p>We can use Selenium to enter text in search boxes, click buttons etc.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/selenium.png"><img alt="../../_images/selenium.png" class="align-center" src="../../_images/selenium.png" style="width: 200px;" /></a>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
+<span class="c1"># Install webdriver_manager: https://github.com/SergeyPirogov/webdriver_manager</span>
+<span class="err">!</span><span class="n">pip3</span> <span class="n">install</span> <span class="n">webdriver_manager</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import packages</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">selenium</span><span class="w"> </span><span class="kn">import</span> <span class="n">webdriver</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">selenium.webdriver.chrome.service</span><span class="w"> </span><span class="kn">import</span> <span class="n">Service</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">selenium.webdriver.common.by</span><span class="w"> </span><span class="kn">import</span> <span class="n">By</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">webdriver_manager.chrome</span><span class="w"> </span><span class="kn">import</span> <span class="n">ChromeDriverManager</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install Chrome webdriver</span>
+<span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">service</span><span class="o">=</span><span class="n">Service</span><span class="p">(</span><span class="n">ChromeDriverManager</span><span class="p">()</span><span class="o">.</span><span class="n">install</span><span class="p">()))</span>
+
+<span class="c1"># Open a web browser at the following page</span>
+<span class="n">driver</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://www.google.com/maps&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[WDM] - Downloading: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 8.82M/8.82M [00:00&lt;00:00, 32.3MB/s]
+</pre></div>
+</div>
+</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/google_maps.png"><img alt="../../_images/google_maps.png" class="align-center" src="../../_images/google_maps.png" style="width: 1000px;" /></a>
+<a class="reference internal image-reference" href="../../_images/inspect.png"><img alt="../../_images/inspect.png" class="align-center" src="../../_images/inspect.png" style="width: 1000px;" /></a>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enter some text in the search box</span>
+<span class="n">inputElement</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">ID</span><span class="p">,</span> <span class="s2">&quot;searchboxinput&quot;</span><span class="p">)</span>
+<span class="n">inputElement</span><span class="o">.</span><span class="n">send_keys</span><span class="p">(</span><span class="s1">&#39;South Sister Oregon&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/enter_text.png"><img alt="../../_images/enter_text.png" class="align-center" src="../../_images/enter_text.png" style="width: 1000px;" /></a>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Click search button</span>
+<span class="n">element</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">ID</span><span class="p">,</span> <span class="s2">&quot;searchbox-searchbutton&quot;</span><span class="p">)</span>
+<span class="n">element</span><span class="o">.</span><span class="n">click</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/search.png"><img alt="../../_images/search.png" class="align-center" src="../../_images/search.png" style="width: 900px;" /></a>
+</section>
+<section id="acknowledgements">
+<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Link to this heading">#</a></h2>
+<p>Some of the this demo was inspired by <a class="reference external" href="https://automatetheboringstuff.com/2e/chapter12/">Automating the Boring Stuff</a> Chapter 12.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./lectures/unit3"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../../labs/week6/activity6.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Make a README</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="lecture-8.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Automating raster analysis</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apis">APIs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#census-bureau">Census Bureau</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#census"><code class="docutils literal notranslate"><span class="pre">census</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usgs-hydrologic-data">USGS hydrologic data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-for-apis">Tips for APIs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#api-limits">API limits</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#web-scraping">Web scraping</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#suppose-a-friend-wanted-to-do-this">Suppose a friend wanted to do this?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#requests"><code class="docutils literal notranslate"><span class="pre">requests</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beautifulsoup4">BeautifulSoup4</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parse-html">Parse HTML</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selenium">Selenium</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgements">Acknowledgements</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Johnny Ryan
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

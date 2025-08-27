@@ -29,7 +29,7 @@ Please let the instructor know before the deadline if you anticipate a late subm
 * **Class website**: all lecture slides, assignments, and guides are available on [this website](../intro.md).
 
 
-* **Dropbox**: the data for the labs are available on Dropbox. Please see **Canvas** for link.
+* **OneDrive**: the data for the labs are available on OneDrive. Please see **Canvas** for link.
 
 
 * **Canvas**: the lecture slides and assignments will also be available on Canvas.
