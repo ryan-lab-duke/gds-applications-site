@@ -1,0 +1,894 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Maps with data &#8212; Geospatial Data Science</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lectures/unit4/lecture-9b';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Visualization" href="lecture-9a.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/nsoe-logo.png" class="logo__image only-light" alt="Geospatial Data Science - Home"/>
+    <img src="../../_static/nsoe-logo.png" class="logo__image only-dark pst-js-only" alt="Geospatial Data Science - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welcome to Geospatial Data Science!
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Course information</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../course-info/general-info.html">General information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../course-info/schedule.html">Schedule (for Fall 2025)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../course-info/python.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../course-info/github.html">GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../course-info/final-project.html">Final projects</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 1</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../unit1/lecture-1.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labs/week1/assignment1.html">Assignment 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../activities/week1/activity-01.html">Activity 1</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 2</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../unit1/lecture-2.html">Vector data analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labs/week2/assignment2.html">Assignment 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../activities/week2/activity-02.html">Activity 2</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 3</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../unit1/lecture-3.html">Network data analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labs/week3/assignment3.html">Assignment 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../activities/week3/activity-03.html">Activity 3</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 4</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../unit1/lecture-4a.html">Gridded data analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit1/lecture-4b.html">Climate data analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labs/week4/assignment4.html">Assignment 4</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 5</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../unit2/lecture-5.html">Machine learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labs/week5/assignment5.html">Assignment 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labs/week5/project-ideas.html">Project ideas</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 6</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../unit3/lecture-6.html">Code management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labs/week6/assignment6.html">Assignment 6</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labs/week6/activity6.html">Make a README</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 7</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../unit3/lecture-7.html">Data access</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 8</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../unit3/lecture-8.html">Automating raster analysis</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 9</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="lecture-9a.html">Visualization</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Maps with data</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ryan-lab-duke/gds-applications-site" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ryan-lab-duke/gds-applications-site/issues/new?title=Issue%20on%20page%20%2Flectures/unit4/lecture-9b.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/lectures/unit4/lecture-9b.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Maps with data</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#search-for-data">Search for data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-data">Download data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-choropleth-map">Simple choropleth map</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#improving-the-choropleth-map">Improving the choropleth map</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-plots">Interactive plots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusions">Conclusions</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="maps-with-data">
+<h1>Maps with data<a class="headerlink" href="#maps-with-data" title="Link to this heading">#</a></h1>
+<p>In the second part of this lecture, we will use Python to produce another type of thematic map. But this instead of representing elevation data, we will visualize Census Bureau data.</p>
+<p>We can automatically download Census Bureau data from the 2019 American Community Survey using <code class="docutils literal notranslate"><span class="pre">CenPy</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">cenpy</span><span class="w"> </span><span class="kn">import</span> <span class="n">products</span>
+<span class="n">acs</span> <span class="o">=</span> <span class="n">products</span><span class="o">.</span><span class="n">ACS</span><span class="p">(</span><span class="mi">2019</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="search-for-data">
+<h2>Search for data<a class="headerlink" href="#search-for-data" title="Link to this heading">#</a></h2>
+<p>Inspired by the article “<a class="reference external" href="https://www.tandfonline.com/doi/abs/10.1080/24694452.2018.1530587">Plumbing Poverty: Mapping Hot Spots of Racial and Geographic Inequality in U.S. Household Water Insecurity</a>” by Shiloh Deitz and Katie Meehan (2019), we will search for data that determines whether household have adequate plumbing facilities.</p>
+<p>The Census Bureau defines “complete plumbing facilities” as (1) piped hot and cold water, (2) a flush toilet, and (3) a bathtub or shower, all located within the housing unit and used only by occupants. We can find the variable <strong>code</strong> in the data tables by searching for the word “<strong>plumbing</strong>”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">acs</span><span class="o">.</span><span class="n">filter_tables</span><span class="p">(</span><span class="s1">&#39;PLUMBING&#39;</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s1">&#39;description&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>description</th>
+      <th>columns</th>
+    </tr>
+    <tr>
+      <th>table_name</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>B25016</th>
+      <td>TENURE BY PLUMBING FACILITIES BY OCCUPANTS PER...</td>
+      <td>[B25016_001E, B25016_002E, B25016_003E, B25016...</td>
+    </tr>
+    <tr>
+      <th>B25047</th>
+      <td>PLUMBING FACILITIES FOR ALL HOUSING UNITS</td>
+      <td>[B25047_001E, B25047_002E, B25047_003E]</td>
+    </tr>
+    <tr>
+      <th>B25048</th>
+      <td>PLUMBING FACILITIES FOR OCCUPIED HOUSING UNITS</td>
+      <td>[B25048_001E, B25048_002E, B25048_003E]</td>
+    </tr>
+    <tr>
+      <th>B25049</th>
+      <td>TENURE BY PLUMBING FACILITIES</td>
+      <td>[B25049_001E, B25049_002E, B25049_003E, B25049...</td>
+    </tr>
+    <tr>
+      <th>B25050</th>
+      <td>PLUMBING FACILITIES BY OCCUPANTS PER ROOM BY Y...</td>
+      <td>[B25050_001E, B25050_002E, B25050_003E, B25050...</td>
+    </tr>
+    <tr>
+      <th>B99259</th>
+      <td>ALLOCATION OF PLUMBING FACILITIES</td>
+      <td>[B99259_001E, B99259_002E, B99259_003E]</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print list of tables</span>
+<span class="n">acs</span><span class="o">.</span><span class="n">filter_variables</span><span class="p">(</span><span class="s1">&#39;B25047&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>label</th>
+      <th>concept</th>
+      <th>predicateType</th>
+      <th>group</th>
+      <th>limit</th>
+      <th>predicateOnly</th>
+      <th>hasGeoCollectionSupport</th>
+      <th>attributes</th>
+      <th>required</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>B25047_003E</th>
+      <td>Estimate!!Total:!!Lacking complete plumbing fa...</td>
+      <td>PLUMBING FACILITIES FOR ALL HOUSING UNITS</td>
+      <td>int</td>
+      <td>B25047</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>B25047_003EA,B25047_003M,B25047_003MA</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>B25047_002E</th>
+      <td>Estimate!!Total:!!Complete plumbing facilities</td>
+      <td>PLUMBING FACILITIES FOR ALL HOUSING UNITS</td>
+      <td>int</td>
+      <td>B25047</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>B25047_002EA,B25047_002M,B25047_002MA</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>B25047_001E</th>
+      <td>Estimate!!Total:</td>
+      <td>PLUMBING FACILITIES FOR ALL HOUSING UNITS</td>
+      <td>int</td>
+      <td>B25047</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>B25047_001EA,B25047_001M,B25047_001MA</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="download-data">
+<h2>Download data<a class="headerlink" href="#download-data" title="Link to this heading">#</a></h2>
+<p>We will focus our analysis on western United States and download data at the <strong>county</strong> level. Of course, a more local analysis could look at smaller spatial scales such as the tract or block group level.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Download data</span>
+<span class="n">wa_plumbing</span> <span class="o">=</span> <span class="n">products</span><span class="o">.</span><span class="n">ACS</span><span class="p">(</span><span class="mi">2019</span><span class="p">)</span><span class="o">.</span><span class="n">from_state</span><span class="p">(</span><span class="s1">&#39;Washington&#39;</span><span class="p">,</span> 
+                                          <span class="n">level</span><span class="o">=</span><span class="s1">&#39;county&#39;</span><span class="p">,</span>
+                                          <span class="n">variables</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;B25047_001E&#39;</span><span class="p">,</span> <span class="s1">&#39;B25047_002E&#39;</span><span class="p">,</span> <span class="s1">&#39;B25047_003E&#39;</span><span class="p">])</span>
+<span class="n">or_plumbing</span> <span class="o">=</span> <span class="n">products</span><span class="o">.</span><span class="n">ACS</span><span class="p">(</span><span class="mi">2019</span><span class="p">)</span><span class="o">.</span><span class="n">from_state</span><span class="p">(</span><span class="s1">&#39;Oregon&#39;</span><span class="p">,</span> 
+                                          <span class="n">level</span><span class="o">=</span><span class="s1">&#39;county&#39;</span><span class="p">,</span>
+                                          <span class="n">variables</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;B25047_001E&#39;</span><span class="p">,</span> <span class="s1">&#39;B25047_002E&#39;</span><span class="p">,</span> <span class="s1">&#39;B25047_003E&#39;</span><span class="p">])</span>
+<span class="n">ca_plumbing</span> <span class="o">=</span> <span class="n">products</span><span class="o">.</span><span class="n">ACS</span><span class="p">(</span><span class="mi">2019</span><span class="p">)</span><span class="o">.</span><span class="n">from_state</span><span class="p">(</span><span class="s1">&#39;California&#39;</span><span class="p">,</span> 
+                                          <span class="n">level</span><span class="o">=</span><span class="s1">&#39;county&#39;</span><span class="p">,</span>
+                                          <span class="n">variables</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;B25047_001E&#39;</span><span class="p">,</span> <span class="s1">&#39;B25047_002E&#39;</span><span class="p">,</span> <span class="s1">&#39;B25047_003E&#39;</span><span class="p">])</span>
+<span class="n">az_plumbing</span> <span class="o">=</span> <span class="n">products</span><span class="o">.</span><span class="n">ACS</span><span class="p">(</span><span class="mi">2019</span><span class="p">)</span><span class="o">.</span><span class="n">from_state</span><span class="p">(</span><span class="s1">&#39;Arizona&#39;</span><span class="p">,</span> 
+                                          <span class="n">level</span><span class="o">=</span><span class="s1">&#39;county&#39;</span><span class="p">,</span>
+                                          <span class="n">variables</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;B25047_001E&#39;</span><span class="p">,</span> <span class="s1">&#39;B25047_002E&#39;</span><span class="p">,</span> <span class="s1">&#39;B25047_003E&#39;</span><span class="p">])</span>
+<span class="n">nm_plumbing</span> <span class="o">=</span> <span class="n">products</span><span class="o">.</span><span class="n">ACS</span><span class="p">(</span><span class="mi">2019</span><span class="p">)</span><span class="o">.</span><span class="n">from_state</span><span class="p">(</span><span class="s1">&#39;New Mexico&#39;</span><span class="p">,</span> 
+                                          <span class="n">level</span><span class="o">=</span><span class="s1">&#39;county&#39;</span><span class="p">,</span>
+                                          <span class="n">variables</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;B25047_001E&#39;</span><span class="p">,</span> <span class="s1">&#39;B25047_002E&#39;</span><span class="p">,</span> <span class="s1">&#39;B25047_003E&#39;</span><span class="p">])</span>
+<span class="n">id_plumbing</span> <span class="o">=</span> <span class="n">products</span><span class="o">.</span><span class="n">ACS</span><span class="p">(</span><span class="mi">2019</span><span class="p">)</span><span class="o">.</span><span class="n">from_state</span><span class="p">(</span><span class="s1">&#39;Idaho&#39;</span><span class="p">,</span> 
+                                          <span class="n">level</span><span class="o">=</span><span class="s1">&#39;county&#39;</span><span class="p">,</span>
+                                          <span class="n">variables</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;B25047_001E&#39;</span><span class="p">,</span> <span class="s1">&#39;B25047_002E&#39;</span><span class="p">,</span> <span class="s1">&#39;B25047_003E&#39;</span><span class="p">])</span>
+<span class="n">az_plumbing</span> <span class="o">=</span> <span class="n">products</span><span class="o">.</span><span class="n">ACS</span><span class="p">(</span><span class="mi">2019</span><span class="p">)</span><span class="o">.</span><span class="n">from_state</span><span class="p">(</span><span class="s1">&#39;Arizona&#39;</span><span class="p">,</span> 
+                                          <span class="n">level</span><span class="o">=</span><span class="s1">&#39;county&#39;</span><span class="p">,</span>
+                                          <span class="n">variables</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;B25047_001E&#39;</span><span class="p">,</span> <span class="s1">&#39;B25047_002E&#39;</span><span class="p">,</span> <span class="s1">&#39;B25047_003E&#39;</span><span class="p">])</span>
+<span class="n">ut_plumbing</span> <span class="o">=</span> <span class="n">products</span><span class="o">.</span><span class="n">ACS</span><span class="p">(</span><span class="mi">2019</span><span class="p">)</span><span class="o">.</span><span class="n">from_state</span><span class="p">(</span><span class="s1">&#39;Utah&#39;</span><span class="p">,</span> 
+                                          <span class="n">level</span><span class="o">=</span><span class="s1">&#39;county&#39;</span><span class="p">,</span>
+                                          <span class="n">variables</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;B25047_001E&#39;</span><span class="p">,</span> <span class="s1">&#39;B25047_002E&#39;</span><span class="p">,</span> <span class="s1">&#39;B25047_003E&#39;</span><span class="p">])</span>
+<span class="n">id_plumbing</span> <span class="o">=</span> <span class="n">products</span><span class="o">.</span><span class="n">ACS</span><span class="p">(</span><span class="mi">2019</span><span class="p">)</span><span class="o">.</span><span class="n">from_state</span><span class="p">(</span><span class="s1">&#39;Idaho&#39;</span><span class="p">,</span> 
+                                          <span class="n">level</span><span class="o">=</span><span class="s1">&#39;county&#39;</span><span class="p">,</span>
+                                          <span class="n">variables</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;B25047_001E&#39;</span><span class="p">,</span> <span class="s1">&#39;B25047_002E&#39;</span><span class="p">,</span> <span class="s1">&#39;B25047_003E&#39;</span><span class="p">])</span>
+<span class="n">nv_plumbing</span> <span class="o">=</span> <span class="n">products</span><span class="o">.</span><span class="n">ACS</span><span class="p">(</span><span class="mi">2019</span><span class="p">)</span><span class="o">.</span><span class="n">from_state</span><span class="p">(</span><span class="s1">&#39;Nevada&#39;</span><span class="p">,</span> 
+                                          <span class="n">level</span><span class="o">=</span><span class="s1">&#39;county&#39;</span><span class="p">,</span>
+                                          <span class="n">variables</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;B25047_001E&#39;</span><span class="p">,</span> <span class="s1">&#39;B25047_002E&#39;</span><span class="p">,</span> <span class="s1">&#39;B25047_003E&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Download data</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">wa_plumbing</span> <span class="o">=</span> <span class="n">products</span><span class="o">.</span><span class="n">ACS</span><span class="p">(</span><span class="mi">2019</span><span class="p">)</span><span class="o">.</span><span class="n">from_state</span><span class="p">(</span><span class="s1">&#39;Washington&#39;</span><span class="p">,</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span>                                           <span class="n">level</span><span class="o">=</span><span class="s1">&#39;county&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>                                           <span class="n">variables</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;B25047_001E&#39;</span><span class="p">,</span> <span class="s1">&#39;B25047_002E&#39;</span><span class="p">,</span> <span class="s1">&#39;B25047_003E&#39;</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">or_plumbing</span> <span class="o">=</span> <span class="n">products</span><span class="o">.</span><span class="n">ACS</span><span class="p">(</span><span class="mi">2019</span><span class="p">)</span><span class="o">.</span><span class="n">from_state</span><span class="p">(</span><span class="s1">&#39;Oregon&#39;</span><span class="p">,</span> 
+<span class="g g-Whitespace">      </span><span class="mi">6</span>                                           <span class="n">level</span><span class="o">=</span><span class="s1">&#39;county&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>                                           <span class="n">variables</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;B25047_001E&#39;</span><span class="p">,</span> <span class="s1">&#39;B25047_002E&#39;</span><span class="p">,</span> <span class="s1">&#39;B25047_003E&#39;</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">ca_plumbing</span> <span class="o">=</span> <span class="n">products</span><span class="o">.</span><span class="n">ACS</span><span class="p">(</span><span class="mi">2019</span><span class="p">)</span><span class="o">.</span><span class="n">from_state</span><span class="p">(</span><span class="s1">&#39;California&#39;</span><span class="p">,</span> 
+<span class="g g-Whitespace">      </span><span class="mi">9</span>                                           <span class="n">level</span><span class="o">=</span><span class="s1">&#39;county&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span>                                           <span class="n">variables</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;B25047_001E&#39;</span><span class="p">,</span> <span class="s1">&#39;B25047_002E&#39;</span><span class="p">,</span> <span class="s1">&#39;B25047_003E&#39;</span><span class="p">])</span>
+
+<span class="nn">File /opt/miniconda3/envs/book/lib/python3.12/site-packages/cenpy/products.py:767,</span> in <span class="ni">ACS.from_state</span><span class="nt">(self, state, variables, level, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">766</span> <span class="k">def</span><span class="w"> </span><span class="nf">from_state</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="n">variables</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="s2">&quot;tract&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">767</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_from_name</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">variables</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="s2">&quot;States&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File /opt/miniconda3/envs/book/lib/python3.12/site-packages/cenpy/products.py:723,</span> in <span class="ni">ACS._from_name</span><span class="nt">(self, place, variables, level, layername, return_geometry, cache_name, strict_within, return_bounds, geometry_precision)</span>
+<span class="g g-Whitespace">    </span><span class="mi">720</span> <span class="n">variables</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;GEO_ID&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">722</span> <span class="n">caller</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">ACS</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">_from_name</span>
+<span class="ne">--&gt; </span><span class="mi">723</span> <span class="n">geoms</span><span class="p">,</span> <span class="n">variables</span><span class="p">,</span> <span class="o">*</span><span class="n">rest</span> <span class="o">=</span> <span class="n">caller</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">724</span>     <span class="n">place</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">725</span>     <span class="n">variables</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">726</span>     <span class="n">level</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">727</span>     <span class="n">layername</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">728</span>     <span class="n">return_geometry</span><span class="o">=</span><span class="n">return_geometry</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">729</span>     <span class="n">cache_name</span><span class="o">=</span><span class="n">cache_name</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">730</span>     <span class="n">strict_within</span><span class="o">=</span><span class="n">strict_within</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">731</span>     <span class="n">return_bounds</span><span class="o">=</span><span class="n">return_bounds</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">732</span>     <span class="n">geometry_precision</span><span class="o">=</span><span class="n">geometry_precision</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">733</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">734</span> <span class="n">variables</span><span class="p">[</span><span class="s2">&quot;GEOID&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">variables</span><span class="o">.</span><span class="n">GEO_ID</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;US&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="g g-Whitespace">    </span><span class="mi">735</span> <span class="n">return_table</span> <span class="o">=</span> <span class="n">geoms</span><span class="p">[[</span><span class="s2">&quot;GEOID&quot;</span><span class="p">,</span> <span class="s2">&quot;geometry&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">736</span>     <span class="n">variables</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;GEO_ID&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;GEOID&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">737</span> <span class="p">)</span>
+
+<span class="nn">File /opt/miniconda3/envs/book/lib/python3.12/site-packages/cenpy/products.py:389,</span> in <span class="ni">_Product._from_name</span><span class="nt">(self, place, variables, level, layername, strict_within, return_bounds, geometry_precision, cache_name, replace_missing, return_geometry)</span>
+<span class="g g-Whitespace">    </span><span class="mi">380</span> <span class="n">geoms</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_from_bbox</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">381</span>     <span class="n">env</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">epsg</span><span class="o">=</span><span class="mi">4326</span><span class="p">)</span><span class="o">.</span><span class="n">total_bounds</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">382</span>     <span class="n">variables</span><span class="o">=</span><span class="n">variables</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">386</span>     <span class="n">replace_missing</span><span class="o">=</span><span class="n">replace_missing</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">387</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">388</span> <span class="k">if</span> <span class="n">strict_within</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">389</span>     <span class="n">geoms</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">sjoin</span><span class="p">(</span><span class="n">geoms</span><span class="p">,</span> <span class="n">env</span><span class="p">[[</span><span class="s2">&quot;geometry&quot;</span><span class="p">]],</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;inner&quot;</span><span class="p">,</span> <span class="n">op</span><span class="o">=</span><span class="s2">&quot;within&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">390</span> <span class="k">if</span> <span class="n">return_bounds</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">391</span>     <span class="k">return</span> <span class="n">geoms</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">env</span>
+
+<span class="nn">File /opt/miniconda3/envs/book/lib/python3.12/site-packages/geopandas/tools/sjoin.py:110,</span> in <span class="ni">sjoin</span><span class="nt">(left_df, right_df, how, predicate, lsuffix, rsuffix, distance, on_attribute, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">108</span> <span class="k">if</span> <span class="n">kwargs</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">109</span>     <span class="n">first</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">kwargs</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+<span class="ne">--&gt; </span><span class="mi">110</span>     <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;sjoin() got an unexpected keyword argument &#39;</span><span class="si">{</span><span class="n">first</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">112</span> <span class="n">on_attribute</span> <span class="o">=</span> <span class="n">_maybe_make_list</span><span class="p">(</span><span class="n">on_attribute</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">114</span> <span class="n">_basic_checks</span><span class="p">(</span><span class="n">left_df</span><span class="p">,</span> <span class="n">right_df</span><span class="p">,</span> <span class="n">how</span><span class="p">,</span> <span class="n">lsuffix</span><span class="p">,</span> <span class="n">rsuffix</span><span class="p">,</span> <span class="n">on_attribute</span><span class="o">=</span><span class="n">on_attribute</span><span class="p">),</span>
+
+<span class="ne">TypeError</span>: sjoin() got an unexpected keyword argument &#39;op&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wa_plumbing</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plumbing</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">wa_plumbing</span><span class="p">,</span> <span class="n">or_plumbing</span><span class="p">,</span> <span class="n">ca_plumbing</span><span class="p">,</span> 
+                      <span class="n">az_plumbing</span><span class="p">,</span> <span class="n">ut_plumbing</span><span class="p">,</span> <span class="n">id_plumbing</span><span class="p">,</span> 
+                      <span class="n">nv_plumbing</span><span class="p">])</span>
+
+<span class="c1"># Compute proportion of household with inadequate plumbing</span>
+<span class="n">plumbing</span><span class="p">[</span><span class="s1">&#39;lack_plumbing_percent&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">plumbing</span><span class="p">[</span><span class="s1">&#39;B25047_003E&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">plumbing</span><span class="p">[</span><span class="s1">&#39;B25047_001E&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="simple-choropleth-map">
+<h2>Simple choropleth map<a class="headerlink" href="#simple-choropleth-map" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">GeoPandas</span></code> provides a high-level interface to the <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code> library for making maps. It is as easy as using the <code class="docutils literal notranslate"><span class="pre">plot()</span></code> method on a <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plumbing</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;lack_plumbing_percent&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="improving-the-choropleth-map">
+<h2>Improving the choropleth map<a class="headerlink" href="#improving-the-choropleth-map" title="Link to this heading">#</a></h2>
+<p>This is useful for a quick look over the data but we would prefer to customize our plot. For instance, we should add a title, colorbar, and nicer colormap.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Lack of plumbing in the western United States&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_axis_off</span><span class="p">()</span>
+<span class="n">divider</span> <span class="o">=</span> <span class="n">make_axes_locatable</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">cax</span> <span class="o">=</span> <span class="n">divider</span><span class="o">.</span><span class="n">append_axes</span><span class="p">(</span><span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;3%&quot;</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plumbing</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;lack_plumbing_percent&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Greens&#39;</span><span class="p">,</span> 
+              <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cax</span><span class="o">=</span><span class="n">cax</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Proportion of households&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="interactive-plots">
+<h2>Interactive plots<a class="headerlink" href="#interactive-plots" title="Link to this heading">#</a></h2>
+<p>Alongside static plots, <code class="docutils literal notranslate"><span class="pre">GeoPandas</span></code> can produce <a class="reference external" href="https://geopandas.org/en/stable/docs/user_guide/interactive_mapping.html">interactive maps</a> based on the <a class="reference external" href="https://github.com/python-visualization/folium"><code class="docutils literal notranslate"><span class="pre">Folium</span></code></a> library, which is itself based on <a class="reference external" href="https://leafletjs.com/"><code class="docutils literal notranslate"><span class="pre">Leaflet</span></code></a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">plumbing</span><span class="o">.</span><span class="n">explore</span><span class="p">(</span>
+     <span class="n">column</span><span class="o">=</span><span class="s2">&quot;lack_plumbing_percent&quot;</span><span class="p">,</span> <span class="c1"># make choropleth based on column</span>
+     <span class="n">scheme</span><span class="o">=</span><span class="s2">&quot;naturalbreaks&quot;</span><span class="p">,</span>         <span class="c1"># use mapclassify&#39;s natural breaks scheme</span>
+     <span class="n">tooltip</span><span class="o">=</span><span class="s2">&quot;lack_plumbing_percent&quot;</span><span class="p">,</span><span class="c1"># show column value in tooltip (on hover)</span>
+     <span class="n">popup</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>                     <span class="c1"># show all values in popup (on click)</span>
+     <span class="n">tiles</span><span class="o">=</span><span class="s2">&quot;CartoDB positron&quot;</span><span class="p">,</span>       <span class="c1"># use &quot;CartoDB positron&quot; tiles</span>
+     <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;Greens&quot;</span><span class="p">,</span>                  <span class="c1"># use &quot;Greens&quot; matplotlib colormap</span>
+     <span class="n">style_kwds</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span> <span class="c1"># use black outline with weight of 1</span>
+    <span class="p">)</span>
+<span class="n">m</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="conclusions">
+<h2>Conclusions<a class="headerlink" href="#conclusions" title="Link to this heading">#</a></h2>
+<p>Maps made using programming don’t have to be terrible - it is possible to produce visually appealing maps in Python. They may never be quite as good as what professional cartographers can produce in Adobe Illustrator but they have other advantages. Once the code is written, we can quickly make edits or add another dataset. I hope this demo has inspired you to improve the quality of your Python plots!</p>
+<p>Content in this lecture was inspired by <a class="reference external" href="https://www.pythonmaps.com/">Adam Symington</a> and this <a class="reference external" href="https://towardsdatascience.com/creating-beautiful-topography-maps-with-python-efced5507aa3">tutorial</a>.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./lectures/unit4"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="lecture-9a.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Visualization</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#search-for-data">Search for data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-data">Download data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-choropleth-map">Simple choropleth map</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#improving-the-choropleth-map">Improving the choropleth map</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-plots">Interactive plots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusions">Conclusions</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Johnny Ryan
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

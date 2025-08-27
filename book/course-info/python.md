@@ -93,9 +93,5 @@ When we are finished with coursework, it is good practice to deactivate the virt
 deactivate
 ```
 
-```{note}
-It is possible to complete this course without installing anything on your own computer. Look for the ![](https://mybinder.org/badge_logo.svg) button on the notebooks to run the code interactively in a browser.
-```
-
 
 

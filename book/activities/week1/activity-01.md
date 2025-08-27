@@ -34,10 +34,6 @@ jupyter notebook
 If you run this command from your course folder, your `.ipynb` assignment will automatically be saved there.
 ```
 
-```{tip}
-Alternatively, you can also use a virtual Jupyter Lab by clicking this button: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/owel-lab/programming-for-sds-site/HEAD)
-```
-
 *****************************
 
 ## Task 1 (5 points)
