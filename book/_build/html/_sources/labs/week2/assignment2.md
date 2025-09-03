@@ -1,6 +1,6 @@
 # Assignment 2
 
-Download the data for the assignment from [here](https://www.dropbox.com/sh/63dhmgtcoss1s0k/AAAsYpRdCV3xcr0jbNq9qFGZa?dl=0). The first dataset contains wildfire perimeters for Oregon from the [National Interagency Fire Center](https://data-nifc.opendata.arcgis.com/search?tags=Category%2Chistoric_wildlandfire_opendata). The first second contains the centers of activity of all known Northern Spotted Owls breeding pairs in Western Oregon as determined by the Bureau of Land Management. More information can be found [here](https://databasin.org/datasets/18c5edbd64c7497aa17a369fbab6f4ac/). 
+Download the data for the assignment from [here](https://prodduke-my.sharepoint.com/:t:/g/personal/jr555_duke_edu/EVBd9PuhvgdPs7nyks9gqfkBVosLjNTCwH-LFtoVMG04JA?e=F5Cn1m). The first dataset contains wildfire perimeters for Oregon from the [National Interagency Fire Center](https://data-nifc.opendata.arcgis.com/search?tags=Category%2Chistoric_wildlandfire_opendata). The first second contains the centers of activity of all known Northern Spotted Owls breeding pairs in Western Oregon as determined by the Bureau of Land Management. More information can be found [here](https://databasin.org/datasets/18c5edbd64c7497aa17a369fbab6f4ac/). 
 
 ```{image} images/spotted_owl.jpg
 :width: 400px
@@ -51,7 +51,7 @@ Import `GeoPandas`, read the **wildfire** dataset, and answer the following ques
 Remember the syntax for masking is `df[df['column'] == value]`.
 ```
 
-* c) Reproject the dataset to UTM Zone 10N (EPSG:32610) and make a new column called `area` that contains the **area** of each wildfire.
+* c) Make a new column called `area` that contains the **area** of each wildfire.
 
 * d) What are the **names** and **years** of the five largest wildfires? 
 
@@ -75,7 +75,12 @@ Read the **spotted owls** dataset and answer the following questions:
 
 * d) What is the furthest **east** that spotted owls have been identified?
 
-Reproject the dataset to UTM Zone 10N (EPSG:32610).
+Reproject the owl dataset to the same CRS as the fires dataset. 
+
+```{admonition} Click to reveal hint
+:class: tip, dropdown
+The easiest way to reproject is to use an EPSG code which can be found [here](https://epsg.io/32610).
+```
 
 * e) Make a new column called `pairs` which has a value of `1` if there are **both** male and female owls in that location. 
 
@@ -101,7 +106,7 @@ The `.groupby` method will be very useful here.
 
 * d) Provide the **name** and **year** of the wildfire that affected the most owl pairs (disregard wildfires named `Unknown`)?
 
-* e) Make a plot showing locations of Northern Spotted Owls breeding pairs on top of the wildfire perimeters for Oregon.
+* e) Make a plot showing locations of Northern Spotted Owls breeding pairs on top of the wildfire perimeters for Oregon. Point will only be awarded to those who make this plot look presentable. 
 
 *****************************
 

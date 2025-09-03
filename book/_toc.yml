@@ -10,6 +10,7 @@ parts:
     - file: course-info/schedule.md
     - file: course-info/python.md
     - file: course-info/github.md
+    - file: course-info/format.ipynb
     - file: course-info/final-project.md
 
   - caption: Week 1

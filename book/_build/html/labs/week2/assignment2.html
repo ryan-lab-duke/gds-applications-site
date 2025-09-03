@@ -176,6 +176,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../course-info/schedule.html">Schedule (for Fall 2025)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../course-info/python.html">Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../course-info/github.html">GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../course-info/format.html">Formatting answers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../course-info/final-project.html">Final projects</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 1</span></p>
@@ -435,7 +436,7 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="assignment-2">
 <h1>Assignment 2<a class="headerlink" href="#assignment-2" title="Link to this heading">#</a></h1>
-<p>Download the data for the assignment from <a class="reference external" href="https://www.dropbox.com/sh/63dhmgtcoss1s0k/AAAsYpRdCV3xcr0jbNq9qFGZa?dl=0">here</a>. The first dataset contains wildfire perimeters for Oregon from the <a class="reference external" href="https://data-nifc.opendata.arcgis.com/search?tags=Category%2Chistoric_wildlandfire_opendata">National Interagency Fire Center</a>. The first second contains the centers of activity of all known Northern Spotted Owls breeding pairs in Western Oregon as determined by the Bureau of Land Management. More information can be found <a class="reference external" href="https://databasin.org/datasets/18c5edbd64c7497aa17a369fbab6f4ac/">here</a>.</p>
+<p>Download the data for the assignment from <a class="reference external" href="https://prodduke-my.sharepoint.com/:t:/g/personal/jr555_duke_edu/EVBd9PuhvgdPs7nyks9gqfkBVosLjNTCwH-LFtoVMG04JA?e=F5Cn1m">here</a>. The first dataset contains wildfire perimeters for Oregon from the <a class="reference external" href="https://data-nifc.opendata.arcgis.com/search?tags=Category%2Chistoric_wildlandfire_opendata">National Interagency Fire Center</a>. The first second contains the centers of activity of all known Northern Spotted Owls breeding pairs in Western Oregon as determined by the Bureau of Land Management. More information can be found <a class="reference external" href="https://databasin.org/datasets/18c5edbd64c7497aa17a369fbab6f4ac/">here</a>.</p>
 <a class="reference internal image-reference" href="../../_images/spotted_owl.jpg"><img alt="../../_images/spotted_owl.jpg" class="align-center" src="../../_images/spotted_owl.jpg" style="width: 400px;" /></a>
 <hr class="docutils" />
 <section id="task-0-0-points">
@@ -478,7 +479,7 @@
 <p>Remember the syntax for masking is <code class="docutils literal notranslate"><span class="pre">df[df['column']</span> <span class="pre">==</span> <span class="pre">value]</span></code>.</p>
 </div>
 <ul class="simple">
-<li><p>c) Reproject the dataset to UTM Zone 10N (EPSG:32610) and make a new column called <code class="docutils literal notranslate"><span class="pre">area</span></code> that contains the <strong>area</strong> of each wildfire.</p></li>
+<li><p>c) Make a new column called <code class="docutils literal notranslate"><span class="pre">area</span></code> that contains the <strong>area</strong> of each wildfire.</p></li>
 <li><p>d) What are the <strong>names</strong> and <strong>years</strong> of the five largest wildfires?</p></li>
 <li><p>e) What was the <strong>total area</strong> (in km<span class="math notranslate nohighlight">\(^2\)</span>) of wildfire in <strong>2021</strong>?</p></li>
 </ul>
@@ -497,7 +498,11 @@
 <li><p>c) What percentage of locations have <strong>female</strong> spotted owls?</p></li>
 <li><p>d) What is the furthest <strong>east</strong> that spotted owls have been identified?</p></li>
 </ul>
-<p>Reproject the dataset to UTM Zone 10N (EPSG:32610).</p>
+<p>Reproject the owl dataset to the same CRS as the fires dataset.</p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Click to reveal hint</p>
+<p>The easiest way to reproject is to use an EPSG code which can be found <a class="reference external" href="https://epsg.io/32610">here</a>.</p>
+</div>
 <ul class="simple">
 <li><p>e) Make a new column called <code class="docutils literal notranslate"><span class="pre">pairs</span></code> which has a value of <code class="docutils literal notranslate"><span class="pre">1</span></code> if there are <strong>both</strong> male and female owls in that location.</p></li>
 </ul>
@@ -522,7 +527,7 @@
 <ul class="simple">
 <li><p>c) How <strong>many</strong> owl pairs were affected in this year?</p></li>
 <li><p>d) Provide the <strong>name</strong> and <strong>year</strong> of the wildfire that affected the most owl pairs (disregard wildfires named <code class="docutils literal notranslate"><span class="pre">Unknown</span></code>)?</p></li>
-<li><p>e) Make a plot showing locations of Northern Spotted Owls breeding pairs on top of the wildfire perimeters for Oregon.</p></li>
+<li><p>e) Make a plot showing locations of Northern Spotted Owls breeding pairs on top of the wildfire perimeters for Oregon. Point will only be awarded to those who make this plot look presentable.</p></li>
 </ul>
 <hr class="docutils" />
 <div class="admonition important">

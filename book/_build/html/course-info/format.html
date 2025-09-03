@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>General information &#8212; Geospatial Data Science</title>
+    <title>Formatting answers &#8212; Geospatial Data Science</title>
   
   
   
@@ -60,11 +60,11 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'course-info/general-info';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'course-info/format';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Schedule (for Fall 2025)" href="schedule.html" />
-    <link rel="prev" title="Welcome to Geospatial Data Science!" href="../intro.html" />
+    <link rel="next" title="Final projects" href="final-project.html" />
+    <link rel="prev" title="GitHub" href="github.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -170,11 +170,11 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Course information</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">General information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general-info.html">General information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="schedule.html">Schedule (for Fall 2025)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python.html">Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="github.html">GitHub</a></li>
-<li class="toctree-l1"><a class="reference internal" href="format.html">Formatting answers</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Formatting answers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="final-project.html">Final projects</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 1</span></p>
@@ -301,7 +301,7 @@
       
       
       
-      <li><a href="https://github.com/ryan-lab-duke/gds-applications-site/issues/new?title=Issue%20on%20page%20%2Fcourse-info/general-info.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/ryan-lab-duke/gds-applications-site/issues/new?title=Issue%20on%20page%20%2Fcourse-info/format.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -331,7 +331,7 @@
       
       
       
-      <li><a href="../_sources/course-info/general-info.md" target="_blank"
+      <li><a href="../_sources/course-info/format.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -341,7 +341,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -407,7 +407,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>General information</h1>
+    <h1>Formatting answers</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -417,9 +417,9 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weekly-schedule">Weekly schedule</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grading">Grading</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials">Materials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-1-old-school-string-formatting">Option 1: “Old-school” string formatting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-str-format">Option 2: str.format()</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-3-f-strings">Option 3: f-Strings</a></li>
 </ul>
             </nav>
         </div>
@@ -431,37 +431,107 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="general-information">
-<h1>General information<a class="headerlink" href="#general-information" title="Link to this heading">#</a></h1>
-<p><strong>Instructor</strong>: <a class="reference external" href="https://nicholas.duke.edu/people/faculty/ryan">Johnny Ryan</a></p>
-<p><strong>Office hours</strong>: Monday 15:00-16:00 and Wednesday 15:00-16:00 (no appointment required)</p>
-<p><strong>Office</strong>: See Canvas</p>
-<section id="weekly-schedule">
-<h2>Weekly schedule<a class="headerlink" href="#weekly-schedule" title="Link to this heading">#</a></h2>
-<p><strong>Lecture</strong>: Monday at 13:25-14:40 and Wednesday 13:25-14:40 in LSRC A156</p>
-</section>
-<section id="grading">
-<h2>Grading<a class="headerlink" href="#grading" title="Link to this heading">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="formatting-answers">
+<h1>Formatting answers<a class="headerlink" href="#formatting-answers" title="Link to this heading">#</a></h1>
+<p>In Assignment 1, we formatted our notebooks using <strong>Markdown</strong> to produce submissions that were stuctured and tidy. Sometimes it is also nice to format the <strong>numerical output</strong> returned by a Python cell in a readable way. For example, we may want to change the number of decimal places. In this demo, we demonstrate some useful approaches for formatting your numerical answers.</p>
+<p>There are three approaches that can be used to manipulate strings in Python:</p>
 <ul class="simple">
-<li><p><strong>Assignments (45%)</strong>: Submit weekly assignments on Canvas (see instructions in Lab #1). Assignments are due a week after they are set (i.e. the following Wed 11:59 pm). Late submissions will be penalized 5% per day late. Submissions will not be accepted after seven days past the deadline.</p></li>
+<li><p>the “old-school” %-formatting</p></li>
+<li><p>the str.format() method</p></li>
+<li><p>f-strings</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Please let the instructor know before the deadline if you anticipate a late submission - we may be able to provide an extension.</p>
+<p>The f-string approach is recommended and the most modern. However, we are likely to find examples of the all approaches so it is useful to show how they work.</p>
 </div>
-<ul class="simple">
-<li><p><strong>Activities (15%)</strong>: Submitted through Canvas. The deadline for activities will be the same day that they are set (i.e. Wed 11:59 pm). Late submissions will be penalized 5% per day late. Submissions will not be accepted after 7 days past the deadline.</p></li>
-<li><p><strong>Final project (30%)</strong>: An essential component of this course is the <a class="reference internal" href="final-project.html"><span class="std std-doc">final project</span></a> which provides an opportunity to explore a particular topic of interest using some of the skills developed in this course. Students will present project during the week starting June 4 and submit a write up by June 6 11:59 pm.</p></li>
-<li><p><strong>Engagement (10%)</strong>: Graded by instructor. Credit can be earned through attendance, participation in class discussion, visiting Professor during office hours, and helping other students with assignments.</p></li>
-</ul>
+<section id="option-1-old-school-string-formatting">
+<h2>Option 1: “Old-school” string formatting<a class="headerlink" href="#option-1-old-school-string-formatting" title="Link to this heading">#</a></h2>
+<p>String objects have a built-in operation using the <code class="docutils literal notranslate"><span class="pre">%</span></code> operator, which you can use to format strings. Here is an example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">trail</span> <span class="o">=</span> <span class="s1">&#39;Scott&#39;</span>
+<span class="n">distance</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The </span><span class="si">%s</span><span class="s1"> Trail is about </span><span class="si">%i</span><span class="s1"> miles&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">trail</span><span class="p">,</span> <span class="n">distance</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The Scott Trail is about 5 miles
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The </span><span class="si">%s</span><span class="s1"> Trail is about </span><span class="si">%.2f</span><span class="s1"> miles&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">trail</span><span class="p">,</span> <span class="n">distance</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The Scott Trail is about 5.00 miles
+</pre></div>
+</div>
+</div>
+</div>
+<p>Where <code class="docutils literal notranslate"><span class="pre">%s</span></code> stands for <strong>string</strong>, <code class="docutils literal notranslate"><span class="pre">%i</span></code> stands for <strong>integer</strong>, <code class="docutils literal notranslate"><span class="pre">.2f</span></code> stands for a <strong>float with 2 decimal places</strong>.</p>
 </section>
-<section id="materials">
-<h2>Materials<a class="headerlink" href="#materials" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p><strong>Class website</strong>: all lecture slides, assignments, and guides are available on <a class="reference internal" href="../intro.html"><span class="std std-doc">this website</span></a>.</p></li>
-<li><p><strong>OneDrive</strong>: the data for the labs are available on OneDrive. Please see <strong>Canvas</strong> for link.</p></li>
-<li><p><strong>Canvas</strong>: the lecture slides and assignments will also be available on Canvas.</p></li>
-</ul>
+<section id="option-2-str-format">
+<h2>Option 2: str.format()<a class="headerlink" href="#option-2-str-format" title="Link to this heading">#</a></h2>
+<p>This newer way of getting the job done was introduced in Python 2.6. Here is an example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The </span><span class="si">{}</span><span class="s2"> Trail is about </span><span class="si">{}</span><span class="s2"> miles&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">trail</span><span class="p">,</span> <span class="n">distance</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The Scott Trail is about 5 miles
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The </span><span class="si">{}</span><span class="s2"> Trail is about </span><span class="si">{:.2f}</span><span class="s2"> miles&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">trail</span><span class="p">,</span> <span class="n">distance</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The Scott Trail is about 5.00 miles
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="option-3-f-strings">
+<h2>Option 3: f-Strings<a class="headerlink" href="#option-3-f-strings" title="Link to this heading">#</a></h2>
+<p>Also called “formatted string literals”, f-strings are string literals that have an <code class="docutils literal notranslate"><span class="pre">f</span></code> at the beginning and curly braces containing expressions that will be replaced with their values. Here is an example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sa">f</span><span class="s2">&quot;The </span><span class="si">{</span><span class="n">trail</span><span class="si">}</span><span class="s2"> Trail is about </span><span class="si">{</span><span class="n">distance</span><span class="si">}</span><span class="s2"> miles&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;The Scott Trail is about 5 miles&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sa">f</span><span class="s2">&quot;The </span><span class="si">{</span><span class="n">trail</span><span class="si">}</span><span class="s2"> Trail is about </span><span class="si">{</span><span class="n">distance</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> miles&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;The Scott Trail is about 5.00 miles&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are many more ways you can use f-strings. Some further reading can be found <a class="reference external" href="https://realpython.com/python-f-strings/">here</a>.</p>
 </section>
 </section>
 
@@ -496,20 +566,20 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../intro.html"
+       href="github.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Welcome to Geospatial Data Science!</p>
+        <p class="prev-next-title">GitHub</p>
       </div>
     </a>
     <a class="right-next"
-       href="schedule.html"
+       href="final-project.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Schedule (for Fall 2025)</p>
+        <p class="prev-next-title">Final projects</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -530,9 +600,9 @@
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weekly-schedule">Weekly schedule</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grading">Grading</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials">Materials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-1-old-school-string-formatting">Option 1: “Old-school” string formatting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-str-format">Option 2: str.format()</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-3-f-strings">Option 3: f-Strings</a></li>
 </ul>
   </nav></div>
 
