@@ -1,6 +1,6 @@
 # Assignment 2
 
-Download the data for the assignment from [here](https://prodduke-my.sharepoint.com/:t:/g/personal/jr555_duke_edu/EVBd9PuhvgdPs7nyks9gqfkBVosLjNTCwH-LFtoVMG04JA?e=F5Cn1m). The first dataset contains wildfire perimeters for Oregon from the [National Interagency Fire Center](https://data-nifc.opendata.arcgis.com/search?tags=Category%2Chistoric_wildlandfire_opendata). The first second contains the centers of activity of all known Northern Spotted Owls breeding pairs in Western Oregon as determined by the Bureau of Land Management. More information can be found [here](https://databasin.org/datasets/18c5edbd64c7497aa17a369fbab6f4ac/). 
+Download the data for the assignment from [here](https://prodduke-my.sharepoint.com/:f:/g/personal/jr555_duke_edu/EgUge3wFlWdDrfElkgb_josBYztMBgmbJ5W8Uti0MiNU9w?e=aXtxc7). The first dataset contains wildfire perimeters for Oregon from the [National Interagency Fire Center](https://data-nifc.opendata.arcgis.com/search?tags=Category%2Chistoric_wildlandfire_opendata). The first second contains the centers of activity of all known Northern Spotted Owls breeding pairs in Western Oregon as determined by the Bureau of Land Management. More information can be found [here](https://databasin.org/datasets/18c5edbd64c7497aa17a369fbab6f4ac/). 
 
 ```{image} images/spotted_owl.jpg
 :width: 400px
