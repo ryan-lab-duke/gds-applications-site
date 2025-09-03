@@ -57,7 +57,7 @@ Write some code that prints the following information:
 ********************************
 
 ```{important}
-We recommend presenting your **numerical answers** in a readable way using string formatting. See [this guide](../course-info/format.ipynb) for more info.
+We recommend presenting your **numerical answers** in a readable way using string formatting. See [this guide](https://ryan-lab-duke.github.io/gds-applications-site/course-info/format.html) for more info.
 ```
 
 ## Task 2 (5 points)
