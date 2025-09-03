@@ -1,6 +1,6 @@
 # Activity 1
 
-Download the data for the assignment from [here](https://www.dropbox.com/scl/fi/zcqevrwv51k3oahjwwz7k/rivers.csv?rlkey=aal2mmo2kk6exeor3mw9i4lir&dl=0). This dataset contains attributes for the some of the largest rivers in the world. In this activity, we will use the `pandas` package to do some basic analysis on this dataset. 
+In this activity, we will practice working with table data in Python. Download the data for the assignment from [here](https://prodduke-my.sharepoint.com/:x:/g/personal/jr555_duke_edu/ETFKJhCx9a5LrWvxNhFSvDIB3RAJT9G2zCHt_rsCedRZCg?e=uBa4oL). This dataset contains attributes for the some of the largest rivers in the world. In this activity, we will use the `pandas` package to do some basic analysis on this dataset. 
 
 ```{image} images/global-rivers.webp
 :width: 600px
@@ -42,9 +42,7 @@ If you run this command from your course folder, your `.ipynb` assignment will a
 
 Write some code that prints the following information:
 
-* Number of columns
-
-* Number of rows
+* Number of rows and columns
 
 * The maximum `Average discharge (m3/s)` value
 
@@ -52,21 +50,29 @@ Write some code that prints the following information:
 
 * The mean `Length (km)` value
 
-*****************************
+* What is the name of the shortest river?
+
+* Compute the ratio of discharge to drainage area (m³/s per km²) for each river. Which river is most "efficient" at draining water relative to its basin size?
+
+********************************
+
+```{important}
+We recommend presenting your **numerical answers** in a readable way using string formatting. See [this guide](../course-info/format.ipynb) for more info.
+```
 
 ## Task 2 (5 points)
 
 Answer the following questions:
 
-* What is the name of the shortest river?
-
 * How many of these rivers are located in North America?
-
-* What is the mean and standard deviation of `Average discharge (m3/s)` (of entire DataFrame)?
 
 * What are the names of the rivers that flow into the Atlantic Ocean?
 
-* Which continent contains the most large rivers?
+* Which continent contains the most rivers?
+
+* Which continent has the longest rivers (on average)?
+
+*  If the Mississippi and Missouri were combined into a single river, what would their combined discharge, length, and drainage area be? How would it rank globally?
 
 *****************************
 
