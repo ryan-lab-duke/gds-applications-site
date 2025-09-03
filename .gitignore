@@ -7,16 +7,6 @@ resources/
 *cache
 *.gds
 
-book/labs/week2/data/*
-book/labs/week3/data/*
-book/labs/week4/data/*
-book/labs/week5/data/*
-book/labs/week6/data/*
-book/labs/week7/data/*
-book/labs/week8/data/*
-book/labs/week9/data/*
-
-book/lectures/unit1/data/*
-book/lectures/unit2/data/*
-book/lectures/unit3/data/*
-book/lectures/unit4/data/*
+book/labs/*/data/*
+book/lectures/*/data/*
+book/activities/*/data/*
