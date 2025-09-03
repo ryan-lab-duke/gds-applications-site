@@ -139,7 +139,7 @@ new_df = pd.merge(geodataframe, dataframe, left_on=['TRACTCE', 'COUNTYFP'], righ
 ```
 
 ```{note}
-Tracts are unique to each county but not to each state. Hence, there could be multiple tracts with the same value in these DataFrames. To join the DatFrames we must therefore specify both the tract **and** the county values.
+Tracts are unique to each county but not to each state. Hence, there could be multiple tracts with the same value in these DataFrames. To join the DataFrames we must therefore specify both the tract **and** the county values.
 ```
 
 *******************
@@ -147,6 +147,11 @@ Tracts are unique to each county but not to each state. Hence, there could be mu
 ## Task 4 (5 points)
 
 * Make a choropleth map showing a variable of interest
+
+```{admonition} Click to reveal hint
+:class: tip, dropdown
+The following guide may be helpful: https://geopandas.org/en/stable/docs/user_guide/mapping.html
+```
 
 * Customize the plot so it looks more presentable.
 

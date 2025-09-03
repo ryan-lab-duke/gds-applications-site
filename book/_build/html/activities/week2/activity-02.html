@@ -420,6 +420,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1-5-points">Task 1 (5 points)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-5-points">Task 2 (5 points)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-3-5-points">Task 3 (5 points)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgements">Acknowledgements</a></li>
 </ul>
             </nav>
         </div>
@@ -433,12 +434,9 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="activity-2">
 <h1>Activity 2<a class="headerlink" href="#activity-2" title="Link to this heading">#</a></h1>
-<p>Download the data for the assignment from <a class="reference external" href="https://www.dropbox.com/scl/fo/otgc923zyn2o8go10486e/h?rlkey=jmzcte1fddpic85a78eju6tfx&amp;amp;dl=0">here</a>. This dataset contains population and income data for Census tracts in Lane County, Oregon. In this activity, we will use the <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> package to do some basic analysis on this dataset.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><code class="docutils literal notranslate"><span class="pre">B01003_001</span></code> is <strong>population</strong> and <code class="docutils literal notranslate"><span class="pre">B19301_001</span></code> is <strong>household income</strong>.</p>
-</div>
-<a class="reference internal image-reference" href="../../_images/lane-county.png"><img alt="../../_images/lane-county.png" class="align-center" src="../../_images/lane-county.png" style="width: 200px;" /></a>
+<p>Flooding is the most common and damaging natural disaster in the United States. Therefore understanding the number of people at risk of flooding is critical information for planning. In this activity, we will perfom some basic spatial analysis using the <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> package to investigate the number of people exposed to flooding in Orange County, NC.</p>
+<p>The data can be downloaded from <a class="reference external" href="https://prodduke-my.sharepoint.com/:f:/g/personal/jr555_duke_edu/EiD2lKkUb1dMsiE33eggj4MBk_tFp8z54O_aoCcobahsjQ?e=zsuzEI">here</a>. There are two shapefiles in this directory. The first dataset, <code class="docutils literal notranslate"><span class="pre">orange-county-structures.shp</span></code>, is an inventory of all structures larger than 450 square feet produced by the Federal Emergency Management Agency (FEMA). More information about this dataset can be found <a class="reference external" href="https://gis-fema.hub.arcgis.com/pages/usa-structures">here</a>. The second dataset, <code class="docutils literal notranslate"><span class="pre">S_FLD_HAZ_AR.shp</span></code>, is the FEMA Special Flood Hazard Area (SFHA) designation, a regulatory product produced using 1-dimensional flood modeling.</p>
+<a class="reference internal image-reference" href="../../_images/flooding.png"><img alt="../../_images/flooding.png" class="align-center" src="../../_images/flooding.png" style="width: 600px;" /></a>
 <hr class="docutils" />
 <ul class="simple">
 <li><p>Activate the <code class="docutils literal notranslate"><span class="pre">.gds</span></code> Python environment by opening an <strong>Anaconda Prompt (miniconda3)</strong> (Windows) or <strong>Terminal</strong> (macOS). Then, on Windows:</p></li>
@@ -467,43 +465,69 @@
 <hr class="docutils" />
 <section id="task-1-5-points">
 <h2>Task 1 (5 points)<a class="headerlink" href="#task-1-5-points" title="Link to this heading">#</a></h2>
-<p>Import the <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> package and read the shapefile. Write some code that prints the following information:</p>
+<p>Import the <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> package and read the <code class="docutils literal notranslate"><span class="pre">orange-county-structures.shp</span></code> shapefile. Write some code that prints the following information from the GeoDataFrame:</p>
 <ul class="simple">
-<li><p>Number of columns</p></li>
-<li><p>Number of rows</p></li>
-<li><p>The maximum <code class="docutils literal notranslate"><span class="pre">B01003_001</span></code> value</p></li>
-<li><p>The minimum <code class="docutils literal notranslate"><span class="pre">B19301_001</span></code> value</p></li>
-<li><p>The mean <code class="docutils literal notranslate"><span class="pre">B19301_001</span></code> value</p></li>
+<li><p>Number of rows and columns</p></li>
+<li><p>Coordinate reference system as an EPSG code</p></li>
+</ul>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Click to reveal hint</p>
+<p>One way of getting the EPSG code from a Coordinate Reference System (CRS) object is to use the <code class="docutils literal notranslate"><span class="pre">to_epsg()</span></code> method.</p>
+</div>
+<ul class="simple">
+<li><p>The number of different categories in the <code class="docutils literal notranslate"><span class="pre">OCC_CLS</span></code> column</p></li>
+<li><p>The percentage of buildings classified as <strong>Residential</strong> in the <code class="docutils literal notranslate"><span class="pre">OCC_CLS</span></code> column</p></li>
+<li><p>The total number of people living in Orange County (i.e. using the <code class="docutils literal notranslate"><span class="pre">POP_MEDIAN</span></code> columns)</p></li>
 </ul>
 </section>
 <hr class="docutils" />
 <section id="task-2-5-points">
 <h2>Task 2 (5 points)<a class="headerlink" href="#task-2-5-points" title="Link to this heading">#</a></h2>
+<p>Now read the <code class="docutils literal notranslate"><span class="pre">S_FLD_HAZ_AR.shp</span></code> shapefile. Write some code that prints the following information from the GeoDataFrame:</p>
 <ul class="simple">
-<li><p>Reproject the shapefile to a <code class="docutils literal notranslate"><span class="pre">projected</span> <span class="pre">coordinate</span> <span class="pre">system</span></code> (i.e. spatial units are in meters)</p></li>
-<li><p>Make a new column that contains population density (in km2).</p></li>
-<li><p>What is the min, mean, and max population density?</p></li>
+<li><p>Number of rows and columns</p></li>
+<li><p>Coordinate reference system as an EPSG code</p></li>
+</ul>
+<p>Reproject the GeoDataFrame to a <code class="docutils literal notranslate"><span class="pre">projected</span> <span class="pre">coordinate</span> <span class="pre">system</span></code> (i.e. spatial units are in meters)</p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Click to reveal hint</p>
+<p>Consider using a UTM Zone e.g. <a class="reference external" href="https://epsg.io/32617">https://epsg.io/32617</a>.</p>
+</div>
+<ul class="simple">
+<li><p>What is the total area of the Orange County according to this dataset (in km2)?</p></li>
+<li><p>What percentage of the county (by area) has been designated as a Special Flood Hazard Area (i.e. where columns <code class="docutils literal notranslate"><span class="pre">SFHA_TF</span> <span class="pre">==</span> <span class="pre">T</span></code>)?</p></li>
 </ul>
 </section>
 <hr class="docutils" />
 <section id="task-3-5-points">
 <h2>Task 3 (5 points)<a class="headerlink" href="#task-3-5-points" title="Link to this heading">#</a></h2>
+<p>Make sure that both datasets have a common <code class="docutils literal notranslate"><span class="pre">projected</span> <span class="pre">coordinate</span> <span class="pre">system</span></code> and answer the following questions.</p>
 <ul class="simple">
-<li><p>Make a choropleth map showing population density</p></li>
+<li><p>How many structures <strong>intersect</strong> designated Special Flood Hazard Areas (i.e. where columns <code class="docutils literal notranslate"><span class="pre">SFHA_TF</span> <span class="pre">==</span> <span class="pre">T</span></code>)?</p></li>
 </ul>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Click to reveal hint</p>
-<p>The following guide may be helpful: <a class="reference external" href="https://geopandas.org/en/stable/docs/user_guide/mapping.html">https://geopandas.org/en/stable/docs/user_guide/mapping.html</a></p>
+<p>The <a class="reference external" href="https://geopandas.org/en/stable/docs/reference/api/geopandas.sjoin.html"><code class="docutils literal notranslate"><span class="pre">sjoin</span></code></a> function should work well for this.</p>
 </div>
 <ul class="simple">
-<li><p>Make a choropleth map showing household income.</p></li>
-<li><p>Customize both plots so they look more presentable.</p></li>
+<li><p>How many of these structures are classified as <strong>Residential</strong>?</p></li>
+<li><p>How many people in Orange County live in a Special Flood Hazard Area?</p></li>
+<li><p>Find the name of the school that is located in a Special Flood Hazard Area (2 points)</p></li>
 </ul>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Click to reveal hint</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">PRIM_OCC</span></code> column describes the primary occupancy for each structure. Consider finding a lat/lon first and then use Google Maps.</p>
+</div>
 <hr class="docutils" />
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Save your notebook locally in both <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> and <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> formats but only submit the <strong>pdf</strong> to Canvas.</p>
 </div>
+</section>
+<section id="acknowledgements">
+<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Link to this heading">#</a></h2>
+<p>This activity was inspired by Gold and Steinberg-McElroy (2025).</p>
+<p>Gold, A.C., Steinberg-McElroy, I. High-resolution estimates of the US population in fluvial or coastal flood hazard areas. Sci Data 12, 1377 (2025). <a class="reference external" href="https://www.nature.com/articles/s41597-025-05717-y">https://doi.org/10.1038/s41597-025-05717-y</a></p>
 </section>
 </section>
 
@@ -575,6 +599,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1-5-points">Task 1 (5 points)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-5-points">Task 2 (5 points)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-3-5-points">Task 3 (5 points)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgements">Acknowledgements</a></li>
 </ul>
   </nav></div>
 
