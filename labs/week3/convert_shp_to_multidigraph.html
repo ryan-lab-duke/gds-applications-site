@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -448,14 +448,100 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convert shapefile to graph</span>
-<span class="n">hghway</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;data/oregon_highways.shp&quot;</span><span class="p">)</span>
+<span class="n">hghway</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;/Users/jr555/Downloads/tl_2023_37_prisecroads/tl_2023_37_prisecroads.shp&quot;</span><span class="p">)</span>
+<span class="n">hghway</span> <span class="o">=</span> <span class="n">hghway</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="s1">&#39;EPSG:32617&#39;</span><span class="p">)</span>
 <span class="n">graph</span> <span class="o">=</span> <span class="n">momepy</span><span class="o">.</span><span class="n">gdf_to_nx</span><span class="p">(</span><span class="n">hghway</span><span class="p">,</span> <span class="n">approach</span><span class="o">=</span><span class="s2">&quot;primal&quot;</span><span class="p">,</span> <span class="n">directed</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/miniconda3/envs/book/lib/python3.12/site-packages/pyogrio/raw.py:198: UserWarning: Measured (M) geometry types are not supported. Original type &#39;Measured LineString&#39; is converted to &#39;LineString&#39;
-  return ogr_read(
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">DataSourceError</span><span class="g g-Whitespace">                           </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Convert shapefile to graph</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">hghway</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;/Users/jr555/Downloads/tl_2023_37_prisecroads/tl_2023_37_prisecroads.shp&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">hghway</span> <span class="o">=</span> <span class="n">hghway</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="s1">&#39;EPSG:32617&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">graph</span> <span class="o">=</span> <span class="n">momepy</span><span class="o">.</span><span class="n">gdf_to_nx</span><span class="p">(</span><span class="n">hghway</span><span class="p">,</span> <span class="n">approach</span><span class="o">=</span><span class="s2">&quot;primal&quot;</span><span class="p">,</span> <span class="n">directed</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="nn">File /opt/miniconda3/envs/book/lib/python3.12/site-packages/geopandas/io/file.py:294,</span> in <span class="ni">_read_file</span><span class="nt">(filename, bbox, mask, columns, rows, engine, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">291</span>             <span class="n">from_bytes</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="g g-Whitespace">    </span><span class="mi">293</span> <span class="k">if</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;pyogrio&quot;</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">294</span>     <span class="k">return</span> <span class="n">_read_file_pyogrio</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">295</span>         <span class="n">filename</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="n">bbox</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">mask</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">,</span> <span class="n">rows</span><span class="o">=</span><span class="n">rows</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+<span class="g g-Whitespace">    </span><span class="mi">296</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">298</span> <span class="k">elif</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;fiona&quot;</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">299</span>     <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">is_file_like</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+
+<span class="nn">File /opt/miniconda3/envs/book/lib/python3.12/site-packages/geopandas/io/file.py:547,</span> in <span class="ni">_read_file_pyogrio</span><span class="nt">(path_or_bytes, bbox, mask, rows, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">538</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">539</span>         <span class="s2">&quot;The &#39;include_fields&#39; and &#39;ignore_fields&#39; keywords are deprecated, and &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">540</span>         <span class="s2">&quot;will be removed in a future release. You can use the &#39;columns&#39; keyword &quot;</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">543</span>         <span class="n">stacklevel</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">544</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">545</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;columns&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;include_fields&quot;</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">547</span> <span class="k">return</span> <span class="n">pyogrio</span><span class="o">.</span><span class="n">read_dataframe</span><span class="p">(</span><span class="n">path_or_bytes</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="n">bbox</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File /opt/miniconda3/envs/book/lib/python3.12/site-packages/pyogrio/geopandas.py:265,</span> in <span class="ni">read_dataframe</span><span class="nt">(path_or_buffer, layer, encoding, columns, read_geometry, force_2d, skip_features, max_features, where, bbox, mask, fids, sql, sql_dialect, fid_as_index, use_arrow, on_invalid, arrow_to_pandas_kwargs, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">260</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">use_arrow</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">261</span>     <span class="c1"># For arrow, datetimes are read as is.</span>
+<span class="g g-Whitespace">    </span><span class="mi">262</span>     <span class="c1"># For numpy IO, datetimes are read as string values to preserve timezone info</span>
+<span class="g g-Whitespace">    </span><span class="mi">263</span>     <span class="c1"># as numpy does not directly support timezones.</span>
+<span class="g g-Whitespace">    </span><span class="mi">264</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;datetime_as_string&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="ne">--&gt; </span><span class="mi">265</span> <span class="n">result</span> <span class="o">=</span> <span class="n">read_func</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">266</span>     <span class="n">path_or_buffer</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">267</span>     <span class="n">layer</span><span class="o">=</span><span class="n">layer</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">268</span>     <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">269</span>     <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">270</span>     <span class="n">read_geometry</span><span class="o">=</span><span class="n">read_geometry</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">271</span>     <span class="n">force_2d</span><span class="o">=</span><span class="n">gdal_force_2d</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">272</span>     <span class="n">skip_features</span><span class="o">=</span><span class="n">skip_features</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">273</span>     <span class="n">max_features</span><span class="o">=</span><span class="n">max_features</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">274</span>     <span class="n">where</span><span class="o">=</span><span class="n">where</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">275</span>     <span class="n">bbox</span><span class="o">=</span><span class="n">bbox</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">276</span>     <span class="n">mask</span><span class="o">=</span><span class="n">mask</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">277</span>     <span class="n">fids</span><span class="o">=</span><span class="n">fids</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">278</span>     <span class="n">sql</span><span class="o">=</span><span class="n">sql</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">279</span>     <span class="n">sql_dialect</span><span class="o">=</span><span class="n">sql_dialect</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">280</span>     <span class="n">return_fids</span><span class="o">=</span><span class="n">fid_as_index</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">281</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">282</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">284</span> <span class="k">if</span> <span class="n">use_arrow</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">285</span>     <span class="n">meta</span><span class="p">,</span> <span class="n">table</span> <span class="o">=</span> <span class="n">result</span>
+
+<span class="nn">File /opt/miniconda3/envs/book/lib/python3.12/site-packages/pyogrio/raw.py:198,</span> in <span class="ni">read</span><span class="nt">(path_or_buffer, layer, encoding, columns, read_geometry, force_2d, skip_features, max_features, where, bbox, mask, fids, sql, sql_dialect, return_fids, datetime_as_string, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">59</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Read OGR data source into numpy arrays.</span>
+<span class="g g-Whitespace">     </span><span class="mi">60</span><span class="sd"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">61</span><span class="sd"> IMPORTANT: non-linear geometry types (e.g., MultiSurface) are converted</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">194</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">195</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">196</span> <span class="n">dataset_kwargs</span> <span class="o">=</span> <span class="n">_preprocess_options_key_value</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span> <span class="k">if</span> <span class="n">kwargs</span> <span class="k">else</span> <span class="p">{}</span>
+<span class="ne">--&gt; </span><span class="mi">198</span> <span class="k">return</span> <span class="n">ogr_read</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">199</span>     <span class="n">get_vsi_path_or_buffer</span><span class="p">(</span><span class="n">path_or_buffer</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">200</span>     <span class="n">layer</span><span class="o">=</span><span class="n">layer</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">201</span>     <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">202</span>     <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">203</span>     <span class="n">read_geometry</span><span class="o">=</span><span class="n">read_geometry</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">204</span>     <span class="n">force_2d</span><span class="o">=</span><span class="n">force_2d</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">205</span>     <span class="n">skip_features</span><span class="o">=</span><span class="n">skip_features</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">206</span>     <span class="n">max_features</span><span class="o">=</span><span class="n">max_features</span> <span class="ow">or</span> <span class="mi">0</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">207</span>     <span class="n">where</span><span class="o">=</span><span class="n">where</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">208</span>     <span class="n">bbox</span><span class="o">=</span><span class="n">bbox</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">209</span>     <span class="n">mask</span><span class="o">=</span><span class="n">_mask_to_wkb</span><span class="p">(</span><span class="n">mask</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">210</span>     <span class="n">fids</span><span class="o">=</span><span class="n">fids</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">211</span>     <span class="n">sql</span><span class="o">=</span><span class="n">sql</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">212</span>     <span class="n">sql_dialect</span><span class="o">=</span><span class="n">sql_dialect</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">213</span>     <span class="n">return_fids</span><span class="o">=</span><span class="n">return_fids</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">214</span>     <span class="n">dataset_kwargs</span><span class="o">=</span><span class="n">dataset_kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">215</span>     <span class="n">datetime_as_string</span><span class="o">=</span><span class="n">datetime_as_string</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">216</span> <span class="p">)</span>
+
+<span class="nn">File pyogrio/_io.pyx:1240,</span> in <span class="ni">pyogrio._io.ogr_read</span><span class="nt">()</span>
+
+<span class="nn">File pyogrio/_io.pyx:220,</span> in <span class="ni">pyogrio._io.ogr_open</span><span class="nt">()</span>
+
+<span class="ne">DataSourceError</span>: /Users/jr555/Downloads/tl_2023_37_prisecroads/tl_2023_37_prisecroads.shp: No such file or directory
 </pre></div>
 </div>
 </div>
@@ -498,38 +584,12 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">edges</span> <span class="o">=</span> <span class="n">directed_edges</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add a key index</span>
-<span class="n">doubles</span> <span class="o">=</span> <span class="n">edges</span><span class="p">[</span><span class="n">edges</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="n">singles</span> <span class="o">=</span> <span class="n">edges</span><span class="p">[</span><span class="o">~</span><span class="n">edges</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a new unique key for each (u, v) pair</span>
+<span class="n">edges</span> <span class="o">=</span> <span class="n">directed_edges</span>
+<span class="n">edges</span><span class="p">[</span><span class="s1">&#39;key&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">edges</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">cumcount</span><span class="p">()</span>
 
-<span class="n">singles</span><span class="p">[</span><span class="s1">&#39;key&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">doubles</span><span class="p">[</span><span class="s1">&#39;key&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-
-<span class="n">edges</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">singles</span><span class="p">,</span> <span class="n">doubles</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Make the multi-index</span>
-<span class="n">edges</span> <span class="o">=</span> <span class="n">edges</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="s1">&#39;key&#39;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Rename some columns</span>
-<span class="n">edges</span> <span class="o">=</span> <span class="n">edges</span><span class="p">[[</span><span class="s1">&#39;HWYNAME&#39;</span><span class="p">,</span><span class="s1">&#39;mm_len&#39;</span><span class="p">,</span> <span class="s1">&#39;geometry&#39;</span><span class="p">]]</span>
-<span class="n">edges</span> <span class="o">=</span> <span class="n">edges</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;HWYNAME&quot;</span><span class="p">:</span> <span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;mm_len&quot;</span><span class="p">:</span> <span class="s2">&quot;length&quot;</span><span class="p">})</span>
+<span class="c1"># Set the MultiIndex back</span>
+<span class="n">edges</span> <span class="o">=</span> <span class="n">edges</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="s1">&#39;key&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -545,8 +605,8 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Save and load</span>
-<span class="n">ox</span><span class="o">.</span><span class="n">save_graphml</span><span class="p">(</span><span class="n">gdf</span><span class="p">,</span> <span class="s1">&#39;./data/graph.graphml&#39;</span><span class="p">)</span>
-<span class="n">graph</span> <span class="o">=</span> <span class="n">ox</span><span class="o">.</span><span class="n">load_graphml</span><span class="p">(</span><span class="s1">&#39;./data/graph.graphml&#39;</span><span class="p">)</span>
+<span class="n">ox</span><span class="o">.</span><span class="n">save_graphml</span><span class="p">(</span><span class="n">gdf</span><span class="p">,</span> <span class="s1">&#39;/Users/jr555/Downloads/tl_2023_37_prisecroads/graph.graphml&#39;</span><span class="p">)</span>
+<span class="n">graph</span> <span class="o">=</span> <span class="n">ox</span><span class="o">.</span><span class="n">load_graphml</span><span class="p">(</span><span class="s1">&#39;/Users/jr555/Downloads/tl_2023_37_prisecroads/graph.graphml&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -559,7 +619,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/5a8fab52a000c1518e4c94210a41587050609f440b15269c96049e4d43371ac6.png" src="../../_images/5a8fab52a000c1518e4c94210a41587050609f440b15269c96049e4d43371ac6.png" />
+<img alt="../../_images/e39470d399122cf07d1b43d22195aab2403e6e5121e7bb8fc0b14689341b161a.png" src="../../_images/e39470d399122cf07d1b43d22195aab2403e6e5121e7bb8fc0b14689341b161a.png" />
 </div>
 </div>
 
