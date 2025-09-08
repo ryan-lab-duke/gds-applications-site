@@ -1,6 +1,6 @@
 # Assignment 3
 
-Download the data for the assignment from [here](https://www.dropbox.com/s/dnwdmk7feumk67s/graph.graphml?dl=0) and [here](https://www.dropbox.com/s/lyqa0gr85d2xkyu/oregon_cities.zip?dl=0). The first dataset is a full-featured `OSMnx`/`NetworkX` graph constructed from a shapefile of the [Oregon Highway Network](https://spatialdata.oregonexplorer.info/geoportal/details;id=1d255f740ff74774b236e0faf4d6c2e0). If you're interested, the shapefile was converted to a graph using the code [here](https://github.com/owel-lab/gds-applications-site/blob/main/book/labs/week3/convert_shp_to_multidigraph.ipynb). The second dataset is shapefile containing all cities in Oregon (as points).
+Download the data for the assignment from [here](https://prodduke-my.sharepoint.com/:f:/g/personal/jr555_duke_edu/EoXdTF5NaLxCrYIWMAOpzDgBoKoJ2LQkcTa0mE841lyi5w?e=KuHIAJ). There are two datasets in this folder. The first, `grahph.graphml`, is a full-featured `OSMnx`/`NetworkX` graph constructed from a shapefile of the [North Carolina primary and secondary road network](https://catalog.data.gov/dataset/tiger-line-shapefile-2023-state-north-carolina-primary-and-secondary-roads). If you're interested, the shapefile was converted to a graph using the code [here](https://github.com/ryan-lab-duke/gds-applications-site/blob/main/book/labs/week3/convert_shp_to_multidigraph.ipynb). The second, `tl_2019_37_place_centroids`, is a shapefile containing centroids of all **places** in North Carolina (i.e. as points). The Census Bureau defines a place as an incorporated city, town, village, or borough. 
 
 ```{image} images/highway.jpg
 :width: 500px
@@ -36,17 +36,17 @@ graph = ox.load_graphml('path/to/data/graph.graphml')
 
 * e) What is the **min**, **max**, and **mean** edge length? 
 
-* f) Produce **and customize** a plot showing the Oregon Highway Network using the `ox.plot_graph` function.
+* f) Produce **and customize** a plot showing the North Carolina road network using the `ox.plot_graph` function.
 
 *****************************
 
 ## Task 2 (10 points)
 
-Read the `oregon_cities.shp` using `GeoPandas`.
+Read the `tl_2019_37_place_centroids.shp` using `GeoPandas`.
 
-* a) Reproject the city `GeoDataFrame` to UTM Zone 10 N.
+* a) Reproject the city `GeoDataFrame` to UTM Zone 17 N.
 
-* b) Choose four cities in Oregon (the more spread out the better!) and compute the Euclidean distance (in km) between each pair.
+* b) Choose four cities in North Carolina (the more spread out the better!) and compute the Euclidean distance (in km) between each pair.
 
 * c) List the **nearest node** for each of the four cities.
 
@@ -66,7 +66,7 @@ Read the `oregon_cities.shp` using `GeoPandas`.
 
 ## Task 3 (5 points)
 
-* How many cities in Oregon are within a 2 hour drive of Eugene (at 60 mph)?
+* How many cities in North Carolina are within a 2 hour drive of Durham (at 60 mph)?
 
 *****************************
 

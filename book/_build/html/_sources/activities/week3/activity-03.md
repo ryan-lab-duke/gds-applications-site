@@ -58,10 +58,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 c = Census("API_KEY")
-data = c.acs5.state(('B25034_011E'), '41')
+data = c.acs5.state(('B25034_011E'), '37')
 ```
 
-The code above will download the variable `B25034_011E` for **Oregon** ([FIPS code](https://transition.fcc.gov/oet/info/maps/census/fips/fips.txt) = 41), from the **5-year American Community Survey** (`acs5`). By default, `census` will download the most recent survey data which is currently 2021. More information about the American Community Survey can be found [here](https://en.wikipedia.org/wiki/American_Community_Survey).
+The code above will download the variable `B25034_011E` for **North Carolina** ([FIPS code](https://transition.fcc.gov/oet/info/maps/census/fips/fips.txt) = 37), from the **5-year American Community Survey** (`acs5`). By default, `census` will download the most recent survey data which is currently 2021. More information about the American Community Survey can be found [here](https://en.wikipedia.org/wiki/American_Community_Survey).
 
 The variable `B25034_011E` represents the **number of houses built in 1939 or earlier**. A full list of variables (or tables) can be found [here](https://api.census.gov/data/2021/acs/acs5/variables.html). If we wanted to download the number of houses built in 1940-1949, 1950-159 etc. we could make a list. 
 
@@ -69,7 +69,7 @@ The variable `B25034_011E` represents the **number of houses built in 1939 or ea
 variable_list = ['B25034_002E','B25034_003E', 'B25034_004E', 'B25034_005E','B25034_006E', 
                  'B25034_007E','B25034_008E', 'B25034_009E', 'B25034_010E', 'B25034_011E']
 
-data = c.acs5.state((variable_list), '41')
+data = c.acs5.state((variable_list), '37')
 
 ```
 
@@ -107,10 +107,10 @@ Now it's your turn to download Census variable(s) for a place or topic of intere
 From the **README** on the [`census`](https://github.com/datamade/census) GitHub page, the syntax for downloading at the tract level is `state_county_tract(fields, state_fips, county_fips, tract)`. Note that two more arguments are required now, `county_fips` and `tract`. We can pass `Census.ALL` to get **all** counties and/or tracts. 
 
 ```
-data = c.acs5.state_county_tract((variable_list), '41', Census.ALL, Census.ALL)
+data = c.acs5.state_county_tract((variable_list), '37', Census.ALL, Census.ALL)
 ```
 
-Otherwise, we should specify a county. For example, `039` would be **Lane County**. A table with the county FIPS codes can be found [here](https://unicede.air-worldwide.com/unicede/unicede_oregon_fips.html). 
+Otherwise, we should specify a county. For example, `135` would be **Orange County**. A table with the county FIPS codes can be found [here](https://unicede.air-worldwide.com/unicede/unicede_north-carolina_fips.html). 
 
 * Download some Census data for a variable(s) for a particular place or topic of interest.
 
@@ -126,10 +126,10 @@ You can use `Crtl + F` to search for a keyword in the following [table](https://
 
 The data we downloaded can easily be converted into a `DataFrame` but it would useful if we could add some spatial information to the data. To do this, we can download a shapefile that represents the corresponding geographic units from [here](https://www2.census.gov/geo/tiger/TIGER2021/). 
 
-If were interested in **tract** level data we would navigate to the `TRACT/` folder and download the `.zip` file for Oregon (i.e. `tl_2021_41_tract.zip`)
+If were interested in **tract** level data we would navigate to the `TRACT/` folder and download the `.zip` file for North Carolina (i.e. `tl_2021_37_tract.zip`)
 
 ```{tip}
-We can find the FIPS code for Oregon from [this website](https://transition.fcc.gov/oet/info/maps/census/fips/fips.txt).
+We can find the FIPS code for North Carolina from [this website](https://transition.fcc.gov/oet/info/maps/census/fips/fips.txt).
 ```
 
 Unzip the file and read the `.shp` file with `geopandas`. The two DataFrames can be merged using the following code:

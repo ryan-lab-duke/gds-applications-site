@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -433,7 +433,7 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="assignment-3">
 <h1>Assignment 3<a class="headerlink" href="#assignment-3" title="Link to this heading">#</a></h1>
-<p>Download the data for the assignment from <a class="reference external" href="https://www.dropbox.com/s/dnwdmk7feumk67s/graph.graphml?dl=0">here</a> and <a class="reference external" href="https://www.dropbox.com/s/lyqa0gr85d2xkyu/oregon_cities.zip?dl=0">here</a>. The first dataset is a full-featured <code class="docutils literal notranslate"><span class="pre">OSMnx</span></code>/<code class="docutils literal notranslate"><span class="pre">NetworkX</span></code> graph constructed from a shapefile of the <a class="reference external" href="https://spatialdata.oregonexplorer.info/geoportal/details;id=1d255f740ff74774b236e0faf4d6c2e0">Oregon Highway Network</a>. If you’re interested, the shapefile was converted to a graph using the code <a class="reference external" href="https://github.com/owel-lab/gds-applications-site/blob/main/book/labs/week3/convert_shp_to_multidigraph.ipynb">here</a>. The second dataset is shapefile containing all cities in Oregon (as points).</p>
+<p>Download the data for the assignment from <a class="reference external" href="https://prodduke-my.sharepoint.com/:f:/g/personal/jr555_duke_edu/EoXdTF5NaLxCrYIWMAOpzDgBoKoJ2LQkcTa0mE841lyi5w?e=KuHIAJ">here</a>. There are two datasets in this folder. The first, <code class="docutils literal notranslate"><span class="pre">grahph.graphml</span></code>, is a full-featured <code class="docutils literal notranslate"><span class="pre">OSMnx</span></code>/<code class="docutils literal notranslate"><span class="pre">NetworkX</span></code> graph constructed from a shapefile of the <a class="reference external" href="https://catalog.data.gov/dataset/tiger-line-shapefile-2023-state-north-carolina-primary-and-secondary-roads">North Carolina primary and secondary road network</a>. If you’re interested, the shapefile was converted to a graph using the code <a class="reference external" href="https://github.com/ryan-lab-duke/gds-applications-site/blob/main/book/labs/week3/convert_shp_to_multidigraph.ipynb">here</a>. The second, <code class="docutils literal notranslate"><span class="pre">tl_2019_37_place_centroids</span></code>, is a shapefile containing centroids of all <strong>places</strong> in North Carolina (i.e. as points). The Census Bureau defines a place as an incorporated city, town, village, or borough.</p>
 <a class="reference internal image-reference" href="../../_images/highway.jpg"><img alt="../../_images/highway.jpg" class="align-center" src="../../_images/highway.jpg" style="width: 500px;" /></a>
 <hr class="docutils" />
 <section id="task-1-10-points">
@@ -458,16 +458,16 @@
 <li><p>c) What is the coordinate reference system of the nodes <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code>?</p></li>
 <li><p>d) List the column names in the edges <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code>.</p></li>
 <li><p>e) What is the <strong>min</strong>, <strong>max</strong>, and <strong>mean</strong> edge length?</p></li>
-<li><p>f) Produce <strong>and customize</strong> a plot showing the Oregon Highway Network using the <code class="docutils literal notranslate"><span class="pre">ox.plot_graph</span></code> function.</p></li>
+<li><p>f) Produce <strong>and customize</strong> a plot showing the North Carolina road network using the <code class="docutils literal notranslate"><span class="pre">ox.plot_graph</span></code> function.</p></li>
 </ul>
 </section>
 <hr class="docutils" />
 <section id="task-2-10-points">
 <h2>Task 2 (10 points)<a class="headerlink" href="#task-2-10-points" title="Link to this heading">#</a></h2>
-<p>Read the <code class="docutils literal notranslate"><span class="pre">oregon_cities.shp</span></code> using <code class="docutils literal notranslate"><span class="pre">GeoPandas</span></code>.</p>
+<p>Read the <code class="docutils literal notranslate"><span class="pre">tl_2019_37_place_centroids.shp</span></code> using <code class="docutils literal notranslate"><span class="pre">GeoPandas</span></code>.</p>
 <ul class="simple">
-<li><p>a) Reproject the city <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code> to UTM Zone 10 N.</p></li>
-<li><p>b) Choose four cities in Oregon (the more spread out the better!) and compute the Euclidean distance (in km) between each pair.</p></li>
+<li><p>a) Reproject the city <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code> to UTM Zone 17 N.</p></li>
+<li><p>b) Choose four cities in North Carolina (the more spread out the better!) and compute the Euclidean distance (in km) between each pair.</p></li>
 <li><p>c) List the <strong>nearest node</strong> for each of the four cities.</p></li>
 <li><p>d) What is the shortest path length (i.e. <code class="docutils literal notranslate"><span class="pre">nx.shortest_path_length</span></code>) between <strong>three pairs</strong> of cities (in km)?</p></li>
 <li><p>e) Produce <strong>and customize</strong> a plot showing the routes between your three city pairs (i.e. <code class="docutils literal notranslate"><span class="pre">fig,</span> <span class="pre">ax</span> <span class="pre">=</span> <span class="pre">ox.plot_graph_route(graph,</span> <span class="pre">route)</span></code>).</p></li>
@@ -485,7 +485,7 @@
 <section id="task-3-5-points">
 <h2>Task 3 (5 points)<a class="headerlink" href="#task-3-5-points" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>How many cities in Oregon are within a 2 hour drive of Eugene (at 60 mph)?</p></li>
+<li><p>How many cities in North Carolina are within a 2 hour drive of Durham (at 60 mph)?</p></li>
 </ul>
 <hr class="docutils" />
 <div class="admonition important">
