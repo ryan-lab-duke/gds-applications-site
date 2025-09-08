@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -477,7 +477,7 @@
 <ul class="simple">
 <li><p>The number of different categories in the <code class="docutils literal notranslate"><span class="pre">OCC_CLS</span></code> column</p></li>
 <li><p>The percentage of buildings classified as <strong>Residential</strong> in the <code class="docutils literal notranslate"><span class="pre">OCC_CLS</span></code> column</p></li>
-<li><p>The total number of people living in Orange County (i.e. using the <code class="docutils literal notranslate"><span class="pre">POP_MEDIAN</span></code> columns)</p></li>
+<li><p>The total number of people living in Orange County (i.e. using the <code class="docutils literal notranslate"><span class="pre">POP_MEDIAN</span></code> column)</p></li>
 </ul>
 </section>
 <hr class="docutils" />
@@ -488,15 +488,19 @@
 <li><p>Number of rows and columns</p></li>
 <li><p>Coordinate reference system as an EPSG code</p></li>
 </ul>
-<p>Reproject the GeoDataFrame to a <code class="docutils literal notranslate"><span class="pre">projected</span> <span class="pre">coordinate</span> <span class="pre">system</span></code> (i.e. spatial units are in meters)</p>
+<p>Reproject the GeoDataFrame to a <code class="docutils literal notranslate"><span class="pre">projected</span> <span class="pre">coordinate</span> <span class="pre">system</span></code> (i.e. spatial units are in meters) and answer the following questions:</p>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Click to reveal hint</p>
 <p>Consider using a UTM Zone e.g. <a class="reference external" href="https://epsg.io/32617">https://epsg.io/32617</a>.</p>
 </div>
 <ul class="simple">
-<li><p>What is the total area of the Orange County according to this dataset (in km2)?</p></li>
-<li><p>What percentage of the county (by area) has been designated as a Special Flood Hazard Area (i.e. where columns <code class="docutils literal notranslate"><span class="pre">SFHA_TF</span> <span class="pre">==</span> <span class="pre">T</span></code>)?</p></li>
+<li><p>What is the total area of Orange County according to this dataset (in km2)?</p></li>
+<li><p>What percentage of the county (by area) has been designated as a Special Flood Hazard Area (i.e. where column <code class="docutils literal notranslate"><span class="pre">SFHA_TF</span> <span class="pre">==</span> <span class="pre">T</span></code>)?</p></li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>More information about the attributes of the columns can be found <a class="reference external" href="https://www.fema.gov/sites/default/files/2020-02/FIRM_Database_Technical_Reference_Feb_2019.pdf">here</a></p>
+</div>
 </section>
 <hr class="docutils" />
 <section id="task-3-5-points">
