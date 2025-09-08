@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -452,12 +452,14 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="network-data-analysis">
 <h1>Network data analysis<a class="headerlink" href="#network-data-analysis" title="Link to this heading">#</a></h1>
-<p>In this lecture we will use the Python library <code class="docutils literal notranslate"><span class="pre">OSMnx</span></code> to download data from <strong>OpenStreetMap (OSM)</strong> and format it into a <strong>graph</strong> model. We will then use the <code class="docutils literal notranslate"><span class="pre">NetworkX</span></code> library to conduct network analysis.</p>
+<p>Network data is a powerful way to model and analyze interconnected systems. In Earth Sciences, researchers use network data to:</p>
 <ul class="simple">
-<li><p>Which is the closest cafe?</p></li>
-<li><p>How many cafes can we walk to in 35 minutes?</p></li>
+<li><p>Measure accessibility to critical services</p></li>
+<li><p>Identify vulnerable links in a network</p></li>
+<li><p>Simulate how natural hazards disrupt mobility</p></li>
+<li><p>Evaluate evacuation routes or supply chain delays</p></li>
 </ul>
-<p>Note that while we will be using network analysis on transport infrastructure, these principles apply to many other types of <strong>relational data</strong> such as international trade, character dialogue in films, or social media.</p>
+<p>In this lecture we will use the Python library <code class="docutils literal notranslate"><span class="pre">OSMnx</span></code> and <code class="docutils literal notranslate"><span class="pre">NetworkX</span></code> packages to conduct network analysis to answer a more trivial question: how many cafes can we walk to in 35 minutes from Grainger Hall? By investigating this question, we will learn how to (1) download data from <strong>OpenStreetMap (OSM)</strong>, (2) interpret the primary components of a <strong>graph</strong>, and (3) perform some basic network data analysis that could be applied to other types of <strong>relational data</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -490,7 +492,7 @@
 <section id="network-data">
 <h2>Network data<a class="headerlink" href="#network-data" title="Link to this heading">#</a></h2>
 <p>Most geospatial data is represented in one of two spatial models, <strong>vector-based</strong>, i.e. points, lines and polygons, or <strong>raster-based</strong>, i.e. cells of a continuous grid surface. The vector data model is <strong>feature-oriented</strong>, as it represents space as a series of discrete entities.</p>
-<p>Network data represents <strong>interconnections</strong> between a set of features or entities. Almost everyone has needed a type of network analysis in their life.</p>
+<p>Network data represents <strong>interconnections</strong> between <strong>features</strong>. Almost everyone has needed a type of network analysis in their life.</p>
 <p>For example:</p>
 <ul class="simple">
 <li><p>What is the shortest route to the beach?</p></li>
@@ -613,7 +615,7 @@
             &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot; /&gt;
             &lt;style&gt;
-                #map_4d3380c2bf3115e1f9035944cce1330a {
+                #map_f81c42e82786365fe81fe67debe51ac5 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -627,14 +629,14 @@
 &lt;body&gt;
     
     
-            &lt;div class=&quot;folium-map&quot; id=&quot;map_4d3380c2bf3115e1f9035944cce1330a&quot; &gt;&lt;/div&gt;
+            &lt;div class=&quot;folium-map&quot; id=&quot;map_f81c42e82786365fe81fe67debe51ac5&quot; &gt;&lt;/div&gt;
         
 &lt;/body&gt;
 &lt;script&gt;
     
     
-            var map_4d3380c2bf3115e1f9035944cce1330a = L.map(
-                &quot;map_4d3380c2bf3115e1f9035944cce1330a&quot;,
+            var map_f81c42e82786365fe81fe67debe51ac5 = L.map(
+                &quot;map_f81c42e82786365fe81fe67debe51ac5&quot;,
                 {
                     center: [36.0046, -78.9426],
                     crs: L.CRS.EPSG3857,
@@ -651,7 +653,7 @@
 
         
     
-            var tile_layer_82f96f68d27e14910d86669b0fc8fa5d = L.tileLayer(
+            var tile_layer_454ecf6a4bb56f531ca870957fad441e = L.tileLayer(
                 &quot;https://tile.openstreetmap.org/{z}/{x}/{y}.png&quot;,
                 {
   &quot;minZoom&quot;: 0,
@@ -668,364 +670,364 @@
             );
         
     
-            tile_layer_82f96f68d27e14910d86669b0fc8fa5d.addTo(map_4d3380c2bf3115e1f9035944cce1330a);
+            tile_layer_454ecf6a4bb56f531ca870957fad441e.addTo(map_f81c42e82786365fe81fe67debe51ac5);
         
     
-            var marker_af2a161eec1c93624c2e1cf6d4bd306a = L.marker(
+            var marker_2e89f4632042e6f56c1448e4f7540c0d = L.marker(
                 [36.00827795297206, -78.92183828698809],
                 {
 }
-            ).addTo(map_4d3380c2bf3115e1f9035944cce1330a);
+            ).addTo(map_f81c42e82786365fe81fe67debe51ac5);
         
     
-        var popup_b773bd3a0958be7dd90e4edb3beaf805 = L.popup({
+        var popup_24618221f7460913b4167b8a91dc78e6 = L.popup({
   &quot;maxWidth&quot;: &quot;100%&quot;,
 });
 
         
             
-                var html_875ec0152786b39520cf8d6349fb96cc = $(`&lt;div id=&quot;html_875ec0152786b39520cf8d6349fb96cc&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;9th Street Coffee and Juice Bar&lt;/div&gt;`)[0];
-                popup_b773bd3a0958be7dd90e4edb3beaf805.setContent(html_875ec0152786b39520cf8d6349fb96cc);
+                var html_b498589f7b47b06ba56a80622b1c39b6 = $(`&lt;div id=&quot;html_b498589f7b47b06ba56a80622b1c39b6&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;9th Street Coffee and Juice Bar&lt;/div&gt;`)[0];
+                popup_24618221f7460913b4167b8a91dc78e6.setContent(html_b498589f7b47b06ba56a80622b1c39b6);
             
         
 
-        marker_af2a161eec1c93624c2e1cf6d4bd306a.bindPopup(popup_b773bd3a0958be7dd90e4edb3beaf805)
+        marker_2e89f4632042e6f56c1448e4f7540c0d.bindPopup(popup_24618221f7460913b4167b8a91dc78e6)
         ;
 
         
     
     
-            var marker_f6e40ed7b7fca64d0d5b6f1633a8770d = L.marker(
+            var marker_dc8bafbbf07beb31af41c592f8efbf39 = L.marker(
                 [36.030850559001685, -78.89727915053125],
                 {
 }
-            ).addTo(map_4d3380c2bf3115e1f9035944cce1330a);
+            ).addTo(map_f81c42e82786365fe81fe67debe51ac5);
         
     
-        var popup_aab1f11021fda7630b15058b605b8503 = L.popup({
+        var popup_f17171bd75c2b67fb22f54b0065f1b89 = L.popup({
   &quot;maxWidth&quot;: &quot;100%&quot;,
 });
 
         
             
-                var html_335202799802c19777babdff2838f710 = $(`&lt;div id=&quot;html_335202799802c19777babdff2838f710&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Sprout Cafe&lt;/div&gt;`)[0];
-                popup_aab1f11021fda7630b15058b605b8503.setContent(html_335202799802c19777babdff2838f710);
+                var html_8978ca4a515eb780b84b5ce4a59ddc0c = $(`&lt;div id=&quot;html_8978ca4a515eb780b84b5ce4a59ddc0c&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Sprout Cafe&lt;/div&gt;`)[0];
+                popup_f17171bd75c2b67fb22f54b0065f1b89.setContent(html_8978ca4a515eb780b84b5ce4a59ddc0c);
             
         
 
-        marker_f6e40ed7b7fca64d0d5b6f1633a8770d.bindPopup(popup_aab1f11021fda7630b15058b605b8503)
+        marker_dc8bafbbf07beb31af41c592f8efbf39.bindPopup(popup_f17171bd75c2b67fb22f54b0065f1b89)
         ;
 
         
     
     
-            var marker_b044a8b5963bca68bec54009ca93bfae = L.marker(
+            var marker_f8e5a70a6a13269552f74eefbc607376 = L.marker(
                 [36.006366068108946, -78.92015310273744],
                 {
 }
-            ).addTo(map_4d3380c2bf3115e1f9035944cce1330a);
+            ).addTo(map_f81c42e82786365fe81fe67debe51ac5);
         
     
-        var popup_3a36772ae92c0062161bf739fbdbc980 = L.popup({
+        var popup_904c103e44c0db1cfc68482db44a8761 = L.popup({
   &quot;maxWidth&quot;: &quot;100%&quot;,
 });
 
         
             
-                var html_6df34e7a4895a468d341f0b01b74beb8 = $(`&lt;div id=&quot;html_6df34e7a4895a468d341f0b01b74beb8&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Mad Hatter&#x27;s Bake Shop&lt;/div&gt;`)[0];
-                popup_3a36772ae92c0062161bf739fbdbc980.setContent(html_6df34e7a4895a468d341f0b01b74beb8);
+                var html_8a6930440be58a2ed16cd824da9bb0f1 = $(`&lt;div id=&quot;html_8a6930440be58a2ed16cd824da9bb0f1&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Mad Hatter&#x27;s Bake Shop&lt;/div&gt;`)[0];
+                popup_904c103e44c0db1cfc68482db44a8761.setContent(html_8a6930440be58a2ed16cd824da9bb0f1);
             
         
 
-        marker_b044a8b5963bca68bec54009ca93bfae.bindPopup(popup_3a36772ae92c0062161bf739fbdbc980)
+        marker_f8e5a70a6a13269552f74eefbc607376.bindPopup(popup_904c103e44c0db1cfc68482db44a8761)
         ;
 
         
     
     
-            var marker_24c80135f96f5ac36c8f7effaccfedd3 = L.marker(
+            var marker_008a294d54ae28c9b24108beb5a0d15f = L.marker(
                 [36.008017882303015, -78.92188228649684],
                 {
 }
-            ).addTo(map_4d3380c2bf3115e1f9035944cce1330a);
+            ).addTo(map_f81c42e82786365fe81fe67debe51ac5);
         
     
-        var popup_cfe4503ba351bf87bf07283a3c578373 = L.popup({
+        var popup_705641088cf6ae8ceb89822670b17486 = L.popup({
   &quot;maxWidth&quot;: &quot;100%&quot;,
 });
 
         
             
-                var html_d8f63eb814546cd6eeb9769f9ca98e1b = $(`&lt;div id=&quot;html_d8f63eb814546cd6eeb9769f9ca98e1b&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Francesca&#x27;s Dessert Cafe&lt;/div&gt;`)[0];
-                popup_cfe4503ba351bf87bf07283a3c578373.setContent(html_d8f63eb814546cd6eeb9769f9ca98e1b);
+                var html_c3a41794bdd342dcda359ddc6b5dff27 = $(`&lt;div id=&quot;html_c3a41794bdd342dcda359ddc6b5dff27&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Francesca&#x27;s Dessert Cafe&lt;/div&gt;`)[0];
+                popup_705641088cf6ae8ceb89822670b17486.setContent(html_c3a41794bdd342dcda359ddc6b5dff27);
             
         
 
-        marker_24c80135f96f5ac36c8f7effaccfedd3.bindPopup(popup_cfe4503ba351bf87bf07283a3c578373)
+        marker_008a294d54ae28c9b24108beb5a0d15f.bindPopup(popup_705641088cf6ae8ceb89822670b17486)
         ;
 
         
     
     
-            var marker_5ca0ce39b02c2aae4589cc346f008cf4 = L.marker(
+            var marker_8a075e505b0edbc964c9127e64d3fb9d = L.marker(
                 [36.015375500000005, -78.93471660000002],
                 {
 }
-            ).addTo(map_4d3380c2bf3115e1f9035944cce1330a);
+            ).addTo(map_f81c42e82786365fe81fe67debe51ac5);
         
     
-        var popup_a7799c9aea517d19871c7d01c2cc5c54 = L.popup({
+        var popup_d6cffa922d3abc421cb82a6418417d74 = L.popup({
   &quot;maxWidth&quot;: &quot;100%&quot;,
 });
 
         
             
-                var html_8ad762d0db43d06b9e7e90f2978e2bc8 = $(`&lt;div id=&quot;html_8ad762d0db43d06b9e7e90f2978e2bc8&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Panaderia La Loma&lt;/div&gt;`)[0];
-                popup_a7799c9aea517d19871c7d01c2cc5c54.setContent(html_8ad762d0db43d06b9e7e90f2978e2bc8);
+                var html_5c6b3fe217257371c104d55a32d5a63d = $(`&lt;div id=&quot;html_5c6b3fe217257371c104d55a32d5a63d&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Panaderia La Loma&lt;/div&gt;`)[0];
+                popup_d6cffa922d3abc421cb82a6418417d74.setContent(html_5c6b3fe217257371c104d55a32d5a63d);
             
         
 
-        marker_5ca0ce39b02c2aae4589cc346f008cf4.bindPopup(popup_a7799c9aea517d19871c7d01c2cc5c54)
+        marker_8a075e505b0edbc964c9127e64d3fb9d.bindPopup(popup_d6cffa922d3abc421cb82a6418417d74)
         ;
 
         
     
     
-            var marker_8cdc4fde8d8063e65e85655ce22e187b = L.marker(
+            var marker_be386f777caf5c20f97b247663777dd2 = L.marker(
                 [36.00089295000001, -78.91104960000001],
                 {
 }
-            ).addTo(map_4d3380c2bf3115e1f9035944cce1330a);
+            ).addTo(map_f81c42e82786365fe81fe67debe51ac5);
         
     
-        var popup_0bfc752470c9556bb85b358d274b17dd = L.popup({
+        var popup_2f3ec135e381612705e074df04ee4d5b = L.popup({
   &quot;maxWidth&quot;: &quot;100%&quot;,
 });
 
         
             
-                var html_b532b279ef640019b09c4b00c78e7b3f = $(`&lt;div id=&quot;html_b532b279ef640019b09c4b00c78e7b3f&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Miel Bon Bons I Fine Chocolate &amp; Macarons l Extraordinary Desserts&lt;/div&gt;`)[0];
-                popup_0bfc752470c9556bb85b358d274b17dd.setContent(html_b532b279ef640019b09c4b00c78e7b3f);
+                var html_fc5e09642217dee667df1d07c8a5904d = $(`&lt;div id=&quot;html_fc5e09642217dee667df1d07c8a5904d&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Miel Bon Bons I Fine Chocolate &amp; Macarons l Extraordinary Desserts&lt;/div&gt;`)[0];
+                popup_2f3ec135e381612705e074df04ee4d5b.setContent(html_fc5e09642217dee667df1d07c8a5904d);
             
         
 
-        marker_8cdc4fde8d8063e65e85655ce22e187b.bindPopup(popup_0bfc752470c9556bb85b358d274b17dd)
+        marker_be386f777caf5c20f97b247663777dd2.bindPopup(popup_2f3ec135e381612705e074df04ee4d5b)
         ;
 
         
     
     
-            var marker_050b3276d8de448450e80c2033d787ac = L.marker(
+            var marker_4dcb18cd766d4436c388e679892f9494 = L.marker(
                 [36.00397473564195, -78.90108628083604],
                 {
 }
-            ).addTo(map_4d3380c2bf3115e1f9035944cce1330a);
+            ).addTo(map_f81c42e82786365fe81fe67debe51ac5);
         
     
-        var popup_4c7282b9d2600c2358594b60526f31e5 = L.popup({
+        var popup_a061babf4ffb28d6ee3c6da4a83f21dd = L.popup({
   &quot;maxWidth&quot;: &quot;100%&quot;,
 });
 
         
             
-                var html_f166ef37848839ad46376459c360dd71 = $(`&lt;div id=&quot;html_f166ef37848839ad46376459c360dd71&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Cocoa Cinnamon&lt;/div&gt;`)[0];
-                popup_4c7282b9d2600c2358594b60526f31e5.setContent(html_f166ef37848839ad46376459c360dd71);
+                var html_91b3be51007df9079f2e0fb8c11663a9 = $(`&lt;div id=&quot;html_91b3be51007df9079f2e0fb8c11663a9&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Cocoa Cinnamon&lt;/div&gt;`)[0];
+                popup_a061babf4ffb28d6ee3c6da4a83f21dd.setContent(html_91b3be51007df9079f2e0fb8c11663a9);
             
         
 
-        marker_050b3276d8de448450e80c2033d787ac.bindPopup(popup_4c7282b9d2600c2358594b60526f31e5)
+        marker_4dcb18cd766d4436c388e679892f9494.bindPopup(popup_a061babf4ffb28d6ee3c6da4a83f21dd)
         ;
 
         
     
     
-            var marker_a65e50a99604eb4ec24571620ec5962d = L.marker(
+            var marker_451fd47479486d52860166a9cd2fd8cc = L.marker(
                 [35.98907227689903, -78.88956919143183],
                 {
 }
-            ).addTo(map_4d3380c2bf3115e1f9035944cce1330a);
+            ).addTo(map_f81c42e82786365fe81fe67debe51ac5);
         
     
-        var popup_cbbb4b3ede20cbc8cc5e648c5f661393 = L.popup({
+        var popup_3acbbf4027a1436b351cc6b2a3100c45 = L.popup({
   &quot;maxWidth&quot;: &quot;100%&quot;,
 });
 
         
             
-                var html_9cd506e91665580ceb48aed77437160d = $(`&lt;div id=&quot;html_9cd506e91665580ceb48aed77437160d&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Nolia Family + Coffee&lt;/div&gt;`)[0];
-                popup_cbbb4b3ede20cbc8cc5e648c5f661393.setContent(html_9cd506e91665580ceb48aed77437160d);
+                var html_9f866949a6203fb7325b6a4cad502648 = $(`&lt;div id=&quot;html_9f866949a6203fb7325b6a4cad502648&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Nolia Family + Coffee&lt;/div&gt;`)[0];
+                popup_3acbbf4027a1436b351cc6b2a3100c45.setContent(html_9f866949a6203fb7325b6a4cad502648);
             
         
 
-        marker_a65e50a99604eb4ec24571620ec5962d.bindPopup(popup_cbbb4b3ede20cbc8cc5e648c5f661393)
+        marker_451fd47479486d52860166a9cd2fd8cc.bindPopup(popup_3acbbf4027a1436b351cc6b2a3100c45)
         ;
 
         
     
     
-            var marker_d07f0a7585b995a7ea464860a01be6b1 = L.marker(
+            var marker_4fc8354e091351d37e19e1428b8b3e50 = L.marker(
                 [36.05783059551391, -78.92942773631333],
                 {
 }
-            ).addTo(map_4d3380c2bf3115e1f9035944cce1330a);
+            ).addTo(map_f81c42e82786365fe81fe67debe51ac5);
         
     
-        var popup_906f98169ae92e63d44ce9fb8ff06176 = L.popup({
+        var popup_85ce432a3d3cc1921485afd4465bb6d4 = L.popup({
   &quot;maxWidth&quot;: &quot;100%&quot;,
 });
 
         
             
-                var html_85efde0358519f425b543cd1bf407f92 = $(`&lt;div id=&quot;html_85efde0358519f425b543cd1bf407f92&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Starbucks&lt;/div&gt;`)[0];
-                popup_906f98169ae92e63d44ce9fb8ff06176.setContent(html_85efde0358519f425b543cd1bf407f92);
+                var html_dbfb66660e97118b979c7dd7e9608744 = $(`&lt;div id=&quot;html_dbfb66660e97118b979c7dd7e9608744&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Starbucks&lt;/div&gt;`)[0];
+                popup_85ce432a3d3cc1921485afd4465bb6d4.setContent(html_dbfb66660e97118b979c7dd7e9608744);
             
         
 
-        marker_d07f0a7585b995a7ea464860a01be6b1.bindPopup(popup_906f98169ae92e63d44ce9fb8ff06176)
+        marker_4fc8354e091351d37e19e1428b8b3e50.bindPopup(popup_85ce432a3d3cc1921485afd4465bb6d4)
         ;
 
         
     
     
-            var marker_65c00ff72564a8b21d23a5096f786d61 = L.marker(
+            var marker_bcf63ce0e5b2d30254bc34c08e790965 = L.marker(
                 [35.98661943373909, -78.92843097874301],
                 {
 }
-            ).addTo(map_4d3380c2bf3115e1f9035944cce1330a);
+            ).addTo(map_f81c42e82786365fe81fe67debe51ac5);
         
     
-        var popup_d294cafb0356fc192448fcd7bc4cf720 = L.popup({
+        var popup_398625b30543e5d999fa15b2c761ed45 = L.popup({
   &quot;maxWidth&quot;: &quot;100%&quot;,
 });
 
         
             
-                var html_df28ee97f554afbfd10f02394c8f82df = $(`&lt;div id=&quot;html_df28ee97f554afbfd10f02394c8f82df&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Baby Scratch&lt;/div&gt;`)[0];
-                popup_d294cafb0356fc192448fcd7bc4cf720.setContent(html_df28ee97f554afbfd10f02394c8f82df);
+                var html_887fe26c26c501e3971e677eee5ebfef = $(`&lt;div id=&quot;html_887fe26c26c501e3971e677eee5ebfef&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Baby Scratch&lt;/div&gt;`)[0];
+                popup_398625b30543e5d999fa15b2c761ed45.setContent(html_887fe26c26c501e3971e677eee5ebfef);
             
         
 
-        marker_65c00ff72564a8b21d23a5096f786d61.bindPopup(popup_d294cafb0356fc192448fcd7bc4cf720)
+        marker_bcf63ce0e5b2d30254bc34c08e790965.bindPopup(popup_398625b30543e5d999fa15b2c761ed45)
         ;
 
         
     
     
-            var marker_eb98cbc939967e867c2e4e67b6665746 = L.marker(
+            var marker_6256d4ff6b548a10ab9ccbbeddbf3099 = L.marker(
                 [35.98648491076477, -78.92736663363871],
                 {
 }
-            ).addTo(map_4d3380c2bf3115e1f9035944cce1330a);
+            ).addTo(map_f81c42e82786365fe81fe67debe51ac5);
         
     
-        var popup_d7b62533b5ac43b6bfd4add53ec750b6 = L.popup({
+        var popup_88f339a0df71dbf8906f6e824fe5429b = L.popup({
   &quot;maxWidth&quot;: &quot;100%&quot;,
 });
 
         
             
-                var html_ed049f09fbceb2163b020f13690aad06 = $(`&lt;div id=&quot;html_ed049f09fbceb2163b020f13690aad06&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Cocoa Cinnamon&lt;/div&gt;`)[0];
-                popup_d7b62533b5ac43b6bfd4add53ec750b6.setContent(html_ed049f09fbceb2163b020f13690aad06);
+                var html_ea5f38b5b83b9df9a888133e51799134 = $(`&lt;div id=&quot;html_ea5f38b5b83b9df9a888133e51799134&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Cocoa Cinnamon&lt;/div&gt;`)[0];
+                popup_88f339a0df71dbf8906f6e824fe5429b.setContent(html_ea5f38b5b83b9df9a888133e51799134);
             
         
 
-        marker_eb98cbc939967e867c2e4e67b6665746.bindPopup(popup_d7b62533b5ac43b6bfd4add53ec750b6)
+        marker_6256d4ff6b548a10ab9ccbbeddbf3099.bindPopup(popup_88f339a0df71dbf8906f6e824fe5429b)
         ;
 
         
     
     
-            var marker_d3ee3fb630c3debb28fca9dc42459a2e = L.marker(
+            var marker_33dd543e981b99aea808a33de492eedd = L.marker(
                 [35.899411916322705, -78.89714129970001],
                 {
 }
-            ).addTo(map_4d3380c2bf3115e1f9035944cce1330a);
+            ).addTo(map_f81c42e82786365fe81fe67debe51ac5);
         
     
-        var popup_dc2eb74af120f1a4ac8e98fb1b98468c = L.popup({
+        var popup_a9d9291123a3b0f3f5db4a0e1f468021 = L.popup({
   &quot;maxWidth&quot;: &quot;100%&quot;,
 });
 
         
             
-                var html_4ec8513cf5011d40f4d585d0ce443386 = $(`&lt;div id=&quot;html_4ec8513cf5011d40f4d585d0ce443386&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Starbucks&lt;/div&gt;`)[0];
-                popup_dc2eb74af120f1a4ac8e98fb1b98468c.setContent(html_4ec8513cf5011d40f4d585d0ce443386);
+                var html_9c79b51f0084b2e61bc93a94df3d85dc = $(`&lt;div id=&quot;html_9c79b51f0084b2e61bc93a94df3d85dc&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Starbucks&lt;/div&gt;`)[0];
+                popup_a9d9291123a3b0f3f5db4a0e1f468021.setContent(html_9c79b51f0084b2e61bc93a94df3d85dc);
             
         
 
-        marker_d3ee3fb630c3debb28fca9dc42459a2e.bindPopup(popup_dc2eb74af120f1a4ac8e98fb1b98468c)
+        marker_33dd543e981b99aea808a33de492eedd.bindPopup(popup_a9d9291123a3b0f3f5db4a0e1f468021)
         ;
 
         
     
     
-            var marker_16566c637b8821879b51cbbfe455c0c0 = L.marker(
+            var marker_ae9d7184235d6482d76dccb884cbdf1c = L.marker(
                 [36.003504477925134, -78.93986341058513],
                 {
 }
-            ).addTo(map_4d3380c2bf3115e1f9035944cce1330a);
+            ).addTo(map_f81c42e82786365fe81fe67debe51ac5);
         
     
-        var popup_20165fd7c670b5745ddc2e9b8da002d5 = L.popup({
+        var popup_022e4fa39a61661ed378b81ad3c17001 = L.popup({
   &quot;maxWidth&quot;: &quot;100%&quot;,
 });
 
         
             
-                var html_92eac10dc31232a8cd76ccf7825c1adf = $(`&lt;div id=&quot;html_92eac10dc31232a8cd76ccf7825c1adf&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Twinnies Cafe&lt;/div&gt;`)[0];
-                popup_20165fd7c670b5745ddc2e9b8da002d5.setContent(html_92eac10dc31232a8cd76ccf7825c1adf);
+                var html_6e603f40bd5153f504cb4de3ab3792fa = $(`&lt;div id=&quot;html_6e603f40bd5153f504cb4de3ab3792fa&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Twinnies Cafe&lt;/div&gt;`)[0];
+                popup_022e4fa39a61661ed378b81ad3c17001.setContent(html_6e603f40bd5153f504cb4de3ab3792fa);
             
         
 
-        marker_16566c637b8821879b51cbbfe455c0c0.bindPopup(popup_20165fd7c670b5745ddc2e9b8da002d5)
+        marker_ae9d7184235d6482d76dccb884cbdf1c.bindPopup(popup_022e4fa39a61661ed378b81ad3c17001)
         ;
 
         
     
     
-            var marker_c770ac5274ccf965a8d86a8496a2ba22 = L.marker(
+            var marker_cf589075d0a4b3e3adb80479c570c7af = L.marker(
                 [35.93888282121306, -78.96972026717717],
                 {
 }
-            ).addTo(map_4d3380c2bf3115e1f9035944cce1330a);
+            ).addTo(map_f81c42e82786365fe81fe67debe51ac5);
         
     
-        var popup_a73c34bc7d3a01de027694bf3fe53bc8 = L.popup({
+        var popup_5ee1b85e5535a830ebc30e88d96e24cf = L.popup({
   &quot;maxWidth&quot;: &quot;100%&quot;,
 });
 
         
             
-                var html_8871e87dca4b943a19b7e48758cc0852 = $(`&lt;div id=&quot;html_8871e87dca4b943a19b7e48758cc0852&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Sweet Bumpas Cakes&lt;/div&gt;`)[0];
-                popup_a73c34bc7d3a01de027694bf3fe53bc8.setContent(html_8871e87dca4b943a19b7e48758cc0852);
+                var html_7f9c3584f75c50f67f4b1b59af1406e8 = $(`&lt;div id=&quot;html_7f9c3584f75c50f67f4b1b59af1406e8&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Sweet Bumpas Cakes&lt;/div&gt;`)[0];
+                popup_5ee1b85e5535a830ebc30e88d96e24cf.setContent(html_7f9c3584f75c50f67f4b1b59af1406e8);
             
         
 
-        marker_c770ac5274ccf965a8d86a8496a2ba22.bindPopup(popup_a73c34bc7d3a01de027694bf3fe53bc8)
+        marker_cf589075d0a4b3e3adb80479c570c7af.bindPopup(popup_5ee1b85e5535a830ebc30e88d96e24cf)
         ;
 
         
     
     
-            var marker_6072825d9a44b7c2b7b3b4dd64c0e6ce = L.marker(
+            var marker_d99b95ecc73418a5422ed19b3441b73b = L.marker(
                 [35.972205677033976, -78.94823179401139],
                 {
 }
-            ).addTo(map_4d3380c2bf3115e1f9035944cce1330a);
+            ).addTo(map_f81c42e82786365fe81fe67debe51ac5);
         
     
-        var popup_efc0b9373175872ab5e83745ab53f9bb = L.popup({
+        var popup_66f32d17f7c44aeb15b9b6f74d621446 = L.popup({
   &quot;maxWidth&quot;: &quot;100%&quot;,
 });
 
         
             
-                var html_bda78dc42df9f6e7a7724f66d0728778 = $(`&lt;div id=&quot;html_bda78dc42df9f6e7a7724f66d0728778&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Saladelia Cafe &amp; Catering&lt;/div&gt;`)[0];
-                popup_efc0b9373175872ab5e83745ab53f9bb.setContent(html_bda78dc42df9f6e7a7724f66d0728778);
+                var html_275ba11eba2cc841360770f1a4394c0a = $(`&lt;div id=&quot;html_275ba11eba2cc841360770f1a4394c0a&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Saladelia Cafe &amp; Catering&lt;/div&gt;`)[0];
+                popup_66f32d17f7c44aeb15b9b6f74d621446.setContent(html_275ba11eba2cc841360770f1a4394c0a);
             
         
 
-        marker_6072825d9a44b7c2b7b3b4dd64c0e6ce.bindPopup(popup_efc0b9373175872ab5e83745ab53f9bb)
+        marker_d99b95ecc73418a5422ed19b3441b73b.bindPopup(popup_66f32d17f7c44aeb15b9b6f74d621446)
         ;
 
         
@@ -1219,7 +1221,7 @@ Edges: 32300
 </section>
 <section id="find-the-distance-to-many-cafes">
 <h2>Find the distance to many cafes<a class="headerlink" href="#find-the-distance-to-many-cafes" title="Link to this heading">#</a></h2>
-<p>To compute the shortest distance from Grainger Hall to <strong>all</strong> the cafes within 2 miles we can make a list of all target locations, find the nearest node for each target location, and loop over them like so…</p>
+<p>To compute the shortest distance from Grainger Hall to <strong>all</strong> the cafes we can make a list of all target locations, find the nearest node for each target location, and loop over them like so…</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">target_xy</span> <span class="o">=</span> <span class="p">[</span><span class="n">cafes</span><span class="p">[</span><span class="s1">&#39;centroid&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">y</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">cafes</span><span class="p">[</span><span class="s1">&#39;centroid&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">values</span><span class="p">]</span>
@@ -1567,7 +1569,7 @@ Edges: 32300
 </div>
 <ul class="simple">
 <li><p>The <strong>nodes</strong> <code class="docutils literal notranslate"><span class="pre">GeoDataFrame</span></code> is indexed by an <code class="docutils literal notranslate"><span class="pre">osmid</span></code> which provides a unique identifier for each node.</p></li>
-<li><p>We then have <code class="docutils literal notranslate"><span class="pre">y</span></code> and <code class="docutils literal notranslate"><span class="pre">x</span></code> columns that represent location in <strong>UTM Zone 17 N</strong> coordinates (since we reprojected earlier). The <code class="docutils literal notranslate"><span class="pre">geometry</span></code> column also looks to be in UTM Zone 10 N so we know we are working in meters, not degrees.</p></li>
+<li><p>We then have <code class="docutils literal notranslate"><span class="pre">y</span></code> and <code class="docutils literal notranslate"><span class="pre">x</span></code> columns that represent location in <strong>UTM Zone 17 N</strong> coordinates (since we reprojected earlier). The <code class="docutils literal notranslate"><span class="pre">geometry</span></code> column also looks to be in UTM Zone 17 N so we know we are working in meters, not degrees.</p></li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">street_count</span></code> column provides the number of street segments connected to each node. The <code class="docutils literal notranslate"><span class="pre">highway</span></code> column provides the type of intersection.</p></li>
 </ul>
 <div class="cell docutils container">
@@ -1780,7 +1782,7 @@ Edges: 32300
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;tertiary&#39;, &#39;service&#39;, &#39;residential&#39;, &#39;footway&#39;, &#39;secondary&#39;, &#39;primary&#39;, &#39;primary_link&#39;, [&#39;primary_link&#39;, &#39;service&#39;], [&#39;footway&#39;, &#39;path&#39;], [&#39;residential&#39;, &#39;footway&#39;], &#39;unclassified&#39;, [&#39;footway&#39;, &#39;service&#39;], &#39;secondary_link&#39;, [&#39;residential&#39;, &#39;service&#39;], &#39;tertiary_link&#39;, [&#39;steps&#39;, &#39;service&#39;], [&#39;residential&#39;, &#39;service&#39;, &#39;path&#39;], &#39;path&#39;, [&#39;residential&#39;, &#39;path&#39;], [&#39;residential&#39;, &#39;track&#39;], [&#39;service&#39;, &#39;path&#39;], [&#39;steps&#39;, &#39;footway&#39;], [&#39;residential&#39;, &#39;footway&#39;, &#39;service&#39;], &#39;track&#39;, &#39;steps&#39;, &#39;living_street&#39;, [&#39;secondary&#39;, &#39;secondary_link&#39;], [&#39;service&#39;, &#39;unclassified&#39;], [&#39;tertiary&#39;, &#39;unclassified&#39;], [&#39;steps&#39;, &#39;service&#39;, &#39;path&#39;], [&#39;tertiary&#39;, &#39;secondary&#39;], [&#39;track&#39;, &#39;footway&#39;, &#39;path&#39;], [&#39;service&#39;, &#39;secondary&#39;], &#39;pedestrian&#39;, [&#39;residential&#39;, &#39;unclassified&#39;], [&#39;footway&#39;, &#39;unclassified&#39;], [&#39;residential&#39;, &#39;primary&#39;], [&#39;residential&#39;, &#39;tertiary&#39;], [&#39;track&#39;, &#39;path&#39;], [&#39;corridor&#39;, &#39;footway&#39;, &#39;service&#39;], [&#39;footway&#39;, &#39;corridor&#39;, &#39;service&#39;], [&#39;steps&#39;, &#39;path&#39;]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;tertiary&#39;, &#39;service&#39;, &#39;residential&#39;, &#39;footway&#39;, &#39;secondary&#39;, &#39;primary&#39;, &#39;primary_link&#39;, [&#39;primary_link&#39;, &#39;service&#39;], [&#39;path&#39;, &#39;footway&#39;], [&#39;residential&#39;, &#39;footway&#39;], &#39;unclassified&#39;, [&#39;footway&#39;, &#39;service&#39;], &#39;secondary_link&#39;, [&#39;residential&#39;, &#39;service&#39;], &#39;tertiary_link&#39;, [&#39;steps&#39;, &#39;service&#39;], [&#39;residential&#39;, &#39;path&#39;, &#39;service&#39;], [&#39;path&#39;, &#39;service&#39;, &#39;residential&#39;], &#39;path&#39;, [&#39;path&#39;, &#39;residential&#39;], [&#39;residential&#39;, &#39;track&#39;], [&#39;path&#39;, &#39;service&#39;], [&#39;steps&#39;, &#39;footway&#39;], [&#39;residential&#39;, &#39;path&#39;], [&#39;residential&#39;, &#39;footway&#39;, &#39;service&#39;], &#39;track&#39;, &#39;steps&#39;, &#39;living_street&#39;, [&#39;secondary&#39;, &#39;secondary_link&#39;], [&#39;service&#39;, &#39;unclassified&#39;], [&#39;tertiary&#39;, &#39;unclassified&#39;], [&#39;path&#39;, &#39;steps&#39;, &#39;service&#39;], [&#39;secondary&#39;, &#39;tertiary&#39;], [&#39;path&#39;, &#39;footway&#39;, &#39;track&#39;], [&#39;secondary&#39;, &#39;service&#39;], &#39;pedestrian&#39;, [&#39;residential&#39;, &#39;unclassified&#39;], [&#39;footway&#39;, &#39;unclassified&#39;], [&#39;residential&#39;, &#39;primary&#39;], [&#39;residential&#39;, &#39;tertiary&#39;], [&#39;path&#39;, &#39;track&#39;], [&#39;footway&#39;, &#39;service&#39;, &#39;corridor&#39;], [&#39;unclassified&#39;, &#39;tertiary&#39;], [&#39;path&#39;, &#39;steps&#39;]]
 </pre></div>
 </div>
 </div>
@@ -1799,7 +1801,7 @@ Edges: 32300
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nan, &#39;parking_aisle&#39;, &#39;alley&#39;, &#39;driveway&#39;, [&#39;parking_aisle&#39;, &#39;driveway&#39;], &#39;drive-through&#39;, [&#39;parking_aisle&#39;, &#39;drive-through&#39;]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nan, &#39;parking_aisle&#39;, &#39;alley&#39;, &#39;driveway&#39;, [&#39;driveway&#39;, &#39;parking_aisle&#39;], &#39;drive-through&#39;, [&#39;drive-through&#39;, &#39;parking_aisle&#39;]]
 </pre></div>
 </div>
 </div>
