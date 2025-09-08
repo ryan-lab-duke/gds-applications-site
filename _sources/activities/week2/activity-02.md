@@ -56,11 +56,7 @@ One way of getting the EPSG code from a Coordinate Reference System (CRS) object
 
 * The percentage of buildings classified as **Residential** in the `OCC_CLS` column
 
-```{note}
-More information about the column names can be found [here](https://www.fema.gov/sites/default/files/2020-02/FIRM_Database_Technical_Reference_Feb_2019.pdf)
-```
-
-* The total number of people living in Orange County (i.e. using the `POP_MEDIAN` columns)
+* The total number of people living in Orange County (i.e. using the `POP_MEDIAN` column)
 
 *****************************
 
@@ -72,16 +68,20 @@ Now read the `S_FLD_HAZ_AR.shp` shapefile. Write some code that prints the follo
 
 * Coordinate reference system as an EPSG code
 
-Reproject the GeoDataFrame to a `projected coordinate system` (i.e. spatial units are in meters)
+Reproject the GeoDataFrame to a `projected coordinate system` (i.e. spatial units are in meters) and answer the following questions:
 
 ```{admonition} Click to reveal hint
 :class: tip, dropdown
 Consider using a UTM Zone e.g. [https://epsg.io/32617](https://epsg.io/32617).
 ```
 
-* What is the total area of the Orange County according to this dataset (in km2)? 
+* What is the total area of Orange County according to this dataset (in km2)? 
 
-* What percentage of the county (by area) has been designated as a Special Flood Hazard Area (i.e. where columns `SFHA_TF == T`)? 
+* What percentage of the county (by area) has been designated as a Special Flood Hazard Area (i.e. where column `SFHA_TF == T`)? 
+
+```{note}
+More information about the attributes of the columns can be found [here](https://www.fema.gov/sites/default/files/2020-02/FIRM_Database_Technical_Reference_Feb_2019.pdf)
+```
 
 *****************************
 
@@ -95,6 +95,7 @@ Make sure that both datasets have a common `projected coordinate system` and ans
 :class: tip, dropdown
 The [`sjoin`](https://geopandas.org/en/stable/docs/reference/api/geopandas.sjoin.html) function should work well for this.
 ```
+
 * How many of these structures are classified as **Residential**?
 
 * How many people in Orange County live in a Special Flood Hazard Area?
