@@ -37,8 +37,13 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-['from sklearn.ensemble import GradientBoostingRegressor', '', '# Initialize gradient boosting regressor', 'breg = GradientBoostingRegressor()', '']
-...
-['    breg, data, target, param_name="n_estimators", param_range=n_estimators,', '    scoring="neg_mean_absolute_error", negate_score=True, std_display_style="errorbar", n_jobs=2)', '_ = disp.ax_.set(', '    xlabel="Number of estimators",', '    ylabel="Mean absolute error (k$)",)']
+from scipy.ndimage import generic_filter
+
+def diversity_metric(window):
+    values = window.astype(int)
+    unique = np.unique(values[values > 0])
+    return len(unique)
+
+div_map = generic_filter(nlcd_2001, diversity_metric, size=15)
 -------------------
 

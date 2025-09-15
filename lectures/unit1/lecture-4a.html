@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -60,6 +60,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'lectures/unit1/lecture-4a';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -203,7 +205,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 5</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../unit2/lecture-5.html">Machine learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit2/lecture-5.html">Machine learning fundamentals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../labs/week5/assignment5.html">Assignment 5</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../labs/week5/project-ideas.html">Project ideas</a></li>
 </ul>
@@ -429,8 +431,9 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frequency-of-land-cover-type">Frequency of land cover type</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregate-land-cover-classes">Aggregate land cover classes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#land-cover-change">Land cover change</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shrubification">Shrubification?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#direction-of-land-cover-change">Direction of land cover change</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neigborhood-operations">Neigborhood operations</a></li>
 </ul>
             </nav>
         </div>
@@ -445,7 +448,7 @@
   <section class="tex2jax_ignore mathjax_ignore" id="gridded-data-analysis">
 <h1>Gridded data analysis<a class="headerlink" href="#gridded-data-analysis" title="Link to this heading">#</a></h1>
 <p>In this demo, we will be investigating the extent of <strong>shrubification</strong> in Alaska using the <strong>National Land Cover Database (NLCD)</strong>. “Shrubification” describes the expansion of shrubs across the <strong>Arctic</strong>. Shrubs are woody plants with diverse growth forms but are often the tallest plants occupying tundra ecosystems and can form dense thickets with closed canopies in suitable habitats.</p>
-<p>Studies indicate that warming temperatures, changes in snow cover, altered disturbance regimes (due to permafrost thaw, tundra fires, anthropogenic activities or changes in herbivory intensity) are all contributing to general <strong>increases in shrub abundance</strong> which will have wide-ranging consequences for the ecosystems and climate of the region.</p>
+<p>Studies indicate that warming temperatures, changes in snow cover, altered disturbance regimes (due to permafrost thaw, tundra fires, anthropogenic activities or changes in herbivory intensity) are all contributing to general <strong>increases in shrub abundance</strong> which will have wide-ranging consequences for the ecosystems and climate of the region (e.g. soil, permafrost, caribou).</p>
 <a class="reference internal image-reference" href="../../_images/shrubs.jpeg"><img alt="../../_images/shrubs.jpeg" class="align-center" src="../../_images/shrubs.jpeg" style="width: 600px;" /></a>
 <section id="national-land-cover-database">
 <h2>National Land Cover Database<a class="headerlink" href="#national-land-cover-database" title="Link to this heading">#</a></h2>
@@ -614,17 +617,17 @@ Data type: (&#39;uint8&#39;,)
 <p>We can have a look at the data using <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>. Since the dataset is so big (eight billion pixels!), we will just plot a subset of the data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
 <span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">nlcd_2016</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;tab20b&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Alaska land cover&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Alaska land cover in 2016&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Alaska land cover&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Alaska land cover in 2016&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/6295d1f735f5ee749eb403993c5d59e88bdcecda57d62321d14053fc239c1eb5.png" src="../../_images/6295d1f735f5ee749eb403993c5d59e88bdcecda57d62321d14053fc239c1eb5.png" />
+<img alt="../../_images/8779a677ddb27926eb9034f850db9ab4d681697889136905b185753f66677669.png" src="../../_images/8779a677ddb27926eb9034f850db9ab4d681697889136905b185753f66677669.png" />
 </div>
 </div>
 </section>
@@ -647,18 +650,18 @@ Data type: (&#39;uint8&#39;,)
 <a class="reference internal image-reference" href="../../_images/nlcd-shrubs.png"><img alt="../../_images/nlcd-shrubs.png" class="align-center" src="../../_images/nlcd-shrubs.png" style="width: 800px;" /></a>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
 <span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">nlcd_2016</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;tab20b&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Alaska land cover&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Alaska land cover in 2016&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Alaska land cover&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Alaska land cover in 2016&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/68a5bec1f33671b57f78cbf1ab7656f2f3060fcbd142e8769d55f78fa0859ed1.png" src="../../_images/68a5bec1f33671b57f78cbf1ab7656f2f3060fcbd142e8769d55f78fa0859ed1.png" />
+<img alt="../../_images/3087f751684d2a198427024fdd37f71b9a7a15e5e17364b73ae06e7bb0497717.png" src="../../_images/3087f751684d2a198427024fdd37f71b9a7a15e5e17364b73ae06e7bb0497717.png" />
 </div>
 </div>
 </section>
@@ -1377,9 +1380,9 @@ Data type: (&#39;uint8&#39;,)
 </div></div></div>
 </div>
 </section>
-<section id="conclusion">
-<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
-<p>Oh dear - the extent of shrubs did <strong>not</strong> increase between 2001 and 2016. One takeaway from this could be that shrubification is <strong>not happening</strong> in this region of the Arctic. But the percentage change in shrubs was very small (-0.02%) and could well be smaller than the uncertainty in our land cover product. For example, if just 1% of pixels were incorrectly classified as shrubs in 2001 our result would be insignificant.</p>
+<section id="shrubification">
+<h2>Shrubification?<a class="headerlink" href="#shrubification" title="Link to this heading">#</a></h2>
+<p>Oh dear - the extent of shrubs did <strong>not</strong> increase between 2001 and 2016. One takeaway from this could be that shrubification is <strong>not happening</strong> in this region of the Arctic. But the percentage change in shrubs was very small (-0.02%), well below what we would expect the uncertainty to be in our land cover product.</p>
 <p>Other, perhaps more significant changes, that occurred between 2001 and 2016 include an increase in <strong>deciduous forest</strong> (41) by <strong>3.9%</strong>, a decrease in <strong>evergreen forest</strong> (42) by <strong>0.4%</strong>, and a decrease in <strong>emergent herbaceous wetlands</strong> (95) by <strong>0.4%</strong>.</p>
 </section>
 <section id="direction-of-land-cover-change">
@@ -1460,7 +1463,7 @@ Data type: (&#39;uint8&#39;,)
 </table>
 </div></div></div>
 </div>
-<p>It looks like most of the <strong>evergreen forest</strong> (99.6%) did not change between 2001 and 2016. When it did, it was most likely to change to <strong>shrub</strong> (51) which may indicate some “shrubification” in Alaska. Let’s finish this section by plotting a map showing where <strong>evergreen forest</strong> was replaced by <strong>shrub</strong>.</p>
+<p>It looks like most of the <strong>evergreen forest</strong> (99.6%) did not change between 2001 and 2016. When it did, it was most likely to change to <strong>shrub</strong> (51). Let’s finish this section by plotting a map showing where <strong>evergreen forest</strong> was replaced by <strong>shrub</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">forest2shrub</span> <span class="o">=</span> <span class="p">(</span><span class="n">nlcd_2001</span> <span class="o">==</span> <span class="mi">42</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">((</span><span class="n">nlcd_2016</span> <span class="o">==</span> <span class="mi">51</span><span class="p">))</span>
@@ -1470,25 +1473,9 @@ Data type: (&#39;uint8&#39;,)
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
 <span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">forest2shrub</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Fores to shrubs in Alaska between 2001 and 2016&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Fores to shrubs in Alaska between 2001 and 2016&#39;)
-</pre></div>
-</div>
-<img alt="../../_images/b75a2bd94e123943320b89c39cc7758bf9792a3440a1eaa28899d58e458c8fcc.png" src="../../_images/b75a2bd94e123943320b89c39cc7758bf9792a3440a1eaa28899d58e458c8fcc.png" />
-</div>
-</div>
-<p>At this scale, it’s difficult to see what’s going on. Let’s zoom in a little…</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
-<span class="n">im2</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">forest2shrub</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)[</span><span class="mi">1000</span><span class="p">:</span><span class="mi">1750</span><span class="p">,</span><span class="mi">2750</span><span class="p">:</span><span class="mi">3750</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Forest to shrubs in Alaska between 2001 and 2016&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Forest to shrubs in Alaska between 2001 and 2016&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1496,7 +1483,144 @@ Data type: (&#39;uint8&#39;,)
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Forest to shrubs in Alaska between 2001 and 2016&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/a252b8231e060f72280e943f9236ea3c13e58fffb3590a5a91abe0e4e19edb43.png" src="../../_images/a252b8231e060f72280e943f9236ea3c13e58fffb3590a5a91abe0e4e19edb43.png" />
+<img alt="../../_images/2b48d70c367756a3f42cccb727b2ec41e8c70ad64b3c6ad0bdcba50ac7f9e2a5.png" src="../../_images/2b48d70c367756a3f42cccb727b2ec41e8c70ad64b3c6ad0bdcba50ac7f9e2a5.png" />
+</div>
+</div>
+<p>At this scale, it’s difficult to see what’s going on. Let’s zoom in a little…</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">im2</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">forest2shrub</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)[</span><span class="mi">1000</span><span class="p">:</span><span class="mi">1750</span><span class="p">,</span><span class="mi">2750</span><span class="p">:</span><span class="mi">3750</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Forest to shrubs in Alaska between 2001 and 2016&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Forest to shrubs in Alaska between 2001 and 2016&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/70179bdc85f394f9d73eba4458a8be1e358e3472559c6e2bbdd2a29a836630a0.png" src="../../_images/70179bdc85f394f9d73eba4458a8be1e358e3472559c6e2bbdd2a29a836630a0.png" />
+</div>
+</div>
+</section>
+<section id="neigborhood-operations">
+<h2>Neigborhood operations<a class="headerlink" href="#neigborhood-operations" title="Link to this heading">#</a></h2>
+<p>So far, we have focused on <strong>local operations</strong>, treating individual grid cells as independent observations that are not influenced by each other. In reality, the land cover of a given grid cell is likely to be similar to adjacent grid cells, than distance grid cells.</p>
+<p><strong>Tobler’s First Law of Geography</strong> is a fundamental principle of spatial analysis that says,</p>
+<blockquote>
+<div><p>Everything is related to everything else, but near things are more related than distant things</p>
+</div></blockquote>
+<p>We can exploit this concept using neigborhood operations. For example, let’s say our land cover dataset contained missing values or outliers. We could easily identify (and replace) these values by comparing them against the values of surrounding grid cells. A <strong>median filter</strong> is a common approach for outlier filtering.</p>
+<a class="reference internal image-reference" href="../../_images/median-filter.png"><img alt="../../_images/median-filter.png" class="align-center" src="../../_images/median-filter.png" style="width: 700px;" /></a>
+<p>The <code class="docutils literal notranslate"><span class="pre">scipy.ndimage</span></code> package provides many functions for applying these neighborhood operations. We define window size (also termed <strong>kernel</strong>) using the <code class="docutils literal notranslate"><span class="pre">size</span></code> parameter and the function automatically slides (or <strong>convolves</strong>) this window across our entire grid.</p>
+<a class="reference internal image-reference" href="../../_images/window.png"><img alt="../../_images/window.png" class="align-center" src="../../_images/window.png" style="width: 500px;" /></a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We chose a large window size to demonstrate the <code class="docutils literal notranslate"><span class="pre">median_filter</span></code> output - <code class="docutils literal notranslate"><span class="pre">size=15</span></code> would be 15 x 15 pixels or a 450 x 450 m window.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.ndimage</span><span class="w"> </span><span class="kn">import</span> <span class="n">median_filter</span>
+
+<span class="c1"># Apply 9x9 median filter</span>
+<span class="n">nlcd_2001_median</span> <span class="o">=</span> <span class="n">median_filter</span><span class="p">(</span><span class="n">nlcd_2001</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+
+<span class="c1"># Plot</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">nlcd_2001_median</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;tab20b&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/6d059de2a538e636b3d2505712fe296086a930fb3f2725a372734828814d335b.png" src="../../_images/6d059de2a538e636b3d2505712fe296086a930fb3f2725a372734828814d335b.png" />
+</div>
+</div>
+<p>The median filter reduces the difference between a grid cell and surrounding grid cells. These type of filters are therefore called <strong>low-pass filters</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We could use any window size or shape. Likewise, there is almost no limit to the different operations we could apply to grid cell values in our window.</p>
+</div>
+<p>A 3×3 Gaussian kernel with sigma=1 provides a weighted mean of neigboring values and can be defined as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+G = \frac{1}{16}
+\begin{bmatrix}
+1 &amp; 2 &amp; 1 \\
+2 &amp; 4 &amp; 2 \\
+1 &amp; 2 &amp; 1
+\end{bmatrix}
+\end{split}\]</div>
+<p>In contrast, a <strong>high-pass filter</strong> emphasizes differences between a grid cell and its neighbors. The classic one is a Laplacian filter:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+H =
+\begin{bmatrix}
+0 &amp; -1 &amp; 0 \\
+-1 &amp;  4 &amp; -1 \\
+0 &amp; -1 &amp; 0
+\end{bmatrix}
+\end{split}\]</div>
+<p>And <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> and <code class="docutils literal notranslate"><span class="pre">SciPy</span></code> make the linear algebra straightforward.</p>
+<p>Since our land cover classes are not continuous values, it doesn’t make sense to apply a Gaussian and Laplacian filter to our data. But we would implement it using <code class="docutils literal notranslate"><span class="pre">generic_filter</span></code> that applies a specific function to each element.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define a 3x3 Gaussian kernel (σ=1)</span>
+<span class="n">gaussian_kernel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+
+<span class="c1"># Normalize</span>
+<span class="n">gaussian_kernel</span> <span class="o">=</span> <span class="n">gaussian_kernel</span> <span class="o">/</span> <span class="n">gaussian_kernel</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="c1"># Define function for generic_filter</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">gaussian_filter_func</span><span class="p">(</span><span class="n">window</span><span class="p">):</span>
+    <span class="n">window</span> <span class="o">=</span> <span class="n">window</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">window</span> <span class="o">*</span> <span class="n">gaussian_kernel</span><span class="p">)</span>
+
+<span class="c1"># Apply filter</span>
+<span class="n">smoothed</span> <span class="o">=</span> <span class="n">ndimage</span><span class="o">.</span><span class="n">generic_filter</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">function</span><span class="o">=</span><span class="n">gaussian_filter_func</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Let’s demonstrate one more time, this time using a custom <strong>diversity index</strong> that simply counts the number of unique land covers in each 15 x 15 window.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.ndimage</span><span class="w"> </span><span class="kn">import</span> <span class="n">generic_filter</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">diversity_metric</span><span class="p">(</span><span class="n">window</span><span class="p">):</span>
+    <span class="n">values</span> <span class="o">=</span> <span class="n">window</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+    <span class="n">unique</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">values</span><span class="p">[</span><span class="n">values</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">])</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">unique</span><span class="p">)</span>
+
+<span class="n">div_map</span> <span class="o">=</span> <span class="n">generic_filter</span><span class="p">(</span><span class="n">nlcd_2001</span><span class="p">,</span> <span class="n">diversity_metric</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Exception ignored in: &lt;bound method IPythonKernel._clean_thread_parent_frames of &lt;ipykernel.ipkernel.IPythonKernel object at 0x110d2c1a0&gt;&gt;
+Traceback (most recent call last):
+  File &quot;/opt/miniconda3/envs/book/lib/python3.12/site-packages/ipykernel/ipkernel.py&quot;, line 790, in _clean_thread_parent_frames
+    active_threads = {thread.ident for thread in threading.enumerate()}
+                                                 ^^^^^^^^^^^^^^^^^^^^^
+  File &quot;/opt/miniconda3/envs/book/lib/python3.12/threading.py&quot;, line 1543, in enumerate
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    with _active_limbo_lock:
+         ^^^^^^^^^^^^^^^^^^
+SystemError: &lt;built-in method __enter__ of _thread.RLock object at 0x10590d800&gt; returned a result with an exception set
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">div_map</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/aaa58bc0df71095034c025a759cb569891ff01739e0a4e2258b10fc66e6b0e0a.png" src="../../_images/aaa58bc0df71095034c025a759cb569891ff01739e0a4e2258b10fc66e6b0e0a.png" />
 </div>
 </div>
 </section>
@@ -1579,8 +1703,9 @@ Data type: (&#39;uint8&#39;,)
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frequency-of-land-cover-type">Frequency of land cover type</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregate-land-cover-classes">Aggregate land cover classes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#land-cover-change">Land cover change</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shrubification">Shrubification?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#direction-of-land-cover-change">Direction of land cover change</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neigborhood-operations">Neigborhood operations</a></li>
 </ul>
   </nav></div>
 

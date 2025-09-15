@@ -104,7 +104,7 @@ The `.groupby` method will be very useful here.
 
 * c) How **many** owl pairs were affected in this year?
 
-* d) Provide the **name** and **year** of the wildfire that affected the most owl pairs (disregard wildfires named `Unknown`)?
+* d) Provide the **name** and **year** of the wildfire that affected the most owl pairs?
 
 * e) Make a plot showing locations of Northern Spotted Owls breeding pairs on top of the wildfire perimeters for Oregon. Point will only be awarded to those who make this plot look presentable. 
 

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Machine learning &#8212; Geospatial Data Science</title>
+    <title>Machine learning fundamentals &#8212; Geospatial Data Science</title>
   
   
   
@@ -203,7 +203,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 5</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Machine learning</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Machine learning fundamentals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../labs/week5/assignment5.html">Assignment 5</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../labs/week5/project-ideas.html">Project ideas</a></li>
 </ul>
@@ -407,7 +407,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Machine learning</h1>
+    <h1>Machine learning fundamentals</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -422,21 +422,28 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-vocabularly">Some vocabularly</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-learning">Supervised learning</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unsupervised-learning">Unsupervised learning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reinforcement-learning">Reinforcement learning</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classification">Classification</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regression">Regression</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clustering">Clustering</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-our-dataset">Exploring our dataset</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-scaling">Feature scaling</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#split-data-in-training-and-testing-subsets">Split data in training and testing subsets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-and-testing-subsets">Training and testing subsets</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fitting-our-first-model">Fitting our first model</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#confusion-matrix">Confusion matrix</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-validation">Cross-validation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-models">Other models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-tree-classifier">Decision Tree Classifier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loss-functions">Loss functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters">Parameters</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overfitting-and-underfitting">Overfitting and underfitting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hyperparameter-tuning">Hyperparameter tuning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#another-example-california-house-prices">Another example - California House Prices</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#noise">Noise</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-curves">Learning curves</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">Further reading</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ensembles">Ensembles</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bagging">Bagging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boosting">Boosting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gradient-boosting">Gradient boosting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgements">Acknowledgements</a></li>
 </ul>
             </nav>
         </div>
@@ -448,14 +455,14 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="machine-learning">
-<h1>Machine learning<a class="headerlink" href="#machine-learning" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="machine-learning-fundamentals">
+<h1>Machine learning fundamentals<a class="headerlink" href="#machine-learning-fundamentals" title="Link to this heading">#</a></h1>
 <p>This week we will be learning about the basic concepts of machine learning.</p>
 <section id="what-is-machine-learning">
 <h2>What is machine learning?<a class="headerlink" href="#what-is-machine-learning" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>The goal of machine learning is to build <strong>predictive models</strong></p></li>
-<li><p>These models <strong>learn</strong> from data, identify patterns, and make predictions <strong>without being explicitly programmed</strong></p></li>
+<li><p>These models <strong>learn</strong> from data to identify patterns and make predictions <strong>without being explicitly programmed</strong></p></li>
 <li><p>Contrasts with process-based models that rely on established scientific principles and mathematical equations to describe a system’s behavior</p></li>
 <li><p>Machine learning is <strong>part</strong> of artificial intelligence, but not the only part</p></li>
 </ul>
@@ -465,13 +472,14 @@
 <h2>Example - the <a class="reference external" href="https://allisonhorst.github.io/palmerpenguins/index.html">Palmer Penguins</a><a class="headerlink" href="#example-the-palmer-penguins" title="Link to this heading">#</a></h2>
 <a class="reference internal image-reference" href="../../_images/penguins.png"><img alt="../../_images/penguins.png" class="align-center" src="../../_images/penguins.png" style="width: 600px;" /></a>
 <p>Artwork by &#64;allison_horst</p>
-<p>We will use the Penguin dataset to demonstrate some key concepts. This dataset contains attributes for 342 penguins collected from three islands in the Palmer Archipelago, Antarctica.</p>
+<p>We will use the Penguin dataset to demonstrate some key concepts. This dataset contains attributes for 342 penguins collected from three islands in the Palmer Archipelago, Antarctica. More information about the Palmer Penguin dataset can be found <a class="reference external" href="https://allisonhorst.github.io/palmerpenguins/index.html">here</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import packages</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mpl</span>
 
 <span class="c1"># Read data</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/penguins.csv&#39;</span><span class="p">)</span>
@@ -556,7 +564,7 @@
 </div>
 <a class="reference internal image-reference" href="../../_images/culmen_depth.png"><img alt="../../_images/culmen_depth.png" class="align-center" src="../../_images/culmen_depth.png" style="width: 600px;" /></a>
 <p>Artwork by &#64;allison_horst</p>
-<p>There are three different species of penguins in this dataset. Our goal is to develop a model that can predict the species of penguin from just the attributes. Then, when we receive more <strong>unlabelled data</strong> (i.e. attributes but no species), we can make a prediction about the species of penguin.</p>
+<p>There are three different species of penguins in this dataset. Our goal is to develop a model that can predict the species of penguin from just the attributes (i.e. <strong>multi-class classification</strong>). Then, when we receive more <strong>unlabelled data</strong> (i.e. attributes but no species), we can make a prediction about the species of penguin.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Species&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
@@ -637,7 +645,7 @@
 <p>It looks like Adelie penguins have a smaller bill length and that Gentoo penguins have longer flippers and are heavier.</p>
 <ul class="simple">
 <li><p>We could use our own judgement to define a threshold for separating the species based on their attributes. But this would be challenging to do when our datasets have more than a couple of attributes.</p></li>
-<li><p>An alternative approach is to develop a model to <strong>learn the decision rules directly from the data</strong> (i.e. machine learning).</p></li>
+<li><p>An alternative approach is to develop a model that <strong>learns the decision rules directly from the data</strong> (i.e. machine learning).</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -764,7 +772,14 @@
 <ul class="simple">
 <li><p>The goal is to extract some structure from our <strong>unlabelled dataset</strong> that can be used to generalize.</p></li>
 <li><p>For example, how many different species are contained in our penguin dataset?</p></li>
-<li><p>Not commonly used in geospatial data science but has a wide variety of applications (e.g. next-word (next-token) prediction)</p></li>
+<li><p>Not commonly used in geospatial data science but has a wide variety of applications (e.g. next-token prediction)</p></li>
+</ul>
+</section>
+<section id="reinforcement-learning">
+<h2>Reinforcement learning<a class="headerlink" href="#reinforcement-learning" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>An agent learns to make decisions by interacting with an environment</p></li>
+<li><p>For example, chess-playing like AlphaGo, self-driving cars</p></li>
 </ul>
 </section>
 <section id="classification">
@@ -930,7 +945,7 @@ memory usage: 13.5+ KB
 <p>We can also investigate the <strong>separability</strong> of penguin species using scatterplots</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Scatter plot categorized by Species</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Scatter plot categorized by species</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
 
 <span class="n">species_list</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Species&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
@@ -949,7 +964,7 @@ memory usage: 13.5+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x12009b8c0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x159885460&gt;
 </pre></div>
 </div>
 <img alt="../../_images/3850053b59d643122678154c13fddeb51b6f8b422b31cee406f9de9c7cab1245.png" src="../../_images/3850053b59d643122678154c13fddeb51b6f8b422b31cee406f9de9c7cab1245.png" />
@@ -992,7 +1007,7 @@ Name: count, dtype: int64
 <a class="reference internal image-reference" href="../../_images/scaling.png"><img alt="../../_images/scaling.png" class="align-center" src="../../_images/scaling.png" style="width: 800px;" /></a>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import library</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import package</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">StandardScaler</span>
 
 <span class="c1"># Define feature list</span>
@@ -1216,8 +1231,8 @@ Name: count, dtype: int64
 </div></div></div>
 </div>
 </section>
-<section id="split-data-in-training-and-testing-subsets">
-<h2>Split data in training and testing subsets<a class="headerlink" href="#split-data-in-training-and-testing-subsets" title="Link to this heading">#</a></h2>
+<section id="training-and-testing-subsets">
+<h2>Training and testing subsets<a class="headerlink" href="#training-and-testing-subsets" title="Link to this heading">#</a></h2>
 <p>If we want to properly evaluate our machine learning model, we should not use <strong>all</strong> the data for training. Instead, we should train the model on a <strong>subset of the data</strong>, retaining another subset (that the model has not “seen”) to <strong>evaluate</strong> the model.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1733,7 +1748,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </section>
 <section id="confusion-matrix">
 <h2>Confusion matrix<a class="headerlink" href="#confusion-matrix" title="Link to this heading">#</a></h2>
-<p>Overall accuracy is a rather crude metric for evaluating the performance of our model. Each observation in the test dataset is treated eqaully, So, as we mentioned earlier, the model could 100% accurate at identifying common penguin species (e.g. Adelie and Gentoo) but be bad at identifying rarer penguin species (e.g. Chinstrap) and still have a high overall accuracy.</p>
+<p>Overall accuracy is a rather crude metric for evaluating the performance of our model. Each observation in the test dataset is treated equally, So, as we mentioned earlier, the model could be 100% accurate at identifying common penguin species (e.g. Adelie and Gentoo) but be bad at identifying rarer penguin species (e.g. Chinstrap) and still have a high overall accuracy.</p>
 <p>The standard way of evaluating a multi-class prediction model is to use a confusion matrix.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1782,7 +1797,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>When we set <code class="docutils literal notranslate"><span class="pre">n_splits</span></code> to <strong>5</strong>, the dataset is split into 5 roughly equal parts (“folds”). In each round, 4 folds are used for training and 1 fold is used for testing (i.e. 80/20 split). If we set <code class="docutils literal notranslate"><span class="pre">n_splits</span></code> to 10, then the dataset would be split into 10 folds, meaning that 9 would be used for training and 1 for testin (i.e. 90/10 split). The split is therefore dependent on the number of folds. <code class="docutils literal notranslate"><span class="pre">KFold</span></code> may not be appropriate for small datasets (since <code class="docutils literal notranslate"><span class="pre">n_splits</span></code> cannot be larger than number of samples).</p>
+<p>When we set <code class="docutils literal notranslate"><span class="pre">n_splits</span></code> to <strong>5</strong>, the dataset is split into 5 roughly equal parts (“folds”). In each round, 4 folds are used for training and 1 fold is used for testing (i.e. 80/20 split). If we set <code class="docutils literal notranslate"><span class="pre">n_splits</span></code> to 10, then the dataset would be split into 10 folds, meaning that 9 would be used for training and 1 for testing (i.e. 90/10 split). The split is therefore dependent on the number of folds. <code class="docutils literal notranslate"><span class="pre">KFold</span></code> may not be appropriate for small datasets (since <code class="docutils literal notranslate"><span class="pre">n_splits</span></code> cannot be larger than number of samples).</p>
 </div>
 <p>An alternative approach is called the <code class="docutils literal notranslate"><span class="pre">ShuffleSplit</span></code> which, as the name suggests, shuffles the dataset randomly and then splits it into a training set and a test set according to the sizes that we choose. This approach allows us to define specific train-test splits.</p>
 <a class="reference internal image-reference" href="../../_images/shufflesplit.png"><img alt="../../_images/shufflesplit.png" class="align-center" src="../../_images/shufflesplit.png" style="width: 800px;" /></a>
@@ -1807,26 +1822,23 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 </section>
-<section id="other-models">
-<h2>Other models<a class="headerlink" href="#other-models" title="Link to this heading">#</a></h2>
-<p>Now that we have tested one model on our dataset, it is simple to test other models.</p>
+<section id="decision-tree-classifier">
+<h2>Decision Tree Classifier<a class="headerlink" href="#decision-tree-classifier" title="Link to this heading">#</a></h2>
+<p>K-nearest Neighbors is an odd type of model because it doesn’t learn during training. It simply stores the training data and makes predictions based on distances to a specific number of neigbors at inference time. But now that we have formatted our data for K-nearest Neighbors we can easily test other, more conventional machine learning models available in <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.tree</span><span class="w"> </span><span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
 
 <span class="c1"># Define model</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">()</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 
 <span class="c1"># Fit model</span>
-<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-
-<span class="c1"># Predict test labels</span>
-<span class="n">predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df_scaled</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 
 <span class="c1"># Score</span>
-<span class="n">accuracy</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+<span class="n">test_scores</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">df_scaled</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">model_name</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The test accuracy using a </span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">accuracy</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The test accuracy using a </span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">test_scores</span><span class="p">)</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="c1"># Generate confusion matrix</span>
 <span class="n">cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predictions</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">model</span><span class="o">.</span><span class="n">classes_</span><span class="p">)</span>
@@ -1839,52 +1851,86 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The test accuracy using a DecisionTreeClassifier is 0.942
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The test accuracy using a DecisionTreeClassifier is 0.953
 </pre></div>
 </div>
-<img alt="../../_images/c47d82b13729b4626720a3bfc85485f41e1cf71edbda401e2eabab4edd2df9c3.png" src="../../_images/c47d82b13729b4626720a3bfc85485f41e1cf71edbda401e2eabab4edd2df9c3.png" />
+<img alt="../../_images/8733911ce286bbb5504b66c6e45d5f966224497920396f38b9b39d0021057396.png" src="../../_images/8733911ce286bbb5504b66c6e45d5f966224497920396f38b9b39d0021057396.png" />
 </div>
 </div>
-<p>A popular <strong>ensemble algorithm</strong> that fits a number of <strong>decision tree classifiers</strong> on various sub-samples of the dataset and uses averaging to improve the predictive accuracy and control over-fitting.</p>
+<p>The nice thing about Decision Trees is that we can visualize the fitted model.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The attribute (e.g. <code class="docutils literal notranslate"><span class="pre">Flipper</span> <span class="pre">Length</span></code>) can be positive or negative because we standardized the values.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.ensemble</span><span class="w"> </span><span class="kn">import</span> <span class="n">RandomForestClassifier</span>
-
-<span class="c1"># Define model</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
-
-<span class="c1"># Fit model</span>
-<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-
-<span class="c1"># Predict test labels</span>
-<span class="n">predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-
-<span class="c1"># Score</span>
-<span class="n">accuracy</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
-<span class="n">model_name</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The test accuracy using a </span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">accuracy</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="c1"># Generate confusion matrix</span>
-<span class="n">cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predictions</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">model</span><span class="o">.</span><span class="n">classes_</span><span class="p">)</span>
-
-<span class="c1"># Plot</span>
-<span class="n">disp</span> <span class="o">=</span> <span class="n">ConfusionMatrixDisplay</span><span class="p">(</span><span class="n">confusion_matrix</span><span class="o">=</span><span class="n">cm</span><span class="p">,</span> <span class="n">display_labels</span><span class="o">=</span><span class="n">model</span><span class="o">.</span><span class="n">classes_</span><span class="p">)</span>
-<span class="n">disp</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Blues</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.tree</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_tree</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plot_tree</span><span class="p">(</span><span class="n">model</span><span class="p">,</span>
+          <span class="n">feature_names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Culmen Length&#39;</span><span class="p">,</span> <span class="s1">&#39;Culmen Depth&#39;</span><span class="p">,</span> <span class="s1">&#39;Flipper Length&#39;</span><span class="p">,</span> <span class="s1">&#39;Body Mass&#39;</span><span class="p">],</span> 
+          <span class="n">class_names</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Species&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">(),</span>
+          <span class="n">filled</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">impurity</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>       
+          <span class="n">proportion</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">rounded</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>        
+          <span class="n">precision</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The test accuracy using a RandomForestClassifier is 0.971
+<img alt="../../_images/cf41088551cf77274cfb3d9f0f9ad4e97241eb65dd725cceeabacd5ec6c746cb.png" src="../../_images/cf41088551cf77274cfb3d9f0f9ad4e97241eb65dd725cceeabacd5ec6c746cb.png" />
+</div>
+</div>
+<p>Decision trees partition the feature space by considering a single feature at a time. We start with 273 samples (80% of dataset), if <code class="docutils literal notranslate"><span class="pre">Flipper</span> <span class="pre">Length</span></code> is smaller than <code class="docutils literal notranslate"><span class="pre">0.47</span></code> then we are left with 168 samples, most of which are now <code class="docutils literal notranslate"><span class="pre">Adelie</span></code>. Then, if <code class="docutils literal notranslate"><span class="pre">Culmen</span> <span class="pre">Length</span></code> is less than <code class="docutils literal notranslate"><span class="pre">-0.14</span></code>, we are left with <strong>116</strong> samples which we classify as <code class="docutils literal notranslate"><span class="pre">Adelie</span></code>. Unfortunately, it looks like <strong>4</strong> of these penguins are actually <code class="docutils literal notranslate"><span class="pre">Gentoos</span></code>.</p>
+<p>We might be asking a couple more questions by now: 1) How does the model choose these thresholds and 2) what is <code class="docutils literal notranslate"><span class="pre">gini</span></code>?</p>
+</section>
+<section id="loss-functions">
+<h2>Loss functions<a class="headerlink" href="#loss-functions" title="Link to this heading">#</a></h2>
+<p>During the learning process, our Decision Tree is trying to find a set of thresholds that make the fewest mistakes when classifying our training data. To find the best thresholds, we need a way to evaluate whether one set of thresholds are better than another. We use <strong>loss functions</strong> to do this.</p>
+<p>Decision Trees commonly use the <strong>Gini loss function</strong> (or impurity). This index measures how mixed the classes are in a given group of samples (i.e. <strong>entropy</strong>). If a group of samples all belong to the same class, the Gini impurity is 0 (perfectly “pure”). If the group has a mix classes, the impurity is higher. At each split, the Decision Tree algorithm tries to reduce entropy or the minimize Gini impurity.</p>
+<p>For regression, a common loss function is <strong>absolute loss</strong> (i.e. MAE) where loss grows <strong>linearly</strong> with absolute mispredicted amount. This loss function is approproate for noisy data, when some mispredictions are unavoidable and shouldn’t dominate the loss.</p>
+<p>Another common loss function in regression is <strong>squared loss</strong> (i.e. MSE) where loss grows <strong>quadratically</strong> with the absolute mispredicted amount. If a prediction is very close to being correct, the square will be small and little attention will be given to that example to obtain zero error. On the other hand, the penalty will be large for predictions that are really far off.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generate a range of prediction errors for regression losses</span>
+<span class="n">errors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
+<span class="n">mae</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">errors</span><span class="p">)</span>
+<span class="n">mse</span> <span class="o">=</span> <span class="n">errors</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="c1"># Generate probabilities for classification impurity measures</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.001</span><span class="p">,</span> <span class="mf">0.999</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>  <span class="c1"># avoid log(0)</span>
+<span class="n">gini</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">p</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p</span><span class="p">)</span>
+<span class="n">entropy</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="n">p</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p</span><span class="p">))</span>
+
+<span class="c1"># Plot</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">gini</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Gini Impurity&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">entropy</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Entropy&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Class probability&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Impurity / loss&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">errors</span><span class="p">,</span> <span class="n">mae</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Mean Absolute Error (MAE)&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">errors</span><span class="p">,</span> <span class="n">mse</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Mean Squared Error (MSE)&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Prediction error&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Loss&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="../../_images/ffbab4f2338dc5fdd9683e1985e6ddb59261470142973bee92ab49b442d91c19.png" src="../../_images/ffbab4f2338dc5fdd9683e1985e6ddb59261470142973bee92ab49b442d91c19.png" />
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/b8ed39dd9d350c0dd37618f48ee24eaa3c116d981c4465ca5fdfcbf0a3c884f2.png" src="../../_images/b8ed39dd9d350c0dd37618f48ee24eaa3c116d981c4465ca5fdfcbf0a3c884f2.png" />
 </div>
 </div>
 </section>
 <section id="parameters">
 <h2>Parameters<a class="headerlink" href="#parameters" title="Link to this heading">#</a></h2>
-<p>All three models that we have used so far can be <strong>customized</strong> using parameters. We can apply the <code class="docutils literal notranslate"><span class="pre">get_params()</span></code> method to our estimators to see what we can adjust.</p>
+<p>Both models that we have used so far can be <strong>customized</strong> using parameters. We can apply the <code class="docutils literal notranslate"><span class="pre">get_params()</span></code> method to our estimators to see what we can adjust.</p>
 <p>For our <code class="docutils literal notranslate"><span class="pre">KNeighborsClassifier</span></code>, the most important parameter is <code class="docutils literal notranslate"><span class="pre">n_neighbors</span></code> which is the number of neighboring observations that the algorithm looks at when making a prediction.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1919,12 +1965,147 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 </div>
-<p>If we set <code class="docutils literal notranslate"><span class="pre">max_depth</span></code> to be small (e.g. &lt;5) then the tree will be shallow and model is only likely to capture broad, simple patterns. It may therefore be prone to <strong>underfitting</strong>.</p>
-<p>In contrast, if we do not set <code class="docutils literal notranslate"><span class="pre">max_depth</span></code>, it defaults to <code class="docutils literal notranslate"><span class="pre">None</span></code> meaning that there is not limit on the height of the tree. On the one head, this may be useful because the tree is more likely to capture more subtle patterns. However, if the tree becomes too deep, then it may begin to split the data until every sample is perfectly separated. If the dataset contains <strong>noise</strong> (which is likely), then the tree will be fitted not only to the true signal but also to <strong>noise</strong> in the data. We call this <strong>overfitting</strong> and it can reduce the overall accuracy of our model.</p>
+<p>If we set <code class="docutils literal notranslate"><span class="pre">max_depth</span></code> to be small (e.g. &lt;3) then the tree will be shallow and model is only likely to capture broad, simple patterns. It may therefore be prone to <strong>underfitting</strong>.</p>
+<p>In contrast, if we do not set <code class="docutils literal notranslate"><span class="pre">max_depth</span></code>, it defaults to <code class="docutils literal notranslate"><span class="pre">None</span></code> meaning that there is no limit on the height of the tree. On the one head, this may be useful because the tree is more likely to capture more subtle patterns. However, if the tree becomes too deep, then it may begin to split the data until every sample is perfectly separated. If the dataset contains <strong>noise</strong> (which is likely), then the tree will be fitted not only to the true signal but also to <strong>noise</strong> in the data. We call this <strong>overfitting</strong> and it can reduce the overall accuracy of our model.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The flexibility of machine learning models is therefore both a strength and weakness.</p>
+</div>
 </section>
-<section id="overfitting-and-underfitting">
-<h2>Overfitting and underfitting<a class="headerlink" href="#overfitting-and-underfitting" title="Link to this heading">#</a></h2>
-<p>So cane we pick a <code class="docutils literal notranslate"><span class="pre">max_depth</span></code> that prevents our model underfitting or overfitting our data? Yes, we can but we have approached the limit of our penguin dataset, so we will now use a new dataset that contains the median value of houses in an area in California. The features collected are based on some statistical averages for each region and geographic information. The goal is therefore to <strong>predict a continuous variable</strong> i.e. <strong>regression</strong>.</p>
+<section id="hyperparameter-tuning">
+<h2>Hyperparameter tuning<a class="headerlink" href="#hyperparameter-tuning" title="Link to this heading">#</a></h2>
+<p>So can we pick a <code class="docutils literal notranslate"><span class="pre">max_depth</span></code> that prevents our model underfitting or overfitting our data? Yes, we can and one way to do that is to use <strong>hyperparameter tuning</strong>. We will demonstrate this timing using <strong>Decision Tree Regression</strong> where the goal is to <strong>predict a continuous variable</strong>. We will first develop a shallow tree to model the relationship between <code class="docutils literal notranslate"><span class="pre">Flipper</span> <span class="pre">Length</span></code> and <code class="docutils literal notranslate"><span class="pre">Body</span> <span class="pre">Mass</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Flipper Length (mm)&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Body Mass (g)&#39;</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Flipper Length (mm)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Body Mass (g)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Body Mass (g)&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/200ca923b090669ee1194b098da25e73cfac40c4061683bebe9ea63bd34298fb.png" src="../../_images/200ca923b090669ee1194b098da25e73cfac40c4061683bebe9ea63bd34298fb.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.tree</span><span class="w"> </span><span class="kn">import</span> <span class="n">DecisionTreeRegressor</span>
+
+<span class="c1"># Select features and target</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s2">&quot;Flipper Length (mm)&quot;</span><span class="p">]]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Body Mass (g)&quot;</span><span class="p">]</span>
+
+<span class="c1"># Train-test split</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="c1"># Initialize and fit the model</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">DecisionTreeRegressor</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">y_predicted</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Flipper Length (mm)&#39;</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Flipper Length (mm)&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Body Mass (g)&#39;</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Flipper Length (mm)&#39;</span><span class="p">),</span> <span class="n">y_predicted</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Flipper Length (mm)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Body Mass (g)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Body Mass (g)&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/d76762223237a0a4734fb0aa875ad3ce84718294aa392ef2c87e5c4fe22a82be.png" src="../../_images/d76762223237a0a4734fb0aa875ad3ce84718294aa392ef2c87e5c4fe22a82be.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Remove the limit on max depth</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">DecisionTreeRegressor</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">y_predicted</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Flipper Length (mm)&#39;</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Flipper Length (mm)&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Body Mass (g)&#39;</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Flipper Length (mm)&#39;</span><span class="p">),</span> <span class="n">y_predicted</span><span class="p">,</span> 
+         <span class="n">linewidth</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Flipper Length (mm)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Body Mass (g)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Body Mass (g)&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/f442b9470a99bc5e6c899a4cef7635152f45b1c66bc4cc325c952f8bad0e87ba.png" src="../../_images/f442b9470a99bc5e6c899a4cef7635152f45b1c66bc4cc325c952f8bad0e87ba.png" />
+</div>
+</div>
+<p>We can find the optimal <code class="docutils literal notranslate"><span class="pre">max_depth</span></code> by iteratively searching over specified parameter values for an estimator using the <code class="docutils literal notranslate"><span class="pre">GridSearchCV</span></code> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">GridSearchCV</span>
+
+<span class="c1"># Define parameter grid (i.e. max depth ranging from 2 to 14)</span>
+<span class="n">param_grid</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;max_depth&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">1</span><span class="p">)}</span>
+
+<span class="c1"># Define model</span>
+<span class="n">tree_reg</span> <span class="o">=</span> <span class="n">DecisionTreeRegressor</span><span class="p">()</span>
+
+<span class="c1"># Define GridSearch estimator</span>
+<span class="n">grid_search</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span>
+    <span class="n">estimator</span><span class="o">=</span><span class="n">tree_reg</span><span class="p">,</span>
+    <span class="n">param_grid</span><span class="o">=</span><span class="n">param_grid</span><span class="p">,</span>
+    <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+    <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;neg_mean_squared_error&#39;</span>
+<span class="p">)</span>
+
+<span class="c1"># Fit model</span>
+<span class="n">grid_search</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="n">results</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">grid_search</span><span class="o">.</span><span class="n">cv_results_</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;param_max_depth&#39;</span><span class="p">],</span> <span class="o">-</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;mean_test_score&#39;</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Max depth&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;CV Mean Squared Error&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/139ecf6626032cd48eaac199f528f3b36a54333f41e131000264952ccb36df14.png" src="../../_images/139ecf6626032cd48eaac199f528f3b36a54333f41e131000264952ccb36df14.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fit model with optimal max depth value</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">DecisionTreeRegressor</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="n">grid_search</span><span class="o">.</span><span class="n">best_params_</span><span class="p">[</span><span class="s1">&#39;max_depth&#39;</span><span class="p">],</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">y_predicted</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Flipper Length (mm)&#39;</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Flipper Length (mm)&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Body Mass (g)&#39;</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Flipper Length (mm)&#39;</span><span class="p">),</span> <span class="n">y_predicted</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Flipper Length (mm)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Body Mass (g)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Body Mass (g)&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/f8cecb5b166401319e0d7cf494ca7e17ad80ff7d3febad95b96d8402f6bb5a86.png" src="../../_images/f8cecb5b166401319e0d7cf494ca7e17ad80ff7d3febad95b96d8402f6bb5a86.png" />
+</div>
+</div>
+<p>So, to summarize… we identified a parameter (<code class="docutils literal notranslate"><span class="pre">max_depth</span></code>) that had a large influence on the complexity of our model. We then used <strong>hyperparameter tuning</strong> to find the optimal value for this parameter. In this case, we defined <strong>optimal</strong> as the lowest <strong>mean squared error</strong>. Higher <code class="docutils literal notranslate"><span class="pre">max_depth</span></code> caused an increase in MSE because our model <strong>overfit</strong> the data. We only had to incerease <code class="docutils literal notranslate"><span class="pre">max_depth</span></code> to <strong>3</strong> to reduce <strong>underfitting</strong>. This kind of tuning is common practice when developing machine learning models.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If a complex model does not provide substantial accuracy gains compared to a simple model, then we should choose the “simplest” model (e.g. lower <code class="docutils literal notranslate"><span class="pre">max_depth</span></code>) for our analysis.</p>
+</div>
+</section>
+<section id="another-example-california-house-prices">
+<h2>Another example - California House Prices<a class="headerlink" href="#another-example-california-house-prices" title="Link to this heading">#</a></h2>
+<p>We are starting to approach the limit of our penguin dataset, so we will now use a new dataset that contains the median value of houses in an area in California. The features collected are based on some statistical averages for each region and geographic information.</p>
 <p>First let’s import the data and define a decision tree regressor with no limit on <code class="docutils literal notranslate"><span class="pre">max_depth</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2049,7 +2230,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The testing error of our model is 46.63 k$
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The testing error of our model is 46.69 k$
 </pre></div>
 </div>
 </div>
@@ -2094,29 +2275,26 @@ Number of leaves: 14840
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/84466625698e7d724c4e4efe3027f7d206768a76fafb3970a4e6b8c9721d0b7d.png" src="../../_images/84466625698e7d724c4e4efe3027f7d206768a76fafb3970a4e6b8c9721d0b7d.png" />
+<img alt="../../_images/b2f42dfbf0b25c47478ee7821b7aa8217430adc1baaa643cf56cc1662431cdff.png" src="../../_images/b2f42dfbf0b25c47478ee7821b7aa8217430adc1baaa643cf56cc1662431cdff.png" />
 </div>
 </div>
-<p>The plot shows that:</p>
 <ul class="simple">
 <li><p>For <code class="docutils literal notranslate"><span class="pre">max_depth</span> <span class="pre">&lt;</span> <span class="pre">10</span></code>, the decision tree underfits the data. The training error and therefore the testing error are both high because the model is too constrained and cannot capture much of the variability of in house prices.</p></li>
 <li><p>The decision tree generalizes the best at <code class="docutils literal notranslate"><span class="pre">max_depth</span> <span class="pre">=</span> <span class="pre">10</span></code>. It is flexible enough to capture a fraction of the variability of the target that generalizes, while not memorizing all of the noise in the target.</p></li>
-<li><p>The decision tree overfits for <code class="docutils literal notranslate"><span class="pre">max_depth</span> <span class="pre">&gt;</span> <span class="pre">10</span></code>. The training error becomes very small, while the testing error actually increases. At these <code class="docutils literal notranslate"><span class="pre">max_depths</span></code>, the model is memorizing the dataset, including the noise, which is harming its ability to generalize to the test data.</p></li>
+<li><p>The decision tree overfits for <code class="docutils literal notranslate"><span class="pre">max_depth</span> <span class="pre">&gt;</span> <span class="pre">10</span></code>. The training error becomes very small, while the testing error actually increases. At these <code class="docutils literal notranslate"><span class="pre">max_depths</span></code>, the model is <strong>memorizing</strong> the dataset, including the noise, which is harming its ability to generalize to the test data.</p></li>
 </ul>
-<p>We have just performed <strong>regularization</strong>, an important machine learning concept that refers to any approach that is used to <strong>constrain model complexity to avoid overfitting</strong>.</p>
 <p>Another example of under- or over-fitting would be a polynomial function that had too few or too many degrees.</p>
-<a class="reference internal image-reference" href="lectures/unit2/images/overunder.png"><img alt="lectures/unit2/images/overunder.png" class="align-center" src="lectures/unit2/images/overunder.png" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../../_images/underover.png"><img alt="../../_images/underover.png" class="align-center" src="../../_images/underover.png" style="width: 800px;" /></a>
 </section>
 <section id="noise">
 <h2>Noise<a class="headerlink" href="#noise" title="Link to this heading">#</a></h2>
 <p>Our house price dataset likely contains a lot of noise. The price of the house could depend time of year or the circumstances of the buyer or seller. These factors are not considered in the features. Since these missing feature are randomly varying from one sample to the next, it appears as if the target variable was changing because of the impact of a random perturbation or noise, even if there were no errors made during the data collection process.</p>
-<p>The same is true for environmental data. We may not be able to measure something that impacts the target variable. It is also possible that there are instrumental errors such as poorly calibrated sensors, limitations in precision, or interference that impact the accuracy of our data. Those unpredictable data acquisition errors can happen either on the input features or in the target variable (in which case we often name this <strong>label noise</strong>).</p>
-<p>While it is challenging to understand which kind of “noise” is dominating, there are many strategies to to make our predictive models robust to noise. These be applied across the entire development cycle:</p>
+<p>The same is true for environmental data. We may not be able to measure something that impacts the target variable. It is also possible that there are instrumental errors such as poorly calibrated sensors, limitations in precision, or interference that impact the accuracy of our data. Those unpredictable data acquisition errors can happen either on the input features <strong>or</strong> in the target variable (in which case we often name this <strong>label noise</strong>).</p>
+<p>While it is challenging to understand which kind of “noise” is dominating, there are several strategies for reducing the sensitivity of our models to noise:</p>
 <ul class="simple">
 <li><p><strong>Data augmentation</strong> (e.g. increase the number of labeled samples in our training dataset)</p></li>
 <li><p><strong>Regularization</strong> (e.g. enforce limits or penalize models that become too complex)</p></li>
 <li><p><strong>Ensemble models</strong> (e.g. combine predictions from multiple different models to average out errors from individual models)</p></li>
-<li><p><strong>Cross-validation</strong> (e.g. assess ability of model to perform consistently across different data subsets)</p></li>
 </ul>
 <p>And there are probably many other strategies…</p>
 </section>
@@ -2167,14 +2345,485 @@ Number of leaves: 14840
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/4a50de32c45b02e2992f62115cb5b978402f40c4bf5e6def501c7d001cc5c2f9.png" src="../../_images/4a50de32c45b02e2992f62115cb5b978402f40c4bf5e6def501c7d001cc5c2f9.png" />
+<img alt="../../_images/cbc3f59c8bf595b9fbd7a6519417727005f722b663c64a2e92e79c8faa1369a1.png" src="../../_images/cbc3f59c8bf595b9fbd7a6519417727005f722b663c64a2e92e79c8faa1369a1.png" />
 </div>
 </div>
-<p>We find that the testing error becomes lower as more samples are added to the training set. It looks as though the testing error is starting to plateau a bit but it is also still going down. We can therefore conclude that more samples would probably improve our predicitve model. This kind of analysis can be useful for informing decision-making. If it is possible to collect more samples, then we should probably do that. However, if the testing error did plateau, then collecting more samples would not be useful and we may reserve our efforts for other things e.g. reducing or handling noise in dataset, developing more sophisticated models etc.</p>
+<p>We find that the testing error becomes lower as more samples are added to the training set. It looks as though the testing error is starting to plateau a bit but it is also still going down. We can therefore conclude that more samples would probably improve our predictive model.</p>
+<p>This kind of analysis can be useful for informing decision-making. If it is possible to collect more samples, then we should probably do that. If that is not possible, we may consider artificially creating new, modified copies of existing data (i.e. <strong>data augmentation</strong>).</p>
+<p>On the other hand, if the testing error did plateau, then collecting more samples would not be useful and we may reserve our efforts for other things e.g. reducing or handling noise in dataset, developing more sophisticated models etc.</p>
 </section>
-<section id="further-reading">
-<h2>Further reading<a class="headerlink" href="#further-reading" title="Link to this heading">#</a></h2>
-<p>More information about the Palmer Penguin dataset can be found <a class="reference external" href="https://allisonhorst.github.io/palmerpenguins/index.html">here</a></p>
+<section id="ensembles">
+<h2>Ensembles<a class="headerlink" href="#ensembles" title="Link to this heading">#</a></h2>
+<p><strong>Ensemble learning</strong> is a popular way to control overfitting. This is a technique where multiple individual models are combined to produce a single more robust (and often more accurate) prediction model. The two main approaches to ensemble learning are 1) <strong>bagging</strong> (i.e. Bootstrap AGGregatING) and 2) <strong>boosting</strong>. We can use these strategies to combine many Decision Trees into powerful models that generalize better.</p>
+</section>
+<section id="bagging">
+<h2>Bagging<a class="headerlink" href="#bagging" title="Link to this heading">#</a></h2>
+<p>Bagging involves fitting a base estimator (e.g. Decision Tree) to a <strong>random subset</strong> of our original dataset and then aggregating their individual predictions (either by voting or by averaging) to generate a final prediction. This approach exploits the <strong>Weak Law of Large Numbers</strong> which states that “<em>the mean of a collection of independent and identically distributed samples from a random variable converges in probability to the expected value</em>”.</p>
+<p>The plot below shows an example from our Penguin dataset. The first panel shows all the observations in our dataset. The other three panels show a random subset. To perform bagging, we would train <strong>independent models</strong> on each of these random subsets.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">resample</span>
+
+<span class="n">species_list</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Species&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Adelie&quot;</span><span class="p">:</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="s2">&quot;Chinstrap&quot;</span><span class="p">:</span> <span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="s2">&quot;Gentoo&quot;</span><span class="p">:</span> <span class="s2">&quot;orange&quot;</span><span class="p">}</span>
+
+<span class="c1"># Create 4 subplots</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">axes</span> <span class="o">=</span> <span class="n">axes</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+
+<span class="c1"># Panel 1: Full data</span>
+<span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">species_list</span><span class="p">:</span>
+    <span class="n">subset</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Species&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">species</span><span class="p">]</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+        <span class="n">subset</span><span class="p">[</span><span class="s1">&#39;Flipper Length (mm)&#39;</span><span class="p">],</span>
+        <span class="n">subset</span><span class="p">[</span><span class="s1">&#39;Body Mass (g)&#39;</span><span class="p">],</span>
+        <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="n">species</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">species</span><span class="p">])</span>
+
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Flipper Length (mm)&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Body Mass (g)&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="c1"># Panels 2–4: Bootstrap samples</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
+    <span class="n">sample_df</span> <span class="o">=</span> <span class="n">resample</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">n_samples</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span> <span class="o">+</span> <span class="n">i</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">species</span> <span class="ow">in</span> <span class="n">species_list</span><span class="p">:</span>
+        <span class="n">subset</span> <span class="o">=</span> <span class="n">sample_df</span><span class="p">[</span><span class="n">sample_df</span><span class="p">[</span><span class="s1">&#39;Species&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">species</span><span class="p">]</span>
+        <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+            <span class="n">subset</span><span class="p">[</span><span class="s1">&#39;Flipper Length (mm)&#39;</span><span class="p">],</span>
+            <span class="n">subset</span><span class="p">[</span><span class="s1">&#39;Body Mass (g)&#39;</span><span class="p">],</span>
+            <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="n">species</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">species</span><span class="p">]</span>
+        <span class="p">)</span>
+        <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Flipper Length (mm)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/8be26a58c41c0282ecb4bbb17311b4f3a7e367fa98ff061b182f62bc2e3b0288.png" src="../../_images/8be26a58c41c0282ecb4bbb17311b4f3a7e367fa98ff061b182f62bc2e3b0288.png" />
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Scikit-learn</span></code> implements the bagging procedure as a <strong>meta-estimator</strong>: an estimator that wraps another estimator by cloning it several times and training it independently on each random subset. Below we define a meta-estimator (i.e. <code class="docutils literal notranslate"><span class="pre">BaggingClassifer</span></code>) with <strong>100 independent</strong> <code class="docutils literal notranslate"><span class="pre">DecisionTreeClassifiers</span></code> (i.e. <code class="docutils literal notranslate"><span class="pre">n_estimators</span></code>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.ensemble</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaggingClassifier</span>
+
+<span class="c1"># Define base estimator</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">()</span>
+
+<span class="c1"># Initialize bagging &quot;meta-estimator&quot;</span>
+<span class="n">bclf</span> <span class="o">=</span> <span class="n">BaggingClassifier</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="n">clf</span><span class="p">,</span> <span class="n">n_estimators</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="c1"># Fit</span>
+<span class="n">scores</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">bclf</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="n">feature_list</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Species&#39;</span><span class="p">],</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="c1"># Print scores</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">scores</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9765132139812447
+</pre></div>
+</div>
+</div>
+</div>
+<p>A note on the size of the random samples. The default parameters for the <code class="docutils literal notranslate"><span class="pre">BaggingClassifer</span></code> is <code class="docutils literal notranslate"><span class="pre">max_samples=1.0</span></code> which implies that 100% of the training dataset is used in each random subset. But <code class="docutils literal notranslate"><span class="pre">bootstrap=True</span></code> indicates that our <strong>sampling involves replacement</strong>. This means that our random subset has the same number of items as our original training datset but is still different because it may <strong>duplicate</strong> some items and not select others. Hence, <strong>Bootstrap AGGregatING = Bagging</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bclf</span><span class="o">.</span><span class="n">get_params</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;bootstrap&#39;: True,
+ &#39;bootstrap_features&#39;: False,
+ &#39;estimator__ccp_alpha&#39;: 0.0,
+ &#39;estimator__class_weight&#39;: None,
+ &#39;estimator__criterion&#39;: &#39;gini&#39;,
+ &#39;estimator__max_depth&#39;: None,
+ &#39;estimator__max_features&#39;: None,
+ &#39;estimator__max_leaf_nodes&#39;: None,
+ &#39;estimator__min_impurity_decrease&#39;: 0.0,
+ &#39;estimator__min_samples_leaf&#39;: 1,
+ &#39;estimator__min_samples_split&#39;: 2,
+ &#39;estimator__min_weight_fraction_leaf&#39;: 0.0,
+ &#39;estimator__monotonic_cst&#39;: None,
+ &#39;estimator__random_state&#39;: None,
+ &#39;estimator__splitter&#39;: &#39;best&#39;,
+ &#39;estimator&#39;: DecisionTreeClassifier(),
+ &#39;max_features&#39;: 1.0,
+ &#39;max_samples&#39;: 1.0,
+ &#39;n_estimators&#39;: 100,
+ &#39;n_jobs&#39;: None,
+ &#39;oob_score&#39;: False,
+ &#39;random_state&#39;: None,
+ &#39;verbose&#39;: 0,
+ &#39;warm_start&#39;: False}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Our <code class="docutils literal notranslate"><span class="pre">BaggingClassifier</span></code> picks random subsets from the data but the Decision Trees may all be quite similar because they <strong>consider all features</strong> when making splits. A <code class="docutils literal notranslate"><span class="pre">RandomForestClassifier</span></code> is a specialized version of decision tree bagging that adds another source of randomness. Instead of considering all features when making splits in the decision tree, it <strong>considers only a random subset of features</strong>. This increases the difference between decision trees, often leading to reduced overfitting and testing error.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.ensemble</span><span class="w"> </span><span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+
+<span class="c1"># Define model</span>
+<span class="n">bclf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">oob_score</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Fit</span>
+<span class="n">bclf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">feature_list</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Species&#39;</span><span class="p">])</span>
+
+<span class="c1">#Print score</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">bclf</span><span class="o">.</span><span class="n">oob_score_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9736842105263158
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Since each tree is trained on a bootstrap sample (i.e. with replacement), about 1/3 of the data is left out during the training. These “out-of-bag” samples can be used to generate a fairly reliable estimate of the <strong>testing error</strong> without having to split the data or perform computationally expensive cross-validation.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bclf</span><span class="o">.</span><span class="n">get_params</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;bootstrap&#39;: True,
+ &#39;ccp_alpha&#39;: 0.0,
+ &#39;class_weight&#39;: None,
+ &#39;criterion&#39;: &#39;gini&#39;,
+ &#39;max_depth&#39;: None,
+ &#39;max_features&#39;: &#39;sqrt&#39;,
+ &#39;max_leaf_nodes&#39;: None,
+ &#39;max_samples&#39;: None,
+ &#39;min_impurity_decrease&#39;: 0.0,
+ &#39;min_samples_leaf&#39;: 1,
+ &#39;min_samples_split&#39;: 2,
+ &#39;min_weight_fraction_leaf&#39;: 0.0,
+ &#39;monotonic_cst&#39;: None,
+ &#39;n_estimators&#39;: 100,
+ &#39;n_jobs&#39;: None,
+ &#39;oob_score&#39;: True,
+ &#39;random_state&#39;: None,
+ &#39;verbose&#39;: 0,
+ &#39;warm_start&#39;: False}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Random Forests is a very popular ensemble algorithm. This is partly because it almost always performs better than single models and partly because it is not very sensitive to the choice of hyperparameters. There are really only two hyperparameters to pick, <code class="docutils literal notranslate"><span class="pre">n_estimators</span></code> which can be as large as you can computationally afford and <code class="docutils literal notranslate"><span class="pre">max_features</span></code> which determines the number of features to use for each tree. Usually the default value of <code class="docutils literal notranslate"><span class="pre">sqrt(n_features)</span></code> is appropriate. Furthermore, since decision trees work with features that have different scales or magnitudes, preprocessing is minimal.</p>
+</section>
+<section id="boosting">
+<h2>Boosting<a class="headerlink" href="#boosting" title="Link to this heading">#</a></h2>
+<p>Boosting considers all our training data but fits models <strong>sequentially</strong> (instead of bagging independently on random subsets). To do this, it fits an initial model and then <strong>re-weights</strong> misclassified observations so that the next model will focus on classifying them correctly. Final prediction is usually a weighted average of these individual models (with more accurate models being weighted higher). Usually the individual models used in boosting are simple (e.g. shallow decision trees) and we call them <strong>weak learners</strong>.</p>
+<p>In its most simplest form, boosting can be implemented by re-weighting our data such that <strong>mispredicted samples</strong> are assigned a <strong>value of 1</strong> and <strong>accurately predicted samples</strong> are assigned a <strong>value of 0</strong>. If we do this, then the new classifier will only consider misclassified samples during its training phase.</p>
+<a class="reference internal image-reference" href="../../_images/boosting.png"><img alt="../../_images/boosting.png" class="align-center" src="../../_images/boosting.png" style="width: 600px;" /></a>
+<p>In practice, there are statistical algorithms that have been developed for determining how sample weights should be updated. The classic version of this approach is called <code class="docutils literal notranslate"><span class="pre">AdaBoost</span></code> (i.e. Adaptive Boosting).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.ensemble</span><span class="w"> </span><span class="kn">import</span> <span class="n">AdaBoostClassifier</span>
+
+<span class="c1"># Define base estimator</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="c1"># Initialize boosting &quot;meta-estimator&quot;</span>
+<span class="n">bclf</span> <span class="o">=</span> <span class="n">AdaBoostClassifier</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">n_estimators</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="c1"># Fit</span>
+<span class="n">bclf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df_scaled</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Species&#39;</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error rate of each classifier: </span><span class="si">{</span><span class="n">bclf</span><span class="o">.</span><span class="n">estimator_errors_</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Weight of each classifier: </span><span class="si">{</span><span class="n">bclf</span><span class="o">.</span><span class="n">estimator_weights_</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Score</span>
+<span class="n">scores</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">bclf</span><span class="p">,</span> <span class="n">df_scaled</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Species&#39;</span><span class="p">],</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">model_name</span> <span class="o">=</span> <span class="n">bclf</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The testing accuracy using a </span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Error rate of each classifier: [0.03508772 0.04141414 0.10874091 0.05378077 0.11121717]
+Weight of each classifier: [4.00733319 3.83498391 2.79681429 3.56070549 2.77151533]
+The testing accuracy using a AdaBoostClassifier is 0.982
+</pre></div>
+</div>
+</div>
+</div>
+<p>We developed an <code class="docutils literal notranslate"><span class="pre">AdaBoostClassifier</span></code> with <strong>5</strong> different <code class="docutils literal notranslate"><span class="pre">DecisionTreeClassifiers</span></code>, each of which are shallow (i.e. <code class="docutils literal notranslate"><span class="pre">max_depth=2</span></code>). The <strong>error rate</strong> for each classifier determines the <strong>classifier’s weight</strong> in the final ensemble.</p>
+</section>
+<section id="gradient-boosting">
+<h2>Gradient boosting<a class="headerlink" href="#gradient-boosting" title="Link to this heading">#</a></h2>
+<p>While AdaBoost is a useful algorithm for learning about boosting, it is not the most computationally efficient or flexible. Nowadays, <strong>Gradient Boosting</strong> is much more popular. Gradient boosting also fits models sequentially but instead of re-weighting the mispredicted samples, it computes the <strong>residual errors</strong> between the actual and predicted samples and fits a new model to these residuals.</p>
+<a class="reference internal image-reference" href="../../_images/gradient-boosting.png"><img alt="../../_images/gradient-boosting.png" class="align-center" src="../../_images/gradient-boosting.png" style="width: 700px;" /></a>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.ensemble</span><span class="w"> </span><span class="kn">import</span> <span class="n">GradientBoostingClassifier</span>
+
+<span class="c1"># Initialize gradient boosting classifier</span>
+<span class="n">bclf</span> <span class="o">=</span> <span class="n">GradientBoostingClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="c1"># Fit</span>
+<span class="n">bclf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df_scaled</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Species&#39;</span><span class="p">])</span>
+
+<span class="c1"># Score</span>
+
+<span class="n">scores</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">bclf</span><span class="p">,</span> <span class="n">df_scaled</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Species&#39;</span><span class="p">],</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">model_name</span> <span class="o">=</span> <span class="n">bclf</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The testing accuracy using a </span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The testing accuracy using a GradientBoostingClassifier is 0.982
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bclf</span><span class="o">.</span><span class="n">get_params</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;ccp_alpha&#39;: 0.0,
+ &#39;criterion&#39;: &#39;friedman_mse&#39;,
+ &#39;init&#39;: None,
+ &#39;learning_rate&#39;: 0.1,
+ &#39;loss&#39;: &#39;log_loss&#39;,
+ &#39;max_depth&#39;: 3,
+ &#39;max_features&#39;: None,
+ &#39;max_leaf_nodes&#39;: None,
+ &#39;min_impurity_decrease&#39;: 0.0,
+ &#39;min_samples_leaf&#39;: 1,
+ &#39;min_samples_split&#39;: 2,
+ &#39;min_weight_fraction_leaf&#39;: 0.0,
+ &#39;n_estimators&#39;: 100,
+ &#39;n_iter_no_change&#39;: None,
+ &#39;random_state&#39;: 42,
+ &#39;subsample&#39;: 1.0,
+ &#39;tol&#39;: 0.0001,
+ &#39;validation_fraction&#39;: 0.1,
+ &#39;verbose&#39;: 0,
+ &#39;warm_start&#39;: False}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Gradient boosting is also useful for regression. Here we apply a <code class="docutils literal notranslate"><span class="pre">GradientBoostingRegressor</span></code> to predict house prices. The plot below is a <strong>learning curve</strong> (or loss curve) that shows how the model’s performance improves as we increase the number of estimators in the ensemble. The performance improves rapidly to begin with since the base estimator is a <strong>weak learner</strong> and residuals are large and easy to learn. But as the residuals become smaller and smaller, newer models provide less of an improvement and the performance starts to plateau.</p>
+<p>This idea of fitting new weak learners to the <strong>negative gradient of the loss function</strong> explains why this class of models are called <strong>gradient boosting algorithms</strong>. By predicting the gradient, the new learners compute the direction <strong>and</strong> magnitude of adjustment needed to reduce the loss.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.ensemble</span><span class="w"> </span><span class="kn">import</span> <span class="n">GradientBoostingRegressor</span>
+
+<span class="c1"># Initialize gradient boosting regressor</span>
+<span class="n">breg</span> <span class="o">=</span> <span class="n">GradientBoostingRegressor</span><span class="p">()</span>
+
+<span class="n">n_estimators</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">disp</span> <span class="o">=</span> <span class="n">ValidationCurveDisplay</span><span class="o">.</span><span class="n">from_estimator</span><span class="p">(</span>
+    <span class="n">breg</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">param_name</span><span class="o">=</span><span class="s2">&quot;n_estimators&quot;</span><span class="p">,</span> <span class="n">param_range</span><span class="o">=</span><span class="n">n_estimators</span><span class="p">,</span>
+    <span class="n">scoring</span><span class="o">=</span><span class="s2">&quot;neg_mean_absolute_error&quot;</span><span class="p">,</span> <span class="n">negate_score</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">std_display_style</span><span class="o">=</span><span class="s2">&quot;errorbar&quot;</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">disp</span><span class="o">.</span><span class="n">ax_</span><span class="o">.</span><span class="n">set</span><span class="p">(</span>
+    <span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;Number of estimators&quot;</span><span class="p">,</span>
+    <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;Mean absolute error (k$)&quot;</span><span class="p">,)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">48</span><span class="p">],</span> <span class="n">line</span> <span class="mi">7</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">breg</span> <span class="o">=</span> <span class="n">GradientBoostingRegressor</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">n_estimators</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">disp</span> <span class="o">=</span> <span class="n">ValidationCurveDisplay</span><span class="o">.</span><span class="n">from_estimator</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="n">breg</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">param_name</span><span class="o">=</span><span class="s2">&quot;n_estimators&quot;</span><span class="p">,</span> <span class="n">param_range</span><span class="o">=</span><span class="n">n_estimators</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="n">scoring</span><span class="o">=</span><span class="s2">&quot;neg_mean_absolute_error&quot;</span><span class="p">,</span> <span class="n">negate_score</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">std_display_style</span><span class="o">=</span><span class="s2">&quot;errorbar&quot;</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">_</span> <span class="o">=</span> <span class="n">disp</span><span class="o">.</span><span class="n">ax_</span><span class="o">.</span><span class="n">set</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span>     <span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;Number of estimators&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>     <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;Mean absolute error (k$)&quot;</span><span class="p">,)</span>
+
+<span class="nn">File /opt/miniconda3/envs/book/lib/python3.12/site-packages/sklearn/model_selection/_plot.py:846,</span> in <span class="ni">ValidationCurveDisplay.from_estimator</span><span class="nt">(cls, estimator, X, y, param_name, param_range, groups, cv, scoring, n_jobs, pre_dispatch, verbose, error_score, fit_params, ax, negate_score, score_name, score_type, std_display_style, line_kw, fill_between_kw, errorbar_kw)</span>
+<span class="g g-Whitespace">    </span><span class="mi">842</span> <span class="n">check_matplotlib_support</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">cls</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">.from_estimator&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">844</span> <span class="n">score_name</span> <span class="o">=</span> <span class="n">_validate_score_name</span><span class="p">(</span><span class="n">score_name</span><span class="p">,</span> <span class="n">scoring</span><span class="p">,</span> <span class="n">negate_score</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">846</span> <span class="n">train_scores</span><span class="p">,</span> <span class="n">test_scores</span> <span class="o">=</span> <span class="n">validation_curve</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">847</span>     <span class="n">estimator</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">848</span>     <span class="n">X</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">849</span>     <span class="n">y</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">850</span>     <span class="n">param_name</span><span class="o">=</span><span class="n">param_name</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">851</span>     <span class="n">param_range</span><span class="o">=</span><span class="n">param_range</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">852</span>     <span class="n">groups</span><span class="o">=</span><span class="n">groups</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">853</span>     <span class="n">cv</span><span class="o">=</span><span class="n">cv</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">854</span>     <span class="n">scoring</span><span class="o">=</span><span class="n">scoring</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">855</span>     <span class="n">n_jobs</span><span class="o">=</span><span class="n">n_jobs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">856</span>     <span class="n">pre_dispatch</span><span class="o">=</span><span class="n">pre_dispatch</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">857</span>     <span class="n">verbose</span><span class="o">=</span><span class="n">verbose</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">858</span>     <span class="n">error_score</span><span class="o">=</span><span class="n">error_score</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">859</span>     <span class="n">fit_params</span><span class="o">=</span><span class="n">fit_params</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">860</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">862</span> <span class="n">viz</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">863</span>     <span class="n">param_name</span><span class="o">=</span><span class="n">param_name</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">864</span>     <span class="n">param_range</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">param_range</span><span class="p">),</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">867</span>     <span class="n">score_name</span><span class="o">=</span><span class="n">score_name</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">868</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">869</span> <span class="k">return</span> <span class="n">viz</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">870</span>     <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">871</span>     <span class="n">negate_score</span><span class="o">=</span><span class="n">negate_score</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">876</span>     <span class="n">errorbar_kw</span><span class="o">=</span><span class="n">errorbar_kw</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">877</span> <span class="p">)</span>
+
+<span class="nn">File /opt/miniconda3/envs/book/lib/python3.12/site-packages/sklearn/utils/_param_validation.py:216,</span> in <span class="ni">validate_params.&lt;locals&gt;.decorator.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">210</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">211</span>     <span class="k">with</span> <span class="n">config_context</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">212</span>         <span class="n">skip_parameter_validation</span><span class="o">=</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">213</span>             <span class="n">prefer_skip_nested_validation</span> <span class="ow">or</span> <span class="n">global_skip_validation</span>
+<span class="g g-Whitespace">    </span><span class="mi">214</span>         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">215</span>     <span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">216</span>         <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">217</span> <span class="k">except</span> <span class="n">InvalidParameterError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">218</span>     <span class="c1"># When the function is just a wrapper around an estimator, we allow</span>
+<span class="g g-Whitespace">    </span><span class="mi">219</span>     <span class="c1"># the function to delegate validation to the estimator, but we replace</span>
+<span class="g g-Whitespace">    </span><span class="mi">220</span>     <span class="c1"># the name of the estimator by the name of the function in the error</span>
+<span class="g g-Whitespace">    </span><span class="mi">221</span>     <span class="c1"># message to avoid confusion.</span>
+<span class="g g-Whitespace">    </span><span class="mi">222</span>     <span class="n">msg</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">223</span>         <span class="sa">r</span><span class="s2">&quot;parameter of \w+ must be&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">224</span>         <span class="sa">f</span><span class="s2">&quot;parameter of </span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__qualname__</span><span class="si">}</span><span class="s2"> must be&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">225</span>         <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">226</span>     <span class="p">)</span>
+
+<span class="nn">File /opt/miniconda3/envs/book/lib/python3.12/site-packages/sklearn/model_selection/_validation.py:2493,</span> in <span class="ni">validation_curve</span><span class="nt">(estimator, X, y, param_name, param_range, groups, cv, scoring, n_jobs, pre_dispatch, verbose, error_score, fit_params, params)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2490</span>     <span class="n">routed_params</span><span class="o">.</span><span class="n">scorer</span> <span class="o">=</span> <span class="n">Bunch</span><span class="p">(</span><span class="n">score</span><span class="o">=</span><span class="p">{})</span>
+<span class="g g-Whitespace">   </span><span class="mi">2492</span> <span class="n">parallel</span> <span class="o">=</span> <span class="n">Parallel</span><span class="p">(</span><span class="n">n_jobs</span><span class="o">=</span><span class="n">n_jobs</span><span class="p">,</span> <span class="n">pre_dispatch</span><span class="o">=</span><span class="n">pre_dispatch</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="n">verbose</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">2493</span> <span class="n">results</span> <span class="o">=</span> <span class="n">parallel</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">2494</span>     <span class="n">delayed</span><span class="p">(</span><span class="n">_fit_and_score</span><span class="p">)(</span>
+<span class="g g-Whitespace">   </span><span class="mi">2495</span>         <span class="n">clone</span><span class="p">(</span><span class="n">estimator</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">2496</span>         <span class="n">X</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2497</span>         <span class="n">y</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2498</span>         <span class="n">scorer</span><span class="o">=</span><span class="n">scorer</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2499</span>         <span class="n">train</span><span class="o">=</span><span class="n">train</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2500</span>         <span class="n">test</span><span class="o">=</span><span class="n">test</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2501</span>         <span class="n">verbose</span><span class="o">=</span><span class="n">verbose</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2502</span>         <span class="n">parameters</span><span class="o">=</span><span class="p">{</span><span class="n">param_name</span><span class="p">:</span> <span class="n">v</span><span class="p">},</span>
+<span class="g g-Whitespace">   </span><span class="mi">2503</span>         <span class="n">fit_params</span><span class="o">=</span><span class="n">routed_params</span><span class="o">.</span><span class="n">estimator</span><span class="o">.</span><span class="n">fit</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2504</span>         <span class="n">score_params</span><span class="o">=</span><span class="n">routed_params</span><span class="o">.</span><span class="n">scorer</span><span class="o">.</span><span class="n">score</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2505</span>         <span class="n">return_train_score</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2506</span>         <span class="n">error_score</span><span class="o">=</span><span class="n">error_score</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2507</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2508</span>     <span class="c1"># NOTE do not change order of iteration to allow one time cv splitters</span>
+<span class="nn">   2509     for train, test</span> in <span class="ni">cv.split</span><span class="nt">(X, y, **routed_params.splitter.split)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2510</span>     <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">param_range</span>
+<span class="g g-Whitespace">   </span><span class="mi">2511</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2512</span> <span class="n">n_params</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">param_range</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2514</span> <span class="n">results</span> <span class="o">=</span> <span class="n">_aggregate_score_dicts</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+
+<span class="nn">File /opt/miniconda3/envs/book/lib/python3.12/site-packages/sklearn/utils/parallel.py:77,</span> in <span class="ni">Parallel.__call__</span><span class="nt">(self, iterable)</span>
+<span class="g g-Whitespace">     </span><span class="mi">72</span> <span class="n">config</span> <span class="o">=</span> <span class="n">get_config</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">73</span> <span class="n">iterable_with_config</span> <span class="o">=</span> <span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">74</span>     <span class="p">(</span><span class="n">_with_config</span><span class="p">(</span><span class="n">delayed_func</span><span class="p">,</span> <span class="n">config</span><span class="p">),</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">75</span>     <span class="k">for</span> <span class="n">delayed_func</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span> <span class="ow">in</span> <span class="n">iterable</span>
+<span class="g g-Whitespace">     </span><span class="mi">76</span> <span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">77</span> <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="n">iterable_with_config</span><span class="p">)</span>
+
+<span class="nn">File /opt/miniconda3/envs/book/lib/python3.12/site-packages/joblib/parallel.py:2007,</span> in <span class="ni">Parallel.__call__</span><span class="nt">(self, iterable)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2001</span> <span class="c1"># The first item from the output is blank, but it makes the interpreter</span>
+<span class="g g-Whitespace">   </span><span class="mi">2002</span> <span class="c1"># progress until it enters the Try/Except block of the generator and</span>
+<span class="g g-Whitespace">   </span><span class="mi">2003</span> <span class="c1"># reaches the first `yield` statement. This starts the asynchronous</span>
+<span class="g g-Whitespace">   </span><span class="mi">2004</span> <span class="c1"># dispatch of the tasks to the workers.</span>
+<span class="g g-Whitespace">   </span><span class="mi">2005</span> <span class="nb">next</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">2007</span> <span class="k">return</span> <span class="n">output</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">return_generator</span> <span class="k">else</span> <span class="nb">list</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+
+<span class="nn">File /opt/miniconda3/envs/book/lib/python3.12/site-packages/joblib/parallel.py:1650,</span> in <span class="ni">Parallel._get_outputs</span><span class="nt">(self, iterator, pre_dispatch)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1647</span>     <span class="k">yield</span>
+<span class="g g-Whitespace">   </span><span class="mi">1649</span>     <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span><span class="o">.</span><span class="n">retrieval_context</span><span class="p">():</span>
+<span class="ne">-&gt; </span><span class="mi">1650</span>         <span class="k">yield from</span> <span class="bp">self</span><span class="o">.</span><span class="n">_retrieve</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1652</span> <span class="k">except</span> <span class="ne">GeneratorExit</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1653</span>     <span class="c1"># The generator has been garbage collected before being fully</span>
+<span class="g g-Whitespace">   </span><span class="mi">1654</span>     <span class="c1"># consumed. This aborts the remaining tasks if possible and warn</span>
+<span class="g g-Whitespace">   </span><span class="mi">1655</span>     <span class="c1"># the user if necessary.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1656</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_exception</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="nn">File /opt/miniconda3/envs/book/lib/python3.12/site-packages/joblib/parallel.py:1762,</span> in <span class="ni">Parallel._retrieve</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1757</span> <span class="c1"># If the next job is not ready for retrieval yet, we just wait for</span>
+<span class="g g-Whitespace">   </span><span class="mi">1758</span> <span class="c1"># async callbacks to progress.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1759</span> <span class="k">if</span> <span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jobs</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span>
+<span class="g g-Whitespace">   </span><span class="mi">1760</span>     <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jobs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_status</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1761</span>         <span class="n">timeout</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">timeout</span><span class="p">)</span> <span class="o">==</span> <span class="n">TASK_PENDING</span><span class="p">)):</span>
+<span class="ne">-&gt; </span><span class="mi">1762</span>     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1763</span>     <span class="k">continue</span>
+<span class="g g-Whitespace">   </span><span class="mi">1765</span> <span class="c1"># We need to be careful: the job list can be filling up as</span>
+<span class="g g-Whitespace">   </span><span class="mi">1766</span> <span class="c1"># we empty it and Python list are not thread-safe by</span>
+<span class="g g-Whitespace">   </span><span class="mi">1767</span> <span class="c1"># default hence the use of the lock</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Gradient Boosting algorithms (e.g. <strong>XGBoost</strong>, <strong>CatBoost</strong>) have emerged as some of the most powerful and widely used methods for machine learning, often outperforming deep learning models. They consistently rank at the top of benchmark datasets and machine learning competitions, especially for tasks involving <strong>structured</strong> (i.e. tabular) data.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Aspect</p></th>
+<th class="head"><p><strong>Bagging</strong></p></th>
+<th class="head"><p><strong>Boosting</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Full name</strong></p></td>
+<td><p>Bootstrap Aggregating</p></td>
+<td><p>Adaptive Boosting</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Main goal</strong></p></td>
+<td><p>Reduce <strong>variance</strong> (i.e. overfitting)</p></td>
+<td><p>Reduce <strong>bias</strong> (i.e. underfitting)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Learning process</strong></p></td>
+<td><p>Models are trained <strong>independently and in parallel</strong></p></td>
+<td><p>Models are trained <strong>sequentially</strong>, each correcting the previous one</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Data sampling</strong></p></td>
+<td><p>Uses <strong>bootstrap samples</strong> (random sampling with replacement)</p></td>
+<td><p>Uses <strong>all data</strong>, but increases weight on misclassified data</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Base learners</strong></p></td>
+<td><p>Usually high-variance models (e.g. deep decision trees)</p></td>
+<td><p>Usually weak learners (e.g. shallow decision trees)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Model diversity</strong></p></td>
+<td><p>Comes from random sampling of data/features</p></td>
+<td><p>Comes from focusing on “hard” cases (errors or gradients)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Parallelization</strong></p></td>
+<td><p>Easy to parallelize (since learners are independent)</p></td>
+<td><p>Harder to parallelize (since each step depends on previous)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Famous algorithms</strong></p></td>
+<td><p>Random Forests</p></td>
+<td><p>AdaBoost, Gradient Boosting, XGBoost</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="acknowledgements">
+<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Link to this heading">#</a></h2>
+<p>Machine learning in Python with scikit-learn MOOC <a class="reference external" href="https://zenodo.org/records/7220307">https://zenodo.org/records/7220307</a> and <a class="reference external" href="https://inria.github.io/scikit-learn-mooc/index.html">https://inria.github.io/scikit-learn-mooc/index.html</a>.</p>
+<p>Machine Learning for Intelligent Systems lecture notes <a class="reference external" href="https://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/">https://www.cs.cornell.edu/courses/cs4780/2018fa/lectures/</a></p>
 </section>
 </section>
 
@@ -2248,21 +2897,28 @@ Number of leaves: 14840
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-vocabularly">Some vocabularly</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-learning">Supervised learning</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unsupervised-learning">Unsupervised learning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reinforcement-learning">Reinforcement learning</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classification">Classification</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regression">Regression</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clustering">Clustering</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-our-dataset">Exploring our dataset</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-scaling">Feature scaling</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#split-data-in-training-and-testing-subsets">Split data in training and testing subsets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-and-testing-subsets">Training and testing subsets</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fitting-our-first-model">Fitting our first model</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#confusion-matrix">Confusion matrix</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-validation">Cross-validation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-models">Other models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-tree-classifier">Decision Tree Classifier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loss-functions">Loss functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters">Parameters</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overfitting-and-underfitting">Overfitting and underfitting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hyperparameter-tuning">Hyperparameter tuning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#another-example-california-house-prices">Another example - California House Prices</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#noise">Noise</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-curves">Learning curves</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">Further reading</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ensembles">Ensembles</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bagging">Bagging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boosting">Boosting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gradient-boosting">Gradient boosting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgements">Acknowledgements</a></li>
 </ul>
   </nav></div>
 
