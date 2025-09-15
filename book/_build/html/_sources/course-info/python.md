@@ -6,7 +6,7 @@ In order to execute Python code for completing assignments, we will need to inst
 
 ## Install Miniconda
 
-The latest version of Miniconda for your operating system can be installed from the [dowload page](https://www.anaconda.com/download/success).
+The latest version of Miniconda for your operating system can be installed from the [download page](https://www.anaconda.com/download/success).
 
 ## Test installation
 
