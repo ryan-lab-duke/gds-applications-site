@@ -18,31 +18,34 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-from tensorflow.keras import layers, models
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
+from sklearn.preprocessing import StandardScaler
+import tensorflow as tf
 
-# Define shape of training data
-input_dim = X_train.shape[1]
+# Set seed value
+tf.random.set_seed(0)
 
-# Define neural network architecture
-model = models.Sequential([
-    layers.Input(shape=(input_dim,)),
-    layers.Dense(32, activation='relu'), 
-    layers.Dense(32, activation='relu'),
-    layers.Dense(32, activation='relu'),
-    layers.Dense(1)
-])
+# Read data
+df = pd.read_csv('data/nisqually.csv', parse_dates=['Date'], index_col=['Date'])
 
-# Show model summary
-model.summary()
+# Define feature list
+feature_list =  df.columns.to_list()[:-1]
+X = df[feature_list]
+y = df['Nisqually Discharge']
 ------------------
 
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Cell [0;32mIn[3], line 1[0m
-[0;32m----> 1[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mtensorflow[39;00m[38;5;21;01m.[39;00m[38;5;21;01mkeras[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m layers, models
-[1;32m      3[0m [38;5;66;03m# Define shape of training data[39;00m
-[1;32m      4[0m input_dim [38;5;241m=[39m X_train[38;5;241m.[39mshape[[38;5;241m1[39m]
+Cell [0;32mIn[1], line 6[0m
+[1;32m      4[0m [38;5;28;01mimport[39;00m[38;5;250m [39m[38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mdates[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[38;5;21;01mmdates[39;00m
+[1;32m      5[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01msklearn[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpreprocessing[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m StandardScaler
+[0;32m----> 6[0m [38;5;28;01mimport[39;00m[38;5;250m [39m[38;5;21;01mtensorflow[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[38;5;21;01mtf[39;00m
+[1;32m      8[0m [38;5;66;03m# Set seed value[39;00m
+[1;32m      9[0m tf[38;5;241m.[39mrandom[38;5;241m.[39mset_seed([38;5;241m0[39m)
 
 [0;31mModuleNotFoundError[0m: No module named 'tensorflow'
 
