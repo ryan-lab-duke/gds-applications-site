@@ -79,7 +79,7 @@ Reproject the owl dataset to the same CRS as the fires dataset.
 
 ```{admonition} Click to reveal hint
 :class: tip, dropdown
-The easiest way to reproject is to use an EPSG code which can be found [here](https://epsg.io/32610).
+The easiest way to reproject is to use an EPSG code which can be found [here](https://epsg.io/32617).
 ```
 
 * e) Make a new column called `pairs` which has a value of `1` if there are **both** male and female owls in that location. 

@@ -19,7 +19,7 @@ Traceback (most recent call last):
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
 # Convert shapefile to graph
-hghway = gpd.read_file("/Users/jr555/Downloads/tl_2023_37_prisecroads/tl_2023_37_prisecroads.shp")
+hghway = gpd.read_file("/Users/jr555/Downloads/State_Maintained_Roads_-_Interstates/State_Maintained_Roads_-_Interstates.shp")
 hghway = hghway.to_crs('EPSG:32617')
 graph = momepy.gdf_to_nx(hghway, approach="primal", directed=True)
 ------------------
@@ -29,7 +29,7 @@ graph = momepy.gdf_to_nx(hghway, approach="primal", directed=True)
 [0;31mDataSourceError[0m                           Traceback (most recent call last)
 Cell [0;32mIn[2], line 2[0m
 [1;32m      1[0m [38;5;66;03m# Convert shapefile to graph[39;00m
-[0;32m----> 2[0m hghway [38;5;241m=[39m [43mgpd[49m[38;5;241;43m.[39;49m[43mread_file[49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43m/Users/jr555/Downloads/tl_2023_37_prisecroads/tl_2023_37_prisecroads.shp[39;49m[38;5;124;43m"[39;49m[43m)[49m
+[0;32m----> 2[0m hghway [38;5;241m=[39m [43mgpd[49m[38;5;241;43m.[39;49m[43mread_file[49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43m/Users/jr555/Downloads/State_Maintained_Roads_-_Interstates/State_Maintained_Roads_-_Interstates.shp[39;49m[38;5;124;43m"[39;49m[43m)[49m
 [1;32m      3[0m hghway [38;5;241m=[39m hghway[38;5;241m.[39mto_crs([38;5;124m'[39m[38;5;124mEPSG:32617[39m[38;5;124m'[39m)
 [1;32m      4[0m graph [38;5;241m=[39m momepy[38;5;241m.[39mgdf_to_nx(hghway, approach[38;5;241m=[39m[38;5;124m"[39m[38;5;124mprimal[39m[38;5;124m"[39m, directed[38;5;241m=[39m[38;5;28;01mTrue[39;00m)
 
@@ -111,5 +111,5 @@ File [0;32mpyogrio/_io.pyx:1240[0m, in [0;36mpyogrio._io.ogr_read[0;34m()[0
 
 File [0;32mpyogrio/_io.pyx:220[0m, in [0;36mpyogrio._io.ogr_open[0;34m()[0m
 
-[0;31mDataSourceError[0m: /Users/jr555/Downloads/tl_2023_37_prisecroads/tl_2023_37_prisecroads.shp: No such file or directory
+[0;31mDataSourceError[0m: /Users/jr555/Downloads/State_Maintained_Roads_-_Interstates/State_Maintained_Roads_-_Interstates.shp: No such file or directory
 

@@ -203,15 +203,11 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 5</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../lectures/unit2/lecture-5.html">Machine learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../week5/assignment5.html">Assignment 5</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../week5/project-ideas.html">Project ideas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/unit2/lecture-5.html">Machine learning fundamentals</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 6</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../lectures/unit3/lecture-6.html">Code management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../week6/assignment6.html">Assignment 6</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../week6/activity6.html">Make a README</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 7</span></p>
 <ul class="nav bd-sidenav">
@@ -225,6 +221,11 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../lectures/unit4/lecture-9a.html">Visualization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../lectures/unit4/lecture-9b.html">Maps with data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../final-project/project-ideas.html">Project ideas</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 10</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../final-project/make-readme.html">Make a README</a></li>
 </ul>
 
     </div>
@@ -448,7 +449,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convert shapefile to graph</span>
-<span class="n">hghway</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;/Users/jr555/Downloads/tl_2023_37_prisecroads/tl_2023_37_prisecroads.shp&quot;</span><span class="p">)</span>
+<span class="n">hghway</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;/Users/jr555/Downloads/State_Maintained_Roads_-_Interstates/State_Maintained_Roads_-_Interstates.shp&quot;</span><span class="p">)</span>
 <span class="n">hghway</span> <span class="o">=</span> <span class="n">hghway</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="s1">&#39;EPSG:32617&#39;</span><span class="p">)</span>
 <span class="n">graph</span> <span class="o">=</span> <span class="n">momepy</span><span class="o">.</span><span class="n">gdf_to_nx</span><span class="p">(</span><span class="n">hghway</span><span class="p">,</span> <span class="n">approach</span><span class="o">=</span><span class="s2">&quot;primal&quot;</span><span class="p">,</span> <span class="n">directed</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
@@ -459,7 +460,7 @@
 <span class="ne">DataSourceError</span><span class="g g-Whitespace">                           </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Convert shapefile to graph</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">hghway</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;/Users/jr555/Downloads/tl_2023_37_prisecroads/tl_2023_37_prisecroads.shp&quot;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">hghway</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;/Users/jr555/Downloads/State_Maintained_Roads_-_Interstates/State_Maintained_Roads_-_Interstates.shp&quot;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">hghway</span> <span class="o">=</span> <span class="n">hghway</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="s1">&#39;EPSG:32617&#39;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">graph</span> <span class="o">=</span> <span class="n">momepy</span><span class="o">.</span><span class="n">gdf_to_nx</span><span class="p">(</span><span class="n">hghway</span><span class="p">,</span> <span class="n">approach</span><span class="o">=</span><span class="s2">&quot;primal&quot;</span><span class="p">,</span> <span class="n">directed</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
@@ -541,7 +542,7 @@
 
 <span class="nn">File pyogrio/_io.pyx:220,</span> in <span class="ni">pyogrio._io.ogr_open</span><span class="nt">()</span>
 
-<span class="ne">DataSourceError</span>: /Users/jr555/Downloads/tl_2023_37_prisecroads/tl_2023_37_prisecroads.shp: No such file or directory
+<span class="ne">DataSourceError</span>: /Users/jr555/Downloads/State_Maintained_Roads_-_Interstates/State_Maintained_Roads_-_Interstates.shp: No such file or directory
 </pre></div>
 </div>
 </div>
@@ -596,6 +597,15 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">edges</span> <span class="o">=</span> <span class="n">edges</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;mm_len&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
+<span class="n">edges</span> <span class="o">=</span> <span class="n">edges</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;node_start&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
+<span class="n">edges</span> <span class="o">=</span> <span class="n">edges</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;node_end&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convery back to graph</span>
 <span class="n">gdf</span> <span class="o">=</span> <span class="n">ox</span><span class="o">.</span><span class="n">graph_from_gdfs</span><span class="p">(</span><span class="n">nodes</span><span class="p">,</span> <span class="n">edges</span><span class="p">)</span>
 </pre></div>
@@ -619,7 +629,23 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/e39470d399122cf07d1b43d22195aab2403e6e5121e7bb8fc0b14689341b161a.png" src="../../_images/e39470d399122cf07d1b43d22195aab2403e6e5121e7bb8fc0b14689341b161a.png" />
+<img alt="../../_images/801e6dd709087e74e9f3248efcc78a653597419e5a47f24802764c458479fea6.png" src="../../_images/801e6dd709087e74e9f3248efcc78a653597419e5a47f24802764c458479fea6.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convert graph to gdf</span>
+<span class="n">nodes</span><span class="p">,</span> <span class="n">edges</span> <span class="o">=</span> <span class="n">momepy</span><span class="o">.</span><span class="n">nx_to_gdf</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span>
+<span class="n">nodes</span><span class="o">.</span><span class="n">to_file</span><span class="p">(</span><span class="s1">&#39;/Users/jr555/Downloads/test-nodes.shp&#39;</span><span class="p">)</span>
+<span class="n">edges</span><span class="o">.</span><span class="n">to_file</span><span class="p">(</span><span class="s1">&#39;/Users/jr555/Downloads/test-edges.shp&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/6m/lbbbs2n90xq6lk5v5902brkc0000gq/T/ipykernel_27338/97893460.py:2: UserWarning: Approach is not set. Defaulting to &#39;primal&#39;.
+  nodes, edges = momepy.nx_to_gdf(graph)
+</pre></div>
+</div>
 </div>
 </div>
 

@@ -40,24 +40,36 @@ parts:
   - caption: Week 5
     chapters:
     - file: lectures/unit2/lecture-5.ipynb
-    - file: labs/week5/assignment5.md
-    - file: labs/week5/project-ideas.md
 
   - caption: Week 6
     chapters:
-    - file: lectures/unit3/lecture-6.ipynb
+    - file: lectures/unit2/lecture-6a.ipynb
+    - file: lectures/unit2/lecture-6b.ipynb
     - file: labs/week6/assignment6.md
-    - file: labs/week6/activity6.md
 
   - caption: Week 7
     chapters:
-    - file: lectures/unit3/lecture-7.ipynb
+    - file: lectures/unit2/lecture-7.ipynb
 
   - caption: Week 8
     chapters:
-    - file: lectures/unit3/lecture-8.ipynb
+    - file: final-project/fall-break.md
 
   - caption: Week 9
     chapters:
-    - file: lectures/unit4/lecture-9a.ipynb
-    - file: lectures/unit4/lecture-9b.ipynb
+    - file: lectures/unit3/lecture-8.ipynb
+    - file: final-project/project-ideas.md
+
+  - caption: Week 10
+    chapters:
+    - file: lectures/unit3/lecture-9.ipynb
+    - file: final-project/make-readme.md
+
+  - caption: Week 11
+    chapters:
+    - file: lectures/unit3/lecture-10.ipynb
+
+  - caption: Week 12
+    chapters:
+    - file: lectures/unit4/lecture-11a.ipynb
+    - file: lectures/unit4/lecture-11b.ipynb

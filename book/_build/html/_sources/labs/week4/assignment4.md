@@ -1,6 +1,6 @@
 # Assignment 4
 
-Download the land cover data for this assignment from [here](https://www.dropbox.com/sh/ueleej8cr77kr2i/AACjQIouxEfUvo6A7ErSfgS0a?dl=0). The datasets are two National Land Cover Database (NLCD) products for Phoenix, AZ from 2001 and 2019. More information about the data can be found on the [Multi-Resolution Land Characteristics Consortium](https://www.mrlc.gov/data) wesbite.
+Download the land cover data for this assignment from [here](https://prodduke-my.sharepoint.com/:f:/g/personal/jr555_duke_edu/EiJFOoCPZAlOo1g6Uep8KpMBqHi_7aTqQ6i5MT0KNJb8sA?e=KMo9rV). The datasets are two National Land Cover Database (NLCD) products for Phoenix, AZ from 2001 and 2019. More information about the data can be found on the [Multi-Resolution Land Characteristics Consortium](https://www.mrlc.gov/data) wesbite.
 
 ```{image} images/phoenix.jpeg
 :width: 700px
@@ -71,7 +71,7 @@ The figure is from [van Vliet, J. (2019). Direct and indirect loss of natural ar
 
 *****************************
 
-In the second part of this assignment we will be anlyzing some climate data for the US in 2021. Download the data for the assignment from [here](https://www.dropbox.com/sh/ueleej8cr77kr2i/AACjQIouxEfUvo6A7ErSfgS0a?dl=0). The dataset contains gridded daily air temperature (K) and cloud cover (%) over the USA for 2021. `t2m` stands for 2 m above the surface, the standard height used by temperature sensors. It is a common metric used in climatology but note that it is different from the surface temperature which would be the temperature of the ground surface. 
+In the second part of this assignment we will be anlyzing some climate data for the US in 2021. Download the data for the assignment from [here](https://prodduke-my.sharepoint.com/:f:/g/personal/jr555_duke_edu/EiJFOoCPZAlOo1g6Uep8KpMBqHi_7aTqQ6i5MT0KNJb8sA?e=KMo9rV). The dataset contains gridded daily air temperature (K) and cloud cover (%) over the USA for 2021. `t2m` stands for 2 m above the surface, the standard height used by temperature sensors. It is a common metric used in climatology but note that it is different from the surface temperature which would be the temperature of the ground surface. 
 
 ```{image} images/clouds.jpg
 :width: 500px
@@ -88,15 +88,15 @@ Read the US climate data and answer the following questions:
 
 * b) List the northernmost, southernmost, eastermost, and westernmost coordinates of the dataset.
 
-* c) What was the **mean** air temperature (in F) and cloud cover (in %) of Eugene? 
+* c) What was the **mean** air temperature (in F) and cloud cover (in %) of Durham, NC? 
 
 ```{admonition} Click to reveal hint
 :class: tip, dropdown
-Right-click on Google Maps to record the approximate latitude and longitude of Eugene.
+Right-click on Google Maps to record the approximate latitude and longitude of Durham.
 ```
-* d) What day was the hottest and coldest in Eugene? 
+* d) What day was the hottest and coldest in Durham, NC? 
 
-* e) What day was the hottest and coldest in Florence, OR? 
+* e) What day was the hottest and coldest in San Francisco, CA? 
  
 *****************************
 
@@ -122,7 +122,7 @@ Copy and paste the lat/lons into Google Maps to find the location of these place
 
 ## Task 7 (5 points)
 
-* a) What was the mean air temperature (in F) and cloud cover (in %) in Florence, OR in **February**?
+* a) What was the mean air temperature (in F) and cloud cover (in %) in Boston, MA in **February**?
 
 * b) What was the air temperature (in F) and cloud cover (in %) in Phoenix, AZ on **July 16**?
 
