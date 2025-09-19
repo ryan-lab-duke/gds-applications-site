@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -63,7 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'activities/week5/wine-activity';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Machine learning applications" href="../../lectures/unit2/lecture-6a.html" />
+    <link rel="next" title="Assignment 5" href="../../labs/week5/assignment5.html" />
     <link rel="prev" title="Machine learning fundamentals" href="../../lectures/unit2/lecture-5.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -181,19 +181,19 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../lectures/unit1/lecture-1.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../labs/week1/assignment1.html">Assignment 1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../week1/activity-01.html">Activity 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week1/activity-01.html">Rivers of the World Activity</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 2</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../lectures/unit1/lecture-2.html">Vector data analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../labs/week2/assignment2.html">Assignment 2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../week2/activity-02.html">Activity 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week2/activity-02.html">Residential Flooding Activity</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 3</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../lectures/unit1/lecture-3.html">Network data analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../labs/week3/assignment3.html">Assignment 3</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../week3/activity-03.html">Activity 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week3/activity-03.html">Census Activity</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 4</span></p>
 <ul class="nav bd-sidenav">
@@ -205,13 +205,11 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../lectures/unit2/lecture-5.html">Machine learning fundamentals</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Wine activity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labs/week5/assignment5.html">Assignment 5</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 6</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../lectures/unit2/lecture-6a.html">Machine learning applications</a></li>
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="../../lectures/unit2/lecture-6b.html">Neural networks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../labs/week6/assignment6.html">Assignment 6</a></li>
 </ul>
@@ -452,7 +450,7 @@
 <h1>Wine activity<a class="headerlink" href="#wine-activity" title="Link to this heading">#</a></h1>
 <section id="background">
 <h2>Background<a class="headerlink" href="#background" title="Link to this heading">#</a></h2>
-<p>In this activity, we will practice some machine learning using the wine dataset. Download the two csv files from <a class="reference external" href="https://prodduke-my.sharepoint.com/:f:/g/personal/jr555_duke_edu/Eu8mGsF_wNBGpcAiRJou5pkBtFIvDh5lyecepsdYCeTlrQ?e=TCOkVn">here</a>.</p>
+<p>In this activity, we will practice some machine learning using the wine dataset. Download the data from <a class="reference external" href="https://prodduke-my.sharepoint.com/:f:/g/personal/jr555_duke_edu/Eu8mGsF_wNBGpcAiRJou5pkBtFIvDh5lyecepsdYCeTlrQ?e=TCOkVn">here</a>.</p>
 <a class="reference internal image-reference" href="../../_images/wine.png"><img alt="../../_images/wine.png" class="align-center" src="../../_images/wine.png" style="width: 500px;" /></a>
 <p>The data provides 13 compostional features for 158 wines grown in the same region in Italy by three different cultivators. The goal is to use these features to determine which of three cultivators the wine belongs to (class 0, 1, or 2).</p>
 <hr class="docutils" />
@@ -523,8 +521,8 @@
 </ul>
 <p>Make a plot showing how testing and training error changes as <code class="docutils literal notranslate"><span class="pre">max_depth</span></code> is increased from 1 to 5.</p>
 <ul class="simple">
-<li><p>At what <code class="docutils literal notranslate"><span class="pre">max_depth</span></code> does training error become 0?</p></li>
-<li><p>At what <code class="docutils literal notranslate"><span class="pre">max_depth</span></code> does testing error become 0?</p></li>
+<li><p>At what <code class="docutils literal notranslate"><span class="pre">max_depth</span></code> does <strong>training error</strong> become 0?</p></li>
+<li><p>At what <code class="docutils literal notranslate"><span class="pre">max_depth</span></code> does <strong>testing error</strong> become 0?</p></li>
 <li><p>Which do you think is the <strong>best</strong> model and explain why.</p></li>
 </ul>
 <hr class="docutils" />
@@ -575,11 +573,11 @@
       </div>
     </a>
     <a class="right-next"
-       href="../../lectures/unit2/lecture-6a.html"
+       href="../../labs/week5/assignment5.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Machine learning applications</p>
+        <p class="prev-next-title">Assignment 5</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

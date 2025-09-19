@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -64,7 +64,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Neural networks" href="lecture-6b.html" />
-    <link rel="prev" title="Wine activity" href="../../activities/week5/wine-activity.html" />
+    <link rel="prev" title="Assignment 5" href="../../labs/week5/assignment5.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -181,19 +181,19 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../unit1/lecture-1.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../labs/week1/assignment1.html">Assignment 1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../activities/week1/activity-01.html">Activity 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../activities/week1/activity-01.html">Rivers of the World Activity</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 2</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../unit1/lecture-2.html">Vector data analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../labs/week2/assignment2.html">Assignment 2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../activities/week2/activity-02.html">Activity 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../activities/week2/activity-02.html">Residential Flooding Activity</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 3</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../unit1/lecture-3.html">Network data analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../labs/week3/assignment3.html">Assignment 3</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../activities/week3/activity-03.html">Activity 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../activities/week3/activity-03.html">Census Activity</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 4</span></p>
 <ul class="nav bd-sidenav">
@@ -205,13 +205,11 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="lecture-5.html">Machine learning fundamentals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../activities/week5/wine-activity.html">Wine activity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labs/week5/assignment5.html">Assignment 5</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 6</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Machine learning applications</a></li>
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="lecture-6b.html">Neural networks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../labs/week6/assignment6.html">Assignment 6</a></li>
 </ul>
@@ -433,17 +431,14 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Machine learning applications</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#image-classification">Image classification</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read-data">Read data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#true-color-skysat-image">True color SkySat image</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-training-dataset">Import training dataset</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-training-dataset">Explore training dataset</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scale-features">Scale features</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fit-model">Fit model</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluate">Evaluate</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fit-model">Fit model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluate">Evaluate</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#confusion-matrix">Confusion matrix</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classify-whole-image">Classify whole image</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#river-discharge-prediction">River discharge prediction</a></li>
@@ -451,11 +446,8 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Scale features</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#split-training-and-testing-data">Split training and testing data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Fit model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot">Plot</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plot">Plot</a></li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -979,9 +971,8 @@ Name: count, dtype: int64
 </div></div></div>
 </div>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="fit-model">
-<h1>Fit model<a class="headerlink" href="#fit-model" title="Link to this heading">#</a></h1>
+<section id="fit-model">
+<h2>Fit model<a class="headerlink" href="#fit-model" title="Link to this heading">#</a></h2>
 <p>Now that our training data is scaled, we can fit our classifier. We will start with a <code class="docutils literal notranslate"><span class="pre">RandomForestClassifier</span></code> and use <strong>“out-of-bag” scoring</strong> to evaluate the model’s performance on unseen data without requiring us to generate a separate validation dataset.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1005,8 +996,8 @@ Name: count, dtype: int64
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="evaluate">
-<h1>Evaluate<a class="headerlink" href="#evaluate" title="Link to this heading">#</a></h1>
+<section id="evaluate">
+<h2>Evaluate<a class="headerlink" href="#evaluate" title="Link to this heading">#</a></h2>
 <p>We can predict the class probabilities for the “out-of-bag” samples using the <code class="docutils literal notranslate"><span class="pre">oob_decision_function_</span></code>. Once we have those predictions, we can compare them to the actual class values and generate a confusion matrix.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1029,6 +1020,7 @@ Name: count, dtype: int64
 <img alt="../../_images/8de19ff321b01914d8f22e177a9b60a8454a1b28143d50d5fae147144928adf4.png" src="../../_images/8de19ff321b01914d8f22e177a9b60a8454a1b28143d50d5fae147144928adf4.png" />
 </div>
 </div>
+</section>
 <section id="confusion-matrix">
 <h2>Confusion matrix<a class="headerlink" href="#confusion-matrix" title="Link to this heading">#</a></h2>
 <p>There is a lot of information that can be understood from a confusion matrix, even though it only contains four numbers for a binary classification.</p>
@@ -1114,7 +1106,7 @@ Name: count, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/875fc83667457273f57ca75615d151026b757efb4e678ff2f9c79f4cc009e371.png" src="../../_images/875fc83667457273f57ca75615d151026b757efb4e678ff2f9c79f4cc009e371.png" />
+<img alt="../../_images/aa674496a4bfc5e2467d607d0519ca9206922e0be2e4603e5d5042a8a062e6d4.png" src="../../_images/aa674496a4bfc5e2467d607d0519ca9206922e0be2e4603e5d5042a8a062e6d4.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1293,9 +1285,8 @@ Name: Nisqually Discharge, dtype: float64
 </div>
 </div>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="plot">
-<h1>Plot<a class="headerlink" href="#plot" title="Link to this heading">#</a></h1>
+<section id="plot">
+<h2>Plot<a class="headerlink" href="#plot" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot</span>
@@ -1311,13 +1302,14 @@ Name: Nisqually Discharge, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x31bf32ae0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x16d779700&gt;
 </pre></div>
 </div>
 <img alt="../../_images/24b39634803472c66322c71f5cce198bbcc98497bf620e0d5d877d782af1659a.png" src="../../_images/24b39634803472c66322c71f5cce198bbcc98497bf620e0d5d877d782af1659a.png" />
 </div>
 </div>
 <p>We notice that the predicted discharge captures general patterns from high to low to high again. But it’s missing peaks in the discharge and it’s a also a little jagged, likely because it treats observations as independent. We are approaching the limits of conventional machine learning algorithms which cannot explicitly model temporal dependencies. For that, we need a different approach: neural networks.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1351,12 +1343,12 @@ Name: Nisqually Discharge, dtype: float64
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../../activities/week5/wine-activity.html"
+       href="../../labs/week5/assignment5.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Wine activity</p>
+        <p class="prev-next-title">Assignment 5</p>
       </div>
     </a>
     <a class="right-next"
@@ -1385,17 +1377,14 @@ Name: Nisqually Discharge, dtype: float64
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Machine learning applications</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#image-classification">Image classification</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read-data">Read data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#true-color-skysat-image">True color SkySat image</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-training-dataset">Import training dataset</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-training-dataset">Explore training dataset</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scale-features">Scale features</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fit-model">Fit model</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluate">Evaluate</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fit-model">Fit model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluate">Evaluate</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#confusion-matrix">Confusion matrix</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classify-whole-image">Classify whole image</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#river-discharge-prediction">River discharge prediction</a></li>
@@ -1403,11 +1392,8 @@ Name: Nisqually Discharge, dtype: float64
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Scale features</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#split-training-and-testing-data">Split training and testing data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Fit model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot">Plot</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plot">Plot</a></li>
-</ul>
-
   </nav></div>
 
 </div></div>

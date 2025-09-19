@@ -1,6 +1,4 @@
-# Activity 3
-
-## Census data
+# Census Activity
 
 In this activity, we will be downloading our own data! 
 
