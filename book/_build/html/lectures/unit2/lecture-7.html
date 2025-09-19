@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -181,19 +181,19 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../unit1/lecture-1.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../labs/week1/assignment1.html">Assignment 1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../activities/week1/activity-01.html">Activity 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../activities/week1/activity-01.html">Rivers of the World Activity</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 2</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../unit1/lecture-2.html">Vector data analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../labs/week2/assignment2.html">Assignment 2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../activities/week2/activity-02.html">Activity 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../activities/week2/activity-02.html">Residential Flooding Activity</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 3</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../unit1/lecture-3.html">Network data analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../labs/week3/assignment3.html">Assignment 3</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../activities/week3/activity-03.html">Activity 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../activities/week3/activity-03.html">Census Activity</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 4</span></p>
 <ul class="nav bd-sidenav">
@@ -205,13 +205,11 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="lecture-5.html">Machine learning fundamentals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../activities/week5/wine-activity.html">Wine activity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labs/week5/assignment5.html">Assignment 5</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 6</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="lecture-6a.html">Machine learning applications</a></li>
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="lecture-6b.html">Neural networks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../labs/week6/assignment6.html">Assignment 6</a></li>
 </ul>
@@ -538,6 +536,7 @@ Name: fraction, Length: 100, dtype: float64
 <h2>Segmentation vs. classification<a class="headerlink" href="#segmentation-vs-classification" title="Link to this heading">#</a></h2>
 <p>Given our previous experience with this task, our first intuition might be to classify every pixel in the tile as water or non-water, then sume the number of water pixels. This would be called <strong>semantic segmentation</strong> and it is a perfectly reasonable approach. However, since our goal is just to quantify how much water is in every tile, that might be overkill.</p>
 <p>Instead, we are just going to predict a single label (a continuous value between 0 and 1) for every tile. This kind of task is (perhaps confusingly) called <strong>image classification</strong> in computer science. What we’re doing is therefore similar to other image recognition tasks where the model processes an image and assigns a single categorical label (e.g. dog, cat, car).</p>
+<a class="reference internal image-reference" href="../../_images/hierarchy.png"><img alt="../../_images/hierarchy.png" class="align-center" src="../../_images/hierarchy.png" style="width: 800px;" /></a>
 </section>
 <section id="architecture">
 <h2>Architecture<a class="headerlink" href="#architecture" title="Link to this heading">#</a></h2>
