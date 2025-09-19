@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -64,7 +64,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Neural networks" href="lecture-6b.html" />
-    <link rel="prev" title="Machine learning fundamentals" href="lecture-5.html" />
+    <link rel="prev" title="Wine activity" href="../../activities/week5/wine-activity.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -204,6 +204,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 5</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="lecture-5.html">Machine learning fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../activities/week5/wine-activity.html">Wine activity</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 6</span></p>
 <ul class="current nav bd-sidenav">
@@ -224,7 +225,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 9</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../unit3/lecture-8.html">Automating raster analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit3/lecture-8.html">Data access</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../final-project/project-ideas.html">Project ideas</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 10</span></p>
@@ -599,40 +600,40 @@
       <th>0</th>
       <td>175</td>
       <td>175</td>
-      <td>175</td>
-      <td>175</td>
+      <td>188</td>
+      <td>191</td>
       <td>1</td>
     </tr>
     <tr>
       <th>1</th>
       <td>176</td>
-      <td>176</td>
-      <td>176</td>
-      <td>176</td>
+      <td>175</td>
+      <td>189</td>
+      <td>193</td>
       <td>1</td>
     </tr>
     <tr>
       <th>2</th>
       <td>177</td>
-      <td>177</td>
-      <td>177</td>
-      <td>177</td>
+      <td>176</td>
+      <td>190</td>
+      <td>195</td>
       <td>1</td>
     </tr>
     <tr>
       <th>3</th>
       <td>180</td>
-      <td>180</td>
-      <td>180</td>
-      <td>180</td>
+      <td>179</td>
+      <td>192</td>
+      <td>199</td>
       <td>1</td>
     </tr>
     <tr>
       <th>4</th>
       <td>178</td>
-      <td>178</td>
-      <td>178</td>
-      <td>178</td>
+      <td>177</td>
+      <td>188</td>
+      <td>195</td>
       <td>1</td>
     </tr>
   </tbody>
@@ -677,17 +678,17 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 18184 entries, 0 to 18183
+RangeIndex: 4546 entries, 0 to 4545
 Data columns (total 5 columns):
  #   Column  Non-Null Count  Dtype
 ---  ------  --------------  -----
- 0   band1   18184 non-null  int64
- 1   band2   18184 non-null  int64
- 2   band3   18184 non-null  int64
- 3   band4   18184 non-null  int64
- 4   labels  18184 non-null  int64
+ 0   band1   4546 non-null   int64
+ 1   band2   4546 non-null   int64
+ 2   band3   4546 non-null   int64
+ 3   band4   4546 non-null   int64
+ 4   labels  4546 non-null   int64
 dtypes: int64(5)
-memory usage: 710.4 KB
+memory usage: 177.7 KB
 </pre></div>
 </div>
 </div>
@@ -701,8 +702,8 @@ memory usage: 710.4 KB
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>labels
-1    11948
-2     6236
+1    2987
+2    1559
 Name: count, dtype: int64
 </pre></div>
 </div>
@@ -750,17 +751,17 @@ Name: count, dtype: int64
   <tbody>
     <tr>
       <th>1</th>
-      <td>135.788919</td>
-      <td>135.788919</td>
-      <td>135.788919</td>
-      <td>135.788919</td>
+      <td>130.431202</td>
+      <td>126.264145</td>
+      <td>139.762638</td>
+      <td>146.697690</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>50.293137</td>
-      <td>50.293137</td>
-      <td>50.293137</td>
-      <td>50.293137</td>
+      <td>86.089801</td>
+      <td>62.787684</td>
+      <td>37.041052</td>
+      <td>15.254009</td>
     </tr>
   </tbody>
 </table>
@@ -802,65 +803,65 @@ Name: count, dtype: int64
   <tbody>
     <tr>
       <th>count</th>
-      <td>18184.000000</td>
-      <td>18184.000000</td>
-      <td>18184.000000</td>
-      <td>18184.000000</td>
-      <td>18184.000000</td>
+      <td>4546.000000</td>
+      <td>4546.000000</td>
+      <td>4546.000000</td>
+      <td>4546.000000</td>
+      <td>4546.000000</td>
     </tr>
     <tr>
       <th>mean</th>
-      <td>106.469094</td>
-      <td>106.469094</td>
-      <td>106.469094</td>
-      <td>106.469094</td>
+      <td>115.224813</td>
+      <td>104.495601</td>
+      <td>104.535416</td>
+      <td>101.620546</td>
       <td>1.342939</td>
     </tr>
     <tr>
       <th>std</th>
-      <td>56.379966</td>
-      <td>56.379966</td>
-      <td>56.379966</td>
-      <td>56.379966</td>
-      <td>0.474704</td>
+      <td>41.548461</td>
+      <td>48.459232</td>
+      <td>60.392400</td>
+      <td>69.908928</td>
+      <td>0.474743</td>
     </tr>
     <tr>
       <th>min</th>
-      <td>2.000000</td>
-      <td>2.000000</td>
-      <td>2.000000</td>
+      <td>39.000000</td>
+      <td>21.000000</td>
+      <td>6.000000</td>
       <td>2.000000</td>
       <td>1.000000</td>
     </tr>
     <tr>
       <th>25%</th>
-      <td>68.000000</td>
-      <td>68.000000</td>
-      <td>68.000000</td>
-      <td>68.000000</td>
+      <td>76.000000</td>
+      <td>66.000000</td>
+      <td>75.250000</td>
+      <td>16.000000</td>
       <td>1.000000</td>
     </tr>
     <tr>
       <th>50%</th>
+      <td>112.000000</td>
+      <td>106.000000</td>
       <td>111.000000</td>
-      <td>111.000000</td>
-      <td>111.000000</td>
-      <td>111.000000</td>
+      <td>118.000000</td>
       <td>1.000000</td>
     </tr>
     <tr>
       <th>75%</th>
-      <td>153.000000</td>
-      <td>153.000000</td>
-      <td>153.000000</td>
-      <td>153.000000</td>
+      <td>152.000000</td>
+      <td>147.000000</td>
+      <td>159.000000</td>
+      <td>167.000000</td>
       <td>2.000000</td>
     </tr>
     <tr>
       <th>max</th>
-      <td>206.000000</td>
-      <td>206.000000</td>
-      <td>206.000000</td>
+      <td>199.000000</td>
+      <td>197.000000</td>
+      <td>205.000000</td>
       <td>206.000000</td>
       <td>2.000000</td>
     </tr>
@@ -871,7 +872,7 @@ Name: count, dtype: int64
 </section>
 <section id="scale-features">
 <h2>Scale features<a class="headerlink" href="#scale-features" title="Link to this heading">#</a></h2>
-<p>Even if it might not that much for some classifiers, it’s good practice to scale our features.</p>
+<p>Even if it might not matter that much for some classifiers, it’s good practice to scale our features.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">StandardScaler</span>
@@ -919,59 +920,59 @@ Name: count, dtype: int64
   <tbody>
     <tr>
       <th>count</th>
-      <td>1.818400e+04</td>
-      <td>1.818400e+04</td>
-      <td>1.818400e+04</td>
-      <td>1.818400e+04</td>
+      <td>4.546000e+03</td>
+      <td>4.546000e+03</td>
+      <td>4.546000e+03</td>
+      <td>4.546000e+03</td>
     </tr>
     <tr>
       <th>mean</th>
-      <td>-2.500810e-17</td>
-      <td>-2.500810e-17</td>
-      <td>-2.500810e-17</td>
-      <td>-2.500810e-17</td>
+      <td>1.250405e-16</td>
+      <td>2.500810e-17</td>
+      <td>-5.001621e-17</td>
+      <td>-5.001621e-17</td>
     </tr>
     <tr>
       <th>std</th>
-      <td>1.000027e+00</td>
-      <td>1.000027e+00</td>
-      <td>1.000027e+00</td>
-      <td>1.000027e+00</td>
+      <td>1.000110e+00</td>
+      <td>1.000110e+00</td>
+      <td>1.000110e+00</td>
+      <td>1.000110e+00</td>
     </tr>
     <tr>
       <th>min</th>
-      <td>-1.852998e+00</td>
-      <td>-1.852998e+00</td>
-      <td>-1.852998e+00</td>
-      <td>-1.852998e+00</td>
+      <td>-1.834802e+00</td>
+      <td>-1.723197e+00</td>
+      <td>-1.631766e+00</td>
+      <td>-1.425161e+00</td>
     </tr>
     <tr>
       <th>25%</th>
-      <td>-6.823373e-01</td>
-      <td>-6.823373e-01</td>
-      <td>-6.823373e-01</td>
-      <td>-6.823373e-01</td>
+      <td>-9.441776e-01</td>
+      <td>-7.944789e-01</td>
+      <td>-4.849722e-01</td>
+      <td>-1.224879e+00</td>
     </tr>
     <tr>
       <th>50%</th>
-      <td>8.036597e-02</td>
-      <td>8.036597e-02</td>
-      <td>8.036597e-02</td>
-      <td>8.036597e-02</td>
+      <td>-7.762424e-02</td>
+      <td>3.104806e-02</td>
+      <td>1.070548e-01</td>
+      <td>2.343228e-01</td>
     </tr>
     <tr>
       <th>75%</th>
-      <td>8.253319e-01</td>
-      <td>8.253319e-01</td>
-      <td>8.253319e-01</td>
-      <td>8.253319e-01</td>
+      <td>8.852129e-01</td>
+      <td>8.772132e-01</td>
+      <td>9.019442e-01</td>
+      <td>9.353118e-01</td>
     </tr>
     <tr>
       <th>max</th>
-      <td>1.765408e+00</td>
-      <td>1.765408e+00</td>
-      <td>1.765408e+00</td>
-      <td>1.765408e+00</td>
+      <td>2.016546e+00</td>
+      <td>1.909122e+00</td>
+      <td>1.663713e+00</td>
+      <td>1.493242e+00</td>
     </tr>
   </tbody>
 </table>
@@ -998,7 +999,7 @@ Name: count, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9024417069951606
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
 </pre></div>
 </div>
 </div>
@@ -1025,7 +1026,7 @@ Name: count, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/52db794bfdabd376199c4abea1155ac19feb1a77a051489277731a7b18bc2f71.png" src="../../_images/52db794bfdabd376199c4abea1155ac19feb1a77a051489277731a7b18bc2f71.png" />
+<img alt="../../_images/8de19ff321b01914d8f22e177a9b60a8454a1b28143d50d5fae147144928adf4.png" src="../../_images/8de19ff321b01914d8f22e177a9b60a8454a1b28143d50d5fae147144928adf4.png" />
 </div>
 </div>
 <section id="confusion-matrix">
@@ -1050,7 +1051,7 @@ Name: count, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Precision: 0.88
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Precision: 1.00
 </pre></div>
 </div>
 </div>
@@ -1066,13 +1067,11 @@ Name: count, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Recall: 0.98
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Recall: 1.00
 </pre></div>
 </div>
 </div>
 </div>
-<p>The <strong>higher recall</strong> signifies that our classifier is good at finding all the water pixels, but the <strong>lower precisions</strong> indicates that it is incorrectly classifying a lot of ice pixels as water. Hence our classifier is probably providing an upper-bound on water coverage which is not really what we want.</p>
-<p>The best way to improve the precision in this case would be to update our training dataset, perhaps providing more edge cases of ice.</p>
 </section>
 <section id="classify-whole-image">
 <h2>Classify whole image<a class="headerlink" href="#classify-whole-image" title="Link to this heading">#</a></h2>
@@ -1115,7 +1114,7 @@ Name: count, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/6c0422002dc45ee470bd3fcb0fb3666045b0432684330a4243c87ecabd7153e4.png" src="../../_images/6c0422002dc45ee470bd3fcb0fb3666045b0432684330a4243c87ecabd7153e4.png" />
+<img alt="../../_images/875fc83667457273f57ca75615d151026b757efb4e678ff2f9c79f4cc009e371.png" src="../../_images/875fc83667457273f57ca75615d151026b757efb4e678ff2f9c79f4cc009e371.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1127,7 +1126,7 @@ Name: count, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Water coverage is 16.68 %
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Water coverage is 17.41 %
 </pre></div>
 </div>
 </div>
@@ -1137,129 +1136,15 @@ Name: count, dtype: int64
 <h2>River discharge prediction<a class="headerlink" href="#river-discharge-prediction" title="Link to this heading">#</a></h2>
 <p>Our next example is a regression task to predict river discharge from climate data. We have nine years of discharge data from the Nisqually River, WA which is glacier-fed river that drains the southern slope of Mount Rainier.</p>
 <a class="reference internal image-reference" href="../../_images/nisqually.png"><img alt="../../_images/nisqually.png" class="align-center" src="../../_images/nisqually.png" style="width: 600px;" /></a>
-<p>We also have climate data from an automated Snow Telemetry (SNOTEL) monitoring site at Paradise. Our goal is to develop a model that learns to predict discharge from climate data. This could be useful if our discharge monitoring station was destroyed by a forest fire or flood. So we will train the model on paired climate-discharge data for 2013-2020 period, and test the model’s ability to predict discharge for 2021.</p>
+<p>We also have climate data from an automated Snow Telemetry (SNOTEL) monitoring site at Paradise. Our goal is to develop a model that learns to <strong>predict discharge from climate data</strong>. This could be useful if our discharge monitoring station was destroyed by a forest fire or flood. So we will train the model on paired climate-discharge data for 2013-2020 period, and test the model’s ability to predict discharge for 2021.</p>
 <a class="reference internal image-reference" href="../../_images/snotel.png"><img alt="../../_images/snotel.png" class="align-center" src="../../_images/snotel.png" style="width: 600px;" /></a>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read data</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/nisqually.csv&#39;</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">],</span> <span class="n">index_col</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">])</span>
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Precipitation Increment (in)</th>
-      <th>Air Temperature Average (degF)</th>
-      <th>Air Temperature Minimum (degF)</th>
-      <th>Air Temperature Maximum (degF)</th>
-      <th>Soil Moisture Percent -2in (pct) Start of Day Values</th>
-      <th>Soil Moisture Percent -4in (pct) Start of Day Values</th>
-      <th>Soil Moisture Percent -8in (pct) Start of Day Values</th>
-      <th>Soil Moisture Percent -20in (pct) Start of Day Values</th>
-      <th>Snow Water Equivalent (in) Start of Day Values</th>
-      <th>Nisqually Discharge</th>
-    </tr>
-    <tr>
-      <th>Date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2013-01-01</th>
-      <td>0.0</td>
-      <td>30.0</td>
-      <td>21.0</td>
-      <td>36.0</td>
-      <td>26.2</td>
-      <td>25.0</td>
-      <td>34.0</td>
-      <td>34.9</td>
-      <td>34.9</td>
-      <td>424.0</td>
-    </tr>
-    <tr>
-      <th>2013-01-02</th>
-      <td>0.0</td>
-      <td>34.0</td>
-      <td>29.0</td>
-      <td>47.0</td>
-      <td>26.4</td>
-      <td>24.9</td>
-      <td>33.9</td>
-      <td>34.9</td>
-      <td>34.9</td>
-      <td>413.0</td>
-    </tr>
-    <tr>
-      <th>2013-01-03</th>
-      <td>0.1</td>
-      <td>35.0</td>
-      <td>31.0</td>
-      <td>46.0</td>
-      <td>26.2</td>
-      <td>25.1</td>
-      <td>34.0</td>
-      <td>35.0</td>
-      <td>35.0</td>
-      <td>404.0</td>
-    </tr>
-    <tr>
-      <th>2013-01-04</th>
-      <td>0.3</td>
-      <td>33.0</td>
-      <td>32.0</td>
-      <td>38.0</td>
-      <td>26.0</td>
-      <td>24.9</td>
-      <td>34.0</td>
-      <td>34.9</td>
-      <td>35.5</td>
-      <td>423.0</td>
-    </tr>
-    <tr>
-      <th>2013-01-05</th>
-      <td>0.4</td>
-      <td>33.0</td>
-      <td>28.0</td>
-      <td>39.0</td>
-      <td>26.1</td>
-      <td>24.7</td>
-      <td>34.0</td>
-      <td>34.9</td>
-      <td>35.8</td>
-      <td>426.0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 </section>
 <section id="id1">
@@ -1333,6 +1218,7 @@ Name: Nisqually Discharge, dtype: float64
 </div>
 </div>
 </div>
+<p>The table contains daily data for nine different features including precipitation, air temperature, soil moisture, and snow water equivalent - all things that we might expect to have an influence on the discharge of the river. Exactly how these factors impact discharge would be challenging to model in a physically-based way. It would also depend on the characteristics of the watershed. Alternatively, we could build a model that learns the relationships between these factors and discharge directly from the data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define start and end</span>
@@ -1345,6 +1231,7 @@ Name: Nisqually Discharge, dtype: float64
 </div>
 </div>
 </div>
+<p>Above we define a start and end date of our <strong>testing period</strong>.</p>
 </section>
 <section id="id2">
 <h2>Scale features<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
@@ -1365,6 +1252,7 @@ Name: Nisqually Discharge, dtype: float64
 </section>
 <section id="split-training-and-testing-data">
 <h2>Split training and testing data<a class="headerlink" href="#split-training-and-testing-data" title="Link to this heading">#</a></h2>
+<p>We will train the data on all years before the start of our testing period (2013-2020) and test the data on the entire record for 2021.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Split data </span>
@@ -1412,17 +1300,21 @@ Name: Nisqually Discharge, dtype: float64
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;2021-01-01&#39;</span><span class="p">:</span><span class="s1">&#39;2021-12-31&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Nisqually Discharge&#39;</span><span class="p">][</span><span class="s1">&#39;2021-01-01&#39;</span><span class="p">:</span><span class="s1">&#39;2021-12-31&#39;</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y_test</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">predictions</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;2021-01-01&#39;</span><span class="p">:</span><span class="s1">&#39;2021-12-31&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Nisqually Discharge&#39;</span><span class="p">][</span><span class="s1">&#39;2021-01-01&#39;</span><span class="p">:</span><span class="s1">&#39;2021-12-31&#39;</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Actual&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y_test</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">predictions</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Predicted&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Predicted discharge (cfs)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;major&#39;</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">mdates</span><span class="o">.</span><span class="n">DateFormatter</span><span class="p">(</span><span class="s1">&#39;%b</span><span class="se">\n</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/60cf3b8bb1ae00a74c30f7309e77acf0b44a9236c5b49727e145c5755b47cbd6.png" src="../../_images/60cf3b8bb1ae00a74c30f7309e77acf0b44a9236c5b49727e145c5755b47cbd6.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x31bf32ae0&gt;
+</pre></div>
+</div>
+<img alt="../../_images/24b39634803472c66322c71f5cce198bbcc98497bf620e0d5d877d782af1659a.png" src="../../_images/24b39634803472c66322c71f5cce198bbcc98497bf620e0d5d877d782af1659a.png" />
 </div>
 </div>
 <p>We notice that the predicted discharge captures general patterns from high to low to high again. But it’s missing peaks in the discharge and it’s a also a little jagged, likely because it treats observations as independent. We are approaching the limits of conventional machine learning algorithms which cannot explicitly model temporal dependencies. For that, we need a different approach: neural networks.</p>
@@ -1459,12 +1351,12 @@ Name: Nisqually Discharge, dtype: float64
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="lecture-5.html"
+       href="../../activities/week5/wine-activity.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Machine learning fundamentals</p>
+        <p class="prev-next-title">Wine activity</p>
       </div>
     </a>
     <a class="right-next"

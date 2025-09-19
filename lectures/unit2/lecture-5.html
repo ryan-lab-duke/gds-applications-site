@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -63,7 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'lectures/unit2/lecture-5';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Machine learning applications" href="lecture-6a.html" />
+    <link rel="next" title="Wine activity" href="../../activities/week5/wine-activity.html" />
     <link rel="prev" title="Assignment 4" href="../../labs/week4/assignment4.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -204,6 +204,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 5</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Machine learning fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../activities/week5/wine-activity.html">Wine activity</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 6</span></p>
 <ul class="nav bd-sidenav">
@@ -224,7 +225,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 9</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../unit3/lecture-8.html">Automating raster analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit3/lecture-8.html">Data access</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../final-project/project-ideas.html">Project ideas</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 10</span></p>
@@ -435,12 +436,18 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-machine-learning">What is machine learning?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-the-palmer-penguins">Example - the Palmer Penguins</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-vocabularly">Some vocabularly</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-learning">Supervised learning</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unsupervised-learning">Unsupervised learning</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reinforcement-learning">Reinforcement learning</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classification">Classification</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regression">Regression</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clustering">Clustering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-machine-learning">Types of machine learning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-learning">Supervised learning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unsupervised-learning">Unsupervised learning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reinforcement-learning">Reinforcement learning</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-machine-learning-tasks">Common machine learning tasks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classification">Classification</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regression">Regression</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clustering">Clustering</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-our-dataset">Exploring our dataset</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-scaling">Feature scaling</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-and-testing-subsets">Training and testing subsets</a></li>
@@ -448,7 +455,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#confusion-matrix">Confusion matrix</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-validation">Cross-validation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-tree-classifier">Decision Tree Classifier</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loss-functions">Loss functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loss-or-error-functions">Loss (or error) functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters">Parameters</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hyperparameter-tuning">Hyperparameter tuning</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#another-example-california-house-prices">Another example - California House Prices</a></li>
@@ -472,7 +479,7 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="machine-learning-fundamentals">
 <h1>Machine learning fundamentals<a class="headerlink" href="#machine-learning-fundamentals" title="Link to this heading">#</a></h1>
-<p>This week we will be learning about the basic concepts of machine learning.</p>
+<p>This week we will be learning about the basic concepts of machine learning. The goal here is to understand several important concepts (as well as the terminology) that appear often in machine learning research.</p>
 <section id="what-is-machine-learning">
 <h2>What is machine learning?<a class="headerlink" href="#what-is-machine-learning" title="Link to this heading">#</a></h2>
 <ul class="simple">
@@ -685,10 +692,10 @@
 <section id="some-vocabularly">
 <h2>Some vocabularly<a class="headerlink" href="#some-vocabularly" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Machine learning starts with a <strong>labelled dataset</strong></p></li>
+<li><p>Most machine learning (in Earth Sciences) starts with a <strong>labelled dataset</strong></p></li>
 <li><p>A <strong>label</strong> (or target variable) is the thing we’re attempting to predict (e.g. penguin species)</p></li>
 <li><p>A <strong>feature</strong> (or predictor variable) is an individual measurable property of the dataset (e.g. flipper length)</p></li>
-<li><p>A <strong>sample</strong> are different individuals or observations</p></li>
+<li><p>A <strong>sample</strong> are different observations or rows in the table</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -768,8 +775,10 @@
 </div></div></div>
 </div>
 </section>
+<section id="types-of-machine-learning">
+<h2>Types of machine learning<a class="headerlink" href="#types-of-machine-learning" title="Link to this heading">#</a></h2>
 <section id="supervised-learning">
-<h2>Supervised learning<a class="headerlink" href="#supervised-learning" title="Link to this heading">#</a></h2>
+<h3>Supervised learning<a class="headerlink" href="#supervised-learning" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>The goal is to <strong>train</strong> an algorithm using features in <strong>labelled</strong> dataset to predict the label of new data that is <strong>unlabelled</strong></p></li>
 </ul>
@@ -783,7 +792,7 @@
 <a class="reference internal image-reference" href="../../_images/captcha.jpeg"><img alt="../../_images/captcha.jpeg" class="align-center" src="../../_images/captcha.jpeg" style="width: 300px;" /></a>
 </section>
 <section id="unsupervised-learning">
-<h2>Unsupervised learning<a class="headerlink" href="#unsupervised-learning" title="Link to this heading">#</a></h2>
+<h3>Unsupervised learning<a class="headerlink" href="#unsupervised-learning" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>The goal is to extract some structure from our <strong>unlabelled dataset</strong> that can be used to generalize.</p></li>
 <li><p>For example, how many different species are contained in our penguin dataset?</p></li>
@@ -791,14 +800,17 @@
 </ul>
 </section>
 <section id="reinforcement-learning">
-<h2>Reinforcement learning<a class="headerlink" href="#reinforcement-learning" title="Link to this heading">#</a></h2>
+<h3>Reinforcement learning<a class="headerlink" href="#reinforcement-learning" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>An agent learns to make decisions by interacting with an environment</p></li>
 <li><p>For example, chess-playing like AlphaGo, self-driving cars</p></li>
 </ul>
 </section>
+</section>
+<section id="common-machine-learning-tasks">
+<h2>Common machine learning tasks<a class="headerlink" href="#common-machine-learning-tasks" title="Link to this heading">#</a></h2>
 <section id="classification">
-<h2>Classification<a class="headerlink" href="#classification" title="Link to this heading">#</a></h2>
+<h3>Classification<a class="headerlink" href="#classification" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>“Split things into <strong>groups</strong> based on their <strong>features</strong>”</p></li>
 <li><p>Examples include:</p>
@@ -812,7 +824,7 @@
 <a class="reference internal image-reference" href="../../_images/classification.jpg"><img alt="../../_images/classification.jpg" class="align-center" src="../../_images/classification.jpg" style="width: 300px;" /></a>
 </section>
 <section id="regression">
-<h2>Regression<a class="headerlink" href="#regression" title="Link to this heading">#</a></h2>
+<h3>Regression<a class="headerlink" href="#regression" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>“Draw a <strong>line</strong> through these dots”</p></li>
 <li><p>Used for predicting continuous variables:</p>
@@ -826,7 +838,7 @@
 <a class="reference internal image-reference" href="../../_images/regression.jpeg"><img alt="../../_images/regression.jpeg" class="align-center" src="../../_images/regression.jpeg" style="width: 300px;" /></a>
 </section>
 <section id="clustering">
-<h2>Clustering<a class="headerlink" href="#clustering" title="Link to this heading">#</a></h2>
+<h3>Clustering<a class="headerlink" href="#clustering" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>“Divide data into groups but machine chooses the best way”</p></li>
 <li><p>Common usages include:</p>
@@ -838,6 +850,7 @@
 </li>
 </ul>
 <a class="reference internal image-reference" href="../../_images/clustering.jpeg"><img alt="../../_images/clustering.jpeg" class="align-center" src="../../_images/clustering.jpeg" style="width: 300px;" /></a>
+</section>
 </section>
 <section id="exploring-our-dataset">
 <h2>Exploring our dataset<a class="headerlink" href="#exploring-our-dataset" title="Link to this heading">#</a></h2>
@@ -979,7 +992,7 @@ memory usage: 13.5+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x14954b830&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1493d4470&gt;
 </pre></div>
 </div>
 <img alt="../../_images/3850053b59d643122678154c13fddeb51b6f8b422b31cee406f9de9c7cab1245.png" src="../../_images/3850053b59d643122678154c13fddeb51b6f8b422b31cee406f9de9c7cab1245.png" />
@@ -1012,8 +1025,7 @@ Name: count, dtype: int64
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Models that rely on the <strong>distance</strong> between a pair of samples (e.g. k-nearest neighbors), should be trained on normalized features to make each feature contribute approximately equally to the distance computations.</p>
-<p>Many models such as logistic regression use a numerical solver (based on gradient descent) to find their optimal parameters. This solver converges faster when the features are scaled.</p>
+<p>Models that rely on the <strong>distance</strong> between a pair of samples (e.g. k-nearest neighbors), should be trained on normalized features to make each feature contribute approximately equally to the distance computations. In general, it is good practice to normalize everything.</p>
 </div>
 <ul class="simple">
 <li><p><strong>Min-max method</strong> scales values so that they end up ranging from 0 to 1</p></li>
@@ -1041,7 +1053,7 @@ Name: count, dtype: int64
 <span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>  
 <span class="n">X_scaled</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 <span class="n">df_scaled</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">X_scaled</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">feature_list</span><span class="p">)</span>
-<span class="n">df_scaled</span>
+<span class="n">df_scaled</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1106,51 +1118,8 @@ Name: count, dtype: int64
       <td>-0.777373</td>
       <td>-0.689020</td>
     </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>337</th>
-      <td>2.178824</td>
-      <td>1.343286</td>
-      <td>0.433355</td>
-      <td>-0.251947</td>
-    </tr>
-    <tr>
-      <th>338</th>
-      <td>-0.077396</td>
-      <td>0.481175</td>
-      <td>0.077258</td>
-      <td>-1.001215</td>
-    </tr>
-    <tr>
-      <th>339</th>
-      <td>1.041543</td>
-      <td>0.531887</td>
-      <td>-0.563715</td>
-      <td>-0.532923</td>
-    </tr>
-    <tr>
-      <th>340</th>
-      <td>1.261662</td>
-      <td>0.937586</td>
-      <td>0.647013</td>
-      <td>-0.127069</td>
-    </tr>
-    <tr>
-      <th>341</th>
-      <td>1.151602</td>
-      <td>0.785449</td>
-      <td>-0.207619</td>
-      <td>-0.532923</td>
-    </tr>
   </tbody>
 </table>
-<p>342 rows × 4 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
@@ -1248,7 +1217,8 @@ Name: count, dtype: int64
 </section>
 <section id="training-and-testing-subsets">
 <h2>Training and testing subsets<a class="headerlink" href="#training-and-testing-subsets" title="Link to this heading">#</a></h2>
-<p>If we want to properly evaluate our machine learning model, we should not use <strong>all</strong> the data for training. Instead, we should train the model on a <strong>subset of the data</strong>, retaining another subset (that the model has not “seen”) to <strong>evaluate</strong> the model.</p>
+<p>If we want to properly evaluate our machine learning model, we should not use <strong>all</strong> the data for training. If we did that, the model may be able to just <strong>memorize</strong> the dataset and would struggle predicting new, unseen data.</p>
+<p>Instead, we should train the model on a <strong>subset of the data</strong>, retaining another subset (that the model has not “seen”) to <strong>evaluate</strong> the model.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
@@ -1259,7 +1229,7 @@ Name: count, dtype: int64
 </div>
 </div>
 </div>
-<p>Our test dataset is a random sample containing 69 individuals, 11 of which are Chinstrap penguins.</p>
+<p>We split our data <strong>randomly</strong> so that 80% is used for training (<code class="docutils literal notranslate"><span class="pre">X_train</span></code> and <code class="docutils literal notranslate"><span class="pre">y_train</span></code>) and 20% is used for testing (<code class="docutils literal notranslate"><span class="pre">X_test</span></code> and <code class="docutils literal notranslate"><span class="pre">y_test</span></code>). Our test dataset therfore contains 69 individuals (and associated features), 11 of which are Chinstrap penguins.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_test</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
@@ -1279,21 +1249,23 @@ Name: count, dtype: int64
 </section>
 <section id="fitting-our-first-model">
 <h2>Fitting our first model<a class="headerlink" href="#fitting-our-first-model" title="Link to this heading">#</a></h2>
-<p>Now we are ready to build our first model. There are usually three main steps here: <code class="docutils literal notranslate"><span class="pre">fit</span></code>, <code class="docutils literal notranslate"><span class="pre">predict</span></code>, <code class="docutils literal notranslate"><span class="pre">score</span></code>. We will first experiment with a very simple supervised algorithm that classifies our data using <strong>K-nearest neighbors</strong>.</p>
+<p>Now we are ready to build our first model. We will first experiment with a very simple supervised algorithm that classifies our data using <strong>K-nearest neighbors</strong>. This algorithm computes the distance between a new data point and all training points. It then finds the closest <strong>k-neighbors</strong> (in our case, 3) and uses a majority vote to assign a lablel to the new data point.</p>
+<a class="reference internal image-reference" href="../../_images/k-nearest.png"><img alt="../../_images/k-nearest.png" class="align-center" src="../../_images/k-nearest.png" style="width: 500px;" /></a>
+<p>Let’s define the K-nearest neighbors classifer in <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.neighbors</span><span class="w"> </span><span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
 
 <span class="c1"># Define model</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">()</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">fit</span></code> method is called to train the model from the input (features) and target data.</p>
+<p>Once we have defined the model there are three main steps to using it: <code class="docutils literal notranslate"><span class="pre">fit</span></code>, <code class="docutils literal notranslate"><span class="pre">predict</span></code>, <code class="docutils literal notranslate"><span class="pre">score</span></code>. The <code class="docutils literal notranslate"><span class="pre">fit</span></code> method is called to train the model from the input (features) and target data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fit model to data</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fit model to training data</span>
 <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1714,9 +1686,12 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
   /* fitted */
   background-color: var(--sklearn-color-fitted-level-3);
 }
-</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>KNeighborsClassifier()</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>KNeighborsClassifier</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.6/modules/generated/sklearn.neighbors.KNeighborsClassifier.html">?<span>Documentation for KNeighborsClassifier</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted"><pre>KNeighborsClassifier()</pre></div> </div></div></div></div></div></div>
+</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>KNeighborsClassifier(n_neighbors=3)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>KNeighborsClassifier</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.6/modules/generated/sklearn.neighbors.KNeighborsClassifier.html">?<span>Documentation for KNeighborsClassifier</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted"><pre>KNeighborsClassifier(n_neighbors=3)</pre></div> </div></div></div></div></div></div>
 </div>
-<p>In scikit-learn an object that has a <code class="docutils literal notranslate"><span class="pre">fit</span></code> method is called an <strong>estimator</strong>. We can use the estimator to make predictions on our data.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> an object that has a <code class="docutils literal notranslate"><span class="pre">fit</span></code> method is called an <strong>estimator</strong>. We can use the estimator to make predictions on our data.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Predict test labels</span>
@@ -1744,8 +1719,9 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <p>To compute the score, the predictor first computes the predictions (using the predict method) and then uses a scoring function to compare the true value vs. the predictions.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If we compare with the accuracy obtained by wrongly evaluating the model on the <strong>training data</strong>, we find a higher accuracy compared to the score obtained on the held-out test data.</p>
+<p>The default scoring function for classifiers is <strong>mean accuracy</strong> defined as the number of correct predictions divided by the total number of samples.</p>
 </div>
+<p>If we compare with the accuracy obtained by wrongly evaluating the model on the <strong>training data</strong>, we find a higher accuracy compared to the score obtained on the held-out test data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">accuracy</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
@@ -1755,7 +1731,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The test accuracy using a KNeighborsClassifier is 0.993
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The test accuracy using a KNeighborsClassifier is 0.996
 </pre></div>
 </div>
 </div>
@@ -1763,7 +1739,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </section>
 <section id="confusion-matrix">
 <h2>Confusion matrix<a class="headerlink" href="#confusion-matrix" title="Link to this heading">#</a></h2>
-<p>Overall accuracy is a rather crude metric for evaluating the performance of our model. Each observation in the test dataset is treated equally, So, as we mentioned earlier, the model could be 100% accurate at identifying common penguin species (e.g. Adelie and Gentoo) but be bad at identifying rarer penguin species (e.g. Chinstrap) and still have a high overall accuracy.</p>
+<p>Mean accuracy is a rather crude metric for evaluating the performance of our model. Each observation in the test dataset is treated equally, So, as we mentioned earlier, the model could be 100% accurate at identifying common penguin species (e.g. Adelie and Gentoo) but be bad at identifying rarer penguin species (e.g. Chinstrap) and still have a high overall accuracy.</p>
 <p>The standard way of evaluating a multi-class prediction model is to use a confusion matrix.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1787,7 +1763,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </section>
 <section id="cross-validation">
 <h2>Cross-validation<a class="headerlink" href="#cross-validation" title="Link to this heading">#</a></h2>
-<p>Since our dataset has 342 individuals (i.e. not that many), we might as well use them all to fit our model. But, if we do this, we won’t be able to effectively evaluate our model. To overcome this, we can use <strong>cross-validation</strong> which involves systematically repeating the train-test split such that the training and testing datasets are different for each evaluation.</p>
+<p>Since our dataset has 342 individuals (i.e. not that many), we might as well use them all to fit our model. But, if we do this, we won’t be able to effectively evaluate our model. To overcome this, we can use a technique called <strong>cross-validation</strong> which involves systematically repeating the train-test split such that the training and testing datasets are different for each evaluation.</p>
 <a class="reference internal image-reference" href="../../_images/kfold.png"><img alt="../../_images/kfold.png" class="align-center" src="../../_images/kfold.png" style="width: 800px;" /></a>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1805,7 +1781,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The mean test accuracy using cross-validation is 0.985
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The mean test accuracy using cross-validation is 0.988
 </pre></div>
 </div>
 </div>
@@ -1839,7 +1815,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </section>
 <section id="decision-tree-classifier">
 <h2>Decision Tree Classifier<a class="headerlink" href="#decision-tree-classifier" title="Link to this heading">#</a></h2>
-<p>K-nearest Neighbors is an odd type of model because it doesn’t learn during training. It simply stores the training data and makes predictions based on distances to a specific number of neigbors at inference time. But now that we have formatted our data for K-nearest Neighbors we can easily test other, more conventional machine learning models available in <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code>.</p>
+<p>K-nearest Neighbors is an odd type of model because it doesn’t actually learn during training. It simply stores the training data and makes predictions based on distances to a specific number of neigbors at inference time. But now that we have formatted our data for K-nearest neighbors, we can easily test other, more conventional machine learning models available in <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.tree</span><span class="w"> </span><span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
@@ -1855,6 +1831,9 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <span class="n">model_name</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The test accuracy using a </span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">test_scores</span><span class="p">)</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
+<span class="c1"># Predict test labels</span>
+<span class="n">predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
 <span class="c1"># Generate confusion matrix</span>
 <span class="n">cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predictions</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">model</span><span class="o">.</span><span class="n">classes_</span><span class="p">)</span>
 
@@ -1869,14 +1848,10 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The test accuracy using a DecisionTreeClassifier is 0.953
 </pre></div>
 </div>
-<img alt="../../_images/8733911ce286bbb5504b66c6e45d5f966224497920396f38b9b39d0021057396.png" src="../../_images/8733911ce286bbb5504b66c6e45d5f966224497920396f38b9b39d0021057396.png" />
+<img alt="../../_images/7dbab7f564353be6ded9985945cacc0fe21328e0ef92b1e89d7382f50d786df5.png" src="../../_images/7dbab7f564353be6ded9985945cacc0fe21328e0ef92b1e89d7382f50d786df5.png" />
 </div>
 </div>
 <p>The nice thing about Decision Trees is that we can visualize the fitted model.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The attribute (e.g. <code class="docutils literal notranslate"><span class="pre">Flipper</span> <span class="pre">Length</span></code>) can be positive or negative because we standardized the values.</p>
-</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.tree</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_tree</span>
@@ -1895,11 +1870,15 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <img alt="../../_images/cf41088551cf77274cfb3d9f0f9ad4e97241eb65dd725cceeabacd5ec6c746cb.png" src="../../_images/cf41088551cf77274cfb3d9f0f9ad4e97241eb65dd725cceeabacd5ec6c746cb.png" />
 </div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The attribute (e.g. <code class="docutils literal notranslate"><span class="pre">Flipper</span> <span class="pre">Length</span></code>) can be positive or negative because we standardized the values.</p>
+</div>
 <p>Decision trees partition the feature space by considering a single feature at a time. We start with 273 samples (80% of dataset), if <code class="docutils literal notranslate"><span class="pre">Flipper</span> <span class="pre">Length</span></code> is smaller than <code class="docutils literal notranslate"><span class="pre">0.47</span></code> then we are left with 168 samples, most of which are now <code class="docutils literal notranslate"><span class="pre">Adelie</span></code>. Then, if <code class="docutils literal notranslate"><span class="pre">Culmen</span> <span class="pre">Length</span></code> is less than <code class="docutils literal notranslate"><span class="pre">-0.14</span></code>, we are left with <strong>116</strong> samples which we classify as <code class="docutils literal notranslate"><span class="pre">Adelie</span></code>. Unfortunately, it looks like <strong>4</strong> of these penguins are actually <code class="docutils literal notranslate"><span class="pre">Gentoos</span></code>.</p>
 <p>We might be asking a couple more questions by now: 1) How does the model choose these thresholds and 2) what is <code class="docutils literal notranslate"><span class="pre">gini</span></code>?</p>
 </section>
-<section id="loss-functions">
-<h2>Loss functions<a class="headerlink" href="#loss-functions" title="Link to this heading">#</a></h2>
+<section id="loss-or-error-functions">
+<h2>Loss (or error) functions<a class="headerlink" href="#loss-or-error-functions" title="Link to this heading">#</a></h2>
 <p>During the learning process, our Decision Tree is trying to find a set of thresholds that make the fewest mistakes when classifying our training data. To find the best thresholds, we need a way to evaluate whether one set of thresholds are better than another. We use <strong>loss functions</strong> to do this.</p>
 <p>Decision Trees commonly use the <strong>Gini loss function</strong> (or impurity). This index measures how mixed the classes are in a given group of samples (i.e. <strong>entropy</strong>). If a group of samples all belong to the same class, the Gini impurity is 0 (perfectly “pure”). If the group has a mix classes, the impurity is higher. At each split, the Decision Tree algorithm tries to reduce entropy or the minimize Gini impurity.</p>
 <p>For regression, a common loss function is <strong>absolute loss</strong> (i.e. MAE) where loss grows <strong>linearly</strong> with absolute mispredicted amount. This loss function is approproate for noisy data, when some mispredictions are unavoidable and shouldn’t dominate the loss.</p>
@@ -1981,15 +1960,15 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <p>If we set <code class="docutils literal notranslate"><span class="pre">max_depth</span></code> to be small (e.g. &lt;3) then the tree will be shallow and model is only likely to capture broad, simple patterns. It may therefore be prone to <strong>underfitting</strong>.</p>
-<p>In contrast, if we do not set <code class="docutils literal notranslate"><span class="pre">max_depth</span></code>, it defaults to <code class="docutils literal notranslate"><span class="pre">None</span></code> meaning that there is no limit on the height of the tree. On the one head, this may be useful because the tree is more likely to capture more subtle patterns. However, if the tree becomes too deep, then it may begin to split the data until every sample is perfectly separated. If the dataset contains <strong>noise</strong> (which is likely), then the tree will be fitted not only to the true signal but also to <strong>noise</strong> in the data. We call this <strong>overfitting</strong> and it can reduce the overall accuracy of our model.</p>
+<p>In contrast, if we do not set <code class="docutils literal notranslate"><span class="pre">max_depth</span></code>, it defaults to <code class="docutils literal notranslate"><span class="pre">None</span></code> meaning that there is no limit on the height of the tree. On the one hand, this may be useful because the tree is more likely to capture more subtle patterns. However, if the tree becomes too deep, then it may begin to split the data until every sample is perfectly separated. If the dataset contains <strong>noise</strong> (which is likely), then the tree will be fitted not only to the true signal but also to <strong>noise</strong> in the data. We call this <strong>overfitting</strong> and it can reduce the overall accuracy of our model.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>The flexibility of machine learning models is therefore both a strength and weakness.</p>
+<p>Machine learning models tend to be very flexible meaning that they are great at finding complex, non-linear patterns in data. The cost of such flexibility is that they will <strong>memorize</strong> or <strong>overfit</strong> the training data if not properly developed. Preventing them doing this is therefore possibly the greatest challenge in machine learning research.</p>
 </div>
 </section>
 <section id="hyperparameter-tuning">
 <h2>Hyperparameter tuning<a class="headerlink" href="#hyperparameter-tuning" title="Link to this heading">#</a></h2>
-<p>So can we pick a <code class="docutils literal notranslate"><span class="pre">max_depth</span></code> that prevents our model underfitting or overfitting our data? Yes, we can and one way to do that is to use <strong>hyperparameter tuning</strong>. We will demonstrate this timing using <strong>Decision Tree Regression</strong> where the goal is to <strong>predict a continuous variable</strong>. We will first develop a shallow tree to model the relationship between <code class="docutils literal notranslate"><span class="pre">Flipper</span> <span class="pre">Length</span></code> and <code class="docutils literal notranslate"><span class="pre">Body</span> <span class="pre">Mass</span></code>.</p>
+<p>So can we pick a <code class="docutils literal notranslate"><span class="pre">max_depth</span></code> that prevents our model underfitting or overfitting our data? Yes, we can and one way to do that is to use <strong>hyperparameter tuning</strong>. We will demonstrate this timing using <strong>Decision Tree Regression</strong> where the goal is to <strong>predict a continuous variable</strong>. We will first develop a shallow tree (i.e. <code class="docutils literal notranslate"><span class="pre">max_depth=2</span></code>) to model the relationship between <code class="docutils literal notranslate"><span class="pre">Flipper</span> <span class="pre">Length</span></code> and <code class="docutils literal notranslate"><span class="pre">Body</span> <span class="pre">Mass</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Flipper Length (mm)&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Body Mass (g)&#39;</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
@@ -2057,6 +2036,19 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <img alt="../../_images/f442b9470a99bc5e6c899a4cef7635152f45b1c66bc4cc325c952f8bad0e87ba.png" src="../../_images/f442b9470a99bc5e6c899a4cef7635152f45b1c66bc4cc325c952f8bad0e87ba.png" />
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">get_depth</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+</pre></div>
+</div>
+</div>
+</div>
+<p>Our “unconstrained” Decision Tree developed a very deep tree with 10 levels.</p>
 <p>We can find the optimal <code class="docutils literal notranslate"><span class="pre">max_depth</span></code> by iteratively searching over specified parameter values for an estimator using the <code class="docutils literal notranslate"><span class="pre">GridSearchCV</span></code> function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2245,12 +2237,12 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The testing error of our model is 46.90 k$
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The testing error of our model is 46.55 k$
 </pre></div>
 </div>
 </div>
 </div>
-<p>To investigate under- and over-fitting, it is also useful to track the <strong>training error</strong>. This metric is defined as the accuracy of our model when applied to the target variable (i.e house price) of the <strong>training dataset</strong> (as opposed to the testing dataset).</p>
+<p>Sometimes the testing error alone does not provide sufficient information to determine whether a model is over- or under-fitting. To investigate in more detail, it is useful to track the <strong>training error</strong>. This metric is defined as the accuracy of our model when applied to the target variable (i.e house price) of the <strong>training dataset</strong> (as opposed to the testing dataset).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fit</span>
@@ -2268,7 +2260,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The training error of our model is 0.00 k$
 Tree depth: 36
-Number of leaves: 14839
+Number of leaves: 14840
 </pre></div>
 </div>
 </div>
@@ -2290,7 +2282,7 @@ Number of leaves: 14839
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/d9aa67f35620d8d4c34dc5d582914ade55fa98b4094484546e1c6e253bfa06d6.png" src="../../_images/d9aa67f35620d8d4c34dc5d582914ade55fa98b4094484546e1c6e253bfa06d6.png" />
+<img alt="../../_images/fdce30852dc9a7de2be95c9940feae4833b42eb885a04c47f8533d4a04a7d69d.png" src="../../_images/fdce30852dc9a7de2be95c9940feae4833b42eb885a04c47f8533d4a04a7d69d.png" />
 </div>
 </div>
 <ul class="simple">
@@ -2307,9 +2299,9 @@ Number of leaves: 14839
 <p>The same is true for environmental data. We may not be able to measure something that impacts the target variable. It is also possible that there are instrumental errors such as poorly calibrated sensors, limitations in precision, or interference that impact the accuracy of our data. Those unpredictable data acquisition errors can happen either on the input features <strong>or</strong> in the target variable (in which case we often name this <strong>label noise</strong>).</p>
 <p>While it is challenging to understand which kind of “noise” is dominating, there are several strategies for reducing the sensitivity of our models to noise:</p>
 <ul class="simple">
-<li><p><strong>Data augmentation</strong> (e.g. increase the number of labeled samples in our training dataset)</p></li>
-<li><p><strong>Regularization</strong> (e.g. enforce limits or penalize models that become too complex)</p></li>
-<li><p><strong>Ensemble models</strong> (e.g. combine predictions from multiple different models to average out errors from individual models)</p></li>
+<li><p><strong>Data augmentation</strong>: increase the number of labeled samples in our training dataset</p></li>
+<li><p><strong>Regularization</strong>: enforce limits or penalize models that become too complex</p></li>
+<li><p><strong>Ensemble models</strong>: combine predictions from multiple different models to average out errors from individual models</p></li>
 </ul>
 <p>And there are probably many other strategies…</p>
 </section>
@@ -2360,10 +2352,10 @@ Number of leaves: 14839
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/bfbb2696f2c69068912f24366d811fc3be8c983d2a30e885cf2ab7fe82a19f77.png" src="../../_images/bfbb2696f2c69068912f24366d811fc3be8c983d2a30e885cf2ab7fe82a19f77.png" />
+<img alt="../../_images/7cebe6d85867cc10504cf1285663e910a008db1bed32d1c21591fcc4c6b6715a.png" src="../../_images/7cebe6d85867cc10504cf1285663e910a008db1bed32d1c21591fcc4c6b6715a.png" />
 </div>
 </div>
-<p>We find that the testing error becomes lower as more samples are added to the training set. It looks as though the testing error is starting to plateau a bit but it is also still going down. We can therefore conclude that more samples would probably improve our predictive model.</p>
+<p>We find that the testing error becomes lower as more samples are added to the training set. It looks as though the testing error is starting to plateau a bit but it is also still going down. We can therefore conclude that <strong>more samples would probably improve our predictive model</strong>.</p>
 <p>This kind of analysis can be useful for informing decision-making. If it is possible to collect more samples, then we should probably do that. If that is not possible, we may consider artificially creating new, modified copies of existing data (i.e. <strong>data augmentation</strong>).</p>
 <p>On the other hand, if the testing error did plateau, then collecting more samples would not be useful and we may reserve our efforts for other things e.g. reducing or handling noise in dataset, developing more sophisticated models etc.</p>
 </section>
@@ -2374,7 +2366,7 @@ Number of leaves: 14839
 <section id="bagging">
 <h2>Bagging<a class="headerlink" href="#bagging" title="Link to this heading">#</a></h2>
 <p>Bagging involves fitting a base estimator (e.g. Decision Tree) to a <strong>random subset</strong> of our original dataset and then aggregating their individual predictions (either by voting or by averaging) to generate a final prediction. This approach exploits the <strong>Weak Law of Large Numbers</strong> which states that “<em>the mean of a collection of independent and identically distributed samples from a random variable converges in probability to the expected value</em>”.</p>
-<p>The plot below shows an example from our Penguin dataset. The first panel shows all the observations in our dataset. The other three panels show a random subset. To perform bagging, we would train <strong>independent models</strong> on each of these random subsets.</p>
+<p>The bagging procedure can be conceptualized using the plot below which shows our Penguin dataset. The first panel shows all the observations in our dataset. The other three panels show a random subset. To perform bagging, we would train <strong>independent models</strong> on each of these random subsets.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">resample</span>
@@ -2438,12 +2430,12 @@ Number of leaves: 14839
 <span class="n">scores</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">bclf</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="n">feature_list</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Species&#39;</span><span class="p">],</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 
 <span class="c1"># Print scores</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">scores</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9765132139812447
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.977
 </pre></div>
 </div>
 </div>
@@ -2484,7 +2476,8 @@ Number of leaves: 14839
 </div>
 </div>
 </div>
-<p>Our <code class="docutils literal notranslate"><span class="pre">BaggingClassifier</span></code> picks random subsets from the data but the Decision Trees may all be quite similar because they <strong>consider all features</strong> when making splits. A <code class="docutils literal notranslate"><span class="pre">RandomForestClassifier</span></code> is a specialized version of decision tree bagging that adds another source of randomness. Instead of considering all features when making splits in the decision tree, it <strong>considers only a random subset of features</strong>. This increases the difference between decision trees, often leading to reduced overfitting and testing error.</p>
+<p>Our <code class="docutils literal notranslate"><span class="pre">BaggingClassifier</span></code> picks random subsets from the data but the Decision Trees may all be quite similar because they <strong>consider all features</strong> when making splits.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">RandomForestClassifier</span></code> is a specialized version of decision tree bagging that adds another source of randomness. Instead of considering all features when making splits in the decision tree, it <strong>considers only a random subset of features</strong>. This increases the difference between decision trees, often leading to reduced overfitting and testing error.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.ensemble</span><span class="w"> </span><span class="kn">import</span> <span class="n">RandomForestClassifier</span>
@@ -2496,12 +2489,12 @@ Number of leaves: 14839
 <span class="n">bclf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">feature_list</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Species&#39;</span><span class="p">])</span>
 
 <span class="c1">#Print score</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">bclf</span><span class="o">.</span><span class="n">oob_score_</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">bclf</span><span class="o">.</span><span class="n">oob_score_</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.97953216374269
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.977
 </pre></div>
 </div>
 </div>
@@ -2544,7 +2537,7 @@ Number of leaves: 14839
 </section>
 <section id="boosting">
 <h2>Boosting<a class="headerlink" href="#boosting" title="Link to this heading">#</a></h2>
-<p>Boosting considers all our training data but fits models <strong>sequentially</strong> (instead of bagging independently on random subsets). To do this, it fits an initial model and then <strong>re-weights</strong> misclassified observations so that the next model will focus on classifying them correctly. Final prediction is usually a weighted average of these individual models (with more accurate models being weighted higher). Usually the individual models used in boosting are simple (e.g. shallow decision trees) and we call them <strong>weak learners</strong>.</p>
+<p>Boosting is another ensembling approach that considers all our training data but fits models <strong>sequentially</strong> (instead of bagging independently on random subsets). To do this, it fits an initial model and then <strong>re-weights</strong> misclassified observations so that the next model will focus on classifying them correctly. Final prediction is usually a weighted average of these individual models (with more accurate models being weighted higher). Usually the individual models used in boosting are simple (e.g. shallow decision trees) and we call them <strong>weak learners</strong>.</p>
 <p>In its most simplest form, boosting can be implemented by re-weighting our data such that <strong>mispredicted samples</strong> are assigned a <strong>value of 1</strong> and <strong>accurately predicted samples</strong> are assigned a <strong>value of 0</strong>. If we do this, then the new classifier will only consider misclassified samples during its training phase.</p>
 <a class="reference internal image-reference" href="../../_images/boosting.png"><img alt="../../_images/boosting.png" class="align-center" src="../../_images/boosting.png" style="width: 600px;" /></a>
 <p>In practice, there are statistical algorithms that have been developed for determining how sample weights should be updated. The classic version of this approach is called <code class="docutils literal notranslate"><span class="pre">AdaBoost</span></code> (i.e. Adaptive Boosting).</p>
@@ -2561,8 +2554,10 @@ Number of leaves: 14839
 <span class="c1"># Fit</span>
 <span class="n">bclf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df_scaled</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Species&#39;</span><span class="p">])</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error rate of each classifier: </span><span class="si">{</span><span class="n">bclf</span><span class="o">.</span><span class="n">estimator_errors_</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Weight of each classifier: </span><span class="si">{</span><span class="n">bclf</span><span class="o">.</span><span class="n">estimator_weights_</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error rate of each classifier:&quot;</span><span class="p">,</span> 
+      <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">err</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">err</span> <span class="ow">in</span> <span class="n">bclf</span><span class="o">.</span><span class="n">estimator_errors_</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Weight of each classifier:&quot;</span><span class="p">,</span>
+      <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">err</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">err</span> <span class="ow">in</span> <span class="n">bclf</span><span class="o">.</span><span class="n">estimator_weights_</span><span class="p">])</span>
 
 <span class="c1"># Score</span>
 <span class="n">scores</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">bclf</span><span class="p">,</span> <span class="n">df_scaled</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Species&#39;</span><span class="p">],</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
@@ -2572,8 +2567,8 @@ Number of leaves: 14839
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Error rate of each classifier: [0.03508772 0.04141414 0.10874091 0.05378077 0.11121717]
-Weight of each classifier: [4.00733319 3.83498391 2.79681429 3.56070549 2.77151533]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Error rate of each classifier: [&#39;0.035&#39;, &#39;0.041&#39;, &#39;0.109&#39;, &#39;0.054&#39;, &#39;0.111&#39;]
+Weight of each classifier: [&#39;4.01&#39;, &#39;3.83&#39;, &#39;2.80&#39;, &#39;3.56&#39;, &#39;2.77&#39;]
 The testing accuracy using a AdaBoostClassifier is 0.982
 </pre></div>
 </div>
@@ -2584,7 +2579,7 @@ The testing accuracy using a AdaBoostClassifier is 0.982
 <section id="gradient-boosting">
 <h2>Gradient boosting<a class="headerlink" href="#gradient-boosting" title="Link to this heading">#</a></h2>
 <p>While AdaBoost is a useful algorithm for learning about boosting, it is not the most computationally efficient or flexible. Nowadays, <strong>Gradient Boosting</strong> is much more popular. Gradient boosting also fits models sequentially but instead of re-weighting the mispredicted samples, it computes the <strong>residual errors</strong> between the actual and predicted samples and fits a new model to these residuals.</p>
-<a class="reference internal image-reference" href="../../_images/gradient-boosting.png"><img alt="../../_images/gradient-boosting.png" class="align-center" src="../../_images/gradient-boosting.png" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../../_images/gradient-boosting.png"><img alt="../../_images/gradient-boosting.png" class="align-center" src="../../_images/gradient-boosting.png" style="width: 500px;" /></a>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.ensemble</span><span class="w"> </span><span class="kn">import</span> <span class="n">GradientBoostingClassifier</span>
@@ -2641,6 +2636,10 @@ The testing accuracy using a AdaBoostClassifier is 0.982
 </div>
 </div>
 <p>Gradient boosting is also useful for regression. Here we apply a <code class="docutils literal notranslate"><span class="pre">GradientBoostingRegressor</span></code> to predict house prices. The plot below is a <strong>learning curve</strong> (or loss curve) that shows how the model’s performance improves as we increase the number of estimators in the ensemble. The performance improves rapidly to begin with since the base estimator is a <strong>weak learner</strong> and residuals are large and easy to learn. But as the residuals become smaller and smaller, newer models provide less of an improvement and the performance starts to plateau.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All Gradient Boosting algorithms use Decision Trees (also known as Classification and Regression Trees (CART)) as their base estimators.</p>
+</div>
 <p>This idea of fitting new weak learners to the <strong>negative gradient of the loss function</strong> explains why this class of models are called <strong>gradient boosting algorithms</strong>. By predicting the gradient, the new learners compute the direction <strong>and</strong> magnitude of adjustment needed to reduce the loss.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2660,7 +2659,7 @@ The testing accuracy using a AdaBoostClassifier is 0.982
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/b7a614fab4860ee564282d5ddd480491eb0429906f87e02a14a9f94762d881dc.png" src="../../_images/b7a614fab4860ee564282d5ddd480491eb0429906f87e02a14a9f94762d881dc.png" />
+<img alt="../../_images/636876239c885c193b5c1e5d247ce5b658912f9dba05e4cdce9074b1f206ff7a.png" src="../../_images/636876239c885c193b5c1e5d247ce5b658912f9dba05e4cdce9074b1f206ff7a.png" />
 </div>
 </div>
 <p>Gradient Boosting algorithms (e.g. <strong>XGBoost</strong>, <strong>CatBoost</strong>) have emerged as some of the most powerful and widely used methods for machine learning, often outperforming deep learning models. They consistently rank at the top of benchmark datasets and machine learning competitions, especially for tasks involving <strong>structured</strong> (i.e. tabular) data.</p>
@@ -2700,7 +2699,7 @@ The testing accuracy using a AdaBoostClassifier is 0.982
 <td><p>Easy to parallelize (since learners are independent)</p></td>
 <td><p>Harder to parallelize (since each step depends on previous)</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>Famous algorithms</strong></p></td>
+<tr class="row-odd"><td><p><strong>Algorithms</strong></p></td>
 <td><p>Random Forests</p></td>
 <td><p>AdaBoost, Gradient Boosting, XGBoost</p></td>
 </tr>
@@ -2755,11 +2754,11 @@ The testing accuracy using a AdaBoostClassifier is 0.982
       </div>
     </a>
     <a class="right-next"
-       href="lecture-6a.html"
+       href="../../activities/week5/wine-activity.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Machine learning applications</p>
+        <p class="prev-next-title">Wine activity</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -2783,12 +2782,18 @@ The testing accuracy using a AdaBoostClassifier is 0.982
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-machine-learning">What is machine learning?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-the-palmer-penguins">Example - the Palmer Penguins</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-vocabularly">Some vocabularly</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-learning">Supervised learning</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unsupervised-learning">Unsupervised learning</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reinforcement-learning">Reinforcement learning</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classification">Classification</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regression">Regression</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clustering">Clustering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-machine-learning">Types of machine learning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-learning">Supervised learning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unsupervised-learning">Unsupervised learning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reinforcement-learning">Reinforcement learning</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-machine-learning-tasks">Common machine learning tasks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classification">Classification</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regression">Regression</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clustering">Clustering</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-our-dataset">Exploring our dataset</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-scaling">Feature scaling</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-and-testing-subsets">Training and testing subsets</a></li>
@@ -2796,7 +2801,7 @@ The testing accuracy using a AdaBoostClassifier is 0.982
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#confusion-matrix">Confusion matrix</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-validation">Cross-validation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-tree-classifier">Decision Tree Classifier</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loss-functions">Loss functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loss-or-error-functions">Loss (or error) functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters">Parameters</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hyperparameter-tuning">Hyperparameter tuning</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#another-example-california-house-prices">Another example - California House Prices</a></li>
