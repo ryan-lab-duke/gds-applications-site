@@ -2,58 +2,30 @@
 
 ## It's competition time!
 
-In this week's lab we will play a Kaggle-like competition. In these competitions, a host usually prepares a dataset and people from around the world compete against each other to build the best machine learning model. Submitted models are scored based on their predictive accuracy relative to a hidden solution file. 
+In this week's lab we will compete to produce the best model for classifying our wine dataset. The data can be downloaded from the [here](https://prodduke-my.sharepoint.com/:f:/g/personal/jr555_duke_edu/Eu8mGsF_wNBGpcAiRJou5pkBtFIvDh5lyecepsdYCeTlrQ?e=Lbv4vU). 
 
-We will be attempting to produce an accurate model for for predicting house prices. The data contains all houses sold in **King County, WA** between May 2014 and May 2015 and can be downloaded from the [here](https://www.dropbox.com/sh/8nstpdxsyl6sntg/AADlAfMmL7xW7qzKPwlNbKL_a?dl=0). 
+Next Wednesday, we will score models based on their **mean accuracy** on a set of 20 wines that only the instructor as access to. Highest accuracy wins.
 
-```{image} images/seattle-houses.webp
-:width: 700px
+```{image} images/wine.png
+:width: 500px
 :align: center
 ```
 
 *****************************
 
-## Question 1 (10 points): 
+## Task 1 (10 points): 
 
-Start by reading `seattle-house-prices.csv` and answer the following questions. 
+Develop a machine learning model that classifies wine into class 0, 1, or 2 using the dataset available to you. 
 
-* How many houses are in this dataset?
+To earn full marks on this assignment, we would like to see some evidence of a **systematic search for model performance**. This search could explore different strategies that we have discussed in class including data augmentation, regularization, feature engineering, and/or ensembling. The easiest way to show evidence for these strategies is usually in the form of **learning curves**. Remember, the best performing model will be the one that can **generalize** to new data, not the one that scores 100% on the training data. 
 
-* How many **features** are there for predicting house price? 
-
-* Are there any null values in this dataset?
-
-* Which **three variables** are **best correlated** with house price (include correlation coefficients)?
-
-* Which **three variables** are **least correlated** with house price (include correlation coefficients)?
-
+```{hint}
+Class 2 is overrepresented in the hidden dataset
+```
 
 *****************************
 
-## Question 2 (30 points):
-
-* Produce a model to predict house prices. You are welcome to generate new features, scale the data, and split the data into training/testing (i.e. `train_test_split`) in any way you like. You are also welcome to use the datasets contained in the data folder or other datasets that you find on the internet. 
-
-
-* Evaluate your model's accuracy by predicting a test dataset, for example:
-
-```
-predictions = forest_reg.predict(X_test)
-final_mse = mean_squared_error(y_test, predictions)
-final_rmse = np.sqrt(final_mse)
-```
-
-
-* On **Monday** the instructor and TA will provide an **unseen set of houses** which students will use to repeat their accuracy evaluation. The best models (i.e. lowest RMSE) will win prizes. 
-
-
-* We will evaluate the models using a simple `mean-squared-error` as follows:
-
-```
-mse = mean_squared_error(y_test , predictions)
-rmse = np.sqrt(final_mse)
-```
 
 ```{important}
-Save your notebooks locally as both `.ipynb` and `.pdf` formats but only submit the **pdf** to Canvas.
+Please submit your notebook in `.pdf` format to Canvas by the deadline as evidence of your work.
 ```

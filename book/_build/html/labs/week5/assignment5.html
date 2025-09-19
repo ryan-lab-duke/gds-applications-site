@@ -63,6 +63,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'labs/week5/assignment5';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Machine learning applications" href="../../lectures/unit2/lecture-6a.html" />
+    <link rel="prev" title="Wine activity" href="../../activities/week5/wine-activity.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -113,8 +115,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
@@ -202,30 +202,46 @@
 <li class="toctree-l1"><a class="reference internal" href="../week4/assignment4.html">Assignment 4</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 5</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../lectures/unit2/lecture-5.html">Machine learning fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../activities/week5/wine-activity.html">Wine activity</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Assignment 5</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 6</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/unit2/lecture-6a.html">Machine learning applications</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/unit2/lecture-6b.html">Neural networks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../week6/assignment6.html">Assignment 6</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 7</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../lectures/unit3/lecture-7.html">Data access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/unit2/lecture-7.html">Specialized neural networks</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 8</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../lectures/unit3/lecture-8.html">Automating raster analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../final-project/fall-break.html">Fall break</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 9</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../lectures/unit4/lecture-9a.html">Visualization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../lectures/unit4/lecture-9b.html">Maps with data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/unit3/lecture-8.html">Data access</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../final-project/project-ideas.html">Project ideas</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 10</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/unit3/lecture-9.html">Code management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../final-project/make-readme.html">Make a README</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 11</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/unit3/lecture-10.html">Automating raster analysis</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 12</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/unit4/lecture-11a.html">Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/unit4/lecture-11b.html">Maps with data</a></li>
 </ul>
 
     </div>
@@ -419,8 +435,7 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#it-s-competition-time">It’s competition time!</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-10-points">Question 1 (10 points):</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-30-points">Question 2 (30 points):</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1-10-points">Task 1 (10 points):</a></li>
 </ul>
             </nav>
         </div>
@@ -436,45 +451,23 @@
 <h1>Assignment 5<a class="headerlink" href="#assignment-5" title="Link to this heading">#</a></h1>
 <section id="it-s-competition-time">
 <h2>It’s competition time!<a class="headerlink" href="#it-s-competition-time" title="Link to this heading">#</a></h2>
-<p>In this week’s lab we will play a Kaggle-like competition. In these competitions, a host usually prepares a dataset and people from around the world compete against each other to build the best machine learning model. Submitted models are scored based on their predictive accuracy relative to a hidden solution file.</p>
-<p>We will be attempting to produce an accurate model for for predicting house prices. The data contains all houses sold in <strong>King County, WA</strong> between May 2014 and May 2015 and can be downloaded from the <a class="reference external" href="https://www.dropbox.com/sh/8nstpdxsyl6sntg/AADlAfMmL7xW7qzKPwlNbKL_a?dl=0">here</a>.</p>
-<a class="reference internal image-reference" href="../../_images/seattle-houses.webp"><img alt="../../_images/seattle-houses.webp" class="align-center" src="../../_images/seattle-houses.webp" style="width: 700px;" /></a>
+<p>In this week’s lab we will compete to produce the best model for classifying our wine dataset. The data can be downloaded from the <a class="reference external" href="https://prodduke-my.sharepoint.com/:f:/g/personal/jr555_duke_edu/Eu8mGsF_wNBGpcAiRJou5pkBtFIvDh5lyecepsdYCeTlrQ?e=Lbv4vU">here</a>.</p>
+<p>Next Wednesday, we will score models based on their <strong>mean accuracy</strong> on a set of 20 wines that only the instructor as access to. Highest accuracy wins.</p>
+<a class="reference internal image-reference" href="../../_images/wine1.png"><img alt="../../_images/wine1.png" class="align-center" src="../../_images/wine1.png" style="width: 500px;" /></a>
 </section>
 <hr class="docutils" />
-<section id="question-1-10-points">
-<h2>Question 1 (10 points):<a class="headerlink" href="#question-1-10-points" title="Link to this heading">#</a></h2>
-<p>Start by reading <code class="docutils literal notranslate"><span class="pre">seattle-house-prices.csv</span></code> and answer the following questions.</p>
-<ul class="simple">
-<li><p>How many houses are in this dataset?</p></li>
-<li><p>How many <strong>features</strong> are there for predicting house price?</p></li>
-<li><p>Are there any null values in this dataset?</p></li>
-<li><p>Which <strong>three variables</strong> are <strong>best correlated</strong> with house price (include correlation coefficients)?</p></li>
-<li><p>Which <strong>three variables</strong> are <strong>least correlated</strong> with house price (include correlation coefficients)?</p></li>
-</ul>
-</section>
+<section id="task-1-10-points">
+<h2>Task 1 (10 points):<a class="headerlink" href="#task-1-10-points" title="Link to this heading">#</a></h2>
+<p>Develop a machine learning model that classifies wine into class 0, 1, or 2 using the dataset available to you.</p>
+<p>To earn full marks on this assignment, we would like to see some evidence of a <strong>systematic search for model performance</strong>. This search could explore different strategies that we have discussed in class including data augmentation, regularization, feature engineering, and/or ensembling. The easiest way to show evidence for these strategies is usually in the form of <strong>learning curves</strong>. Remember, the best performing model will be the one that can <strong>generalize</strong> to new data, not the one that scores 100% on the training data.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Class 2 is overrepresented in the hidden dataset</p>
+</div>
 <hr class="docutils" />
-<section id="question-2-30-points">
-<h2>Question 2 (30 points):<a class="headerlink" href="#question-2-30-points" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Produce a model to predict house prices. You are welcome to generate new features, scale the data, and split the data into training/testing (i.e. <code class="docutils literal notranslate"><span class="pre">train_test_split</span></code>) in any way you like. You are also welcome to use the datasets contained in the data folder or other datasets that you find on the internet.</p></li>
-<li><p>Evaluate your model’s accuracy by predicting a test dataset, for example:</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">predictions</span> <span class="o">=</span> <span class="n">forest_reg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-<span class="n">final_mse</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predictions</span><span class="p">)</span>
-<span class="n">final_rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">final_mse</span><span class="p">)</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>On <strong>Monday</strong> the instructor and TA will provide an <strong>unseen set of houses</strong> which students will use to repeat their accuracy evaluation. The best models (i.e. lowest RMSE) will win prizes.</p></li>
-<li><p>We will evaluate the models using a simple <code class="docutils literal notranslate"><span class="pre">mean-squared-error</span></code> as follows:</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mse</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span> <span class="p">,</span> <span class="n">predictions</span><span class="p">)</span>
-<span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">final_mse</span><span class="p">)</span>
-</pre></div>
-</div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>Save your notebooks locally as both <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> and <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> formats but only submit the <strong>pdf</strong> to Canvas.</p>
+<p>Please submit your notebook in <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> format to Canvas by the deadline as evidence of your work.</p>
 </div>
 </section>
 </section>
@@ -509,6 +502,24 @@
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../../activities/week5/wine-activity.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Wine activity</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../lectures/unit2/lecture-6a.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Machine learning applications</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -527,8 +538,7 @@
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#it-s-competition-time">It’s competition time!</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-10-points">Question 1 (10 points):</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-30-points">Question 2 (30 points):</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1-10-points">Task 1 (10 points):</a></li>
 </ul>
   </nav></div>
 

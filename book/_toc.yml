@@ -40,6 +40,8 @@ parts:
   - caption: Week 5
     chapters:
     - file: lectures/unit2/lecture-5.ipynb
+    - file: activities/week5/wine-activity.md
+    - file: labs/week5/assignment5.md
 
   - caption: Week 6
     chapters:
