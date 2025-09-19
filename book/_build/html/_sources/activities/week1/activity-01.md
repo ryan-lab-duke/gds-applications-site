@@ -1,4 +1,4 @@
-# Activity 1
+# Rivers of the World Activity
 
 In this activity, we will practice working with table data in Python. Download the data for the assignment from [here](https://prodduke-my.sharepoint.com/:x:/g/personal/jr555_duke_edu/ETFKJhCx9a5LrWvxNhFSvDIB3RAJT9G2zCHt_rsCedRZCg?e=uBa4oL). This dataset contains attributes for the some of the largest rivers in the world. In this activity, we will use the `pandas` package to do some basic analysis on this dataset. 
 

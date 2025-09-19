@@ -1,4 +1,4 @@
-# Activity 2
+# Residential Flooding Activity
 
 Flooding is the most common and damaging natural disaster in the United States. Therefore understanding the number of people at risk of flooding is critical information for planning. In this activity, we will perfom some basic spatial analysis using the `geopandas` package to investigate the number of people exposed to flooding in Orange County, NC. 
 

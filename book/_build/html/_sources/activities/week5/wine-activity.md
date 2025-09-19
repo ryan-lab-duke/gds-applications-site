@@ -2,7 +2,7 @@
 
 ## Background
 
-In this activity, we will practice some machine learning using the wine dataset. Download the two csv files from [here](https://prodduke-my.sharepoint.com/:f:/g/personal/jr555_duke_edu/Eu8mGsF_wNBGpcAiRJou5pkBtFIvDh5lyecepsdYCeTlrQ?e=TCOkVn). 
+In this activity, we will practice some machine learning using the wine dataset. Download the data from [here](https://prodduke-my.sharepoint.com/:f:/g/personal/jr555_duke_edu/Eu8mGsF_wNBGpcAiRJou5pkBtFIvDh5lyecepsdYCeTlrQ?e=TCOkVn). 
 
 ```{image} images/wine.png
 :width: 500px
@@ -87,9 +87,9 @@ from sklearn.tree import plot_tree
 
 Make a plot showing how testing and training error changes as `max_depth` is increased from 1 to 5.
 
-* At what `max_depth` does training error become 0?
+* At what `max_depth` does **training error** become 0?
 
-* At what `max_depth` does testing error become 0?
+* At what `max_depth` does **testing error** become 0?
 
 * Which do you think is the **best** model and explain why.
 

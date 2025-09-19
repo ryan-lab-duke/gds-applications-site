@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Activity 2 &#8212; Geospatial Data Science</title>
+    <title>Residential Flooding Activity &#8212; Geospatial Data Science</title>
   
   
   
@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -181,19 +181,19 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../lectures/unit1/lecture-1.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../labs/week1/assignment1.html">Assignment 1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../week1/activity-01.html">Activity 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week1/activity-01.html">Rivers of the World Activity</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 2</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../lectures/unit1/lecture-2.html">Vector data analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../labs/week2/assignment2.html">Assignment 2</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Activity 2</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Residential Flooding Activity</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 3</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../lectures/unit1/lecture-3.html">Network data analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../labs/week3/assignment3.html">Assignment 3</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../week3/activity-03.html">Activity 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week3/activity-03.html">Census Activity</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 4</span></p>
 <ul class="nav bd-sidenav">
@@ -205,13 +205,11 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../lectures/unit2/lecture-5.html">Machine learning fundamentals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../week5/wine-activity.html">Wine activity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labs/week5/assignment5.html">Assignment 5</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 6</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../lectures/unit2/lecture-6a.html">Machine learning applications</a></li>
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="../../lectures/unit2/lecture-6b.html">Neural networks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../labs/week6/assignment6.html">Assignment 6</a></li>
 </ul>
@@ -423,7 +421,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Activity 2</h1>
+    <h1>Residential Flooding Activity</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -448,8 +446,8 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="activity-2">
-<h1>Activity 2<a class="headerlink" href="#activity-2" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="residential-flooding-activity">
+<h1>Residential Flooding Activity<a class="headerlink" href="#residential-flooding-activity" title="Link to this heading">#</a></h1>
 <p>Flooding is the most common and damaging natural disaster in the United States. Therefore understanding the number of people at risk of flooding is critical information for planning. In this activity, we will perfom some basic spatial analysis using the <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> package to investigate the number of people exposed to flooding in Orange County, NC.</p>
 <p>The data can be downloaded from <a class="reference external" href="https://prodduke-my.sharepoint.com/:f:/g/personal/jr555_duke_edu/EiD2lKkUb1dMsiE33eggj4MBk_tFp8z54O_aoCcobahsjQ?e=zsuzEI">here</a>. There are two shapefiles in this directory. The first dataset, <code class="docutils literal notranslate"><span class="pre">orange-county-structures.shp</span></code>, is an inventory of all structures larger than 450 square feet produced by the Federal Emergency Management Agency (FEMA). More information about this dataset can be found <a class="reference external" href="https://gis-fema.hub.arcgis.com/pages/usa-structures">here</a>. The second dataset, <code class="docutils literal notranslate"><span class="pre">S_FLD_HAZ_AR.shp</span></code>, is the FEMA Special Flood Hazard Area (SFHA) designation, a regulatory product produced using 1-dimensional flood modeling.</p>
 <a class="reference internal image-reference" href="../../_images/flooding.png"><img alt="../../_images/flooding.png" class="align-center" src="../../_images/flooding.png" style="width: 600px;" /></a>

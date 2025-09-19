@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -181,19 +181,19 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../unit1/lecture-1.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../labs/week1/assignment1.html">Assignment 1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../activities/week1/activity-01.html">Activity 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../activities/week1/activity-01.html">Rivers of the World Activity</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 2</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../unit1/lecture-2.html">Vector data analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../labs/week2/assignment2.html">Assignment 2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../activities/week2/activity-02.html">Activity 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../activities/week2/activity-02.html">Residential Flooding Activity</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 3</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../unit1/lecture-3.html">Network data analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../labs/week3/assignment3.html">Assignment 3</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../activities/week3/activity-03.html">Activity 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../activities/week3/activity-03.html">Census Activity</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 4</span></p>
 <ul class="nav bd-sidenav">
@@ -205,13 +205,11 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Machine learning fundamentals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../activities/week5/wine-activity.html">Wine activity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labs/week5/assignment5.html">Assignment 5</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 6</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="lecture-6a.html">Machine learning applications</a></li>
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="lecture-6b.html">Neural networks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../labs/week6/assignment6.html">Assignment 6</a></li>
 </ul>
@@ -803,7 +801,7 @@
 <h3>Reinforcement learning<a class="headerlink" href="#reinforcement-learning" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>An agent learns to make decisions by interacting with an environment</p></li>
-<li><p>For example, chess-playing like AlphaGo, self-driving cars</p></li>
+<li><p>For example, chess-playing like AlphaZero, self-driving cars</p></li>
 </ul>
 </section>
 </section>
@@ -992,7 +990,7 @@ memory usage: 13.5+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1493d4470&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x12e09f680&gt;
 </pre></div>
 </div>
 <img alt="../../_images/3850053b59d643122678154c13fddeb51b6f8b422b31cee406f9de9c7cab1245.png" src="../../_images/3850053b59d643122678154c13fddeb51b6f8b422b31cee406f9de9c7cab1245.png" />
@@ -1830,8 +1828,18 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <span class="n">test_scores</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">df_scaled</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">model_name</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The test accuracy using a </span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">test_scores</span><span class="p">)</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="c1"># Predict test labels</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The test accuracy using a DecisionTreeClassifier is 0.953
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Predict test labels</span>
 <span class="n">predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 
 <span class="c1"># Generate confusion matrix</span>
@@ -1845,9 +1853,6 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The test accuracy using a DecisionTreeClassifier is 0.953
-</pre></div>
-</div>
 <img alt="../../_images/7dbab7f564353be6ded9985945cacc0fe21328e0ef92b1e89d7382f50d786df5.png" src="../../_images/7dbab7f564353be6ded9985945cacc0fe21328e0ef92b1e89d7382f50d786df5.png" />
 </div>
 </div>
@@ -1932,12 +1937,19 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <span class="n">model</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">()</span>
 
 <span class="c1"># Print all hyperparameters</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">get_params</span><span class="p">())</span>
+<span class="n">model</span><span class="o">.</span><span class="n">get_params</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;algorithm&#39;: &#39;auto&#39;, &#39;leaf_size&#39;: 30, &#39;metric&#39;: &#39;minkowski&#39;, &#39;metric_params&#39;: None, &#39;n_jobs&#39;: None, &#39;n_neighbors&#39;: 5, &#39;p&#39;: 2, &#39;weights&#39;: &#39;uniform&#39;}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;algorithm&#39;: &#39;auto&#39;,
+ &#39;leaf_size&#39;: 30,
+ &#39;metric&#39;: &#39;minkowski&#39;,
+ &#39;metric_params&#39;: None,
+ &#39;n_jobs&#39;: None,
+ &#39;n_neighbors&#39;: 5,
+ &#39;p&#39;: 2,
+ &#39;weights&#39;: &#39;uniform&#39;}
 </pre></div>
 </div>
 </div>
@@ -1949,12 +1961,24 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <span class="n">model</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">()</span>
 
 <span class="c1"># Print all hyperparameters</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">get_params</span><span class="p">())</span>
+<span class="n">model</span><span class="o">.</span><span class="n">get_params</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;ccp_alpha&#39;: 0.0, &#39;class_weight&#39;: None, &#39;criterion&#39;: &#39;gini&#39;, &#39;max_depth&#39;: None, &#39;max_features&#39;: None, &#39;max_leaf_nodes&#39;: None, &#39;min_impurity_decrease&#39;: 0.0, &#39;min_samples_leaf&#39;: 1, &#39;min_samples_split&#39;: 2, &#39;min_weight_fraction_leaf&#39;: 0.0, &#39;monotonic_cst&#39;: None, &#39;random_state&#39;: None, &#39;splitter&#39;: &#39;best&#39;}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;ccp_alpha&#39;: 0.0,
+ &#39;class_weight&#39;: None,
+ &#39;criterion&#39;: &#39;gini&#39;,
+ &#39;max_depth&#39;: None,
+ &#39;max_features&#39;: None,
+ &#39;max_leaf_nodes&#39;: None,
+ &#39;min_impurity_decrease&#39;: 0.0,
+ &#39;min_samples_leaf&#39;: 1,
+ &#39;min_samples_split&#39;: 2,
+ &#39;min_weight_fraction_leaf&#39;: 0.0,
+ &#39;monotonic_cst&#39;: None,
+ &#39;random_state&#39;: None,
+ &#39;splitter&#39;: &#39;best&#39;}
 </pre></div>
 </div>
 </div>
@@ -2237,7 +2261,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The testing error of our model is 46.55 k$
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The testing error of our model is 46.71 k$
 </pre></div>
 </div>
 </div>
@@ -2260,7 +2284,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The training error of our model is 0.00 k$
 Tree depth: 36
-Number of leaves: 14840
+Number of leaves: 14837
 </pre></div>
 </div>
 </div>
@@ -2282,7 +2306,7 @@ Number of leaves: 14840
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/fdce30852dc9a7de2be95c9940feae4833b42eb885a04c47f8533d4a04a7d69d.png" src="../../_images/fdce30852dc9a7de2be95c9940feae4833b42eb885a04c47f8533d4a04a7d69d.png" />
+<img alt="../../_images/e6ca329aa93906f7acaf9ca6ecb518bb9de136dd683d5f42ef986df4a10201b8.png" src="../../_images/e6ca329aa93906f7acaf9ca6ecb518bb9de136dd683d5f42ef986df4a10201b8.png" />
 </div>
 </div>
 <ul class="simple">
@@ -2352,7 +2376,7 @@ Number of leaves: 14840
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/7cebe6d85867cc10504cf1285663e910a008db1bed32d1c21591fcc4c6b6715a.png" src="../../_images/7cebe6d85867cc10504cf1285663e910a008db1bed32d1c21591fcc4c6b6715a.png" />
+<img alt="../../_images/da822ab75a71021cb1d1987c4ae7218850fcbdecd6f3258406a19ed24b7ab67c.png" src="../../_images/da822ab75a71021cb1d1987c4ae7218850fcbdecd6f3258406a19ed24b7ab67c.png" />
 </div>
 </div>
 <p>We find that the testing error becomes lower as more samples are added to the training set. It looks as though the testing error is starting to plateau a bit but it is also still going down. We can therefore conclude that <strong>more samples would probably improve our predictive model</strong>.</p>
@@ -2494,7 +2518,7 @@ Number of leaves: 14840
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.977
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.980
 </pre></div>
 </div>
 </div>
@@ -2659,7 +2683,7 @@ The testing accuracy using a AdaBoostClassifier is 0.982
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/636876239c885c193b5c1e5d247ce5b658912f9dba05e4cdce9074b1f206ff7a.png" src="../../_images/636876239c885c193b5c1e5d247ce5b658912f9dba05e4cdce9074b1f206ff7a.png" />
+<img alt="../../_images/532030ac86094ca542e0505bc29511e8c63b555dabc337606d4a344585f02b2d.png" src="../../_images/532030ac86094ca542e0505bc29511e8c63b555dabc337606d4a344585f02b2d.png" />
 </div>
 </div>
 <p>Gradient Boosting algorithms (e.g. <strong>XGBoost</strong>, <strong>CatBoost</strong>) have emerged as some of the most powerful and widely used methods for machine learning, often outperforming deep learning models. They consistently rank at the top of benchmark datasets and machine learning competitions, especially for tasks involving <strong>structured</strong> (i.e. tabular) data.</p>
