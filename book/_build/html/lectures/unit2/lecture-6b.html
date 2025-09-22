@@ -644,7 +644,7 @@ a = \text{ReLU}\!\left(w_0 x_0 + w_1 x_1 + w_2 x_2 + b\right)
 <li><p>Too high will cause the model to bounce around without converging</p></li>
 <li><p>Too low will cause the model to converge very slowly and may get stuck at local minima</p></li>
 </ul>
-<p>Unfortunately, computing the gradients for every training sample, for every node in our network would take a long time. So we usually estimate the gradient by computing the derivative of the loss for on random samples of our training dataset. This is called <strong>stochastic gradient descent</strong>.</p>
+<p>Unfortunately, computing the gradients for every training sample, for every node in our network would take a long time. So we usually estimate the gradient by computing the derivative of the loss on random samples of our training dataset. This is called <strong>stochastic gradient descent</strong>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>If gradient becomes zero (e.g. saddle point, or local minima), then this optimization approach gets stuck.</p>
@@ -824,7 +824,7 @@ NSE: 0.61
 </div>
 <p>We obtained a slight improvement using early stopping. Other regularization strategies include:</p>
 <ul class="simple">
-<li><p><strong>L2 regularization</strong> (or weight decay) adds a penalty to the error function that is proportional to the sum of squared weights</p></li>
+<li><p><strong>L2 regularization</strong> (or weight decay) adds a penalty to the error function that encourages smaller weights when modifying gradients</p></li>
 <li><p><strong>Dropout</strong> randomly “turns off” a fraction of nodes during training which prevents nodes relying too much on each other.</p></li>
 </ul>
 <div class="admonition note">
