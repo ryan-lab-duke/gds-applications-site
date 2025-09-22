@@ -990,7 +990,7 @@ memory usage: 13.5+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x12e09f680&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x12d839430&gt;
 </pre></div>
 </div>
 <img alt="../../_images/3850053b59d643122678154c13fddeb51b6f8b422b31cee406f9de9c7cab1245.png" src="../../_images/3850053b59d643122678154c13fddeb51b6f8b422b31cee406f9de9c7cab1245.png" />
@@ -1247,7 +1247,7 @@ Name: count, dtype: int64
 </section>
 <section id="fitting-our-first-model">
 <h2>Fitting our first model<a class="headerlink" href="#fitting-our-first-model" title="Link to this heading">#</a></h2>
-<p>Now we are ready to build our first model. We will first experiment with a very simple supervised algorithm that classifies our data using <strong>K-nearest neighbors</strong>. This algorithm computes the distance between a new data point and all training points. It then finds the closest <strong>k-neighbors</strong> (in our case, 3) and uses a majority vote to assign a lablel to the new data point.</p>
+<p>Now we are ready to build our first model. We will first experiment with a very simple supervised algorithm that classifies our data using <strong>K-nearest neighbors</strong>. This algorithm computes the distance between a new data point and all training points. It then finds the closest <strong>k-neighbors</strong> (usually Euclidean but could be Manhattan) and uses a majority vote to assign a lablel to the new data point.</p>
 <a class="reference internal image-reference" href="../../_images/k-nearest.png"><img alt="../../_images/k-nearest.png" class="align-center" src="../../_images/k-nearest.png" style="width: 500px;" /></a>
 <p>Let’s define the K-nearest neighbors classifer in <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code>.</p>
 <div class="cell docutils container">
@@ -1884,7 +1884,11 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </section>
 <section id="loss-or-error-functions">
 <h2>Loss (or error) functions<a class="headerlink" href="#loss-or-error-functions" title="Link to this heading">#</a></h2>
-<p>During the learning process, our Decision Tree is trying to find a set of thresholds that make the fewest mistakes when classifying our training data. To find the best thresholds, we need a way to evaluate whether one set of thresholds are better than another. We use <strong>loss functions</strong> to do this.</p>
+<p>During the learning process, our Decision Tree is trying to find a set of thresholds that make the fewest mistakes when classifying our training data. To find the best thresholds, the algorithm evaluates different thresholds for each feature and selects the one that provides the least error relative to labels in the training dataset. The metric that we use to evaluate whether one set of thresholds are better than another is called a <strong>loss function</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Since an exhaustive (i.e. brute-force) search over all real numbers is impossible, the algorithm only tests thresholds between consecutive unique values contained in the dataset.</p>
+</div>
 <p>Decision Trees commonly use the <strong>Gini loss function</strong> (or impurity). This index measures how mixed the classes are in a given group of samples (i.e. <strong>entropy</strong>). If a group of samples all belong to the same class, the Gini impurity is 0 (perfectly “pure”). If the group has a mix classes, the impurity is higher. At each split, the Decision Tree algorithm tries to reduce entropy or the minimize Gini impurity.</p>
 <p>For regression, a common loss function is <strong>absolute loss</strong> (i.e. MAE) where loss grows <strong>linearly</strong> with absolute mispredicted amount. This loss function is approproate for noisy data, when some mispredictions are unavoidable and shouldn’t dominate the loss.</p>
 <p>Another common loss function in regression is <strong>squared loss</strong> (i.e. MSE) where loss grows <strong>quadratically</strong> with the absolute mispredicted amount. If a prediction is very close to being correct, the square will be small and little attention will be given to that example to obtain zero error. On the other hand, the penalty will be large for predictions that are really far off.</p>
@@ -2261,7 +2265,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The testing error of our model is 46.71 k$
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The testing error of our model is 46.24 k$
 </pre></div>
 </div>
 </div>
@@ -2284,7 +2288,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The training error of our model is 0.00 k$
 Tree depth: 36
-Number of leaves: 14837
+Number of leaves: 14838
 </pre></div>
 </div>
 </div>
@@ -2306,7 +2310,7 @@ Number of leaves: 14837
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/e6ca329aa93906f7acaf9ca6ecb518bb9de136dd683d5f42ef986df4a10201b8.png" src="../../_images/e6ca329aa93906f7acaf9ca6ecb518bb9de136dd683d5f42ef986df4a10201b8.png" />
+<img alt="../../_images/850fbc8fce945efb423ebbd0bbd6072232e7483e8b2c1c0cb7d96fea0cad9525.png" src="../../_images/850fbc8fce945efb423ebbd0bbd6072232e7483e8b2c1c0cb7d96fea0cad9525.png" />
 </div>
 </div>
 <ul class="simple">
@@ -2376,7 +2380,7 @@ Number of leaves: 14837
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/da822ab75a71021cb1d1987c4ae7218850fcbdecd6f3258406a19ed24b7ab67c.png" src="../../_images/da822ab75a71021cb1d1987c4ae7218850fcbdecd6f3258406a19ed24b7ab67c.png" />
+<img alt="../../_images/d5425a8c6f84e5fbb3801f63d5ad34df5a9234d7e879f564c1500e2900716ad1.png" src="../../_images/d5425a8c6f84e5fbb3801f63d5ad34df5a9234d7e879f564c1500e2900716ad1.png" />
 </div>
 </div>
 <p>We find that the testing error becomes lower as more samples are added to the training set. It looks as though the testing error is starting to plateau a bit but it is also still going down. We can therefore conclude that <strong>more samples would probably improve our predictive model</strong>.</p>
@@ -2459,7 +2463,7 @@ Number of leaves: 14837
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.977
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.974
 </pre></div>
 </div>
 </div>
@@ -2518,7 +2522,7 @@ Number of leaves: 14837
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.980
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.977
 </pre></div>
 </div>
 </div>
@@ -2683,7 +2687,7 @@ The testing accuracy using a AdaBoostClassifier is 0.982
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/532030ac86094ca542e0505bc29511e8c63b555dabc337606d4a344585f02b2d.png" src="../../_images/532030ac86094ca542e0505bc29511e8c63b555dabc337606d4a344585f02b2d.png" />
+<img alt="../../_images/4d247ddb3a280625801296377f9c031a90436ae4a0a4c073e53ff4645640d6fa.png" src="../../_images/4d247ddb3a280625801296377f9c031a90436ae4a0a4c073e53ff4645640d6fa.png" />
 </div>
 </div>
 <p>Gradient Boosting algorithms (e.g. <strong>XGBoost</strong>, <strong>CatBoost</strong>) have emerged as some of the most powerful and widely used methods for machine learning, often outperforming deep learning models. They consistently rank at the top of benchmark datasets and machine learning competitions, especially for tasks involving <strong>structured</strong> (i.e. tabular) data.</p>
