@@ -436,9 +436,15 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-nisqually-river-discharge">Example - Nisqually River discharge</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensorflow"><code class="docutils literal notranslate"><span class="pre">TensorFlow</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-single-node">A single node</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#activation-functions">Activation functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture">Architecture</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters">Parameters</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#network-training">Network training</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#network-training">Network training</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cost-function">Cost function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization">Optimization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#backprop">Backprop</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fitting-model">Fitting model</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluating-model">Evaluating model</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regularization">Regularization</a></li>
@@ -554,18 +560,23 @@
 <p>This model has three main components:</p>
 <ul class="simple">
 <li><p>An input layer which takes a vector of size <code class="docutils literal notranslate"><span class="pre">input_dim</span></code>, representing the number of features in our climate data.</p></li>
-<li><p>Three hidden layers, each of which has 32 <strong>nodes</strong> which represent numbers (between 0 and 1) that correspond to patterns in the data. Initially, the numbers that the nodes represent are random but during training they are updated using a <strong>ReLU (Rectified Linear Unit)</strong> activation function.</p></li>
+<li><p>Three hidden layers, each of which has 32 <strong>nodes</strong> which represent numbers (between 0 and 1). Initially, the numbers that the nodes represent are random but during training they are updated using a <strong>ReLU (Rectified Linear Unit)</strong> activation function.</p></li>
 <li><p>An output layer that produces a continuous value representing scaled discharge.</p></li>
 </ul>
 </section>
 <section id="a-single-node">
 <h2>A single node<a class="headerlink" href="#a-single-node" title="Link to this heading">#</a></h2>
 <a class="reference internal image-reference" href="../../_images/node.png"><img alt="../../_images/node.png" class="align-center" src="../../_images/node.png" style="width: 500px;" /></a>
-<p>Neural networks consist of nodes that receive input from other nodes and computes an output. In this model, we have 106 nodes (9 + 32 + 32 + 32 + 1). The output from each node depends on the <strong>weighted sum</strong> of the inputs and some <strong>bias</strong> so that this weighted sum has to cross some threshold before the node is activated. We then use an <strong>activation function</strong> to <strong>non-linearly</strong> convert this weighted sum (+ bias). In the model, we use a <strong>ReLU</strong> activation function (<code class="docutils literal notranslate"><span class="pre">activation='relu'</span></code>) which converts all negative values to zero but there are others such as a <strong>sigmoid</strong> that convert values to between 0 and 1, and <strong>tanh</strong> that converts values to between -1 and 1.</p>
+<p>Neural networks consist of nodes that receive input from other nodes and computes an output. In this model, we have 106 nodes (9 + 32 + 32 + 32 + 1).</p>
+<p>The output from each node depends on the <strong>weighted sum</strong> of the inputs and some <strong>bias</strong> so that this weighted sum has to cross some threshold before the node is activated.</p>
+<p>We then use an <strong>activation function</strong> to <strong>non-linearly</strong> convert this weighted sum (+ bias). In the model, we use a <strong>ReLU</strong> activation function (<code class="docutils literal notranslate"><span class="pre">activation='relu'</span></code>) which converts all negative values to zero but there are others such as a <strong>sigmoid</strong> that convert values to between 0 and 1, and <strong>tanh</strong> that converts values to between -1 and 1.</p>
 <div class="math notranslate nohighlight">
 \[
 a = \text{ReLU}\!\left(w_0 x_0 + w_1 x_1 + w_2 x_2 + b\right)
 \]</div>
+</section>
+<section id="activation-functions">
+<h2>Activation functions<a class="headerlink" href="#activation-functions" title="Link to this heading">#</a></h2>
 <a class="reference internal image-reference" href="../../_images/functions.png"><img alt="../../_images/functions.png" class="align-center" src="../../_images/functions.png" style="width: 600px;" /></a>
 </section>
 <section id="architecture">
@@ -620,13 +631,30 @@ a = \text{ReLU}\!\left(w_0 x_0 + w_1 x_1 + w_2 x_2 + b\right)
 <section id="network-training">
 <h2>Network training<a class="headerlink" href="#network-training" title="Link to this heading">#</a></h2>
 <p>We now need an algorithm to update these weights and biases so that our model can predict discharge accurately. We use several different types of algorithm to do this.</p>
+<section id="cost-function">
+<h3>Cost function<a class="headerlink" href="#cost-function" title="Link to this heading">#</a></h3>
 <p>The first is called a <strong>cost function</strong>. In supervised learning, we can compare the outputs training samples (initially produced using a neural network with random weights and biases) with their actual discharge values. The difference, usually computed as the <strong>mean-squared-error (MSE)</strong>, provides the model with error (also known as <strong>loss</strong>) that the model will attempt to minimize.</p>
-<p>To minimize the error, neural networks first use <strong>backpropagation algorithms</strong> that compute the gradient of the loss function with respect to each parameter in a neural network (all 2,465 of them).</p>
-<p>We can then use an <strong>optimization algorithm</strong> to adjust all weights and biases in the network, based on their gradients. A commonly used optimization algorithm is called <strong>Adam</strong> (Adaptive Moment Estimation) but there are others (e.g. RMSProp). A key parameter for the optimization algorithm is the <strong>learning rate</strong> which controls the step size during optimization. A learning rate that is:</p>
+</section>
+<section id="optimization">
+<h3>Optimization<a class="headerlink" href="#optimization" title="Link to this heading">#</a></h3>
+<p>Now we need some method to reduce the loss by updating the weights in the network. We could randomly adjust the weights and see what happens. But a more efficient way is to use an <strong>optimization algorithm</strong> which computes the derivative of the loss with respect to the network weights. This is known as <strong>gradient descent</strong>.</p>
+<a class="reference internal image-reference" href="../../_images/gradient-descent.png"><img alt="../../_images/gradient-descent.png" class="align-center" src="../../_images/gradient-descent.png" style="width: 500px;" /></a>
+<p>A key parameter for gradient descent is the <strong>learning rate</strong> which controls the step size during optimization. A learning rate that is:</p>
 <ul class="simple">
 <li><p>Too high will cause the model to bounce around without converging</p></li>
 <li><p>Too low will cause the model to converge very slowly and may get stuck at local minima</p></li>
 </ul>
+<p>Unfortunately, computing the gradients for every training sample, for every node in our network would take a long time. So we usually estimate the gradient by computing the derivative of the loss for a small sample of randomly chosen training samples. This is called <strong>stochastic gradient descent</strong>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If gradient becomes zero (e.g. saddle point, or local minima), then this optimization approach gets stuck.</p>
+</div>
+<a class="reference internal image-reference" href="../../_images/local-min.png"><img alt="../../_images/local-min.png" class="align-center" src="../../_images/local-min.png" style="width: 500px;" /></a>
+<p>A velocity term (weighted average of previous gradients) is usually added to stochastic gradient descent (i.e. <strong>SGD + momentum</strong>) which enables the algorithm to overcome zero gradients and escape shallow local minima. Other approaches to improve gradient descent include <strong>RMSProp</strong>, <strong>Adam</strong> (Adaptive Moment Estimation), and <strong>AdamW</strong> (Adam + weight decay).</p>
+</section>
+<section id="backprop">
+<h3>Backprop<a class="headerlink" href="#backprop" title="Link to this heading">#</a></h3>
+<p>The final algorithm is called <strong>backpropagation</strong> which recursively applies the <strong>chain rule</strong> to compute gradients back through the network. Backpropagation substantially reduces the computational cost of computing gradients. It therefore enabled researchers to train <strong>deep</strong> neural networks that proved to be much more accurate than the shallow neural networks that were previously being used.</p>
 <p>Below we compile our model that we defined earlier.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -647,13 +675,10 @@ a = \text{ReLU}\!\left(w_0 x_0 + w_1 x_1 + w_2 x_2 + b\right)
 </div>
 </div>
 </section>
+</section>
 <section id="fitting-model">
 <h2>Fitting model<a class="headerlink" href="#fitting-model" title="Link to this heading">#</a></h2>
-<p>We are now ready to <strong><code class="docutils literal notranslate"><span class="pre">fit</span></code></strong> our model to the training data. The key parameters here are <code class="docutils literal notranslate"><span class="pre">batch_size</span></code> which determines how many samples we should use to compute the loss (i.e. MSE) and update the weights and biases before moving onto the next batch. An <code class="docutils literal notranslate"><span class="pre">epoch</span></code> is therefore one full pass through the training dataset (i.e. training on all batches). The number of training cycles (or iterations) is therefore defined as the number of batches multiplied by the number of epochs.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>It is often too computationally expensive to backpropagate over the entire dataset.</p>
-</div>
+<p>We are now ready to <strong><code class="docutils literal notranslate"><span class="pre">fit</span></code></strong> our model to the training data. The key parameters here are <code class="docutils literal notranslate"><span class="pre">batch_size</span></code> which determines how many samples we should use to compute the losses (i.e. MSE) and gradients before moving onto the next batch. An <code class="docutils literal notranslate"><span class="pre">epoch</span></code> is therefore one full pass through the training dataset (i.e. training on all batches). The number of training cycles (or iterations) is therefore defined as the number of batches multiplied by the number of epochs.</p>
 <p>Finally, we define a <code class="docutils literal notranslate"><span class="pre">validation_split</span></code> which is the proportion of the dataset to hold-out from training during each epoch. Data in the validation dataset will be used for training (during other epochs). But separating them out during training allows us to monitor how well the model is performing on unseen data <strong>while it is training</strong>. This can be useful when model takes multiple hours (or days) to fit.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -756,7 +781,7 @@ NSE: 0.61
 </div></blockquote>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>In most practical applications we almost always find that the best fitting model is a large model that has been regularized appropriately.</p>
+<p>It is recommended not to use the size of the network as a regularizer. Instead, we almost always find that the best fitting model is a large model that has been regularized appropriately.</p>
 </div>
 <p>The first strategy we can use is <strong>early stopping</strong> which simply stops training when validation loss stops improving. During training, we store a copy of the model parameters. When the algorithm terminates, we return the parameters with the lowest validation error, rather than the latest parameters. This is one of the most commonly used regularization strategies in machine learning because of its effectiveness and simplicity.</p>
 <p><code class="docutils literal notranslate"><span class="pre">TensorFlow</span></code> makes this easy to implement. We just need to specify a <code class="docutils literal notranslate"><span class="pre">patience</span></code> parameter that defines the number of epochs with no improvement after which training will be stopped.</p>
@@ -991,9 +1016,15 @@ NSE: 0.49
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-nisqually-river-discharge">Example - Nisqually River discharge</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensorflow"><code class="docutils literal notranslate"><span class="pre">TensorFlow</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-single-node">A single node</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#activation-functions">Activation functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture">Architecture</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters">Parameters</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#network-training">Network training</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#network-training">Network training</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cost-function">Cost function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization">Optimization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#backprop">Backprop</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fitting-model">Fitting model</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluating-model">Evaluating model</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regularization">Regularization</a></li>
