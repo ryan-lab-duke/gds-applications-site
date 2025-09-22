@@ -1006,8 +1006,24 @@ Name: count, dtype: int64
 <span class="c1"># OOB predictions</span>
 <span class="n">y_pred</span> <span class="o">=</span> <span class="n">bclf</span><span class="o">.</span><span class="n">oob_decision_function_</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
 
-<span class="c1"># Generate confusion matrix</span>
-<span class="n">cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">bclf</span><span class="o">.</span><span class="n">classes_</span><span class="p">)</span>
+<span class="c1"># Edit values to make a point</span>
+<span class="n">n_to_convert</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">0.1</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">y_pred</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="n">indices_to_convert</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">y_pred</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">size</span><span class="o">=</span><span class="n">n_to_convert</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">y_pred_mod</span> <span class="o">=</span> <span class="n">y_pred</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">y_pred_mod</span><span class="p">[</span><span class="n">indices_to_convert</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="n">n_to_convert</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">0.05</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">y_pred_mod</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="n">indices_to_convert</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">y_pred_mod</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">size</span><span class="o">=</span><span class="n">n_to_convert</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">y_pred_mod</span> <span class="o">=</span> <span class="n">y_pred_mod</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">y_pred_mod</span><span class="p">[</span><span class="n">indices_to_convert</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generate confusion matrix</span>
+<span class="n">cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_pred_mod</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">bclf</span><span class="o">.</span><span class="n">classes_</span><span class="p">)</span>
 
 <span class="c1"># Plot</span>
 <span class="n">disp</span> <span class="o">=</span> <span class="n">ConfusionMatrixDisplay</span><span class="p">(</span><span class="n">confusion_matrix</span><span class="o">=</span><span class="n">cm</span><span class="p">,</span> <span class="n">display_labels</span><span class="o">=</span><span class="n">class_labels</span><span class="p">)</span>
@@ -1017,7 +1033,7 @@ Name: count, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/8de19ff321b01914d8f22e177a9b60a8454a1b28143d50d5fae147144928adf4.png" src="../../_images/8de19ff321b01914d8f22e177a9b60a8454a1b28143d50d5fae147144928adf4.png" />
+<img alt="../../_images/6d69ff26befdc51c88d553f1b440dd5cd70d01602d6d4d9cbb6bddd988ecf1ec.png" src="../../_images/6d69ff26befdc51c88d553f1b440dd5cd70d01602d6d4d9cbb6bddd988ecf1ec.png" />
 </div>
 </div>
 </section>
@@ -1037,13 +1053,13 @@ Name: count, dtype: int64
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">precision_score</span>
 
-<span class="n">precision</span> <span class="o">=</span> <span class="n">precision_score</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="n">precision</span> <span class="o">=</span> <span class="n">precision_score</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_pred_mod</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Precision: </span><span class="si">{</span><span class="n">precision</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Precision: 1.00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Precision: 0.97
 </pre></div>
 </div>
 </div>
@@ -1053,13 +1069,13 @@ Name: count, dtype: int64
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">recall_score</span>
 
-<span class="n">recall</span> <span class="o">=</span> <span class="n">recall_score</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="n">recall</span> <span class="o">=</span> <span class="n">recall_score</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_pred_mod</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Recall: </span><span class="si">{</span><span class="n">recall</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Recall: 1.00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Recall: 0.91
 </pre></div>
 </div>
 </div>
@@ -1106,7 +1122,7 @@ Name: count, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/3a977ebc92829d4a309f4bf4095ae5abf73cf8cbf465bff43323caaf4565c577.png" src="../../_images/3a977ebc92829d4a309f4bf4095ae5abf73cf8cbf465bff43323caaf4565c577.png" />
+<img alt="../../_images/80756cf9fc409ec99b2db455feda8a8d65438687bc8e9011278e9287afd42b20.png" src="../../_images/80756cf9fc409ec99b2db455feda8a8d65438687bc8e9011278e9287afd42b20.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1118,7 +1134,7 @@ Name: count, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Water coverage is 17.43 %
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Water coverage is 17.53 %
 </pre></div>
 </div>
 </div>
@@ -1302,7 +1318,7 @@ Name: Nisqually Discharge, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1675d9880&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1581c97c0&gt;
 </pre></div>
 </div>
 <img alt="../../_images/24b39634803472c66322c71f5cce198bbcc98497bf620e0d5d877d782af1659a.png" src="../../_images/24b39634803472c66322c71f5cce198bbcc98497bf620e0d5d877d782af1659a.png" />
