@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Assignment 6 &#8212; Geospatial Data Science</title>
+    <title>Assignment 7 &#8212; Geospatial Data Science</title>
   
   
   
@@ -60,11 +60,11 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'labs/week6/assignment6';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'labs/week7/assignment7';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Specialized neural networks" href="../../lectures/unit2/lecture-7.html" />
-    <link rel="prev" title="Penguin activity" href="../../activities/week6/penguin-activity.html" />
+    <link rel="next" title="Fall break" href="../../final-project/fall-break.html" />
+    <link rel="prev" title="EuroSAT activity" href="../../activities/week7/eurosat-activity.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -208,16 +208,18 @@
 <li class="toctree-l1"><a class="reference internal" href="../week5/assignment5.html">Assignment 5</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 6</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../lectures/unit2/lecture-6a.html">Machine learning applications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../lectures/unit2/lecture-6b.html">Neural networks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../activities/week6/penguin-activity.html">Penguin activity</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Assignment 6</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week6/assignment6.html">Assignment 6</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 7</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../lectures/unit2/lecture-7.html">Specialized neural networks</a></li>
 
+<li class="toctree-l1"><a class="reference internal" href="../../activities/week7/eurosat-activity.html">EuroSAT activity</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Assignment 7</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 8</span></p>
 <ul class="nav bd-sidenav">
@@ -318,7 +320,7 @@
       
       
       
-      <li><a href="https://github.com/ryan-lab-duke/gds-applications-site/issues/new?title=Issue%20on%20page%20%2Flabs/week6/assignment6.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/ryan-lab-duke/gds-applications-site/issues/new?title=Issue%20on%20page%20%2Flabs/week7/assignment7.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -348,7 +350,7 @@
       
       
       
-      <li><a href="../../_sources/labs/week6/assignment6.md" target="_blank"
+      <li><a href="../../_sources/labs/week7/assignment7.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -424,7 +426,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Assignment 6</h1>
+    <h1>Assignment 7</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -435,6 +437,7 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1-10-points">Task 1 (10 points):</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-10-points">Task 2 (10 points)</a></li>
 </ul>
             </nav>
         </div>
@@ -446,17 +449,17 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="assignment-6">
-<h1>Assignment 6<a class="headerlink" href="#assignment-6" title="Link to this heading">#</a></h1>
-<p>In this week’s lab we will develop a <strong>neural network</strong> to predict house prices. The data can be downloaded from <a class="reference external" href="https://prodduke-my.sharepoint.com/:f:/g/personal/jr555_duke_edu/ErvXd7F79M1Lg9bgNEPqOpEB5aVF_oDmbi45TyM3GTCRUA?e=ad8pOD">here</a>.</p>
-<a class="reference internal image-reference" href="../../_images/houses.png"><img alt="../../_images/houses.png" class="align-center" src="../../_images/houses.png" style="width: 500px;" /></a>
-<p>There are two csv files. The first, <code class="docutils literal notranslate"><span class="pre">house-features.csv</span></code>, contains eight attributes for 20640 houses. Note that each row represents some geographic unit (e.g. Census tract) hence columns such as <code class="docutils literal notranslate"><span class="pre">AveOccup</span></code> are decimal numbers. The other file, <code class="docutils literal notranslate"><span class="pre">house-prices.csv</span></code> contains the house prices.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="assignment-7">
+<h1>Assignment 7<a class="headerlink" href="#assignment-7" title="Link to this heading">#</a></h1>
+<p>In this activity, we will develop a convolutional network to perform image classification on the EuroSAT dataset which can be accessed <a class="reference external" href="https://zenodo.org/records/7711810">here</a>. We will just be using the RGB version so download the <code class="docutils literal notranslate"><span class="pre">EuroSAT_RGB.zip</span></code> file.</p>
+<p>As a reminder, this dataset contains 27,000 labeled Sentinel-2 images over Europe with ten different land use and land cover classes.</p>
 <hr class="docutils" />
 <section id="task-1-10-points">
 <h2>Task 1 (10 points):<a class="headerlink" href="#task-1-10-points" title="Link to this heading">#</a></h2>
-<p>Develop a <strong>multilayer perceptron</strong> that predicts house prices using the features available.</p>
-<p>To earn full marks on this assignment, we would like to see some evidence of a <strong>systematic search for model performance</strong>.</p>
-<p>Unlike the previous assignment, this search should focus on the strategies for optimizing the model itself. Things that could be adjusted include:</p>
+<p>Develop a convolutional network to classify the EuroSAT dataset.</p>
+<p>To earn full marks on this assignment, we would like to see some evidence of tinkering to improve model performance.</p>
+<p>Since training on this dataset takes a long time, you probably won’t be able to carry out an extensive hyperparameter optimization search. Therefore you probably will not be able to produce learning curves.</p>
+<p>That said, we’d like to see some effort to optimize the model. Please don’t submit the same model that was used in the class activity. Things that could be adjusted include:</p>
 <ul class="simple">
 <li><p>Number of hidden layers</p></li>
 <li><p>Number of nodes in the hidden layers</p></li>
@@ -466,15 +469,17 @@
 <li><p>Batch size</p></li>
 <li><p>Activation functions</p></li>
 </ul>
-<p>Don’t attempt to optimize every one of these but please <strong>try at least one</strong>. You can use <strong>learning curves</strong> as evidence for this optimization search.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The best performing model will be the one that can <strong>generalize</strong> to new data, so we will be checking that the dataset was split into training (80%) and testing data (20%) and that the <strong>testing error</strong> was evaluated.</p>
-</div>
+</section>
+<section id="task-2-10-points">
+<h2>Task 2 (10 points)<a class="headerlink" href="#task-2-10-points" title="Link to this heading">#</a></h2>
+<p>Evaluate the model using a confusion matrix to answer the following questions:</p>
+<p>a) Which classes have the highest and lowest overall <strong>mean accuracy</strong>?</p>
+<p>b) Which classes have the highest and lowest <strong>precision</strong>?</p>
+<p>c) Which classes have the highest and lowest <strong>recall</strong>?</p>
 <hr class="docutils" />
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>Please submit your notebook in <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> format to Canvas by the deadline as evidence of your work.</p>
+<p>Save your notebook locally in both <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> and <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> formats but only submit the <strong>pdf</strong> to Canvas.</p>
 </div>
 </section>
 </section>
@@ -492,7 +497,7 @@
         },
         kernelOptions: {
             name: "python3",
-            path: "./labs/week6"
+            path: "./labs/week7"
         },
         predefinedOutput: true
     }
@@ -510,20 +515,20 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../../activities/week6/penguin-activity.html"
+       href="../../activities/week7/eurosat-activity.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Penguin activity</p>
+        <p class="prev-next-title">EuroSAT activity</p>
       </div>
     </a>
     <a class="right-next"
-       href="../../lectures/unit2/lecture-7.html"
+       href="../../final-project/fall-break.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Specialized neural networks</p>
+        <p class="prev-next-title">Fall break</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -545,6 +550,7 @@
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1-10-points">Task 1 (10 points):</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-10-points">Task 2 (10 points)</a></li>
 </ul>
   </nav></div>
 

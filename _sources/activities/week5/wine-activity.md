@@ -89,7 +89,7 @@ Make a plot showing how testing and training error changes as `max_depth` is inc
 
 * At what `max_depth` does **training error** become 0?
 
-* At what `max_depth` does **testing error** become 0?
+* At what `max_depth` does **testing error** start to plateau?
 
 * Which do you think is the **best** model and explain why.
 
