@@ -63,7 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'lectures/unit2/lecture-7';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Fall break" href="../../final-project/fall-break.html" />
+    <link rel="next" title="EuroSAT activity" href="../../activities/week7/eurosat-activity.html" />
     <link rel="prev" title="Assignment 6" href="../../labs/week6/assignment6.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -211,11 +211,15 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="lecture-6a.html">Machine learning applications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lecture-6b.html">Neural networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../activities/week6/penguin-activity.html">Penguin activity</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../labs/week6/assignment6.html">Assignment 6</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 7</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Specialized neural networks</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../../activities/week7/eurosat-activity.html">EuroSAT activity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labs/week7/assignment7.html">Assignment 7</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 8</span></p>
 <ul class="nav bd-sidenav">
@@ -225,6 +229,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../unit3/lecture-8.html">Data access</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../final-project/project-ideas.html">Project ideas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labs/assignmentX.html">Assignment 6</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 10</span></p>
 <ul class="nav bd-sidenav">
@@ -431,6 +436,7 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Specialized neural networks</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-how-much-water-is-in-these-satellite-images">Example - how much water is in these satellite images?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#segmentation-vs-classification">Segmentation vs. classification</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture">Architecture</a></li>
@@ -440,8 +446,26 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fully-connected-neural-network">Fully-connected neural network</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#network-training">Network training</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fit-and-evaluate-model">Fit and evaluate model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#semantic-segmentation">Semantic segmentation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imagenet">ImageNet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-types-of-specialized-neural-network">Other types of specialized neural network</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-methodology">Practical methodology</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-metrics">Performance metrics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#error-rate">Error rate</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#error-metrics">Error metrics</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#baseline-model">Baseline model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-data">More data?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-hyperparameters">Selecting hyperparameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automated-hyperparameter-optimization-algorithms">Automated hyperparameter optimization algorithms</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">Further reading</a></li>
 </ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -543,7 +567,7 @@ Name: fraction, Length: 100, dtype: float64
 <p>We will be using <code class="docutils literal notranslate"><span class="pre">TensorFlow</span></code> again to define our convolutional network.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">tensorflow.keras</span><span class="w"> </span><span class="kn">import</span> <span class="n">layers</span><span class="p">,</span> <span class="n">models</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">tensorflow.keras</span><span class="w"> </span><span class="kn">import</span> <span class="n">layers</span><span class="p">,</span> <span class="n">models</span><span class="p">,</span> <span class="n">optimizers</span><span class="p">,</span> <span class="n">Input</span>
 
 <span class="c1"># Define image size</span>
 <span class="n">img_size</span> <span class="o">=</span> <span class="n">src</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="n">src</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> <span class="n">src</span><span class="o">.</span><span class="n">count</span>
@@ -581,7 +605,7 @@ Name: fraction, Length: 100, dtype: float64
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">tensorflow.keras</span><span class="w"> </span><span class="kn">import</span> <span class="n">layers</span><span class="p">,</span> <span class="n">models</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">tensorflow.keras</span><span class="w"> </span><span class="kn">import</span> <span class="n">layers</span><span class="p">,</span> <span class="n">models</span><span class="p">,</span> <span class="n">optimizers</span><span class="p">,</span> <span class="n">Input</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Define image size</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">img_size</span> <span class="o">=</span> <span class="n">src</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="n">src</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> <span class="n">src</span><span class="o">.</span><span class="n">count</span>
 
@@ -593,9 +617,10 @@ Name: fraction, Length: 100, dtype: float64
 </section>
 <section id="local-receptive-fields">
 <h2>Local receptive fields<a class="headerlink" href="#local-receptive-fields" title="Link to this heading">#</a></h2>
-<p>We’ll notice that our convolutional network has some different <strong>types of layers</strong>. The first type is called a <code class="docutils literal notranslate"><span class="pre">Conv2D</span></code> (2D convolution layer) which we can think of as a <strong>filtering operation</strong> (or window). The filter (or local receptive field) in our model has a size of <strong>5 x 5 pixels</strong>. We can slide this filter across our image and apply a function (i.e. a convolution) to map values from the input layer onto the next layer.</p>
+<p>We’ll notice that our convolutional network has some different <strong>types of layers</strong>. The first type is called a <code class="docutils literal notranslate"><span class="pre">Conv2D</span></code> (2D convolution layer) which we can think of as a <strong>filtering operation</strong>. The filter (also known as a <strong>local receptive field</strong>) in our model has a kernel size of <strong>5 x 5 pixels</strong>. We can slide this filter across our image, computing <strong>dot products</strong> to map values from the input layer onto the next layer. This process is called <strong>convolution</strong>.</p>
 <a class="reference internal image-reference" href="../../_images/filter.png"><img alt="../../_images/filter.png" class="align-center" src="../../_images/filter.png" style="width: 700px;" /></a>
-<p>In traditional image processing, we would manually define the <strong>weights</strong> of the filter. For example we could use a Gaussian filter to reduce noise or a Laplacian filter to enhance edges. Our <code class="docutils literal notranslate"><span class="pre">Conv2D</span></code> layer however initializes the 5 x 5 kernel weights <strong>randomly</strong>. During training, backpropagation updates those weights so that the filter outputs different spatial structures (e.g. water boundaries, textures, shapes). We have set our <code class="docutils literal notranslate"><span class="pre">Conv2D</span></code> layer to produce <strong>16 different filters</strong> (or feature maps).</p>
+<p>In traditional image processing, we would manually define the <strong>weights</strong> of the filter. For example we could use a Gaussian filter to reduce noise or a Laplacian filter to enhance edges.</p>
+<p>Our <code class="docutils literal notranslate"><span class="pre">Conv2D</span></code> layer however initializes the 5 x 5 kernel weights <strong>randomly</strong>. During training, backpropagation updates these weights so that the filter outputs different spatial structures (e.g. water boundaries, textures, shapes). We have set our <code class="docutils literal notranslate"><span class="pre">Conv2D</span></code> layer to produce <strong>16 different filters</strong> (or feature maps).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Our <code class="docutils literal notranslate"><span class="pre">Conv2D</span></code> layer converts our 320 x 320 x 4 image into 316 x 316 x 16 feature maps because we can only move the local receptive field 316 nodes across (or 316 nodes down) before colliding with the right-hand side (or bottom) of the input image.</p>
@@ -616,29 +641,29 @@ Name: fraction, Length: 100, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">Model: "sequential_4"</span>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">Model: "sequential_6"</span>
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┓
 ┃<span style="font-weight: bold"> Layer (type)                    </span>┃<span style="font-weight: bold"> Output Shape           </span>┃<span style="font-weight: bold">       Param # </span>┃
 ┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━┩
-│ conv2d_12 (<span style="color: #0087ff; text-decoration-color: #0087ff">Conv2D</span>)              │ (<span style="color: #00d7ff; text-decoration-color: #00d7ff">None</span>, <span style="color: #00af00; text-decoration-color: #00af00">316</span>, <span style="color: #00af00; text-decoration-color: #00af00">316</span>, <span style="color: #00af00; text-decoration-color: #00af00">16</span>)   │         <span style="color: #00af00; text-decoration-color: #00af00">1,616</span> │
+│ conv2d_18 (<span style="color: #0087ff; text-decoration-color: #0087ff">Conv2D</span>)              │ (<span style="color: #00d7ff; text-decoration-color: #00d7ff">None</span>, <span style="color: #00af00; text-decoration-color: #00af00">316</span>, <span style="color: #00af00; text-decoration-color: #00af00">316</span>, <span style="color: #00af00; text-decoration-color: #00af00">16</span>)   │         <span style="color: #00af00; text-decoration-color: #00af00">1,616</span> │
 ├─────────────────────────────────┼────────────────────────┼───────────────┤
-│ max_pooling2d_12 (<span style="color: #0087ff; text-decoration-color: #0087ff">MaxPooling2D</span>) │ (<span style="color: #00d7ff; text-decoration-color: #00d7ff">None</span>, <span style="color: #00af00; text-decoration-color: #00af00">158</span>, <span style="color: #00af00; text-decoration-color: #00af00">158</span>, <span style="color: #00af00; text-decoration-color: #00af00">16</span>)   │             <span style="color: #00af00; text-decoration-color: #00af00">0</span> │
+│ max_pooling2d_18 (<span style="color: #0087ff; text-decoration-color: #0087ff">MaxPooling2D</span>) │ (<span style="color: #00d7ff; text-decoration-color: #00d7ff">None</span>, <span style="color: #00af00; text-decoration-color: #00af00">158</span>, <span style="color: #00af00; text-decoration-color: #00af00">158</span>, <span style="color: #00af00; text-decoration-color: #00af00">16</span>)   │             <span style="color: #00af00; text-decoration-color: #00af00">0</span> │
 ├─────────────────────────────────┼────────────────────────┼───────────────┤
-│ conv2d_13 (<span style="color: #0087ff; text-decoration-color: #0087ff">Conv2D</span>)              │ (<span style="color: #00d7ff; text-decoration-color: #00d7ff">None</span>, <span style="color: #00af00; text-decoration-color: #00af00">154</span>, <span style="color: #00af00; text-decoration-color: #00af00">154</span>, <span style="color: #00af00; text-decoration-color: #00af00">16</span>)   │         <span style="color: #00af00; text-decoration-color: #00af00">6,416</span> │
+│ conv2d_19 (<span style="color: #0087ff; text-decoration-color: #0087ff">Conv2D</span>)              │ (<span style="color: #00d7ff; text-decoration-color: #00d7ff">None</span>, <span style="color: #00af00; text-decoration-color: #00af00">154</span>, <span style="color: #00af00; text-decoration-color: #00af00">154</span>, <span style="color: #00af00; text-decoration-color: #00af00">16</span>)   │         <span style="color: #00af00; text-decoration-color: #00af00">6,416</span> │
 ├─────────────────────────────────┼────────────────────────┼───────────────┤
-│ max_pooling2d_13 (<span style="color: #0087ff; text-decoration-color: #0087ff">MaxPooling2D</span>) │ (<span style="color: #00d7ff; text-decoration-color: #00d7ff">None</span>, <span style="color: #00af00; text-decoration-color: #00af00">77</span>, <span style="color: #00af00; text-decoration-color: #00af00">77</span>, <span style="color: #00af00; text-decoration-color: #00af00">16</span>)     │             <span style="color: #00af00; text-decoration-color: #00af00">0</span> │
+│ max_pooling2d_19 (<span style="color: #0087ff; text-decoration-color: #0087ff">MaxPooling2D</span>) │ (<span style="color: #00d7ff; text-decoration-color: #00d7ff">None</span>, <span style="color: #00af00; text-decoration-color: #00af00">77</span>, <span style="color: #00af00; text-decoration-color: #00af00">77</span>, <span style="color: #00af00; text-decoration-color: #00af00">16</span>)     │             <span style="color: #00af00; text-decoration-color: #00af00">0</span> │
 ├─────────────────────────────────┼────────────────────────┼───────────────┤
-│ conv2d_14 (<span style="color: #0087ff; text-decoration-color: #0087ff">Conv2D</span>)              │ (<span style="color: #00d7ff; text-decoration-color: #00d7ff">None</span>, <span style="color: #00af00; text-decoration-color: #00af00">73</span>, <span style="color: #00af00; text-decoration-color: #00af00">73</span>, <span style="color: #00af00; text-decoration-color: #00af00">16</span>)     │         <span style="color: #00af00; text-decoration-color: #00af00">6,416</span> │
+│ conv2d_20 (<span style="color: #0087ff; text-decoration-color: #0087ff">Conv2D</span>)              │ (<span style="color: #00d7ff; text-decoration-color: #00d7ff">None</span>, <span style="color: #00af00; text-decoration-color: #00af00">73</span>, <span style="color: #00af00; text-decoration-color: #00af00">73</span>, <span style="color: #00af00; text-decoration-color: #00af00">16</span>)     │         <span style="color: #00af00; text-decoration-color: #00af00">6,416</span> │
 ├─────────────────────────────────┼────────────────────────┼───────────────┤
-│ max_pooling2d_14 (<span style="color: #0087ff; text-decoration-color: #0087ff">MaxPooling2D</span>) │ (<span style="color: #00d7ff; text-decoration-color: #00d7ff">None</span>, <span style="color: #00af00; text-decoration-color: #00af00">36</span>, <span style="color: #00af00; text-decoration-color: #00af00">36</span>, <span style="color: #00af00; text-decoration-color: #00af00">16</span>)     │             <span style="color: #00af00; text-decoration-color: #00af00">0</span> │
+│ max_pooling2d_20 (<span style="color: #0087ff; text-decoration-color: #0087ff">MaxPooling2D</span>) │ (<span style="color: #00d7ff; text-decoration-color: #00d7ff">None</span>, <span style="color: #00af00; text-decoration-color: #00af00">36</span>, <span style="color: #00af00; text-decoration-color: #00af00">36</span>, <span style="color: #00af00; text-decoration-color: #00af00">16</span>)     │             <span style="color: #00af00; text-decoration-color: #00af00">0</span> │
 ├─────────────────────────────────┼────────────────────────┼───────────────┤
-│ global_average_pooling2d_4      │ (<span style="color: #00d7ff; text-decoration-color: #00d7ff">None</span>, <span style="color: #00af00; text-decoration-color: #00af00">16</span>)             │             <span style="color: #00af00; text-decoration-color: #00af00">0</span> │
+│ global_average_pooling2d_6      │ (<span style="color: #00d7ff; text-decoration-color: #00d7ff">None</span>, <span style="color: #00af00; text-decoration-color: #00af00">16</span>)             │             <span style="color: #00af00; text-decoration-color: #00af00">0</span> │
 │ (<span style="color: #0087ff; text-decoration-color: #0087ff">GlobalAveragePooling2D</span>)        │                        │               │
 ├─────────────────────────────────┼────────────────────────┼───────────────┤
-│ dense_8 (<span style="color: #0087ff; text-decoration-color: #0087ff">Dense</span>)                 │ (<span style="color: #00d7ff; text-decoration-color: #00d7ff">None</span>, <span style="color: #00af00; text-decoration-color: #00af00">64</span>)             │         <span style="color: #00af00; text-decoration-color: #00af00">1,088</span> │
+│ dense_12 (<span style="color: #0087ff; text-decoration-color: #0087ff">Dense</span>)                │ (<span style="color: #00d7ff; text-decoration-color: #00d7ff">None</span>, <span style="color: #00af00; text-decoration-color: #00af00">64</span>)             │         <span style="color: #00af00; text-decoration-color: #00af00">1,088</span> │
 ├─────────────────────────────────┼────────────────────────┼───────────────┤
-│ dense_9 (<span style="color: #0087ff; text-decoration-color: #0087ff">Dense</span>)                 │ (<span style="color: #00d7ff; text-decoration-color: #00d7ff">None</span>, <span style="color: #00af00; text-decoration-color: #00af00">1</span>)              │            <span style="color: #00af00; text-decoration-color: #00af00">65</span> │
+│ dense_13 (<span style="color: #0087ff; text-decoration-color: #0087ff">Dense</span>)                │ (<span style="color: #00d7ff; text-decoration-color: #00d7ff">None</span>, <span style="color: #00af00; text-decoration-color: #00af00">1</span>)              │            <span style="color: #00af00; text-decoration-color: #00af00">65</span> │
 └─────────────────────────────────┴────────────────────────┴───────────────┘
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold"> Total params: </span><span style="color: #00af00; text-decoration-color: #00af00">15,601</span> (60.94 KB)
@@ -663,11 +688,15 @@ Name: fraction, Length: 100, dtype: float64
 </section>
 <section id="network-training">
 <h2>Network training<a class="headerlink" href="#network-training" title="Link to this heading">#</a></h2>
-<p>Now we have some understanding of the convolutional network, let’s train it. First we will define some helper functions to read the GeoTiff tiles and convert them into a a tensorflow dataset.</p>
+<p>Now we have some understanding of the convolutional network, let’s train it.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The training procedure is exactly the same as a multilayer perceptron (i.e. end-to-end with backprop + gradient descent).</p>
+</div>
+<p>First we will define some helper functions to read the GeoTiff tiles and convert them into a a tensorflow dataset.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tensorflow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tf</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
 
 <span class="c1"># Function to load GeoTIFF with rasterio</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">_load_geotiff</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
@@ -867,6 +896,132 @@ Name: fraction, Length: 100, dtype: float64
 </div>
 </div>
 </section>
+<section id="semantic-segmentation">
+<h2>Semantic segmentation<a class="headerlink" href="#semantic-segmentation" title="Link to this heading">#</a></h2>
+<p>We have trained a convolutional network to predict water fraction from a single 320 x 320 tile which is fine for answering our research question. But some tasks may require us to classify individual pixels in the input image (i.e. <strong>semantic segmentation</strong>). To do this, we would have to enhance the resolution of the feature maps using an <code class="docutils literal notranslate"><span class="pre">UpSampling2D</span></code> layer. We would also have to preserve the original dimensions of our input layer by <strong>padding</strong> the edges of the image so that our upsampling is able to restore our image to 320 x 320 pixels using upsampling.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The “U-shaped” downsampling followed by upsampling is why these type of convolutional networks are called <strong>U-Nets</strong>.</p>
+</div>
+<p>Below is the architecture of a simple U-Net model defined using <code class="docutils literal notranslate"><span class="pre">TensorFlow</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">unet_model</span><span class="p">(</span><span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="n">img_size</span><span class="p">)):</span>
+    <span class="n">inputs</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="n">input_shape</span><span class="p">)</span>
+
+    <span class="c1"># Encoder</span>
+    <span class="n">c1</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;same&#39;</span><span class="p">)(</span><span class="n">inputs</span><span class="p">)</span>
+    <span class="n">c1</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;same&#39;</span><span class="p">)(</span><span class="n">c1</span><span class="p">)</span>
+    <span class="n">p1</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">MaxPooling2D</span><span class="p">(</span><span class="mi">2</span><span class="p">)(</span><span class="n">c1</span><span class="p">)</span>
+
+    <span class="n">c2</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;same&#39;</span><span class="p">)(</span><span class="n">p1</span><span class="p">)</span>
+    <span class="n">c2</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;same&#39;</span><span class="p">)(</span><span class="n">c2</span><span class="p">)</span>
+    <span class="n">p2</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">MaxPooling2D</span><span class="p">(</span><span class="mi">2</span><span class="p">)(</span><span class="n">c2</span><span class="p">)</span>
+
+    <span class="c1"># Bottleneck</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;same&#39;</span><span class="p">)(</span><span class="n">p2</span><span class="p">)</span>
+
+    <span class="c1"># Decoder</span>
+    <span class="n">u1</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">UpSampling2D</span><span class="p">(</span><span class="mi">2</span><span class="p">)(</span><span class="n">b</span><span class="p">)</span>
+    <span class="n">u1</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Concatenate</span><span class="p">()([</span><span class="n">u1</span><span class="p">,</span> <span class="n">c2</span><span class="p">])</span>
+    <span class="n">c3</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;same&#39;</span><span class="p">)(</span><span class="n">u1</span><span class="p">)</span>
+
+    <span class="n">u2</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">UpSampling2D</span><span class="p">(</span><span class="mi">2</span><span class="p">)(</span><span class="n">c3</span><span class="p">)</span>
+    <span class="n">u2</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Concatenate</span><span class="p">()([</span><span class="n">u2</span><span class="p">,</span> <span class="n">c1</span><span class="p">])</span>
+    <span class="n">c4</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;same&#39;</span><span class="p">)(</span><span class="n">u2</span><span class="p">)</span>
+
+    <span class="n">outputs</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;sigmoid&#39;</span><span class="p">)(</span><span class="n">c4</span><span class="p">)</span>
+
+    <span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;adam&#39;</span><span class="p">,</span>
+              <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;mse&#39;</span><span class="p">,</span>  
+              <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;mae&#39;</span><span class="p">])</span>
+    
+    <span class="k">return</span> <span class="n">model</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="imagenet">
+<h2>ImageNet<a class="headerlink" href="#imagenet" title="Link to this heading">#</a></h2>
+<p>ImageNet is a image dataset containing &gt;14,000,000 images, all of which are described by single (e.g. chair, cat) or multiple (e.g. African elephant, soccer ball) words. Images were crawled from the internet and classified by workers from Amazon’s Mechanical Turk service.</p>
+<a class="reference internal image-reference" href="../../_images/imagenet.png"><img alt="../../_images/imagenet.png" class="align-center" src="../../_images/imagenet.png" style="width: 800px;" /></a>
+<p>Between 2010-2017, researchers competed in <strong>ImageNet Large Scale Visual Recognition Challenge</strong> (ILSVRC) to see who could design the most accurate model for classifying images in ImageNet. In 2012, AlexNet, a <strong>deep convolutional network</strong>, won the competition by a large margin (top-5 error of ~15% vs ~26%). This breakthrough is considered to have launched the <strong>deep learning revolution</strong> in computer vision.
+Convolutional networks dominated image recognition tasks between 2012-2020.</p>
+</section>
+<section id="other-types-of-specialized-neural-network">
+<h2>Other types of specialized neural network<a class="headerlink" href="#other-types-of-specialized-neural-network" title="Link to this heading">#</a></h2>
+<p>The examples that we have studied provide a foundation for understanding other types of neural network (there are many). One limitation of traditional neural networks is that they are very <strong>static</strong>. They require labelled training data with a fixed shape and the final model has <strong>no memory</strong> of the weights and biases from earlier in the training period.</p>
+<p><strong>Recurrent neural networks</strong> process sequences of data one step at a time, maintaining a hidden state that carries information from previous steps. At each new input, the network updates this hidden state and produces an output, which makes RNNs well-suited for tasks where order and context over time matter, like language or time-series prediction.</p>
+<a class="reference internal image-reference" href="../../_images/rnn.png"><img alt="../../_images/rnn.png" class="align-center" src="../../_images/rnn.png" style="width: 700px;" /></a>
+<p>The challenge with RNNs is that they are difficult to train because gradients tend to either <strong>vanish</strong> or <strong>explode</strong>, especially for longer sequences of inputs. This problem was overcome by the development of <strong>long short-term memory (LSTMs)networks</strong> and <strong>gated recurrent networks (GRUs)</strong>.</p>
+<p>Given enough data and compute, <strong>transformers</strong> can match or outperform convolutional networks on image classification tasks. Since 2021, <strong>Vision Transformers (ViT)</strong> treat the image as a sequence of tokens (or “patches”) and use <strong>global self-attention</strong> to capture spatial structure across the entire image.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="practical-methodology">
+<h1>Practical methodology<a class="headerlink" href="#practical-methodology" title="Link to this heading">#</a></h1>
+<p>Successful application of deep learning requires more than just a good knowledge of what algorithms exist and the principles that explain how they work. A good deep learning <strong>practitioner</strong> is someone that can choose the right algorithm for a particular application and is able to improve models by intelligently responding to feedback from experiments (as opposed to blindy guessing). We will conclude this unit by discussing some strategies that should guide practical design of deep learning workflows.</p>
+<a class="reference internal image-reference" href="../../_images/machine-learning-xkcd.png"><img alt="../../_images/machine-learning-xkcd.png" class="align-center" src="../../_images/machine-learning-xkcd.png" style="width: 500px;" /></a>
+<p><a class="reference external" href="https://xkcd.com/1838/">https://xkcd.com/1838/</a></p>
+<section id="performance-metrics">
+<h2>Performance metrics<a class="headerlink" href="#performance-metrics" title="Link to this heading">#</a></h2>
+<p>Defining the desired error rate and error metric is a necessary first step in any project because it can be used to guide future actions.</p>
+<section id="error-rate">
+<h3>Error rate<a class="headerlink" href="#error-rate" title="Link to this heading">#</a></h3>
+<p>For most applications, it is <strong>impossible to achieve zero error</strong> because environmental datasets contain <strong>noise</strong>.</p>
+<ul class="simple">
+<li><p>We have a finite amount of training data that does not fully represent all possible conditions in the system (e.g. 100-year flood)</p></li>
+<li><p>Our input features may not contain complete information about the output variable (e.g. seasonal vegetation changes)</p></li>
+<li><p>There is random variation in our input and output variabes (e.g. measurement error)</p></li>
+</ul>
+<p>We should therefore <strong>define an acceptable error rate</strong> in the early stage a project. In academic settings, this may be based on previous studies that represent the “state-of-the-art” (SoTA). In commercial settings, this may be defined as the error rate required for an application to be safe, cost-effective, or appealing to consumers.</p>
+</section>
+<section id="error-metrics">
+<h3>Error metrics<a class="headerlink" href="#error-metrics" title="Link to this heading">#</a></h3>
+<p>Several different metrics cna be used to measure the performance of an application. These performance metrics are usually different from the loss function used to train the model (i.e. usually MSE or MAE in regression tasks).</p>
+<p>Many applications require more insightful metrics. For our river discharge prediction, we used the Nash-Sutcliffe efficiency (NSE) coefficient to evaluate the predictive skill of our model for the whole 365-day period. The difference between prediction and observations is therefore treated the same every day.</p>
+<p>But what if we our goal was to predict discharge during winter or during flood events? We might want to use a different performance metric such as a flood event efficiency coefficient that evaluates the difference between predictions and observations <strong>only during flood events</strong> above some threshold discharge.</p>
+<p>Likewise, in our image classification task, we were more concerned about <strong>overestimating</strong> surface water coverage than underestimating it. We therefore produced a confusion matrix to investigate the <strong>precision</strong> of our model (i.e. fraction of predicted water pixels that were correct). We were less concerned about <strong>recall</strong> (i.e. fraction of observed water pixels that were correctly predicted).</p>
+<p>In contrast, when it is costly to miss true values (e.g. natural hazards), we might place more emphasis on recall. Choosing a good error metric is therefore important. Without one, it can be challenging to determine whether changes to a machine learning system is making progress or not.</p>
+</section>
+</section>
+<section id="baseline-model">
+<h2>Baseline model<a class="headerlink" href="#baseline-model" title="Link to this heading">#</a></h2>
+<p>The next step in any practical application is to <strong>establish a reasonable end-to-end system as soon as possible</strong>. The baseline model depends on the structure of the data. If the problem involves structured data (i.e. tabular), the baseline might be a simple statistcial model like logistic regression with a few linear weights. If the problem falls into the “AI-complete” category (i.e. computer vision, natural language processing), the baseline probably has to be an appropriate deep learning model.</p>
+<p>Start with commonly used activation functions (e.g. ReLUs) and optimization algorithms (e.g. SGD + momentum or Adam). If your task is similar to another task that has been studied extensively, you could clone that model. You could even use a <strong>pre-trained</strong> model that has been developed for a similar task. For example, many studies use models that were trained on <strong>ImageNet</strong> (e.g. ResNet) to solve other computer vision tasks.</p>
+</section>
+<section id="more-data">
+<h2>More data?<a class="headerlink" href="#more-data" title="Link to this heading">#</a></h2>
+<p>After designing an end-to-end system <strong>with acceptable performance</strong>, we may be tempted to start trying out different algorithms and tinkering with the parameters. But it is usually often much better to <strong>gather more data</strong> than improve the learning algorithm. Major breakthroughs in deep learning have actually been realized by development of large labelled datasets (e.g. ImageNet).</p>
+<a class="reference internal image-reference" href="../../_images/more-data.png"><img alt="../../_images/more-data.png" class="align-center" src="../../_images/more-data.png" style="width: 600px;" /></a>
+<p>We can determine whether we need more data by plotting the relationships between training dataset size and testing error (i.e. learning curve). By extrapolating the curves, we can predict how much additional data would be required to achieve a certain level of performance.</p>
+<p>If gathering more data is not feasible (e.g. time-consuming, costly), we could pursue <strong>data augmentation</strong>. For example, flipping, rotating, or shifting image tiles used by our image classifiers. Or training our discharge prediction model on data from adjacent watersheds that exhibit similar behaviour but which have longer records.</p>
+</section>
+<section id="selecting-hyperparameters">
+<h2>Selecting hyperparameters<a class="headerlink" href="#selecting-hyperparameters" title="Link to this heading">#</a></h2>
+<p>Almost all deep learning approaches involve several hyperparameters that control aspects of the algorithm’s behaviour. Some of these hyperparameters affect the time and memory cost of running the algorithm. Others affect the quality of the model recovered by the training process. Currently there is no general theory that we can use for hyperparameter tuning (i.e. if X do Y). Choosing hyperparameters therefore requires developing good intuition about machine learning models and how to improve their ability to generalize.</p>
+<p>If we have a good understanding of the fundamental relationships between hyperparameters, training error, testing error, and computational resources, we may be able to <strong>tune hyperparameters manually</strong>. The generalization error usually follows a U-shaped curve when plotted as a function of the one of the hyperparameters. At one extreme, the value of the hyperparameter corresponds to a model with <strong>low complexity</strong> which <strong>underfits</strong> the training data (i.e. training error is high). At the other end, the value of the hyperparameter corresponds to a model with <strong>high complexity</strong> which <strong>overfits</strong> the training data (i.e. training error is low).</p>
+<a class="reference internal image-reference" href="../../_images/capacity-vs-error.png"><img alt="../../_images/capacity-vs-error.png" class="align-center" src="../../_images/capacity-vs-error.png" style="width: 600px;" /></a>
+<p><strong>Learning rate</strong> is probably the most important hyperparameter to tune. Too high and gradient descent can inadvertently increase, rather than decrease, the training error. Too small and the training becomes very slow and may become permanently stuck.</p>
+<p>Tuning other hyperparameters requires <strong>monitoring both the training and the testing error</strong> to diagnose whether the model is overfitting or underfitting.</p>
+<p>Neural networks typically perform best when the training error is low. So if your training error is high, then we have no choice but to <strong>increase the complexity of the model</strong>, either by adding more layers to the network or adding more nodes. Major breakthroughs occurred in deep learning when researchers developed networks with more layers that enabled more expressive models.</p>
+<p>Once we have sufficiently reduced the training error, we can work on improving the testing error by tuning hyperparameters. We can avoid overfitting by reducing the complexity of the model using <strong>regularization</strong> (e.g. dropout or weight decay).</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The best performing model is usually a large model that has been regularized well.</p>
+</div>
+<p>One way to guarantee success is to continually increase model complexity until the task is solved. But in reality, we are limited by computational resources and time. If our model is too complex, then training will take too long and we won’t have time to search for optimal hyperparameters. The optimal model complexity therefore depends on computational resources and time which will vary widely depending on the setting.</p>
+</section>
+<section id="automated-hyperparameter-optimization-algorithms">
+<h2>Automated hyperparameter optimization algorithms<a class="headerlink" href="#automated-hyperparameter-optimization-algorithms" title="Link to this heading">#</a></h2>
+<p>While manual hyperparameter tuning can work well, automated hyperparameter tuning is generally considered the conventional approach. The most simple approach is to perform a <strong>grid search</strong> where the user selects a finite set of values to explore. The grid search algorithm then trains a model for every combination of hyperparameter values. The experiment that yields the lowest validation error is then selected. Grid search usually performs best when applied repeatedly. If the lowest error was identified at the edge of the value set, then the value set should be updated.</p>
+<a class="reference internal image-reference" href="../../_images/gridsearch.png"><img alt="../../_images/gridsearch.png" class="align-center" src="../../_images/gridsearch.png" style="width: 600px;" /></a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The obvious problem with grid search is that the computational cost grows exponentially with the number of hyperparameters.</p>
+</div>
+<p>An alternative approach is <strong>random search</strong> which often converges to good hyperparameter values much faster than grid search. One advantage of random search is that we could run it for any time period we like. Even if it finishes, we could restart with the hope of finding better hyperparameter values.</p>
+</section>
 <section id="further-reading">
 <h2>Further reading<a class="headerlink" href="#further-reading" title="Link to this heading">#</a></h2>
 <p>Bishop, C. M. (2006). <a class="reference external" href="https://link.springer.com/9780387310732">Pattern recognition and machine learning</a></p>
@@ -917,11 +1072,11 @@ Name: fraction, Length: 100, dtype: float64
       </div>
     </a>
     <a class="right-next"
-       href="../../final-project/fall-break.html"
+       href="../../activities/week7/eurosat-activity.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Fall break</p>
+        <p class="prev-next-title">EuroSAT activity</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -942,6 +1097,7 @@ Name: fraction, Length: 100, dtype: float64
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Specialized neural networks</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-how-much-water-is-in-these-satellite-images">Example - how much water is in these satellite images?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#segmentation-vs-classification">Segmentation vs. classification</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture">Architecture</a></li>
@@ -951,8 +1107,26 @@ Name: fraction, Length: 100, dtype: float64
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fully-connected-neural-network">Fully-connected neural network</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#network-training">Network training</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fit-and-evaluate-model">Fit and evaluate model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#semantic-segmentation">Semantic segmentation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imagenet">ImageNet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-types-of-specialized-neural-network">Other types of specialized neural network</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-methodology">Practical methodology</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-metrics">Performance metrics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#error-rate">Error rate</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#error-metrics">Error metrics</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#baseline-model">Baseline model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-data">More data?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-hyperparameters">Selecting hyperparameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automated-hyperparameter-optimization-algorithms">Automated hyperparameter optimization algorithms</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">Further reading</a></li>
 </ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>

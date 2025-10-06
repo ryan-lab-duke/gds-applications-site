@@ -211,11 +211,13 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="lecture-6a.html">Machine learning applications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lecture-6b.html">Neural networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../activities/week6/penguin-activity.html">Penguin activity</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../labs/week6/assignment6.html">Assignment 6</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 7</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="lecture-7.html">Specialized neural networks</a></li>
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 8</span></p>
 <ul class="nav bd-sidenav">
@@ -225,6 +227,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../unit3/lecture-8.html">Data access</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../final-project/project-ideas.html">Project ideas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labs/assignmentX.html">Assignment 6</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 10</span></p>
 <ul class="nav bd-sidenav">
@@ -990,7 +993,7 @@ memory usage: 13.5+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x12d839430&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x132b9ff20&gt;
 </pre></div>
 </div>
 <img alt="../../_images/3850053b59d643122678154c13fddeb51b6f8b422b31cee406f9de9c7cab1245.png" src="../../_images/3850053b59d643122678154c13fddeb51b6f8b422b31cee406f9de9c7cab1245.png" />
@@ -1247,7 +1250,7 @@ Name: count, dtype: int64
 </section>
 <section id="fitting-our-first-model">
 <h2>Fitting our first model<a class="headerlink" href="#fitting-our-first-model" title="Link to this heading">#</a></h2>
-<p>Now we are ready to build our first model. We will first experiment with a very simple supervised algorithm that classifies our data using <strong>K-nearest neighbors</strong>. This algorithm computes the distance between a new data point and all training points. It then finds the closest <strong>k-neighbors</strong> (usually Euclidean but could be Manhattan) and uses a majority vote to assign a lablel to the new data point.</p>
+<p>Now we are ready to build our first model. We will first experiment with a very simple supervised algorithm that classifies our data using <strong>K-nearest neighbors</strong>. This algorithm computes the distance between a new data point and all training points. It then finds the closest <strong>k-neighbors</strong> (usually Euclidean but could be Manhattan) and uses a majority vote to assign a label to the new data point.</p>
 <a class="reference internal image-reference" href="../../_images/k-nearest.png"><img alt="../../_images/k-nearest.png" class="align-center" src="../../_images/k-nearest.png" style="width: 500px;" /></a>
 <p>Let’s define the K-nearest neighbors classifer in <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code>.</p>
 <div class="cell docutils container">
@@ -2265,7 +2268,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The testing error of our model is 46.24 k$
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The testing error of our model is 46.55 k$
 </pre></div>
 </div>
 </div>
@@ -2288,7 +2291,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The training error of our model is 0.00 k$
 Tree depth: 36
-Number of leaves: 14838
+Number of leaves: 14841
 </pre></div>
 </div>
 </div>
@@ -2310,7 +2313,7 @@ Number of leaves: 14838
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/850fbc8fce945efb423ebbd0bbd6072232e7483e8b2c1c0cb7d96fea0cad9525.png" src="../../_images/850fbc8fce945efb423ebbd0bbd6072232e7483e8b2c1c0cb7d96fea0cad9525.png" />
+<img alt="../../_images/f3c7fb4d2fc9c0a2365267a0a8bde4357069aa26caca20630c03fb15f8b81719.png" src="../../_images/f3c7fb4d2fc9c0a2365267a0a8bde4357069aa26caca20630c03fb15f8b81719.png" />
 </div>
 </div>
 <ul class="simple">
@@ -2380,7 +2383,7 @@ Number of leaves: 14838
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/d5425a8c6f84e5fbb3801f63d5ad34df5a9234d7e879f564c1500e2900716ad1.png" src="../../_images/d5425a8c6f84e5fbb3801f63d5ad34df5a9234d7e879f564c1500e2900716ad1.png" />
+<img alt="../../_images/1e82b29e393797c52fcf360b94a149e158ce1c52c6a95656a64ea564fe5ad867.png" src="../../_images/1e82b29e393797c52fcf360b94a149e158ce1c52c6a95656a64ea564fe5ad867.png" />
 </div>
 </div>
 <p>We find that the testing error becomes lower as more samples are added to the training set. It looks as though the testing error is starting to plateau a bit but it is also still going down. We can therefore conclude that <strong>more samples would probably improve our predictive model</strong>.</p>
@@ -2463,7 +2466,7 @@ Number of leaves: 14838
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.974
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.977
 </pre></div>
 </div>
 </div>
@@ -2522,7 +2525,7 @@ Number of leaves: 14838
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.977
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.974
 </pre></div>
 </div>
 </div>
@@ -2687,7 +2690,7 @@ The testing accuracy using a AdaBoostClassifier is 0.982
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/4d247ddb3a280625801296377f9c031a90436ae4a0a4c073e53ff4645640d6fa.png" src="../../_images/4d247ddb3a280625801296377f9c031a90436ae4a0a4c073e53ff4645640d6fa.png" />
+<img alt="../../_images/67d026de144cc6dbb53a605cebcf6625c1a16131f5e4e15f8fd93a128c6f7077.png" src="../../_images/67d026de144cc6dbb53a605cebcf6625c1a16131f5e4e15f8fd93a128c6f7077.png" />
 </div>
 </div>
 <p>Gradient Boosting algorithms (e.g. <strong>XGBoost</strong>, <strong>CatBoost</strong>) have emerged as some of the most powerful and widely used methods for machine learning, often outperforming deep learning models. They consistently rank at the top of benchmark datasets and machine learning competitions, especially for tasks involving <strong>structured</strong> (i.e. tabular) data.</p>

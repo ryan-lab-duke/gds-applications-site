@@ -18,7 +18,7 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-from tensorflow.keras import layers, models
+from tensorflow.keras import layers, models, optimizers, Input
 
 # Define image size
 img_size = src.width, src.height, src.count
@@ -55,7 +55,7 @@ model = build_cnn()
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
 Cell [0;32mIn[4], line 1[0m
-[0;32m----> 1[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mtensorflow[39;00m[38;5;21;01m.[39;00m[38;5;21;01mkeras[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m layers, models
+[0;32m----> 1[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mtensorflow[39;00m[38;5;21;01m.[39;00m[38;5;21;01mkeras[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m layers, models, optimizers, Input
 [1;32m      3[0m [38;5;66;03m# Define image size[39;00m
 [1;32m      4[0m img_size [38;5;241m=[39m src[38;5;241m.[39mwidth, src[38;5;241m.[39mheight, src[38;5;241m.[39mcount
 

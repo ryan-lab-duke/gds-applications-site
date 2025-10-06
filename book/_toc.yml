@@ -47,11 +47,14 @@ parts:
     chapters:
     - file: lectures/unit2/lecture-6a.ipynb
     - file: lectures/unit2/lecture-6b.ipynb
+    - file: activities/week6/penguin-activity.md
     - file: labs/week6/assignment6.md
 
   - caption: Week 7
     chapters:
     - file: lectures/unit2/lecture-7.ipynb
+    - file: activities/week7/eurosat-activity.ipynb
+    - file: labs/week7/assignment7.md
 
   - caption: Week 8
     chapters:
@@ -61,6 +64,7 @@ parts:
     chapters:
     - file: lectures/unit3/lecture-8.ipynb
     - file: final-project/project-ideas.md
+    - file: labs/assignmentX.md
 
   - caption: Week 10
     chapters:
