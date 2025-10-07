@@ -94,9 +94,13 @@ Read the US climate data and answer the following questions:
 :class: tip, dropdown
 Right-click on Google Maps to record the approximate latitude and longitude of Durham.
 ```
-* d) What day was the hottest and coldest in Durham, NC? 
+* d) What was the hottest day and coldest day in Durham, NC?
 
-* e) What day was the hottest and coldest in San Francisco, CA? 
+```{note}
+Looking for a date.
+``` 
+
+* e) What was the hottest day and coldest day in San Francisco, CA? 
  
 *****************************
 
