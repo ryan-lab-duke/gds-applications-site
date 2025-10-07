@@ -7,35 +7,35 @@
 | 1    | Aug 25  | [Introduction](../lectures/unit1/lecture-1.ipynb)                | [Assignment 1](../labs/week1/assignment1.md)   |
 |      | Aug 27  | [Vector data](../lectures/unit1/lecture-2.ipynb)                 |                |
 | 2    | Sep 1   | No class (Labor Day)        | [Assignment 2](../labs/week2/assignment2.md)   |
-|      | Sep 3   | [Activity](../activities/week1/activity-01.md)                    |                |
+|      | Sep 3   | [Rivers of the world activity](../activities/week1/activity-01.md)                    |                |
 | 3    | Sep 8   | [Network data](../lectures/unit1/lecture-3.ipynb)                | [Assignment 3](../labs/week3/assignment3.md)   |
-|      | Sep 10  | [Activity](../activities/week2/activity-02.md)                    |                |
+|      | Sep 10  | [Residential flooding activity](../activities/week2/activity-02.md)                    |                |
 | 4    | Sep 15  | [Gridded data](../lectures/unit1/lecture-4a.ipynb)                | [Assignment 4](../labs/week4/assignment4.md)   |
-|      | Sep 17  | [Activity](../activities/week3/activity-03.md)                    |                |
+|      | Sep 17  | [Census activity](../activities/week3/activity-03.md)                    |                |
 --
 
 ## Unit 2: Geospatial Machine Learning
 
 | Week | Date    | Lecture                                     | Homework       |
 |------|---------|---------------------------------------------|----------------|
-| 5    | Sep 22  | Fundamentals                                | Assignment 5   |
-|      | Sep 24  | Activity                                    |                |
-| 6    | Sep 29  | Regression and classification algorithms    | Assignment 6   |
-|      | Oct 1   | Activity                                    |                |
-| 7    | Oct 6   | Neural networks and deep learning           | Assignment 7   |
-|      | Oct 8   | Activity                                    |                |
-| 8    | Oct 13  | No class (Fall break)                       | No lab         |
-|      | Oct 15  | No class (Fall break)                       |                |
+| 5    | Sep 22  | [Machine learning fundamentals](../lectures/unit2/lecture-5.ipynb)               | [Assignment 5](../labs/week5/assignment5.md)   |
+|      | Sep 24  | [Wine activity](../activities/week5/wine-activity.md)                               |                |
+| 6    | Sep 29  | No class (Baby)                             |                |
+|      | Oct 1   | No class (Baby)                             |                |
+| 7    | Oct 6   | [Neural networks](../lectures/unit2/lecture-6b.ipynb)                         | [Assignment 6](../labs/week3/assignment3.md)   |
+|      | Oct 8   | [Penguin activity](../activities/week6/penguin-activity.md)                        |                |
+| 8    | Oct 13  | No class (Fall break)                       | Submit project idea         |
+|      | Oct 15  | Previous class projects                     |                |
+| 9    | Oct 20  | [Specialized neural networks](../lectures/unit2/lecture-7.ipynb)                       | [Assignment 7](../labs/week7/assignment7.md)        |
+|      | Oct 22  | [EuroSAT activity](../activities/week7/eurosat-activity.ipynb)                     |                |
 --
 ## Unit 3: Project Management
 
 | Week | Date    | Lecture           | Homework            |
 |------|---------|-------------------|---------------------|
-| 9    | Oct 20  | Data access       | Submit project idea |
-|      | Oct 22  | Activity          |                     |
-| 10   | Oct 27  | Code management   | Initialize project  |
+| 10   | Oct 27  | Data access   | Initialize project  |
 |      | Oct 29  | Activity          |                     |
-| 11   | Nov 3   | Collaboration     | Project work        |
+| 11   | Nov 3   | Collaboration and code management    | Project work        |
 |      | Nov 5   | Activity          |                     |
 
 --
