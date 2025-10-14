@@ -16,32 +16,32 @@ parts:
   - caption: Week 1
     chapters:
     - file: lectures/unit1/lecture-1.ipynb
-    - file: activities/week1/activity-01.md
-    - file: labs/week1/assignment1.md
+    - file: activities/rivers.md
+    - file: labs/assignment1.md
 
   - caption: Week 2
     chapters:
     - file: lectures/unit1/lecture-2.ipynb
-    - file: activities/week2/activity-02.md
-    - file: labs/week2/assignment2.md
+    - file: activities/flooding.md
+    - file: labs/assignment2.md
 
   - caption: Week 3
     chapters:
     - file: lectures/unit1/lecture-3.ipynb
-    - file: activities/week3/activity-03.md
-    - file: labs/week3/assignment3.md
+    - file: activities/census.md
+    - file: labs/assignment3.md
 
   - caption: Week 4
     chapters:
     - file: lectures/unit1/lecture-4a.ipynb
     - file: lectures/unit1/lecture-4b.ipynb
-    - file: labs/week4/assignment4.md
+    - file: labs/assignment4.md
 
   - caption: Week 5
     chapters:
     - file: lectures/unit2/lecture-5.ipynb
-    - file: activities/week5/wine-activity.md
-    - file: labs/week5/assignment5.md
+    - file: activities/wines.md
+    - file: labs/assignment5.md
 
   - caption: Week 6
     chapters:
@@ -51,8 +51,8 @@ parts:
     chapters:
     - file: lectures/unit2/lecture-6a.ipynb
     - file: lectures/unit2/lecture-6b.ipynb
-    - file: activities/week6/penguin-activity.md
-    - file: labs/week6/assignment6.md
+    - file: activities/penguins.md
+    - file: labs/assignment6.md
 
   - caption: Week 8
     chapters:
@@ -62,13 +62,13 @@ parts:
   - caption: Week 9
     chapters:
     - file: lectures/unit2/lecture-7.ipynb
-    - file: activities/week7/eurosat-activity.ipynb
-    - file: labs/week7/assignment7.md
+    - file: activities/eurosat.ipynb
+    - file: labs/assignment7.md
 
   - caption: Week 10
     chapters:
     - file: lectures/unit3/lecture-8.ipynb
-    - file: final-project/make-readme.md
+    - file: final-project/initialize.md
 
   - caption: Week 11
     chapters:
