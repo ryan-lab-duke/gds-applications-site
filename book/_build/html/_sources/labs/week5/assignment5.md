@@ -6,6 +6,10 @@ In this week's lab we will compete to produce the best model for classifying our
 
 Next Wednesday, we will score models based on their **mean accuracy** on a set of 20 wines that only the instructor as access to. Highest accuracy wins.
 
+```{important}
+mean_accuracy = model.score(X, y)
+```
+
 ```{image} images/wine.png
 :width: 500px
 :align: center
