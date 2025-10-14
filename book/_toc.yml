@@ -16,20 +16,20 @@ parts:
   - caption: Week 1
     chapters:
     - file: lectures/unit1/lecture-1.ipynb
-    - file: labs/week1/assignment1.md
     - file: activities/week1/activity-01.md
+    - file: labs/week1/assignment1.md
 
   - caption: Week 2
     chapters:
     - file: lectures/unit1/lecture-2.ipynb
-    - file: labs/week2/assignment2.md
     - file: activities/week2/activity-02.md
+    - file: labs/week2/assignment2.md
 
   - caption: Week 3
     chapters:
     - file: lectures/unit1/lecture-3.ipynb
-    - file: labs/week3/assignment3.md
     - file: activities/week3/activity-03.md
+    - file: labs/week3/assignment3.md
 
   - caption: Week 4
     chapters:

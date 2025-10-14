@@ -1,4 +1,4 @@
-# Assignment 7
+# Assignment 8
 
 In this activity, we will develop a convolutional network to perform image classification on the EuroSAT dataset which can be accessed [here](https://zenodo.org/records/7711810). We will just be using the RGB version so download the `EuroSAT_RGB.zip` file. 
 

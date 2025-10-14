@@ -1,4 +1,6 @@
-# Project ideas
+# Assignment 7
+
+## Project ideas
 
 Now we have explored some different types of geospatial data (e.g. table, network, and gridded) in different contexts (e.g. urbanization, habitat loss, mobility), we should be ready to come up with an idea for a final project.
 

@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -64,7 +64,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Make a README" href="../../final-project/make-readme.html" />
-    <link rel="prev" title="Assignment 7" href="../../labs/week7/assignment7.html" />
+    <link rel="prev" title="Assignment 8" href="../../labs/week7/assignment7.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -180,20 +180,20 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 1</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../unit1/lecture-1.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../labs/week1/assignment1.html">Assignment 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../activities/week1/activity-01.html">Rivers of the World Activity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labs/week1/assignment1.html">Assignment 1</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 2</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../unit1/lecture-2.html">Vector data analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../labs/week2/assignment2.html">Assignment 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../activities/week2/activity-02.html">Residential Flooding Activity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labs/week2/assignment2.html">Assignment 2</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 3</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../unit1/lecture-3.html">Network data analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../labs/week3/assignment3.html">Assignment 3</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../activities/week3/activity-03.html">Census Activity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labs/week3/assignment3.html">Assignment 3</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 4</span></p>
 <ul class="nav bd-sidenav">
@@ -221,14 +221,14 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 8</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../final-project/fall-break.html">Fall break</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../final-project/project-ideas.html">Project ideas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../final-project/project-ideas.html">Assignment 7</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 9</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../unit2/lecture-7.html">Specialized neural networks</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../../activities/week7/eurosat-activity.html">EuroSAT activity</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../labs/week7/assignment7.html">Assignment 7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labs/week7/assignment7.html">Assignment 8</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 10</span></p>
 <ul class="current nav bd-sidenav">
@@ -444,7 +444,7 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#restful-web-apis">RESTful web APIs</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#official-data-from-the-state-of-north-carolina">Official data from the state of North Carolina</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#north-carolina-data">North Carolina data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#url-parameters">URL Parameters</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#census-bureau-data">Census Bureau data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#api-wrappers">API wrappers</a></li>
@@ -498,8 +498,8 @@
 <p>To put this all into perspective, next, you will explore a RESTful API interface example. For these kind of tasks, we have to carefully inspect the API <strong>documentation</strong> to understand what functions are available and what keyword arguments they require.</p>
 </section>
 </section>
-<section id="official-data-from-the-state-of-north-carolina">
-<h2>Official data from the state of North Carolina<a class="headerlink" href="#official-data-from-the-state-of-north-carolina" title="Link to this heading">#</a></h2>
+<section id="north-carolina-data">
+<h2>North Carolina data<a class="headerlink" href="#north-carolina-data" title="Link to this heading">#</a></h2>
 <p>North Carolina has a service called <strong>Log Into North Carolina (LINC)</strong> which is an interactive data retrieval service containing historical information for over 900 data items and a variety of geographic areas within the state. Topics include: population, labor force, education, transportation, revenue, agriculture, vital statistics, energy and utilities, for a variety of geographic areas within the state.</p>
 <a class="reference internal image-reference" href="lectures/unit3/images/link.png"><img alt="lectures/unit3/images/link.png" class="align-center" src="lectures/unit3/images/link.png" style="width: 300px;" /></a>
 <p>The <strong>LINC API</strong> is organized around REST can be accessed from the following link <code class="docutils literal notranslate"><span class="pre">https://linc.osbm.nc.gov/api/explore/v2.1/</span></code>. The homepage provides a list of <strong>requests</strong> that can be used for querying and accessing data.</p>
@@ -757,7 +757,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x137419b50&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x147558620&gt;]
 </pre></div>
 </div>
 <img alt="../../_images/3bcd6daaefa44b9d00743da476efe41d2a3db8fd4e9d6a2fa2be0e4558d95a81.png" src="../../_images/3bcd6daaefa44b9d00743da476efe41d2a3db8fd4e9d6a2fa2be0e4558d95a81.png" />
@@ -1735,7 +1735,7 @@ rendered_preview: Rendered preview
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Assignment 7</p>
+        <p class="prev-next-title">Assignment 8</p>
       </div>
     </a>
     <a class="right-next"
@@ -1769,7 +1769,7 @@ rendered_preview: Rendered preview
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#restful-web-apis">RESTful web APIs</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#official-data-from-the-state-of-north-carolina">Official data from the state of North Carolina</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#north-carolina-data">North Carolina data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#url-parameters">URL Parameters</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#census-bureau-data">Census Bureau data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#api-wrappers">API wrappers</a></li>
