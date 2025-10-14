@@ -7,6 +7,6 @@ resources/
 *cache
 *.gds
 
-book/labs/*/data/*
+book/labs/data/*
 book/lectures/*/data/*
-book/activities/*/data/*
+book/activities/data/*
