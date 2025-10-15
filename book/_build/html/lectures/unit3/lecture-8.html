@@ -479,10 +479,10 @@
 <li><p>It is <strong>automated</strong>, meaning that it is both faster and more accurate than pointing and clicking</p></li>
 <li><p>It <strong>links</strong> the data access <strong>to</strong> our data analysis, meaning that we can make our analysis more <strong>reproducible</strong> (for ourselves <strong>and</strong> others!)</p></li>
 </ol>
-<p>we will mainly learn about downloading data using <strong>Application Programming Interfaces (APIs)</strong>. We will also talk about options for downloading data when an API is unavailable or insufficient.</p>
+<p>We will mainly learn about downloading data using <strong>Application Programming Interfaces (APIs)</strong>. We will also talk about options for downloading data when an API is unavailable or insufficient.</p>
 <section id="apis">
 <h2>APIs<a class="headerlink" href="#apis" title="Link to this heading">#</a></h2>
-<p>Most organizations responsible for collecting, organizing, and storing data have a <strong>public API</strong> that we can use. An API is a type of software that provides a <strong>standard set of protocols/functions</strong> so that our computer can <strong>communicate</strong> with other computers (in contrast, a <strong>user interface</strong> is a type of software that connects a <strong>computer</strong> to a <strong>person</strong>). A <strong>web API</strong> is an API that allows our computer to communicate with other computers <strong>over the internet</strong>, typically using HTTPS.</p>
+<p>Most organizations responsible for collecting, organizing, and storing data have a <strong>public API</strong> that we can use to access their data. An API is a type of software that provides a <strong>standard set of protocols/functions</strong> so that our computer can <strong>communicate</strong> with other computers (in contrast, a <strong>user interface</strong> is a type of software that connects a <strong>computer</strong> to a <strong>person</strong>). A <strong>web API</strong> is an API that allows our computer to communicate with other computers <strong>over the internet</strong>, typically using HTTPS.</p>
 <a class="reference internal image-reference" href="../../_images/api.svg"><img alt="../../_images/api.svg" class="align-center" src="../../_images/api.svg" style="width: 800px;" /></a>
 <section id="api-request">
 <h3>API request<a class="headerlink" href="#api-request" title="Link to this heading">#</a></h3>
@@ -501,7 +501,7 @@
 <section id="north-carolina-data">
 <h2>North Carolina data<a class="headerlink" href="#north-carolina-data" title="Link to this heading">#</a></h2>
 <p>North Carolina has a service called <strong>Log Into North Carolina (LINC)</strong> which is an interactive data retrieval service containing historical information for over 900 data items and a variety of geographic areas within the state. Topics include: population, labor force, education, transportation, revenue, agriculture, vital statistics, energy and utilities, for a variety of geographic areas within the state.</p>
-<a class="reference internal image-reference" href="lectures/unit3/images/link.png"><img alt="lectures/unit3/images/link.png" class="align-center" src="lectures/unit3/images/link.png" style="width: 300px;" /></a>
+<a class="reference internal image-reference" href="../../_images/linc.png"><img alt="../../_images/linc.png" class="align-center" src="../../_images/linc.png" style="width: 300px;" /></a>
 <p>The <strong>LINC API</strong> is organized around REST can be accessed from the following link <code class="docutils literal notranslate"><span class="pre">https://linc.osbm.nc.gov/api/explore/v2.1/</span></code>. The homepage provides a list of <strong>requests</strong> that can be used for querying and accessing data.</p>
 <a class="reference internal image-reference" href="../../_images/linc-catalog.png"><img alt="../../_images/linc-catalog.png" class="align-center" src="../../_images/linc-catalog.png" style="width: 700px;" /></a>
 <a class="reference internal image-reference" href="../../_images/linc-dataset.png"><img alt="../../_images/linc-dataset.png" class="align-center" src="../../_images/linc-dataset.png" style="width: 700px;" /></a>
@@ -757,7 +757,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x15f8549e0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x16c254950&gt;]
 </pre></div>
 </div>
 <img alt="../../_images/3bcd6daaefa44b9d00743da476efe41d2a3db8fd4e9d6a2fa2be0e4558d95a81.png" src="../../_images/3bcd6daaefa44b9d00743da476efe41d2a3db8fd4e9d6a2fa2be0e4558d95a81.png" />
@@ -917,26 +917,76 @@
 <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 
 <span class="c1"># Convert to DataFrame</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">columns</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">columns</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
 <span class="n">df</span><span class="p">[</span><span class="s2">&quot;B01003_001E&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;B01003_001E&quot;</span><span class="p">])</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Convert to DataFrame</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">columns</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;B01003_001E&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;B01003_001E&quot;</span><span class="p">])</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;data&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>NAME</th>
+      <th>B01003_001E</th>
+      <th>state</th>
+      <th>county</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Alamance County, North Carolina</td>
+      <td>179165</td>
+      <td>37</td>
+      <td>001</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Brunswick County, North Carolina</td>
+      <td>159964</td>
+      <td>37</td>
+      <td>019</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Buncombe County, North Carolina</td>
+      <td>275901</td>
+      <td>37</td>
+      <td>021</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Burke County, North Carolina</td>
+      <td>88338</td>
+      <td>37</td>
+      <td>023</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Cabarrus County, North Carolina</td>
+      <td>240016</td>
+      <td>37</td>
+      <td>025</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 <section id="api-wrappers">
@@ -981,7 +1031,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
-<span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">dataretrieval</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">dataretrieval</span>
 </pre></div>
 </div>
 </div>
@@ -1203,7 +1253,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x14b38fd10&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x179d0bb30&gt;]
 </pre></div>
 </div>
 <img alt="../../_images/c9292d5c2d7fa15887995e4024b43dd5101b21a12dd399611ad3eb10da4407a6.png" src="../../_images/c9292d5c2d7fa15887995e4024b43dd5101b21a12dd399611ad3eb10da4407a6.png" />

@@ -1,6 +1,6 @@
 # Assignment 6
 
-In this week's lab we will develop a **neural network** to predict house prices. The data can be downloaded from [here](https://prodduke-my.sharepoint.com/:f:/g/personal/jr555_duke_edu/ErvXd7F79M1Lg9bgNEPqOpEB5aVF_oDmbi45TyM3GTCRUA?e=ad8pOD). 
+In this week's lab we will develop a **neural network** to predict house prices. The data can be downloaded from [here](https://prodduke-my.sharepoint.com/:x:/g/personal/jr555_duke_edu/Efym-RdI_XROu94IYGpwuDcBhB1lLHNjKwh7q-9Pd8LGew?e=eKJUsa) and [here](https://prodduke-my.sharepoint.com/:x:/g/personal/jr555_duke_edu/EY_7YGKJ23RGktDqU6UElFoBlpWkCQFivAI09tbZQ0FUxg?e=ElS3Yj).
 
 ```{image} images/houses.png
 :width: 500px
