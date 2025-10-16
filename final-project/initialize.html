@@ -63,8 +63,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'final-project/initialize';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Code management and collaboration" href="../lectures/unit3/lecture-9.html" />
-    <link rel="prev" title="Data access" href="../lectures/unit3/lecture-8.html" />
+    <link rel="next" title="Automating raster analysis" href="../lectures/unit3/lecture-10.html" />
+    <link rel="prev" title="Code management and collaboration" href="../lectures/unit3/lecture-9.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -231,13 +231,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../labs/assignment7.html">Assignment 8</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 10</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../lectures/unit3/lecture-8.html">Data access</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Initialize GitHub repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="readme.html">Make a README</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 11</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../lectures/unit3/lecture-9.html">Code management and collaboration</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Initialize GitHub repository</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 12</span></p>
 <ul class="nav bd-sidenav">
@@ -446,17 +447,15 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-tips-for-the-centralized-workflow">Some tips for the centralized workflow</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-feature-branch-workflow-recommended">(Option 2) Feature branch workflow (recommended)</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-branch-workflow-recommended">(Option 2) Branch workflow (recommended)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow">Workflow</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-branch-workflow-in-command-line">Feature branch workflow in command line</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#branch-workflow-in-command-line">Branch workflow in command line</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-tips-for-collaborating-on-group-project">Some tips for collaborating on group project</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#everyone-install-a-python-distribution">Everyone: install a Python distribution</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-a-virtual-environment">Setup a virtual environment</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-dependencies">Install dependencies</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#make-a-readme-10-points">Make a README (10 points)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-10-points">Task 2 (10 points)</a></li>
 </ul>
             </nav>
         </div>
@@ -470,17 +469,12 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="initialize-github-repository">
 <h1>Initialize GitHub repository<a class="headerlink" href="#initialize-github-repository" title="Link to this heading">#</a></h1>
-<p>The goal of the lab this week is to:</p>
+<p>The goal of the activity this week is to:</p>
 <ul class="simple">
-<li><p>Form teams and designate a team leader</p></li>
 <li><p>Create a new GitHub repository for your final project</p></li>
 <li><p>Choose a GitHub workflow that works for all team members</p></li>
 <li><p>Install necessary Python packages to carry out project</p></li>
 </ul>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>There is no submission for this lab.</p>
-</div>
 <section id="team-leader-make-a-new-github-repository">
 <h2>Team leader: make a new Github repository<a class="headerlink" href="#team-leader-make-a-new-github-repository" title="Link to this heading">#</a></h2>
 <p>If you’re working in a group, pick a <strong>project lead</strong> to initiate and manage the <strong>GitHub repository</strong> (or repo).</p>
@@ -525,9 +519,9 @@
 </ul>
 </section>
 </section>
-<section id="option-2-feature-branch-workflow-recommended">
-<h2>(Option 2) Feature branch workflow (recommended)<a class="headerlink" href="#option-2-feature-branch-workflow-recommended" title="Link to this heading">#</a></h2>
-<p>To fully explore the power of GitHub, we recommend that using a feature branching workflow. The learning curve is a little steeper than the centralized workflow but will provide a more complete introduction to git and GitHub.</p>
+<section id="option-2-branch-workflow-recommended">
+<h2>(Option 2) Branch workflow (recommended)<a class="headerlink" href="#option-2-branch-workflow-recommended" title="Link to this heading">#</a></h2>
+<p>To fully explore the power of GitHub, we recommend that using a branching workflow. The learning curve is a little steeper than the centralized workflow but will provide a more complete introduction to git and GitHub.</p>
 <section id="workflow">
 <h3>Workflow<a class="headerlink" href="#workflow" title="Link to this heading">#</a></h3>
 <ul class="simple">
@@ -543,8 +537,8 @@
 </ul>
 </section>
 </section>
-<section id="feature-branch-workflow-in-command-line">
-<h2>Feature branch workflow in command line<a class="headerlink" href="#feature-branch-workflow-in-command-line" title="Link to this heading">#</a></h2>
+<section id="branch-workflow-in-command-line">
+<h2>Branch workflow in command line<a class="headerlink" href="#branch-workflow-in-command-line" title="Link to this heading">#</a></h2>
 <p>It seems like most people in the class are using GitHub Desktop. But if your team would like to use the <strong>command line</strong> (i.e. Terminal), the steps are basically the same. There are some useful instructions <a class="reference external" href="https://icesat-2hackweek.github.io/learning-resources/projects/example_workflow/">here</a> and <a class="reference external" href="https://blog.scottlowe.org/2015/01/27/using-fork-branch-git-workflow/">here</a>. The instructor and TA would also be happy to help get a workflow started.</p>
 </section>
 <section id="some-tips-for-collaborating-on-group-project">
@@ -619,7 +613,6 @@
 <h2>Install dependencies<a class="headerlink" href="#install-dependencies" title="Link to this heading">#</a></h2>
 <p>We can install individual Python packages using <a class="reference external" href="https://pip.pypa.io/en/stable/"><code class="docutils literal notranslate"><span class="pre">pip</span></code></a>. The syntax is <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">xxx</span></code> where <code class="docutils literal notranslate"><span class="pre">xxx</span></code> is the package we want to install. It’s often easier to install multiple packages at once using a text file, so that anyone else setting up the project will have exactly the same environment.</p>
 <p>To do this we can make a text file called <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> using <strong>Notepad</strong> on Windows or <strong>TextEdit</strong> on MacOS, add the names of the packages for the project, and save it into our new project folder.</p>
-<a class="reference internal image-reference" href="final-project/images/requirements.png"><img alt="final-project/images/requirements.png" class="align-center" src="final-project/images/requirements.png" style="width: 400px;" /></a>
 <p>We can install all the packages at once by running:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span> 
 </pre></div>
@@ -641,34 +634,9 @@
 <p class="admonition-title">Note</p>
 <p>Exit the Python interpreter by pressing <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">Z</span></code> and then <code class="docutils literal notranslate"><span class="pre">Enter</span></code> in Windows or just <code class="docutils literal notranslate"><span class="pre">control</span> <span class="pre">+</span> <span class="pre">Z</span></code> in MacOS.</p>
 </div>
-</section>
-<section id="make-a-readme-10-points">
-<h2>Make a README (10 points)<a class="headerlink" href="#make-a-readme-10-points" title="Link to this heading">#</a></h2>
-<p>Now we are ready to prepare a <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file in your new GitHub repo which will serve as the landing page for your project. Note that you can continue to update the <code class="docutils literal notranslate"><span class="pre">README</span></code> as your project evolves.</p>
-<p>Review the <a class="reference external" href="https://www.markdownguide.org/basic-syntax/">markdown cheat sheet</a> and use some basic headings, bulleted/numbered lists, and other formatting to organize your outline. We recommend using a <strong>markdown editor</strong> such as <a class="reference external" href="https://macdown.uranusjr.com/">MacDown</a> for MacOS or <a class="reference external" href="https://wereturtle.github.io/ghostwriter/download.html">Ghostwriter</a> for Windows.</p>
-<p>Please include the following in <code class="docutils literal notranslate"><span class="pre">README</span></code>:</p>
-<ul class="simple">
-<li><p>Project Title</p></li>
-<li><p>Name(s) of individual or team members</p></li>
-<li><p>Short 1-2 sentence summary</p></li>
-<li><p>Problem statement, question(s) and/or objective(s)</p></li>
-<li><p>Datasets you will use (with links, if available)</p></li>
-<li><p>Python packages that team members require</p></li>
-<li><p>Planned methods/approach</p></li>
-<li><p>Expected outcomes</p></li>
-<li><p>Any other relevant information, images/tables, references, etc.</p></li>
-<li><p>References</p></li>
-</ul>
-<p>That may sound like a lot, but some of these items should only be 1-2 sentences, others can be short lists. Consider this the start of your final report.</p>
-</section>
-<hr class="docutils" />
-<section id="task-2-10-points">
-<h2>Task 2 (10 points)<a class="headerlink" href="#task-2-10-points" title="Link to this heading">#</a></h2>
-<p>Push all changes to GitHub and submit README as a pdf to Canvas. The markdown editors should be able to export <code class="docutils literal notranslate"><span class="pre">.md</span></code> files as <code class="docutils literal notranslate"><span class="pre">.pdf</span></code></p>
-<p>We would like to see at <strong>least one commit</strong> from <strong>each group member</strong> at this phase of the project, even if it is as simple as adding their name to the <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>Save your README locally as both <code class="docutils literal notranslate"><span class="pre">.md</span></code> and <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> formats but only submit the <strong>pdf</strong> to Canvas.</p>
+<p>Submit your GitHub username on Canvas as evidence for this activity.</p>
 </div>
 </section>
 </section>
@@ -704,20 +672,20 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../lectures/unit3/lecture-8.html"
+       href="../lectures/unit3/lecture-9.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Data access</p>
+        <p class="prev-next-title">Code management and collaboration</p>
       </div>
     </a>
     <a class="right-next"
-       href="../lectures/unit3/lecture-9.html"
+       href="../lectures/unit3/lecture-10.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Code management and collaboration</p>
+        <p class="prev-next-title">Automating raster analysis</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -745,17 +713,15 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-tips-for-the-centralized-workflow">Some tips for the centralized workflow</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-feature-branch-workflow-recommended">(Option 2) Feature branch workflow (recommended)</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-branch-workflow-recommended">(Option 2) Branch workflow (recommended)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow">Workflow</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-branch-workflow-in-command-line">Feature branch workflow in command line</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#branch-workflow-in-command-line">Branch workflow in command line</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-tips-for-collaborating-on-group-project">Some tips for collaborating on group project</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#everyone-install-a-python-distribution">Everyone: install a Python distribution</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-a-virtual-environment">Setup a virtual environment</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-dependencies">Install dependencies</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#make-a-readme-10-points">Make a README (10 points)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-10-points">Task 2 (10 points)</a></li>
 </ul>
   </nav></div>
 
