@@ -68,11 +68,12 @@ parts:
   - caption: Week 10
     chapters:
     - file: lectures/unit3/lecture-8.ipynb
-    - file: final-project/initialize.md
+    - file: final-project/readme.md
 
   - caption: Week 11
     chapters:
     - file: lectures/unit3/lecture-9.ipynb
+    - file: final-project/initialize.md
 
   - caption: Week 12
     chapters:

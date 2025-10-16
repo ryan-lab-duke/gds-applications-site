@@ -1,9 +1,6 @@
 # Initialize GitHub repository
 
-
-The goal of the lab this week is to:
-
-   * Form teams and designate a team leader
+The goal of the activity this week is to:
    
    
    * Create a new GitHub repository for your final project
@@ -14,9 +11,6 @@ The goal of the lab this week is to:
    
    * Install necessary Python packages to carry out project
 
-```{important}
-There is no submission for this lab.
-```
 
 ## Team leader: make a new Github repository
 
@@ -80,9 +74,9 @@ Notice that in the top left that **Current repository** is now set to `project-r
 
 * **Fetch** and **pull** regularly to avoid conflicts
 
-## (Option 2) Feature branch workflow (recommended)
+## (Option 2) Branch workflow (recommended)
 
-To fully explore the power of GitHub, we recommend that using a feature branching workflow. The learning curve is a little steeper than the centralized workflow but will provide a more complete introduction to git and GitHub. 
+To fully explore the power of GitHub, we recommend that using a branching workflow. The learning curve is a little steeper than the centralized workflow but will provide a more complete introduction to git and GitHub. 
 
 ### Workflow 
 
@@ -112,7 +106,7 @@ To fully explore the power of GitHub, we recommend that using a feature branchin
 
 * Repeat the steps above to contribute to the project.
 
-## Feature branch workflow in command line
+## Branch workflow in command line
 
 It seems like most people in the class are using GitHub Desktop. But if your team would like to use the **command line** (i.e. Terminal), the steps are basically the same. There are some useful instructions [here](https://icesat-2hackweek.github.io/learning-resources/projects/example_workflow/) and [here](https://blog.scottlowe.org/2015/01/27/using-fork-branch-git-workflow/). The instructor and TA would also be happy to help get a workflow started. 
 
@@ -209,11 +203,6 @@ We can install individual Python packages using [`pip`](https://pip.pypa.io/en/s
 
 To do this we can make a text file called `requirements.txt` using **Notepad** on Windows or **TextEdit** on MacOS, add the names of the packages for the project, and save it into our new project folder. 
 
-```{image} images/requirements.png
-:width: 400px
-:align: center
-```
-
 We can install all the packages at once by running:
 
 ```
@@ -242,35 +231,6 @@ If this runs without error, we are all good. If we get a `ModuleNotFoundError:`,
 Exit the Python interpreter by pressing `Ctrl + Z` and then `Enter` in Windows or just `control + Z` in MacOS.
 ```
 
-## Make a README (10 points)
-
-Now we are ready to prepare a `README.md` file in your new GitHub repo which will serve as the landing page for your project. Note that you can continue to update the `README` as your project evolves.  
-
-Review the [markdown cheat sheet](https://www.markdownguide.org/basic-syntax/) and use some basic headings, bulleted/numbered lists, and other formatting to organize your outline. We recommend using a **markdown editor** such as [MacDown](https://macdown.uranusjr.com/) for MacOS or [Ghostwriter](https://wereturtle.github.io/ghostwriter/download.html) for Windows.
-
-Please include the following in `README`:
-
-* Project Title
-* Name(s) of individual or team members
-* Short 1-2 sentence summary
-* Problem statement, question(s) and/or objective(s)
-* Datasets you will use (with links, if available)
-* Python packages that team members require
-* Planned methods/approach
-* Expected outcomes
-* Any other relevant information, images/tables, references, etc.
-* References
-
-That may sound like a lot, but some of these items should only be 1-2 sentences, others can be short lists. Consider this the start of your final report. 
-
-*****************************
-
-## Task 2 (10 points)
-
-Push all changes to GitHub and submit README as a pdf to Canvas. The markdown editors should be able to export `.md` files as `.pdf`
-
-We would like to see at **least one commit** from **each group member** at this phase of the project, even if it is as simple as adding their name to the `README.md` file.
-
 ```{important}
-Save your README locally as both `.md` and `.pdf` formats but only submit the **pdf** to Canvas.
+Submit your GitHub username on Canvas as evidence for this activity.
 ```

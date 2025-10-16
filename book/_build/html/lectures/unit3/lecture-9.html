@@ -63,8 +63,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'lectures/unit3/lecture-9';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Automating raster analysis" href="lecture-10.html" />
-    <link rel="prev" title="Initialize GitHub repository" href="../../final-project/initialize.html" />
+    <link rel="next" title="Initialize GitHub repository" href="../../final-project/initialize.html" />
+    <link rel="prev" title="Make a README" href="../../final-project/readme.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -233,11 +233,12 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 10</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="lecture-8.html">Data access</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../final-project/initialize.html">Initialize GitHub repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../final-project/readme.html">Make a README</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 11</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Code management and collaboration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../final-project/initialize.html">Initialize GitHub repository</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 12</span></p>
 <ul class="nav bd-sidenav">
@@ -453,10 +454,16 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#centralized-workflow-for-teams">Centralized workflow for teams</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advantages">Advantages</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#disadvantages">Disadvantages</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-branch-workflow">Feature branch workflow</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advantages-of-feature-branch-workflow">Advantages of feature branch workflow</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#branch-workflow-for-single-user">Branch workflow for single user</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-new-branch">Create new branch</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-branching">Basic branching</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#merging-conflicts">Merging conflicts</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#branch-workflow-for-teams">Branch workflow for teams</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advantages-of-branch-workflow">Advantages of branch workflow</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#good-practices">Good practices</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#agree-on-a-workflow">Agree on a workflow</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-often">Commit often</a></li>
@@ -465,21 +472,13 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-branches">Use branches</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#github-desktop">GitHub Desktop</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#github-com">GitHub.com</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-usage">Basic usage</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-a-new-file">Add a new file</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#make-some-changes">Make some changes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#undo-the-changes">Undo the changes</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-use-version-control-systems">Why do we use version control systems?</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#security">Security</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collaboration">Collaboration</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#community">Community</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#challenges">Challenges</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#challenges-of-version-control">Challenges of version control</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgments">Acknowledgments</a></li>
 </ul>
             </nav>
@@ -536,50 +535,80 @@
 <h2>Single user workflow<a class="headerlink" href="#single-user-workflow" title="Link to this heading">#</a></h2>
 <p>Install git using the following <a class="reference external" href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">instructions</a></p>
 <p>Open terminal and set user name and email address.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">user</span><span class="o">.</span><span class="n">name</span> <span class="s2">&quot;Johnny Ryan&quot;</span>
-<span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">user</span><span class="o">.</span><span class="n">email</span> <span class="n">jonathan</span><span class="o">.</span><span class="n">ryan</span><span class="nd">@duke</span><span class="o">.</span><span class="n">edu</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">user</span><span class="o">.</span><span class="n">name</span> <span class="s2">&quot;Johnny Ryan&quot;</span>
+<span class="o">%</span> <span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">user</span><span class="o">.</span><span class="n">email</span> <span class="n">jonathan</span><span class="o">.</span><span class="n">ryan</span><span class="nd">@duke</span><span class="o">.</span><span class="n">edu</span>
 </pre></div>
 </div>
 <p>Set default branch name to <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">init</span><span class="o">.</span><span class="n">defaultBranch</span> <span class="n">main</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">init</span><span class="o">.</span><span class="n">defaultBranch</span> <span class="n">main</span>
 </pre></div>
 </div>
 <section id="initialize-a-repository">
 <h3>Initialize a repository<a class="headerlink" href="#initialize-a-repository" title="Link to this heading">#</a></h3>
 <p>Make a new folder with a text file.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="n">my_project</span>
-<span class="n">cd</span> <span class="n">my_project</span>
-<span class="n">echo</span> <span class="s2">&quot;This is the content of my file.&quot;</span> <span class="o">&gt;</span> <span class="n">file</span><span class="o">.</span><span class="n">txt</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">mkdir</span> <span class="n">my_project</span>
+<span class="o">%</span> <span class="n">cd</span> <span class="n">my_project</span>
+<span class="o">%</span> <span class="n">echo</span> <span class="s2">&quot;This is the content of my file.&quot;</span> <span class="o">&gt;</span> <span class="n">file</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
 </div>
 <p>Initialize <code class="docutils literal notranslate"><span class="pre">git</span></code> in repository.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">init</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">git</span> <span class="n">init</span>
+<span class="n">Initialized</span> <span class="n">empty</span> <span class="n">Git</span> <span class="n">repository</span> <span class="ow">in</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">jr555</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">my_project</span><span class="o">/.</span><span class="n">git</span><span class="o">/</span>
 </pre></div>
 </div>
-<a class="reference internal image-reference" href="../../_images/git-dot.png"><img alt="../../_images/git-dot.png" class="align-center" src="../../_images/git-dot.png" style="width: 400px;" /></a>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">ls</span> <span class="o">-</span><span class="n">la</span> 
+<span class="n">total</span> <span class="mi">16</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>   <span class="mi">5</span> <span class="n">jr555</span>  <span class="n">staff</span>  <span class="mi">160</span> <span class="n">Oct</span> <span class="mi">16</span> <span class="mi">10</span><span class="p">:</span><span class="mi">35</span> <span class="o">.</span>
+<span class="n">drwx</span><span class="o">------+</span>  <span class="mi">6</span> <span class="n">jr555</span>  <span class="n">staff</span>  <span class="mi">192</span> <span class="n">Oct</span> <span class="mi">15</span> <span class="mi">12</span><span class="p">:</span><span class="mi">29</span> <span class="o">..</span>
+<span class="n">drwxr</span><span class="o">-</span><span class="n">xr</span><span class="o">-</span><span class="n">x</span>  <span class="mi">15</span> <span class="n">jr555</span>  <span class="n">staff</span>  <span class="mi">480</span> <span class="n">Oct</span> <span class="mi">16</span> <span class="mi">10</span><span class="p">:</span><span class="mi">36</span> <span class="o">.</span><span class="n">git</span>
+<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--@</span>  <span class="mi">1</span> <span class="n">jr555</span>  <span class="n">staff</span>   <span class="mi">43</span> <span class="n">Oct</span> <span class="mi">16</span> <span class="mi">10</span><span class="p">:</span><span class="mi">35</span> <span class="n">file</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
 <p>At this point our repository contains all the necessary files but no version control is happening yet. We can confirm this by checking the <strong>status</strong> of our files.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">status</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">git</span> <span class="n">status</span>
+<span class="n">On</span> <span class="n">branch</span> <span class="n">main</span>
+
+<span class="n">No</span> <span class="n">commits</span> <span class="n">yet</span>
+
+<span class="n">Untracked</span> <span class="n">files</span><span class="p">:</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">include</span> <span class="ow">in</span> <span class="n">what</span> <span class="n">will</span> <span class="n">be</span> <span class="n">committed</span><span class="p">)</span>
+	<span class="n">file</span><span class="o">.</span><span class="n">txt</span>
+
+<span class="n">nothing</span> <span class="n">added</span> <span class="n">to</span> <span class="n">commit</span> <span class="n">but</span> <span class="n">untracked</span> <span class="n">files</span> <span class="n">present</span> <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add&quot;</span> <span class="n">to</span> <span class="n">track</span><span class="p">)</span>
 </pre></div>
 </div>
-<a class="reference internal image-reference" href="../../_images/git-status.png"><img alt="../../_images/git-status.png" class="align-center" src="../../_images/git-status.png" style="width: 400px;" /></a>
 <p>We use a two-step process to start tracking changes to our file. We first define the files we want to track using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="o">.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">git</span> <span class="n">add</span> <span class="o">.</span>
+<span class="n">On</span> <span class="n">branch</span> <span class="n">main</span>
+
+<span class="n">No</span> <span class="n">commits</span> <span class="n">yet</span>
+
+<span class="n">Changes</span> <span class="n">to</span> <span class="n">be</span> <span class="n">committed</span><span class="p">:</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git rm --cached &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">unstage</span><span class="p">)</span>
+	<span class="n">new</span> <span class="n">file</span><span class="p">:</span>   <span class="n">file</span><span class="o">.</span><span class="n">txt</span>
+
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">.</span></code> tells <code class="docutils literal notranslate"><span class="pre">git</span></code> to stage <strong>all changes to all files</strong> in the repository.</p>
 </div>
-<a class="reference internal image-reference" href="../../_images/git-status2.png"><img alt="../../_images/git-status2.png" class="align-center" src="../../_images/git-status2.png" style="width: 400px;" /></a>
 <p>We then use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> to begin tracking our files.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;initial commit&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;initial commit&quot;</span>
+<span class="p">[</span><span class="n">main</span> <span class="p">(</span><span class="n">root</span><span class="o">-</span><span class="n">commit</span><span class="p">)</span> <span class="n">e829ea6</span><span class="p">]</span> <span class="n">initial</span> <span class="n">commit</span>
+ <span class="mi">1</span> <span class="n">file</span> <span class="n">changed</span><span class="p">,</span> <span class="mi">1</span> <span class="n">insertion</span><span class="p">(</span><span class="o">+</span><span class="p">)</span>
+ <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">file</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">-m</span></code> is a message that we use to briefly describe what the changes were.</p>
 </div>
-<a class="reference internal image-reference" href="../../_images/git-commit.png"><img alt="../../_images/git-commit.png" class="align-center" src="../../_images/git-commit.png" style="width: 400px;" /></a>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">git</span> <span class="n">status</span>
+<span class="n">On</span> <span class="n">branch</span> <span class="n">main</span>
+<span class="n">nothing</span> <span class="n">to</span> <span class="n">commit</span><span class="p">,</span> <span class="n">working</span> <span class="n">tree</span> <span class="n">clean</span>
+</pre></div>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><code class="docutils literal notranslate"><span class="pre">nothing</span> <span class="pre">to</span> <span class="pre">commit,</span> <span class="pre">working</span> <span class="pre">tree</span> <span class="pre">clean</span></code> means that none of our tracked files are <strong>modified</strong>.</p>
@@ -588,22 +617,62 @@
 <section id="modify-repository">
 <h3>Modify repository<a class="headerlink" href="#modify-repository" title="Link to this heading">#</a></h3>
 <p>Let’s add another file to our project to see what happens.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;# My Project&quot;</span> <span class="o">&gt;</span> <span class="n">README</span><span class="o">.</span><span class="n">md</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">echo</span> <span class="s2">&quot;# My Project&quot;</span> <span class="o">&gt;</span> <span class="n">README</span><span class="o">.</span><span class="n">md</span>
 </pre></div>
 </div>
 <p>We will also make some changes to <code class="docutils literal notranslate"><span class="pre">file.txt</span></code> so that it now reads <code class="docutils literal notranslate"><span class="pre">This</span> <span class="pre">is</span> <span class="pre">the</span> <span class="pre">content</span> <span class="pre">of</span> <span class="pre">my</span> <span class="pre">file</span> <span class="pre">**with</span> <span class="pre">edits.**</span></code>. Now when we run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> we see there are two files, one file that is <strong>modified</strong> and one file that is <strong>untracked</strong>.</p>
-<a class="reference internal image-reference" href="../../_images/git-modify.png"><img alt="../../_images/git-modify.png" class="align-center" src="../../_images/git-modify.png" style="width: 400px;" /></a>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">git</span> <span class="n">status</span>
+<span class="n">On</span> <span class="n">branch</span> <span class="n">main</span>
+<span class="n">Changes</span> <span class="ow">not</span> <span class="n">staged</span> <span class="k">for</span> <span class="n">commit</span><span class="p">:</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">update</span> <span class="n">what</span> <span class="n">will</span> <span class="n">be</span> <span class="n">committed</span><span class="p">)</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git restore &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">discard</span> <span class="n">changes</span> <span class="ow">in</span> <span class="n">working</span> <span class="n">directory</span><span class="p">)</span>
+	<span class="n">modified</span><span class="p">:</span>   <span class="n">file</span><span class="o">.</span><span class="n">txt</span>
+
+<span class="n">Untracked</span> <span class="n">files</span><span class="p">:</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">include</span> <span class="ow">in</span> <span class="n">what</span> <span class="n">will</span> <span class="n">be</span> <span class="n">committed</span><span class="p">)</span>
+	<span class="n">README</span><span class="o">.</span><span class="n">md</span>
+
+<span class="n">no</span> <span class="n">changes</span> <span class="n">added</span> <span class="n">to</span> <span class="n">commit</span> <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add&quot;</span> <span class="ow">and</span><span class="o">/</span><span class="ow">or</span> <span class="s2">&quot;git commit -a&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 <p><strong>Both</strong> these files can be staged using the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> command which stages <strong>all addition, modification, or deletion</strong> of files. We can therefore use the same workflow every time.</p>
-<a class="reference internal image-reference" href="../../_images/git-modify2.png"><img alt="../../_images/git-modify2.png" class="align-center" src="../../_images/git-modify2.png" style="width: 400px;" /></a>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">git</span> <span class="n">add</span> <span class="o">.</span>
+<span class="o">%</span> <span class="n">git</span> <span class="n">status</span>
+<span class="n">On</span> <span class="n">branch</span> <span class="n">main</span>
+<span class="n">Changes</span> <span class="n">to</span> <span class="n">be</span> <span class="n">committed</span><span class="p">:</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git restore --staged &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">unstage</span><span class="p">)</span>
+	<span class="n">new</span> <span class="n">file</span><span class="p">:</span>   <span class="n">README</span><span class="o">.</span><span class="n">md</span>
+	<span class="n">modified</span><span class="p">:</span>   <span class="n">file</span><span class="o">.</span><span class="n">txt</span>
+
+</pre></div>
+</div>
 <p>We can then use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> to track them.</p>
-<a class="reference internal image-reference" href="../../_images/git-commit.png"><img alt="../../_images/git-commit.png" class="align-center" src="../../_images/git-commit.png" style="width: 400px;" /></a>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;added README&quot;</span>
+<span class="p">[</span><span class="n">main</span> <span class="mi">4</span><span class="n">a5bbcb</span><span class="p">]</span> <span class="n">added</span> <span class="n">README</span>
+ <span class="mi">2</span> <span class="n">files</span> <span class="n">changed</span><span class="p">,</span> <span class="mi">2</span> <span class="n">insertions</span><span class="p">(</span><span class="o">+</span><span class="p">),</span> <span class="mi">1</span> <span class="n">deletion</span><span class="p">(</span><span class="o">-</span><span class="p">)</span>
+ <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">README</span><span class="o">.</span><span class="n">md</span>
+</pre></div>
+</div>
 <p>We can inspect the history of our repository using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code>.</p>
-<a class="reference internal image-reference" href="../../_images/git-log.png"><img alt="../../_images/git-log.png" class="align-center" src="../../_images/git-log.png" style="width: 400px;" /></a>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">git</span> <span class="n">log</span>
+<span class="n">commit</span> <span class="mi">4</span><span class="n">a5bbcb4aae1d50bcec4abbd448cc8e4aebc8a15</span> <span class="p">(</span><span class="n">HEAD</span> <span class="o">-&gt;</span> <span class="n">main</span><span class="p">)</span>
+<span class="n">Author</span><span class="p">:</span> <span class="n">Johnny</span> <span class="n">Ryan</span> <span class="o">&lt;</span><span class="n">jonathan</span><span class="o">.</span><span class="n">ryan</span><span class="nd">@duke</span><span class="o">.</span><span class="n">edu</span><span class="o">&gt;</span>
+<span class="n">Date</span><span class="p">:</span>   <span class="n">Thu</span> <span class="n">Oct</span> <span class="mi">16</span> <span class="mi">10</span><span class="p">:</span><span class="mi">48</span><span class="p">:</span><span class="mi">48</span> <span class="mi">2025</span> <span class="o">-</span><span class="mi">0400</span>
+
+    <span class="n">added</span> <span class="n">README</span>
+
+<span class="n">commit</span> <span class="n">e829ea674e5563626ce44015a71454d4aedca51b</span>
+<span class="n">Author</span><span class="p">:</span> <span class="n">Johnny</span> <span class="n">Ryan</span> <span class="o">&lt;</span><span class="n">jonathan</span><span class="o">.</span><span class="n">ryan</span><span class="nd">@duke</span><span class="o">.</span><span class="n">edu</span><span class="o">&gt;</span>
+<span class="n">Date</span><span class="p">:</span>   <span class="n">Thu</span> <span class="n">Oct</span> <span class="mi">16</span> <span class="mi">10</span><span class="p">:</span><span class="mi">45</span><span class="p">:</span><span class="mi">12</span> <span class="mi">2025</span> <span class="o">-</span><span class="mi">0400</span>
+
+    <span class="n">initial</span> <span class="n">commit</span>
+</pre></div>
+</div>
 <p>This command lists the commits in reverse chronological order (newest commits first) and includes the author’s name, email, date written, and message.</p>
 <p>The commit is named using a type of <strong>checksum</strong> called a SHA-1 hash which is a 40-character string composed of hexadecimal characters (0–9 and a–f).</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Adding the <code class="docutils literal notranslate"><span class="pre">-a</span></code> option to the git commit command makes Git automatically stage every file that is already tracked before doing the commit, letting you skip the git add part e.g. <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-a</span> <span class="pre">-m</span> <span class="pre">'some</span> <span class="pre">more</span> <span class="pre">changes'</span></code></p>
+<p>Adding the <code class="docutils literal notranslate"><span class="pre">-a</span></code> option to the git commit command makes Git automatically stage every file that is already tracked before doing the commit, letting you skip the git add part e.g. <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-a</span> <span class="pre">-m</span> <span class="pre">&quot;some</span> <span class="pre">more</span> <span class="pre">changes&quot;</span></code></p>
 </div>
 </section>
 <section id="knowledge-check">
@@ -620,13 +689,92 @@
 <section id="going-back-in-time">
 <h3>Going back in time<a class="headerlink" href="#going-back-in-time" title="Link to this heading">#</a></h3>
 <p>If we want to go back to a previous commit (just to look around) we can use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code>.</p>
-<a class="reference internal image-reference" href="../../_images/checkout.png"><img alt="../../_images/checkout.png" class="align-center" src="../../_images/checkout.png" style="width: 400px;" /></a>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">git</span> <span class="n">checkout</span> <span class="n">e829ea674e5563626ce44015a71454d4aedca51b</span>
+<span class="n">Note</span><span class="p">:</span> <span class="n">switching</span> <span class="n">to</span> <span class="s1">&#39;e829ea674e5563626ce44015a71454d4aedca51b&#39;</span><span class="o">.</span>
+
+<span class="n">You</span> <span class="n">are</span> <span class="ow">in</span> <span class="s1">&#39;detached HEAD&#39;</span> <span class="n">state</span><span class="o">.</span> <span class="n">You</span> <span class="n">can</span> <span class="n">look</span> <span class="n">around</span><span class="p">,</span> <span class="n">make</span> <span class="n">experimental</span>
+<span class="n">changes</span> <span class="ow">and</span> <span class="n">commit</span> <span class="n">them</span><span class="p">,</span> <span class="ow">and</span> <span class="n">you</span> <span class="n">can</span> <span class="n">discard</span> <span class="nb">any</span> <span class="n">commits</span> <span class="n">you</span> <span class="n">make</span> <span class="ow">in</span> <span class="n">this</span>
+<span class="n">state</span> <span class="n">without</span> <span class="n">impacting</span> <span class="nb">any</span> <span class="n">branches</span> <span class="n">by</span> <span class="n">switching</span> <span class="n">back</span> <span class="n">to</span> <span class="n">a</span> <span class="n">branch</span><span class="o">.</span>
+
+<span class="n">If</span> <span class="n">you</span> <span class="n">want</span> <span class="n">to</span> <span class="n">create</span> <span class="n">a</span> <span class="n">new</span> <span class="n">branch</span> <span class="n">to</span> <span class="n">retain</span> <span class="n">commits</span> <span class="n">you</span> <span class="n">create</span><span class="p">,</span> <span class="n">you</span> <span class="n">may</span>
+<span class="n">do</span> <span class="n">so</span> <span class="p">(</span><span class="n">now</span> <span class="ow">or</span> <span class="n">later</span><span class="p">)</span> <span class="n">by</span> <span class="n">using</span> <span class="o">-</span><span class="n">c</span> <span class="k">with</span> <span class="n">the</span> <span class="n">switch</span> <span class="n">command</span><span class="o">.</span> <span class="n">Example</span><span class="p">:</span>
+
+  <span class="n">git</span> <span class="n">switch</span> <span class="o">-</span><span class="n">c</span> <span class="o">&lt;</span><span class="n">new</span><span class="o">-</span><span class="n">branch</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span>
+
+<span class="n">Or</span> <span class="n">undo</span> <span class="n">this</span> <span class="n">operation</span> <span class="k">with</span><span class="p">:</span>
+
+  <span class="n">git</span> <span class="n">switch</span> <span class="o">-</span>
+
+<span class="n">Turn</span> <span class="n">off</span> <span class="n">this</span> <span class="n">advice</span> <span class="n">by</span> <span class="n">setting</span> <span class="n">config</span> <span class="n">variable</span> <span class="n">advice</span><span class="o">.</span><span class="n">detachedHead</span> <span class="n">to</span> <span class="n">false</span>
+
+<span class="n">HEAD</span> <span class="ow">is</span> <span class="n">now</span> <span class="n">at</span> <span class="n">e829ea6</span> <span class="n">initial</span> <span class="n">commit</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">ls</span>
+<span class="n">file</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
 <p>From here we can save the old file somewhere else before going back to the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">main</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">git</span> <span class="n">checkout</span> <span class="n">main</span>
+<span class="n">Previous</span> <span class="n">HEAD</span> <span class="n">position</span> <span class="n">was</span> <span class="n">e829ea6</span> <span class="n">initial</span> <span class="n">commit</span>
+<span class="n">Switched</span> <span class="n">to</span> <span class="n">branch</span> <span class="s1">&#39;main&#39;</span>
+
+<span class="o">%</span> <span class="n">ls</span>
+<span class="n">README</span><span class="o">.</span><span class="n">md</span>	<span class="n">file</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
 <p>If we made changes to a file that we later decide we don’t want, we can <strong>undo</strong> them using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">restore</span></code> (provided that we have not yet committed them).</p>
-<a class="reference internal image-reference" href="../../_images/git-restore.png"><img alt="../../_images/git-restore.png" class="align-center" src="../../_images/git-restore.png" style="width: 400px;" /></a>
-<a class="reference internal image-reference" href="../../_images/git-restore2.png"><img alt="../../_images/git-restore2.png" class="align-center" src="../../_images/git-restore2.png" style="width: 400px;" /></a>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="nb">open</span> <span class="n">README</span><span class="o">.</span><span class="n">md</span>
+<span class="o">%</span> <span class="n">git</span> <span class="n">status</span>
+<span class="n">On</span> <span class="n">branch</span> <span class="n">main</span>
+<span class="n">Changes</span> <span class="ow">not</span> <span class="n">staged</span> <span class="k">for</span> <span class="n">commit</span><span class="p">:</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">update</span> <span class="n">what</span> <span class="n">will</span> <span class="n">be</span> <span class="n">committed</span><span class="p">)</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git restore &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">discard</span> <span class="n">changes</span> <span class="ow">in</span> <span class="n">working</span> <span class="n">directory</span><span class="p">)</span>
+	<span class="n">modified</span><span class="p">:</span>   <span class="n">README</span><span class="o">.</span><span class="n">md</span>
+
+<span class="n">no</span> <span class="n">changes</span> <span class="n">added</span> <span class="n">to</span> <span class="n">commit</span> <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add&quot;</span> <span class="ow">and</span><span class="o">/</span><span class="ow">or</span> <span class="s2">&quot;git commit -a&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">git</span> <span class="n">restore</span> <span class="n">README</span><span class="o">.</span><span class="n">md</span>
+<span class="o">%</span> <span class="n">git</span> <span class="n">status</span>
+<span class="n">On</span> <span class="n">branch</span> <span class="n">main</span>
+<span class="n">nothing</span> <span class="n">to</span> <span class="n">commit</span><span class="p">,</span> <span class="n">working</span> <span class="n">tree</span> <span class="n">clean</span>
+</pre></div>
+</div>
+<p>We can also use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">restore</span></code> to <strong>unstage</strong> a file.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="nb">open</span> <span class="n">README</span><span class="o">.</span><span class="n">md</span>
+<span class="o">%</span> <span class="n">git</span> <span class="n">add</span> <span class="n">README</span><span class="o">.</span><span class="n">md</span>
+<span class="o">%</span> <span class="n">git</span> <span class="n">status</span>
+<span class="n">On</span> <span class="n">branch</span> <span class="n">main</span>
+<span class="n">Changes</span> <span class="n">to</span> <span class="n">be</span> <span class="n">committed</span><span class="p">:</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git restore --staged &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">unstage</span><span class="p">)</span>
+	<span class="n">modified</span><span class="p">:</span>   <span class="n">README</span><span class="o">.</span><span class="n">md</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">git</span> <span class="n">restore</span> <span class="o">--</span><span class="n">staged</span> <span class="n">README</span><span class="o">.</span><span class="n">md</span>
+<span class="n">On</span> <span class="n">branch</span> <span class="n">main</span>
+<span class="n">Changes</span> <span class="ow">not</span> <span class="n">staged</span> <span class="k">for</span> <span class="n">commit</span><span class="p">:</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">update</span> <span class="n">what</span> <span class="n">will</span> <span class="n">be</span> <span class="n">committed</span><span class="p">)</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git restore &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">discard</span> <span class="n">changes</span> <span class="ow">in</span> <span class="n">working</span> <span class="n">directory</span><span class="p">)</span>
+	<span class="n">modified</span><span class="p">:</span>   <span class="n">README</span><span class="o">.</span><span class="n">md</span>
+
+<span class="n">no</span> <span class="n">changes</span> <span class="n">added</span> <span class="n">to</span> <span class="n">commit</span> <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add&quot;</span> <span class="ow">and</span><span class="o">/</span><span class="ow">or</span> <span class="s2">&quot;git commit -a&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">git</span> <span class="n">restore</span> <span class="n">README</span><span class="o">.</span><span class="n">md</span>
+<span class="o">%</span> <span class="n">git</span> <span class="n">status</span>
+<span class="n">On</span> <span class="n">branch</span> <span class="n">main</span>
+<span class="n">nothing</span> <span class="n">to</span> <span class="n">commit</span><span class="p">,</span> <span class="n">working</span> <span class="n">tree</span> <span class="n">clean</span>
+</pre></div>
+</div>
 <p>If we want to reset our repository to a previous commit, we can use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span></code>.</p>
-<a class="reference internal image-reference" href="../../_images/git-reset.png"><img alt="../../_images/git-reset.png" class="align-center" src="../../_images/git-reset.png" style="width: 400px;" /></a>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>% git reset --hard e829ea674e5563626ce44015a71454d4aedca51b
+HEAD is now at e829ea6 initial commit
+
+$ ls
+file.txt
+</pre></div>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span></code> command is very dangerous. It completely rewinds our repository to that commit and all changes after that commit are permanently deleted! Be careful with this command.</p>
@@ -636,11 +784,21 @@
 <h3>Working with remotes<a class="headerlink" href="#working-with-remotes" title="Link to this heading">#</a></h3>
 <p>Remote repositories are versions of our project that are hosted somewhere else (usually on GitHub). To set up a remote repository, first go to <a class="reference external" href="https://github.com/">GitHub.com</a> and click <strong>New</strong>.</p>
 <p>Choose a name for the new repository, <strong>leave everything else blank</strong>, and click <strong>Create Repository</strong>. Then back in Terminal, run:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">origin</span> <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">JohnnyRyan1</span><span class="o">/</span><span class="n">my_project</span><span class="o">.</span><span class="n">git</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">origin</span> <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">JohnnyRyan1</span><span class="o">/</span><span class="n">my_project</span><span class="o">.</span><span class="n">git</span>
+<span class="o">%</span> <span class="n">git</span> <span class="n">remote</span> <span class="o">-</span><span class="n">v</span>
+<span class="n">origin</span>	<span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">JohnnyRyan1</span><span class="o">/</span><span class="n">my_project</span><span class="o">.</span><span class="n">git</span> <span class="p">(</span><span class="n">fetch</span><span class="p">)</span>
+<span class="n">origin</span>	<span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">JohnnyRyan1</span><span class="o">/</span><span class="n">my_project</span><span class="o">.</span><span class="n">git</span> <span class="p">(</span><span class="n">push</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>This links our local repository with our remote repository. We can then <strong>upload</strong> our local repository to the remote using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code>.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span> <span class="o">-</span><span class="n">u</span> <span class="n">origin</span> <span class="n">main</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">git</span> <span class="n">push</span> <span class="o">-</span><span class="n">u</span> <span class="n">origin</span> <span class="n">main</span>
+<span class="n">Enumerating</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">Counting</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">3</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">Writing</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">3</span><span class="p">),</span> <span class="mi">248</span> <span class="nb">bytes</span> <span class="o">|</span> <span class="mf">248.00</span> <span class="n">KiB</span><span class="o">/</span><span class="n">s</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">Total</span> <span class="mi">3</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">0</span><span class="p">),</span> <span class="n">reused</span> <span class="mi">0</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pack</span><span class="o">-</span><span class="n">reused</span> <span class="mi">0</span>
+<span class="n">To</span> <span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">JohnnyRyan1</span><span class="o">/</span><span class="n">my_project</span><span class="o">.</span><span class="n">git</span>
+ <span class="o">*</span> <span class="p">[</span><span class="n">new</span> <span class="n">branch</span><span class="p">]</span>      <span class="n">main</span> <span class="o">-&gt;</span> <span class="n">main</span>
+<span class="n">branch</span> <span class="s1">&#39;main&#39;</span> <span class="nb">set</span> <span class="n">up</span> <span class="n">to</span> <span class="n">track</span> <span class="s1">&#39;origin/main&#39;</span><span class="o">.</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -650,10 +808,46 @@
 <a class="reference internal image-reference" href="../../_images/empty-repo.png"><img alt="../../_images/empty-repo.png" class="align-center" src="../../_images/empty-repo.png" style="width: 700px;" /></a>
 <p>Our remote repository now contains <code class="docutils literal notranslate"><span class="pre">file.txt</span></code>. But since we used <code class="docutils literal notranslate"><span class="pre">reset</span></code> earlier, we lost our <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file. We can make one on GitHub.</p>
 <a class="reference internal image-reference" href="../../_images/remote-commit.png"><img alt="../../_images/remote-commit.png" class="align-center" src="../../_images/remote-commit.png" style="width: 700px;" /></a>
-<p>We can run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">fetch</span></code> now to compare our local repository with our remote repository.</p>
-<a class="reference internal image-reference" href="../../_images/git-fetch.png"><img alt="../../_images/git-fetch.png" class="align-center" src="../../_images/git-fetch.png" style="width: 400px;" /></a>
-<p>After running <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>, we find that our local repository is 1 commit behind the remote repository. We can use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> to update our local repository.</p>
-<a class="reference internal image-reference" href="../../_images/git-pull.png"><img alt="../../_images/git-pull.png" class="align-center" src="../../_images/git-pull.png" style="width: 400px;" /></a>
+<p>We can run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">fetch</span></code> now to compare our local repository with our remote repository and download the new commits from the remote. Note that this command <strong>does not modify</strong> our local repository.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">git</span> <span class="n">fetch</span>
+<span class="n">remote</span><span class="p">:</span> <span class="n">Enumerating</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">remote</span><span class="p">:</span> <span class="n">Counting</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">4</span><span class="o">/</span><span class="mi">4</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">remote</span><span class="p">:</span> <span class="n">Compressing</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">remote</span><span class="p">:</span> <span class="n">Total</span> <span class="mi">3</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">0</span><span class="p">),</span> <span class="n">reused</span> <span class="mi">0</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pack</span><span class="o">-</span><span class="n">reused</span> <span class="mi">0</span> <span class="p">(</span><span class="kn">from</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="n">Unpacking</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">3</span><span class="p">),</span> <span class="mi">937</span> <span class="nb">bytes</span> <span class="o">|</span> <span class="mf">937.00</span> <span class="n">KiB</span><span class="o">/</span><span class="n">s</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">From</span> <span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">JohnnyRyan1</span><span class="o">/</span><span class="n">my_project</span>
+   <span class="n">e829ea6</span><span class="o">..</span><span class="n">b3eb2b2</span>  <span class="n">main</span>       <span class="o">-&gt;</span> <span class="n">origin</span><span class="o">/</span><span class="n">main</span>
+</pre></div>
+</div>
+<p>After running <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>, we find that our local repository is 1 commit behind the remote repository. We can use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> to merge the remote commits into our local repository.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">git</span> <span class="n">status</span>
+<span class="n">On</span> <span class="n">branch</span> <span class="n">main</span>
+<span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">behind</span> <span class="s1">&#39;origin/main&#39;</span> <span class="n">by</span> <span class="mi">1</span> <span class="n">commit</span><span class="p">,</span> <span class="ow">and</span> <span class="n">can</span> <span class="n">be</span> <span class="n">fast</span><span class="o">-</span><span class="n">forwarded</span><span class="o">.</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git pull&quot;</span> <span class="n">to</span> <span class="n">update</span> <span class="n">your</span> <span class="n">local</span> <span class="n">branch</span><span class="p">)</span>
+
+<span class="n">nothing</span> <span class="n">to</span> <span class="n">commit</span><span class="p">,</span> <span class="n">working</span> <span class="n">tree</span> <span class="n">clean</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">git</span> <span class="n">pull</span>
+<span class="n">Updating</span> <span class="n">e829ea6</span><span class="o">..</span><span class="n">b3eb2b2</span>
+<span class="n">Fast</span><span class="o">-</span><span class="n">forward</span>
+ <span class="n">README</span><span class="o">.</span><span class="n">md</span> <span class="o">|</span> <span class="mi">1</span> <span class="o">+</span>
+ <span class="mi">1</span> <span class="n">file</span> <span class="n">changed</span><span class="p">,</span> <span class="mi">1</span> <span class="n">insertion</span><span class="p">(</span><span class="o">+</span><span class="p">)</span>
+ <span class="n">create</span> <span class="n">mode</span> <span class="mi">100644</span> <span class="n">README</span><span class="o">.</span><span class="n">md</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The phrase “fast-forward” means that the commit in the remote repository was directly ahead of the commit in the local repository, so Git simply moves the pointer forward.</p>
+</div>
+<p>Now when we run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>, we have a third line that tells us that we are not only <strong>on branch main</strong> but also that our repository is <strong>up to date with <code class="docutils literal notranslate"><span class="pre">origin/main</span></code></strong>, the remote repository.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">git</span> <span class="n">status</span>
+<span class="n">On</span> <span class="n">branch</span> <span class="n">main</span>
+<span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">up</span> <span class="n">to</span> <span class="n">date</span> <span class="k">with</span> <span class="s1">&#39;origin/main&#39;</span><span class="o">.</span>
+
+<span class="n">nothing</span> <span class="n">to</span> <span class="n">commit</span><span class="p">,</span> <span class="n">working</span> <span class="n">tree</span> <span class="n">clean</span>
+</pre></div>
+</div>
 </section>
 </section>
 <section id="centralized-workflow-for-teams">
@@ -696,61 +890,253 @@
 <li><p>But this does not scale well as teams increase in size</p></li>
 </ul>
 </section>
-<section id="feature-branch-workflow">
-<h3>Feature branch workflow<a class="headerlink" href="#feature-branch-workflow" title="Link to this heading">#</a></h3>
+</section>
+<section id="branch-workflow-for-single-user">
+<h2>Branch workflow for single user<a class="headerlink" href="#branch-workflow-for-single-user" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>The logical extension of the centralized workflow is to use <strong>branches</strong></p></li>
-<li><p>In this workflow, all feature development takes place in a dedicated branch instead of the main branch</p></li>
+<li><p>In this workflow, all feature development takes place in a dedicated branch instead of the main repository</p></li>
 <li><p>This means that main branch never contains broken code - a huge advantage for continuous integration environments</p></li>
 </ul>
-<ul class="simple">
-<li><p>All team members <strong>clone</strong> a <strong>single, central repository</strong> to their local machine</p></li>
-</ul>
-<a class="reference internal image-reference" href="../../_images/colab.svg"><img alt="../../_images/colab.svg" class="align-center" src="../../_images/colab.svg" style="width: 600px;" /></a>
-<ul class="simple">
-<li><p>Team members immediately create a new branch to make their changes</p></li>
-</ul>
-<a class="reference internal image-reference" href="../../_images/big_branch.svg"><img alt="../../_images/big_branch.svg" class="align-center" src="../../_images/big_branch.svg" style="width: 600px;" /></a>
-<ul class="simple">
-<li><p>When team members finish their changes, they <strong>push</strong> their branch to the central repository. The central repository will now contain multiple branches.</p></li>
-<li><p>Therefore, unlike the centralized workflow, this <strong>push</strong> will never cause conflicts</p></li>
-</ul>
-<a class="reference internal image-reference" href="../../_images/mary_successful_push.svg"><img alt="../../_images/mary_successful_push.svg" class="align-center" src="../../_images/mary_successful_push.svg" style="width: 600px;" /></a>
-<ul class="simple">
-<li><p>Team members then submit a <strong>pull request</strong> on <a class="reference external" href="http://GitHub.com">GitHub.com</a> asking to <strong>merge</strong> their new feature (or branch) into the main codebase, all team members will be notified automatically</p></li>
-</ul>
-<a class="reference internal image-reference" href="../../_images/git-pull-request.png"><img alt="../../_images/git-pull-request.png" class="align-center" src="../../_images/git-pull-request.png" style="width: 300px;" /></a>
-<ul class="simple">
-<li><p>Team leader <strong>reviews</strong> pull request, discusses any changes with team members</p></li>
-<li><p>Once everything looks good, team leader merges new feature into main codebase</p></li>
-<li><p>Team member can then delete their branch</p></li>
-</ul>
-<a class="reference internal image-reference" href="../../_images/merge.svg"><img alt="../../_images/merge.svg" class="align-center" src="../../_images/merge.svg" style="width: 600px;" /></a>
-<a class="reference internal image-reference" href="../../_images/pull-request.png"><img alt="../../_images/pull-request.png" class="align-center" src="../../_images/pull-request.png" style="width: 800px;" /></a>
-<a class="reference internal image-reference" href="../../_images/pr-changes.png"><img alt="../../_images/pr-changes.png" class="align-center" src="../../_images/pr-changes.png" style="width: 1000px;" /></a>
-<a class="reference internal image-reference" href="../../_images/create-pull-request.png"><img alt="../../_images/create-pull-request.png" class="align-center" src="../../_images/create-pull-request.png" style="width: 1000px;" /></a>
-<a class="reference internal image-reference" href="../../_images/github-diff-file.png"><img alt="../../_images/github-diff-file.png" class="align-center" src="../../_images/github-diff-file.png" style="width: 800px;" /></a>
+<p>Let’s demonstrate branching by continuing to work on <code class="docutils literal notranslate"><span class="pre">my_project</span></code> folder.</p>
 </section>
-<section id="advantages-of-feature-branch-workflow">
-<h3>Advantages of feature branch workflow<a class="headerlink" href="#advantages-of-feature-branch-workflow" title="Link to this heading">#</a></h3>
+<section id="create-new-branch">
+<h2>Create new branch<a class="headerlink" href="#create-new-branch" title="Link to this heading">#</a></h2>
+<p>We will first create a new branch called <code class="docutils literal notranslate"><span class="pre">testing</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">branch</span> <span class="n">testing</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../_images/git-branch.png"><img alt="../../_images/git-branch.png" class="align-center" src="../../_images/git-branch.png" style="width: 600px;" /></a>
+<p>We then switch to that branch using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">git</span> <span class="n">checkout</span> <span class="n">testing</span>
+<span class="n">Switched</span> <span class="n">to</span> <span class="n">branch</span> <span class="s1">&#39;testing&#39;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This can be done in one line using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">testing</span></code> which both creates the branch and switches to it.</p>
+</div>
+<a class="reference internal image-reference" href="../../_images/git-branch2.png"><img alt="../../_images/git-branch2.png" class="align-center" src="../../_images/git-branch2.png" style="width: 600px;" /></a>
+<section id="basic-branching">
+<h3>Basic branching<a class="headerlink" href="#basic-branching" title="Link to this heading">#</a></h3>
+<p>Now we make a change to <code class="docutils literal notranslate"><span class="pre">file.txt</span></code> and commit it.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="nb">open</span> <span class="n">file</span><span class="o">.</span><span class="n">txt</span>
+<span class="o">%</span> <span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;Made a change&quot;</span>
+<span class="p">[</span><span class="n">testing</span> <span class="n">f1c1c74</span><span class="p">]</span> <span class="n">Made</span> <span class="n">a</span> <span class="n">change</span>
+ <span class="mi">1</span> <span class="n">file</span> <span class="n">changed</span><span class="p">,</span> <span class="mi">1</span> <span class="n">insertion</span><span class="p">(</span><span class="o">+</span><span class="p">),</span> <span class="mi">1</span> <span class="n">deletion</span><span class="p">(</span><span class="o">-</span><span class="p">)</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../_images/git-branch3.png"><img alt="../../_images/git-branch3.png" class="align-center" src="../../_images/git-branch3.png" style="width: 600px;" /></a>
+<p>We find that our <code class="docutils literal notranslate"><span class="pre">testing</span></code> branch has moved forward but our <code class="docutils literal notranslate"><span class="pre">main</span></code> branch still points to the commit we were on before we switched to the new branch. We can go back to the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">main</span></code> which does two things: 1) switches the working directory to the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch and 2) undoes the changes we made in the <code class="docutils literal notranslate"><span class="pre">testing</span></code> branch.</p>
+<a class="reference internal image-reference" href="../../_images/git-branch4.png"><img alt="../../_images/git-branch4.png" class="align-center" src="../../_images/git-branch4.png" style="width: 600px;" /></a>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">git</span> <span class="n">checkout</span> <span class="n">main</span>
+<span class="n">Switched</span> <span class="n">to</span> <span class="n">branch</span> <span class="s1">&#39;main&#39;</span>
+<span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">up</span> <span class="n">to</span> <span class="n">date</span> <span class="k">with</span> <span class="s1">&#39;origin/main&#39;</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>We can <strong>merge</strong> the <code class="docutils literal notranslate"><span class="pre">testing</span></code> branch with the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">git</span> <span class="n">merge</span> <span class="n">testing</span>
+<span class="n">Updating</span> <span class="n">b3eb2b2</span><span class="o">..</span><span class="n">f1c1c74</span>
+<span class="n">Fast</span><span class="o">-</span><span class="n">forward</span>
+ <span class="n">file</span><span class="o">.</span><span class="n">txt</span> <span class="o">|</span> <span class="mi">2</span> <span class="o">+-</span>
+ <span class="mi">1</span> <span class="n">file</span> <span class="n">changed</span><span class="p">,</span> <span class="mi">1</span> <span class="n">insertion</span><span class="p">(</span><span class="o">+</span><span class="p">),</span> <span class="mi">1</span> <span class="n">deletion</span><span class="p">(</span><span class="o">-</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>And we can push those new changes to our remote repository.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">git</span> <span class="n">status</span>
+<span class="n">On</span> <span class="n">branch</span> <span class="n">main</span>
+<span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">ahead</span> <span class="n">of</span> <span class="s1">&#39;origin/main&#39;</span> <span class="n">by</span> <span class="mi">1</span> <span class="n">commit</span><span class="o">.</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git push&quot;</span> <span class="n">to</span> <span class="n">publish</span> <span class="n">your</span> <span class="n">local</span> <span class="n">commits</span><span class="p">)</span>
+
+<span class="n">nothing</span> <span class="n">to</span> <span class="n">commit</span><span class="p">,</span> <span class="n">working</span> <span class="n">tree</span> <span class="n">clean</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">git</span> <span class="n">push</span>
+<span class="n">Enumerating</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">Counting</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">5</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">Delta</span> <span class="n">compression</span> <span class="n">using</span> <span class="n">up</span> <span class="n">to</span> <span class="mi">10</span> <span class="n">threads</span>
+<span class="n">Compressing</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">Writing</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">3</span><span class="p">),</span> <span class="mi">325</span> <span class="nb">bytes</span> <span class="o">|</span> <span class="mf">325.00</span> <span class="n">KiB</span><span class="o">/</span><span class="n">s</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">Total</span> <span class="mi">3</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">0</span><span class="p">),</span> <span class="n">reused</span> <span class="mi">0</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pack</span><span class="o">-</span><span class="n">reused</span> <span class="mi">0</span>
+<span class="n">To</span> <span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">JohnnyRyan1</span><span class="o">/</span><span class="n">my_project</span><span class="o">.</span><span class="n">git</span>
+   <span class="n">b3eb2b2</span><span class="o">..</span><span class="n">f1c1c74</span>  <span class="n">main</span> <span class="o">-&gt;</span> <span class="n">main</span>
+</pre></div>
+</div>
+<p>We should now delete the <code class="docutils literal notranslate"><span class="pre">testing</span></code> branch.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">d</span> <span class="n">testing</span>
+<span class="n">Deleted</span> <span class="n">branch</span> <span class="n">testing</span> <span class="p">(</span><span class="n">was</span> <span class="n">f1c1c74</span><span class="p">)</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="merging-conflicts">
+<h3>Merging conflicts<a class="headerlink" href="#merging-conflicts" title="Link to this heading">#</a></h3>
+<p>Sometimes the merge does not go smoothly. For example, if we made committed different changes to the same file in both <code class="docutils literal notranslate"><span class="pre">main</span></code> and <code class="docutils literal notranslate"><span class="pre">testing</span></code> repositories, we would have a <strong>conflict</strong> that git would not be able resolve automatically.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">testing</span>
+<span class="n">Switched</span> <span class="n">to</span> <span class="n">a</span> <span class="n">new</span> <span class="n">branch</span> <span class="s1">&#39;testing&#39;</span>
+<span class="o">%</span> <span class="nb">open</span> <span class="n">file</span><span class="o">.</span><span class="n">txt</span>
+<span class="o">%</span> <span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;Added a new line&quot;</span>
+<span class="p">[</span><span class="n">testing</span> <span class="n">d7686d8</span><span class="p">]</span> <span class="n">Added</span> <span class="n">a</span> <span class="n">new</span> <span class="n">line</span>
+ <span class="mi">1</span> <span class="n">file</span> <span class="n">changed</span><span class="p">,</span> <span class="mi">2</span> <span class="n">insertions</span><span class="p">(</span><span class="o">+</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">git</span> <span class="n">checkout</span> <span class="n">main</span>
+<span class="n">Switched</span> <span class="n">to</span> <span class="n">branch</span> <span class="s1">&#39;main&#39;</span>
+<span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">up</span> <span class="n">to</span> <span class="n">date</span> <span class="k">with</span> <span class="s1">&#39;origin/main&#39;</span><span class="o">.</span>
+<span class="o">%</span> <span class="nb">open</span> <span class="n">file</span><span class="o">.</span><span class="n">txt</span>
+<span class="o">%</span> <span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;Added more text&quot;</span>
+<span class="p">[</span><span class="n">main</span> <span class="mi">0</span><span class="n">be9124</span><span class="p">]</span> <span class="n">Added</span> <span class="n">more</span> <span class="n">text</span>
+ <span class="mi">1</span> <span class="n">file</span> <span class="n">changed</span><span class="p">,</span> <span class="mi">1</span> <span class="n">insertion</span><span class="p">(</span><span class="o">+</span><span class="p">),</span> <span class="mi">1</span> <span class="n">deletion</span><span class="p">(</span><span class="o">-</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>When we run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span></code>, we get a conflict message. Instead of creating a new merge commit, git paused the process until we are able to resolve the conflict.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">git</span> <span class="n">merge</span> <span class="n">testing</span>
+<span class="n">Auto</span><span class="o">-</span><span class="n">merging</span> <span class="n">file</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">CONFLICT</span> <span class="p">(</span><span class="n">content</span><span class="p">):</span> <span class="n">Merge</span> <span class="n">conflict</span> <span class="ow">in</span> <span class="n">file</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">Automatic</span> <span class="n">merge</span> <span class="n">failed</span><span class="p">;</span> <span class="n">fix</span> <span class="n">conflicts</span> <span class="ow">and</span> <span class="n">then</span> <span class="n">commit</span> <span class="n">the</span> <span class="n">result</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>We can run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> to see which files are <strong>unmerged</strong>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">git</span> <span class="n">status</span>
+<span class="n">On</span> <span class="n">branch</span> <span class="n">main</span>
+<span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">ahead</span> <span class="n">of</span> <span class="s1">&#39;origin/main&#39;</span> <span class="n">by</span> <span class="mi">1</span> <span class="n">commit</span><span class="o">.</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git push&quot;</span> <span class="n">to</span> <span class="n">publish</span> <span class="n">your</span> <span class="n">local</span> <span class="n">commits</span><span class="p">)</span>
+
+<span class="n">You</span> <span class="n">have</span> <span class="n">unmerged</span> <span class="n">paths</span><span class="o">.</span>
+  <span class="p">(</span><span class="n">fix</span> <span class="n">conflicts</span> <span class="ow">and</span> <span class="n">run</span> <span class="s2">&quot;git commit&quot;</span><span class="p">)</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git merge --abort&quot;</span> <span class="n">to</span> <span class="n">abort</span> <span class="n">the</span> <span class="n">merge</span><span class="p">)</span>
+
+<span class="n">Unmerged</span> <span class="n">paths</span><span class="p">:</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">mark</span> <span class="n">resolution</span><span class="p">)</span>
+	<span class="n">both</span> <span class="n">modified</span><span class="p">:</span>   <span class="n">file</span><span class="o">.</span><span class="n">txt</span>
+
+<span class="n">no</span> <span class="n">changes</span> <span class="n">added</span> <span class="n">to</span> <span class="n">commit</span> <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add&quot;</span> <span class="ow">and</span><span class="o">/</span><span class="ow">or</span> <span class="s2">&quot;git commit -a&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We can manually resolve this conflict using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">mergetool</span></code>. We have setup our system to use Xcode’s <strong>FileMerge</strong> graphical tool to do this.</p>
+<a class="reference internal image-reference" href="../../_images/filemerge.png"><img alt="../../_images/filemerge.png" class="align-center" src="../../_images/filemerge.png" style="width: 600px;" /></a>
+<aside class="margin sidebar">
+<p class="sidebar-title">FileMerge</p>
+<p>To use Xcode’s <strong>FileMerge</strong> as our git merge tool I had to install <a class="reference external" href="https://developer.apple.com/xcode/">Xcode</a>, run <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">xcode-select</span> <span class="pre">-s</span> <span class="pre">/Applications/Xcode.app/Contents/Developer</span></code> and then <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">merge.tool</span> <span class="pre">opendiff.trustExitCode</span> <span class="pre">true</span></code>.</p>
+</aside>
+<p>Once we finished resolving conflicts, we save the file. We can run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> again to confirm that the conflicts have been resolved.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">git</span> <span class="n">status</span>
+<span class="n">On</span> <span class="n">branch</span> <span class="n">main</span>
+<span class="n">Your</span> <span class="n">branch</span> <span class="ow">is</span> <span class="n">ahead</span> <span class="n">of</span> <span class="s1">&#39;origin/main&#39;</span> <span class="n">by</span> <span class="mi">1</span> <span class="n">commit</span><span class="o">.</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git push&quot;</span> <span class="n">to</span> <span class="n">publish</span> <span class="n">your</span> <span class="n">local</span> <span class="n">commits</span><span class="p">)</span>
+
+<span class="n">All</span> <span class="n">conflicts</span> <span class="n">fixed</span> <span class="n">but</span> <span class="n">you</span> <span class="n">are</span> <span class="n">still</span> <span class="n">merging</span><span class="o">.</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git commit&quot;</span> <span class="n">to</span> <span class="n">conclude</span> <span class="n">merge</span><span class="p">)</span>
+
+<span class="n">Changes</span> <span class="n">to</span> <span class="n">be</span> <span class="n">committed</span><span class="p">:</span>
+	<span class="n">modified</span><span class="p">:</span>   <span class="n">file</span><span class="o">.</span><span class="n">txt</span>
+
+<span class="n">Untracked</span> <span class="n">files</span><span class="p">:</span>
+  <span class="p">(</span><span class="n">use</span> <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> <span class="n">to</span> <span class="n">include</span> <span class="ow">in</span> <span class="n">what</span> <span class="n">will</span> <span class="n">be</span> <span class="n">committed</span><span class="p">)</span>
+	<span class="n">file</span><span class="o">.</span><span class="n">txt</span><span class="o">.</span><span class="n">orig</span>
+
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;Merged commit&quot;</span>
+<span class="p">[</span><span class="n">main</span> <span class="mi">6</span><span class="n">cf2c9a</span><span class="p">]</span> <span class="n">Merged</span> <span class="n">commit</span>
+
+<span class="o">%</span> <span class="n">git</span> <span class="n">log</span>
+<span class="n">commit</span> <span class="mi">6</span><span class="n">cf2c9a45a83aa1c1a93c5f9466353ed5b31a878</span> <span class="p">(</span><span class="n">HEAD</span> <span class="o">-&gt;</span> <span class="n">main</span><span class="p">)</span>
+<span class="n">Merge</span><span class="p">:</span> <span class="mi">87</span><span class="n">d1c58</span> <span class="mi">92010</span><span class="n">d5</span>
+<span class="n">Author</span><span class="p">:</span> <span class="n">Johnny</span> <span class="n">Ryan</span> <span class="o">&lt;</span><span class="n">jonathan</span><span class="o">.</span><span class="n">ryan</span><span class="nd">@duke</span><span class="o">.</span><span class="n">edu</span><span class="o">&gt;</span>
+<span class="n">Date</span><span class="p">:</span>   <span class="n">Thu</span> <span class="n">Oct</span> <span class="mi">16</span> <span class="mi">14</span><span class="p">:</span><span class="mi">29</span><span class="p">:</span><span class="mi">29</span> <span class="mi">2025</span> <span class="o">-</span><span class="mi">0400</span>
+
+    <span class="n">Merged</span> <span class="n">commit</span>
+
+<span class="n">commit</span> <span class="mi">87</span><span class="n">d1c58eedb0811286c36ae8be17f9e211c6a496</span>
+<span class="n">Author</span><span class="p">:</span> <span class="n">Johnny</span> <span class="n">Ryan</span> <span class="o">&lt;</span><span class="n">jonathan</span><span class="o">.</span><span class="n">ryan</span><span class="nd">@duke</span><span class="o">.</span><span class="n">edu</span><span class="o">&gt;</span>
+<span class="n">Date</span><span class="p">:</span>   <span class="n">Thu</span> <span class="n">Oct</span> <span class="mi">16</span> <span class="mi">14</span><span class="p">:</span><span class="mi">21</span><span class="p">:</span><span class="mi">51</span> <span class="mi">2025</span> <span class="o">-</span><span class="mi">0400</span>
+
+    <span class="n">Added</span> <span class="n">more</span> <span class="n">text</span>
+
+<span class="n">commit</span> <span class="mi">92010</span><span class="n">d5fdf347807345dc36ea2f2e868fee88de0</span> <span class="p">(</span><span class="n">testing</span><span class="p">)</span>
+<span class="n">Author</span><span class="p">:</span> <span class="n">Johnny</span> <span class="n">Ryan</span> <span class="o">&lt;</span><span class="n">jonathan</span><span class="o">.</span><span class="n">ryan</span><span class="nd">@duke</span><span class="o">.</span><span class="n">edu</span><span class="o">&gt;</span>
+<span class="n">Date</span><span class="p">:</span>   <span class="n">Thu</span> <span class="n">Oct</span> <span class="mi">16</span> <span class="mi">14</span><span class="p">:</span><span class="mi">21</span><span class="p">:</span><span class="mi">26</span> <span class="mi">2025</span> <span class="o">-</span><span class="mi">0400</span>
+
+    <span class="n">Added</span> <span class="n">a</span> <span class="n">new</span> <span class="n">line</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="branch-workflow-for-teams">
+<h2>Branch workflow for teams<a class="headerlink" href="#branch-workflow-for-teams" title="Link to this heading">#</a></h2>
+<p>All team members <strong>clone</strong> a <strong>single, central repository</strong> to their local machine.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">JohnnyRyan1</span><span class="o">/</span><span class="n">my_project</span><span class="o">.</span><span class="n">git</span>
+<span class="n">Cloning</span> <span class="n">into</span> <span class="s1">&#39;my_project&#39;</span><span class="o">...</span>
+<span class="n">remote</span><span class="p">:</span> <span class="n">Enumerating</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">remote</span><span class="p">:</span> <span class="n">Counting</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">18</span><span class="o">/</span><span class="mi">18</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">remote</span><span class="p">:</span> <span class="n">Compressing</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">12</span><span class="o">/</span><span class="mi">12</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">remote</span><span class="p">:</span> <span class="n">Total</span> <span class="mi">18</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">2</span><span class="p">),</span> <span class="n">reused</span> <span class="mi">15</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">2</span><span class="p">),</span> <span class="n">pack</span><span class="o">-</span><span class="n">reused</span> <span class="mi">0</span> <span class="p">(</span><span class="kn">from</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="n">Receiving</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">18</span><span class="o">/</span><span class="mi">18</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">Resolving</span> <span class="n">deltas</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../_images/colab.svg"><img alt="../../_images/colab.svg" class="align-center" src="../../_images/colab.svg" style="width: 600px;" /></a>
+<p>Team members <strong>immediately create a new branch</strong>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">laptop</span>
+<span class="n">Switched</span> <span class="n">to</span> <span class="n">a</span> <span class="n">new</span> <span class="n">branch</span> <span class="s1">&#39;laptop&#39;</span>
+
+<span class="o">%</span> <span class="nb">open</span> <span class="n">file</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../_images/big_branch.svg"><img alt="../../_images/big_branch.svg" class="align-center" src="../../_images/big_branch.svg" style="width: 600px;" /></a>
+<p>Team members work on the code, <strong>staying on their branch</strong>. When they finish, they <strong>commit</strong> them to their branch and <strong>push</strong> it to the remote repository. The remote repository will now contain multiple branches.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;Text from laptop&quot;</span>
+<span class="p">[</span><span class="n">laptop</span> <span class="n">db3be2d</span><span class="p">]</span> <span class="n">Text</span> <span class="kn">from</span><span class="w"> </span><span class="nn">laptop</span>
+ <span class="mi">1</span> <span class="n">file</span> <span class="n">changed</span><span class="p">,</span> <span class="mi">2</span> <span class="n">insertions</span><span class="p">(</span><span class="o">+</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">git</span> <span class="n">push</span> <span class="o">--</span><span class="nb">set</span><span class="o">-</span><span class="n">upstream</span> <span class="n">origin</span> <span class="n">laptop</span>
+<span class="n">Enumerating</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">Counting</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">5</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">Delta</span> <span class="n">compression</span> <span class="n">using</span> <span class="n">up</span> <span class="n">to</span> <span class="mi">8</span> <span class="n">threads</span>
+<span class="n">Compressing</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">3</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">Writing</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">3</span><span class="p">),</span> <span class="mi">368</span> <span class="nb">bytes</span> <span class="o">|</span> <span class="mf">368.00</span> <span class="n">KiB</span><span class="o">/</span><span class="n">s</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">Total</span> <span class="mi">3</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">0</span><span class="p">),</span> <span class="n">reused</span> <span class="mi">0</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pack</span><span class="o">-</span><span class="n">reused</span> <span class="mi">0</span>
+<span class="n">remote</span><span class="p">:</span> 
+<span class="n">remote</span><span class="p">:</span> <span class="n">Create</span> <span class="n">a</span> <span class="n">pull</span> <span class="n">request</span> <span class="k">for</span> <span class="s1">&#39;laptop&#39;</span> <span class="n">on</span> <span class="n">GitHub</span> <span class="n">by</span> <span class="n">visiting</span><span class="p">:</span>
+<span class="n">remote</span><span class="p">:</span>      <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">JohnnyRyan1</span><span class="o">/</span><span class="n">my_project</span><span class="o">/</span><span class="n">pull</span><span class="o">/</span><span class="n">new</span><span class="o">/</span><span class="n">laptop</span>
+<span class="n">remote</span><span class="p">:</span> 
+<span class="n">To</span> <span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">JohnnyRyan1</span><span class="o">/</span><span class="n">my_project</span><span class="o">.</span><span class="n">git</span>
+ <span class="o">*</span> <span class="p">[</span><span class="n">new</span> <span class="n">branch</span><span class="p">]</span>      <span class="n">laptop</span> <span class="o">-&gt;</span> <span class="n">laptop</span>
+<span class="n">branch</span> <span class="s1">&#39;laptop&#39;</span> <span class="nb">set</span> <span class="n">up</span> <span class="n">to</span> <span class="n">track</span> <span class="s1">&#39;origin/laptop&#39;</span><span class="o">.</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../_images/mary_successful_push.svg"><img alt="../../_images/mary_successful_push.svg" class="align-center" src="../../_images/mary_successful_push.svg" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../_images/pull-request.png"><img alt="../../_images/pull-request.png" class="align-center" src="../../_images/pull-request.png" style="width: 700px;" /></a>
+<p>Team leader <strong>reviews</strong> pull request, discusses any changes with team members.</p>
+<a class="reference internal image-reference" href="../../_images/pull-request2.png"><img alt="../../_images/pull-request2.png" class="align-center" src="../../_images/pull-request2.png" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../../_images/pull-request3.png"><img alt="../../_images/pull-request3.png" class="align-center" src="../../_images/pull-request3.png" style="width: 700px;" /></a>
+<p>Once everything looks good, team leader merges new feature into main codebase. Team member can then delete their branch.</p>
+<a class="reference internal image-reference" href="../../_images/pull-request4.png"><img alt="../../_images/pull-request4.png" class="align-center" src="../../_images/pull-request4.png" style="width: 700px;" /></a>
+<p>Team <strong>leader</strong> can then <code class="docutils literal notranslate"><span class="pre">pull</span></code> the changes from the remote GitHub repository to their local repository.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">git</span> <span class="n">pull</span>
+<span class="n">remote</span><span class="p">:</span> <span class="n">Enumerating</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">remote</span><span class="p">:</span> <span class="n">Counting</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">6</span><span class="o">/</span><span class="mi">6</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">remote</span><span class="p">:</span> <span class="n">Compressing</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">4</span><span class="o">/</span><span class="mi">4</span><span class="p">),</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">remote</span><span class="p">:</span> <span class="n">Total</span> <span class="mi">4</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">0</span><span class="p">),</span> <span class="n">reused</span> <span class="mi">3</span> <span class="p">(</span><span class="n">delta</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pack</span><span class="o">-</span><span class="n">reused</span> <span class="mi">0</span> <span class="p">(</span><span class="kn">from</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="n">Unpacking</span> <span class="n">objects</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span> <span class="p">(</span><span class="mi">4</span><span class="o">/</span><span class="mi">4</span><span class="p">),</span> <span class="mf">1.20</span> <span class="n">KiB</span> <span class="o">|</span> <span class="mf">307.00</span> <span class="n">KiB</span><span class="o">/</span><span class="n">s</span><span class="p">,</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">From</span> <span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">JohnnyRyan1</span><span class="o">/</span><span class="n">my_project</span>
+   <span class="mi">6</span><span class="n">cf2c9a</span><span class="o">.</span><span class="mf">.5e1</span><span class="n">a0e0</span>  <span class="n">main</span>       <span class="o">-&gt;</span> <span class="n">origin</span><span class="o">/</span><span class="n">main</span>
+<span class="n">Updating</span> <span class="mi">6</span><span class="n">cf2c9a</span><span class="o">.</span><span class="mf">.5e1</span><span class="n">a0e0</span>
+<span class="n">Fast</span><span class="o">-</span><span class="n">forward</span>
+ <span class="n">file</span><span class="o">.</span><span class="n">txt</span> <span class="o">|</span> <span class="mi">2</span> <span class="o">++</span>
+ <span class="mi">1</span> <span class="n">file</span> <span class="n">changed</span><span class="p">,</span> <span class="mi">2</span> <span class="n">insertions</span><span class="p">(</span><span class="o">+</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="advantages-of-branch-workflow">
+<h2>Advantages of branch workflow<a class="headerlink" href="#advantages-of-branch-workflow" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Promotes collaboration with team members through <strong>pull requests</strong> and <strong>merge reviews</strong></p></li>
 <li><p>Teams can work in parallel on same files so good approach for larger teams</p></li>
 <li><p>Main branch never contains broken code</p></li>
-<li><p>Guiding framework for other, more complex worflows</p></li>
+<li><p>Guiding framework for other, more complex workflows</p></li>
 </ul>
-<ul class="simple">
-<li><p>Instead of using a single, central repository, forking workflows give every team member their <strong>own central repository</strong></p></li>
-<li><p>Team members can tinker with their forked repository as they wish without disturbing anyone else</p></li>
-<li><p>When ready they can <strong>push</strong> to their private central repository and file <strong>pull requests</strong> if they think their changes are ready to be integrated to main codebase</p></li>
-</ul>
-<a class="reference internal image-reference" href="../../_images/multiple_repos.svg"><img alt="../../_images/multiple_repos.svg" class="align-center" src="../../_images/multiple_repos.svg" style="width: 600px;" /></a>
-<ul class="simple">
-<li><p>Provides a little more <strong>power</strong> to the team leader because they are the only person that can push to the official repository</p></li>
-<li><p>Allows the team leader to <strong>accept/reject commits</strong> from any developer without giving them write access to the main codebase</p></li>
-<li><p>Often used for large open-source projects</p></li>
-</ul>
-</section>
 </section>
 <section id="good-practices">
 <h2>Good practices<a class="headerlink" href="#good-practices" title="Link to this heading">#</a></h2>
@@ -773,7 +1159,7 @@
 <ul class="simple">
 <li><p>VCS enables rapid updates from multiple developers</p></li>
 <li><p>It’s easy to have a local copy of the codebase fall behind the global copy</p></li>
-<li><p>Make sure to <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> or <code class="docutils literal notranslate"><span class="pre">fetch</span></code> the latest code before you start working on project</p></li>
+<li><p>Make sure to <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">fetch</span></code> or <code class="docutils literal notranslate"><span class="pre">pull</span></code> the latest code before you start working on project</p></li>
 </ul>
 </section>
 <section id="make-detailed-notes">
@@ -787,55 +1173,13 @@
 <h3>Use branches<a class="headerlink" href="#use-branches" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Branches enable multiple developers to work in parallel on <strong>separate lines</strong> of development</p></li>
-<li><p>Branches should be used <strong>frequently</strong> as they are quick and inexpensive.</p></li>
+<li><p>Branches should be used <strong>frequently</strong> (e.g. multiple times per day) as they are quick and inexpensive.</p></li>
 <li><p>When development on a branch is complete it should be <strong>merged</strong> into the main line of development and then <strong>deleted</strong></p></li>
 </ul>
-<p>There are two ways to use <code class="docutils literal notranslate"><span class="pre">git</span></code>, the command-line and <strong>GitHub Desktop</strong>. Most students prefer to use the desktop version to begin with but we’d be happy to provide guidance on the command-line version during labs.</p>
 </section>
 </section>
-<section id="github-desktop">
-<h2>GitHub Desktop<a class="headerlink" href="#github-desktop" title="Link to this heading">#</a></h2>
-<p>We will talk a bit more about <code class="docutils literal notranslate"><span class="pre">git</span></code> later in the lecture but, to continue setting up our project, go ahead and install <a class="reference external" href="https://desktop.github.com/"><strong>GitHub Desktop</strong></a>.</p>
-<ul class="simple">
-<li><p>Open <strong>GitHub Desktop</strong> → <strong>Add an Existing Repository from your Hard Drive…</strong></p></li>
-<li><p>Select <strong>Choose…</strong> and navigate to your project folder</p></li>
-<li><p>Respond to this warning by clicking <strong>create a repository</strong></p></li>
-<li><p>Leave everything as is and <strong>Create Repository</strong></p></li>
-</ul>
-<p>Now we can <strong>Publish repository</strong> on <a class="reference external" href="http://Github.com">Github.com</a> by clicking the big blue button. If you signed up for an educational GitHub account we should able to tick the box to <strong>Keep this code private</strong> and click <strong>Publish Repository</strong> again.</p>
-</section>
-<section id="github-com">
-<h2><a class="reference external" href="http://GitHub.com">GitHub.com</a><a class="headerlink" href="#github-com" title="Link to this heading">#</a></h2>
-<p>If we navigate to <code class="docutils literal notranslate"><span class="pre">github.com</span></code> on a web browser, sign in, and navigate to our profile, there should be a new <strong>repository</strong> that contains our files (just an <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> and <code class="docutils literal notranslate"><span class="pre">.venv</span></code> folder for now).</p>
-</section>
-<section id="basic-usage">
-<h2>Basic usage<a class="headerlink" href="#basic-usage" title="Link to this heading">#</a></h2>
-<p>In line with our “learn by doing” mantra, we will demonstrate the basics of version control with GitHub using a demo.</p>
-<section id="add-a-new-file">
-<h3>Add a new file<a class="headerlink" href="#add-a-new-file" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Make a new text file using <strong>Notepad</strong> on Windows or <strong>TextEdit</strong> on MacOS called <code class="docutils literal notranslate"><span class="pre">README.md</span></code>, add some random text, and save.</p></li>
-<li><p>In <strong>GitHub Desktop</strong> we will see <strong>1 changed file</strong>.</p></li>
-<li><p>Type in <strong>“Added README”</strong> in the <strong>Summary</strong> box in the lower left → <strong>Commit to main</strong>.</p></li>
-</ul>
-<p>If we navigate to <code class="docutils literal notranslate"><span class="pre">github.com</span></code>, we will see this new file.</p>
-</section>
-<section id="make-some-changes">
-<h3>Make some changes<a class="headerlink" href="#make-some-changes" title="Link to this heading">#</a></h3>
-<p>Now make some changes to the text in the <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file, save, <strong>and close</strong>. Again, we will see <strong>1 changed file</strong> in GitHub Desktop.</p>
-</section>
-<section id="undo-the-changes">
-<h3>Undo the changes<a class="headerlink" href="#undo-the-changes" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Type in <strong>“Changed README”</strong> in the <strong>Summary</strong> box in the lower left and <strong>Commit to main</strong> again.</p></li>
-<li><p>Click the <strong>History</strong> tab (next to <strong>Changes</strong>)</p></li>
-<li><p>Right-click the <strong>Changed README</strong> commit and click <strong>Revert Changes in Commit…</strong></p></li>
-</ul>
-<p>If we navigate to the <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file, we will find that the changes we made have been deleted. We have successfully used <code class="docutils literal notranslate"><span class="pre">git</span></code> in a practical way!</p>
-</section>
-</section>
-<section id="why-do-we-use-version-control-systems">
-<h2>Why do we use version control systems?<a class="headerlink" href="#why-do-we-use-version-control-systems" title="Link to this heading">#</a></h2>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
 <section id="security">
 <h3>Security<a class="headerlink" href="#security" title="Link to this heading">#</a></h3>
 <ul class="simple">
@@ -857,17 +1201,17 @@
 <ul class="simple">
 <li><p>Impossible for junior developer to mess up a big project</p></li>
 <li><p>Since it is so robust this encourages open-source <strong>experimentation</strong> and <strong>development</strong></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">GitHub</span></code> has really emerged as the industry standard</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GitHub</span></code> has emerged as the industry standard</p></li>
 </ul>
 <a class="reference internal image-reference" href="../../_images/pull.svg"><img alt="../../_images/pull.svg" class="align-center" src="../../_images/pull.svg" style="width: 500px;" /></a>
 </section>
-</section>
-<section id="challenges-of-version-control">
-<h2>Challenges of version control<a class="headerlink" href="#challenges-of-version-control" title="Link to this heading">#</a></h2>
+<section id="challenges">
+<h3>Challenges<a class="headerlink" href="#challenges" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Difficult to learn</p></li>
+<li><p>Can be difficult to learn</p></li>
 </ul>
 <a class="reference internal image-reference" href="../../_images/meme.jpeg"><img alt="../../_images/meme.jpeg" class="align-center" src="../../_images/meme.jpeg" style="width: 600px;" /></a>
+</section>
 </section>
 <section id="acknowledgments">
 <h2>Acknowledgments<a class="headerlink" href="#acknowledgments" title="Link to this heading">#</a></h2>
@@ -907,20 +1251,20 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../../final-project/initialize.html"
+       href="../../final-project/readme.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Initialize GitHub repository</p>
+        <p class="prev-next-title">Make a README</p>
       </div>
     </a>
     <a class="right-next"
-       href="lecture-10.html"
+       href="../../final-project/initialize.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Automating raster analysis</p>
+        <p class="prev-next-title">Initialize GitHub repository</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -955,10 +1299,16 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#centralized-workflow-for-teams">Centralized workflow for teams</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advantages">Advantages</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#disadvantages">Disadvantages</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-branch-workflow">Feature branch workflow</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advantages-of-feature-branch-workflow">Advantages of feature branch workflow</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#branch-workflow-for-single-user">Branch workflow for single user</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-new-branch">Create new branch</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-branching">Basic branching</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#merging-conflicts">Merging conflicts</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#branch-workflow-for-teams">Branch workflow for teams</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advantages-of-branch-workflow">Advantages of branch workflow</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#good-practices">Good practices</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#agree-on-a-workflow">Agree on a workflow</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-often">Commit often</a></li>
@@ -967,21 +1317,13 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-branches">Use branches</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#github-desktop">GitHub Desktop</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#github-com">GitHub.com</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-usage">Basic usage</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-a-new-file">Add a new file</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#make-some-changes">Make some changes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#undo-the-changes">Undo the changes</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-use-version-control-systems">Why do we use version control systems?</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#security">Security</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collaboration">Collaboration</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#community">Community</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#challenges">Challenges</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#challenges-of-version-control">Challenges of version control</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgments">Acknowledgments</a></li>
 </ul>
   </nav></div>
