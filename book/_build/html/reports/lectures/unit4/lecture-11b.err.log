@@ -25,7 +25,7 @@ acs = products.ACS(2019)
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mAttributeError[0m                            Traceback (most recent call last)
-[0;32m/var/folders/6m/lbbbs2n90xq6lk5v5902brkc0000gq/T/ipykernel_794/1023165891.py[0m in [0;36m?[0;34m()[0m
+[0;32m/var/folders/6m/lbbbs2n90xq6lk5v5902brkc0000gq/T/ipykernel_45915/1023165891.py[0m in [0;36m?[0;34m()[0m
 [0;32m----> 1[0;31m [0;32mfrom[0m [0mcenpy[0m [0;32mimport[0m [0mproducts[0m[0;34m[0m[0;34m[0m[0m
 [0m[1;32m      2[0m [0macs[0m [0;34m=[0m [0mproducts[0m[0;34m.[0m[0mACS[0m[0;34m([0m[0;36m2019[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 
