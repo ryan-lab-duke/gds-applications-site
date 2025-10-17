@@ -443,15 +443,9 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#team-leader-make-a-new-github-repository">Team leader: make a new Github repository</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#team-leader-add-other-team-members-to-repository">Team leader: add other team members to repository</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#everyone-clone-repository">Everyone: clone repository</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-1-centralized-git-workflow">(Option 1) Centralized git workflow</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-tips-for-the-centralized-workflow">Some tips for the centralized workflow</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-branch-workflow-recommended">(Option 2) Branch workflow (recommended)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow">Workflow</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#branch-workflow-in-command-line">Branch workflow in command line</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow">Workflow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#branching">Branching</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-request">Pull request</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-tips-for-collaborating-on-group-project">Some tips for collaborating on group project</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#everyone-install-a-python-distribution">Everyone: install a Python distribution</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-a-virtual-environment">Setup a virtual environment</a></li>
@@ -472,7 +466,7 @@
 <p>The goal of the activity this week is to:</p>
 <ul class="simple">
 <li><p>Create a new GitHub repository for your final project</p></li>
-<li><p>Choose a GitHub workflow that works for all team members</p></li>
+<li><p>Practice pushing and pulling to the remote repository</p></li>
 <li><p>Install necessary Python packages to carry out project</p></li>
 </ul>
 <section id="team-leader-make-a-new-github-repository">
@@ -480,70 +474,101 @@
 <p>If you’re working in a group, pick a <strong>project lead</strong> to initiate and manage the <strong>GitHub repository</strong> (or repo).</p>
 <ul class="simple">
 <li><p>Go to: <a class="github reference external" href="https://github.com/"></a></p></li>
-<li><p>Click the big green <strong>New</strong> button and follow instructions on the left side of page. Come up with a clever, descriptive repo name - try to avoid names like “finalproject”, which won’t make the project very memorable or searchable.</p></li>
+<li><p>Make a new repository by clicking the big green <strong>New</strong> button.  Come up with a short, descriptive repo name - try to avoid names like “finalproject”, which won’t make the project very memorable or searchable.</p></li>
 <li><p>Set the access to <strong>Public</strong> (so instructors/other students can follow progress).</p></li>
 <li><p>Select to include a <code class="docutils literal notranslate"><span class="pre">README.md</span></code> and include a <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file with a <code class="docutils literal notranslate"><span class="pre">Python</span></code> template.</p></li>
 </ul>
 <p>Don’t stress too much about the specifics of the repo - these are not permanent, and you can always change repo names, or start over entirely (just copy and add existing files as a first commit). One of the goals here is to gain more experience using <code class="docutils literal notranslate"><span class="pre">git</span></code> for collaborative work and, early on, you’re inevitably going to make some mistakes.</p>
+<ul class="simple">
+<li><p>When you’re happy, click the green <strong>Create repository</strong> button.</p></li>
+</ul>
 </section>
 <section id="team-leader-add-other-team-members-to-repository">
 <h2>Team leader: add other team members to repository<a class="headerlink" href="#team-leader-add-other-team-members-to-repository" title="Link to this heading">#</a></h2>
-<p>The team leader now needs to add the others as collaborators and make sure they have permission to access and commit.</p>
+<p>The team leader now needs to add the others as collaborators and make sure they have permission to push changes to the repository.</p>
 <ul class="simple">
-<li><p>Click <strong>Settings</strong> –&gt; <strong>Collaborators</strong> from menu on the left</p></li>
+<li><p>Click <strong>Settings</strong> from the top menu and –&gt; <strong>Collaborators</strong> from the menu of the left</p></li>
 <li><p>Click the big green <strong>Add people</strong> button and add the other team members using their <strong>GitHub usernames</strong></p></li>
 </ul>
 </section>
 <section id="everyone-clone-repository">
 <h2>Everyone: clone repository<a class="headerlink" href="#everyone-clone-repository" title="Link to this heading">#</a></h2>
-<p>All team members should install <a class="reference external" href="https://desktop.github.com/">GitHub Desktop</a>.</p>
-<p>Once installed, open GitHub Desktop, click <strong>File</strong> –&gt; <strong>Clone repository…</strong>, enter <code class="docutils literal notranslate"><span class="pre">https://github.com/&lt;team-leader-username&gt;/&lt;project-repo-name&gt;</span></code> as the <strong>URL</strong> where <code class="docutils literal notranslate"><span class="pre">&lt;team-leader-username&gt;</span></code> is the <strong>team leader’s</strong> GitHub username and <code class="docutils literal notranslate"><span class="pre">&lt;project-repo-name&gt;</span></code> is the name of the new project repo.</p>
-<p>Choose a <strong>Local path</strong> where you keep your coursework (e.g. <code class="docutils literal notranslate"><span class="pre">C:\Users\your_name\Documents</span></code>) and click <strong>Clone</strong>.</p>
-<p>Notice that in the top left that <strong>Current repository</strong> is now set to <code class="docutils literal notranslate"><span class="pre">project-repo-name</span></code>.</p>
-</section>
-<section id="option-1-centralized-git-workflow">
-<h2>(Option 1) Centralized git workflow<a class="headerlink" href="#option-1-centralized-git-workflow" title="Link to this heading">#</a></h2>
+<p>All team members should now install <code class="docutils literal notranslate"><span class="pre">git</span></code> by following these <a class="reference external" href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">instructions</a>. Once installed:</p>
 <ul class="simple">
-<li><p>To contribute to the repo, <strong>team members</strong> should make a new file called <code class="docutils literal notranslate"><span class="pre">README_XX.md</span></code> where <code class="docutils literal notranslate"><span class="pre">XX</span></code> are the initials of the team member.</p></li>
-<li><p>When the team member is finished with thir edits to <code class="docutils literal notranslate"><span class="pre">README_XX.md</span></code>, they can go to <strong>GitHub Desktop</strong>, include a <strong>Summary</strong> of the changes, <strong>Commit to main</strong> and then click <strong>Push origin</strong> button.</p></li>
-<li><p><strong>Team leader</strong> can then go to <strong>GitHub Desktop</strong>, click <strong>Fetch origin</strong> and <strong>Pull origin</strong> to retrieve the changes that the team members made to their local environment.</p></li>
-<li><p><strong>Team leader</strong> can then add useful text from <code class="docutils literal notranslate"><span class="pre">README_XX.md</span></code> to the main file (e.g. <code class="docutils literal notranslate"><span class="pre">README.md</span></code>). Once they are finished they can <strong>delete</strong> <code class="docutils literal notranslate"><span class="pre">README_XX.md</span></code>, go to <strong>GitHub Desktop</strong>, include a <strong>Summary</strong> of the changes, click <strong>Commit to main</strong> and then <strong>Push origin</strong> button.</p></li>
-<li><p><strong>Team members</strong> can then go to <strong>GitHub Desktop</strong>, click <strong>Fetch origin</strong> and <strong>Pull origin</strong> to retrieve the changes that the team leader made. Repeat the steps above to contribute to the project.</p></li>
+<li><p>Copy the <strong>SSH URL</strong> of the new repository by clicking the big green <strong>&lt;&gt; Code</strong> button</p></li>
+<li><p>Navigate to place in your file directory where you keep your coursework (e.g. <code class="docutils literal notranslate"><span class="pre">C:\Users\user\Documents</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">clone</span></code> the repository locally by running:</p></li>
 </ul>
-<section id="some-tips-for-the-centralized-workflow">
-<h3>Some tips for the centralized workflow<a class="headerlink" href="#some-tips-for-the-centralized-workflow" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Only the team leader should edit the main files (e.g. <code class="docutils literal notranslate"><span class="pre">README.md</span></code>)</p></li>
-<li><p>Team members should edit their own versions (e.g. <code class="docutils literal notranslate"><span class="pre">README_XX.md</span></code>)</p></li>
-<li><p><strong>Fetch</strong> and <strong>pull</strong> regularly to avoid conflicts</p></li>
-</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="o">&lt;</span><span class="n">team</span><span class="o">-</span><span class="n">leader</span><span class="o">-</span><span class="n">username</span><span class="o">&gt;/&lt;</span><span class="n">project</span><span class="o">-</span><span class="n">repo</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;.</span><span class="n">git</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Where <code class="docutils literal notranslate"><span class="pre">&lt;team-leader-username&gt;</span></code> is the <strong>team leader’s</strong> GitHub username and <code class="docutils literal notranslate"><span class="pre">&lt;project-repo-name&gt;</span></code> is the name of the new project repo.</p>
+</div>
+<p>At this stage, we may need to setup <strong>SSH (Secure Shell Protocol)</strong>. We can do this by first generating a new <strong>SHH key</strong> following these <a class="reference external" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=mac">instructions</a> and then adding the new SSH key to our GitHub account following these <a class="reference external" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">instructions</a>.</p>
 </section>
-</section>
-<section id="option-2-branch-workflow-recommended">
-<h2>(Option 2) Branch workflow (recommended)<a class="headerlink" href="#option-2-branch-workflow-recommended" title="Link to this heading">#</a></h2>
-<p>To fully explore the power of GitHub, we recommend that using a branching workflow. The learning curve is a little steeper than the centralized workflow but will provide a more complete introduction to git and GitHub.</p>
 <section id="workflow">
-<h3>Workflow<a class="headerlink" href="#workflow" title="Link to this heading">#</a></h3>
+<h2>Workflow<a class="headerlink" href="#workflow" title="Link to this heading">#</a></h2>
+<p>All <strong>team members</strong> should now have a local copy of the repository that includes an empty <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file.</p>
 <ul class="simple">
-<li><p>In GitHub Desktop, <strong>all team members</strong> should create a their <strong>own branch</strong> by clicking the drop-down menu called <strong>Current branch</strong>, typing a name for their branch (e.g. <code class="docutils literal notranslate"><span class="pre">xx_branch</span></code>), click the big blue <strong>Create new branch</strong> button and <strong>Create branch</strong></p></li>
-<li><p>All team members should publish <code class="docutils literal notranslate"><span class="pre">xx_branch</span></code> to main repo by clicking the big blue <strong>Publish branch</strong> button</p></li>
-<li><p>All team members can make changes to <code class="docutils literal notranslate"><span class="pre">README.md</span></code>. Once they are finished, go back to <strong>GitHub Desktop</strong>, include a <strong>Summary</strong> of the changes, click <strong>Commit to <code class="docutils literal notranslate"><span class="pre">xx_branch</span></code></strong> and then <strong>Push origin</strong> button.</p></li>
-<li><p>In GitHub Desktop, click the big blue <strong>Create Pull Request</strong> button which should take you to <a class="reference external" href="http://GitHub.com">GitHub.com</a> where you can click <strong>Create pull request</strong>.</p></li>
-<li><p>The <strong>team leader</strong> can then go to <code class="docutils literal notranslate"><span class="pre">https://github.com/&lt;team-leader-username&gt;/&lt;project-repo-name&gt;</span></code>, click <strong>Pull requests</strong> from the top menu, click on the open pull request. If there are no conflicts, the team leader can click <strong>Merge pull request</strong> and <strong>Confirm merge</strong>.</p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">README.md</span></code> should now be updated on the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.</p></li>
-<li><p>Once your changes have been incorpotated in the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch it is good practice to clean up your repository by <strong>deleting</strong> the old branch (e.g. <code class="docutils literal notranslate"><span class="pre">xx_branch</span></code>).</p></li>
-<li><p>Before starting new work, <strong>all team members</strong> should first click the <strong>Fetch origin</strong> button to check for new changes.</p></li>
+<li><p>One team member can now replace the empty <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file with the README that you produced in last week’s activity and save the file.</p></li>
+<li><p>Now <strong>push</strong> those changes to the remote repository by running:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;added information to README&quot;</span>
+<span class="n">git</span> <span class="n">push</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Other team members can now download these changes to their local repository by running:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">pull</span>
+</pre></div>
+</div>
+</section>
+<section id="branching">
+<h2>Branching<a class="headerlink" href="#branching" title="Link to this heading">#</a></h2>
+<p>To fully explore the power of GitHub, we recommend that students use a branching workflow. The learning curve is a little steeper than the centralized workflow but will provide a more complete introduction to git and GitHub.</p>
+<ul class="simple">
+<li><p><strong>All team members</strong> should create a their <strong>own branch</strong> by running:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">xxx</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">xxx</span></code> is their name or something.</p>
+<ul class="simple">
+<li><p>All team members should make changes to the <code class="docutils literal notranslate"><span class="pre">README.md</span></code>. Once they are finished, <strong>commit</strong> the changes and <strong>push</strong> to the remote repository using:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;more edits to README&quot;</span>
+<span class="n">git</span> <span class="n">push</span> <span class="o">--</span><span class="nb">set</span><span class="o">-</span><span class="n">upstream</span> <span class="n">origin</span> <span class="n">xxx</span>
+</pre></div>
+</div>
+</section>
+<section id="pull-request">
+<h2>Pull request<a class="headerlink" href="#pull-request" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>In <a class="reference external" href="http://GitHub.com">GitHub.com</a>, one of the team members should click the big green <strong>Compare &amp; pull request</strong> button, then <strong>Create pull request</strong>, <strong>Merge pull request</strong>, and <strong>Confirm merge</strong>.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There are instructions for doing a pull request using command-line on this page.</p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">README.md</span></code> should now be updated on the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.</p>
+<ul class="simple">
+<li><p>Once your changes have been incorporated in the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch it is good practice to clean up your repository. <strong>All team members</strong> should check back into <code class="docutils literal notranslate"><span class="pre">main</span></code>, pull the new edits from the remote, and <strong>delete</strong> the old branches.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="n">main</span>
+<span class="n">git</span> <span class="n">pull</span>
+<span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">d</span> <span class="n">xxx</span>
+</pre></div>
+</div>
+<ul class="simple">
 <li><p>Repeat the steps above to contribute to the project.</p></li>
 </ul>
 </section>
-</section>
-<section id="branch-workflow-in-command-line">
-<h2>Branch workflow in command line<a class="headerlink" href="#branch-workflow-in-command-line" title="Link to this heading">#</a></h2>
-<p>It seems like most people in the class are using GitHub Desktop. But if your team would like to use the <strong>command line</strong> (i.e. Terminal), the steps are basically the same. There are some useful instructions <a class="reference external" href="https://icesat-2hackweek.github.io/learning-resources/projects/example_workflow/">here</a> and <a class="reference external" href="https://blog.scottlowe.org/2015/01/27/using-fork-branch-git-workflow/">here</a>. The instructor and TA would also be happy to help get a workflow started.</p>
-</section>
 <section id="some-tips-for-collaborating-on-group-project">
 <h2>Some tips for collaborating on group project<a class="headerlink" href="#some-tips-for-collaborating-on-group-project" title="Link to this heading">#</a></h2>
-<p>The best practice for collaborating on GitHub is to <strong>avoid</strong> situations where two people are independently <strong>working on the same script</strong>. When trying to push/pull changes to/from same origin branch, there will inevitably be <strong>merge conflicts</strong> that can be messy to untangle.</p>
+<p>The best practice for collaborating on GitHub is to <strong>avoid</strong> situations where two people are independently <strong>working on the same file</strong>. When trying to push/pull changes to/from same origin branch, there will inevitably be <strong>merge conflicts</strong> that can be messy to untangle.</p>
 <p>Collaboration is also a little more complicated with <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebooks</span></code> since running cells in the notebook will change execution count and output, even if the code and content appear identical. You are welcome to use other programs to write scripts (e.g. <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Lab</span></code> or <code class="docutils literal notranslate"><span class="pre">Spyder</span></code>).</p>
 <p>General recommendation - <strong>split up</strong> the project into multiple <strong>smaller scipts</strong>, and have each person work on different components. For example, you could have one script that ingests files, reduces/manipulates the data (e.g., reprojection), then writes new files out to disk in “analysis-ready” format. Then a second notebook reads in those data and does some analysis, creates some plots, etc. If you can pass things back and forth between group members like this, you’ll avoid conflicts.</p>
 <ul class="simple">
@@ -563,7 +588,7 @@
 </ul>
 </li>
 <li><p>Don’t add unnecessary files to your repo (careful with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add/commit</span></code>)</p></li>
-<li><p>Commit <strong>early</strong>, commit <strong>often</strong></p></li>
+<li><p>Commit <strong>early</strong>, commit <strong>often</strong>, and use <strong>branches</strong></p></li>
 </ul>
 </section>
 <hr class="docutils" />
@@ -571,7 +596,7 @@
 <h2>Everyone: install a Python distribution<a class="headerlink" href="#everyone-install-a-python-distribution" title="Link to this heading">#</a></h2>
 <p>There are many ways to do this, but our <em>current</em> preferred option is described below. One advantage of the workflow described next is that it is cross-platform meaning that it should work on Windows, MacOS, and Linux operating systems. Some of the text here overlaps with the <a class="reference external" href="https://cleo-lab.github.io/gds-applications-site/course-info/python.html">intro to Python packaging</a> page.</p>
 <p>As a reminder, a distribution is a collection of files that together allows us to build, package, and distribute a module. Since many software programs are written in Python, all computers have an internal <strong>Python distribution</strong> by default but it is usually an older version of Python (e.g. Python 2.7).</p>
-<p>Given that we require specific packages for geospatial data science, it is good practice to install a more modern Python distribution (e.g. Python 3.10.8) using <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html"><code class="docutils literal notranslate"><span class="pre">Miniconda</span></code></a>.</p>
+<p>Given that we require specific packages for geospatial data science, it is good practice to install a more modern Python distribution using <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html"><code class="docutils literal notranslate"><span class="pre">Miniconda</span></code></a>.</p>
 <p>Most students downloaded Python in Week 1 so can <strong>skip this setep</strong>. But, as a reminder, the latest version of Miniconda can be installed from the <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">dowload page</a>.</p>
 <p>We can check that Python is installed by opening an <strong>Anaconda Prompt (miniconda3)</strong> (Windows) and entering:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">where</span> <span class="n">python</span>
@@ -636,7 +661,7 @@
 </div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>Submit your GitHub username on Canvas as evidence for this activity.</p>
+<p>Submit your GitHub username on Canvas as evidence for completing this activity.</p>
 </div>
 </section>
 </section>
@@ -709,15 +734,9 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#team-leader-make-a-new-github-repository">Team leader: make a new Github repository</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#team-leader-add-other-team-members-to-repository">Team leader: add other team members to repository</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#everyone-clone-repository">Everyone: clone repository</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-1-centralized-git-workflow">(Option 1) Centralized git workflow</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-tips-for-the-centralized-workflow">Some tips for the centralized workflow</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-branch-workflow-recommended">(Option 2) Branch workflow (recommended)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow">Workflow</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#branch-workflow-in-command-line">Branch workflow in command line</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow">Workflow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#branching">Branching</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-request">Pull request</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-tips-for-collaborating-on-group-project">Some tips for collaborating on group project</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#everyone-install-a-python-distribution">Everyone: install a Python distribution</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-a-virtual-environment">Setup a virtual environment</a></li>
