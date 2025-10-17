@@ -4,9 +4,9 @@ The goal of the activity this week is to:
    
    
    * Create a new GitHub repository for your final project
-   
-   
-   * Choose a GitHub workflow that works for all team members
+
+    
+   * Practice pushing and pulling to the remote repository
 
    
    * Install necessary Python packages to carry out project
@@ -19,7 +19,7 @@ If you’re working in a group, pick a **project lead** to initiate and manage t
 * Go to: https://github.com/
 
 
-* Click the big green **New** button and follow instructions on the left side of page. Come up with a clever, descriptive repo name - try to avoid names like "finalproject", which won't make the project very memorable or searchable. 
+* Make a new repository by clicking the big green **New** button.  Come up with a short, descriptive repo name - try to avoid names like "finalproject", which won't make the project very memorable or searchable. 
 
 
 * Set the access to **Public** (so instructors/other students can follow progress).
@@ -30,89 +30,98 @@ If you’re working in a group, pick a **project lead** to initiate and manage t
 
 Don’t stress too much about the specifics of the repo - these are not permanent, and you can always change repo names, or start over entirely (just copy and add existing files as a first commit). One of the goals here is to gain more experience using `git` for collaborative work and, early on, you're inevitably going to make some mistakes.
 
+* When you're happy, click the green **Create repository** button.
+
 ## Team leader: add other team members to repository
 
-The team leader now needs to add the others as collaborators and make sure they have permission to access and commit. 
+The team leader now needs to add the others as collaborators and make sure they have permission to push changes to the repository.
 
-* Click **Settings** --> **Collaborators** from menu on the left
+* Click **Settings** from the top menu and --> **Collaborators** from the menu of the left
 
 
 * Click the big green **Add people** button and add the other team members using their **GitHub usernames**
 
 ## Everyone: clone repository
 
-All team members should install [GitHub Desktop](https://desktop.github.com/).
+All team members should now install `git` by following these [instructions](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git). Once installed:
 
-Once installed, open GitHub Desktop, click **File** --> **Clone repository...**, enter `https://github.com/<team-leader-username>/<project-repo-name>` as the **URL** where ```<team-leader-username>``` is the **team leader's** GitHub username and ```<project-repo-name>``` is the name of the new project repo. 
+* Copy the **SSH URL** of the new repository by clicking the big green **<> Code** button
 
-Choose a **Local path** where you keep your coursework (e.g. `C:\Users\your_name\Documents`) and click **Clone**.
+* Navigate to place in your file directory where you keep your coursework (e.g. `C:\Users\user\Documents`)
 
-Notice that in the top left that **Current repository** is now set to `project-repo-name`.
+* `clone` the repository locally by running:
 
-## (Option 1) Centralized git workflow
+```
+git clone git@github.com:<team-leader-username>/<project-repo-name>.git
+```
 
-* To contribute to the repo, **team members** should make a new file called `README_XX.md` where `XX` are the initials of the team member. 
+```{note}
+Where `<team-leader-username>` is the **team leader's** GitHub username and `<project-repo-name>` is the name of the new project repo. 
+```
+
+At this stage, we may need to setup **SSH (Secure Shell Protocol)**. We can do this by first generating a new **SHH key** following these [instructions](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=mac) and then adding the new SSH key to our GitHub account following these [instructions](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account).
+
+## Workflow
+
+All **team members** should now have a local copy of the repository that includes an empty `README.md` file. 
+
+* One team member can now replace the empty `README.md` file with the README that you produced in last week's activity and save the file. 
+
+* Now **push** those changes to the remote repository by running:
+
+```
+git commit -a -m "added information to README"
+git push
+```
+
+* Other team members can now download these changes to their local repository by running:
+
+```
+git pull
+```
+
+## Branching
+
+To fully explore the power of GitHub, we recommend that students use a branching workflow. The learning curve is a little steeper than the centralized workflow but will provide a more complete introduction to git and GitHub. 
+
+* **All team members** should create a their **own branch** by running:
+
+```
+git checkout -b xxx
+```
+where `xxx` is their name or something. 
+
+* All team members should make changes to the `README.md`. Once they are finished, **commit** the changes and **push** to the remote repository using:
+
+```
+git commit -a -m "more edits to README"
+git push --set-upstream origin xxx
+```
+
+## Pull request
+
+* In GitHub.com, one of the team members should click the big green **Compare & pull request** button, then **Create pull request**, **Merge pull request**, and **Confirm merge**. 
+
+```{note}
+There are instructions for doing a pull request using command-line on this page.
+```
+
+The `README.md` should now be updated on the `main` branch. 
 
 
-* When the team member is finished with thir edits to `README_XX.md`, they can go to **GitHub Desktop**, include a **Summary** of the changes, **Commit to main** and then click **Push origin** button.
+* Once your changes have been incorporated in the `main` branch it is good practice to clean up your repository. **All team members** should check back into `main`, pull the new edits from the remote, and **delete** the old branches. 
 
-
-* **Team leader** can then go to **GitHub Desktop**, click **Fetch origin** and **Pull origin** to retrieve the changes that the team members made to their local environment. 
-
-
-* **Team leader** can then add useful text from `README_XX.md` to the main file (e.g. `README.md`). Once they are finished they can **delete** `README_XX.md`, go to **GitHub Desktop**, include a **Summary** of the changes, click **Commit to main** and then **Push origin** button.
-
-
-* **Team members** can then go to **GitHub Desktop**, click **Fetch origin** and **Pull origin** to retrieve the changes that the team leader made. Repeat the steps above to contribute to the project.
-
-
-### Some tips for the centralized workflow
-
-* Only the team leader should edit the main files (e.g. `README.md`)
-
-* Team members should edit their own versions (e.g. `README_XX.md`)
-
-* **Fetch** and **pull** regularly to avoid conflicts
-
-## (Option 2) Branch workflow (recommended)
-
-To fully explore the power of GitHub, we recommend that using a branching workflow. The learning curve is a little steeper than the centralized workflow but will provide a more complete introduction to git and GitHub. 
-
-### Workflow 
-
-* In GitHub Desktop, **all team members** should create a their **own branch** by clicking the drop-down menu called **Current branch**, typing a name for their branch (e.g. `xx_branch`), click the big blue **Create new branch** button and **Create branch**
-
-
-* All team members should publish `xx_branch` to main repo by clicking the big blue **Publish branch** button
-
-
-* All team members can make changes to `README.md`. Once they are finished, go back to **GitHub Desktop**, include a **Summary** of the changes, click **Commit to `xx_branch`** and then **Push origin** button.
-
-
-* In GitHub Desktop, click the big blue **Create Pull Request** button which should take you to GitHub.com where you can click **Create pull request**.
-
-
-* The **team leader** can then go to `https://github.com/<team-leader-username>/<project-repo-name>`, click **Pull requests** from the top menu, click on the open pull request. If there are no conflicts, the team leader can click **Merge pull request** and **Confirm merge**.
-
-
-* The `README.md` should now be updated on the `main` branch. 
-
-
-* Once your changes have been incorpotated in the `main` branch it is good practice to clean up your repository by **deleting** the old branch (e.g. `xx_branch`).
+```
+git checkout main
+git pull
+git branch -d xxx
+```
  
-
-* Before starting new work, **all team members** should first click the **Fetch origin** button to check for new changes. 
-
-
 * Repeat the steps above to contribute to the project.
-
-## Branch workflow in command line
-
-It seems like most people in the class are using GitHub Desktop. But if your team would like to use the **command line** (i.e. Terminal), the steps are basically the same. There are some useful instructions [here](https://icesat-2hackweek.github.io/learning-resources/projects/example_workflow/) and [here](https://blog.scottlowe.org/2015/01/27/using-fork-branch-git-workflow/). The instructor and TA would also be happy to help get a workflow started. 
 
 ##  Some tips for collaborating on group project
 
-The best practice for collaborating on GitHub is to **avoid** situations where two people are independently **working on the same script**. When trying to push/pull changes to/from same origin branch, there will inevitably be **merge conflicts** that can be messy to untangle.
+The best practice for collaborating on GitHub is to **avoid** situations where two people are independently **working on the same file**. When trying to push/pull changes to/from same origin branch, there will inevitably be **merge conflicts** that can be messy to untangle.
 
 Collaboration is also a little more complicated with `Jupyter Notebooks` since running cells in the notebook will change execution count and output, even if the code and content appear identical. You are welcome to use other programs to write scripts (e.g. `Jupyter Lab` or `Spyder`). 
 
@@ -132,7 +141,7 @@ General recommendation - **split up** the project into multiple **smaller scipts
 
 * Don’t add unnecessary files to your repo (careful with `git add/commit`)
 
-* Commit **early**, commit **often**
+* Commit **early**, commit **often**, and use **branches**
 
 *****************************
 
@@ -144,7 +153,7 @@ There are many ways to do this, but our *current* preferred option is described 
 As a reminder, a distribution is a collection of files that together allows us to build, package, and distribute a module. Since many software programs are written in Python, all computers have an internal **Python distribution** by default but it is usually an older version of Python (e.g. Python 2.7). 
 
 
-Given that we require specific packages for geospatial data science, it is good practice to install a more modern Python distribution (e.g. Python 3.10.8) using [`Miniconda`](https://docs.conda.io/en/latest/miniconda.html).
+Given that we require specific packages for geospatial data science, it is good practice to install a more modern Python distribution using [`Miniconda`](https://docs.conda.io/en/latest/miniconda.html).
 
 
 Most students downloaded Python in Week 1 so can **skip this setep**. But, as a reminder, the latest version of Miniconda can be installed from the [dowload page](https://docs.conda.io/en/latest/miniconda.html). 
@@ -232,5 +241,5 @@ Exit the Python interpreter by pressing `Ctrl + Z` and then `Enter` in Windows o
 ```
 
 ```{important}
-Submit your GitHub username on Canvas as evidence for this activity.
+Submit your GitHub username on Canvas as evidence for completing this activity.
 ```
