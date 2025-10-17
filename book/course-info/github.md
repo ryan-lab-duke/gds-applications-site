@@ -8,4 +8,4 @@ If you already have a GitHub account, you can skip this step. If not, create a n
 
 ## Install `git`
 
-There are two options for installing `git`, the command line tool and the graphical user interface (GUI) called GitHub Desktop. Most students prefer **GitHub Desktop** which can be downloaded [here](https://desktop.github.com/). But, if you are comfortable with the command line, `git` can also be installed following [these instructions](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git). 
+There are two options for installing `git`, the command-line interface (CLI) and the graphical user interface (GUI) called GitHub Desktop. We encourage students to learn the CLI which can be installed following [these instructions](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git). 

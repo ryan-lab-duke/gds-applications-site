@@ -78,6 +78,7 @@ parts:
   - caption: Week 12
     chapters:
     - file: lectures/unit3/lecture-10.ipynb
+    - file: activities/contribute.md
 
   - caption: Week 13
     chapters:
