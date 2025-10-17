@@ -499,7 +499,7 @@
 <li><p>Navigate to place in your file directory where you keep your coursework (e.g. <code class="docutils literal notranslate"><span class="pre">C:\Users\user\Documents</span></code>)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">clone</span></code> the repository locally by running:</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="o">&lt;</span><span class="n">team</span><span class="o">-</span><span class="n">leader</span><span class="o">-</span><span class="n">username</span><span class="o">&gt;/&lt;</span><span class="n">project</span><span class="o">-</span><span class="n">repo</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;.</span><span class="n">git</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:&lt;team-leader-username&gt;/&lt;project-repo-name&gt;.git
 </pre></div>
 </div>
 <div class="admonition note">
@@ -515,14 +515,14 @@
 <li><p>One team member can now replace the empty <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file with the README that you produced in last week’s activity and save the file.</p></li>
 <li><p>Now <strong>push</strong> those changes to the remote repository by running:</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;added information to README&quot;</span>
-<span class="n">git</span> <span class="n">push</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-a<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;added information to README&quot;</span>
+git<span class="w"> </span>push
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>Other team members can now download these changes to their local repository by running:</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">pull</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>pull
 </pre></div>
 </div>
 </section>
@@ -532,15 +532,15 @@
 <ul class="simple">
 <li><p><strong>All team members</strong> should create a their <strong>own branch</strong> by running:</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">xxx</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>xxx
 </pre></div>
 </div>
 <p>where <code class="docutils literal notranslate"><span class="pre">xxx</span></code> is their name or something.</p>
 <ul class="simple">
 <li><p>All team members should make changes to the <code class="docutils literal notranslate"><span class="pre">README.md</span></code>. Once they are finished, <strong>commit</strong> the changes and <strong>push</strong> to the remote repository using:</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;more edits to README&quot;</span>
-<span class="n">git</span> <span class="n">push</span> <span class="o">--</span><span class="nb">set</span><span class="o">-</span><span class="n">upstream</span> <span class="n">origin</span> <span class="n">xxx</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-a<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;more edits to README&quot;</span>
+git<span class="w"> </span>push<span class="w"> </span>--set-upstream<span class="w"> </span>origin<span class="w"> </span>xxx
 </pre></div>
 </div>
 </section>
@@ -557,9 +557,9 @@
 <ul class="simple">
 <li><p>Once your changes have been incorporated in the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch it is good practice to clean up your repository. <strong>All team members</strong> should check back into <code class="docutils literal notranslate"><span class="pre">main</span></code>, pull the new edits from the remote, and <strong>delete</strong> the old branches.</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="n">main</span>
-<span class="n">git</span> <span class="n">pull</span>
-<span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">d</span> <span class="n">xxx</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>main
+git<span class="w"> </span>pull
+git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </span>xxx
 </pre></div>
 </div>
 <ul class="simple">
@@ -611,7 +611,7 @@
 </pre></div>
 </div>
 <p>Or:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">python</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/opt/miniconda3/bin/python
 </pre></div>
 </div>
 </section>
@@ -630,7 +630,7 @@
 </pre></div>
 </div>
 <p>On macOS, run:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">.</span><span class="n">venv</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
 </pre></div>
 </div>
 </section>
@@ -651,7 +651,7 @@
 </pre></div>
 </div>
 <p>Then:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span>
 </pre></div>
 </div>
 <p>If this runs without error, we are all good. If we get a <code class="docutils literal notranslate"><span class="pre">ModuleNotFoundError:</span></code>, we might check that the package was included in our <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file.</p>
