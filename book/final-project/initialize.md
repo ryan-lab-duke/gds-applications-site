@@ -51,7 +51,7 @@ All team members should now install `git` by following these [instructions](http
 
 * `clone` the repository locally by running:
 
-```
+```bash
 git clone git@github.com:<team-leader-username>/<project-repo-name>.git
 ```
 
@@ -69,14 +69,14 @@ All **team members** should now have a local copy of the repository that include
 
 * Now **push** those changes to the remote repository by running:
 
-```
+```bash
 git commit -a -m "added information to README"
 git push
 ```
 
 * Other team members can now download these changes to their local repository by running:
 
-```
+```bash
 git pull
 ```
 
@@ -86,14 +86,14 @@ To fully explore the power of GitHub, we recommend that students use a branching
 
 * **All team members** should create a their **own branch** by running:
 
-```
+```bash
 git checkout -b xxx
 ```
 where `xxx` is their name or something. 
 
 * All team members should make changes to the `README.md`. Once they are finished, **commit** the changes and **push** to the remote repository using:
 
-```
+```bash
 git commit -a -m "more edits to README"
 git push --set-upstream origin xxx
 ```
@@ -111,7 +111,7 @@ The `README.md` should now be updated on the `main` branch.
 
 * Once your changes have been incorporated in the `main` branch it is good practice to clean up your repository. **All team members** should check back into `main`, pull the new edits from the remote, and **delete** the old branches. 
 
-```
+```bash
 git checkout main
 git pull
 git branch -d xxx
@@ -178,7 +178,7 @@ C:\Users\johnny\miniconda3\python.exe
 
 Or:
 
-```
+```bash
 /opt/miniconda3/bin/python
 ```
 
@@ -202,7 +202,7 @@ Next we need to activate the virtual environment. In Windows this can be achieve
 
 On macOS, run:
 
-```
+```bash
 source .venv/bin/activate
 ```
 
@@ -230,7 +230,7 @@ python
 
 Then:
 
-```
+```python
 import numpy
 ```
 
