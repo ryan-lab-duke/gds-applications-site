@@ -6,7 +6,7 @@
 |------|---------|-----------------------------|----------------|
 | 1    | Aug 25  | [Introduction](../lectures/unit1/lecture-1.ipynb)                | [Assignment 1](../labs/assignment1.md)   |
 |      | Aug 27  | [Vector data](../lectures/unit1/lecture-2.ipynb)                 |                |
-| 2    | Sep 1   | No class (Labor Day)        | [Assignment 2](../labs/week2/assignment2.md)   |
+| 2    | Sep 1   | No class (Labor Day)        | [Assignment 2](../labs/assignment2.md)   |
 |      | Sep 3   | [Rivers of the world activity](../activities/rivers.md)                    |                |
 | 3    | Sep 8   | [Network data](../lectures/unit1/lecture-3.ipynb)                | [Assignment 3](../labs/assignment3.md)   |
 |      | Sep 10  | [Residential flooding activity](../activities/flooding.md)                    |                |
