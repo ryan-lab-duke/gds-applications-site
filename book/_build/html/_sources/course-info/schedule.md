@@ -33,10 +33,10 @@
 
 | Week | Date    | Lecture           | Homework            |
 |------|---------|-------------------|---------------------|
-| 10   | Oct 27  | Data access   | Initialize project  |
-|      | Oct 29  | Activity          |                     |
-| 11   | Nov 3   | Collaboration and code management    | Project work        |
-|      | Nov 5   | Activity          |                     |
+| 10   | Oct 27  | [Data access](../lectures/unit3/lecture-8.ipynb)   |   |
+|      | Oct 29  | [Make a README](../final-project/readme.md)          |                     |
+| 11   | Nov 3   | [Code management and collaboration](../lectures/unit3/lecture-9.ipynb)    | Project work        |
+|      | Nov 5   | [Initialize GitHub repository](../final-project/initialize.md)        |                     |
 
 --
 
@@ -45,7 +45,7 @@
 | Week | Date    | Lecture                  | Homework       |
 |------|---------|--------------------------|----------------|
 | 12   | Nov 10  | Design principles         | Project work   |
-|      | Nov 12  | Activity                  |                |
+|      | Nov 12  | [Contribute to a GitHub project](../activities/contribute.md)                  |                |
 | 13   | Nov 17  | Cartography               | Project work   |
 |      | Nov 19  | Activity                  |                |
 | 14   | Nov 24  | Interactive visualization | No lab         |
