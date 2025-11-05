@@ -241,7 +241,8 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 12</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../unit3/lecture-10.html">Automating raster analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit3/lecture-10.html">Automated raster analysis using Google Earth Engine</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="../../activities/contribute.html">Contributing to a GitHub repository</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 13</span></p>
@@ -468,44 +469,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="nn">/var/folders/6m/lbbbs2n90xq6lk5v5902brkc0000gq/T/ipykernel_45915/1023165891.py</span> in <span class="ni">?</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">cenpy</span><span class="w"> </span><span class="kn">import</span> <span class="n">products</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">acs</span> <span class="o">=</span> <span class="n">products</span><span class="o">.</span><span class="n">ACS</span><span class="p">(</span><span class="mi">2019</span><span class="p">)</span>
-
-<span class="nn">/opt/miniconda3/envs/book/lib/python3.12/site-packages/cenpy/__init__.py</span> in <span class="ni">?</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> 
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">explorer</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.remote</span><span class="w"> </span><span class="kn">import</span> <span class="n">APIConnection</span> <span class="k">as</span> <span class="n">_APIConnection</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">_load_sitekey</span><span class="p">,</span> <span class="n">set_sitekey</span>
-<span class="ne">----&gt; </span><span class="mi">7</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.products</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> 
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">SITEKEY</span> <span class="o">=</span> <span class="n">_load_sitekey</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> 
-
-<span class="nn">/opt/miniconda3/envs/book/lib/python3.12/site-packages/cenpy/products.py</span> in <span class="ni">?</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="kn">import</span><span class="w"> </span><span class="nn">copy</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> 
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="n">_places</span> <span class="o">=</span> <span class="n">_ft</span><span class="p">(</span><span class="s2">&quot;place&quot;</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">12</span> <span class="n">_places</span><span class="p">[</span><span class="s2">&quot;TARGETFP&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">_places</span><span class="o">.</span><span class="n">PLACEFP</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">rjust</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">))</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="n">_places</span><span class="p">[</span><span class="s2">&quot;TARGETNAME&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">_places</span><span class="o">.</span><span class="n">PLACENAME</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="n">_places</span><span class="p">[</span><span class="s2">&quot;STATEFP&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">_places</span><span class="o">.</span><span class="n">STATEFP</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">rjust</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">))</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="n">_places</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;PLACEFP&quot;</span><span class="p">,</span> <span class="s2">&quot;FUNCSTAT&quot;</span><span class="p">,</span> <span class="s2">&quot;COUNTY&quot;</span><span class="p">,</span> <span class="s2">&quot;PLACENAME&quot;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="nn">/opt/miniconda3/envs/book/lib/python3.12/site-packages/pandas/core/generic.py</span> in <span class="ni">?</span><span class="nt">(self, name)</span>
-<span class="g g-Whitespace">   </span><span class="mi">6295</span>             <span class="ow">and</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_accessors</span>
-<span class="g g-Whitespace">   </span><span class="mi">6296</span>             <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_info_axis</span><span class="o">.</span><span class="n">_can_hold_identifiers_and_holds_name</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">6297</span>         <span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">6298</span>             <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
-<span class="ne">-&gt; </span><span class="mi">6299</span>         <span class="k">return</span> <span class="nb">object</span><span class="o">.</span><span class="fm">__getattribute__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
-
-<span class="ne">AttributeError</span>: &#39;DataFrame&#39; object has no attribute &#39;PLACEFP&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <section id="search-for-data">
 <h2>Search for data<a class="headerlink" href="#search-for-data" title="Link to this heading">#</a></h2>
@@ -517,6 +480,68 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>description</th>
+      <th>columns</th>
+    </tr>
+    <tr>
+      <th>table_name</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>B25016</th>
+      <td>TENURE BY PLUMBING FACILITIES BY OCCUPANTS PER...</td>
+      <td>[B25016_001E, B25016_002E, B25016_003E, B25016...</td>
+    </tr>
+    <tr>
+      <th>B25047</th>
+      <td>PLUMBING FACILITIES FOR ALL HOUSING UNITS</td>
+      <td>[B25047_001E, B25047_002E, B25047_003E]</td>
+    </tr>
+    <tr>
+      <th>B25048</th>
+      <td>PLUMBING FACILITIES FOR OCCUPIED HOUSING UNITS</td>
+      <td>[B25048_001E, B25048_002E, B25048_003E]</td>
+    </tr>
+    <tr>
+      <th>B25049</th>
+      <td>TENURE BY PLUMBING FACILITIES</td>
+      <td>[B25049_001E, B25049_002E, B25049_003E, B25049...</td>
+    </tr>
+    <tr>
+      <th>B25050</th>
+      <td>PLUMBING FACILITIES BY OCCUPANTS PER ROOM BY Y...</td>
+      <td>[B25050_001E, B25050_002E, B25050_003E, B25050...</td>
+    </tr>
+    <tr>
+      <th>B99259</th>
+      <td>ALLOCATION OF PLUMBING FACILITIES</td>
+      <td>[B99259_001E, B99259_002E, B99259_003E]</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -525,6 +550,76 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>label</th>
+      <th>concept</th>
+      <th>predicateType</th>
+      <th>group</th>
+      <th>limit</th>
+      <th>predicateOnly</th>
+      <th>hasGeoCollectionSupport</th>
+      <th>attributes</th>
+      <th>required</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>B25047_003E</th>
+      <td>Estimate!!Total:!!Lacking complete plumbing fa...</td>
+      <td>PLUMBING FACILITIES FOR ALL HOUSING UNITS</td>
+      <td>int</td>
+      <td>B25047</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>B25047_003EA,B25047_003M,B25047_003MA</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>B25047_002E</th>
+      <td>Estimate!!Total:!!Complete plumbing facilities</td>
+      <td>PLUMBING FACILITIES FOR ALL HOUSING UNITS</td>
+      <td>int</td>
+      <td>B25047</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>B25047_002EA,B25047_002M,B25047_002MA</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>B25047_001E</th>
+      <td>Estimate!!Total:</td>
+      <td>PLUMBING FACILITIES FOR ALL HOUSING UNITS</td>
+      <td>int</td>
+      <td>B25047</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>B25047_001EA,B25047_001M,B25047_001MA</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 <section id="download-data">
@@ -563,6 +658,67 @@
 <span class="n">nv_plumbing</span> <span class="o">=</span> <span class="n">products</span><span class="o">.</span><span class="n">ACS</span><span class="p">(</span><span class="mi">2019</span><span class="p">)</span><span class="o">.</span><span class="n">from_state</span><span class="p">(</span><span class="s1">&#39;Nevada&#39;</span><span class="p">,</span> 
                                           <span class="n">level</span><span class="o">=</span><span class="s1">&#39;county&#39;</span><span class="p">,</span>
                                           <span class="n">variables</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;B25047_001E&#39;</span><span class="p">,</span> <span class="s1">&#39;B25047_002E&#39;</span><span class="p">,</span> <span class="s1">&#39;B25047_003E&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Download data</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">wa_plumbing</span> <span class="o">=</span> <span class="n">products</span><span class="o">.</span><span class="n">ACS</span><span class="p">(</span><span class="mi">2019</span><span class="p">)</span><span class="o">.</span><span class="n">from_state</span><span class="p">(</span><span class="s1">&#39;Washington&#39;</span><span class="p">,</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span>                                           <span class="n">level</span><span class="o">=</span><span class="s1">&#39;county&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>                                           <span class="n">variables</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;B25047_001E&#39;</span><span class="p">,</span> <span class="s1">&#39;B25047_002E&#39;</span><span class="p">,</span> <span class="s1">&#39;B25047_003E&#39;</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">or_plumbing</span> <span class="o">=</span> <span class="n">products</span><span class="o">.</span><span class="n">ACS</span><span class="p">(</span><span class="mi">2019</span><span class="p">)</span><span class="o">.</span><span class="n">from_state</span><span class="p">(</span><span class="s1">&#39;Oregon&#39;</span><span class="p">,</span> 
+<span class="g g-Whitespace">      </span><span class="mi">6</span>                                           <span class="n">level</span><span class="o">=</span><span class="s1">&#39;county&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>                                           <span class="n">variables</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;B25047_001E&#39;</span><span class="p">,</span> <span class="s1">&#39;B25047_002E&#39;</span><span class="p">,</span> <span class="s1">&#39;B25047_003E&#39;</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">ca_plumbing</span> <span class="o">=</span> <span class="n">products</span><span class="o">.</span><span class="n">ACS</span><span class="p">(</span><span class="mi">2019</span><span class="p">)</span><span class="o">.</span><span class="n">from_state</span><span class="p">(</span><span class="s1">&#39;California&#39;</span><span class="p">,</span> 
+<span class="g g-Whitespace">      </span><span class="mi">9</span>                                           <span class="n">level</span><span class="o">=</span><span class="s1">&#39;county&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span>                                           <span class="n">variables</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;B25047_001E&#39;</span><span class="p">,</span> <span class="s1">&#39;B25047_002E&#39;</span><span class="p">,</span> <span class="s1">&#39;B25047_003E&#39;</span><span class="p">])</span>
+
+<span class="nn">File /opt/miniconda3/envs/book/lib/python3.12/site-packages/cenpy/products.py:767,</span> in <span class="ni">ACS.from_state</span><span class="nt">(self, state, variables, level, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">766</span> <span class="k">def</span><span class="w"> </span><span class="nf">from_state</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="n">variables</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="s2">&quot;tract&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">767</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_from_name</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">variables</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="s2">&quot;States&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File /opt/miniconda3/envs/book/lib/python3.12/site-packages/cenpy/products.py:723,</span> in <span class="ni">ACS._from_name</span><span class="nt">(self, place, variables, level, layername, return_geometry, cache_name, strict_within, return_bounds, geometry_precision)</span>
+<span class="g g-Whitespace">    </span><span class="mi">720</span> <span class="n">variables</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;GEO_ID&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">722</span> <span class="n">caller</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">ACS</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">_from_name</span>
+<span class="ne">--&gt; </span><span class="mi">723</span> <span class="n">geoms</span><span class="p">,</span> <span class="n">variables</span><span class="p">,</span> <span class="o">*</span><span class="n">rest</span> <span class="o">=</span> <span class="n">caller</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">724</span>     <span class="n">place</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">725</span>     <span class="n">variables</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">726</span>     <span class="n">level</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">727</span>     <span class="n">layername</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">728</span>     <span class="n">return_geometry</span><span class="o">=</span><span class="n">return_geometry</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">729</span>     <span class="n">cache_name</span><span class="o">=</span><span class="n">cache_name</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">730</span>     <span class="n">strict_within</span><span class="o">=</span><span class="n">strict_within</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">731</span>     <span class="n">return_bounds</span><span class="o">=</span><span class="n">return_bounds</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">732</span>     <span class="n">geometry_precision</span><span class="o">=</span><span class="n">geometry_precision</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">733</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">734</span> <span class="n">variables</span><span class="p">[</span><span class="s2">&quot;GEOID&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">variables</span><span class="o">.</span><span class="n">GEO_ID</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;US&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="g g-Whitespace">    </span><span class="mi">735</span> <span class="n">return_table</span> <span class="o">=</span> <span class="n">geoms</span><span class="p">[[</span><span class="s2">&quot;GEOID&quot;</span><span class="p">,</span> <span class="s2">&quot;geometry&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">736</span>     <span class="n">variables</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;GEO_ID&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;GEOID&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">737</span> <span class="p">)</span>
+
+<span class="nn">File /opt/miniconda3/envs/book/lib/python3.12/site-packages/cenpy/products.py:389,</span> in <span class="ni">_Product._from_name</span><span class="nt">(self, place, variables, level, layername, strict_within, return_bounds, geometry_precision, cache_name, replace_missing, return_geometry)</span>
+<span class="g g-Whitespace">    </span><span class="mi">380</span> <span class="n">geoms</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_from_bbox</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">381</span>     <span class="n">env</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">epsg</span><span class="o">=</span><span class="mi">4326</span><span class="p">)</span><span class="o">.</span><span class="n">total_bounds</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">382</span>     <span class="n">variables</span><span class="o">=</span><span class="n">variables</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">386</span>     <span class="n">replace_missing</span><span class="o">=</span><span class="n">replace_missing</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">387</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">388</span> <span class="k">if</span> <span class="n">strict_within</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">389</span>     <span class="n">geoms</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">sjoin</span><span class="p">(</span><span class="n">geoms</span><span class="p">,</span> <span class="n">env</span><span class="p">[[</span><span class="s2">&quot;geometry&quot;</span><span class="p">]],</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;inner&quot;</span><span class="p">,</span> <span class="n">op</span><span class="o">=</span><span class="s2">&quot;within&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">390</span> <span class="k">if</span> <span class="n">return_bounds</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">391</span>     <span class="k">return</span> <span class="n">geoms</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">env</span>
+
+<span class="nn">File /opt/miniconda3/envs/book/lib/python3.12/site-packages/geopandas/tools/sjoin.py:110,</span> in <span class="ni">sjoin</span><span class="nt">(left_df, right_df, how, predicate, lsuffix, rsuffix, distance, on_attribute, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">108</span> <span class="k">if</span> <span class="n">kwargs</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">109</span>     <span class="n">first</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">kwargs</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+<span class="ne">--&gt; </span><span class="mi">110</span>     <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;sjoin() got an unexpected keyword argument &#39;</span><span class="si">{</span><span class="n">first</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">112</span> <span class="n">on_attribute</span> <span class="o">=</span> <span class="n">_maybe_make_list</span><span class="p">(</span><span class="n">on_attribute</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">114</span> <span class="n">_basic_checks</span><span class="p">(</span><span class="n">left_df</span><span class="p">,</span> <span class="n">right_df</span><span class="p">,</span> <span class="n">how</span><span class="p">,</span> <span class="n">lsuffix</span><span class="p">,</span> <span class="n">rsuffix</span><span class="p">,</span> <span class="n">on_attribute</span><span class="o">=</span><span class="n">on_attribute</span><span class="p">),</span>
+
+<span class="ne">TypeError</span>: sjoin() got an unexpected keyword argument &#39;op&#39;
 </pre></div>
 </div>
 </div>
