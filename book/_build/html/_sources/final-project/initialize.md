@@ -41,9 +41,18 @@ The team leader now needs to add the others as collaborators and make sure they 
 
 * Click the big green **Add people** button and add the other team members using their **GitHub usernames**
 
-## Everyone: clone repository
+## Everyone: Add SSH key and install `git`
 
-All team members should now install `git` by following these [instructions](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git). Once installed:
+At this stage, we may need to setup **SSH (Secure Shell Protocol)**. We can do this by first generating a new **SHH key** following these [instructions](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=mac) 
+
+
+Then add the new SSH key to our GitHub account following these [instructions](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account).
+
+Then install `git` by following these [instructions](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
+
+## Everyone: Clone repository
+
+Once we have generated a local SSH key and added it to our account, all team members should **clone** the repository to their local machine.
 
 * Copy the **SSH URL** of the new repository by clicking the big green **<> Code** button
 
@@ -58,8 +67,6 @@ git clone git@github.com:<team-leader-username>/<project-repo-name>.git
 ```{note}
 Where `<team-leader-username>` is the **team leader's** GitHub username and `<project-repo-name>` is the name of the new project repo. 
 ```
-
-At this stage, we may need to setup **SSH (Secure Shell Protocol)**. We can do this by first generating a new **SHH key** following these [instructions](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=mac) and then adding the new SSH key to our GitHub account following these [instructions](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account).
 
 ## Workflow
 
@@ -241,5 +248,5 @@ Exit the Python interpreter by pressing `Ctrl + Z` and then `Enter` in Windows o
 ```
 
 ```{important}
-Submit your GitHub username on Canvas as evidence for completing this activity.
+There is no deliverable for this activity.
 ```

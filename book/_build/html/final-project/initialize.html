@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -63,7 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'final-project/initialize';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Automated raster analysis using Google Earth Engine" href="../lectures/unit3/lecture-10.html" />
+    <link rel="next" title="Google Earth Engine" href="../lectures/unit3/lecture-10.html" />
     <link rel="prev" title="Code management and collaboration" href="../lectures/unit3/lecture-9.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -242,8 +242,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 12</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../lectures/unit3/lecture-10.html">Automated raster analysis using Google Earth Engine</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="../lectures/unit3/lecture-10.html">Google Earth Engine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../activities/contribute.html">Contributing to a GitHub repository</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 13</span></p>
@@ -444,7 +443,8 @@
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#team-leader-make-a-new-github-repository">Team leader: make a new Github repository</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#team-leader-add-other-team-members-to-repository">Team leader: add other team members to repository</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#everyone-clone-repository">Everyone: clone repository</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#everyone-add-ssh-key-and-install-git">Everyone: Add SSH key and install <code class="docutils literal notranslate"><span class="pre">git</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#everyone-clone-repository">Everyone: Clone repository</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow">Workflow</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#branching">Branching</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-request">Pull request</a></li>
@@ -493,9 +493,15 @@
 <li><p>Click the big green <strong>Add people</strong> button and add the other team members using their <strong>GitHub usernames</strong></p></li>
 </ul>
 </section>
+<section id="everyone-add-ssh-key-and-install-git">
+<h2>Everyone: Add SSH key and install <code class="docutils literal notranslate"><span class="pre">git</span></code><a class="headerlink" href="#everyone-add-ssh-key-and-install-git" title="Link to this heading">#</a></h2>
+<p>At this stage, we may need to setup <strong>SSH (Secure Shell Protocol)</strong>. We can do this by first generating a new <strong>SHH key</strong> following these <a class="reference external" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=mac">instructions</a></p>
+<p>Then add the new SSH key to our GitHub account following these <a class="reference external" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">instructions</a>.</p>
+<p>Then install <code class="docutils literal notranslate"><span class="pre">git</span></code> by following these <a class="reference external" href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">instructions</a>.</p>
+</section>
 <section id="everyone-clone-repository">
-<h2>Everyone: clone repository<a class="headerlink" href="#everyone-clone-repository" title="Link to this heading">#</a></h2>
-<p>All team members should now install <code class="docutils literal notranslate"><span class="pre">git</span></code> by following these <a class="reference external" href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">instructions</a>. Once installed:</p>
+<h2>Everyone: Clone repository<a class="headerlink" href="#everyone-clone-repository" title="Link to this heading">#</a></h2>
+<p>Once we have generated a local SSH key and added it to our account, all team members should <strong>clone</strong> the repository to their local machine.</p>
 <ul class="simple">
 <li><p>Copy the <strong>SSH URL</strong> of the new repository by clicking the big green <strong>&lt;&gt; Code</strong> button</p></li>
 <li><p>Navigate to place in your file directory where you keep your coursework (e.g. <code class="docutils literal notranslate"><span class="pre">C:\Users\user\Documents</span></code>)</p></li>
@@ -508,7 +514,6 @@
 <p class="admonition-title">Note</p>
 <p>Where <code class="docutils literal notranslate"><span class="pre">&lt;team-leader-username&gt;</span></code> is the <strong>team leader’s</strong> GitHub username and <code class="docutils literal notranslate"><span class="pre">&lt;project-repo-name&gt;</span></code> is the name of the new project repo.</p>
 </div>
-<p>At this stage, we may need to setup <strong>SSH (Secure Shell Protocol)</strong>. We can do this by first generating a new <strong>SHH key</strong> following these <a class="reference external" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=mac">instructions</a> and then adding the new SSH key to our GitHub account following these <a class="reference external" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">instructions</a>.</p>
 </section>
 <section id="workflow">
 <h2>Workflow<a class="headerlink" href="#workflow" title="Link to this heading">#</a></h2>
@@ -663,7 +668,7 @@ git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </sp
 </div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>Submit your GitHub username on Canvas as evidence for completing this activity.</p>
+<p>There is no deliverable for this activity.</p>
 </div>
 </section>
 </section>
@@ -712,7 +717,7 @@ git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </sp
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Automated raster analysis using Google Earth Engine</p>
+        <p class="prev-next-title">Google Earth Engine</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -735,7 +740,8 @@ git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </sp
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#team-leader-make-a-new-github-repository">Team leader: make a new Github repository</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#team-leader-add-other-team-members-to-repository">Team leader: add other team members to repository</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#everyone-clone-repository">Everyone: clone repository</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#everyone-add-ssh-key-and-install-git">Everyone: Add SSH key and install <code class="docutils literal notranslate"><span class="pre">git</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#everyone-clone-repository">Everyone: Clone repository</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow">Workflow</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#branching">Branching</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-request">Pull request</a></li>
