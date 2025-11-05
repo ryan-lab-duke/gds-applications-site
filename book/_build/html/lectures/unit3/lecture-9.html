@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -242,7 +242,6 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 12</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="lecture-10.html">Automating raster analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../activities/contribute.html">Contributing to a GitHub repository</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 13</span></p>
@@ -804,9 +803,9 @@ branch<span class="w"> </span><span class="s1">&#39;main&#39;</span><span class=
 <p class="admonition-title">Note</p>
 <p>The first time we use this command we have to include <code class="docutils literal notranslate"><span class="pre">-u</span> <span class="pre">origin</span> <span class="pre">main</span></code> to define which branch we want to upload to (i.e. the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch of our remote repository called <code class="docutils literal notranslate"><span class="pre">origin</span></code>.</p>
 </div>
-<a class="reference internal image-reference" href="../../_images/empty-repo.png"><img alt="../../_images/empty-repo.png" class="align-center" src="../../_images/empty-repo.png" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../../_images/empty-repo.png"><img alt="../../_images/empty-repo.png" class="align-center" src="../../_images/empty-repo.png" style="width: 1000px;" /></a>
 <p>Our remote repository now contains <code class="docutils literal notranslate"><span class="pre">file.txt</span></code>. But since we used <code class="docutils literal notranslate"><span class="pre">reset</span></code> earlier, we lost our <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file. We can make one on GitHub.</p>
-<a class="reference internal image-reference" href="../../_images/remote-commit.png"><img alt="../../_images/remote-commit.png" class="align-center" src="../../_images/remote-commit.png" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../../_images/remote-commit.png"><img alt="../../_images/remote-commit.png" class="align-center" src="../../_images/remote-commit.png" style="width: 1000px;" /></a>
 <p>We can run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">fetch</span></code> now to compare our local repository with our remote repository and download the new commits from the remote. Note that this command <strong>does not modify</strong> our local repository.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>%<span class="w"> </span>git<span class="w"> </span>fetch
 remote:<span class="w"> </span>Enumerating<span class="w"> </span>objects:<span class="w"> </span><span class="m">4</span>,<span class="w"> </span><span class="k">done</span>.
@@ -902,7 +901,7 @@ nothing<span class="w"> </span>to<span class="w"> </span>commit,<span class="w">
 <section id="create-new-branch">
 <h2>Create new branch<a class="headerlink" href="#create-new-branch" title="Link to this heading">#</a></h2>
 <p>We will first create a new branch called <code class="docutils literal notranslate"><span class="pre">testing</span></code>.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>branch<span class="w"> </span>testing
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>%<span class="w"> </span>git<span class="w"> </span>branch<span class="w"> </span>testing
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="../../_images/git-branch.png"><img alt="../../_images/git-branch.png" class="align-center" src="../../_images/git-branch.png" style="width: 600px;" /></a>
@@ -1105,12 +1104,12 @@ branch<span class="w"> </span><span class="s1">&#39;laptop&#39;</span><span clas
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="../../_images/mary_successful_push.svg"><img alt="../../_images/mary_successful_push.svg" class="align-center" src="../../_images/mary_successful_push.svg" style="width: 600px;" /></a>
-<a class="reference internal image-reference" href="../../_images/pull-request.png"><img alt="../../_images/pull-request.png" class="align-center" src="../../_images/pull-request.png" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../../_images/pull-request.png"><img alt="../../_images/pull-request.png" class="align-center" src="../../_images/pull-request.png" style="width: 1000px;" /></a>
 <p>Team leader <strong>reviews</strong> pull request, discusses any changes with team members.</p>
-<a class="reference internal image-reference" href="../../_images/pull-request2.png"><img alt="../../_images/pull-request2.png" class="align-center" src="../../_images/pull-request2.png" style="width: 700px;" /></a>
-<a class="reference internal image-reference" href="../../_images/pull-request3.png"><img alt="../../_images/pull-request3.png" class="align-center" src="../../_images/pull-request3.png" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../../_images/pull-request2.png"><img alt="../../_images/pull-request2.png" class="align-center" src="../../_images/pull-request2.png" style="width: 1000px;" /></a>
+<a class="reference internal image-reference" href="../../_images/pull-request3.png"><img alt="../../_images/pull-request3.png" class="align-center" src="../../_images/pull-request3.png" style="width: 1000px;" /></a>
 <p>Once everything looks good, team leader merges new feature into main codebase. Team member can then delete their branch.</p>
-<a class="reference internal image-reference" href="../../_images/pull-request4.png"><img alt="../../_images/pull-request4.png" class="align-center" src="../../_images/pull-request4.png" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../../_images/pull-request4.png"><img alt="../../_images/pull-request4.png" class="align-center" src="../../_images/pull-request4.png" style="width: 1000px;" /></a>
 <p>Team <strong>leader</strong> can then <code class="docutils literal notranslate"><span class="pre">pull</span></code> the changes from the remote GitHub repository to their local repository.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>%<span class="w"> </span>git<span class="w"> </span>pull
 remote:<span class="w"> </span>Enumerating<span class="w"> </span>objects:<span class="w"> </span><span class="m">6</span>,<span class="w"> </span><span class="k">done</span>.

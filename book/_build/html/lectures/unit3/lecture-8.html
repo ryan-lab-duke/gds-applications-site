@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -242,7 +242,6 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 12</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="lecture-10.html">Automating raster analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../activities/contribute.html">Contributing to a GitHub repository</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 13</span></p>
@@ -461,7 +460,6 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#api-limits">API limits</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#web-scraping">Web scraping</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#suppose-a-friend-wanted-to-do-this">Suppose a friend wanted to do this?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selenium">Selenium</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgements">Acknowledgements</a></li>
 </ul>
             </nav>
@@ -523,16 +521,24 @@
 <span class="c1"># Define dataset</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="s1">&#39;monthly-labor-force-linc/&#39;</span>
 
-<span class="c1"># Define request</span>
+<span class="c1"># Define type of request</span>
 <span class="n">request</span> <span class="o">=</span> <span class="s1">&#39;exports/csv&#39;</span>
+
+<span class="c1"># Define requst</span>
+<span class="n">url</span> <span class="o">=</span> <span class="n">base_url</span> <span class="o">+</span> <span class="n">dataset</span> <span class="o">+</span> <span class="n">request</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://linc.osbm.nc.gov/api/explore/v2.1/catalog/datasets/monthly-labor-force-linc/exports/csv
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Make a request</span>
-<span class="n">url</span> <span class="o">=</span> <span class="n">base_url</span> <span class="o">+</span> <span class="n">dataset</span> <span class="o">+</span> <span class="n">request</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Make request</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 <span class="n">response</span>
 </pre></div>
@@ -759,7 +765,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x134854290&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x173488c80&gt;]
 </pre></div>
 </div>
 <img alt="../../_images/3bcd6daaefa44b9d00743da476efe41d2a3db8fd4e9d6a2fa2be0e4558d95a81.png" src="../../_images/3bcd6daaefa44b9d00743da476efe41d2a3db8fd4e9d6a2fa2be0e4558d95a81.png" />
@@ -774,6 +780,19 @@
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define new request</span>
 <span class="n">durham_url</span> <span class="o">=</span> <span class="n">url</span> <span class="o">+</span> <span class="s2">&quot;?where=area_name=&#39;Durham County&#39;&quot;</span>
 <span class="n">durham_url</span> <span class="o">=</span> <span class="n">durham_url</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;%20&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">durham_url</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://linc.osbm.nc.gov/api/explore/v2.1/catalog/datasets/monthly-labor-force-linc/exports/csv?where=area_name=&#39;Durham%20County&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Make request</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">durham_url</span><span class="p">)</span>
 
 <span class="c1"># Convert to DataFrame</span>
@@ -883,7 +902,8 @@
 </div>
 </div>
 </div>
-<p>Next we add <code class="docutils literal notranslate"><span class="pre">get</span></code> to our query, followed by <code class="docutils literal notranslate"><span class="pre">NAME,</span></code> and the variables we are interested in.</p>
+<a class="reference internal image-reference" href="../../_images/api-guide.png"><img alt="../../_images/api-guide.png" class="align-center" src="../../_images/api-guide.png" style="width: 600px;" /></a>
+<p>The example in the API user guide shows that we can find the variables we are interested in by adding a <code class="docutils literal notranslate"><span class="pre">get</span></code> to our query, followed by <code class="docutils literal notranslate"><span class="pre">NAME,</span></code> and the code of the variable.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><strong>B01003_001E</strong> is just total population variable.</p>
@@ -895,7 +915,7 @@
 </div>
 </div>
 </div>
-<p>We then define our places of interest, noting that the wildcard (<code class="docutils literal notranslate"><span class="pre">*</span></code>) indicates <strong>all values</strong>. Here we define all counties in North Carolina which has a <strong>Federal Information Processing Standards (FIPS) code = 37</strong>. We also define our API key.</p>
+<p>Likewise, the user guide shows that we can define our places of interest using <code class="docutils literal notranslate"><span class="pre">&amp;for=state:*</span></code>, noting that the wildcard (<code class="docutils literal notranslate"><span class="pre">*</span></code>) indicates <strong>all values</strong>. Here we define all counties in North Carolina which has a <strong>Federal Information Processing Standards (FIPS) code = 37</strong>. We also define our API key.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">place</span> <span class="o">=</span> <span class="s1">&#39;for=county:*&amp;in=state:37&#39;</span>
@@ -1255,7 +1275,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1444fec00&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1734dd7c0&gt;]
 </pre></div>
 </div>
 <img alt="../../_images/c9292d5c2d7fa15887995e4024b43dd5101b21a12dd399611ad3eb10da4407a6.png" src="../../_images/c9292d5c2d7fa15887995e4024b43dd5101b21a12dd399611ad3eb10da4407a6.png" />
@@ -1677,16 +1697,8 @@ rendered_preview: Rendered preview
 <section id="suppose-a-friend-wanted-to-do-this">
 <h2>Suppose a friend wanted to do this?<a class="headerlink" href="#suppose-a-friend-wanted-to-do-this" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">BeautifulSoup</span></code>: parses HTML, the format that web pages are written in</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">selenium</span></code>: launches and controls a web browser. The package is able to fill in forms and simulate mouse clicks in this browser.</p></li>
-</ul>
-</section>
-<section id="selenium">
-<h2>Selenium<a class="headerlink" href="#selenium" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Sometimes we want even more control…</p></li>
-<li><p>Selenium is a package for performing <strong>web browser automation</strong></p></li>
-<li><p>We can use Selenium to enter text in search boxes, click buttons etc.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">selenium</span></code>: is a package for performing <strong>web browser automation</strong>, it allows us to launch and control a web browser.</p></li>
+<li><p>We can use this package is to enter text in search boxes, click buttons, etc.</p></li>
 </ul>
 <a class="reference internal image-reference" href="../../_images/selenium.png"><img alt="../../_images/selenium.png" class="align-center" src="../../_images/selenium.png" style="width: 200px;" /></a>
 <div class="cell docutils container">
@@ -1748,6 +1760,7 @@ rendered_preview: Rendered preview
 <p><a class="reference external" href="https://earthdatascience.org/courses/use-data-open-source-python/intro-to-apis/apis-in-python/">Earth Data Analytics Online Certificate Chapter 15: APIs</a></p>
 <p><a class="reference external" href="https://planetarycomputer.microsoft.com/docs/quickstarts/reading-stac/">Reading Data from the STAC API</a></p>
 <p><a class="reference external" href="https://hamedalemo.github.io/advanced-geo-python/lectures/11_earth_search_tutorial.html">Tutorial for Searching a STAC Catalog</a></p>
+<p><a class="reference external" href="https://uwgda-jupyterbook.readthedocs.io/en/latest/modules/05_Raster1_GDAL_rasterio_LS8/05_Raster1_LS8_download.html?highlight=microsoft">UW Geospatial Data Analysis: Demo: Landsat and Dynamic Data Access</a></p>
 </section>
 </section>
 
@@ -1836,7 +1849,6 @@ rendered_preview: Rendered preview
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#api-limits">API limits</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#web-scraping">Web scraping</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#suppose-a-friend-wanted-to-do-this">Suppose a friend wanted to do this?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selenium">Selenium</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgements">Acknowledgements</a></li>
 </ul>
   </nav></div>

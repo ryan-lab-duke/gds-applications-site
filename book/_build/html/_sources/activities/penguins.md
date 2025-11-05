@@ -141,10 +141,6 @@ ax.text(0.05, 0.95, f"MAE = {mae:.2f} g", transform=ax.transAxes,
 
 Tinker with your model to see if you can improve your MAE. 
 
-```{note}
-Students who can reduce their MAE to < 275 g will receive a bonus point.
-``` 
-
 *****************************
 
 ```{important}

@@ -2,7 +2,7 @@
 
 Now we are ready to prepare a `README.md` file which will serve as the landing page for your project in GitHub. Note that you can continue to update the `README` as your project evolves.  
 
-Review the [markdown cheat sheet](https://www.markdownguide.org/basic-syntax/) and use some basic headings, bulleted/numbered lists, and other formatting to organize your outline. There are several **markdown editor** options. One option is to make one from a Jupyter Notebook (**File** --> **New** --> **Markdown File**). Alternatively, we can use a standalone software such as [MacDown](https://macdown.uranusjr.com/) for MacOS or [Ghostwriter](https://wereturtle.github.io/ghostwriter/download.html) for Windows.
+Review the [markdown cheat sheet](https://www.markdownguide.org/basic-syntax/) and use some basic headings, bulleted/numbered lists, and other formatting to organize your outline. There are several **markdown editor** options. One option is to make one from a Jupyter Notebook (**File** --> **New** --> **Markdown File**). Alternatively, we can use a standalone software such as [MacDown](https://macdown.uranusjr.com/) for MacOS or [Ghostwriter](https://ghostwriter.kde.org/) for Windows.
 
 Please include the following in `README`:
 
