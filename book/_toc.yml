@@ -82,5 +82,8 @@ parts:
 
   - caption: Week 13
     chapters:
-    - file: lectures/unit4/lecture-11a.ipynb
-    - file: lectures/unit4/lecture-11b.ipynb
+    - file: lectures/unit4/lecture-11.ipynb
+
+  - caption: Week 14
+    chapters:
+    - file: final-project/thanksgiving.md
