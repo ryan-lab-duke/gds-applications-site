@@ -2,7 +2,7 @@
 
 ## It's competition time!
 
-In this week's lab we will compete to produce the best model for classifying our wine dataset. The data can be downloaded from the [here](https://prodduke-my.sharepoint.com/:f:/g/personal/jr555_duke_edu/Eu8mGsF_wNBGpcAiRJou5pkBtFIvDh5lyecepsdYCeTlrQ?e=Lbv4vU). 
+In this week's lab we will compete to produce the best model for classifying our wine dataset. The data can be downloaded from [here](https://prodduke-my.sharepoint.com/:f:/g/personal/jr555_duke_edu/Eu8mGsF_wNBGpcAiRJou5pkBtFIvDh5lyecepsdYCeTlrQ?e=Lbv4vU). 
 
 Next Wednesday, we will score models based on their **mean accuracy** on a set of 20 wines that only the instructor as access to. Highest accuracy wins.
 
