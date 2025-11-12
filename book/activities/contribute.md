@@ -20,13 +20,16 @@ git clone git@github.com:<username>/gds-applications-site.git
 
 ```{note}
 Where `<username>` is your GitHub username.
+```
 
-(Note that if you get an error on this step, you may need to run the clone command using your repository HTTPS link instead.)
+```{margin}
+If you get an error on this step, you may need to run the clone command using the HTTPS link instead.
 ```
 
 * Create a new branch by running:
 
 ```bash
+cd gds-applications-site
 git checkout -b suggested_edit
 ```
 
