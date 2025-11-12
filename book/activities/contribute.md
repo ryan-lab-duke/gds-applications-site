@@ -12,7 +12,7 @@ In this workflow, projects don't have to worry about adding users as collaborato
 
 * To begin this activity, go to the [course website](https://github.com/ryan-lab-duke/gds-applications-site) and click the **Fork** button in the top right. Leave everything as is on the next page and click **Create fork**. When we do this, GitHub will make a copy of the project that lives in our namespace that we can push to. 
 
-* **Clone** this new remote repository locally by running:
+* Switch to a clean folder on your local machine, and **Clone** this new remote repository locally by running:
 
 ```bash
 git clone git@github.com:<username>/gds-applications-site.git
@@ -22,9 +22,14 @@ git clone git@github.com:<username>/gds-applications-site.git
 Where `<username>` is your GitHub username.
 ```
 
+```{margin}
+If you get an error on this step, you may need to run the clone command using the HTTPS link instead.
+```
+
 * Create a new branch by running:
 
 ```bash
+cd gds-applications-site
 git checkout -b suggested_edit
 ```
 
