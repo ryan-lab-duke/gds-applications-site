@@ -9,15 +9,15 @@ This course introduces students to the foundations of modern geospatial data sci
 ### Learning outcomes:
 
 * Improve programming skills
-
 * Learn how think computationally and statistically
-
 * Solve real-world problems using spatial analysis
-
 * Run basic machine learning models
-
 * Manage a data science project using version control
-
 * Collaboratively develop a data science project
-
 * Communicate results of data science project orally and as a short write-up
+
+
+
+## Other ideas:
+
+* As someone who recently had to re-install Python and Spyder, I think it would be cool to add a section on Python. Like what are virtual environments, IDEs, package managers, Anaconda vs. miniconda, adding to PTAH or not, etc. Maybe slightly outside the scope of this course but I always thought that every student working with Python needs a detailed introduction so that they really understand what they are doing.
