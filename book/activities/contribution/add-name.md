@@ -1,6 +1,7 @@
 # Contribute here
 
 - [x] Johnny Ryan
+- [x] Sydney Mudd
 - [x] Gabriel Sandoval
 - [x] Noah Jacobs
 - [x] Vedaansh Uberoi
