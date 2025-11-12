@@ -1,9 +1,11 @@
 # Contribute here
 
 - [x] Johnny Ryan
-- [ ] Bradley Bowen
+- [x] Bradley Bowen
+- [x] Kara Bivens
+- [x] Maya Maciel-Seidman 
 - [ ] 
 - [ ] 
 - [ ] 
-- [ ] 
+- [X] Camryn Kluetmeier 
 - [ ] 
