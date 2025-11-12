@@ -1,6 +1,7 @@
 # Contribute here
 
 - [x] Johnny Ryan
+- [x] Noah Jacobs
 - [x] Vedaansh Uberoi
 - [x] Ana Stringer
 - [x] Jasper Heuer
