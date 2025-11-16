@@ -13,3 +13,4 @@
 - [x] Kara Bivens
 - [x] Maya Maciel-Seidman 
 - [X] Camryn Kluetmeier
+- [ ] Anselme Dossou
