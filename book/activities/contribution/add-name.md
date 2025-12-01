@@ -12,5 +12,6 @@
 - [x] Bradley Bowen
 - [x] Kara Bivens
 - [x] Maya Maciel-Seidman 
-- [X] Camryn Kluetmeier
-- [ ] Anselme Dossou
+- [x] Camryn Kluetmeier
+- [x] Zilin Zhou
+- [x] Anselme Dossou
